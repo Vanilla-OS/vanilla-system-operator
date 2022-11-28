@@ -83,7 +83,7 @@ func writeLatestCheck(t time.Time) error {
 
 // TryUpdate tries to update the system via ABRoot
 func TryUpdate() error {
-	cmd := exec.Command("abroot", "exec", "--assume-yes", `"apt update && apt upgrade -y && apt autoremove -y"`)
+	cmd := exec.Command("abroot", "exec", "--assume-yes", "apt", "update", "&&", "apt", "upgrade", "-y", "&&", "apt", "autoremove", "-y")
 	cmd.Stdout = os.Stdout
 	cmd.Stderr = os.Stderr
 
