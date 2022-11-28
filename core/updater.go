@@ -83,6 +83,8 @@ func writeLatestCheck(t time.Time) error {
 
 // TryUpdate tries to update the system via ABRoot
 func TryUpdate() error {
+	writeLatestCheck(time.Now())
+
 	cmd := exec.Command("abroot", "exec", "--assume-yes", "apt", "update", "&&", "apt", "upgrade", "-y", "&&", "apt", "autoremove", "-y")
 	cmd.Stdout = os.Stdout
 	cmd.Stderr = os.Stderr
@@ -92,6 +94,6 @@ func TryUpdate() error {
 		return err
 	}
 
-	writeLatestCheck(time.Now())
+	SendNotification("Update", "System updated successfully, restart to apply changes.")
 	return nil
 }
