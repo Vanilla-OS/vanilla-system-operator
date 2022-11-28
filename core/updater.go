@@ -85,11 +85,22 @@ func writeLatestCheck(t time.Time) error {
 func TryUpdate() error {
 	writeLatestCheck(time.Now())
 
-	cmd := exec.Command("abroot", "exec", "--assume-yes", "apt", "update", "&&", "apt", "upgrade", "-y", "&&", "apt", "autoremove", "-y")
+	file, err := os.Create("/tmp/" + time.Now().Format("20060102150405") + "-script")
+	if err != nil {
+		return err
+	}
+	defer file.Close()
+
+	_, err = file.WriteString("#!/bin/bash\napt update && apt upgrade -y && apt autoremove -y")
+	if err != nil {
+		return err
+	}
+
+	cmd := exec.Command("abroot", "exec", "--assume-yes", "sh", "/tmp/"+file.Name())
 	cmd.Stdout = os.Stdout
 	cmd.Stderr = os.Stderr
 
-	err := cmd.Run()
+	err = cmd.Run()
 	if err != nil {
 		return err
 	}
