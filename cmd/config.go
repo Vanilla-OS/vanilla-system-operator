@@ -51,10 +51,6 @@ func NewConfigCommand() *cobra.Command {
 }
 
 func config(cmd *cobra.Command, args []string) error {
-	if !core.RootCheck(true) {
-		return nil
-	}
-
 	if len(args) == 0 {
 		fmt.Println("No command specified.")
 		return configUsage(cmd)
@@ -72,6 +68,9 @@ func config(cmd *cobra.Command, args []string) error {
 		}
 		fmt.Println(settings.GetConfigValue(args[1]))
 	case "set":
+		if !core.RootCheck(true) {
+			return nil
+		}
 		if len(args) < 3 {
 			fmt.Println("No key or value specified.")
 			return configUsage(cmd)
