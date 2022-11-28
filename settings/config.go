@@ -10,6 +10,8 @@ package settings
 */
 
 import (
+	"fmt"
+
 	"github.com/spf13/viper"
 )
 
@@ -54,6 +56,12 @@ func GetConfigValue(key string) interface{} {
 }
 
 func SetConfigValue(key string, value interface{}) {
+	if key == "updates.schedule" {
+		if value != "daily" && value != "weekly" && value != "monthly" {
+			fmt.Println("Invalid value for updates.schedule!")
+			return
+		}
+	}
 	viper.Set(key, value)
 }
 
