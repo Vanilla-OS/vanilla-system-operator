@@ -90,7 +90,7 @@ func TryUpdate() error {
 		exit
 	EOF`
 
-	cmd := exec.Command("abroot", "exec", sequence)
+	cmd := exec.Command("abroot", "exec", "--assume-yes", sequence)
 	cmd.Stdout = os.Stdout
 	cmd.Stderr = os.Stderr
 
