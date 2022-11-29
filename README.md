@@ -18,6 +18,6 @@ Commands:
     config              Configure VSO
     developer-program   Join the developers program
     help                Show this help message and exit
-    sys-update          Force a system update
+    trigger-update          Force a system update
     version             Show version and exit
 ```
