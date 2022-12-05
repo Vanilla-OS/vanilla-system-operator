@@ -3,4 +3,4 @@
 export DH_GOPKG := github.com/vanilla-os/vso
 
 %:
-	dh $@ --buildsystem=golang --with=golang
+	dh $@

@@ -29,8 +29,12 @@ Options:
 
 Commands:
 	config              Configure VSO
+	create-task              Create a new task
+	delete-task              Delete a task
 	developer-program   Join the developers program
 	help                Show this help message and exit
+	list-tasks          List all tasks
+	rotate-tasks		Rotate tasks
 	trigger-update	  Trigger a system update
 	version             Show version and exit`)
 }
@@ -46,8 +50,12 @@ func newVsoCommand() *cobra.Command {
 func main() {
 	rootCmd := newVsoCommand()
 
+	rootCmd.AddCommand(cmd.NewCreateTaskCommand())
+	rootCmd.AddCommand(cmd.NewDeleteTaskCommand())
 	rootCmd.AddCommand(cmd.NewConfigCommand())
 	rootCmd.AddCommand(cmd.NewDevProgramCommand())
+	rootCmd.AddCommand(cmd.NewListTasksCommand())
+	rootCmd.AddCommand(cmd.NewRotateTasksCommand())
 	rootCmd.AddCommand(cmd.NewTriggerUpdateCommand())
 	rootCmd.SetHelpFunc(help)
 	rootCmd.Execute()

@@ -46,3 +46,18 @@ func SendNotification(title, body string) error {
 	}
 	return nil
 }
+
+func ConfirmWindow(title string, body string) bool {
+	cmd := exec.Command(
+		"/usr/bin/adwdialog",
+		"--title", title,
+		"--description", body,
+		"--type", "question",
+	)
+	cmd.Env = os.Environ()
+	cmd.Env = append(cmd.Env, "DISPLAY=:1")
+	out, err := cmd.Output()
+	fmt.Println(string(out))
+	fmt.Println(err)
+	return err == nil
+}

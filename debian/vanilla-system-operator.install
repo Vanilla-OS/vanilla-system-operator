@@ -1,1 +1,2 @@
 config/config.json /etc/vso/
+VERSION /etc/vso/
