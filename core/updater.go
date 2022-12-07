@@ -46,6 +46,7 @@ func NeedUpdate() bool {
 // write the current time to the log file if it doesn't exist
 func getLatestCheck() *time.Time {
 	var latestCheck time.Time
+
 	if _, err := os.Stat(checkLogPath); os.IsNotExist(err) {
 		latestCheck = time.Now()
 		writeLatestCheck(latestCheck)
@@ -56,10 +57,16 @@ func getLatestCheck() *time.Time {
 		}
 		defer file.Close()
 
-		_, err = fmt.Fscan(file, &latestCheck)
+		content, err := os.ReadFile(checkLogPath)
 		if err != nil {
 			return nil
 		}
+
+		latestCheck, err = time.Parse("2006-01-02 15:04:05.999999999 -0700 MST m=+0.000000000", string(content))
+		if err != nil {
+			return nil
+		}
+
 	}
 
 	return &latestCheck
