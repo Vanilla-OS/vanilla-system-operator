@@ -10,12 +10,29 @@ import (
 )
 
 var (
-	checkLogPath = "/var/log/vso-check.log"
+	checkLogPath   = "/var/log/vso-check.log"
+	abrootLockPath = "/tmp/abroot-transactions.lock"
 )
+
+// AreABRootTransactionsLocked checks if there are any abroot transactions
+// currently running
+func AreABRootTransactionsLocked() bool {
+	_, err := os.Stat(abrootLockPath)
+	if err != nil {
+		return false
+	}
+
+	return true
+}
 
 // NeedUpdate checks if the system needs to be updated according to the latest
 // update log compared to the VSO configuation
 func NeedUpdate() bool {
+	if AreABRootTransactionsLocked() {
+		fmt.Println("ABRoot transactions are currently locked. Skipping update check.")
+		return false
+	}
+
 	res := false
 	currentTime := time.Now()
 	schedule := settings.GetConfigValue("updates.schedule")
