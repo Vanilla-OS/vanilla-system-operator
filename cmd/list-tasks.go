@@ -5,7 +5,7 @@ package cmd
 		Mirko Brombin <send@mirko.pm>
 		Pietro di Caprio <pietro@fabricators.ltd>
 	Copyright: 2022
-	Description: VSO is an utility which allows you to perform maintenance
+	Description: VSO is a utility which allows you to perform maintenance
 	tasks on your Vanilla OS installation.
 */
 
@@ -21,7 +21,7 @@ func listTasksUsage(*cobra.Command) error {
   List all tasks
 
 Usage:
-	vso list-tasks [options] [arguments]
+	vso list-tasks [options]
 
 Options:
 	--help/-h		show this message

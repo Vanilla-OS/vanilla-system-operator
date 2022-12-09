@@ -5,7 +5,7 @@ package cmd
 		Mirko Brombin <send@mirko.pm>
 		Pietro di Caprio <pietro@fabricators.ltd>
 	Copyright: 2022
-	Description: VSO is an utility which allows you to perform maintenance
+	Description: VSO is a utility which allows you to perform maintenance
 	tasks on your Vanilla OS installation.
 */
 
@@ -25,10 +25,10 @@ Usage:
 
 Options:
 	--help/-h		show this message
-	--now			trigger an update now
+	--now			trigger a system update immediately
 
 Examples:
-	vso trigger-update
+	vso trigger-update --now
 `)
 	return nil
 }

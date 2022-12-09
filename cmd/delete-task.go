@@ -5,7 +5,7 @@ package cmd
 		Mirko Brombin <send@mirko.pm>
 		Pietro di Caprio <pietro@fabricators.ltd>
 	Copyright: 2022
-	Description: VSO is an utility which allows you to perform maintenance
+	Description: VSO is a utility which allows you to perform maintenance
 	tasks on your Vanilla OS installation.
 */
 
@@ -21,13 +21,14 @@ func deleteTaskUsage(*cobra.Command) error {
   Delete a task
 
 Usage:
-	vso delete-task [task] [options] [arguments]
+	vso delete-task [task] [options]
 
 Options:
 	--help/-h		show this message
 
 Examples:
 	vso delete-task my-task
+	vso delete-task "my task"
 `)
 
 	return nil

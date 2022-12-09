@@ -5,7 +5,7 @@ package cmd
 		Mirko Brombin <send@mirko.pm>
 		Pietro di Caprio <pietro@fabricators.ltd>
 	Copyright: 2022
-	Description: VSO is an utility which allows you to perform maintenance
+	Description: VSO is a utility which allows you to perform maintenance
 	tasks on your Vanilla OS installation.
 */
 
@@ -46,7 +46,8 @@ Arguments:
 	--on-process		execute the task when a process came up
 
 Examples:
-	vso tasks new
+	vso create-task -n "Battery fully charged" -d "notify at full charge" -c "notify-send 'Battery fully charged'" --on-full-battery
+	vso create-task -n "Launch-terminal" -d "Launch terminal at Settings launch" -c "kgx" --on-process gnome-control-center
 `)
 	return nil
 }

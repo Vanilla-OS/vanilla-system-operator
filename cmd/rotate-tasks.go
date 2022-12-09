@@ -1,5 +1,14 @@
 package cmd
 
+/*	License: GPLv3
+	Authors:
+		Mirko Brombin <send@mirko.pm>
+		Pietro di Caprio <pietro@fabricators.ltd>
+	Copyright: 2022
+	Description: VSO is a utility which allows you to perform maintenance
+	tasks on your Vanilla OS installation.
+*/
+
 import (
 	"fmt"
 
