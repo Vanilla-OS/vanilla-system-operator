@@ -4,6 +4,9 @@ import (
 	"fmt"
 	"os"
 	"os/exec"
+	"regexp"
+	"strconv"
+	"strings"
 	"time"
 
 	"github.com/vanilla-os/vso/settings"
@@ -107,6 +110,11 @@ func writeLatestCheck(t time.Time) error {
 
 // TryUpdate tries to update the system via ABRoot
 func TryUpdate() error {
+	if !SmartUpdate() {
+		fmt.Println("Smart update detected device is being used, skipping update.")
+		return nil
+	}
+
 	writeLatestCheck(time.Now())
 
 	file, err := os.Create("/tmp/" + time.Now().Format("20060102150405") + "-script")
@@ -131,4 +139,108 @@ func TryUpdate() error {
 
 	SendNotification("Update", "System updated successfully, restart to apply changes.")
 	return nil
+}
+
+// SmartUpdate checks if the device is currently being used, then returns true
+// if the device is not being used
+func SmartUpdate() bool {
+	fmt.Println("Starting smart update check...")
+
+	if settings.GetConfigValue("updates.smart") == "false" {
+		return true
+	}
+
+	commonChecks := GetCommonChecks()
+
+	// battery check
+	if commonChecks.LowBattery {
+		fmt.Println("Low battery detected, skipping update.")
+		return false
+	}
+
+	// connection availability check
+	if !commonChecks.Network {
+		fmt.Println("No network connection detected, skipping update.")
+		return false
+	}
+
+	// internet usage check (false if exceeds 500kb/s)
+	cmd := exec.Command("ifstat", "1", "1")
+	out, err := cmd.Output()
+	if err != nil {
+		fmt.Println("Error while checking internet usage, skipping update. (1)")
+		return false
+	}
+
+	out = out[2:]
+
+	re := regexp.MustCompile(`\d+\.\d+`)
+	numbers := re.FindAllString(string(out), -1)
+
+	for _, number := range numbers {
+		if number > "500.0" {
+			fmt.Println("Internet usage detected, skipping update.")
+			return false
+		}
+	}
+
+	// ram check (false if exceeds 50%)
+	cmd = exec.Command("cat", "/proc/meminfo")
+	out, err = cmd.Output()
+	if err != nil {
+		fmt.Println("Error while checking ram usage, skipping update. (1)")
+		return false
+	}
+
+	var memAvailable, memTotal int
+	for _, line := range strings.Split(string(out), "\n") {
+		if strings.Contains(line, "MemAvailable") {
+			re := regexp.MustCompile(`\d+`)
+			memAvailable, err = strconv.Atoi(re.FindString(line))
+			if err != nil {
+				fmt.Println("Error while checking ram usage, skipping update. (2)")
+				return false
+			}
+		} else if strings.Contains(line, "MemTotal") {
+			re := regexp.MustCompile(`\d+`)
+			memTotal, err = strconv.Atoi(re.FindString(line))
+			if err != nil {
+				fmt.Println("Error while checking ram usage, skipping update. (3)")
+				return false
+			}
+		}
+	}
+
+	if memAvailable < memTotal/2 {
+		fmt.Println("Ram usage detected, skipping update.")
+		return false
+	}
+
+	// cpu check (false if exceeds 50%)
+	cmd = exec.Command("top", "-bn1")
+	out, err = cmd.Output()
+	if err != nil {
+		fmt.Println("Error while checking cpu usage, skipping update. (1)")
+		return false
+	}
+
+	var cpuUsage float64
+	for _, line := range strings.Split(string(out), "\n") {
+		if strings.Contains(line, "Cpu(s)") {
+			re := regexp.MustCompile(`\d+\.\d+`)
+			cpuUsage, err = strconv.ParseFloat(re.FindString(line), 64)
+			if err != nil {
+				fmt.Println("Error while checking cpu usage, skipping update. (2)")
+				return false
+			}
+		}
+	}
+
+	if cpuUsage > 50.0 {
+		fmt.Println("Cpu usage detected, skipping update.")
+		return false
+	}
+
+	fmt.Println("Smart update check passed.")
+	return true
 }

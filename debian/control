@@ -23,6 +23,7 @@ Depends: ${shlibs:Depends},
          golang-go,
          golang-github-spf13-cobra-dev,
          golang-github-spf13-viper-dev,
-         adwdialog
+         adwdialog,
+         ifstat
 Built-Using: ${misc:Built-Using}
 Description: VSO is an utility which allows you to perform maintenance tasks on your Vanilla OS installation.

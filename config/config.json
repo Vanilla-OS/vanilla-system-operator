@@ -1,5 +1,6 @@
 {
   "updates": {
-    "schedule": "weekly"
+    "schedule": "weekly",
+    "smart": true
   }
 }

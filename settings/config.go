@@ -61,7 +61,19 @@ func SetConfigValue(key string, value interface{}) {
 			fmt.Println("Invalid value for updates.schedule!")
 			return
 		}
+	} else if key == "updates.smart" {
+		if value != true && value != false && value != "true" && value != "false" {
+			fmt.Println("Invalid value for updates.smart!")
+			return
+		}
 	}
+
+	if value == "true" {
+		value = true
+	} else if value == "false" {
+		value = false
+	}
+
 	viper.Set(key, value)
 }
 
