@@ -14,6 +14,7 @@ type CommonChecks struct {
 	FullBattery bool
 }
 
+// GetCommonChecks checks network and battery
 func GetCommonChecks() *CommonChecks {
 	cChecks := CommonChecks{}
 
