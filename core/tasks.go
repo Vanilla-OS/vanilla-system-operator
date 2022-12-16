@@ -12,9 +12,13 @@ import (
 
 type Task struct {
 	Name                string
+	Slug                string
 	Description         string
 	NeedConfirm         bool
 	Command             string
+	AfterTask           string
+	AfterTaskSuccess    string
+	AfterTaskFailure    string
 	Every               string
 	At                  string
 	OnBoot              bool
@@ -32,10 +36,11 @@ type Task struct {
 
 var (
 	tasksLocation = "/.config/vso/tasks"
+	currentQueue  = []Task{}
 )
 
-// List lists all tasks
-func List() ([]string, error) {
+// ListUnitFiles lists all tasks files
+func ListUnitFiles() ([]string, error) {
 	files, err := os.ReadDir(getUserTasksLocation())
 	if err != nil {
 		return nil, err
@@ -51,7 +56,7 @@ func List() ([]string, error) {
 
 // ListDetailed lists all tasks with detailed information
 func ListDetailed() ([]Task, error) {
-	list, err := List()
+	list, err := ListUnitFiles()
 	if err != nil {
 		return nil, err
 	}
@@ -168,7 +173,7 @@ func Rotate(event string) error {
 }
 
 func runRotator(cChecks *CommonChecks, event string) error {
-	list, err := List()
+	currentQueue, err := ListDetailed()
 	if err != nil {
 		return err
 	}
@@ -177,13 +182,7 @@ func runRotator(cChecks *CommonChecks, event string) error {
 	rotatedNFails := 0
 	rotatedNSuccess := 0
 
-	for _, name := range list {
-		t, err := Load(name)
-		if err != nil {
-			rotatedNFails++
-			return err
-		}
-
+	for _, t := range currentQueue {
 		if t.ShouldRun(cChecks, event) {
 			err = t.Run()
 			if err != nil {
@@ -195,6 +194,8 @@ func runRotator(cChecks *CommonChecks, event string) error {
 		rotatedN++
 		rotatedNSuccess++
 	}
+
+	currentQueue = []Task{}
 
 	fmt.Printf("Rotated %d tasks, %d failed, %d success\n", rotatedN, rotatedNFails, rotatedNSuccess)
 
@@ -252,6 +253,15 @@ func (t *Task) ShouldRun(cChecks *CommonChecks, event string) bool {
 	if t.OnBoot && event == "boot" {
 		res = true
 		target = "boot"
+	} else if t.AfterTask != "" && TaskHasRun(t.AfterTask) {
+		res = true
+		target = "after task " + t.AfterTask
+	} else if t.AfterTaskSuccess != "" && TaskHasRunSuccess(t.AfterTaskSuccess) {
+		res = true
+		target = "after task success " + t.AfterTaskSuccess
+	} else if t.AfterTaskFailure != "" && TaskHasRunFail(t.AfterTaskFailure) {
+		res = true
+		target = "after task failure " + t.AfterTaskFailure
 	} else if t.Every != "" && ItsBeen(t.LastExecution, t.Every) {
 		res = true
 		target = "every " + t.Every
@@ -307,9 +317,52 @@ func (t *Task) ShouldRun(cChecks *CommonChecks, event string) bool {
 	return res
 }
 
+// TaskHasRun checks if a task has run in the current queue
+func TaskHasRun(name string) bool {
+	for _, task := range currentQueue {
+		if task.Name == name {
+			return true
+		}
+	}
+
+	return false
+}
+
+// TaskHasRunSuccess checks if a task has run successfully in the current queue
+func TaskHasRunSuccess(name string) bool {
+	for _, task := range currentQueue {
+		if task.Name == name && task.WasSuccessful() {
+			return true
+		}
+	}
+
+	return false
+}
+
+// TaskHasRunFail checks if a task has run unsuccessfully in the current queue
+func TaskHasRunFail(name string) bool {
+	for _, task := range currentQueue {
+		if task.Name == name && task.WasFailure() {
+			return true
+		}
+	}
+
+	return false
+}
+
 // Save saves a task in a vsotask file
 func (t *Task) Save() error {
-	file, err := os.Create(getUserTasksLocation() + "/" + t.Name + ".vsotask")
+	t.Slug = slugify(t.Name)
+
+	if t.AfterTask != "" {
+		t.Slug = t.AfterTask + "-" + t.Slug
+	} else if t.AfterTaskSuccess != "" {
+		t.Slug = t.AfterTaskSuccess + "-" + t.Slug
+	} else if t.AfterTaskFailure != "" {
+		t.Slug = t.AfterTaskFailure + "-" + t.Slug
+	}
+
+	file, err := os.Create(getUserTasksLocation() + "/" + t.Slug + ".vsotask")
 	if err != nil {
 		return err
 	}
@@ -323,6 +376,44 @@ func (t *Task) Save() error {
 	}
 
 	return nil
+}
+
+// slugify returns a slugified string
+func slugify(s string) string {
+	s = strings.ToLower(s)
+	s = strings.Replace(s, " ", "-", -1)
+	s = strings.Replace(s, "_", "-", -1)
+	s = strings.Replace(s, ":", "-", -1)
+	s = strings.Replace(s, "/", "-", -1)
+	s = strings.Replace(s, "\\", "-", -1)
+	s = strings.Replace(s, ".", "-", -1)
+	s = strings.Replace(s, ",", "-", -1)
+	s = strings.Replace(s, ";", "-", -1)
+	s = strings.Replace(s, "!", "-", -1)
+	s = strings.Replace(s, "?", "-", -1)
+	s = strings.Replace(s, "(", "-", -1)
+	s = strings.Replace(s, ")", "-", -1)
+	s = strings.Replace(s, "[", "-", -1)
+	s = strings.Replace(s, "]", "-", -1)
+	s = strings.Replace(s, "{", "-", -1)
+	s = strings.Replace(s, "}", "-", -1)
+	s = strings.Replace(s, "'", "-", -1)
+	s = strings.Replace(s, "\"", "-", -1)
+	s = strings.Replace(s, "`", "-", -1)
+	s = strings.Replace(s, "#", "-", -1)
+	s = strings.Replace(s, "$", "-", -1)
+	s = strings.Replace(s, "%", "-", -1)
+	s = strings.Replace(s, "^", "-", -1)
+	s = strings.Replace(s, "&", "-", -1)
+	s = strings.Replace(s, "*", "-", -1)
+	s = strings.Replace(s, "+", "-", -1)
+	s = strings.Replace(s, "=", "-", -1)
+	s = strings.Replace(s, "|", "-", -1)
+	s = strings.Replace(s, ">", "-", -1)
+	s = strings.Replace(s, "<", "-", -1)
+	s = strings.Replace(s, "~", "-", -1)
+
+	return s
 }
 
 // Unit returns the unit name of a task
@@ -347,7 +438,7 @@ func (t *Task) SaveLastSuccess() error {
 	t.RemoveRunning()
 	t.RemoveLastFailure()
 
-	file, err := os.Create("/tmp/" + t.Name + ".vsotask.success")
+	file, err := os.Create("/tmp/" + t.Slug + ".vsotask.success")
 	if err != nil {
 		return err
 	}
@@ -367,7 +458,7 @@ func (t *Task) SaveLastSuccess() error {
 func (t *Task) RemoveLastSuccess() error {
 	fmt.Println("| Removing last success status")
 
-	err := os.Remove("/tmp/" + t.Name + ".vsotask.success")
+	err := os.Remove("/tmp/" + t.Slug + ".vsotask.success")
 	if err != nil {
 		return err
 	}
@@ -377,7 +468,7 @@ func (t *Task) RemoveLastSuccess() error {
 
 // WasSuccessful checks if a task was successful
 func (t *Task) WasSuccessful() bool {
-	_, err := os.Stat("/tmp/" + t.Name + ".vsotask.success")
+	_, err := os.Stat("/tmp/" + t.Slug + ".vsotask.success")
 	return err == nil
 }
 
@@ -388,7 +479,7 @@ func (t *Task) SaveLastFailure() error {
 	t.RemoveRunning()
 	t.RemoveLastSuccess()
 
-	file, err := os.Create("/tmp/" + t.Name + ".vsotask.failure")
+	file, err := os.Create("/tmp/" + t.Slug + ".vsotask.failure")
 	if err != nil {
 		return err
 	}
@@ -399,7 +490,7 @@ func (t *Task) SaveLastFailure() error {
 		return err
 	}
 
-	os.Remove("/tmp/" + t.Name + ".vsotask.success")
+	os.Remove("/tmp/" + t.Slug + ".vsotask.success")
 
 	return nil
 }
@@ -408,7 +499,7 @@ func (t *Task) SaveLastFailure() error {
 func (t *Task) RemoveLastFailure() error {
 	fmt.Println("| Removing last failure status")
 
-	err := os.Remove("/tmp/" + t.Name + ".vsotask.failure")
+	err := os.Remove("/tmp/" + t.Slug + ".vsotask.failure")
 	if err != nil {
 		return err
 	}
@@ -420,7 +511,7 @@ func (t *Task) RemoveLastFailure() error {
 func (t *Task) SaveRunning() error {
 	fmt.Println("| Saving running status")
 
-	file, err := os.Create("/tmp/" + t.Name + ".vsotask.running")
+	file, err := os.Create("/tmp/" + t.Slug + ".vsotask.running")
 	if err != nil {
 		return err
 	}
@@ -436,7 +527,7 @@ func (t *Task) SaveRunning() error {
 
 // IsRunning checks if a task is running
 func (t *Task) IsRunning() bool {
-	_, err := os.Stat("/tmp/" + t.Name + ".vsotask.running")
+	_, err := os.Stat("/tmp/" + t.Slug + ".vsotask.running")
 	return err == nil
 }
 
@@ -444,7 +535,7 @@ func (t *Task) IsRunning() bool {
 func (t *Task) RemoveRunning() error {
 	fmt.Println("| Removing running status")
 
-	err := os.Remove("/tmp/" + t.Name + ".vsotask.running")
+	err := os.Remove("/tmp/" + t.Slug + ".vsotask.running")
 	if err != nil {
 		return err
 	}
@@ -454,8 +545,46 @@ func (t *Task) RemoveRunning() error {
 
 // WasFailure checks if a task was a failure
 func (t *Task) WasFailure() bool {
-	_, err := os.Stat("/tmp/" + t.Name + ".vsotask.failure")
+	_, err := os.Stat("/tmp/" + t.Slug + ".vsotask.failure")
 	return err == nil
+}
+
+// Relations returns a list of Task which depends on the current one
+func (t *Task) Relations() []Task {
+	tasks, err := ListDetailed()
+	if err != nil {
+		return []Task{}
+	}
+
+	var relations []Task
+	for _, task := range tasks {
+		if task.AfterTask == t.Name || task.AfterTaskSuccess == t.Name || task.AfterTaskFailure == t.Name {
+			relations = append(relations, task)
+		}
+	}
+
+	return relations
+}
+
+// Dependencies returns a list of Task which the current one depends on
+func (t *Task) Dependencies() []Task {
+	if t.AfterTask == "" && t.AfterTaskSuccess == "" && t.AfterTaskFailure == "" {
+		return []Task{}
+	}
+
+	tasks, err := ListDetailed()
+	if err != nil {
+		return []Task{}
+	}
+
+	var dependencies []Task
+	for _, task := range tasks {
+		if task.Name == t.AfterTask || task.Name == t.AfterTaskSuccess || task.Name == t.AfterTaskFailure {
+			dependencies = append(dependencies, task)
+		}
+	}
+
+	return dependencies
 }
 
 // Load loads a task

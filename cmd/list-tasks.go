@@ -54,9 +54,24 @@ func listTasks(cmd *cobra.Command, args []string) error {
 	fmt.Println("--------------------")
 
 	for _, task := range tasks {
+		relations := task.Relations()
+		dependencies := task.Dependencies()
+
 		fmt.Println("- " + task.Name)
 		fmt.Println("  Description: " + task.Description)
 		fmt.Println("  LastExecution: " + task.LastExecution.String())
+		if len(relations) > 0 {
+			fmt.Println("  Relations:")
+			for _, relation := range relations {
+				fmt.Println("    - " + relation.Name)
+			}
+		}
+		if len(dependencies) > 0 {
+			fmt.Println("  Dependencies:")
+			for _, dependency := range dependencies {
+				fmt.Println("    - " + dependency.Name)
+			}
+		}
 		fmt.Println("--------------------")
 	}
 
