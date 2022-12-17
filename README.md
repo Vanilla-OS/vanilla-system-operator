@@ -28,3 +28,4 @@ Commands:
 
 - NOTE: Developer's program is a proposed feature for the future.
 
+**Documentation and manpage is available at <https://documentation.vanillaos.org/docs/vso/>.**
