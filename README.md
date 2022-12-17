@@ -26,6 +26,8 @@ Commands:
 	version             	Show version and exit`
 ```
 
-- NOTE: Developer's program is a proposed feature for the future.
+- _NOTE: Developer's program is a proposed feature for the future._
 
-**Documentation and manpage is available at <https://documentation.vanillaos.org/docs/vso/>.**
+## Docs
+
+The official **documentation and manpage** for `vso` are available at <https://documentation.vanillaos.org/docs/vso/>.
