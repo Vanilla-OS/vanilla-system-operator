@@ -50,7 +50,7 @@ func deleteTask(cmd *cobra.Command, args []string) error {
 		return fmt.Errorf("invalid number of arguments")
 	}
 
-	err := core.Delete(args[0])
+	err := core.DeleteTaskByUnitName(args[0])
 	if err != nil {
 		fmt.Println("Task", args[0], "does not exist")
 		return err

@@ -51,5 +51,5 @@ func rotateTasks(cmd *cobra.Command, args []string) error {
 		event = "no-system-event"
 	}
 
-	return core.Rotate(event)
+	return core.RotateTasks(event)
 }

@@ -6,11 +6,9 @@ Uploaders: Mirko Brombin <send@mirko.pm>
 Build-Depends: debhelper (>= 9),
                dh-golang,
                golang-go,
+               golang-dbus-dev,
                golang-github-spf13-cobra-dev,
-               golang-github-spf13-viper-dev,
-               golang-github-google-uuid-dev,
-               golang-github-mattn-go-sqlite3-dev,
-               golang-github-briandowns-spinner-dev
+               golang-github-spf13-viper-dev
 Standards-Version: 3.9.6
 Homepage: https://github.com/vanilla-os/vanilla-system-operator
 Vcs-Browser: https://github.com/vanilla-os/vanilla-system-operator
@@ -21,6 +19,7 @@ Architecture: all
 Depends: ${shlibs:Depends},
          ${misc:Depends},
          golang-go,
+         golang-dbus-dev,
          golang-github-spf13-cobra-dev,
          golang-github-spf13-viper-dev,
          adwdialog,

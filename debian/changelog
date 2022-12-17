@@ -1,5 +1,5 @@
-vanilla-system-operator (0.1) kinetic; urgency=critical
+vanilla-system-operator (0.2.0) kinetic; urgency=critical
 
-  * First Release
+  * Support tasks relations/dependencies
 
  -- Mirko brombin <send@mirko.pm>  Wen, 16 Sep 2022 23:26:34 +0200

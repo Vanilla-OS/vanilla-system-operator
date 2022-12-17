@@ -45,7 +45,7 @@ func NewListTasksCommand() *cobra.Command {
 }
 
 func listTasks(cmd *cobra.Command, args []string) error {
-	tasks, err := core.ListDetailed()
+	tasks, err := core.ListTasksDetailed()
 	if err != nil {
 		return err
 	}

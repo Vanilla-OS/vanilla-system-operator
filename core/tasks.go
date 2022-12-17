@@ -39,8 +39,8 @@ var (
 	currentQueue  = []Task{}
 )
 
-// ListUnitFiles lists all tasks files
-func ListUnitFiles() ([]string, error) {
+// ListUnitTasks lists all tasks files
+func ListUnitTasks() ([]string, error) {
 	files, err := os.ReadDir(getUserTasksLocation())
 	if err != nil {
 		return nil, err
@@ -54,9 +54,9 @@ func ListUnitFiles() ([]string, error) {
 	return list, nil
 }
 
-// ListDetailed lists all tasks with detailed information
-func ListDetailed() ([]Task, error) {
-	list, err := ListUnitFiles()
+// ListTasksDetailed lists all tasks with detailed information
+func ListTasksDetailed() ([]Task, error) {
+	list, err := ListUnitTasks()
 	if err != nil {
 		return nil, err
 	}
@@ -64,7 +64,7 @@ func ListDetailed() ([]Task, error) {
 	var tasks []Task
 	for _, name := range list {
 		name = name[:len(name)-len(".vsotask")]
-		task, err := Load(name)
+		task, err := LoadTaskByUnitName(name)
 		if err != nil {
 			return nil, err
 		}
@@ -75,8 +75,8 @@ func ListDetailed() ([]Task, error) {
 	return tasks, nil
 }
 
-// Delete deletes a task
-func Delete(name string) error {
+// DeleteTaskByUnitName deletes a task
+func DeleteTaskByUnitName(name string) error {
 	err := os.Remove(getUserTasksLocation() + "/" + name + ".vsotask")
 	if err != nil {
 		return err
@@ -85,9 +85,9 @@ func Delete(name string) error {
 	return nil
 }
 
-// Run runs a task
-func Run(name string) error {
-	t, err := Load(name)
+// RunTaskByUnitName runs a task
+func RunTaskByUnitName(name string) error {
+	t, err := LoadTaskByUnitName(name)
 	if err != nil {
 		return err
 	}
@@ -143,9 +143,10 @@ func (t *Task) Run() error {
 	return nil
 }
 
-// Rotate checks which tasks should be run and runs them
-func Rotate(event string) error {
-	if rotatorIsRunning() {
+// RotateTasks checks if no other rotators are running, then performs initial
+// checks and starts rotating every 5 seconds
+func RotateTasks(event string) error {
+	if isTasksRotatorIsRunning() {
 		fmt.Println("Rotator is already running")
 		return nil
 	}
@@ -155,7 +156,7 @@ func Rotate(event string) error {
 		return err
 	}
 
-	err = saveRotatorRunning()
+	err = saveTasksRotatorRunning()
 	if err != nil {
 		return err
 	}
@@ -163,7 +164,7 @@ func Rotate(event string) error {
 	for {
 		fmt.Println("---")
 		cChecks := GetCommonChecks()
-		err := runRotator(cChecks, event)
+		err := runTasksRotator(cChecks, event)
 		if err != nil {
 			fmt.Println(err)
 		}
@@ -172,8 +173,9 @@ func Rotate(event string) error {
 	}
 }
 
-func runRotator(cChecks *CommonChecks, event string) error {
-	currentQueue, err := ListDetailed()
+// runTasksRotator checks which tasks should be run and starts rotating
+func runTasksRotator(cChecks *CommonChecks, event string) error {
+	currentQueue, err := ListTasksDetailed()
 	if err != nil {
 		return err
 	}
@@ -202,8 +204,8 @@ func runRotator(cChecks *CommonChecks, event string) error {
 	return nil
 }
 
-// saveRotatorRunning saves that the rotator is running
-func saveRotatorRunning() error {
+// saveTasksRotatorRunning saves that the rotator is running
+func saveTasksRotatorRunning() error {
 	err := os.WriteFile("/tmp/vso-rotator-running", []byte("true"), 0644)
 	if err != nil {
 		return err
@@ -212,8 +214,8 @@ func saveRotatorRunning() error {
 	return nil
 }
 
-// removeRotatorRunning removes that the rotator is running
-func removeRotatorRunning() error {
+// removeTasksRotatorRunning removes that the rotator is running
+func removeTasksRotatorRunning() error {
 	err := os.Remove("/tmp/vso-rotator-running")
 	if err != nil {
 		return err
@@ -222,8 +224,8 @@ func removeRotatorRunning() error {
 	return nil
 }
 
-// rotatorIsRunning checks if the rotator is running
-func rotatorIsRunning() bool {
+// isTasksRotatorIsRunning checks if the rotator is running
+func isTasksRotatorIsRunning() bool {
 	_, err := os.Stat("/tmp/vso-rotator-running")
 	running := !os.IsNotExist(err)
 
@@ -234,7 +236,7 @@ func rotatorIsRunning() bool {
 	}
 
 	if !running {
-		err := removeRotatorRunning()
+		err := removeTasksRotatorRunning()
 		if err != nil {
 			fmt.Println(err)
 		}
@@ -551,7 +553,7 @@ func (t *Task) WasFailure() bool {
 
 // Relations returns a list of Task which depends on the current one
 func (t *Task) Relations() []Task {
-	tasks, err := ListDetailed()
+	tasks, err := ListTasksDetailed()
 	if err != nil {
 		return []Task{}
 	}
@@ -572,7 +574,7 @@ func (t *Task) Dependencies() []Task {
 		return []Task{}
 	}
 
-	tasks, err := ListDetailed()
+	tasks, err := ListTasksDetailed()
 	if err != nil {
 		return []Task{}
 	}
@@ -587,8 +589,8 @@ func (t *Task) Dependencies() []Task {
 	return dependencies
 }
 
-// Load loads a task
-func Load(name string) (*Task, error) {
+// LoadTaskByUnitName loads a task
+func LoadTaskByUnitName(name string) (*Task, error) {
 	if !strings.HasSuffix(name, ".vsotask") {
 		name = name + ".vsotask"
 	}
@@ -610,8 +612,8 @@ func Load(name string) (*Task, error) {
 	return &t, nil
 }
 
-// makeAutostart creates an autostart file for vso if it doesn't exist
-func makeAutostart() error {
+// makeTasksRotatorAutostart creates an autostart file for vso if it doesn't exist
+func makeTasksRotatorAutostart() error {
 	curUser, err := getRealUser()
 	if err != nil {
 		fmt.Println("Cannot determine real user. Autostart will not be created.")
@@ -659,14 +661,14 @@ func makeTasksLocation() error {
 	return nil
 }
 
-// TasksInit calls makeTasksLocation and makeAutostart in one call
+// TasksInit calls makeTasksLocation and makeTasksRotatorAutostart in one call
 func TasksInit() error {
 	err := makeTasksLocation()
 	if err != nil {
 		return err
 	}
 
-	err = makeAutostart()
+	err = makeTasksRotatorAutostart()
 	if err != nil {
 		return err
 	}
