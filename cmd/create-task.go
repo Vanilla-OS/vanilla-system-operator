@@ -37,8 +37,6 @@ Arguments:
 	--every/-e		execute the task every X (minutes, hours, days)
 	--at/-a			execute the task at a specific time (hh:mm)
 	--on-boot		execute the task on boot
-	--on-shutdown	execute the task on shutdown
-	--on-login		execute the task on login
 	--on-network		execute the task on network connection
 	--on-disconnect	execute the task on network disconnection
 	--on-battery		execute the task on battery
@@ -72,9 +70,6 @@ func NewCreateTaskCommand() *cobra.Command {
 	cmd.Flags().StringP("every", "e", "", "execute the task every X (minutes, hours, days)")
 	cmd.Flags().StringP("at", "a", "", "execute the task at a specific time (hh:mm)")
 	cmd.Flags().Bool("on-boot", false, "execute the task on boot")
-	cmd.Flags().Bool("on-shutdown", false, "execute the task on shutdown")
-	cmd.Flags().Bool("on-login", false, "execute the task on login")
-	// cmd.Flags().Bool("on-logout", false, "execute the task on logout")
 	cmd.Flags().Bool("on-network", false, "execute the task on network connection")
 	cmd.Flags().Bool("on-disconnect", false, "execute the task on network disconnection")
 	cmd.Flags().Bool("on-battery", false, "execute the task on battery")
