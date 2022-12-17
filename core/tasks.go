@@ -4,39 +4,13 @@ import (
 	"encoding/json"
 	"fmt"
 	"os"
-	"os/exec"
-	"strconv"
 	"strings"
 	"time"
 )
 
-type Task struct {
-	Name                string
-	Slug                string
-	Description         string
-	NeedConfirm         bool
-	Command             string
-	AfterTask           string
-	AfterTaskSuccess    string
-	AfterTaskFailure    string
-	Every               string
-	At                  string
-	OnBoot              bool
-	OnNetwork           bool
-	OnDisconnect        bool
-	OnBattery           bool
-	OnLowBattery        bool
-	OnCharge            bool
-	OnFullBattery       bool
-	OnConditionCommand  string
-	OnProcess           string
-	LastExecution       time.Time
-	LastExecutionOutput string
-}
-
 var (
-	tasksLocation = "/.config/vso/tasks"
-	currentQueue  = []Task{}
+	TasksLocation = "/.config/vso/tasks"
+	CurrentQueue  = []Task{}
 )
 
 // ListUnitTasks lists all tasks files
@@ -100,49 +74,6 @@ func RunTaskByUnitName(name string) error {
 	return nil
 }
 
-// Run runs a task
-func (t *Task) Run() error {
-	if t.IsRunning() {
-		fmt.Println("| Not running since it is already running")
-		return nil
-	}
-
-	err := t.SaveRunning()
-	if err != nil {
-		return err
-	}
-
-	if t.NeedConfirm {
-		if !ConfirmWindow("Task '"+t.Name+"' wants to run", t.Description) {
-			err = t.RemoveRunning()
-			if err != nil {
-				return err
-			}
-			return nil
-		}
-	}
-
-	cmd := exec.Command("bash", "-c", t.Command)
-	output, err := cmd.CombinedOutput()
-	fmt.Printf("| Command: %s\n", t.Command)
-	fmt.Printf("| Output: %s\n", output)
-	if err != nil {
-		t.SaveLastFailure()
-	}
-
-	t.LastExecution = time.Now()
-	t.LastExecutionOutput = string(output)
-
-	err = t.Save()
-	if err != nil {
-		return err
-	}
-
-	t.SaveLastSuccess()
-
-	return nil
-}
-
 // RotateTasks checks if no other rotators are running, then performs initial
 // checks and starts rotating every 5 seconds
 func RotateTasks(event string) error {
@@ -175,7 +106,7 @@ func RotateTasks(event string) error {
 
 // runTasksRotator checks which tasks should be run and starts rotating
 func runTasksRotator(cChecks *CommonChecks, event string) error {
-	currentQueue, err := ListTasksDetailed()
+	CurrentQueue, err := ListTasksDetailed()
 	if err != nil {
 		return err
 	}
@@ -184,7 +115,7 @@ func runTasksRotator(cChecks *CommonChecks, event string) error {
 	rotatedNFails := 0
 	rotatedNSuccess := 0
 
-	for _, t := range currentQueue {
+	for _, t := range CurrentQueue {
 		if t.ShouldRun(cChecks, event) {
 			err = t.Run()
 			if err != nil {
@@ -197,7 +128,7 @@ func runTasksRotator(cChecks *CommonChecks, event string) error {
 		rotatedNSuccess++
 	}
 
-	currentQueue = []Task{}
+	CurrentQueue = []Task{}
 
 	fmt.Printf("Rotated %d tasks, %d failed, %d success\n", rotatedN, rotatedNFails, rotatedNSuccess)
 
@@ -245,83 +176,9 @@ func isTasksRotatorIsRunning() bool {
 	return running
 }
 
-// ShouldRun checks if a task respect the assigned event/condition
-func (t *Task) ShouldRun(cChecks *CommonChecks, event string) bool {
-	fmt.Printf("Task: %s\n", t.Name)
-	fmt.Printf("| Check if task should run\n")
-	res := false
-	target := ""
-
-	if t.OnBoot && event == "boot" {
-		res = true
-		target = "boot"
-	} else if t.AfterTask != "" && TaskHasRun(t.AfterTask) {
-		res = true
-		target = "after task " + t.AfterTask
-	} else if t.AfterTaskSuccess != "" && TaskHasRunSuccess(t.AfterTaskSuccess) {
-		res = true
-		target = "after task success " + t.AfterTaskSuccess
-	} else if t.AfterTaskFailure != "" && TaskHasRunFail(t.AfterTaskFailure) {
-		res = true
-		target = "after task failure " + t.AfterTaskFailure
-	} else if t.Every != "" && ItsBeen(t.LastExecution, t.Every) {
-		res = true
-		target = "every " + t.Every
-	} else if t.At != "" && ItsTime(t.At) {
-		res = true
-		target = "at " + t.At
-	} else if t.OnNetwork && cChecks.Network {
-		res = true
-		target = "network"
-	} else if t.OnDisconnect && !cChecks.Network {
-		res = true
-		target = "disconnect"
-	} else if t.OnBattery && cChecks.Battery {
-		res = true
-		target = "battery"
-	} else if t.OnLowBattery && cChecks.LowBattery {
-		res = true
-		target = "low battery"
-	} else if t.OnCharge && !cChecks.Battery {
-		res = true
-		target = "charge"
-	} else if t.OnFullBattery && cChecks.FullBattery {
-		res = true
-		target = "full battery"
-	} else if t.OnConditionCommand != "" {
-		cmd := exec.Command("sh", "-c", t.OnConditionCommand)
-		cmd.Env = os.Environ()
-		cmd.Env = append(cmd.Env, "VSO_TASK_NAME="+t.Name)
-		err := cmd.Run()
-		if err == nil {
-			res = true
-			target = "condition command: " + t.OnConditionCommand
-		}
-	} else if t.OnProcess != "" {
-		if processIsRunning(t.OnProcess, true) {
-			res = true
-			target = "process: " + t.OnProcess
-		} else {
-			t.SaveLastFailure()
-		}
-	}
-	if res {
-		fmt.Printf("| Condition reached: %s\n", target)
-
-		if t.WasSuccessful() {
-			res = false
-			fmt.Printf("| Not running due to last success\n")
-		}
-	} else {
-		fmt.Printf("| Condition not reached, task will not run\n")
-	}
-
-	return res
-}
-
 // TaskHasRun checks if a task has run in the current queue
 func TaskHasRun(name string) bool {
-	for _, task := range currentQueue {
+	for _, task := range CurrentQueue {
 		if task.Name == name {
 			return true
 		}
@@ -332,7 +189,7 @@ func TaskHasRun(name string) bool {
 
 // TaskHasRunSuccess checks if a task has run successfully in the current queue
 func TaskHasRunSuccess(name string) bool {
-	for _, task := range currentQueue {
+	for _, task := range CurrentQueue {
 		if task.Name == name && task.WasSuccessful() {
 			return true
 		}
@@ -343,250 +200,13 @@ func TaskHasRunSuccess(name string) bool {
 
 // TaskHasRunFail checks if a task has run unsuccessfully in the current queue
 func TaskHasRunFail(name string) bool {
-	for _, task := range currentQueue {
+	for _, task := range CurrentQueue {
 		if task.Name == name && task.WasFailure() {
 			return true
 		}
 	}
 
 	return false
-}
-
-// Save saves a task in a vsotask file
-func (t *Task) Save() error {
-	t.Slug = slugify(t.Name)
-
-	if t.AfterTask != "" {
-		t.Slug = t.AfterTask + "-" + t.Slug
-	} else if t.AfterTaskSuccess != "" {
-		t.Slug = t.AfterTaskSuccess + "-" + t.Slug
-	} else if t.AfterTaskFailure != "" {
-		t.Slug = t.AfterTaskFailure + "-" + t.Slug
-	}
-
-	file, err := os.Create(getUserTasksLocation() + "/" + t.Slug + ".vsotask")
-	if err != nil {
-		return err
-	}
-	defer file.Close()
-
-	encoder := json.NewEncoder(file)
-
-	err = encoder.Encode(t)
-	if err != nil {
-		return err
-	}
-
-	return nil
-}
-
-// slugify returns a slugified string
-func slugify(s string) string {
-	s = strings.ToLower(s)
-	s = strings.Replace(s, " ", "-", -1)
-	s = strings.Replace(s, "_", "-", -1)
-	s = strings.Replace(s, ":", "-", -1)
-	s = strings.Replace(s, "/", "-", -1)
-	s = strings.Replace(s, "\\", "-", -1)
-	s = strings.Replace(s, ".", "-", -1)
-	s = strings.Replace(s, ",", "-", -1)
-	s = strings.Replace(s, ";", "-", -1)
-	s = strings.Replace(s, "!", "-", -1)
-	s = strings.Replace(s, "?", "-", -1)
-	s = strings.Replace(s, "(", "-", -1)
-	s = strings.Replace(s, ")", "-", -1)
-	s = strings.Replace(s, "[", "-", -1)
-	s = strings.Replace(s, "]", "-", -1)
-	s = strings.Replace(s, "{", "-", -1)
-	s = strings.Replace(s, "}", "-", -1)
-	s = strings.Replace(s, "'", "-", -1)
-	s = strings.Replace(s, "\"", "-", -1)
-	s = strings.Replace(s, "`", "-", -1)
-	s = strings.Replace(s, "#", "-", -1)
-	s = strings.Replace(s, "$", "-", -1)
-	s = strings.Replace(s, "%", "-", -1)
-	s = strings.Replace(s, "^", "-", -1)
-	s = strings.Replace(s, "&", "-", -1)
-	s = strings.Replace(s, "*", "-", -1)
-	s = strings.Replace(s, "+", "-", -1)
-	s = strings.Replace(s, "=", "-", -1)
-	s = strings.Replace(s, "|", "-", -1)
-	s = strings.Replace(s, ">", "-", -1)
-	s = strings.Replace(s, "<", "-", -1)
-	s = strings.Replace(s, "~", "-", -1)
-
-	return s
-}
-
-// Unit returns the unit name of a task
-func (t *Task) Unit() string {
-	return t.Name + ".vsotask"
-}
-
-// Delete deletes a task
-func (t *Task) Delete() error {
-	err := os.Remove(getUserTasksLocation() + "/" + t.Name + ".vsotask")
-	if err != nil {
-		return err
-	}
-
-	return nil
-}
-
-// SaveLastSuccess saves the last success of a task in /tmp
-func (t *Task) SaveLastSuccess() error {
-	fmt.Println("| Saving last success status")
-
-	t.RemoveRunning()
-	t.RemoveLastFailure()
-
-	file, err := os.Create("/tmp/" + t.Slug + ".vsotask.success")
-	if err != nil {
-		return err
-	}
-	defer file.Close()
-
-	_, err = file.WriteString(time.Now().Format(time.RFC3339))
-	if err != nil {
-		return err
-	}
-
-	os.Remove("/tmp/" + t.Name + ".vsotask.failure")
-
-	return nil
-}
-
-// RemoveLastSuccess removes the last success of a task in /tmp
-func (t *Task) RemoveLastSuccess() error {
-	fmt.Println("| Removing last success status")
-
-	err := os.Remove("/tmp/" + t.Slug + ".vsotask.success")
-	if err != nil {
-		return err
-	}
-
-	return nil
-}
-
-// WasSuccessful checks if a task was successful
-func (t *Task) WasSuccessful() bool {
-	_, err := os.Stat("/tmp/" + t.Slug + ".vsotask.success")
-	return err == nil
-}
-
-// SaveLastFailure saves the last failure of a task in /tmp
-func (t *Task) SaveLastFailure() error {
-	fmt.Println("| Saving last failure status")
-
-	t.RemoveRunning()
-	t.RemoveLastSuccess()
-
-	file, err := os.Create("/tmp/" + t.Slug + ".vsotask.failure")
-	if err != nil {
-		return err
-	}
-	defer file.Close()
-
-	_, err = file.WriteString(time.Now().Format(time.RFC3339))
-	if err != nil {
-		return err
-	}
-
-	os.Remove("/tmp/" + t.Slug + ".vsotask.success")
-
-	return nil
-}
-
-// RemoveLastFailure removes the last failure of a task in /tmp
-func (t *Task) RemoveLastFailure() error {
-	fmt.Println("| Removing last failure status")
-
-	err := os.Remove("/tmp/" + t.Slug + ".vsotask.failure")
-	if err != nil {
-		return err
-	}
-
-	return nil
-}
-
-// SaveRunning saves the running state of a task in /tmp
-func (t *Task) SaveRunning() error {
-	fmt.Println("| Saving running status")
-
-	file, err := os.Create("/tmp/" + t.Slug + ".vsotask.running")
-	if err != nil {
-		return err
-	}
-	defer file.Close()
-
-	_, err = file.WriteString(time.Now().Format(time.RFC3339))
-	if err != nil {
-		return err
-	}
-
-	return nil
-}
-
-// IsRunning checks if a task is running
-func (t *Task) IsRunning() bool {
-	_, err := os.Stat("/tmp/" + t.Slug + ".vsotask.running")
-	return err == nil
-}
-
-// RemoveRunning removes the running state of a task in /tmp
-func (t *Task) RemoveRunning() error {
-	fmt.Println("| Removing running status")
-
-	err := os.Remove("/tmp/" + t.Slug + ".vsotask.running")
-	if err != nil {
-		return err
-	}
-
-	return nil
-}
-
-// WasFailure checks if a task was a failure
-func (t *Task) WasFailure() bool {
-	_, err := os.Stat("/tmp/" + t.Slug + ".vsotask.failure")
-	return err == nil
-}
-
-// Relations returns a list of Task which depends on the current one
-func (t *Task) Relations() []Task {
-	tasks, err := ListTasksDetailed()
-	if err != nil {
-		return []Task{}
-	}
-
-	var relations []Task
-	for _, task := range tasks {
-		if task.AfterTask == t.Name || task.AfterTaskSuccess == t.Name || task.AfterTaskFailure == t.Name {
-			relations = append(relations, task)
-		}
-	}
-
-	return relations
-}
-
-// Dependencies returns a list of Task which the current one depends on
-func (t *Task) Dependencies() []Task {
-	if t.AfterTask == "" && t.AfterTaskSuccess == "" && t.AfterTaskFailure == "" {
-		return []Task{}
-	}
-
-	tasks, err := ListTasksDetailed()
-	if err != nil {
-		return []Task{}
-	}
-
-	var dependencies []Task
-	for _, task := range tasks {
-		if task.Name == t.AfterTask || task.Name == t.AfterTaskSuccess || task.Name == t.AfterTaskFailure {
-			dependencies = append(dependencies, task)
-		}
-	}
-
-	return dependencies
 }
 
 // LoadTaskByUnitName loads a task
@@ -676,45 +296,6 @@ func TasksInit() error {
 	return nil
 }
 
-// getRealUser returns the real user if the current is root
-func getRealUser() (string, error) {
-	curUser := os.Getenv("USER")
-	if curUser == "" || curUser == "root" {
-		curUser = os.Getenv("SUDO_USER")
-		if curUser == "" {
-			fmt.Println("Could not determine current user")
-			return "", fmt.Errorf("cannot determine current user")
-		}
-	}
-
-	return curUser, nil
-}
-
-// processIsRunning checks if a process is running based on its name
-func processIsRunning(name string, excludeVsoPid bool) bool {
-	cmd := exec.Command("ps", "-A", "-o", "pid,ppid,cmd")
-	out, err := cmd.Output()
-	if err != nil {
-		return false
-	}
-
-	lines := strings.Split(string(out), "\n")
-	for _, line := range lines {
-		if strings.Contains(line, name) {
-			if excludeVsoPid {
-				vsoPid := strconv.Itoa(os.Getppid())
-				if strings.Contains(line, vsoPid) {
-					continue
-				}
-			}
-			return true
-		}
-	}
-
-	return false
-
-}
-
 // getUserTasksLocation returns the location of the user tasks
 func getUserTasksLocation() string {
 	curUser, err := getRealUser()
@@ -722,5 +303,5 @@ func getUserTasksLocation() string {
 		return ""
 	}
 
-	return "/home/" + curUser + tasksLocation
+	return "/home/" + curUser + TasksLocation
 }
