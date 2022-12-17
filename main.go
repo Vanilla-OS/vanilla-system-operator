@@ -25,7 +25,7 @@ func help(cmd *cobra.Command, args []string) {
 	vso [options] [command] [arguments]
 
 Options:
-	-h, --help            Show this help message and exit
+	-h, --help            	Show this help message and exit
 
 Commands:
 	config              	Configure VSO
