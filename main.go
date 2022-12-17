@@ -28,15 +28,15 @@ Options:
 	-h, --help            Show this help message and exit
 
 Commands:
-	config              Configure VSO
-	create-task              Create a new task
-	delete-task              Delete a task
-	developer-program   Join the developers program
-	help                Show this help message and exit
-	list-tasks          List all tasks
+	config              	Configure VSO
+	create-task             Create a new task
+	delete-task             Delete a task
+	developer-program   	Join the developers program
+	help                	Show this help message and exit
+	list-tasks          	List all tasks
 	rotate-tasks		Rotate tasks
-	trigger-update	  Trigger a system update
-	version             Show version and exit`)
+	trigger-update	  	Trigger a system update
+	version             	Show version and exit`)
 }
 
 func newVsoCommand() *cobra.Command {
