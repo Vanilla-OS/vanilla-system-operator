@@ -12,18 +12,18 @@
 Usage: vso [options] [command] [arguments]
 
 Options:
-	-h, --help            Show this help message and exit
+	-h, --help            	Show this help message and exit
 
 Commands:
-	config              Configure VSO
-	create-task              Create a new task
-	delete-task              Delete a task
-	developer-program   Join the developer's program
-	help                Show this help message and exit
-	list-tasks          List all tasks
+	config              	Configure VSO
+	create-task             Create a new task
+	delete-task             Delete a task
+	developer-program   	Join the developer's program
+	help                	Show this help message and exit
+	list-tasks          	List all tasks
 	rotate-tasks		Rotate tasks
-	trigger-update	  Trigger a system update
-	version             Show version and exit`
+	trigger-update	  	Trigger a system update
+	version             	Show version and exit`
 ```
 
 - NOTE: Developer's program is a proposed feature for the future.
