@@ -49,6 +49,31 @@ func ListTasksDetailed() ([]Task, error) {
 	return tasks, nil
 }
 
+// ListTasksJson lists all tasks with detailed information in JSON format
+func ListTasksJson() (string, error) {
+	tasks, err := ListTasksDetailed()
+	if err != nil {
+		return "", err
+	}
+
+	var tasksJson []TaskJson
+	for _, task := range tasks {
+		tasksJson = append(tasksJson, TaskJson{
+			Task:         task,
+			Dependencies: task.Dependencies(),
+			Relations:    task.Relations(),
+			Target:       task.Target(),
+		})
+	}
+
+	json, err := json.Marshal(tasksJson)
+	if err != nil {
+		return "", err
+	}
+
+	return string(json), nil
+}
+
 // DeleteTaskByUnitName deletes a task
 func DeleteTaskByUnitName(name string) error {
 	err := os.Remove(getUserTasksLocation() + "/" + name + ".vsotask")

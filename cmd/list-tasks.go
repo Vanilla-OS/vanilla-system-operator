@@ -25,6 +25,7 @@ Usage:
 
 Options:
 	--help/-h		show this message
+	--json/-j		output in JSON format
 
 Examples:
 	vso list-tasks
@@ -39,12 +40,22 @@ func NewListTasksCommand() *cobra.Command {
 		Short: "List all tasks",
 		RunE:  listTasks,
 	}
+	cmd.Flags().BoolP("json", "j", false, "output in JSON format")
 	cmd.SetUsageFunc(listTasksUsage)
 
 	return cmd
 }
 
 func listTasks(cmd *cobra.Command, args []string) error {
+	json, err := cmd.Flags().GetBool("json")
+	if err != nil {
+		return err
+	}
+
+	if json {
+		return listTasksJson()
+	}
+
 	tasks, err := core.ListTasksDetailed()
 	if err != nil {
 		return err
@@ -74,6 +85,17 @@ func listTasks(cmd *cobra.Command, args []string) error {
 		}
 		fmt.Println("--------------------")
 	}
+
+	return nil
+}
+
+func listTasksJson() error {
+	json, err := core.ListTasksJson()
+	if err != nil {
+		return err
+	}
+
+	fmt.Println(string(json))
 
 	return nil
 }
