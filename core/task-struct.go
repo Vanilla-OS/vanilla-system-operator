@@ -32,6 +32,13 @@ type Task struct {
 	LastExecutionOutput string
 }
 
+type TaskJson struct {
+	Task
+	Dependencies []Task `json:"Dependencies"`
+	Relations    []Task `json:"Relations"`
+	Target       string `json:"Target"`
+}
+
 // Run runs a task
 func (t *Task) Run() error {
 	if t.IsRunning() {
@@ -147,6 +154,41 @@ func (t *Task) ShouldRun(cChecks *CommonChecks, event string) bool {
 	}
 
 	return res
+}
+
+// Target returns the target of the task
+func (t *Task) Target() string {
+	if t.AfterTask != "" {
+		return "afterTask"
+	} else if t.AfterTaskSuccess != "" {
+		return "afterTaskSuccess"
+	} else if t.AfterTaskFailure != "" {
+		return "afterTaskFailure"
+	} else if t.Every != "" {
+		return "every"
+	} else if t.At != "" {
+		return "at"
+	} else if t.OnBoot {
+		return "onBoot"
+	} else if t.OnNetwork {
+		return "onNetwork"
+	} else if t.OnDisconnect {
+		return "onDisconnect"
+	} else if t.OnBattery {
+		return "onBattery"
+	} else if t.OnLowBattery {
+		return "onLowBattery"
+	} else if t.OnCharge {
+		return "onCharge"
+	} else if t.OnFullBattery {
+		return "onFullBattery"
+	} else if t.OnConditionCommand != "" {
+		return "onConditionCommand"
+	} else if t.OnProcess != "" {
+		return "onProcess"
+	}
+
+	return ""
 }
 
 // Save saves a task in a vsotask file
