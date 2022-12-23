@@ -158,12 +158,6 @@ func SmartUpdate() bool {
 		return false
 	}
 
-	// connection availability check
-	if !commonChecks.Network {
-		fmt.Println("No network connection detected, skipping update.")
-		return false
-	}
-
 	// internet usage check (false if exceeds 500kb/s)
 	cmd := exec.Command("ifstat", "1", "1")
 	out, err := cmd.Output()
