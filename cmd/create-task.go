@@ -64,9 +64,9 @@ func NewCreateTaskCommand() *cobra.Command {
 	cmd.Flags().StringP("description", "d", "", "description of the task")
 	cmd.Flags().Bool("need-confirm", false, "ask for confirmation before executing the task")
 	cmd.Flags().StringP("command", "c", "", "command to execute")
-	cmd.Flags().String("after-task", "", "execute the task after another task")
-	cmd.Flags().String("after-task-success", "", "execute the task after another task if it was successful")
-	cmd.Flags().String("after-task-failure", "", "execute the task after another task if it failed")
+	//cmd.Flags().String("after-task", "", "execute the task after another task")
+	//cmd.Flags().String("after-task-success", "", "execute the task after another task if it was successful")
+	//cmd.Flags().String("after-task-failure", "", "execute the task after another task if it failed")
 	cmd.Flags().StringP("every", "e", "", "execute the task every X (minutes, hours, days)")
 	cmd.Flags().StringP("at", "a", "", "execute the task at a specific time (hh:mm)")
 	cmd.Flags().Bool("on-boot", false, "execute the task on boot")
@@ -102,9 +102,9 @@ func createTask(cmd *cobra.Command, args []string) error {
 	}
 
 	// checking for optional arguments
-	afterTask, _ := cmd.Flags().GetString("after-task")
-	afterTaskSuccess, _ := cmd.Flags().GetString("after-task-success")
-	afterTaskFailure, _ := cmd.Flags().GetString("after-task-failure")
+	//afterTask, _ := cmd.Flags().GetString("after-task")
+	//afterTaskSuccess, _ := cmd.Flags().GetString("after-task-success")
+	//afterTaskFailure, _ := cmd.Flags().GetString("after-task-failure")
 	every, _ := cmd.Flags().GetString("every")
 	at, _ := cmd.Flags().GetString("at")
 	onBoot, _ := cmd.Flags().GetBool("on-boot")
@@ -124,9 +124,9 @@ func createTask(cmd *cobra.Command, args []string) error {
 		NeedConfirm: nconfirm,
 		Command:     command,
 
-		AfterTask:        afterTask,
-		AfterTaskSuccess: afterTaskSuccess,
-		AfterTaskFailure: afterTaskFailure,
+		AfterTask:        "",
+		AfterTaskSuccess: "",
+		AfterTaskFailure: "",
 		Every:            every,
 		At:               at,
 
