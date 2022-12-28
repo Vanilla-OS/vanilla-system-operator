@@ -1,4 +1,4 @@
-vanilla-system-operator (1.0.1) kinetic; urgency=critical
+vanilla-system-operator (1.1.0) kinetic; urgency=critical
 
   * Support tasks relations/dependencies
   * Add manpage (man vso)
