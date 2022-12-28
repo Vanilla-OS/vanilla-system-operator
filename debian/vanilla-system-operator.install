@@ -1,1 +1,2 @@
 config/config.json /etc/vso/
+man/vso.1 /usr/share/man/man1
