@@ -33,7 +33,7 @@ Examples:
 
 func NewDevProgramCommand() *cobra.Command {
 	cmd := &cobra.Command{
-		Use:   "sys-update",
+		Use:   "developer-program",
 		Short: "Join the developers program",
 		RunE:  devProgram,
 	}
