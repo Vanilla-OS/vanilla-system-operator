@@ -1,6 +1,8 @@
 package core
 
 import (
+	"fmt"
+	"os"
 	"os/exec"
 	"strconv"
 	"strings"
@@ -12,6 +14,27 @@ type CommonChecks struct {
 	Battery     bool
 	LowBattery  bool
 	FullBattery bool
+}
+
+// IsLaptop checks if the system is a laptop by looking for the chassis type
+func IsLaptop() bool {
+	file, err := os.Open("/sys/devices/virtual/dmi/id/chassis_type")
+	if err != nil {
+		return false
+	}
+	defer file.Close()
+
+	var chassisType int
+	_, err = fmt.Fscanf(file, "%d", &chassisType)
+	if err != nil {
+		return false
+	}
+
+	if chassisType == 8 || chassisType == 9 || chassisType == 10 || chassisType == 14 {
+		return true
+	}
+
+	return false
 }
 
 // GetCommonChecks checks network and battery
