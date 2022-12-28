@@ -154,7 +154,7 @@ func SmartUpdate() bool {
 	commonChecks := GetCommonChecks()
 
 	// battery check
-	if commonChecks.LowBattery {
+	if IsLaptop() && commonChecks.LowBattery {
 		fmt.Println("Low battery detected, skipping update.")
 		return false
 	}
