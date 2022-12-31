@@ -4,10 +4,15 @@ import (
 	"fmt"
 	"os"
 	"os/exec"
+	"path"
 	"strconv"
 	"strings"
 	"time"
 )
+
+// powerPath is the path of batteries in Linux
+// after 3.20
+const powerPath = "/sys/class/power_supply/"
 
 type CommonChecks struct {
 	Network     bool
@@ -49,32 +54,35 @@ func GetCommonChecks() *CommonChecks {
 	}
 
 	// Battery
-	cmd = exec.Command("acpi")
+	cmd = exec.Command("ls", powerPath)
 	output, err := cmd.CombinedOutput()
 	if err == nil {
-		if strings.Contains(string(output), "Discharging") {
-			cChecks.Battery = true
-		}
-		if strings.Contains(string(output), "Charging") || strings.Contains(string(output), "Not charging") {
-			cChecks.Battery = false
-		}
-		percentage := ""
-		for _, char := range string(output) {
-			if char >= '0' && char <= '9' {
-				percentage += string(char)
-			}
-			if char == '%' {
-				break
-			}
-		}
-		if percentage != "" {
-			perc, err := strconv.Atoi(percentage)
-			if err == nil {
-				if perc <= 30 {
-					cChecks.LowBattery = true
+		devices := strings.Split(string(output), "\n")
+		for _, dev := range devices {
+			if strings.Contains(dev, "BAT") {
+				devPath := path.Join(powerPath, dev)
+				statusPath := path.Join(devPath, "status")
+				capacityPath := path.Join(devPath, "capacity")
+
+				statusCmd := exec.Command("cat", statusPath)
+				statusOutput, err := statusCmd.CombinedOutput()
+				if err == nil {
+					if strings.Contains(string(statusOutput), "Discharging") {
+						cChecks.Battery = true
+					}
 				}
-				if perc == 100 {
-					cChecks.FullBattery = true
+				capacityCmd := exec.Command("cat", capacityPath)
+				capacityOutput, err := capacityCmd.CombinedOutput()
+				if err == nil {
+					percent, err := strconv.Atoi(strings.TrimSpace(string(capacityOutput)))
+					if err == nil {
+						if percent <= 30 {
+							cChecks.LowBattery = true
+						}
+						if percent == 100 {
+							cChecks.FullBattery = true
+						}
+					}
 				}
 			}
 		}
