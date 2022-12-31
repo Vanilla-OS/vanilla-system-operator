@@ -141,7 +141,7 @@ func TryUpdate() error {
 // SmartUpdate checks if the device is currently being used, then returns true
 // if the device is not being used
 func SmartUpdate() bool {
-	if settings.GetConfigValue("updates.smart") == "false" {
+	if settings.GetConfigValue("updates.smart") == false {
 		fmt.Println("Smart update is disabled, skipping check.")
 		return true
 	}
