@@ -59,7 +59,7 @@ func config(cmd *cobra.Command, args []string) error {
 	switch args[0] {
 	case "show":
 		for _, key := range settings.GetConfigKeys() {
-			fmt.Printf("%s: %s\n", key, settings.GetConfigValue(key))
+			fmt.Printf("%s: %v\n", key, settings.GetConfigValue(key))
 		}
 	case "get":
 		if len(args) < 2 {
