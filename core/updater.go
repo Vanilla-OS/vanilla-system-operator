@@ -21,11 +21,8 @@ var (
 // currently running
 func AreABRootTransactionsLocked() bool {
 	_, err := os.Stat(abrootLockPath)
-	if err != nil {
-		return false
-	}
 
-	return true
+	return err == nil
 }
 
 // NeedUpdate checks if the system needs to be updated according to the latest

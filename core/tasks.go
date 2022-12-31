@@ -131,7 +131,8 @@ func RotateTasks(event string) error {
 
 // runTasksRotator checks which tasks should be run and starts rotating
 func runTasksRotator(cChecks *CommonChecks, event string) error {
-	CurrentQueue, err := ListTasksDetailed()
+	var err error
+	CurrentQueue, err = ListTasksDetailed()
 	if err != nil {
 		return err
 	}
