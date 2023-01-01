@@ -1,5 +1,11 @@
 vanilla-system-operator (1.1.2) kinetic; urgency=critical
 
+  * Rework battery check
+
+ -- Mirko brombin <send@mirko.pm>  Sun, 01 SJan 2022 17:13:34 +0200
+
+vanilla-system-operator (1.1.1) kinetic; urgency=critical
+
   * Support tasks relations/dependencies
   * Add manpage (man vso)
 
