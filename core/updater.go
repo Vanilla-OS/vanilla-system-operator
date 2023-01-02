@@ -152,7 +152,7 @@ func SmartUpdate() bool {
 
 	// battery check
 	if IsLaptop() && commonChecks.LowBattery {
-		fmt.Println("Low battery detected, skipping update.")
+		fmt.Printf("Low battery detected, skipping update.")
 		return false
 	}
 
@@ -171,7 +171,7 @@ func SmartUpdate() bool {
 
 	for _, number := range numbers {
 		if number > "500.0" {
-			fmt.Println("Internet usage detected, skipping update.")
+			fmt.Printf("Internet usage detected (%s kb/s), skipping update.\n", number)
 			return false
 		}
 	}
@@ -204,32 +204,28 @@ func SmartUpdate() bool {
 	}
 
 	if memAvailable < memTotal/2 {
-		fmt.Println("Ram usage detected, skipping update.")
+		fmt.Printf("Ram usage detected (%.2f%%), skipping update.\n",
+			float64(memTotal-memAvailable)/float64(memTotal)*100)
 		return false
 	}
 
 	// cpu check (false if exceeds 50%)
-	cmd = exec.Command("top", "-bn1")
+	cmd = exec.Command("sh", "-c", "top -bn1 | grep \"Cpu(s)\" | awk '{print $2 + $4}'")
 	out, err = cmd.Output()
 	if err != nil {
 		fmt.Println("Error while checking cpu usage, skipping update. (1)")
 		return false
 	}
 
-	var cpuUsage float64
-	for _, line := range strings.Split(string(out), "\n") {
-		if strings.Contains(line, "Cpu(s)") {
-			re := regexp.MustCompile(`\d+\.\d+`)
-			cpuUsage, err = strconv.ParseFloat(re.FindString(line), 64)
-			if err != nil {
-				fmt.Println("Error while checking cpu usage, skipping update. (2)")
-				return false
-			}
-		}
+	cpuUsage, err := strconv.ParseFloat(strings.TrimSpace(string(out)), 64)
+	if err != nil {
+		fmt.Println("Error while checking cpu usage, skipping update. (2)")
+		return false
 	}
 
-	if cpuUsage > 50.0 {
-		fmt.Println("Cpu usage detected, skipping update.")
+	fmt.Println("Cpu usage:", cpuUsage)
+	if cpuUsage > 50 {
+		fmt.Printf("Cpu usage detected (%.2f%%), skipping update.\n", cpuUsage)
 		return false
 	}
 
