@@ -21,9 +21,9 @@ func triggerUpdateUsage(*cobra.Command) error {
 	Trigger a system update
 
 Usage:
-  	vso trigger-update [options]
+  	vso trigger-update [flags]
 
-Options:
+Flags:
 	--help/-h		show this message
 	--now			trigger a system update immediately
 

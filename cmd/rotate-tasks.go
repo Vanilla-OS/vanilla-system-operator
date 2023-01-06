@@ -21,9 +21,9 @@ func rotateTasksUsage(*cobra.Command) error {
 	  Rotate tasks
 
 Usage:
-	vso rotate-tasks [options]
+	vso rotate-tasks [flags]
 
-Options:
+Flags:
 	--help/-h		show this message
 
 Examples:

@@ -21,9 +21,9 @@ func listTasksUsage(*cobra.Command) error {
   List all tasks
 
 Usage:
-	vso list-tasks [options]
+	vso list-tasks [flags]
 
-Options:
+Flags:
 	--help/-h		show this message
 	--json/-j		output in JSON format
 

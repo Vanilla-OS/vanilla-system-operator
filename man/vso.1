@@ -13,7 +13,7 @@ VSO is an utility which allows you to perform maintenance tasks on your Vanilla 
 .IP
 .nf
 \f[C]
-vso [options] [command] [arguments]
+vso [flags] [command] [arguments]
 \f[R]
 .fi
 .SS DESCRIPTION
@@ -21,9 +21,9 @@ vso [options] [command] [arguments]
 .nf
 \f[C]
 Usage: 
-    vso [options] [command] [arguments]
+    vso [flags] [command] [arguments]
 
-Options:
+Global Flags:
     -h, --help            Show this help message and exit
 
 Commands:
@@ -46,9 +46,9 @@ Description:
     Configure VSO
 
 Usage:
-    vso config [options] [command]
+    vso config [flags] [command]
 
-Options:
+Flags:
     --help/-h           show this message
     --assume-yes/-y     assume yes to all questions
 
@@ -70,9 +70,9 @@ Description:
     Create a new task
 
 Usage:
-    vso create-task [options] [arguments]
+    vso create-task [flags] [arguments]
 
-Options:
+Flags:
     --help/-h               show this message
 
 Arguments:
@@ -105,9 +105,9 @@ Description:
     Delete a task
 
 Usage:
-    vso delete-task [task] [options]
+    vso delete-task [task] [flags]
 
-Options:
+Flags:
     --help/-h       show this message
 
 Examples:
@@ -123,9 +123,9 @@ Description:
     Join the developers program
 
 Usage:
-    vso developer-program [options]
+    vso developer-program [flags]
 
-Options:
+Flags:
     --help/-h       show this message
 
 Examples:
@@ -140,9 +140,9 @@ Description:
     List all tasks
 
 Usage:
-    vso list-tasks [options]
+    vso list-tasks [flags]
 
-Options:
+Flags:
     --help/-h       show this message
 
 Examples:
@@ -157,9 +157,9 @@ Description:
     Rotate tasks
 
 Usage:
-    vso rotate-tasks [options]
+    vso rotate-tasks [flags]
 
-Options:
+Flags:
     --help/-h       show this message
 
 Examples:
@@ -174,9 +174,9 @@ Description:
     Trigger a system update
 
 Usage:
-    vso trigger-update [options]
+    vso trigger-update [flags]
 
-Options:
+Flags:
     --help/-h       show this message
     --now           trigger a system update immediately
 

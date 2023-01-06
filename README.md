@@ -9,21 +9,22 @@
 ## Help
 
 ```
-Usage: vso [options] [command] [arguments]
+Usage:
+	vso [flags] [command] [arguments]
 
-Options:
+Global Flags:
 	-h, --help            	Show this help message and exit
 
 Commands:
 	config              	Configure VSO
 	create-task             Create a new task
 	delete-task             Delete a task
-	developer-program   	Join the developer's program
+	developer-program   	Join the developers program
 	help                	Show this help message and exit
 	list-tasks          	List all tasks
-	rotate-tasks		Rotate tasks
-	trigger-update	  	Trigger a system update
-	version             	Show version and exit`
+	rotate-tasks			Rotate tasks
+	trigger-update	  		Trigger a system update
+	version             	Show version and exit
 ```
 
 - _NOTE: Developer's program is a proposed feature for the future._

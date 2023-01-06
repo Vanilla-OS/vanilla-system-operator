@@ -20,9 +20,9 @@ func devProgramUsage(*cobra.Command) error {
 	Join the developers program
 
 Usage:
-  	vso developer-program [options]
+  	vso developer-program [flags]
 
-Options:
+Flags:
 	--help/-h		show this message
 
 Examples:

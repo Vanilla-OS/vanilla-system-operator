@@ -21,9 +21,9 @@ func deleteTaskUsage(*cobra.Command) error {
   Delete a task
 
 Usage:
-	vso delete-task [task] [options]
+	vso delete-task [flags] [options]
 
-Options:
+Flags:
 	--help/-h		show this message
 
 Examples:
