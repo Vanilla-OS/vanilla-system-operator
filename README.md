@@ -22,8 +22,8 @@ Commands:
 	developer-program   	Join the developers program
 	help                	Show this help message and exit
 	list-tasks          	List all tasks
-	rotate-tasks			Rotate tasks
-	trigger-update	  		Trigger a system update
+	rotate-tasks		Rotate tasks
+	trigger-update	  	Trigger a system update
 	version             	Show version and exit
 ```
 
