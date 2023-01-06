@@ -31,9 +31,6 @@ Arguments:
 	--description/-d	description of the task
 	--need-confirm		ask for confirmation before executing the task
 	--command/-c		command to execute
-	--after-task		execute the task after another task
-	--after-task-success	execute the task after another task if it was successful
-	--after-task-failure	execute the task after another task if it failed
 	--every/-e		execute the task every X (minutes, hours, days)
 	--at/-a			execute the task at a specific time (hh:mm)
 	--on-boot		execute the task on boot
