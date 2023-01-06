@@ -22,9 +22,9 @@ var (
 
 func help(cmd *cobra.Command, args []string) {
 	fmt.Println(`Usage:
-	vso [options] [command] [arguments]
+	vso [flags] [command] [arguments]
 
-Options:
+Global Flags:
 	-h, --help            	Show this help message and exit
 
 Commands:

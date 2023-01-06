@@ -14,7 +14,7 @@ VSO est un utilitaire qui vous permet de r\['e]aliser des taches de maintenance 
 .IP
 .nf
 \f[C]
-vso [options] [commande] [arguments]
+vso [flags] [commande] [arguments]
 \f[R]
 .fi
 .SS DESCRIPTION
@@ -22,9 +22,9 @@ vso [options] [commande] [arguments]
 .nf
 \f[C]
 Utilisation: 
-    vso [options] [commande] [arguments]
+    vso [flags] [commande] [arguments]
 
-Options:
+Flags:
     -h, --help            Afficher ce message d\[aq]aide et quitter
 
 Commandes:
@@ -47,9 +47,9 @@ Description:
     Configurer VSO
 
 Utilisation:
-    vso config [options] [commande]
+    vso config [flags] [commande]
 
-Options:
+Flags:
     --help/-h           afficher ce message
     --assume-yes/-y     supposer oui \[`a] toutes les questions
 
@@ -71,9 +71,9 @@ Description:
     Cr\['e]er une nouvelle tache
 
 Utilisation:
-    vso create-task [options] [arguments]
+    vso create-task [flags] [arguments]
 
-Options:
+Flags:
     --help/-h               afficher ce message
 
 Arguments:
@@ -106,9 +106,9 @@ Description:
     Supprimer une tache
 
 Utilisation:
-    vso delete-task [tache] [options]
+    vso delete-task [tache] [flags]
 
-Options:
+Flags:
     --help/-h       afficher ce message
 
 Exemples:
@@ -124,9 +124,9 @@ Description:
     Rejoindre le programme d\['e]veloppeurs
 
 Utilisation:
-    vso developer-program [options]
+    vso developer-program [flags]
 
-Options:
+Flags:
     --help/-h       afficher ce message
 
 Exemples:
@@ -141,9 +141,9 @@ Description:
     Lister toutes les taches
 
 Usage:
-    vso list-tasks [options]
+    vso list-tasks [flags]
 
-Options:
+Flags:
     --help/-h       afficher ce message
 
 Examples:
@@ -158,9 +158,9 @@ Description:
     Faire tourner les taches
 
 Usage:
-    vso rotate-tasks [options]
+    vso rotate-tasks [flags]
 
-Options:
+Flags:
     --help/-h       afficher ce message
 
 Examples:
@@ -175,9 +175,9 @@ Description:
     Actionner une mise \[`a] jour syst\[`e]me
 
 Usage:
-    vso trigger-update [options]
+    vso trigger-update [flags]
 
-Options:
+Flags:
     --help/-h       afficher ce message
     --now           actionner une mise \[`a] jour syst\[`e]me imm\['e]diatement
 

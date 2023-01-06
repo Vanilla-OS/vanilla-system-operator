@@ -22,9 +22,9 @@ func configUsage(*cobra.Command) error {
 	Configure VSO
 
 Usage:
-  	vso config [options] [command]
+  	vso config [flags] [command]
 
-Options:
+Flags:
 	--help/-h		show this message
 	--assume-yes/-y		assume yes to all questions
 
