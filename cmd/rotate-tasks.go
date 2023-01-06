@@ -4,7 +4,7 @@ package cmd
 	Authors:
 		Mirko Brombin <send@mirko.pm>
 		Pietro di Caprio <pietro@fabricators.ltd>
-	Copyright: 2022
+	Copyright: 2023
 	Description: VSO is a utility which allows you to perform maintenance
 	tasks on your Vanilla OS installation.
 */

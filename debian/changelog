@@ -1,4 +1,4 @@
-vanilla-system-operator (1.1.4) kinetic; urgency=critical
+vanilla-system-operator (1.1.5) kinetic; urgency=critical
 
   * Improve SmartUpdate
 
