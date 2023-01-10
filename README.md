@@ -24,7 +24,9 @@ Commands:
 	list-tasks          	List all tasks
 	rotate-tasks		Rotate tasks
 	trigger-update	  	Trigger a system update
+	update-check	  	Check for system updates
 	version             	Show version and exit
+>>>>>>> 9d90f26 (cmd: update-check)
 ```
 
 - _NOTE: Developer's program is a proposed feature for the future._
