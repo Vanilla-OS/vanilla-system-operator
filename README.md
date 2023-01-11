@@ -24,6 +24,7 @@ Commands:
 	list-tasks          	List all tasks
 	rotate-tasks		Rotate tasks
 	trigger-update	  	Trigger a system update
+	update-check	  	Check for system updates
 	version             	Show version and exit
 ```
 

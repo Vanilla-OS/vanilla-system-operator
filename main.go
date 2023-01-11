@@ -36,6 +36,7 @@ Commands:
 	list-tasks          	List all tasks
 	rotate-tasks		Rotate tasks
 	trigger-update	  	Trigger a system update
+	update-check	  	Check for system updates
 	version             	Show version and exit`)
 }
 
@@ -57,6 +58,7 @@ func main() {
 	rootCmd.AddCommand(cmd.NewListTasksCommand())
 	rootCmd.AddCommand(cmd.NewRotateTasksCommand())
 	rootCmd.AddCommand(cmd.NewTriggerUpdateCommand())
+	rootCmd.AddCommand(cmd.NewCheckUpdateCommand())
 	rootCmd.SetHelpFunc(help)
 	rootCmd.Execute()
 }
