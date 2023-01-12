@@ -2,44 +2,28 @@ package core
 
 import (
 	"fmt"
+	"io/ioutil"
 	"os"
 	"os/exec"
 	"path"
+	"regexp"
 	"strconv"
 	"strings"
 	"time"
 )
 
-// powerPath is the path of batteries in Linux
-// after 3.20
-const powerPath = "/sys/class/power_supply/"
-
 type CommonChecks struct {
-	Network     bool
-	Battery     bool
-	LowBattery  bool
-	FullBattery bool
-}
-
-// IsLaptop checks if the system is a laptop by looking for the chassis type
-func IsLaptop() bool {
-	file, err := os.Open("/sys/devices/virtual/dmi/id/chassis_type")
-	if err != nil {
-		return false
-	}
-	defer file.Close()
-
-	var chassisType int
-	_, err = fmt.Fscanf(file, "%d", &chassisType)
-	if err != nil {
-		return false
-	}
-
-	if chassisType == 8 || chassisType == 9 || chassisType == 10 || chassisType == 14 {
-		return true
-	}
-
-	return false
+	Network           bool
+	Battery           bool
+	LowBattery        bool
+	FullBattery       bool
+	IsLaptop          bool
+	HighInternetUsage bool
+	InternetUsage     int
+	HighMemoryUsage   bool
+	MemoryUsage       int
+	HighCPUUsage      bool
+	CPUUsage          int
 }
 
 // GetCommonChecks checks network and battery
@@ -47,40 +31,71 @@ func GetCommonChecks() *CommonChecks {
 	cChecks := CommonChecks{}
 
 	// Network
-	cmd := exec.Command("sh", "-c", "ping -q -w 1 -c 1 `ip r | grep default | cut -d ' ' -f 3` > /dev/null && exit 0 || exit 1")
-	err := cmd.Run()
-	if err == nil {
-		cChecks.Network = true
-	}
+	cChecks.Network = IsNetworkUp()
 
 	// Battery
-	cmd = exec.Command("ls", powerPath)
-	output, err := cmd.CombinedOutput()
-	if err == nil {
-		devices := strings.Split(string(output), "\n")
-		for _, dev := range devices {
-			if strings.Contains(dev, "BAT") {
-				devPath := path.Join(powerPath, dev)
-				statusPath := path.Join(devPath, "status")
-				capacityPath := path.Join(devPath, "capacity")
+	cChecks.Battery, cChecks.LowBattery, cChecks.FullBattery = GetBatteryStats()
 
-				statusCmd := exec.Command("cat", statusPath)
-				statusOutput, err := statusCmd.CombinedOutput()
+	// IsLaptop
+	cChecks.IsLaptop = IsLaptop()
+
+	// Internet usage
+	cChecks.HighInternetUsage, cChecks.InternetUsage = IsInternetUnderHighUsage()
+
+	// Memory usage
+	cChecks.HighMemoryUsage, cChecks.MemoryUsage = IsMemoryUnderHighUsage()
+
+	// CPU usage
+	cChecks.HighCPUUsage, cChecks.CPUUsage = IsCPUUnderHighUsage()
+
+	if os.Getenv("VSO_VERBOSE") != "" {
+		fmt.Printf("Network: %t\n", cChecks.Network)
+		fmt.Printf("Battery: %t\n", cChecks.Battery)
+		fmt.Printf("Low battery: %t\n", cChecks.LowBattery)
+		fmt.Printf("Full battery: %t\n", cChecks.FullBattery)
+		fmt.Printf("Is laptop: %t\n", cChecks.IsLaptop)
+		fmt.Printf("High internet usage: %t\n", cChecks.HighInternetUsage)
+		fmt.Printf("Internet usage: %d\n", cChecks.InternetUsage)
+		fmt.Printf("High memory usage: %t\n", cChecks.HighMemoryUsage)
+		fmt.Printf("Memory usage: %d\n", cChecks.MemoryUsage)
+		fmt.Printf("High CPU usage: %t\n", cChecks.HighCPUUsage)
+		fmt.Printf("CPU usage: %d\n", cChecks.CPUUsage)
+	}
+
+	return &cChecks
+}
+
+// IsNetworkUp checks if the network is up
+func IsNetworkUp() bool {
+	cmd := exec.Command("sh", "-c", "ping -q -w 1 -c 1 `ip r | grep default | cut -d ' ' -f 3` > /dev/null && exit 0 || exit 1")
+	err := cmd.Run()
+	return err == nil
+}
+
+// GetBatteryStats gets the battery stats
+func GetBatteryStats() (bool, bool, bool) {
+	battery, lowBattery, fullBattery := false, false, false
+
+	files, err := ioutil.ReadDir("/sys/class/power_supply/")
+	if err == nil {
+		for _, file := range files {
+			if strings.Contains(file.Name(), "BAT") {
+				status, err := ioutil.ReadFile(path.Join("/sys/class/power_supply/", file.Name(), "status"))
 				if err == nil {
-					if strings.Contains(string(statusOutput), "Discharging") {
-						cChecks.Battery = true
+					if strings.Contains(string(status), "Discharging") {
+						battery = true
 					}
 				}
-				capacityCmd := exec.Command("cat", capacityPath)
-				capacityOutput, err := capacityCmd.CombinedOutput()
+
+				capacity, err := ioutil.ReadFile(path.Join("/sys/class/power_supply/", file.Name(), "capacity"))
 				if err == nil {
-					percent, err := strconv.Atoi(strings.TrimSpace(string(capacityOutput)))
+					percent, err := strconv.Atoi(strings.TrimSpace(string(capacity)))
 					if err == nil {
 						if percent <= 30 {
-							cChecks.LowBattery = true
+							lowBattery = true
 						}
 						if percent == 100 {
-							cChecks.FullBattery = true
+							fullBattery = true
 						}
 					}
 				}
@@ -88,12 +103,7 @@ func GetCommonChecks() *CommonChecks {
 		}
 	}
 
-	// fmt.Printf(
-	// 	"Checks:\tNetwork: %t\n\tBattery: %t\n\tLow battery: %t\n\tFull battery: %t\n",
-	// 	cChecks.Network, cChecks.Battery, cChecks.LowBattery, cChecks.FullBattery,
-	// )
-
-	return &cChecks
+	return battery, lowBattery, fullBattery
 }
 
 // ItsBeen checks if it's been a certain amount of time since the last time
@@ -125,5 +135,100 @@ func ItsTime(targetTime string) bool {
 	}
 
 	return false
+}
 
+// IsLaptop checks if the system is a laptop by looking for the chassis type
+func IsLaptop() bool {
+	file, err := os.Open("/sys/devices/virtual/dmi/id/chassis_type")
+	if err != nil {
+		return false
+	}
+	defer file.Close()
+
+	var chassisType int
+	_, err = fmt.Fscanf(file, "%d", &chassisType)
+	if err != nil {
+		return false
+	}
+
+	if chassisType == 8 || chassisType == 9 || chassisType == 10 || chassisType == 14 {
+		return true
+	}
+
+	return false
+}
+
+// IsInternetUnderHighUsage checks if the internet is being used (false if exceeds 500kb/s)
+func IsInternetUnderHighUsage() (bool, int) {
+	cmd := exec.Command("ifstat", "1", "1")
+	out, err := cmd.Output()
+	if err != nil {
+		return false, 0
+	}
+
+	out = out[2:]
+	re := regexp.MustCompile(`\d+\.\d+`)
+	numbers := re.FindAllString(string(out), -1)
+
+	for _, number := range numbers {
+		num, err := strconv.ParseFloat(number, 64)
+		if err != nil {
+			return false, 0
+		}
+		if num < 500 {
+			return false, int(num / 1000)
+		} else {
+			return true, int(num / 1000)
+		}
+	}
+
+	return false, 0
+}
+
+// IsMemoryUnderHighUsage checks if the memory is being used (false if exceeds 50%)
+func IsMemoryUnderHighUsage() (bool, int) {
+	out, err := ioutil.ReadFile("/proc/meminfo")
+	if err != nil {
+		return false, 0
+	}
+
+	re := regexp.MustCompile(`\d+`)
+	numbers := re.FindAllString(string(out), -1)
+
+	total, err := strconv.ParseFloat(numbers[0], 64)
+	if err != nil {
+		return false, 0
+	}
+
+	used, err := strconv.ParseFloat(numbers[1], 64)
+	if err != nil {
+		return false, 0
+	}
+
+	percent := (used / total) * 100
+	if percent < 50 {
+		return false, int(percent)
+	}
+
+	return true, int(percent)
+}
+
+// IsCPUUnderHighUsage checks if the CPU is being used (false if exceeds 50%)
+func IsCPUUnderHighUsage() (bool, int) {
+	cmd := exec.Command("sh", "-c", "top -bn1 | grep \"Cpu(s)\" | awk '{print $2 + $4}'")
+	out, err := cmd.Output()
+	if err != nil {
+		return false, 0
+	}
+
+	cpuUsage, err := strconv.ParseFloat(strings.TrimSpace(string(out)), 64)
+	if err != nil {
+		return false, int(cpuUsage)
+	}
+
+	if cpuUsage < 50 {
+		return false, int(cpuUsage)
+	}
+
+	return true, int(cpuUsage)
 }
