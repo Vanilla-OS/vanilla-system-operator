@@ -210,7 +210,7 @@ func SmartUpdate() bool {
 		return false
 	}
 
-	// ram check (false if exceeds 50%)
+	// ram check
 	if commonChecks.HighMemoryUsage {
 		if commonChecks.MemoryUsage == 0 {
 			fmt.Println("Something goes wrong during memory usage check, skipping update.")
@@ -220,13 +220,19 @@ func SmartUpdate() bool {
 		return false
 	}
 
-	// cpu check (false if exceeds 50%)
+	// cpu check
 	if commonChecks.HighCPUUsage {
 		if commonChecks.CPUUsage == 0 {
 			fmt.Println("Something goes wrong during CPU usage check, skipping update.")
 			return false
 		}
 		fmt.Printf("CPU usage detected (%d), skipping update.", commonChecks.CPUUsage)
+		return false
+	}
+
+	// cpu temp check
+	if commonChecks.CPUTemp >= 50 {
+		fmt.Printf("High CPU temperature detected (%d), skipping update.", commonChecks.CPUTemp)
 		return false
 	}
 

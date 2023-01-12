@@ -24,6 +24,7 @@ type CommonChecks struct {
 	MemoryUsage       int
 	HighCPUUsage      bool
 	CPUUsage          int
+	CPUTemp           int
 }
 
 // GetCommonChecks checks network and battery
@@ -48,6 +49,9 @@ func GetCommonChecks() *CommonChecks {
 	// CPU usage
 	cChecks.HighCPUUsage, cChecks.CPUUsage = IsCPUUnderHighUsage()
 
+	// CPU temp
+	cChecks.CPUTemp = GetCPUTemp()
+
 	if os.Getenv("VSO_VERBOSE") != "" {
 		fmt.Printf("Network: %t\n", cChecks.Network)
 		fmt.Printf("Battery: %t\n", cChecks.Battery)
@@ -60,6 +64,7 @@ func GetCommonChecks() *CommonChecks {
 		fmt.Printf("Memory usage: %d\n", cChecks.MemoryUsage)
 		fmt.Printf("High CPU usage: %t\n", cChecks.HighCPUUsage)
 		fmt.Printf("CPU usage: %d\n", cChecks.CPUUsage)
+		fmt.Printf("CPU temp: %d\n", cChecks.CPUTemp)
 	}
 
 	return &cChecks
@@ -231,4 +236,20 @@ func IsCPUUnderHighUsage() (bool, int) {
 	}
 
 	return true, int(cpuUsage)
+}
+
+// GetCPUTemp gets the CPU temperature
+func GetCPUTemp() int {
+	b, err := ioutil.ReadFile("/sys/class/thermal/thermal_zone0/temp")
+	if err != nil {
+		return 0
+	}
+
+	// the temperature is returned in millidegrees Celsius, so we need to convert it to degrees Celsius
+	temp, err := strconv.Atoi(string(b[:len(b)-1]))
+	if err != nil {
+		return 0
+	}
+	temp = temp / 1000
+	return temp
 }
