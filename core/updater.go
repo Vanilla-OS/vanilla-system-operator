@@ -4,6 +4,7 @@ import (
 	"fmt"
 	"os"
 	"os/exec"
+	"strings"
 	"time"
 
 	"github.com/vanilla-os/vso/settings"
@@ -53,7 +54,48 @@ func NeedUpdate() bool {
 		}
 	}
 
+	status, _, _ := HasUpdates()
+	if status {
+		res = true
+	}
+
 	return res
+}
+
+// HasUpdates checks if the system has updates available
+func HasUpdates() (bool, []string, error) {
+	update_cmd := exec.Command("___apt___", "update")
+	update_cmd.Stdin = os.Stdin
+	update_cmd.Stdout = os.Stdout
+	update_cmd.Stderr = os.Stderr
+	if err := update_cmd.Run(); err != nil {
+		return false, nil, err
+	}
+
+	list_cmd := exec.Command("___apt___", "list", "--upgradable")
+	list_cmd.Env = os.Environ()
+	list_cmd.Env = append(list_cmd.Env, "LANG=en_US.UTF-8")
+	output, err := list_cmd.Output()
+	if err != nil {
+		return false, nil, err
+	}
+
+	packages := strings.Split(string(output), "\n")
+	if len(packages) <= 2 {
+		return false, nil, nil
+	}
+
+	list_updates := []string{}
+	for _, pkg := range packages[1 : len(packages)-1] { // First and last lines are not packages
+		cols := strings.Split(pkg, " ")
+		pkg_name, pkg_newver, pkg_oldver := cols[0], cols[1], cols[5]
+		pkg_name = strings.Split(pkg_name, "/")[0]  // Remove source info
+		pkg_oldver = pkg_oldver[:len(pkg_oldver)-1] // Remove trailing "]"
+
+		list_updates = append(list_updates, fmt.Sprintf("  - %s\t%s -> %s", pkg_name, pkg_oldver, pkg_newver))
+	}
+
+	return true, list_updates, nil
 }
 
 // getLatestCheck returns the latest check time from the log file, it also
