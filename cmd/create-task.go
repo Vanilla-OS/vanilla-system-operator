@@ -42,6 +42,13 @@ Arguments:
 	--on-full-battery	execute the task on full battery
 	--on-condition-command	execute the task on condition command
 	--on-process		execute the task when a process came up
+	--on-internet-usage	execute the task when internet usage is higher than Xkb/s
+	--on-high-internet-usage	execute the task when internet usage is higher than 500kb/s
+	--on-memory-usage	execute the task when memory usage is higher than X%
+	--on-high-memory-usage	execute the task when memory usage is higher than 50%
+	--on-cpu-usage		execute the task when cpu usage is higher than X%
+	--on-high-cpu-usage	execute the task when cpu usage is higher than 50%
+	--on-cpu-temp		execute the task when cpu temperature is higher than 60°C	
 
 Examples:
 	vso create-task -n "Battery fully charged" -d "notify at full charge" -c "notify-send 'Battery fully charged'" --on-full-battery
@@ -75,6 +82,13 @@ func NewCreateTaskCommand() *cobra.Command {
 	cmd.Flags().Bool("on-full-battery", false, "execute the task on full battery")
 	cmd.Flags().String("on-condition-command", "", "execute the task on condition command")
 	cmd.Flags().String("on-process", "", "execute the task when a process came up")
+	cmd.Flags().Int("on-internet-usage", 0, "execute the task when internet usage is higher than Xkb/s")
+	cmd.Flags().Bool("on-high-internet-usage", false, "execute the task when internet usage is higher than 500kb/s")
+	cmd.Flags().Int("on-memory-usage", 0, "execute the task when memory usage is higher than X%")
+	cmd.Flags().Bool("on-high-memory-usage", false, "execute the task when memory usage is higher than 50%")
+	cmd.Flags().Int("on-cpu-usage", 0, "execute the task when cpu usage is higher than X%")
+	cmd.Flags().Bool("on-high-cpu-usage", false, "execute the task when cpu usage is higher than 50%")
+	cmd.Flags().Int("on-cpu-temp", 0, "execute the task when cpu temperature is higher than 60°C")
 
 	return cmd
 }
@@ -113,6 +127,13 @@ func createTask(cmd *cobra.Command, args []string) error {
 	onFullBattery, _ := cmd.Flags().GetBool("on-full-battery")
 	onConditionCommand, _ := cmd.Flags().GetString("on-condition-command")
 	onProcess, _ := cmd.Flags().GetString("on-process")
+	onInternetUsage, _ := cmd.Flags().GetInt("on-internet-usage")
+	onHighInternetUsage, _ := cmd.Flags().GetBool("on-high-internet-usage")
+	onMemoryUsage, _ := cmd.Flags().GetInt("on-memory-usage")
+	onHighMemoryUsage, _ := cmd.Flags().GetBool("on-high-memory-usage")
+	onCPUUsage, _ := cmd.Flags().GetInt("on-cpu-usage")
+	onHighCPUUsage, _ := cmd.Flags().GetBool("on-high-cpu-usage")
+	onCPUTemp, _ := cmd.Flags().GetInt("on-cpu-temp")
 
 	// creating the task
 	task := core.Task{
@@ -127,15 +148,22 @@ func createTask(cmd *cobra.Command, args []string) error {
 		Every:            every,
 		At:               at,
 
-		OnBoot:             onBoot,
-		OnNetwork:          onNetwork,
-		OnDisconnect:       onDisconnect,
-		OnBattery:          onBattery,
-		OnLowBattery:       onLowBattery,
-		OnCharge:           onCharge,
-		OnFullBattery:      onFullBattery,
-		OnConditionCommand: onConditionCommand,
-		OnProcess:          onProcess,
+		OnBoot:              onBoot,
+		OnNetwork:           onNetwork,
+		OnDisconnect:        onDisconnect,
+		OnBattery:           onBattery,
+		OnLowBattery:        onLowBattery,
+		OnCharge:            onCharge,
+		OnFullBattery:       onFullBattery,
+		OnConditionCommand:  onConditionCommand,
+		OnProcess:           onProcess,
+		OnInternetUsage:     onInternetUsage,
+		OnHighInternetUsage: onHighInternetUsage,
+		OnMemoryUsage:       onMemoryUsage,
+		OnHighMemoryUsage:   onHighMemoryUsage,
+		OnCPUUsage:          onCPUUsage,
+		OnHighCPUUsage:      onHighCPUUsage,
+		OnCPUTemp:           onCPUTemp,
 	}
 
 	// saving the task

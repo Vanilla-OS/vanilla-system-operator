@@ -5,6 +5,7 @@ import (
 	"fmt"
 	"os"
 	"os/exec"
+	"strconv"
 	"time"
 )
 
@@ -28,6 +29,13 @@ type Task struct {
 	OnFullBattery       bool
 	OnConditionCommand  string
 	OnProcess           string
+	OnInternetUsage     int
+	OnHighInternetUsage bool
+	OnMemoryUsage       int
+	OnHighMemoryUsage   bool
+	OnCPUUsage          int
+	OnHighCPUUsage      bool
+	OnCPUTemp           int
 	LastExecution       time.Time
 	LastExecutionOutput string
 }
@@ -141,7 +149,29 @@ func (t *Task) ShouldRun(cChecks *CommonChecks, event string) bool {
 		} else {
 			t.SaveLastFailure()
 		}
+	} else if t.OnInternetUsage > 0 && cChecks.InternetUsage > t.OnInternetUsage {
+		res = true
+		target = "internet usage: " + strconv.Itoa(cChecks.InternetUsage) + " > " + strconv.Itoa(t.OnInternetUsage)
+	} else if t.OnHighInternetUsage && cChecks.HighInternetUsage {
+		res = true
+		target = "high internet usage"
+	} else if t.OnMemoryUsage > 0 && cChecks.MemoryUsage > t.OnMemoryUsage {
+		res = true
+		target = "memory usage: " + strconv.Itoa(cChecks.MemoryUsage) + " > " + strconv.Itoa(t.OnMemoryUsage)
+	} else if t.OnHighMemoryUsage && cChecks.HighMemoryUsage {
+		res = true
+		target = "high memory usage"
+	} else if t.OnCPUUsage > 0 && cChecks.CPUUsage > t.OnCPUUsage {
+		res = true
+		target = "cpu usage: " + strconv.Itoa(cChecks.CPUUsage) + " > " + strconv.Itoa(t.OnCPUUsage)
+	} else if t.OnHighCPUUsage && cChecks.HighCPUUsage {
+		res = true
+		target = "high cpu usage"
+	} else if t.OnCPUTemp > 0 && cChecks.CPUTemp > t.OnCPUTemp {
+		res = true
+		target = "cpu temp: " + strconv.Itoa(cChecks.CPUTemp) + " > " + strconv.Itoa(t.OnCPUTemp)
 	}
+
 	if res {
 		fmt.Printf("| Condition reached: %s\n", target)
 
@@ -186,6 +216,20 @@ func (t *Task) Target() string {
 		return "onConditionCommand"
 	} else if t.OnProcess != "" {
 		return "onProcess"
+	} else if t.OnInternetUsage > 0 {
+		return "onInternetUsage"
+	} else if t.OnHighInternetUsage {
+		return "onHighInternetUsage"
+	} else if t.OnMemoryUsage > 0 {
+		return "onMemoryUsage"
+	} else if t.OnHighMemoryUsage {
+		return "onHighMemoryUsage"
+	} else if t.OnCPUUsage > 0 {
+		return "onCPUUsage"
+	} else if t.OnHighCPUUsage {
+		return "onHighCPUUsage"
+	} else if t.OnCPUTemp > 0 {
+		return "onCPUTemp"
 	}
 
 	return ""
