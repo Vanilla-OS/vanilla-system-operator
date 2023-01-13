@@ -76,9 +76,9 @@ func ListTasksJson() (string, error) {
 
 // DeleteTaskByUnitName deletes a task
 func DeleteTaskByUnitName(name string) error {
-	err := os.Remove(getUserTasksLocation() + "/" + name + ".vsotask")
+	err := os.Remove(getUserTasksLocation() + "/" + strings.ToLower(name) + ".vsotask")
 	if err != nil {
-		return err
+		return fmt.Errorf("task does not exist with unit file name: %s", name)
 	}
 
 	return nil
