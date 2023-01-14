@@ -49,6 +49,8 @@ Arguments:
 	--on-cpu-usage		execute the task when cpu usage is higher than X%
 	--on-high-cpu-usage	execute the task when cpu usage is higher than 50%
 	--on-cpu-temp		execute the task when cpu temperature is higher than 60°C	
+	--on-device-connect	execute the task when a device is connected
+	--on-device-disconnect	execute the task when a device is disconnected
 
 Examples:
 	vso create-task -n "Battery fully charged" -d "notify at full charge" -c "notify-send 'Battery fully charged'" --on-full-battery
@@ -89,6 +91,8 @@ func NewCreateTaskCommand() *cobra.Command {
 	cmd.Flags().Int("on-cpu-usage", 0, "execute the task when cpu usage is higher than X%")
 	cmd.Flags().Bool("on-high-cpu-usage", false, "execute the task when cpu usage is higher than 50%")
 	cmd.Flags().Int("on-cpu-temp", 0, "execute the task when cpu temperature is higher than 60°C")
+	cmd.Flags().String("on-device-connect", "", "execute the task when a device is connected")
+	cmd.Flags().String("on-device-disconnect", "", "execute the task when a device is disconnected")
 
 	return cmd
 }
@@ -134,6 +138,8 @@ func createTask(cmd *cobra.Command, args []string) error {
 	onCPUUsage, _ := cmd.Flags().GetInt("on-cpu-usage")
 	onHighCPUUsage, _ := cmd.Flags().GetBool("on-high-cpu-usage")
 	onCPUTemp, _ := cmd.Flags().GetInt("on-cpu-temp")
+	onDeviceConnect, _ := cmd.Flags().GetString("on-device-connect")
+	onDeviceDisconnect, _ := cmd.Flags().GetString("on-device-disconnect")
 
 	// creating the task
 	task := core.Task{
@@ -148,22 +154,24 @@ func createTask(cmd *cobra.Command, args []string) error {
 		Every:            every,
 		At:               at,
 
-		OnBoot:              onBoot,
-		OnNetwork:           onNetwork,
-		OnDisconnect:        onDisconnect,
-		OnBattery:           onBattery,
-		OnLowBattery:        onLowBattery,
-		OnCharge:            onCharge,
-		OnFullBattery:       onFullBattery,
-		OnConditionCommand:  onConditionCommand,
-		OnProcess:           onProcess,
-		OnInternetUsage:     onInternetUsage,
-		OnHighInternetUsage: onHighInternetUsage,
-		OnMemoryUsage:       onMemoryUsage,
-		OnHighMemoryUsage:   onHighMemoryUsage,
-		OnCPUUsage:          onCPUUsage,
-		OnHighCPUUsage:      onHighCPUUsage,
-		OnCPUTemp:           onCPUTemp,
+		OnBoot:               onBoot,
+		OnNetwork:            onNetwork,
+		OnDisconnect:         onDisconnect,
+		OnBattery:            onBattery,
+		OnLowBattery:         onLowBattery,
+		OnCharge:             onCharge,
+		OnFullBattery:        onFullBattery,
+		OnConditionCommand:   onConditionCommand,
+		OnProcess:            onProcess,
+		OnInternetUsage:      onInternetUsage,
+		OnHighInternetUsage:  onHighInternetUsage,
+		OnMemoryUsage:        onMemoryUsage,
+		OnHighMemoryUsage:    onHighMemoryUsage,
+		OnCPUUsage:           onCPUUsage,
+		OnHighCPUUsage:       onHighCPUUsage,
+		OnCPUTemp:            onCPUTemp,
+		OnDeviceConnected:    onDeviceConnect,
+		OnDeviceDisconnected: onDeviceDisconnect,
 	}
 
 	// saving the task

@@ -10,32 +10,36 @@ import (
 )
 
 type Task struct {
-	Name                string
-	Slug                string
-	Description         string
-	NeedConfirm         bool
-	Command             string
-	AfterTask           string
-	AfterTaskSuccess    string
-	AfterTaskFailure    string
-	Every               string
-	At                  string
-	OnBoot              bool
-	OnNetwork           bool
-	OnDisconnect        bool
-	OnBattery           bool
-	OnLowBattery        bool
-	OnCharge            bool
-	OnFullBattery       bool
-	OnConditionCommand  string
-	OnProcess           string
-	OnInternetUsage     int
-	OnHighInternetUsage bool
-	OnMemoryUsage       int
-	OnHighMemoryUsage   bool
-	OnCPUUsage          int
-	OnHighCPUUsage      bool
-	OnCPUTemp           int
+	Name        string
+	Slug        string
+	Description string
+	NeedConfirm bool
+	Command     string
+
+	AfterTask            string
+	AfterTaskSuccess     string
+	AfterTaskFailure     string
+	Every                string
+	At                   string
+	OnBoot               bool
+	OnNetwork            bool
+	OnDisconnect         bool
+	OnBattery            bool
+	OnLowBattery         bool
+	OnCharge             bool
+	OnFullBattery        bool
+	OnConditionCommand   string
+	OnProcess            string
+	OnInternetUsage      int
+	OnHighInternetUsage  bool
+	OnMemoryUsage        int
+	OnHighMemoryUsage    bool
+	OnCPUUsage           int
+	OnHighCPUUsage       bool
+	OnCPUTemp            int
+	OnDeviceConnected    string
+	OnDeviceDisconnected string
+
 	LastExecution       time.Time
 	LastExecutionOutput string
 }
@@ -170,6 +174,20 @@ func (t *Task) ShouldRun(cChecks *CommonChecks, event string) bool {
 	} else if t.OnCPUTemp > 0 && cChecks.CPUTemp > t.OnCPUTemp {
 		res = true
 		target = "cpu temp: " + strconv.Itoa(cChecks.CPUTemp) + " > " + strconv.Itoa(t.OnCPUTemp)
+	} else if t.OnDeviceConnected != "" {
+		if deviceIsConnected(t.OnDeviceConnected) {
+			res = true
+			target = "device connected: " + t.OnDeviceConnected
+		} else {
+			t.SaveLastFailure()
+		}
+	} else if t.OnDeviceDisconnected != "" {
+		if !deviceIsConnected(t.OnDeviceDisconnected) {
+			res = true
+			target = "device disconnected: " + t.OnDeviceConnected
+		} else {
+			t.SaveLastFailure()
+		}
 	}
 
 	if res {
@@ -184,6 +202,14 @@ func (t *Task) ShouldRun(cChecks *CommonChecks, event string) bool {
 	}
 
 	return res
+}
+
+// deviceIsConnected checks if a device is connected
+func deviceIsConnected(device string) bool {
+	cmd := exec.Command("sh", "-c", "lsusb | grep -i '"+device+"'")
+	cmd.Env = os.Environ()
+	err := cmd.Run()
+	return err == nil
 }
 
 // Target returns the target of the task
