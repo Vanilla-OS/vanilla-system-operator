@@ -184,7 +184,7 @@ func (t *Task) ShouldRun(cChecks *CommonChecks, event string) bool {
 	} else if t.OnDeviceDisconnected != "" {
 		if !deviceIsConnected(t.OnDeviceDisconnected) {
 			res = true
-			target = "device disconnected: " + t.OnDeviceConnected
+			target = "device disconnected: " + t.OnDeviceDisconnected
 		} else {
 			t.SaveLastFailure()
 		}
