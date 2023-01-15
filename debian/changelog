@@ -1,4 +1,4 @@
-vanilla-system-operator (1.3.0-3) kinetic; urgency=critical
+vanilla-system-operator (1.3.0-4) kinetic; urgency=critical
 
   * New task events for internet, memory, cpu usage and temperature
   * Deleting tasks is now case insensitive
