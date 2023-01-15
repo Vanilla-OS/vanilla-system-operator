@@ -17,6 +17,7 @@ Depends: ${shlibs:Depends},
          ${misc:Depends},
          golang-go,
          adwdialog,
-         ifstat
+         ifstat,
+         abroot
 Built-Using: ${misc:Built-Using}
 Description: VSO is an utility which allows you to perform maintenance tasks on your Vanilla OS installation.
