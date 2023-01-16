@@ -197,25 +197,31 @@ func IsMemoryUnderHighUsage() (bool, int) {
 		return false, 0
 	}
 
-	re := regexp.MustCompile(`\d+`)
-	numbers := re.FindAllString(string(out), -1)
-
-	total, err := strconv.ParseFloat(numbers[0], 64)
+	re := regexp.MustCompile(`(?m)^MemTotal:\s+(\d+)`)
+	totalMem := re.FindStringSubmatch(string(out))
+	if totalMem == nil {
+		return false, 0
+	}
+	total, err := strconv.ParseUint(totalMem[1], 10, 64)
 	if err != nil {
 		return false, 0
 	}
 
-	used, err := strconv.ParseFloat(numbers[1], 64)
+	re = regexp.MustCompile(`(?m)^MemAvailable:\s+(\d+)`)
+	availableMem := re.FindStringSubmatch(string(out))
+	if availableMem == nil {
+		return false, 0
+	}
+	available, err := strconv.ParseUint(availableMem[1], 10, 64)
 	if err != nil {
 		return false, 0
 	}
 
-	percent := (used / total) * 100
-	if percent < 50 {
-		return false, int(percent)
+	percent := 100 * (float64(total-available) / float64(total))
+	if percent > 50 {
+		return true, int(percent + 0.5)
 	}
-
-	return true, int(percent)
+	return false, int(percent + 0.5)
 }
 
 // IsCPUUnderHighUsage checks if the CPU is being used (false if exceeds 50%)
