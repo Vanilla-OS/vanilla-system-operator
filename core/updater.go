@@ -36,6 +36,7 @@ func NeedUpdate() bool {
 	schedule := settings.GetConfigValue("updates.schedule")
 	latestCheck := getLatestCheck()
 	if latestCheck == nil {
+		fmt.Println("No previous update check found. Triggering update.")
 		return true
 	}
 
@@ -64,7 +65,15 @@ func NeedUpdate() bool {
 
 // HasUpdates checks if the system has updates available
 func HasUpdates() (bool, []string, error) {
-	update_cmd := exec.Command("___apt___", "update")
+	aptBinary := "___apt___"
+	if _, err := os.Stat(aptBinary); err != nil {
+		aptBinary = "apt" // Fallback to apt only for development purposes
+		if _, err := os.Stat(aptBinary); err != nil {
+			return false, nil, err
+		}
+	}
+
+	update_cmd := exec.Command(aptBinary, "update")
 	update_cmd.Stdin = os.Stdin
 	update_cmd.Stdout = os.Stdout
 	update_cmd.Stderr = os.Stderr
@@ -72,7 +81,7 @@ func HasUpdates() (bool, []string, error) {
 		return false, nil, err
 	}
 
-	list_cmd := exec.Command("___apt___", "list", "--upgradable")
+	list_cmd := exec.Command(aptBinary, "list", "--upgradable")
 	list_cmd.Env = os.Environ()
 	list_cmd.Env = append(list_cmd.Env, "LANG=en_US.UTF-8")
 	output, err := list_cmd.Output()
@@ -106,23 +115,28 @@ func getLatestCheck() *time.Time {
 	if _, err := os.Stat(checkLogPath); os.IsNotExist(err) {
 		latestCheck = time.Now()
 		writeLatestCheck(latestCheck)
-	} else {
-		file, err := os.Open(checkLogPath)
-		if err != nil {
-			return nil
-		}
-		defer file.Close()
+		return &latestCheck
+	}
 
-		content, err := os.ReadFile(checkLogPath)
-		if err != nil {
-			return nil
-		}
+	file, err := os.Open(checkLogPath)
+	if err != nil {
+		fmt.Println("Failed to open update log file:", err)
+		return nil
+	}
+	defer file.Close()
 
-		latestCheck, err = time.Parse("2006-01-02 15:04:05.999999999 -0700 MST m=+0.000000000", string(content))
-		if err != nil {
-			return nil
-		}
+	content, err := os.ReadFile(checkLogPath)
+	if err != nil {
+		fmt.Println("Failed to read update log file:", err)
+		return nil
+	}
 
+	timeString := string(content)
+	timeArr := strings.Split(timeString, " ")
+	latestCheck, err = time.Parse("2006-01-02 15:04:05", timeArr[0]+" "+timeArr[1])
+	if err != nil {
+		fmt.Println("Failed to parse update log file:", err)
+		return nil
 	}
 
 	return &latestCheck
