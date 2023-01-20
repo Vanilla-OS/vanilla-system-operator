@@ -65,9 +65,9 @@ func NeedUpdate() bool {
 
 // HasUpdates checks if the system has updates available
 func HasUpdates() (bool, []string, error) {
-	aptBinary := "___apt___"
+	aptBinary := "/usr/bin/___apt___"
 	if _, err := os.Stat(aptBinary); err != nil {
-		aptBinary = "apt" // Fallback to apt only for development purposes
+		aptBinary = "/usr/bin/apt" // Fallback to apt only for development purposes
 		if _, err := os.Stat(aptBinary); err != nil {
 			return false, nil, err
 		}
@@ -91,6 +91,7 @@ func HasUpdates() (bool, []string, error) {
 
 	packages := strings.Split(string(output), "\n")
 	if len(packages) <= 2 {
+		fmt.Println("Only one package found, skipping update")
 		return false, nil, nil
 	}
 
