@@ -91,7 +91,6 @@ func HasUpdates() (bool, []string, error) {
 
 	packages := strings.Split(string(output), "\n")
 	if len(packages) <= 2 {
-		fmt.Println("Only one package found, skipping update")
 		return false, nil, nil
 	}
 
