@@ -245,7 +245,7 @@ func SmartUpdate() bool {
 	}
 
 	// cpu temp check
-	if commonChecks.CPUTemp >= 60 {
+	if commonChecks.CPUTemp >= 70 {
 		fmt.Printf("High CPU temperature detected (%d), skipping update.", commonChecks.CPUTemp)
 		return false
 	}
