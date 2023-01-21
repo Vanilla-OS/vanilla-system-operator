@@ -183,7 +183,7 @@ func TryUpdate() error {
 		return err
 	}
 
-	cmd := exec.Command("abroot", "exec", "--assume-yes", "sh", file.Name())
+	cmd := exec.Command("abroot", "exec", "--force-run", "sh", file.Name())
 	cmd.Stdout = os.Stdout
 	cmd.Stderr = os.Stderr
 
