@@ -64,14 +64,14 @@ func checkUpdate(cmd *cobra.Command, args []string) error {
 		}
 	}
 
-	if !status {
-		fmt.Println("Your system is up-to-date.")
-		return nil
-	}
-
 	if err != nil {
 		fmt.Println("An error occurred while checking for updates.")
 		return err
+	}
+
+	if !status {
+		fmt.Println("Your system is up-to-date.")
+		return nil
 	}
 
 	fmt.Println("--------------------------------------------")
