@@ -34,8 +34,8 @@ Commands:
 	set <key> <value>	set a configuration value
 
 Examples:
-	vso config get updates::schedule
-	vso config set updates::schedule weekly
+	vso config get updates.schedule
+	vso config set updates.schedule weekly
 `)
 	return nil
 }
