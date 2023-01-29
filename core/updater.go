@@ -159,8 +159,8 @@ func writeLatestCheck(t time.Time) error {
 }
 
 // TryUpdate tries to update the system via ABRoot
-func TryUpdate() error {
-	if !SmartUpdate() {
+func TryUpdate(force bool) error {
+	if !force && !SmartUpdate() {
 		fmt.Println("Smart update detected device is being used, skipping update.")
 		return nil
 	}

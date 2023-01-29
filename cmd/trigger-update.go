@@ -56,7 +56,7 @@ func triggerUpdate(cmd *cobra.Command, args []string) error {
 
 	if cmd.Flags().Changed("now") {
 		fmt.Println("Triggering update now...")
-		err := core.TryUpdate()
+		err := core.TryUpdate(true)
 		if err != nil {
 			fmt.Println(msg_fail_update, "CMD_TR_UP_NOW")
 			return err
@@ -65,7 +65,7 @@ func triggerUpdate(cmd *cobra.Command, args []string) error {
 	}
 
 	if core.NeedUpdate() {
-		err := core.TryUpdate()
+		err := core.TryUpdate(false)
 		if err != nil {
 			fmt.Println(msg_fail_update, "CMD_TR_UP_NEED")
 			return err
