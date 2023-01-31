@@ -7,7 +7,7 @@
   <vendor_url>https://www.vanillaos.org/</vendor_url>
   <icon_name>package-x-generic</icon_name>
 
-  <action id="org.vanillaos.abroot.check_updates">
+  <action id="org.vanillaos.vso.check_updates">
     <description>Check for system package updates</description>
     <message>Authentication is required to check for updates</message>
     <icon_name>package-x-generic</icon_name>
