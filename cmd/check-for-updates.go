@@ -47,9 +47,9 @@ func NewCheckUpdateCommand() *cobra.Command {
 }
 
 func checkUpdate(cmd *cobra.Command, args []string) error {
-	if !core.RootCheck(true) {
-		return nil
-	}
+	// if !core.RootCheck(true) {
+	// 	return nil
+	// }
 
 	if !cmd.Flag("as-exit-code").Changed {
 		fmt.Println("Checking for updates...")
