@@ -33,7 +33,6 @@ Arguments:
 	--command/-c		command to execute
 	--every/-e		execute the task every X (minutes, hours, days)
 	--at/-a			execute the task at a specific time (hh:mm)
-	--on-boot		execute the task on boot
 	--on-network		execute the task on network connection
 	--on-disconnect	execute the task on network disconnection
 	--on-battery		execute the task on battery
@@ -75,7 +74,7 @@ func NewCreateTaskCommand() *cobra.Command {
 	//cmd.Flags().String("after-task-failure", "", "execute the task after another task if it failed")
 	cmd.Flags().StringP("every", "e", "", "execute the task every X (minutes, hours, days)")
 	cmd.Flags().StringP("at", "a", "", "execute the task at a specific time (hh:mm)")
-	cmd.Flags().Bool("on-boot", false, "execute the task on boot")
+	//cmd.Flags().Bool("on-boot", false, "execute the task on boot")
 	cmd.Flags().Bool("on-network", false, "execute the task on network connection")
 	cmd.Flags().Bool("on-disconnect", false, "execute the task on network disconnection")
 	cmd.Flags().Bool("on-battery", false, "execute the task on battery")
@@ -122,7 +121,7 @@ func createTask(cmd *cobra.Command, args []string) error {
 	//afterTaskFailure, _ := cmd.Flags().GetString("after-task-failure")
 	every, _ := cmd.Flags().GetString("every")
 	at, _ := cmd.Flags().GetString("at")
-	onBoot, _ := cmd.Flags().GetBool("on-boot")
+	//onBoot, _ := cmd.Flags().GetBool("on-boot")
 	onNetwork, _ := cmd.Flags().GetBool("on-network")
 	onDisconnect, _ := cmd.Flags().GetBool("on-disconnect")
 	onBattery, _ := cmd.Flags().GetBool("on-battery")
@@ -154,7 +153,7 @@ func createTask(cmd *cobra.Command, args []string) error {
 		Every:            every,
 		At:               at,
 
-		OnBoot:               onBoot,
+		//OnBoot:               onBoot,
 		OnNetwork:            onNetwork,
 		OnDisconnect:         onDisconnect,
 		OnBattery:            onBattery,

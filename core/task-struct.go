@@ -16,12 +16,12 @@ type Task struct {
 	NeedConfirm bool
 	Command     string
 
-	AfterTask            string
-	AfterTaskSuccess     string
-	AfterTaskFailure     string
-	Every                string
-	At                   string
-	OnBoot               bool
+	AfterTask        string
+	AfterTaskSuccess string
+	AfterTaskFailure string
+	Every            string
+	At               string
+	//OnBoot               bool
 	OnNetwork            bool
 	OnDisconnect         bool
 	OnBattery            bool
@@ -101,10 +101,7 @@ func (t *Task) ShouldRun(cChecks *CommonChecks, event string) bool {
 	res := false
 	target := ""
 
-	if t.OnBoot && event == "boot" {
-		res = true
-		target = "boot"
-	} else if t.AfterTask != "" && TaskHasRun(t.AfterTask) {
+	if t.AfterTask != "" && TaskHasRun(t.AfterTask) {
 		res = true
 		target = "after task " + t.AfterTask
 	} else if t.AfterTaskSuccess != "" && TaskHasRunSuccess(t.AfterTaskSuccess) {
@@ -224,8 +221,6 @@ func (t *Task) Target() string {
 		return "every"
 	} else if t.At != "" {
 		return "at"
-	} else if t.OnBoot {
-		return "onBoot"
 	} else if t.OnNetwork {
 		return "onNetwork"
 	} else if t.OnDisconnect {
