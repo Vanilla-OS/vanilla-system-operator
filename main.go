@@ -17,7 +17,7 @@ import (
 )
 
 var (
-	Version = "1.3.4"
+	Version = "1.3.4-1"
 )
 
 func help(cmd *cobra.Command, args []string) {
