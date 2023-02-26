@@ -1,3 +1,9 @@
+vanilla-system-operator (1.3.4-2) lunar; urgency=critical
+
+  * Defer updates until first-setup is complete
+
+ -- Mirko brombin <send@mirko.pm>  Mon, 13 Feb 2023 22:44:00 +0200
+
 vanilla-system-operator (1.3.4-1) kinetic; urgency=critical
 
   * Defer updates until first-setup is complete
