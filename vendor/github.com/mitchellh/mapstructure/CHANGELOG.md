@@ -33,11 +33,11 @@
 * Squash is now supported with embedded fields that are struct pointers [GH-205]
 * Empty strings will convert to 0 for all numeric types when weakly decoding [GH-206]
 
-## 1.3.4-1
+## 1.3.3
 
 * Decoding maps from maps creates a settable value for decode hooks [GH-203]
 
-## 1.3.4-1
+## 1.3.2
 
 * Decode into interface type with a struct value is supported [GH-187]
 
