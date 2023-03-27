@@ -1,6 +1,0 @@
-[Allow admins to check for updates]
-Identity=unix-group:sudo
-Action=org.vanillaos.vso.check_updates
-ResultAny=no
-ResultInactive=no
-ResultActive=yes

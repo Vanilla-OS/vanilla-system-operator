@@ -2,5 +2,5 @@ config/config.json /etc/vso/
 man/vso.1 /usr/share/man/man1
 man/es/vso.1 /usr/share/man/es/man1
 man/fr/vso.1 /usr/share/man/fr/man1
-polkit/org.vanillaos.vso.pkla /var/lib/polkit-1/localauthority/10-vendor.d/
+polkit/org.vanillaos.vso.rules /usr/share/polkit-1/rules.d/
 polkit/org.vanillaos.vso.policy /usr/share/polkit-1/actions/
