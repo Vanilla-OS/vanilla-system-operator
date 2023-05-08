@@ -79,7 +79,7 @@ func HasUpdates() (bool, []string, error) {
 		}
 	}
 
-	update_cmd := exec.Command(aptBinary, "update")
+	update_cmd := exec.Command("abrootv2", "upgrade", "--check-only")
 	update_cmd.Stdin = os.Stdin
 	update_cmd.Stdout = os.Stdout
 	update_cmd.Stderr = os.Stderr
@@ -87,27 +87,8 @@ func HasUpdates() (bool, []string, error) {
 		return false, nil, err
 	}
 
-	list_cmd := exec.Command(aptBinary, "list", "--upgradable")
-	list_cmd.Env = os.Environ()
-	list_cmd.Env = append(list_cmd.Env, "LANG=en_US.UTF-8")
-	output, err := list_cmd.Output()
-	if err != nil {
-		return false, nil, err
-	}
-
-	packages := strings.Split(string(output), "\n")
-	if len(packages) <= 2 {
-		return false, nil, nil
-	}
-
-	list_updates := []string{}
-	for _, pkg := range packages[1 : len(packages)-1] { // First and last lines are not packages
-		cols := strings.Split(pkg, " ")
-		pkg_name, pkg_newver, pkg_oldver := cols[0], cols[1], cols[5]
-		pkg_name = strings.Split(pkg_name, "/")[0]  // Remove source info
-		pkg_oldver = pkg_oldver[:len(pkg_oldver)-1] // Remove trailing "]"
-
-		list_updates = append(list_updates, fmt.Sprintf("  - %s\t%s -> %s", pkg_name, pkg_oldver, pkg_newver))
+	list_updates := []string{
+		"not implemented yet",
 	}
 
 	return true, list_updates, nil
@@ -195,22 +176,11 @@ func TryUpdate(force bool) error {
 
 	writeLatestCheck(time.Now())
 
-	file, err := os.Create("/tmp/" + time.Now().Format("20060102150405") + "-script")
-	if err != nil {
-		return err
-	}
-	defer file.Close()
-
-	_, err = file.WriteString("#!/bin/bash\napt update && apt upgrade -y && apt autoremove -y")
-	if err != nil {
-		return err
-	}
-
-	cmd := exec.Command("abroot", "exec", "--force-run", "sh", file.Name())
+	cmd := exec.Command("abrootv2", "upgrade")
 	cmd.Stdout = os.Stdout
 	cmd.Stderr = os.Stderr
 
-	err = cmd.Run()
+	err := cmd.Run()
 	if err != nil {
 		return err
 	}

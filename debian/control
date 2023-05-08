@@ -15,9 +15,7 @@ Package: vanilla-system-operator
 Architecture: all
 Depends: ${shlibs:Depends},
          ${misc:Depends},
-         golang-go,
          adwdialog,
-         ifstat,
-         abroot
+         ifstat
 Built-Using: ${misc:Built-Using}
 Description: VSO is an utility which allows you to perform maintenance tasks on your Vanilla OS installation.
