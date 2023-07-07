@@ -3,9 +3,9 @@ package settings
 /*	License: GPLv3
 	Authors:
 		Mirko Brombin <send@mirko.pm>
-		Pietro di Caprio <pietro@fabricators.ltd>
+		Vanilla OS Contributors <https://github.com/vanilla-os/>
 	Copyright: 2023
-	Description: VSO is an utility which allows you to perform maintenance
+	Description: VSO is a utility which allows you to perform maintenance
 	tasks on your Vanilla OS installation.
 */
 
@@ -21,6 +21,7 @@ type Config struct {
 
 type UpdatesConfig struct {
 	Schedule string `json:"schedule"`
+	Smart    bool   `json:"smart"`
 }
 
 var Cnf *Config
@@ -47,8 +48,11 @@ func GetConfig() *Config {
 	return Cnf
 }
 
-func GetConfigKeys() []string {
-	return viper.AllKeys()
+func GetConfigAsKV() map[string]string {
+	list := make(map[string]string)
+	list["updates.schedule"] = Cnf.Updates.Schedule
+	list["updates.smart"] = fmt.Sprintf("%t", Cnf.Updates.Smart)
+	return list
 }
 
 func GetConfigValue(key string) interface{} {

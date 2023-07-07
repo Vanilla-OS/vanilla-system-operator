@@ -1,5 +1,14 @@
 package core
 
+/*	License: GPLv3
+	Authors:
+		Mirko Brombin <send@mirko.pm>
+		Vanilla OS Contributors <https://github.com/vanilla-os/>
+	Copyright: 2023
+	Description: VSO is a utility which allows you to perform maintenance
+	tasks on your Vanilla OS installation.
+*/
+
 import (
 	"fmt"
 	"io/ioutil"

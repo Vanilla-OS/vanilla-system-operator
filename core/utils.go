@@ -1,12 +1,24 @@
 package core
 
+/*	License: GPLv3
+	Authors:
+		Mirko Brombin <send@mirko.pm>
+		Vanilla OS Contributors <https://github.com/vanilla-os/>
+	Copyright: 2023
+	Description: VSO is a utility which allows you to perform maintenance
+	tasks on your Vanilla OS installation.
+*/
+
 import (
 	"fmt"
+	"io"
 	"net/http"
 	"os"
 	"os/exec"
 	"strconv"
 	"strings"
+
+	"github.com/olekukonko/tablewriter"
 )
 
 var ProcessPath string
@@ -139,4 +151,17 @@ func slugify(s string) string {
 	s = strings.Replace(s, "~", "-", -1)
 
 	return s
+}
+
+func CreateVsoTable(writer io.Writer) *tablewriter.Table {
+	table := tablewriter.NewWriter(writer)
+	table.SetColumnSeparator("┊")
+	table.SetCenterSeparator("┼")
+	table.SetRowSeparator("┄")
+	table.SetHeaderLine(true)
+	table.SetAlignment(tablewriter.ALIGN_LEFT)
+	table.SetHeaderAlignment(tablewriter.ALIGN_LEFT)
+	table.SetRowLine(true)
+
+	return table
 }

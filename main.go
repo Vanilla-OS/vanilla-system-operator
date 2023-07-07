@@ -10,55 +10,40 @@ package main
 */
 
 import (
-	"fmt"
+	"embed"
 
-	"github.com/spf13/cobra"
+	"github.com/vanilla-os/orchid/cmdr"
 	"github.com/vanilla-os/vso/cmd"
 )
 
 var (
-	Version = "1.3.4-1"
+	Version = "2.0.0-alpha.1"
 )
 
-func help(cmd *cobra.Command, args []string) {
-	fmt.Println(`Usage:
-	vso [flags] [command] [arguments]
-
-Global Flags:
-	-h, --help            	Show this help message and exit
-
-Commands:
-	config              	Configure VSO
-	create-task             Create a new task
-	delete-task             Delete a task
-	developer-program   	Join the developers program
-	help                	Show this help message and exit
-	list-tasks          	List all tasks
-	rotate-tasks		Rotate tasks
-	trigger-update	  	Trigger a system update
-	update-check	  	Check for system updates
-	version             	Show version and exit`)
-}
-
-func newVsoCommand() *cobra.Command {
-	return &cobra.Command{
-		Use:     "vso",
-		Short:   "VSO is an utility which allows you to perform maintenance tasks on your Vanilla OS installation.",
-		Version: Version,
-	}
-}
+//go:embed locales/*.yml
+var fs embed.FS
+var vso *cmdr.App
 
 func main() {
-	rootCmd := newVsoCommand()
+	vso = cmd.New(Version, fs)
 
-	rootCmd.AddCommand(cmd.NewCreateTaskCommand())
-	rootCmd.AddCommand(cmd.NewDeleteTaskCommand())
-	rootCmd.AddCommand(cmd.NewConfigCommand())
-	rootCmd.AddCommand(cmd.NewDevProgramCommand())
-	rootCmd.AddCommand(cmd.NewListTasksCommand())
-	rootCmd.AddCommand(cmd.NewRotateTasksCommand())
-	rootCmd.AddCommand(cmd.NewTriggerUpdateCommand())
-	rootCmd.AddCommand(cmd.NewCheckUpdateCommand())
-	rootCmd.SetHelpFunc(help)
-	rootCmd.Execute()
+	// root command
+	root := cmd.NewRootCommand(Version)
+	vso.CreateRootCommand(root)
+
+	// commands
+	tasks := cmd.NewTasksCommand()
+	root.AddCommand(tasks)
+
+	upgrade := cmd.NewUpgradeCommand()
+	root.AddCommand(upgrade)
+
+	config := cmd.NewConfigCommand()
+	root.AddCommand(config)
+
+	// run the app
+	err := vso.Run()
+	if err != nil {
+		cmdr.Error.Println(err)
+	}
 }
