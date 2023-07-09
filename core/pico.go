@@ -23,7 +23,7 @@ func PicoInit() error {
 	subsystem, err := core.NewSubSystem(
 		"vso-pico",
 		stack,
-		true,
+		false, // temporary disabled as I am debugging a problem with dbox and the --init flag
 		true,
 	)
 

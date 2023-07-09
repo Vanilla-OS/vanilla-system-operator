@@ -25,7 +25,7 @@ func NewPicoCommand() []*cmdr.Command {
 				return nil
 			}
 
-			return fmt.Errorf("not implemented")
+			return runPicoCmd(cmd.Name(), args)
 		}
 	}
 
@@ -65,6 +65,12 @@ func NewPicoCommand() []*cmdr.Command {
 		vso.Trans("shell.description"),
 		handleFunc(),
 	)
+	runCmd := cmdr.NewCommand(
+		"run",
+		vso.Trans("run.description"),
+		vso.Trans("run.description"),
+		handleFunc(),
+	)
 
 	initCmd := cmdr.NewCommand(
 		"pico-init",
@@ -76,7 +82,7 @@ func NewPicoCommand() []*cmdr.Command {
 		cmdr.NewBoolFlag(
 			"force",
 			"f",
-			vso.Trans("init.force"),
+			vso.Trans("init.options.force"),
 			false,
 		),
 	)
@@ -88,6 +94,7 @@ func NewPicoCommand() []*cmdr.Command {
 		upgradeCmd,
 		searchCmd,
 		shellCmd,
+		runCmd,
 		initCmd,
 	}
 }
@@ -106,5 +113,59 @@ func picoInit(cmd *cobra.Command, args []string) error {
 	}
 
 	cmdr.Success.Println("The Pico subsystem has been initialized successfully.")
+	return nil
+}
+
+func runPicoCmd(command string, args []string) error {
+	pico, err := core.GetPico()
+	if err != nil {
+		return err
+	}
+
+	if command == "shell" {
+		return pico.Enter()
+	} else if command == "run" {
+		_, err := pico.Exec(false, args...)
+		return err
+	}
+
+	pkgManager, err := pico.Stack.GetPkgManager()
+	if err != nil {
+		return err
+	}
+
+	var realCommand string
+	switch command {
+	case "autoremove":
+		realCommand = pkgManager.CmdAutoRemove
+	case "clean":
+		realCommand = pkgManager.CmdClean
+	case "install":
+		realCommand = pkgManager.CmdInstall
+	case "list":
+		realCommand = pkgManager.CmdList
+	case "purge":
+		realCommand = pkgManager.CmdPurge
+	case "remove":
+		realCommand = pkgManager.CmdRemove
+	case "search":
+		realCommand = pkgManager.CmdSearch
+	case "show":
+		realCommand = pkgManager.CmdShow
+	case "update":
+		realCommand = pkgManager.CmdUpdate
+	case "upgrade":
+		realCommand = pkgManager.CmdUpgrade
+	default:
+		return fmt.Errorf("unknown command: %s", command)
+	}
+
+	finalArgs := pkgManager.GenCmd(realCommand, args...)
+
+	_, err = pico.Exec(false, finalArgs...)
+	if err != nil {
+		return err
+	}
+
 	return nil
 }
