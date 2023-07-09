@@ -19,38 +19,7 @@ func PicoExists() bool {
 }
 
 func PicoInit() error {
-	var stack *core.Stack
-	if !core.StackExists("vso-pico") {
-
-		if !core.PkgManagerExists("vso-apt") {
-			core.NewPkgManager(
-				"vso-apt",
-				true,
-				"autoremove",
-				"clean",
-				"install",
-				"list",
-				"purge",
-				"remove",
-				"search",
-				"show",
-				"update",
-				"upgrade",
-				true,
-			)
-		}
-
-		stack = core.NewStack(
-			"vso-pico",
-			"registry.vanillaos.org/vanillaos/pico:main",
-			[]string{"systemd"},
-			"vso-apt",
-			true,
-		)
-	} else {
-		stack, _ = core.LoadStack("vso-pico")
-	}
-
+	stack, _ := core.LoadStack("vso-pico")
 	subsystem, err := core.NewSubSystem(
 		"vso-pico",
 		stack,
