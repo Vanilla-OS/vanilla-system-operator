@@ -12,6 +12,8 @@ package main
 import (
 	"embed"
 
+	"github.com/vanilla-os/apx/core"
+	"github.com/vanilla-os/apx/settings"
 	"github.com/vanilla-os/orchid/cmdr"
 	"github.com/vanilla-os/vso/cmd"
 )
@@ -25,6 +27,13 @@ var fs embed.FS
 var vso *cmdr.App
 
 func main() {
+	cnf := settings.NewApxConfig(
+		"/usr/share/vso/apx",
+		"/usr/share/apx/distrobox",
+		"btrfs",
+	)
+	core.NewApx(cnf)
+
 	vso = cmd.New(Version, fs)
 
 	// root command
@@ -40,6 +49,10 @@ func main() {
 
 	config := cmd.NewConfigCommand()
 	root.AddCommand(config)
+
+	// pico
+	pico := cmd.NewPicoCommand()
+	root.AddCommand(pico...)
 
 	// run the app
 	err := vso.Run()
