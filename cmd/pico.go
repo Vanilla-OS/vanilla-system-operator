@@ -65,11 +65,20 @@ func NewPicoCommand() []*cmdr.Command {
 		vso.Trans("shell.description"),
 		handleFunc(),
 	)
+
 	initCmd := cmdr.NewCommand(
-		"init",
+		"pico-init",
 		vso.Trans("init.description"),
 		vso.Trans("init.description"),
-		handleFunc(),
+		picoInit,
+	)
+	initCmd.WithBoolFlag(
+		cmdr.NewBoolFlag(
+			"force",
+			"f",
+			vso.Trans("init.force"),
+			false,
+		),
 	)
 
 	return []*cmdr.Command{
@@ -81,4 +90,21 @@ func NewPicoCommand() []*cmdr.Command {
 		shellCmd,
 		initCmd,
 	}
+}
+
+func picoInit(cmd *cobra.Command, args []string) error {
+	force, _ := cmd.Flags().GetBool("force")
+
+	if core.PicoExists() && !force {
+		cmdr.Error.Println("The Pico subsystem is already initialized. Use the --force flag to force the initialization.")
+		return nil
+	}
+
+	err := core.PicoInit()
+	if err != nil {
+		return err
+	}
+
+	cmdr.Success.Println("The Pico subsystem has been initialized successfully.")
+	return nil
 }
