@@ -28,7 +28,7 @@ jobs:
       run: go build -o vso
         
     - name: Compress
-      run: tar -czvf vso.tar.gz apx
+      run: tar -czvf vso.tar.gz vso
     
     - uses: softprops/action-gh-release@v1
       with:
