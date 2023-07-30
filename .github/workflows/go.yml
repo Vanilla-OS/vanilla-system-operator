@@ -1,15 +1,16 @@
-name: Build
+name: Go
 
 on:
   push:
-    branches: [ "main" ]
-  pull_request:
-    branches: [ "main" ]
+    branches: [ "v2" ]
 
 jobs:
 
   build:
     runs-on: ubuntu-latest
+    container:
+      image: ghcr.io/vanilla-os/pico:main
+
     steps:
     - uses: actions/checkout@v3
 
@@ -18,8 +19,22 @@ jobs:
       with:
         go-version: 1.19
 
-    - name: Build
-      run: go build -v ./...
+    - name: Install build dependencies
+      run: |
+          apt-get update
+          apt-get install -y pkg-config build-essential
 
-    - name: Test
-      run: go test -v ./...
+    - name: Build
+      run: go build -o vso
+        
+    - name: Compress
+      run: tar -czvf vso.tar.gz apx
+    
+    - uses: softprops/action-gh-release@v1
+      with:
+          token: "${{ secrets.GITHUB_TOKEN }}"
+          tag_name: "continuous"
+          prerelease: true
+          name: "Continuous Build"
+          files: |
+            vso.tar.gz
