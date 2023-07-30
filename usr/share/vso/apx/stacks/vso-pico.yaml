@@ -1,6 +1,5 @@
 name: vso-pico
-base: registry.vanillaos.org/vanillaos/vso:main
+base: ghcr.io/vanilla-os/vso:main
 packages: []
-#  - systemd
 pkgmanager: apt
 builtin: true
