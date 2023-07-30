@@ -31,11 +31,7 @@ jobs:
           - name: Compress
             run: tar -czvf vso.tar.gz vso
           
-          - uses: softprops/action-gh-release@v1
+          - uses: actions/upload-artifact@v3
             with:
-                token: "${{ secrets.GITHUB_TOKEN }}"
-                tag_name: "continuous"
-                prerelease: true
-                name: "Continuous Build"
-                files: |
-                  vso.tar.gz
+              name: vso
+              path: vso.tar.gz
