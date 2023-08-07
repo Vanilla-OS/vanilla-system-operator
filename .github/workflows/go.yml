@@ -29,6 +29,9 @@ jobs:
         
     - name: Compress
       run: tar -czvf vso.tar.gz vso
+
+    - name: Compress-manpage
+      run: tar -czvf vso-man.tar.gz vso
     
     - uses: softprops/action-gh-release@v1
       with:
@@ -38,3 +41,4 @@ jobs:
           name: "Continuous Build"
           files: |
             vso.tar.gz
+            vso-man.tar.gz
