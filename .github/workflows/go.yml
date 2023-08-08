@@ -31,7 +31,7 @@ jobs:
       run: tar -czvf vso.tar.gz vso
 
     - name: Compress-manpage
-      run: tar -czvf vso-man.tar.gz vso
+      run: tar -czvf vso-man.tar.gz man/vso.1
     
     - uses: softprops/action-gh-release@v1
       with:
