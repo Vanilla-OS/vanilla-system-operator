@@ -21,7 +21,7 @@ func NewPicoCommand() []*cmdr.Command {
 	handleFunc := func() func(cmd *cobra.Command, args []string) error {
 		return func(cmd *cobra.Command, args []string) error {
 			if !core.PicoExists() {
-				cmdr.Error.Println("The Pico subsystem is not initialized. Please run `vso init-pico` to initialize it.")
+				cmdr.Error.Println("The Pico subsystem is not initialized. Please run `vso pico-init` to initialize it.")
 				return nil
 			}
 
