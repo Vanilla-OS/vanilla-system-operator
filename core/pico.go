@@ -31,8 +31,8 @@ func PicoInit() error {
 		return err
 	}
 
-	subsystem.Create()
-	return nil
+	err = subsystem.Create()
+	return err
 }
 
 func PicoDelete() error {

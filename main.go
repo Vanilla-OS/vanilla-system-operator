@@ -29,7 +29,7 @@ var vso *cmdr.App
 func main() {
 	cnf := settings.NewApxConfig(
 		"/usr/share/vso/apx",
-		"/usr/share/apx/distrobox",
+		"/usr/share/apx/distrobox/distrobox",
 		"btrfs",
 	)
 	core.NewApx(cnf)

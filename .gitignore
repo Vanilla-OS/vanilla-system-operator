@@ -3,3 +3,4 @@
 /debian/vanilla-system-operator
 /debian/debhelper-build-stamp
 /debian/vanilla-system-operator.substvars
+/vso
