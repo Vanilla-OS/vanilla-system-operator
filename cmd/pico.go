@@ -72,6 +72,51 @@ func NewPicoCommand() []*cmdr.Command {
 		handleFunc(),
 	)
 
+	exportCmd := cmdr.NewCommand(
+		"export",
+		vso.Trans("export.description"),
+		vso.Trans("export.description"),
+		picoExport,
+	)
+	exportCmd.WithStringFlag(
+		cmdr.NewStringFlag(
+			"app",
+			"a",
+			vso.Trans("export.options.app"),
+			"",
+		),
+	)
+	exportCmd.WithStringFlag(
+		cmdr.NewStringFlag(
+			"bin",
+			"b",
+			vso.Trans("export.options.bin"),
+			"",
+		),
+	)
+	unexportCmd := cmdr.NewCommand(
+		"unexport",
+		vso.Trans("unexport.description"),
+		vso.Trans("unexport.description"),
+		picoUnexport,
+	)
+	unexportCmd.WithStringFlag(
+		cmdr.NewStringFlag(
+			"app",
+			"a",
+			vso.Trans("unexport.options.app"),
+			"",
+		),
+	)
+	unexportCmd.WithStringFlag(
+		cmdr.NewStringFlag(
+			"bin",
+			"b",
+			vso.Trans("unexport.options.bin"),
+			"",
+		),
+	)
+
 	initCmd := cmdr.NewCommand(
 		"pico-init",
 		vso.Trans("init.description"),
@@ -95,6 +140,8 @@ func NewPicoCommand() []*cmdr.Command {
 		searchCmd,
 		shellCmd,
 		runCmd,
+		exportCmd,
+		unexportCmd,
 		initCmd,
 	}
 }
@@ -113,6 +160,42 @@ func picoInit(cmd *cobra.Command, args []string) error {
 	}
 
 	cmdr.Success.Println("The Pico subsystem has been initialized successfully.")
+	return nil
+}
+
+func picoExport(cmd *cobra.Command, args []string) error {
+	app, _ := cmd.Flags().GetString("app")
+	bin, _ := cmd.Flags().GetString("bin")
+
+	if app == "" && bin == "" {
+		cmdr.Error.Println("You must specify either the --app or the --bin flag.")
+		return nil
+	}
+
+	err := core.PicoExport(app, bin)
+	if err != nil {
+		return err
+	}
+
+	cmdr.Success.Println("The application has been exported successfully.")
+	return nil
+}
+
+func picoUnexport(cmd *cobra.Command, args []string) error {
+	app, _ := cmd.Flags().GetString("app")
+	bin, _ := cmd.Flags().GetString("bin")
+
+	if app == "" && bin == "" {
+		cmdr.Error.Println("You must specify either the --app or the --bin flag.")
+		return nil
+	}
+
+	err := core.PicoUnexport(app, bin)
+	if err != nil {
+		return err
+	}
+
+	cmdr.Success.Println("The application has been unexported successfully.")
 	return nil
 }
 

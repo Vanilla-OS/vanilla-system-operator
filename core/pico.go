@@ -48,3 +48,33 @@ func PicoDelete() error {
 
 	return nil
 }
+
+func PicoExport(app string, binary string) error {
+	subsystem, err := GetPico()
+	if err != nil {
+		return err
+	}
+
+	if app != "" {
+		err = subsystem.ExportDesktopEntry(app)
+	} else {
+		err = subsystem.ExportBin(binary, "")
+	}
+
+	return err
+}
+
+func PicoUnexport(app string, binary string) error {
+	subsystem, err := GetPico()
+	if err != nil {
+		return err
+	}
+
+	if app != "" {
+		err = subsystem.UnexportDesktopEntry(app)
+	} else {
+		err = subsystem.UnexportBin(binary, "")
+	}
+
+	return err
+}
