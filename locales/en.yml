@@ -1,0 +1,45 @@
+vso:
+  description: "The Vanilla System Operator is a package manager, a system updater and a task automator."
+  errors:
+    unknownCommand: "Unknown command: %s"
+    invalidInput: "Invalid input."
+    invalidChoice: "Invalid choice."
+  info:
+    aborting: "Aborting as requested."
+  terminal:
+    yes: "yes"
+    no: "no"
+
+pico:
+  description: "Manage the Pico subsystem."
+  error:
+    notInitialized: "The Pico subsystem is not initialized. Please run `vso pico-init` to initialize it."
+    alreadyInitialized: "The Pico subsystem is already initialized. Use the --force flag to force the initialization."
+    noAppNameOrBin: "--app-name or --bin must be specified."
+    sameAppOrBin: "--app-name and --bin cannot be both specified."
+    exportingApp: "An error occurred while exporting the application: %s"
+    exportingBin: "An error occurred while exporting the binary: %s"
+    unexportingApp: "An error occurred while unexporting the application: %s"
+    unexportingBin: "An error occurred while unexporting the binary: %s"
+  info:
+    initialized: "The Pico subsystem has been initialized."
+    exported: "Exported %s\n"
+    unexported: "Unexported %s\n"
+  export:
+    description: "Export an application or binary from the subsystem."
+    options:
+      app:
+        description: "The name of the application to export."
+      bin:
+        description: "The name of the binary to export."
+      binOutput:
+        description: "Path of the binary output (default: ~/.local/bin/)."
+  unexport:
+    description: "Unexport an application or binary from the subsystem."
+    options:
+      app:
+        description: "The name of the application to unexport."
+      bin:
+        description: "The name of the binary to unexport."
+      binOutput:
+        description: "Path of the binary output (default: ~/.local/bin/)."

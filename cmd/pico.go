@@ -21,7 +21,7 @@ func NewPicoCommand() []*cmdr.Command {
 	handleFunc := func() func(cmd *cobra.Command, args []string) error {
 		return func(cmd *cobra.Command, args []string) error {
 			if !core.PicoExists() {
-				cmdr.Error.Println("The Pico subsystem is not initialized. Please run `vso pico-init` to initialize it.")
+				cmdr.Error.Println(vso.Trans("pico.error.notInitialized"))
 				return nil
 			}
 
@@ -31,58 +31,58 @@ func NewPicoCommand() []*cmdr.Command {
 
 	installCmd := cmdr.NewCommand(
 		"install",
-		vso.Trans("install.description"),
-		vso.Trans("install.description"),
+		vso.Trans("pico.install.description"),
+		vso.Trans("pico.install.description"),
 		handleFunc(),
 	)
 	removeCmd := cmdr.NewCommand(
 		"remove",
-		vso.Trans("remove.description"),
-		vso.Trans("remove.description"),
+		vso.Trans("pico.remove.description"),
+		vso.Trans("pico.remove.description"),
 		handleFunc(),
 	)
 	updateCmd := cmdr.NewCommand(
 		"update",
-		vso.Trans("update.description"),
-		vso.Trans("update.description"),
+		vso.Trans("pico.update.description"),
+		vso.Trans("pico.update.description"),
 		handleFunc(),
 	)
 	upgradeCmd := cmdr.NewCommand(
 		"upgrade",
-		vso.Trans("upgrade.description"),
-		vso.Trans("upgrade.description"),
+		vso.Trans("pico.upgrade.description"),
+		vso.Trans("pico.upgrade.description"),
 		handleFunc(),
 	)
 	searchCmd := cmdr.NewCommand(
 		"search",
-		vso.Trans("search.description"),
-		vso.Trans("search.description"),
+		vso.Trans("pico.search.description"),
+		vso.Trans("pico.search.description"),
 		handleFunc(),
 	)
 	shellCmd := cmdr.NewCommand(
 		"shell",
-		vso.Trans("shell.description"),
-		vso.Trans("shell.description"),
+		vso.Trans("pico.shell.description"),
+		vso.Trans("pico.shell.description"),
 		handleFunc(),
 	)
 	runCmd := cmdr.NewCommand(
 		"run",
-		vso.Trans("run.description"),
-		vso.Trans("run.description"),
+		vso.Trans("pico.run.description"),
+		vso.Trans("pico.run.description"),
 		handleFunc(),
 	)
 
 	exportCmd := cmdr.NewCommand(
 		"export",
-		vso.Trans("export.description"),
-		vso.Trans("export.description"),
+		vso.Trans("pico.export.description"),
+		vso.Trans("pico.export.description"),
 		picoExport,
 	)
 	exportCmd.WithStringFlag(
 		cmdr.NewStringFlag(
 			"app",
 			"a",
-			vso.Trans("export.options.app"),
+			vso.Trans("pico.export.options.app.description"),
 			"",
 		),
 	)
@@ -90,21 +90,21 @@ func NewPicoCommand() []*cmdr.Command {
 		cmdr.NewStringFlag(
 			"bin",
 			"b",
-			vso.Trans("export.options.bin"),
+			vso.Trans("pico.export.options.bin.description"),
 			"",
 		),
 	)
 	unexportCmd := cmdr.NewCommand(
 		"unexport",
-		vso.Trans("unexport.description"),
-		vso.Trans("unexport.description"),
+		vso.Trans("pico.unexport.description"),
+		vso.Trans("pico.unexport.description"),
 		picoUnexport,
 	)
 	unexportCmd.WithStringFlag(
 		cmdr.NewStringFlag(
 			"app",
 			"a",
-			vso.Trans("unexport.options.app"),
+			vso.Trans("pico.unexport.options.app.description"),
 			"",
 		),
 	)
@@ -112,22 +112,22 @@ func NewPicoCommand() []*cmdr.Command {
 		cmdr.NewStringFlag(
 			"bin",
 			"b",
-			vso.Trans("unexport.options.bin"),
+			vso.Trans("pico.unexport.options.bin.description"),
 			"",
 		),
 	)
 
 	initCmd := cmdr.NewCommand(
 		"pico-init",
-		vso.Trans("init.description"),
-		vso.Trans("init.description"),
+		vso.Trans("pico.init.description"),
+		vso.Trans("pico.init.description"),
 		picoInit,
 	)
 	initCmd.WithBoolFlag(
 		cmdr.NewBoolFlag(
 			"force",
 			"f",
-			vso.Trans("init.options.force"),
+			vso.Trans("pico.init.options.force.description"),
 			false,
 		),
 	)
@@ -150,7 +150,7 @@ func picoInit(cmd *cobra.Command, args []string) error {
 	force, _ := cmd.Flags().GetBool("force")
 
 	if core.PicoExists() && !force {
-		cmdr.Error.Println("The Pico subsystem is already initialized. Use the --force flag to force the initialization.")
+		cmdr.Error.Println(vso.Trans("pico.error.alreadyInitialized"))
 		return nil
 	}
 
@@ -159,7 +159,7 @@ func picoInit(cmd *cobra.Command, args []string) error {
 		return err
 	}
 
-	cmdr.Success.Println("The Pico subsystem has been initialized successfully.")
+	cmdr.Success.Println(vso.Trans("pico.info.initialized"))
 	return nil
 }
 
@@ -168,7 +168,7 @@ func picoExport(cmd *cobra.Command, args []string) error {
 	bin, _ := cmd.Flags().GetString("bin")
 
 	if app == "" && bin == "" {
-		cmdr.Error.Println("You must specify either the --app or the --bin flag.")
+		cmdr.Error.Println(vso.Trans("pico.error.noAppNameOrBin"))
 		return nil
 	}
 
@@ -177,7 +177,7 @@ func picoExport(cmd *cobra.Command, args []string) error {
 		return err
 	}
 
-	cmdr.Success.Println("The application has been exported successfully.")
+	cmdr.Success.Println(vso.Trans("pico.info.exported"))
 	return nil
 }
 
@@ -186,7 +186,7 @@ func picoUnexport(cmd *cobra.Command, args []string) error {
 	bin, _ := cmd.Flags().GetString("bin")
 
 	if app == "" && bin == "" {
-		cmdr.Error.Println("You must specify either the --app or the --bin flag.")
+		cmdr.Error.Println(vso.Trans("pico.error.noAppNameOrBin"))
 		return nil
 	}
 
@@ -195,7 +195,7 @@ func picoUnexport(cmd *cobra.Command, args []string) error {
 		return err
 	}
 
-	cmdr.Success.Println("The application has been unexported successfully.")
+	cmdr.Success.Println(vso.Trans("pico.info.unexported"))
 	return nil
 }
 
@@ -240,7 +240,7 @@ func runPicoCmd(command string, args []string) error {
 	case "upgrade":
 		realCommand = pkgManager.CmdUpgrade
 	default:
-		return fmt.Errorf("unknown command: %s", command)
+		return fmt.Errorf(vso.Trans("vso.errors.unknownCommand"), command)
 	}
 
 	finalArgs := pkgManager.GenCmd(realCommand, args...)
