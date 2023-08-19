@@ -25,6 +25,8 @@ pico:
     initialized: "The Pico subsystem has been initialized."
     exported: "Exported %s\n"
     unexported: "Unexported %s\n"
+    exportedApps: "Exported %d applications"
+    unexportedApps: "Unexported %d applications"
   export:
     description: "Export an application or binary from the subsystem."
     options:

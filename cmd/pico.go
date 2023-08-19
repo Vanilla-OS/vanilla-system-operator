@@ -25,7 +25,7 @@ func NewPicoCommand() []*cmdr.Command {
 				return nil
 			}
 
-			return runPicoCmd(cmd.Name(), args)
+			return runPicoCmd(cmd.Name(), cmd, args)
 		}
 	}
 
@@ -199,7 +199,7 @@ func picoUnexport(cmd *cobra.Command, args []string) error {
 	return nil
 }
 
-func runPicoCmd(command string, args []string) error {
+func runPicoCmd(command string, cmd *cobra.Command, args []string) error {
 	pico, err := core.GetPico()
 	if err != nil {
 		return err
@@ -240,7 +240,14 @@ func runPicoCmd(command string, args []string) error {
 	case "upgrade":
 		realCommand = pkgManager.CmdUpgrade
 	default:
-		return fmt.Errorf(vso.Trans("vso.errors.unknownCommand"), command)
+		return fmt.Errorf(vso.Trans("pico.errors.unknownCommand"), command)
+	}
+
+	if command == "remove" {
+		exportedN, err := pico.UnexportDesktopEntries(args...)
+		if err == nil {
+			cmdr.Info.Printfln(vso.Trans("pico.info.unexportedApps"), exportedN)
+		}
 	}
 
 	finalArgs := pkgManager.GenCmd(realCommand, args...)
@@ -248,6 +255,13 @@ func runPicoCmd(command string, args []string) error {
 	_, err = pico.Exec(false, finalArgs...)
 	if err != nil {
 		return err
+	}
+
+	if command == "install" {
+		exportedN, err := pico.ExportDesktopEntries(args...)
+		if err == nil {
+			cmdr.Info.Printfln(vso.Trans("pico.info.exportedApps"), exportedN)
+		}
 	}
 
 	return nil
