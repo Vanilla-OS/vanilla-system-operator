@@ -10,6 +10,27 @@ vso:
     yes: "yes"
     no: "no"
 
+config:
+  description: "Manage the system configuration."
+  get:
+    description: "Get the system configuration."
+    error:
+      noKey: "No key specified."
+      noValue: "No value found for key: %s"
+    options:
+      key:
+        description: "Get the system configuration using key"
+  set:
+    description: "Set the system configuration."
+    error:
+      noKey: "No key specified."
+      noValue: "No value specified."
+    options:
+      key:
+        description: "set the configuration key"
+      value:
+        description: "set the configuration value"
+
 pico:
   description: "Manage the Pico subsystem."
   error:
