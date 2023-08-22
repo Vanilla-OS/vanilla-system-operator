@@ -74,4 +74,16 @@ pico:
       force:
         description: "force the initialization if the subsystem is already initialized."
   install:
-    description: "install an application inside the subsystem."
+    description: "Install an application inside the subsystem."
+  remove:
+    description: "Remove an application from the subsystem."
+  run:
+    description: "Run an application from the subsystem."
+  search:
+    description: "Search for an application to install inside the subsystem."
+  shell:
+    description: "Enter the subsystem environment."
+  update:
+    description: "Update the Subsystem's package repository."
+  upgrade:
+    description: "Upgrade the packages inside the subsystem."
