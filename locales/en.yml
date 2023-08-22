@@ -105,4 +105,29 @@ sys-upgrade:
       updating: "An error occured when updating the system."
     info:
       updating: "Updating the system..."
-    now: "Upgrade the system now"
+    now: "Trigger a system upgrade now"
+
+  tasks:
+    description:  "Create and manage tasks"
+    stacks:
+      new:
+        error:
+          emptyCommand: "The command cannot be empty."
+          emptyDescription: "The description cannot be empty."
+          emptyName: "The name cannot be empty."
+          noCommand: "No command specified."
+          noDescription: "No description specified."
+          noName: "No name specified."
+        info:
+          askCommand: "Command: "
+          askDescription: "Description: "
+          askName: "Name: "
+          taskCreated: "Task has been created successfully."
+    list:
+      description: "List all tasks"
+      noTasks: "No tasks found."
+      info:
+        foundTasks: "Found %d tasks."
+      options:
+        json:
+          description: "output the tasks in JSON format"
