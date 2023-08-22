@@ -42,6 +42,8 @@ pico:
     exportingBin: "An error occurred while exporting the binary: %s"
     unexportingApp: "An error occurred while unexporting the application: %s"
     unexportingBin: "An error occurred while unexporting the binary: %s"
+  errors:
+    unknownCommand: "Unknown command: %s"
   info:
     initialized: "The Pico subsystem has been initialized."
     exported: "Exported %s\n"
@@ -66,3 +68,10 @@ pico:
         description: "the name of the binary to unexport."
       binOutput:
         description: "path of the binary output (default: ~/.local/bin/)."
+  init:
+    description: "Initialize the Pico subsystem."
+    options:
+      force:
+        description: "force the initialization if the subsystem is already initialized."
+  install:
+    description: "install an application inside the subsystem."
