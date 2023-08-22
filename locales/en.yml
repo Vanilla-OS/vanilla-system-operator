@@ -19,7 +19,7 @@ config:
       noValue: "No value found for key: %s"
     options:
       key:
-        description: "Get the system configuration using key"
+        description: "get the system configuration using key"
   set:
     description: "Set the system configuration."
     error:
@@ -52,17 +52,17 @@ pico:
     description: "Export an application or binary from the subsystem."
     options:
       app:
-        description: "The name of the application to export."
+        description: "the name of the application to export"
       bin:
-        description: "The name of the binary to export."
+        description: "the name of the binary to export."
       binOutput:
-        description: "Path of the binary output (default: ~/.local/bin/)."
+        description: "path of the binary output (default: ~/.local/bin/)."
   unexport:
     description: "Unexport an application or binary from the subsystem."
     options:
       app:
-        description: "The name of the application to unexport."
+        description: "the name of the application to unexport."
       bin:
-        description: "The name of the binary to unexport."
+        description: "the name of the binary to unexport."
       binOutput:
-        description: "Path of the binary output (default: ~/.local/bin/)."
+        description: "path of the binary output (default: ~/.local/bin/)."
