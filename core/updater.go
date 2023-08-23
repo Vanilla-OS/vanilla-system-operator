@@ -22,15 +22,22 @@ import (
 var (
 	checkLogPath       = "/var/log/vso-check.log"
 	firstSetupDonePath = "/etc/vanilla-first-setup-done"
-	abrootLockPath     = "/tmp/abroot-transactions.lock"
+	abrootLockPaths    = []string{
+		"/tmp/ABSystem.Upgrade.lock",
+		"/tmp/ABSystem.Upgrade.user.lock",
+	}
 )
 
 // AreABRootTransactionsLocked checks if there are any abroot transactions
 // currently running
 func AreABRootTransactionsLocked() bool {
-	_, err := os.Stat(abrootLockPath)
-
-	return err == nil
+	for _, abrootLockPath := range abrootLockPaths {
+		_, err := os.Stat(abrootLockPath)
+		if err == nil {
+			return true
+		}
+	}
+	return false
 }
 
 // NeedUpdate checks if the system needs to be updated according to the latest
