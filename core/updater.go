@@ -87,14 +87,6 @@ func NeedUpdate() bool {
 
 // HasUpdates checks if the system has updates available
 func HasUpdates() (bool, []string, error) {
-	aptBinary := "/usr/bin/private.apt"
-	if _, err := os.Stat(aptBinary); err != nil {
-		aptBinary = "/usr/bin/apt" // Fallback to apt only for development purposes
-		if _, err := os.Stat(aptBinary); err != nil {
-			return false, nil, err
-		}
-	}
-
 	update_cmd := exec.Command("abroot", "upgrade", "--check-only")
 	update_cmd.Stdin = os.Stdin
 	update_cmd.Stdout = os.Stdout
