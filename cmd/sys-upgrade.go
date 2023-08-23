@@ -140,10 +140,6 @@ func checkUpgrade(cmd *cobra.Command, args []string) error {
 }
 
 func upgrade(cmd *cobra.Command, args []string) error {
-	if !core.RootCheck(true) {
-		return nil
-	}
-
 	now, _ := cmd.Flags().GetBool("now")
 
 	if now {

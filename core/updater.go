@@ -87,20 +87,23 @@ func NeedUpdate() bool {
 
 // HasUpdates checks if the system has updates available
 func HasUpdates() (bool, []string, error) {
-	update_cmd := exec.Command("abroot", "upgrade", "--check-only")
-	update_cmd.Stdin = os.Stdin
-	update_cmd.Stdout = os.Stdout
-	update_cmd.Stderr = os.Stderr
-	if err := update_cmd.Run(); err != nil {
-		return false, nil, err
+	update_cmd := exec.Command("pkexec", "abroot", "upgrade", "--check-only")
+
+	err := update_cmd.Run()
+
+	if exitError, ok := err.(*exec.ExitError); ok {
+		if exitError.ExitCode() == 0 {
+			// TODO: blocked by https://github.com/Vanilla-OS/ABRoot/issues/115
+			list_updates := []string{}
+			return true, list_updates, nil
+		} else if exitError.ExitCode() == 1 {
+			return false, nil, nil
+		}
 	}
 
-	list_updates := []string{
-		"not implemented yet",
-	}
-
-	return true, list_updates, nil
+	return false, nil, err
 }
+
 func okToUpdate() bool {
 	// check vso logs for previous run
 	if _, err := os.Stat(checkLogPath); os.IsNotExist(err) {
@@ -184,7 +187,7 @@ func TryUpdate(force bool) error {
 
 	writeLatestCheck(time.Now())
 
-	cmd := exec.Command("abroot", "upgrade")
+	cmd := exec.Command("pkexec", "abroot", "upgrade")
 	cmd.Stdout = os.Stdout
 	cmd.Stderr = os.Stderr
 
