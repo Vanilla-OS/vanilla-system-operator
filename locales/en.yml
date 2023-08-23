@@ -90,7 +90,7 @@ pico:
 sys-upgrade:
   description: "Upgrade the system"
   check:
-    asExitCode: "Checks for upgrade but doesn't print anything. Return exit code 0 if no upgrade is available and 1 otherwise".
+    asExitCode: "Checks for upgrade but doesn't print anything. Return exit code 0 if no upgrade is available and 1 otherwise."
     description: "Check for system updates"
     error:
       asExitCodeAndJson: "An error occured when checking for updates. See the JSON output for more details."
