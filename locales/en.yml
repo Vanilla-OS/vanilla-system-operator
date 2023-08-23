@@ -19,15 +19,15 @@ config:
       noValue: "No value found for key: %s"
     options:
       key:
-        description: "get the system configuration using key"
+        description: "retrieve configuration value by using its key"
   set:
     description: "Set the system configuration"
     error:
       noKey: "No key specified."
       noValue: "No value specified."
     options:
-      key: "set the configuration key"
-      value: "set the configuration value"
+      key: "key of the configuration to set"
+      value: "value of the configuration to set"
     success: "Configuration updated successfully."
 
 pico:
@@ -83,14 +83,14 @@ pico:
   shell:
     description: "Enter the subsystem environment"
   update:
-    description: "Update the Subsystem's package repository"
+    description: "Update the subsystem's package repository"
   upgrade:
     description: "Upgrade the packages inside the subsystem"
 
 sys-upgrade:
   description: "Upgrade the system"
   check:
-    asExitCode: "Check for system upgrade with a specific exit code"
+    asExitCode: "Checks for upgrade but doesn't print anything. Return exit code 0 if no upgrade is available and 1 otherwise".
     description: "Check for system updates"
     error:
       asExitCodeAndJson: "An error occured when checking for updates. See the JSON output for more details."
@@ -180,7 +180,7 @@ sys-upgrade:
         onNetwork:
           description: "execute the task when the system is connected to the network"
         onProcess:
-          description: "execute the task when a process is running"
+          description: "execute the task when a process starts"
     rm:
       description: "Remove a task"
       error:
