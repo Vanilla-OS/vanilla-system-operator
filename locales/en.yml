@@ -68,7 +68,7 @@ pico:
       binOutput:
         description: "path of the binary output (default: ~/.local/bin/)"
   init:
-    description: "Initialize the Pico subsystem"
+    description: "Initialize the Pico subsystem, used for package management"
     options:
       force:
         description: "force the initialization if the subsystem is already initialized"
