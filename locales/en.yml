@@ -166,7 +166,7 @@ sys-upgrade:
         onFullBattery:
           description: "execute the task when the system is fully charged"
         onHighCpuUsage:
-          description: "execute the task when CPU usage is higher than X%"
+          description: "execute the task when CPU usage is higher than 50%"
         onHighInternetUsage:
           description: "execute the task when internet usage is higher than 500Kb/s"
         onHighMemoryUsage:
