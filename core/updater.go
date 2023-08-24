@@ -87,7 +87,7 @@ func NeedUpdate() bool {
 
 // HasUpdates checks if the system has updates available
 func HasUpdates() (bool, []string, error) {
-	update_cmd := exec.Command("pkexec", "abroot", "upgrade", "--check-only")
+	update_cmd := exec.Command("abroot", "upgrade", "--check-only")
 
 	err := update_cmd.Run()
 
@@ -187,7 +187,7 @@ func TryUpdate(force bool) error {
 
 	writeLatestCheck(time.Now())
 
-	cmd := exec.Command("pkexec", "abroot", "upgrade")
+	cmd := exec.Command("abroot", "upgrade")
 	cmd.Stdout = os.Stdout
 	cmd.Stderr = os.Stderr
 
