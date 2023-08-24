@@ -1,202 +1,210 @@
 vso:
-  description: ""
+  description: "The Vanilla System Operator is a package manager, a system updater
+    and a task automator."
   errors:
-    unknownCommand: ""
-    invalidInput: ""
-    invalidChoice: ""
+    unknownCommand: "Unknown command: %s"
+    invalidInput: "Invalid input."
+    invalidChoice: "Invalid choice."
   info:
-    aborting: ""
+    aborting: "Aborting as requested."
   terminal:
-    yes: ""
-    no: ""
+    yes: "yes"
+    no: "no"
 
 config:
-  description: ""
+  description: "Manage the system configuration."
   get:
-    description: ""
+    description: "Get the system configuration"
     error:
-      noKey: ""
-      noValue: ""
+      noKey: "No key specified."
+      noValue: "No value found for key: %s"
     options:
       key:
-        description: ""
+        description: "retrieve configuration value by using its key"
   set:
-    description: ""
+    description: "Set the system configuration"
     error:
-      noKey: ""
-      noValue: ""
+      noKey: "No key specified."
+      noValue: "No value specified."
     options:
-      key: ""
-      value: ""
-    success: ""
+      key: "key of the configuration to set"
+      value: "value of the configuration to set"
+    success: "Configuration updated successfully."
 
 pico:
-  description: ""
+  description: "Manage the Pico subsystem"
   error:
-    notInitialized: ""
-    alreadyInitialized: ""
-    noAppNameOrBin: ""
-    sameAppOrBin: ""
-    exportingApp: ""
-    exportingBin: ""
-    unexportingApp: ""
-    unexportingBin: ""
+    notInitialized: "The Pico subsystem is not initialized. Please run `vso pico-init`
+      to initialize it."
+    alreadyInitialized: "The Pico subsystem is already initialized. Use the --force
+      flag to force the initialization."
+    noAppNameOrBin: "--app-name or --bin must be specified."
+    sameAppOrBin: "--app-name and --bin cannot be both specified."
+    exportingApp: "An error occurred while exporting the application: %s"
+    exportingBin: "An error occurred while exporting the binary: %s"
+    unexportingApp: "An error occurred while unexporting the application: %s"
+    unexportingBin: "An error occurred while unexporting the binary: %s"
   errors:
-    unknownCommand: ""
+    unknownCommand: "Unknown command: %s"
   info:
-    initialized: ""
-    exported: ""
-    unexported: ""
-    exportedApps: ""
-    unexportedApps: ""
+    initialized: "The Pico subsystem has been initialized."
+    exported: "Exported %s\n"
+    unexported: "Unexported %s\n"
+    exportedApps: "Exported %d applications"
+    unexportedApps: "Unexported %d applications"
   export:
-    description: ""
+    description: "Export an application or binary from the subsystem"
     options:
       app:
-        description: ""
+        description: "the name of the application to export"
       bin:
-        description: ""
+        description: "the name of the binary to export"
       binOutput:
-        description: ""
+        description: "path of the binary output (default: ~/.local/bin/)"
   unexport:
-    description: ""
+    description: "Unexport an application or binary from the subsystem"
     options:
       app:
-        description: ""
+        description: "the name of the application to unexport"
       bin:
-        description: ""
+        description: "the name of the binary to unexport"
       binOutput:
-        description: ""
+        description: "path of the binary output (default: ~/.local/bin/)"
   init:
-    description: ""
+    description: "Initialize the Pico subsystem, used for package management"
     options:
       force:
-        description: ""
+        description: "force the initialization if the subsystem is already initialized"
   install:
-    description: ""
+    description: "Install an application inside the subsystem"
   remove:
-    description: ""
+    description: "Remove an application from the subsystem"
   run:
-    description: ""
+    description: "Run an application from the subsystem"
   search:
-    description: ""
+    description: "Search for an application to install inside the subsystem"
   shell:
-    description: ""
+    description: "Enter the subsystem environment"
   update:
-    description: ""
+    description: "Update the subsystem's package repository"
   upgrade:
-    description: ""
+    description: "Upgrade the packages inside the subsystem"
 
 sys-upgrade:
-  description: ""
+  description: "Upgrade the system"
   check:
-    asExitCode: ""
-    description: ""
+    asExitCode: "Checks for upgrade but doesn't print anything. Return exit code 0
+      if no upgrade is available and 1 otherwise."
+    description: "Check for system updates"
     error:
-      asExitCodeAndJson: ""
+      asExitCodeAndJson: "An error occured when checking for updates. See the JSON
+        output for more details."
     info:
-      checking: ""
-      noUpdates: ""
-      updatesAvailable: ""
+      checking: "Checking for updates..."
+      noUpdates: "No updates available."
+      updatesAvailable: "Updates available."
   sys-upgrade:
-    description: ""
+    description: "Upgrade the system"
     error:
-      updating: ""
+      updating: "An error occured when updating the system."
     info:
-      updating: ""
-    now: ""
+      updating: "Updating the system..."
+    now: "Trigger a system upgrade now"
 
   tasks:
-    description: ""
+    description: "Create and manage tasks"
     stacks:
       new:
         error:
-          emptyCommand: ""
-          emptyDescription: ""
-          emptyName: ""
-          noCommand: ""
-          noDescription: ""
-          noName: ""
+          emptyCommand: "The command cannot be empty."
+          emptyDescription: "The description cannot be empty."
+          emptyName: "The name cannot be empty."
+          noCommand: "No command specified."
+          noDescription: "No description specified."
+          noName: "No name specified."
         info:
-          askCommand: ""
-          askDescription: ""
-          askName: ""
-          taskCreated: ""
+          askCommand: "Command: "
+          askDescription: "Description: "
+          askName: "Name: "
+          taskCreated: "Task has been created successfully."
     list:
-      description: ""
-      noTasks: ""
+      description: "List all tasks"
+      noTasks: "No tasks found."
       info:
-        foundTasks: ""
+        foundTasks: "Found %d tasks."
       options:
         json:
-          description: ""
+          description: "output the tasks in JSON format"
     new:
-      description: ""
+      description: "Create a new task"
       options:
         assumeYes:
-          description: ""
+          description: "assume yes for all prompts"
         at:
-          description: ""
+          description: "schedule the task to execute at a specific time (hh:mm)"
         command:
-          description: ""
+          description: "specify the command to execute"
         description:
-          description: ""
+          description: "specify the task's description"
         every:
-          description: ""
+          description: "schedule the task to execute every X time (minutes, hours,
+            days)"
         name:
-          description: ""
+          description: "specify the task's name"
         needConfirm:
-          description: ""
+          description: "ask for confirmation before executing the task"
         onBattery:
-          description: ""
+          description: "execute the task only when the system is on battery"
         onCharge:
-          description: ""
+          description: "execute the task only when the system is charging"
         onConditionCommand:
-          description: ""
+          description: "execute the task on condition command"
         onCpuTemp:
-          description: ""
+          description: "execute the task when CPU temperature is higher than 60°C"
         onCpuUsage:
-          description: ""
+          description: "execute the task when CPU usage is higher than X%"
         onDeviceConnect:
-          description: ""
+          description: "execute the task when a device is connected"
         onDeviceDisconnect:
-          description: ""
+          description: "execute the task when a device is disconnected"
         onDisconnect:
-          description: ""
+          description: "execute the task when the system is disconnected from the
+            network"
         onFullBattery:
-          description: ""
+          description: "execute the task when the system is fully charged"
         onHighCpuUsage:
-          description: ""
+          description: "execute the task when CPU usage is higher than 50%"
         onHighInternetUsage:
-          description: ""
+          description: "execute the task when internet usage is higher than 500Kb/s"
         onHighMemoryUsage:
-          description: ""
+          description: "execute the task when memory usage is higher than 50%"
         onInternetUsage:
-          description: ""
+          description: "execute the task when internet usage is higher than XKb/s"
         onLowBattery:
-          description: ""
+          description: "execute the task when the system is low on battery (20%)"
         onMemoryUsage:
-          description: ""
+          description: "execute the task when memory usage is higher than X%"
         onNetwork:
-          description: ""
+          description: "execute the task when the system is connected to the network"
         onProcess:
-          description: ""
+          description: "execute the task when a process starts"
     rm:
-      description: ""
+      description: "Remove a task"
       error:
-        cannotDelete: ""
-        noName: ""
-        notFound: ""
+        cannotDelete: "Cannot delete task: %s"
+        noName: "No task name specified."
+        notFound: "Task not found."
       info:
-        askConfirmation: ""
-        taskDeleted: ""
+        askConfirmation: "Are you sure you want to delete the task %s? [y/N]"
+        taskDeleted: "Task has been deleted successfully."
       options:
         force:
-          description: ""
+          description: "force the deletion of the task"
         name:
-          description: ""
+          description: "specify the task's name"
     rotate:
-      description: ""
+      description: "Rotate tasks"
       options:
         privateEvent:
-          description: ""
+          description: "specify private event to rotate tasks for boot, shutdown,
+            login, logout"
