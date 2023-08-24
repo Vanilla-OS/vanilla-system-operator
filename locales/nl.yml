@@ -8,8 +8,8 @@ vso:
   info:
     aborting: "Aborting as requested."
   terminal:
-    yes: "yes"
-    no: "no"
+    yes: "ja"
+    no: "nee"
 
 config:
   description: "Manage the system configuration."
@@ -123,7 +123,7 @@ sys-upgrade:
           noDescription: "No description specified."
           noName: "No name specified."
         info:
-          askCommand: "Command: "
+          askCommand: "Opdracht: "
           askDescription: "Description: "
           askName: "Name: "
           taskCreated: "Task has been created successfully."
