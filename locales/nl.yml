@@ -31,6 +31,8 @@ config:
       value: "value of the configuration to set"
     success: "Configuration updated successfully."
 
+  show:
+    description: Show the system configuration
 pico:
   description: "Manage the Pico subsystem"
   error:
@@ -103,3 +105,118 @@ sys-upgrade:
       options: {}
     rotate:
       options: {}
+tasks:
+  new:
+    options:
+      at:
+        description: schedule the task to execute at a specific time (hh:mm)
+      command:
+        description: specify the command to execute
+      onProcess:
+        description: execute the task when a process starts
+      assumeYes:
+        description: assume yes for all prompts
+      description:
+        description: specify the task's description
+      every:
+        description: schedule the task to execute every X time (minutes, hours, days)
+      name:
+        description: specify the task's name
+      needConfirm:
+        description: ask for confirmation before executing the task
+      onBattery:
+        description: execute the task only when the system is on battery
+      onCharge:
+        description: execute the task only when the system is charging
+      onConditionCommand:
+        description: execute the task on condition command
+      onCpuTemp:
+        description: execute the task when CPU temperature is higher than 60°C
+      onCpuUsage:
+        description: execute the task when CPU usage is higher than X%
+      onDeviceConnect:
+        description: execute the task when a device is connected
+      onDeviceDisconnect:
+        description: execute the task when a device is disconnected
+      onDisconnect:
+        description: execute the task when the system is disconnected from the network
+      onFullBattery:
+        description: execute the task when the system is fully charged
+      onHighCpuUsage:
+        description: execute the task when CPU usage is higher than 50%
+      onHighInternetUsage:
+        description: execute the task when internet usage is higher than 500Kb/s
+      onHighMemoryUsage:
+        description: execute the task when memory usage is higher than 50%
+      onInternetUsage:
+        description: execute the task when internet usage is higher than XKb/s
+      onLowBattery:
+        description: execute the task when the system is low on battery (20%)
+      onMemoryUsage:
+        description: execute the task when memory usage is higher than X%
+      onNetwork:
+        description: execute the task when the system is connected to the network
+    description: Create a new task
+  rm:
+    description: Remove a task
+    error:
+      cannotDelete: 'Cannot delete task: %s'
+      noName: No task name specified.
+      notFound: Task not found.
+    info:
+      askConfirmation: Are you sure you want to delete the task %s? [y/N]
+      taskDeleted: Task has been deleted successfully.
+    options:
+      force:
+        description: force the deletion of the task
+      name:
+        description: specify the task's name
+  description: Create and manage tasks
+  stacks:
+    new:
+      error:
+        emptyCommand: The command cannot be empty.
+        emptyDescription: The description cannot be empty.
+        emptyName: The name cannot be empty.
+        noCommand: No command specified.
+        noDescription: No description specified.
+        noName: No name specified.
+      info:
+        askCommand: 'Command: '
+        askDescription: 'Description: '
+        askName: 'Name: '
+        taskCreated: Task has been created successfully.
+  list:
+    description: List all tasks
+    noTasks: No tasks found.
+    info:
+      foundTasks: Found %d tasks.
+    options:
+      json:
+        description: output the tasks in JSON format
+  rotate:
+    description: Rotate tasks
+    options:
+      privateEvent:
+        description: specify private event to rotate tasks for boot, shutdown, login,
+          logout
+sysUpgrade:
+  description: Upgrade the system
+  check:
+    asExitCode: Checks for upgrade but doesn't print anything. Return exit code 0
+      if no upgrade is available and 1 otherwise.
+    description: Check for system updates
+    error:
+      asExitCodeAndJson: An error occured when checking for updates. See the JSON
+        output for more details.
+    info:
+      checking: Checking for updates...
+      noUpdates: No updates available.
+      updatesAvailable: Updates available.
+  sysUpgrade:
+    description: Upgrade the system
+    error:
+      updating: An error occured when updating the system.
+    info:
+      updating: Updating the system...
+    now: Trigger a system upgrade now
