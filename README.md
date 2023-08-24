@@ -1,6 +1,12 @@
 <div align="center">
   <img src="vso-logo.svg" height="120">
   <h1 align="center">Vanilla System Operator</h1>
+	
+[![Translation Status][weblate-image]][weblate-url]
+
+[weblate-url]: https://hosted.weblate.org/engage/vanilla-os/
+[weblate-image]: https://hosted.weblate.org/widget/vanilla-os/vanilla-system-operator/svg-badge.svg
+ 
   <p align="center">VSO is a utility which allows you to perform maintenance tasks on your Vanilla OS installation.</p>
 </div>
 
