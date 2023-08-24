@@ -1,30 +1,30 @@
 vso:
-  description: "The Vanilla System Operator is a package manager, a system updater
-    and a task automator."
+  description: "Vanilla System Operator или VSO - это программа для обновления системы
+    и автоматизации задач. Также она является менеджером пакетов."
   errors:
-    unknownCommand: "Unknown command: %s"
-    invalidInput: "Invalid input."
-    invalidChoice: "Invalid choice."
+    unknownCommand: "Неизвестная команда: %s"
+    invalidInput: "Недопустимый ввод."
+    invalidChoice: "Недопустимый выбор."
   info:
     aborting: "Aborting as requested."
   terminal:
-    yes: "yes"
-    no: "no"
+    yes: "да"
+    no: "нет"
 
 config:
-  description: "Manage the system configuration."
+  description: "Управление конфигурацией системы."
   get:
-    description: "Get the system configuration"
+    description: "Получить конфигурацию системы"
     error:
-      noKey: "No key specified."
+      noKey: "Нет выбранного ключа."
       noValue: "No value found for key: %s"
     options:
       key:
         description: "retrieve configuration value by using its key"
   set:
-    description: "Set the system configuration"
+    description: "Установить конфигурацию системы"
     error:
-      noKey: "No key specified."
+      noKey: "Нет выбранного ключа."
       noValue: "No value specified."
     options:
       key: "key of the configuration to set"
