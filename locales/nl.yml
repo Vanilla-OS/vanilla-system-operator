@@ -1,22 +1,22 @@
 vso:
-  description: "The Vanilla System Operator is a package manager, a system updater
-    and a task automator."
+  description: "De Vanilla System Operator is een pakketbeheerder, een systeemupdater
+    en een taakautomatiseerder."
   errors:
-    unknownCommand: "Unknown command: %s"
-    invalidInput: "Invalid input."
-    invalidChoice: "Invalid choice."
+    unknownCommand: "Onbekende opdracht: %s"
+    invalidInput: "Ongeldige invoer"
+    invalidChoice: "Ongeldige keuze"
   info:
-    aborting: "Aborting as requested."
+    aborting: "Afbreken zoals verzocht"
   terminal:
     yes: "ja"
     no: "nee"
 
 config:
-  description: "Manage the system configuration."
+  description: "Beheer de systeem­configuratie"
   get:
-    description: "Get the system configuration"
+    description: "Verkrijg de systeemconfiguratie"
     error:
-      noKey: "No key specified."
+      noKey: "Geen sleutel opgegeven"
       noValue: "No value found for key: %s"
     options:
       key:
@@ -24,12 +24,12 @@ config:
   set:
     description: "Set the system configuration"
     error:
-      noKey: "No key specified."
-      noValue: "No value specified."
+      noKey: "Geen sleutel opgegeven"
+      noValue: "Geen waarde opgegeven"
     options:
       key: "key of the configuration to set"
       value: "value of the configuration to set"
-    success: "Configuration updated successfully."
+    success: "Configuratie succesvol bijgewerkt"
 
   show:
     description: Show the system configuration
@@ -47,12 +47,12 @@ pico:
     unexportingApp: "An error occurred while unexporting the application: %s"
     unexportingBin: "An error occurred while unexporting the binary: %s"
   errors:
-    unknownCommand: "Unknown command: %s"
+    unknownCommand: "Onbekende opdracht: %s"
   info:
     initialized: "The Pico subsystem has been initialized."
-    exported: "Exported %s\n"
-    unexported: "Unexported %s\n"
-    exportedApps: "Exported %d applications"
+    exported: "%s geëxporteerd\n"
+    unexported: "%s geontexporteerd\n"
+    exportedApps: "%d apps geëxporteerd"
     unexportedApps: "Unexported %d applications"
   export:
     description: "Export an application or binary from the subsystem"
@@ -182,9 +182,9 @@ tasks:
         noDescription: No description specified.
         noName: No name specified.
       info:
-        askCommand: 'Command: '
-        askDescription: 'Description: '
-        askName: 'Name: '
+        askCommand: 'Opdracht: '
+        askDescription: 'Omschrijving: '
+        askName: 'Naam: '
         taskCreated: Task has been created successfully.
   list:
     description: List all tasks
@@ -195,7 +195,7 @@ tasks:
       json:
         description: output the tasks in JSON format
   rotate:
-    description: Rotate tasks
+    description: Taken roteren
     options:
       privateEvent:
         description: specify private event to rotate tasks for boot, shutdown, login,
@@ -212,7 +212,7 @@ sysUpgrade:
     info:
       checking: Checking for updates...
       noUpdates: No updates available.
-      updatesAvailable: Updates available.
+      updatesAvailable: Updates beschikbaar
   sysUpgrade:
     description: Upgrade the system
     error:
