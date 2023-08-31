@@ -1,210 +1,213 @@
 vso:
-  description: "The Vanilla System Operator is a package manager, a system updater
-    and a task automator."
+  description: "O Vanilla System Operator é um gerenciador de pacotes, um atualizador
+    do sistema e um automatizador de tarefas."
   errors:
-    unknownCommand: "Unknown command: %s"
-    invalidInput: "Invalid input."
-    invalidChoice: "Invalid choice."
+    unknownCommand: "Comando desconhecido: %s"
+    invalidInput: "Entrada inválida."
+    invalidChoice: "Escolha inválida."
   info:
-    aborting: "Aborting as requested."
+    aborting: "Abortando conforme solicitado."
   terminal:
-    yes: "yes"
-    no: "no"
+    yes: "sim"
+    no: "não"
 
 config:
-  description: "Manage the system configuration."
+  description: "Gerenciar a configuração do sistema."
   get:
-    description: "Get the system configuration"
+    description: "Obter a configuração do sistema"
     error:
-      noKey: "No key specified."
-      noValue: "No value found for key: %s"
+      noKey: "Nenhuma chave especificada."
+      noValue: "Nenhum valor encontrado para a chave: %s"
     options:
       key:
-        description: "retrieve configuration value by using its key"
+        description: "recuperar valor de configuração usando sua chave"
   set:
-    description: "Set the system configuration"
+    description: "Definir a configuração do sistema"
     error:
-      noKey: "No key specified."
-      noValue: "No value specified."
+      noKey: "Nenhuma chave especificada."
+      noValue: "Nenhum valor especificado."
     options:
-      key: "key of the configuration to set"
-      value: "value of the configuration to set"
-    success: "Configuration updated successfully."
+      key: "chave da configuração a ser definida"
+      value: "valor da configuração a ser definida"
+    success: "Configuração atualizada com sucesso."
   show:
-    description: "Show the system configuration"
+    description: "Mostrar a configuração do sistema"
 
 pico:
-  description: "Manage the Pico subsystem"
+  description: "Gerenciar o subsistema Pico"
   error:
-    notInitialized: "The Pico subsystem is not initialized. Please run `vso pico-init`
-      to initialize it."
-    alreadyInitialized: "The Pico subsystem is already initialized. Use the --force
-      flag to force the initialization."
-    noAppNameOrBin: "--app-name or --bin must be specified."
-    sameAppOrBin: "--app-name and --bin cannot be both specified."
-    exportingApp: "An error occurred while exporting the application: %s"
-    exportingBin: "An error occurred while exporting the binary: %s"
-    unexportingApp: "An error occurred while unexporting the application: %s"
-    unexportingBin: "An error occurred while unexporting the binary: %s"
+    notInitialized: "O subsistema Pico não foi inicializado. Por favor, execute 'vso
+      pico-init' para inicializá-lo."
+    alreadyInitialized: "O subsistema Pico já foi inicializado. Use o sinalizador
+      --force para forçar a inicialização."
+    noAppNameOrBin: "--app-name ou --bin devem ser especificados."
+    sameAppOrBin: "--app-name e --bin não podem ser especificados ao mesmo tempo."
+    exportingApp: "Ocorreu um erro ao exportar o aplicativo: %s"
+    exportingBin: "Ocorreu um erro ao exportar o binário: %s"
+    unexportingApp: "Ocorreu um erro ao cancelar a exportação do aplicativo: %s"
+    unexportingBin: "Ocorreu um erro ao cancelar a exportação do binário: %s"
   errors:
-    unknownCommand: "Unknown command: %s"
+    unknownCommand: "Comando desconhecido: %s"
   info:
-    initialized: "The Pico subsystem has been initialized."
-    exported: "Exported %s\n"
-    unexported: "Unexported %s\n"
-    exportedApps: "Exported %d applications"
-    unexportedApps: "Unexported %d applications"
+    initialized: "O subsistema Pico foi inicializado."
+    exported: "Exportado %s\n"
+    unexported: "Desfeita a exportação de %s\n"
+    exportedApps: "Exportados %d aplicativos"
+    unexportedApps: "Desfeita a exportação de %d aplicativos"
   export:
-    description: "Export an application or binary from the subsystem"
+    description: "Exportar um aplicativo ou binário do subsistema"
     options:
       app:
-        description: "the name of the application to export"
+        description: "o nome do aplicativo a ser exportado"
       bin:
-        description: "the name of the binary to export"
+        description: "o nome do binário a ser exportado"
       binOutput:
-        description: "path of the binary output (default: ~/.local/bin/)"
+        description: "caminho de saída do binário (padrão: ~/.local/bin/)"
   unexport:
-    description: "Unexport an application or binary from the subsystem"
+    description: "Desfazer a exportação de um aplicativo ou binário do subsistema"
     options:
       app:
-        description: "the name of the application to unexport"
+        description: "o nome do aplicativo para desfazer a exportação"
       bin:
-        description: "the name of the binary to unexport"
+        description: "o nome do binário para desfazer a exportação"
       binOutput:
-        description: "path of the binary output (default: ~/.local/bin/)"
+        description: "caminho de saída do binário (padrão: ~/.local/bin/)"
   init:
-    description: "Initialize the Pico subsystem, used for package management"
+    description: "Inicializar o subsistema Pico, usado para gerenciamento de pacotes"
     options:
       force:
-        description: "force the initialization if the subsystem is already initialized"
+        description: "forçar a inicialização se o subsistema já estiver inicializado"
   install:
-    description: "Install an application inside the subsystem"
+    description: "Instalar um aplicativo dentro do subsistema"
   remove:
-    description: "Remove an application from the subsystem"
+    description: "Remover um aplicativo do subsistema"
   run:
-    description: "Run an application from the subsystem"
+    description: "Executar um aplicativo a partir do subsistema"
   search:
-    description: "Search for an application to install inside the subsystem"
+    description: "Procurar um aplicativo para instalar dentro do subsistema"
   shell:
-    description: "Enter the subsystem environment"
+    description: "Entrar no ambiente do subsistema"
   update:
-    description: "Update the subsystem's package repository"
+    description: "Atualizar o repositório de pacotes do subsistema"
   upgrade:
-    description: "Upgrade the packages inside the subsystem"
+    description: "Atualizar os pacotes dentro do subsistema"
 
 sysUpgrade:
-  description: "Upgrade the system"
+  description: "Atualizar o sistema"
   check:
-    asExitCode: "Checks for upgrade but doesn't print anything. Return exit code 0
-      if no upgrade is available and 1 otherwise."
-    description: "Check for system updates"
+    asExitCode: "Verifica se há atualização, mas não imprime nada. Retorna o código
+      de saída 0 se nenhuma atualização estiver disponível e 1 caso contrário."
+    description: "Verificar se há atualizações do sistema"
     error:
-      asExitCodeAndJson: "An error occured when checking for updates. See the JSON
-        output for more details."
+      asExitCodeAndJson: "Ocorreu um erro ao verificar se há atualizações. Consulte
+        a saída JSON para obter mais detalhes."
     info:
-      checking: "Checking for updates..."
-      noUpdates: "No updates available."
-      updatesAvailable: "Updates available."
+      checking: "Verificando se há atualizações..."
+      noUpdates: "Não há atualizações disponíveis."
+      updatesAvailable: "Atualizações disponíveis."
   sysUpgrade:
-    description: "Upgrade the system"
+    description: "Atualizar o sistema"
     error:
-      updating: "An error occured when updating the system."
+      updating: "Ocorreu um erro ao atualizar o sistema."
     info:
-      updating: "Updating the system..."
-    now: "Trigger a system upgrade now"
+      updating: "Atualizando o sistema..."
+    now: "Acionar uma atualização do sistema agora"
 
 tasks:
-  description: "Create and manage tasks"
+  description: "Criar e gerenciar tarefas"
   stacks:
     new:
       error:
-        emptyCommand: "The command cannot be empty."
-        emptyDescription: "The description cannot be empty."
-        emptyName: "The name cannot be empty."
-        noCommand: "No command specified."
-        noDescription: "No description specified."
-        noName: "No name specified."
+        emptyCommand: "O comando não pode estar vazio."
+        emptyDescription: "A descrição não pode estar vazia."
+        emptyName: "O nome não pode estar vazio."
+        noCommand: "Nenhum comando especificado."
+        noDescription: "Nenhuma descrição especificada."
+        noName: "Nenhum nome especificado."
       info:
-        askCommand: "Command: "
-        askDescription: "Description: "
-        askName: "Name: "
-        taskCreated: "Task has been created successfully."
+        askCommand: "Comando: "
+        askDescription: "Descrição: "
+        askName: "Nome: "
+        taskCreated: "A tarefa foi criada com sucesso."
   list:
-    description: "List all tasks"
-    noTasks: "No tasks found."
+    description: "Listar todas as tarefas"
+    noTasks: "Nenhuma tarefa encontrada."
     info:
-      foundTasks: "Found %d tasks."
+      foundTasks: "Encontradas %d tarefas."
     options:
       json:
-        description: "output the tasks in JSON format"
+        description: "saída das tarefas no formato JSON"
   new:
-    description: "Create a new task"
+    description: "Criar uma nova tarefa"
     options:
       assumeYes:
-        description: "assume yes for all prompts"
+        description: "suponha que sim para todos os prompts"
       at:
-        description: "schedule the task to execute at a specific time (hh:mm)"
+        description: "agendar a execução da tarefa em um horário específico (hh:mm)"
       command:
-        description: "specify the command to execute"
+        description: "especificar o comando a ser executado"
       description:
-        description: "specify the task's description"
+        description: "especificar a descrição da tarefa"
       every:
-        description: "schedule the task to execute every X time (minutes, hours, days)"
+        description: "agendar a tarefa para ser executada a cada X tempo (minutos,
+          horas, dias)"
       name:
-        description: "specify the task's name"
+        description: "especificar o nome da tarefa"
       needConfirm:
-        description: "ask for confirmation before executing the task"
+        description: "peça confirmação antes de executar a tarefa"
       onBattery:
-        description: "execute the task only when the system is on battery"
+        description: "executar a tarefa somente quando o sistema estiver na bateria"
       onCharge:
-        description: "execute the task only when the system is charging"
+        description: "executar a tarefa somente quando o sistema estiver carregando"
       onConditionCommand:
-        description: "execute the task on condition command"
+        description: "executar a tarefa dependendo da condição do comando"
       onCpuTemp:
-        description: "execute the task when CPU temperature is higher than 60°C"
+        description: "executar a tarefa quando a temperatura da CPU for superior a
+          60°C"
       onCpuUsage:
-        description: "execute the task when CPU usage is higher than X%"
+        description: "executar a tarefa quando o uso da CPU for maior que X%"
       onDeviceConnect:
-        description: "execute the task when a device is connected"
+        description: "executar a tarefa quando um dispositivo for conectado"
       onDeviceDisconnect:
-        description: "execute the task when a device is disconnected"
+        description: "executar a tarefa quando um dispositivo for desconectado"
       onDisconnect:
-        description: "execute the task when the system is disconnected from the network"
+        description: "executar a tarefa quando o sistema for desconectado da rede"
       onFullBattery:
-        description: "execute the task when the system is fully charged"
+        description: "executar a tarefa quando o sistema estiver totalmente carregado"
       onHighCpuUsage:
-        description: "execute the task when CPU usage is higher than 50%"
+        description: "executar a tarefa quando o uso da CPU for superior a 50%"
       onHighInternetUsage:
-        description: "execute the task when internet usage is higher than 500Kb/s"
+        description: "executar a tarefa quando o uso da Internet for superior a 500Kb/s"
       onHighMemoryUsage:
-        description: "execute the task when memory usage is higher than 50%"
+        description: "executar a tarefa quando o uso de memória for superior a 50%"
       onInternetUsage:
-        description: "execute the task when internet usage is higher than XKb/s"
+        description: "executar a tarefa quando o uso da Internet for maior que XKb/s"
       onLowBattery:
-        description: "execute the task when the system is low on battery (20%)"
+        description: "executar a tarefa quando o sistema estiver com pouca bateria
+          (20%)"
       onMemoryUsage:
-        description: "execute the task when memory usage is higher than X%"
+        description: "executar a tarefa quando o uso de memória for maior que X%"
       onNetwork:
-        description: "execute the task when the system is connected to the network"
+        description: "executar a tarefa quando o sistema for conectado à rede"
       onProcess:
-        description: "execute the task when a process starts"
+        description: "executar a tarefa quando um processo for iniciado"
   rm:
-    description: "Remove a task"
+    description: "Remover uma tarefa"
     error:
-      cannotDelete: "Cannot delete task: %s"
-      noName: "No task name specified."
-      notFound: "Task not found."
+      cannotDelete: "Não é possível excluir tarefa: %s"
+      noName: "Nenhum nome de tarefa especificado."
+      notFound: "Tarefa não encontrada."
     info:
-      askConfirmation: "Are you sure you want to delete the task %s? [y/N]"
-      taskDeleted: "Task has been deleted successfully."
+      askConfirmation: "Tem certeza de que deseja excluir a tarefa %s? [y/N]"
+      taskDeleted: "A tarefa foi excluída com sucesso."
     options:
       force:
-        description: "force the deletion of the task"
+        description: "forçar a exclusão da tarefa"
       name:
-        description: "specify the task's name"
+        description: "especificar o nome da tarefa"
   rotate:
-    description: "Rotate tasks"
+    description: "Rotacionar tarefas"
     options:
       privateEvent:
-        description: "specify private event to rotate tasks for boot, shutdown, login,
-          logout"
+        description: "especificar evento privado para girar tarefas para inicialização,
+          desligamento, login, logout"
