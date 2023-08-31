@@ -1,47 +1,47 @@
 vso:
-  description: "The Vanilla System Operator is a package manager, a system updater
-    and a task automator."
+  description: "Der Vanilla System Operator ist ein Paketmanager, kann das System
+    aktualisieren und Aufgaben automatisieren."
   errors:
-    unknownCommand: "Unknown command: %s"
-    invalidInput: "Invalid input."
-    invalidChoice: "Invalid choice."
+    unknownCommand: "Unbekannter Befehl: %s"
+    invalidInput: "Ungültige Eingabe."
+    invalidChoice: "Ungültige Auswahl."
   info:
-    aborting: "Aborting as requested."
+    aborting: "Wie gefordert abgebrochen."
   terminal:
-    yes: "yes"
-    no: "no"
+    yes: "Ja"
+    no: "Nein"
 
 config:
-  description: "Manage the system configuration."
+  description: "Systemkonfiguration verwalten."
   get:
-    description: "Get the system configuration"
+    description: "Systemkonfiguration betrachten"
     error:
-      noKey: "No key specified."
-      noValue: "No value found for key: %s"
+      noKey: "Kein Key spezifiziert."
+      noValue: "Kein Wert für den Key gefunden: %s"
     options:
       key:
-        description: "retrieve configuration value by using its key"
+        description: "Konfigurationswert erhalten mit Hilfe des Keys"
   set:
-    description: "Set the system configuration"
+    description: "Systemkonfiguration festlegen"
     error:
-      noKey: "No key specified."
-      noValue: "No value specified."
+      noKey: "Kein Key spezifiziert."
+      noValue: "Kein Wert festgelegt."
     options:
-      key: "key of the configuration to set"
-      value: "value of the configuration to set"
-    success: "Configuration updated successfully."
+      key: "Key der festzulegenden Konfiguration"
+      value: "Wert der festzulegenden Konfiguration"
+    success: "Konfiguration erfolgreich aktualisiert."
   show:
-    description: "Show the system configuration"
+    description: "Systemkonfiguration anzeigen"
 
 pico:
-  description: "Manage the Pico subsystem"
+  description: "Pico-Subsystem verwalten"
   error:
-    notInitialized: "The Pico subsystem is not initialized. Please run `vso pico-init`
-      to initialize it."
-    alreadyInitialized: "The Pico subsystem is already initialized. Use the --force
-      flag to force the initialization."
-    noAppNameOrBin: "--app-name or --bin must be specified."
-    sameAppOrBin: "--app-name and --bin cannot be both specified."
+    notInitialized: "Das Pico-Subsystem ist nicht initialisiert. Bitte führe `vso
+      pico-init`aus, um es zu initialisieren."
+    alreadyInitialized: "Das Pico-Subsystem ist bereits initialisiert. Nutze die --force
+      Flag um die Initialisierung zu erzwingen."
+    noAppNameOrBin: "--app-name oder --bin muss spezifiziert sein."
+    sameAppOrBin: "--app-name und --bin können nicht beide spezifiziert sein."
     exportingApp: "An error occurred while exporting the application: %s"
     exportingBin: "An error occurred while exporting the binary: %s"
     unexportingApp: "An error occurred while unexporting the application: %s"
