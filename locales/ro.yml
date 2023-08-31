@@ -1,59 +1,59 @@
 vso:
-  description: "The Vanilla System Operator is a package manager, a system updater
-    and a task automator."
+  description: "Operatorul de sistem Vanilla este un manager de pachete, un actualizator
+    de sistem și un automat de sarcini."
   errors:
-    unknownCommand: "Unknown command: %s"
-    invalidInput: "Invalid input."
-    invalidChoice: "Invalid choice."
+    unknownCommand: "Comanda necunoscută: %s"
+    invalidInput: "Intrare nevalidă."
+    invalidChoice: "Alegere nevalidă."
   info:
-    aborting: "Aborting as requested."
+    aborting: "Se anulează conform solicitării."
   terminal:
-    yes: "yes"
-    no: "no"
+    yes: "da"
+    no: "nu"
 
 config:
-  description: "Manage the system configuration."
+  description: "Gestionați configurația sistemului."
   get:
-    description: "Get the system configuration"
+    description: "Obțineți configurația sistemului"
     error:
-      noKey: "No key specified."
-      noValue: "No value found for key: %s"
+      noKey: "Nicio cheie specificată."
+      noValue: "Nu a fost găsită nicio valoare pentru cheia: %s"
     options:
       key:
-        description: "retrieve configuration value by using its key"
+        description: "preluați valoarea configurației folosind cheia acestuia"
   set:
-    description: "Set the system configuration"
+    description: "Setați configurația sistemului"
     error:
-      noKey: "No key specified."
-      noValue: "No value specified."
+      noKey: "Nicio cheie specificată."
+      noValue: "Nu este specificată nicio valoare."
     options:
-      key: "key of the configuration to set"
-      value: "value of the configuration to set"
-    success: "Configuration updated successfully."
+      key: "tasta configurației de setat"
+      value: "valoarea configurației de setat"
+    success: "Configurația a fost actualizată cu succes."
   show:
-    description: "Show the system configuration"
+    description: "Afișați configurația sistemului"
 
 pico:
-  description: "Manage the Pico subsystem"
+  description: "Gestionați subsistemul Pico"
   error:
-    notInitialized: "The Pico subsystem is not initialized. Please run `vso pico-init`
-      to initialize it."
-    alreadyInitialized: "The Pico subsystem is already initialized. Use the --force
-      flag to force the initialization."
-    noAppNameOrBin: "--app-name or --bin must be specified."
-    sameAppOrBin: "--app-name and --bin cannot be both specified."
-    exportingApp: "An error occurred while exporting the application: %s"
-    exportingBin: "An error occurred while exporting the binary: %s"
-    unexportingApp: "An error occurred while unexporting the application: %s"
-    unexportingBin: "An error occurred while unexporting the binary: %s"
+    notInitialized: "Subsistemul Pico nu este inițializat. Rulați `vso pico-init`
+      pentru a-l inițializa."
+    alreadyInitialized: "Subsistemul Pico este deja inițializat. Utilizați indicatorul
+      --force pentru a forța inițializarea."
+    noAppNameOrBin: "Trebuie specificat --app-name sau --bin."
+    sameAppOrBin: "--app-name și --bin nu pot fi ambele specificate."
+    exportingApp: "A apărut o eroare la exportul aplicației: %s"
+    exportingBin: "A apărut o eroare la exportul binarului: %s"
+    unexportingApp: "A apărut o eroare la dezexportarea aplicației: %s"
+    unexportingBin: "A apărut o eroare la dezexportarea binarului: %s"
   errors:
-    unknownCommand: "Unknown command: %s"
+    unknownCommand: "Comanda necunoscută: %s"
   info:
-    initialized: "The Pico subsystem has been initialized."
-    exported: "Exported %s\n"
-    unexported: "Unexported %s\n"
-    exportedApps: "Exported %d applications"
-    unexportedApps: "Unexported %d applications"
+    initialized: "Subsistemul Pico a fost inițializat."
+    exported: "Exportat %s\n"
+    unexported: "Exportat %s\n"
+    exportedApps: "Au exportat %d aplicații"
+    unexportedApps: "%d aplicații neexportate"
   export:
     description: "Export an application or binary from the subsystem"
     options:
