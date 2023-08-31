@@ -1,96 +1,99 @@
 vso:
-  description: "The Vanilla System Operator is a package manager, a system updater
-    and a task automator."
+  description: "Le centre de contrôle de Vanilla OS est un gestionnaire de paquets,
+    un outil de mise à jour du système et un automate de tâches."
   errors:
-    unknownCommand: "Unknown command: %s"
-    invalidInput: "Invalid input."
-    invalidChoice: "Invalid choice."
+    unknownCommand: "Commande inconnue : %s"
+    invalidInput: "Entrée invalide."
+    invalidChoice: "Choix invalide."
   info:
-    aborting: "Aborting as requested."
+    aborting: "Annulation comme demandé."
   terminal:
-    yes: "yes"
-    no: "no"
+    yes: "oui"
+    no: "non"
 
 config:
-  description: "Manage the system configuration."
+  description: "Gestion de la configuration du système."
   get:
-    description: "Get the system configuration"
+    description: "Obtenir la configuration du système"
     error:
-      noKey: "No key specified."
-      noValue: "No value found for key: %s"
+      noKey: "Aucune clé n'est spécifiée."
+      noValue: "Aucune valeur trouvée pour la clé : %s"
     options:
       key:
-        description: "retrieve configuration value by using its key"
+        description: "récupérer la valeur de la configuration en utilisant sa clé"
   set:
-    description: "Set the system configuration"
+    description: "Définir la configuration du système"
     error:
-      noKey: "No key specified."
-      noValue: "No value specified."
+      noKey: "Aucune clé n'est spécifiée."
+      noValue: "Aucune valeur n'est spécifiée."
     options:
-      key: "key of the configuration to set"
-      value: "value of the configuration to set"
-    success: "Configuration updated successfully."
+      key: "clé de la configuration à définir"
+      value: "valeur de la configuration à définir"
+    success: "Configuration mise à jour avec succès."
 
   show:
-    description: Show the system configuration
+    description: Afficher la configuration du système
 pico:
-  description: "Manage the Pico subsystem"
+  description: "Gestion du sous-système Pico"
   error:
-    notInitialized: "The Pico subsystem is not initialized. Please run `vso pico-init`
-      to initialize it."
-    alreadyInitialized: "The Pico subsystem is already initialized. Use the --force
-      flag to force the initialization."
-    noAppNameOrBin: "--app-name or --bin must be specified."
-    sameAppOrBin: "--app-name and --bin cannot be both specified."
-    exportingApp: "An error occurred while exporting the application: %s"
-    exportingBin: "An error occurred while exporting the binary: %s"
-    unexportingApp: "An error occurred while unexporting the application: %s"
-    unexportingBin: "An error occurred while unexporting the binary: %s"
+    notInitialized: "Le sous-système Pico n'est pas initialisé. Veuillez lancer `vso
+      pico-init` pour l'initialiser."
+    alreadyInitialized: "Le sous-système Pico est déjà initialisé. Utilisez l'option
+      --force pour forcer l'initialisation."
+    noAppNameOrBin: "Les options --app-name ou --bin doivent être spécifiées."
+    sameAppOrBin: "--app-name et --bin ne peuvent pas être spécifiés tous les deux."
+    exportingApp: "Une erreur s'est produite lors de l'exportation de l'application
+      : %s"
+    exportingBin: "Une erreur s'est produite lors de l'exportation du binaire : %s"
+    unexportingApp: "Une erreur s'est produite lors de la suppression de l'exportation
+      de l'application : %s"
+    unexportingBin: "Une erreur s'est produite lors de la suppression de l'exportation
+      du binaire : %s"
   errors:
-    unknownCommand: "Unknown command: %s"
+    unknownCommand: "Commande inconnue : %s"
   info:
-    initialized: "The Pico subsystem has been initialized."
-    exported: "Exported %s\n"
-    unexported: "Unexported %s\n"
-    exportedApps: "Exported %d applications"
-    unexportedApps: "Unexported %d applications"
+    initialized: "Le sous-système Pico a été initialisé."
+    exported: "Exportation de %s\n"
+    unexported: "Suppression de l'exportation de %s\n"
+    exportedApps: "Exportation de l'application %d"
+    unexportedApps: "Suppression de l'exportation de l'application %d"
   export:
-    description: "Export an application or binary from the subsystem"
+    description: "Exporter une application ou un binaire du sous-système"
     options:
       app:
-        description: "the name of the application to export"
+        description: "le nom de l'application à exporter"
       bin:
-        description: "the name of the binary to export"
+        description: "le nom du binaire à exporter"
       binOutput:
-        description: "path of the binary output (default: ~/.local/bin/)"
+        description: "chemin de la sortie du binaire (par défaut : ~/.local/bin/)"
   unexport:
-    description: "Unexport an application or binary from the subsystem"
+    description: "Supprimer l'exportation d'une application ou d'un binaire du sous-système"
     options:
       app:
-        description: "the name of the application to unexport"
+        description: "le nom de l'application à supprimer l'exportation"
       bin:
-        description: "the name of the binary to unexport"
+        description: "le nom du binaire à supprimer l'exportation"
       binOutput:
-        description: "path of the binary output (default: ~/.local/bin/)"
+        description: "chemin de la sortie du binaire (par défaut : ~/.local/bin/)"
   init:
-    description: "Initialize the Pico subsystem, used for package management"
+    description: "Initialiser le sous-système Pico, utilisé pour la gestion des paquets"
     options:
       force:
-        description: "force the initialization if the subsystem is already initialized"
+        description: "forcer l'initialisation si le sous-système est déjà initialisé"
   install:
-    description: "Install an application inside the subsystem"
+    description: "Installer une application dans le sous-système"
   remove:
-    description: "Remove an application from the subsystem"
+    description: "Supprimer une application du sous-système"
   run:
-    description: "Run an application from the subsystem"
+    description: "Exécuter une application à partir du sous-système"
   search:
-    description: "Search for an application to install inside the subsystem"
+    description: "Recherche d'une application à installer dans le sous-système"
   shell:
-    description: "Enter the subsystem environment"
+    description: "Entrer dans l'environnement du sous-système"
   update:
-    description: "Update the subsystem's package repository"
+    description: "Mise à jour du référentiel de paquets du sous-système"
   upgrade:
-    description: "Upgrade the packages inside the subsystem"
+    description: "Mise à jour des paquets à l'intérieur du sous-système"
 
 sys-upgrade:
   check: {}
@@ -106,117 +109,126 @@ sys-upgrade:
     rotate:
       options: {}
 sysUpgrade:
-  description: Upgrade the system
+  description: Mise à niveau du système
   check:
-    description: Check for system updates
+    description: Vérifier les mises à jour du système
     info:
-      checking: Checking for updates...
-      noUpdates: No updates available.
-      updatesAvailable: Updates available.
-    asExitCode: Checks for upgrade but doesn't print anything. Return exit code 0
-      if no upgrade is available and 1 otherwise.
+      checking: Vérifier les mises à jour ...
+      noUpdates: Aucune mise à jour n'est disponible.
+      updatesAvailable: Mises à jour disponibles.
+    asExitCode: Vérifie l'existence d'une mise à jour, mais n'imprime rien. Retourne
+      le code de sortie 0 si aucune mise à jour n'est disponible et 1 sinon.
     error:
-      asExitCodeAndJson: An error occured when checking for updates. See the JSON
-        output for more details.
+      asExitCodeAndJson: Une erreur s'est produite lors de la vérification des mises
+        à jour. Voir la sortie JSON pour plus de détails.
   sysUpgrade:
-    description: Upgrade the system
+    description: Mise à jour du système
     error:
-      updating: An error occured when updating the system.
+      updating: Une erreur s'est produite lors de la mise à jour du système.
     info:
-      updating: Updating the system...
-    now: Trigger a system upgrade now
+      updating: Mise à jour du système ...
+    now: Déclencher une mise à niveau du système maintenant
 tasks:
   new:
     options:
       onHighCpuUsage:
-        description: execute the task when CPU usage is higher than 50%
+        description: exécuter la tâche lorsque l'utilisation du CPU est supérieure
+          à 50 %
       onNetwork:
-        description: execute the task when the system is connected to the network
+        description: exécuter la tâche lorsque le système est connecté au réseau
       onProcess:
-        description: execute the task when a process starts
+        description: exécuter la tâche au démarrage d'un processus
       assumeYes:
-        description: assume yes for all prompts
+        description: Supposez que vous répondez par oui à toutes les questions
       at:
-        description: schedule the task to execute at a specific time (hh:mm)
+        description: programmer l'exécution de la tâche à une heure précise (hh:mm)
       command:
-        description: specify the command to execute
+        description: spécifier la commande à exécuter
       description:
-        description: specify the task's description
+        description: spécifier la description de la tâche
       every:
-        description: schedule the task to execute every X time (minutes, hours, days)
+        description: programmer l'exécution de la tâche tous les X temps (minutes,
+          heures, jours)
       name:
-        description: specify the task's name
+        description: spécifier le nom de la tâche
       needConfirm:
-        description: ask for confirmation before executing the task
+        description: demander une confirmation avant d'exécuter la tâche
       onCharge:
-        description: execute the task only when the system is charging
+        description: exécuter la tâche uniquement lorsque le système est en charge
       onBattery:
-        description: execute the task only when the system is on battery
+        description: exécuter la tâche uniquement lorsque le système est sur batterie
       onConditionCommand:
-        description: execute the task on condition command
+        description: exécuter la commande de la tâche avec condition
       onCpuTemp:
-        description: execute the task when CPU temperature is higher than 60°C
+        description: exécuter la tâche lorsque la température de l'unité centrale
+          est supérieure à 60°C
       onCpuUsage:
-        description: execute the task when CPU usage is higher than X%
+        description: exécuter la tâche lorsque l'utilisation de l'unité centrale est
+          supérieure à X%
       onDeviceConnect:
-        description: execute the task when a device is connected
+        description: exécuter la tâche lorsqu'un appareil est connecté
       onDeviceDisconnect:
-        description: execute the task when a device is disconnected
+        description: exécuter la tâche lorsqu'un appareil est déconnecté
       onDisconnect:
-        description: execute the task when the system is disconnected from the network
+        description: exécuter la tâche lorsque le système est déconnecté du réseau
       onFullBattery:
-        description: execute the task when the system is fully charged
+        description: exécuter la tâche lorsque le système est complètement chargé
       onHighInternetUsage:
-        description: execute the task when internet usage is higher than 500Kb/s
+        description: exécuter la tâche lorsque l'utilisation de l'internet est supérieure
+          à 500 Kb/s
       onHighMemoryUsage:
-        description: execute the task when memory usage is higher than 50%
+        description: exécuter la tâche lorsque l'utilisation de la mémoire est supérieure
+          à 50 %
       onInternetUsage:
-        description: execute the task when internet usage is higher than XKb/s
+        description: exécuter la tâche lorsque l'utilisation de l'internet est supérieure
+          à X Kb/s
       onLowBattery:
-        description: execute the task when the system is low on battery (20%)
+        description: exécuter la tâche lorsque la batterie du système est faible (20
+          %)
       onMemoryUsage:
-        description: execute the task when memory usage is higher than X%
-    description: Create a new task
+        description: exécuter la tâche lorsque l'utilisation de la mémoire est supérieure
+          à X%
+    description: Créer une nouvelle tâche
   rm:
-    description: Remove a task
+    description: Supprimer une tâche
     options:
       force:
-        description: force the deletion of the task
+        description: forcer la suppression de la tâche
       name:
-        description: specify the task's name
+        description: spécifier le nom de la tâche
     error:
-      cannotDelete: 'Cannot delete task: %s'
-      noName: No task name specified.
-      notFound: Task not found.
+      cannotDelete: 'Impossible de supprimer la tâche : %s'
+      noName: Aucun nom de tâche n'est spécifié.
+      notFound: Tâche non trouvée.
     info:
-      askConfirmation: Are you sure you want to delete the task %s? [y/N]
-      taskDeleted: Task has been deleted successfully.
-  description: Create and manage tasks
+      askConfirmation: Êtes-vous sûr de vouloir supprimer la tâche %s ? [y/N]
+      taskDeleted: La tâche a été supprimée avec succès.
+  description: Créer et gérer des tâches
   stacks:
     new:
       error:
-        emptyCommand: The command cannot be empty.
-        emptyDescription: The description cannot be empty.
-        emptyName: The name cannot be empty.
-        noCommand: No command specified.
-        noDescription: No description specified.
-        noName: No name specified.
+        emptyCommand: La commande ne peut pas être vide.
+        emptyDescription: La description ne peut pas être vide.
+        emptyName: Le nom ne peut pas être vide.
+        noCommand: Aucune commande n'a été spécifiée.
+        noDescription: Aucune description n'a été spécifiée.
+        noName: Aucun nom n'a été spécifié.
       info:
-        askCommand: 'Command: '
-        askDescription: 'Description: '
-        askName: 'Name: '
-        taskCreated: Task has been created successfully.
+        askCommand: 'Commande : '
+        askDescription: 'Description : '
+        askName: 'Nom : '
+        taskCreated: La tâche a été créée avec succès.
   list:
-    description: List all tasks
-    noTasks: No tasks found.
+    description: Liste des tâches
+    noTasks: Aucune tâche n'a été trouvée.
     info:
-      foundTasks: Found %d tasks.
+      foundTasks: A trouvé %d tâches.
     options:
       json:
-        description: output the tasks in JSON format
+        description: sortir des tâches au format JSON
   rotate:
-    description: Rotate tasks
+    description: Rotation des tâches
     options:
       privateEvent:
-        description: specify private event to rotate tasks for boot, shutdown, login,
-          logout
+        description: spécifier un événement privé pour alterner les tâches de démarrage,
+          d'arrêt, de connexion et de déconnexion
