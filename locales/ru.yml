@@ -17,7 +17,7 @@ config:
     description: "Получить конфигурацию системы"
     error:
       noKey: "Нет выбранного ключа."
-      noValue: "No value found for key: %s"
+      noValue: "Не найдено значение для ключа: %s"
     options:
       key:
         description: "retrieve configuration value by using its key"
