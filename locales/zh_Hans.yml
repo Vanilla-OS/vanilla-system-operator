@@ -1,210 +1,204 @@
 vso:
-  description: "The Vanilla System Operator is a package manager, a system updater
-    and a task automator."
+  description: "Vanilla 系统操作程序是软件包管理器、系统更新程序、任务自动化程序的三合一。"
   errors:
-    unknownCommand: "Unknown command: %s"
-    invalidInput: "Invalid input."
-    invalidChoice: "Invalid choice."
+    unknownCommand: "未知的命令：%s"
+    invalidInput: "输入无效。"
+    invalidChoice: "选择无效。"
   info:
-    aborting: "Aborting as requested."
+    aborting: "应用户要求取消操作。"
   terminal:
-    yes: "yes"
-    no: "no"
+    yes: "是"
+    no: "否"
 
 config:
-  description: "Manage the system configuration."
+  description: "管理系统配置。"
   get:
-    description: "Get the system configuration"
+    description: "获取系统配置"
     error:
-      noKey: "No key specified."
-      noValue: "No value found for key: %s"
+      noKey: "没有指定键。"
+      noValue: "无法为键找到对应值：%s"
     options:
       key:
-        description: "retrieve configuration value by using its key"
+        description: "按键名获取配置值"
   set:
-    description: "Set the system configuration"
+    description: "设置系统配置"
     error:
-      noKey: "No key specified."
-      noValue: "No value specified."
+      noKey: "没有指定键。"
+      noValue: "没有指定值。"
     options:
-      key: "key of the configuration to set"
-      value: "value of the configuration to set"
-    success: "Configuration updated successfully."
+      key: "要设置的配置的键"
+      value: "要设置的配置的值"
+    success: "已成功更新配置。"
   show:
-    description: "Show the system configuration"
+    description: "显示系统配置"
 
 pico:
-  description: "Manage the Pico subsystem"
+  description: "管理 Pico 子系统"
   error:
-    notInitialized: "The Pico subsystem is not initialized. Please run `vso pico-init`
-      to initialize it."
-    alreadyInitialized: "The Pico subsystem is already initialized. Use the --force
-      flag to force the initialization."
-    noAppNameOrBin: "--app-name or --bin must be specified."
-    sameAppOrBin: "--app-name and --bin cannot be both specified."
-    exportingApp: "An error occurred while exporting the application: %s"
-    exportingBin: "An error occurred while exporting the binary: %s"
-    unexportingApp: "An error occurred while unexporting the application: %s"
-    unexportingBin: "An error occurred while unexporting the binary: %s"
+    notInitialized: "Pico 子系统尚未初始化。请运行 `vso pico-init` 以初始化子系统。"
+    alreadyInitialized: "Pico 子系统已经初始化。请使用 --force 标记以强制初始化。"
+    noAppNameOrBin: "必须指定 --app-name 或 --bin。"
+    sameAppOrBin: "不能同时指定 --app-name 和 --bin。"
+    exportingApp: "导出应用程序时发生错误：%s"
+    exportingBin: "导出二进制文件时发生错误：%s"
+    unexportingApp: "移除导出的应用程序时发生错误：%s"
+    unexportingBin: "移除导出的二进制文件时发生错误：%s"
   errors:
-    unknownCommand: "Unknown command: %s"
+    unknownCommand: "未知的命令：%s"
   info:
-    initialized: "The Pico subsystem has been initialized."
-    exported: "Exported %s\n"
-    unexported: "Unexported %s\n"
-    exportedApps: "Exported %d applications"
-    unexportedApps: "Unexported %d applications"
+    initialized: "Pico 子系统已经初始化。"
+    exported: "已导出 %s\n"
+    unexported: "已移除导出 %s\n"
+    exportedApps: "已导出 %d 个应用程序"
+    unexportedApps: "已移除导出的 %d 个应用程序"
   export:
-    description: "Export an application or binary from the subsystem"
+    description: "从子系统导出应用程序或二进制文件"
     options:
       app:
-        description: "the name of the application to export"
+        description: "要导出的应用程序的名称"
       bin:
-        description: "the name of the binary to export"
+        description: "要导出的二进制文件的名称"
       binOutput:
-        description: "path of the binary output (default: ~/.local/bin/)"
+        description: "二进制输出的路径（默认：~/.local/bin/）"
   unexport:
-    description: "Unexport an application or binary from the subsystem"
+    description: "从子系统移除导出的应用程序或二进制文件"
     options:
       app:
-        description: "the name of the application to unexport"
+        description: "要移除导出的应用程序的名称"
       bin:
-        description: "the name of the binary to unexport"
+        description: "要移除导出的二进制文件的名称"
       binOutput:
-        description: "path of the binary output (default: ~/.local/bin/)"
+        description: "二进制输出的路径（默认：~/.local/bin/）"
   init:
-    description: "Initialize the Pico subsystem, used for package management"
+    description: "初始化 Pico 子系统，用于包管理"
     options:
       force:
-        description: "force the initialization if the subsystem is already initialized"
+        description: "子系统已经初始化时强制初始化"
   install:
-    description: "Install an application inside the subsystem"
+    description: "在子系统内安装应用程序"
   remove:
-    description: "Remove an application from the subsystem"
+    description: "从子系统中移除应用程序"
   run:
-    description: "Run an application from the subsystem"
+    description: "运行来自子系统的应用程序"
   search:
-    description: "Search for an application to install inside the subsystem"
+    description: "搜索要在子系统内安装的应用程序"
   shell:
-    description: "Enter the subsystem environment"
+    description: "进入子系统环境"
   update:
-    description: "Update the subsystem's package repository"
+    description: "更新子系统的软件仓库"
   upgrade:
-    description: "Upgrade the packages inside the subsystem"
+    description: "更新子系统内的软件包"
 
 sysUpgrade:
-  description: "Upgrade the system"
+  description: "更新系统"
   check:
-    asExitCode: "Checks for upgrade but doesn't print anything. Return exit code 0
-      if no upgrade is available and 1 otherwise."
-    description: "Check for system updates"
+    asExitCode: "检查更新但关闭输出。没有更新可用时返回码为 0，否则为 1。"
+    description: "检查系统更新"
     error:
-      asExitCodeAndJson: "An error occured when checking for updates. See the JSON
-        output for more details."
+      asExitCodeAndJson: "检查更新时出现错误。查看 JSON 输出获取详细信息。"
     info:
-      checking: "Checking for updates..."
-      noUpdates: "No updates available."
-      updatesAvailable: "Updates available."
+      checking: "正在检查更新…"
+      noUpdates: "没有更新可用。"
+      updatesAvailable: "更新可用。"
   sysUpgrade:
-    description: "Upgrade the system"
+    description: "更新系统"
     error:
-      updating: "An error occured when updating the system."
+      updating: "更新系统时发生错误。"
     info:
-      updating: "Updating the system..."
-    now: "Trigger a system upgrade now"
+      updating: "正在更新系统…"
+    now: "立即执行系统更新"
 
 tasks:
-  description: "Create and manage tasks"
+  description: "创建和管理任务"
   stacks:
     new:
       error:
-        emptyCommand: "The command cannot be empty."
-        emptyDescription: "The description cannot be empty."
-        emptyName: "The name cannot be empty."
-        noCommand: "No command specified."
-        noDescription: "No description specified."
-        noName: "No name specified."
+        emptyCommand: "命令不能为空。"
+        emptyDescription: "描述不能为空。"
+        emptyName: "名称不能为空。"
+        noCommand: "没有指定命令。"
+        noDescription: "没有指定描述。"
+        noName: "没有指定名称。"
       info:
-        askCommand: "Command: "
-        askDescription: "Description: "
-        askName: "Name: "
-        taskCreated: "Task has been created successfully."
+        askCommand: "命令： "
+        askDescription: "描述： "
+        askName: "名称： "
+        taskCreated: "已成功创建任务。"
   list:
-    description: "List all tasks"
-    noTasks: "No tasks found."
+    description: "列出所有任务"
+    noTasks: "没有找到任务。"
     info:
-      foundTasks: "Found %d tasks."
+      foundTasks: "找到 %d 个任务。"
     options:
       json:
-        description: "output the tasks in JSON format"
+        description: "以 JSON 格式输出任务"
   new:
-    description: "Create a new task"
+    description: "创建新任务"
     options:
       assumeYes:
-        description: "assume yes for all prompts"
+        description: "为所有操作指定“是”"
       at:
-        description: "schedule the task to execute at a specific time (hh:mm)"
+        description: "设置任务在特定时间执行（hh:mm）"
       command:
-        description: "specify the command to execute"
+        description: "指定要执行的命令"
       description:
-        description: "specify the task's description"
+        description: "指定任务描述"
       every:
-        description: "schedule the task to execute every X time (minutes, hours, days)"
+        description: "设置任务在每……时执行（分、小时、天）"
       name:
-        description: "specify the task's name"
+        description: "指定任务名称"
       needConfirm:
-        description: "ask for confirmation before executing the task"
+        description: "执行任务时要求确认"
       onBattery:
-        description: "execute the task only when the system is on battery"
+        description: "仅当系统使用电池时执行任务"
       onCharge:
-        description: "execute the task only when the system is charging"
+        description: "仅当系统正在充电时执行任务"
       onConditionCommand:
-        description: "execute the task on condition command"
+        description: "按条件命令执行任务"
       onCpuTemp:
-        description: "execute the task when CPU temperature is higher than 60°C"
+        description: "在 CPU 温度高于 60°C 时执行任务"
       onCpuUsage:
-        description: "execute the task when CPU usage is higher than X%"
+        description: "在 CPU 使用率高于 …% 时执行任务"
       onDeviceConnect:
-        description: "execute the task when a device is connected"
+        description: "在某设备连接时执行任务"
       onDeviceDisconnect:
-        description: "execute the task when a device is disconnected"
+        description: "在某设备断开连接时执行任务"
       onDisconnect:
-        description: "execute the task when the system is disconnected from the network"
+        description: "在系统与网络断开连接时执行任务"
       onFullBattery:
-        description: "execute the task when the system is fully charged"
+        description: "在系统充满电时执行任务"
       onHighCpuUsage:
-        description: "execute the task when CPU usage is higher than 50%"
+        description: "在 CPU 使用率高于 50% 时执行任务"
       onHighInternetUsage:
-        description: "execute the task when internet usage is higher than 500Kb/s"
+        description: "在网络吞吐量高于 500Kb/s 时执行任务"
       onHighMemoryUsage:
-        description: "execute the task when memory usage is higher than 50%"
+        description: "在内存使用率高于 50% 时执行任务"
       onInternetUsage:
-        description: "execute the task when internet usage is higher than XKb/s"
+        description: "在网络吞吐量高于 …Kb/s 时执行任务"
       onLowBattery:
-        description: "execute the task when the system is low on battery (20%)"
+        description: "在系统电量低（20%）时执行任务"
       onMemoryUsage:
-        description: "execute the task when memory usage is higher than X%"
+        description: "在内存使用率高于 …% 时执行任务"
       onNetwork:
-        description: "execute the task when the system is connected to the network"
+        description: "在系统连接到网络时执行任务"
       onProcess:
-        description: "execute the task when a process starts"
+        description: "在某进程启动时执行任务"
   rm:
-    description: "Remove a task"
+    description: "移除任务"
     error:
-      cannotDelete: "Cannot delete task: %s"
-      noName: "No task name specified."
-      notFound: "Task not found."
+      cannotDelete: "无法删除任务：%s"
+      noName: "没有指定任务名称。"
+      notFound: "未找到任务。"
     info:
-      askConfirmation: "Are you sure you want to delete the task %s? [y/N]"
-      taskDeleted: "Task has been deleted successfully."
+      askConfirmation: "确定要删除任务 %s 吗？[y/N]"
+      taskDeleted: "已成功删除任务。"
     options:
       force:
-        description: "force the deletion of the task"
+        description: "强制删除任务"
       name:
-        description: "specify the task's name"
+        description: "指定任务名称"
   rotate:
-    description: "Rotate tasks"
+    description: "轮换任务"
     options:
       privateEvent:
-        description: "specify private event to rotate tasks for boot, shutdown, login,
-          logout"
+        description: "指定私有事件以轮换开机、关机、登录、注销的任务"
