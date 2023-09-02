@@ -54,6 +54,10 @@ func main() {
 	pico := cmd.NewPicoCommand()
 	root.AddCommand(pico...)
 
+	// waydroid
+	way := cmd.NewWayCommand()
+	root.AddCommand(way...)
+
 	// run the app
 	err := vso.Run()
 	if err != nil {

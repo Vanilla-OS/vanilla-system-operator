@@ -5,7 +5,7 @@ import (
 )
 
 func GetPico() (*core.SubSystem, error) {
-	subsystem, err := core.LoadSubSystem("vso-pico")
+	subsystem, err := core.LoadSubSystem("vso-pico", false)
 	if err != nil {
 		return nil, err
 	}
@@ -25,6 +25,8 @@ func PicoInit() error {
 		stack,
 		true,
 		true,
+		false,
+		false,
 	)
 
 	if err != nil {
