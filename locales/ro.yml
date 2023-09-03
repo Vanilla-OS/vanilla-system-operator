@@ -1,0 +1,210 @@
+vso:
+  description: "Operatorul de sistem Vanilla este un manager de pachete, un actualizator
+    de sistem și un automat de sarcini."
+  errors:
+    unknownCommand: "Comanda necunoscută: %s"
+    invalidInput: "Intrare nevalidă."
+    invalidChoice: "Alegere nevalidă."
+  info:
+    aborting: "Se anulează conform solicitării."
+  terminal:
+    yes: "da"
+    no: "nu"
+
+config:
+  description: "Gestionați configurația sistemului."
+  get:
+    description: "Obțineți configurația sistemului"
+    error:
+      noKey: "Nicio cheie specificată."
+      noValue: "Nu a fost găsită nicio valoare pentru cheia: %s"
+    options:
+      key:
+        description: "preluați valoarea configurației folosind cheia acestuia"
+  set:
+    description: "Setați configurația sistemului"
+    error:
+      noKey: "Nicio cheie specificată."
+      noValue: "Nu este specificată nicio valoare."
+    options:
+      key: "tasta configurației de setat"
+      value: "valoarea configurației de setat"
+    success: "Configurația a fost actualizată cu succes."
+  show:
+    description: "Afișați configurația sistemului"
+
+pico:
+  description: "Gestionați subsistemul Pico"
+  error:
+    notInitialized: "Subsistemul Pico nu este inițializat. Rulați `vso pico-init`
+      pentru a-l inițializa."
+    alreadyInitialized: "Subsistemul Pico este deja inițializat. Utilizați indicatorul
+      --force pentru a forța inițializarea."
+    noAppNameOrBin: "Trebuie specificat --app-name sau --bin."
+    sameAppOrBin: "--app-name și --bin nu pot fi ambele specificate."
+    exportingApp: "A apărut o eroare la exportul aplicației: %s"
+    exportingBin: "A apărut o eroare la exportul binarului: %s"
+    unexportingApp: "A apărut o eroare la dezexportarea aplicației: %s"
+    unexportingBin: "A apărut o eroare la dezexportarea binarului: %s"
+  errors:
+    unknownCommand: "Comanda necunoscută: %s"
+  info:
+    initialized: "Subsistemul Pico a fost inițializat."
+    exported: "Exportat %s\n"
+    unexported: "Exportat %s\n"
+    exportedApps: "Au exportat %d aplicații"
+    unexportedApps: "%d aplicații neexportate"
+  export:
+    description: "Export an application or binary from the subsystem"
+    options:
+      app:
+        description: "the name of the application to export"
+      bin:
+        description: "the name of the binary to export"
+      binOutput:
+        description: "path of the binary output (default: ~/.local/bin/)"
+  unexport:
+    description: "Unexport an application or binary from the subsystem"
+    options:
+      app:
+        description: "the name of the application to unexport"
+      bin:
+        description: "the name of the binary to unexport"
+      binOutput:
+        description: "path of the binary output (default: ~/.local/bin/)"
+  init:
+    description: "Initialize the Pico subsystem, used for package management"
+    options:
+      force:
+        description: "force the initialization if the subsystem is already initialized"
+  install:
+    description: "Install an application inside the subsystem"
+  remove:
+    description: "Remove an application from the subsystem"
+  run:
+    description: "Run an application from the subsystem"
+  search:
+    description: "Search for an application to install inside the subsystem"
+  shell:
+    description: "Enter the subsystem environment"
+  update:
+    description: "Update the subsystem's package repository"
+  upgrade:
+    description: "Upgrade the packages inside the subsystem"
+
+sysUpgrade:
+  description: "Upgrade the system"
+  check:
+    asExitCode: "Checks for upgrade but doesn't print anything. Return exit code 0
+      if no upgrade is available and 1 otherwise."
+    description: "Check for system updates"
+    error:
+      asExitCodeAndJson: "An error occured when checking for updates. See the JSON
+        output for more details."
+    info:
+      checking: "Checking for updates..."
+      noUpdates: "No updates available."
+      updatesAvailable: "Updates available."
+  sysUpgrade:
+    description: "Upgrade the system"
+    error:
+      updating: "An error occured when updating the system."
+    info:
+      updating: "Updating the system..."
+    now: "Trigger a system upgrade now"
+
+tasks:
+  description: "Create and manage tasks"
+  stacks:
+    new:
+      error:
+        emptyCommand: "The command cannot be empty."
+        emptyDescription: "The description cannot be empty."
+        emptyName: "The name cannot be empty."
+        noCommand: "No command specified."
+        noDescription: "No description specified."
+        noName: "No name specified."
+      info:
+        askCommand: "Command: "
+        askDescription: "Description: "
+        askName: "Name: "
+        taskCreated: "Task has been created successfully."
+  list:
+    description: "List all tasks"
+    noTasks: "No tasks found."
+    info:
+      foundTasks: "Found %d tasks."
+    options:
+      json:
+        description: "output the tasks in JSON format"
+  new:
+    description: "Create a new task"
+    options:
+      assumeYes:
+        description: "assume yes for all prompts"
+      at:
+        description: "schedule the task to execute at a specific time (hh:mm)"
+      command:
+        description: "specify the command to execute"
+      description:
+        description: "specify the task's description"
+      every:
+        description: "schedule the task to execute every X time (minutes, hours, days)"
+      name:
+        description: "specify the task's name"
+      needConfirm:
+        description: "ask for confirmation before executing the task"
+      onBattery:
+        description: "execute the task only when the system is on battery"
+      onCharge:
+        description: "execute the task only when the system is charging"
+      onConditionCommand:
+        description: "execute the task on condition command"
+      onCpuTemp:
+        description: "execute the task when CPU temperature is higher than 60°C"
+      onCpuUsage:
+        description: "execute the task when CPU usage is higher than X%"
+      onDeviceConnect:
+        description: "execute the task when a device is connected"
+      onDeviceDisconnect:
+        description: "execute the task when a device is disconnected"
+      onDisconnect:
+        description: "execute the task when the system is disconnected from the network"
+      onFullBattery:
+        description: "execute the task when the system is fully charged"
+      onHighCpuUsage:
+        description: "execute the task when CPU usage is higher than 50%"
+      onHighInternetUsage:
+        description: "execute the task when internet usage is higher than 500Kb/s"
+      onHighMemoryUsage:
+        description: "execute the task when memory usage is higher than 50%"
+      onInternetUsage:
+        description: "execute the task when internet usage is higher than XKb/s"
+      onLowBattery:
+        description: "execute the task when the system is low on battery (20%)"
+      onMemoryUsage:
+        description: "execute the task when memory usage is higher than X%"
+      onNetwork:
+        description: "execute the task when the system is connected to the network"
+      onProcess:
+        description: "execute the task when a process starts"
+  rm:
+    description: "Remove a task"
+    error:
+      cannotDelete: "Cannot delete task: %s"
+      noName: "No task name specified."
+      notFound: "Task not found."
+    info:
+      askConfirmation: "Are you sure you want to delete the task %s? [y/N]"
+      taskDeleted: "Task has been deleted successfully."
+    options:
+      force:
+        description: "force the deletion of the task"
+      name:
+        description: "specify the task's name"
+  rotate:
+    description: "Rotate tasks"
+    options:
+      privateEvent:
+        description: "specify private event to rotate tasks for boot, shutdown, login,
+          logout"

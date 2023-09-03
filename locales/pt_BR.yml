@@ -1,0 +1,213 @@
+vso:
+  description: "O Vanilla System Operator é um gerenciador de pacotes, um atualizador
+    do sistema e um automatizador de tarefas."
+  errors:
+    unknownCommand: "Comando desconhecido: %s"
+    invalidInput: "Entrada inválida."
+    invalidChoice: "Escolha inválida."
+  info:
+    aborting: "Abortando conforme solicitado."
+  terminal:
+    yes: "sim"
+    no: "não"
+
+config:
+  description: "Gerenciar a configuração do sistema."
+  get:
+    description: "Obter a configuração do sistema"
+    error:
+      noKey: "Nenhuma chave especificada."
+      noValue: "Nenhum valor encontrado para a chave: %s"
+    options:
+      key:
+        description: "recuperar valor de configuração usando sua chave"
+  set:
+    description: "Definir a configuração do sistema"
+    error:
+      noKey: "Nenhuma chave especificada."
+      noValue: "Nenhum valor especificado."
+    options:
+      key: "chave da configuração a ser definida"
+      value: "valor da configuração a ser definida"
+    success: "Configuração atualizada com sucesso."
+  show:
+    description: "Mostrar a configuração do sistema"
+
+pico:
+  description: "Gerenciar o subsistema Pico"
+  error:
+    notInitialized: "O subsistema Pico não foi inicializado. Por favor, execute 'vso
+      pico-init' para inicializá-lo."
+    alreadyInitialized: "O subsistema Pico já foi inicializado. Use o sinalizador
+      --force para forçar a inicialização."
+    noAppNameOrBin: "--app-name ou --bin devem ser especificados."
+    sameAppOrBin: "--app-name e --bin não podem ser especificados ao mesmo tempo."
+    exportingApp: "Ocorreu um erro ao exportar o aplicativo: %s"
+    exportingBin: "Ocorreu um erro ao exportar o binário: %s"
+    unexportingApp: "Ocorreu um erro ao cancelar a exportação do aplicativo: %s"
+    unexportingBin: "Ocorreu um erro ao cancelar a exportação do binário: %s"
+  errors:
+    unknownCommand: "Comando desconhecido: %s"
+  info:
+    initialized: "O subsistema Pico foi inicializado."
+    exported: "Exportado %s\n"
+    unexported: "Desfeita a exportação de %s\n"
+    exportedApps: "Exportados %d aplicativos"
+    unexportedApps: "Desfeita a exportação de %d aplicativos"
+  export:
+    description: "Exportar um aplicativo ou binário do subsistema"
+    options:
+      app:
+        description: "o nome do aplicativo a ser exportado"
+      bin:
+        description: "o nome do binário a ser exportado"
+      binOutput:
+        description: "caminho de saída do binário (padrão: ~/.local/bin/)"
+  unexport:
+    description: "Desfazer a exportação de um aplicativo ou binário do subsistema"
+    options:
+      app:
+        description: "o nome do aplicativo para desfazer a exportação"
+      bin:
+        description: "o nome do binário para desfazer a exportação"
+      binOutput:
+        description: "caminho de saída do binário (padrão: ~/.local/bin/)"
+  init:
+    description: "Inicializar o subsistema Pico, usado para gerenciamento de pacotes"
+    options:
+      force:
+        description: "forçar a inicialização se o subsistema já estiver inicializado"
+  install:
+    description: "Instalar um aplicativo dentro do subsistema"
+  remove:
+    description: "Remover um aplicativo do subsistema"
+  run:
+    description: "Executar um aplicativo a partir do subsistema"
+  search:
+    description: "Procurar um aplicativo para instalar dentro do subsistema"
+  shell:
+    description: "Entrar no ambiente do subsistema"
+  update:
+    description: "Atualizar o repositório de pacotes do subsistema"
+  upgrade:
+    description: "Atualizar os pacotes dentro do subsistema"
+
+sysUpgrade:
+  description: "Atualizar o sistema"
+  check:
+    asExitCode: "Verifica se há atualização, mas não imprime nada. Retorna o código
+      de saída 0 se nenhuma atualização estiver disponível e 1 caso contrário."
+    description: "Verificar se há atualizações do sistema"
+    error:
+      asExitCodeAndJson: "Ocorreu um erro ao verificar se há atualizações. Consulte
+        a saída JSON para obter mais detalhes."
+    info:
+      checking: "Verificando se há atualizações..."
+      noUpdates: "Não há atualizações disponíveis."
+      updatesAvailable: "Atualizações disponíveis."
+  sysUpgrade:
+    description: "Atualizar o sistema"
+    error:
+      updating: "Ocorreu um erro ao atualizar o sistema."
+    info:
+      updating: "Atualizando o sistema..."
+    now: "Acionar uma atualização do sistema agora"
+
+tasks:
+  description: "Criar e gerenciar tarefas"
+  stacks:
+    new:
+      error:
+        emptyCommand: "O comando não pode estar vazio."
+        emptyDescription: "A descrição não pode estar vazia."
+        emptyName: "O nome não pode estar vazio."
+        noCommand: "Nenhum comando especificado."
+        noDescription: "Nenhuma descrição especificada."
+        noName: "Nenhum nome especificado."
+      info:
+        askCommand: "Comando: "
+        askDescription: "Descrição: "
+        askName: "Nome: "
+        taskCreated: "A tarefa foi criada com sucesso."
+  list:
+    description: "Listar todas as tarefas"
+    noTasks: "Nenhuma tarefa encontrada."
+    info:
+      foundTasks: "Encontradas %d tarefas."
+    options:
+      json:
+        description: "saída das tarefas no formato JSON"
+  new:
+    description: "Criar uma nova tarefa"
+    options:
+      assumeYes:
+        description: "suponha que sim para todos os prompts"
+      at:
+        description: "agendar a execução da tarefa em um horário específico (hh:mm)"
+      command:
+        description: "especificar o comando a ser executado"
+      description:
+        description: "especificar a descrição da tarefa"
+      every:
+        description: "agendar a tarefa para ser executada a cada X tempo (minutos,
+          horas, dias)"
+      name:
+        description: "especificar o nome da tarefa"
+      needConfirm:
+        description: "peça confirmação antes de executar a tarefa"
+      onBattery:
+        description: "executar a tarefa somente quando o sistema estiver na bateria"
+      onCharge:
+        description: "executar a tarefa somente quando o sistema estiver carregando"
+      onConditionCommand:
+        description: "executar a tarefa dependendo da condição do comando"
+      onCpuTemp:
+        description: "executar a tarefa quando a temperatura da CPU for superior a
+          60°C"
+      onCpuUsage:
+        description: "executar a tarefa quando o uso da CPU for maior que X%"
+      onDeviceConnect:
+        description: "executar a tarefa quando um dispositivo for conectado"
+      onDeviceDisconnect:
+        description: "executar a tarefa quando um dispositivo for desconectado"
+      onDisconnect:
+        description: "executar a tarefa quando o sistema for desconectado da rede"
+      onFullBattery:
+        description: "executar a tarefa quando o sistema estiver totalmente carregado"
+      onHighCpuUsage:
+        description: "executar a tarefa quando o uso da CPU for superior a 50%"
+      onHighInternetUsage:
+        description: "executar a tarefa quando o uso da Internet for superior a 500Kb/s"
+      onHighMemoryUsage:
+        description: "executar a tarefa quando o uso de memória for superior a 50%"
+      onInternetUsage:
+        description: "executar a tarefa quando o uso da Internet for maior que XKb/s"
+      onLowBattery:
+        description: "executar a tarefa quando o sistema estiver com pouca bateria
+          (20%)"
+      onMemoryUsage:
+        description: "executar a tarefa quando o uso de memória for maior que X%"
+      onNetwork:
+        description: "executar a tarefa quando o sistema for conectado à rede"
+      onProcess:
+        description: "executar a tarefa quando um processo for iniciado"
+  rm:
+    description: "Remover uma tarefa"
+    error:
+      cannotDelete: "Não é possível excluir tarefa: %s"
+      noName: "Nenhum nome de tarefa especificado."
+      notFound: "Tarefa não encontrada."
+    info:
+      askConfirmation: "Tem certeza de que deseja excluir a tarefa %s? [y/N]"
+      taskDeleted: "A tarefa foi excluída com sucesso."
+    options:
+      force:
+        description: "forçar a exclusão da tarefa"
+      name:
+        description: "especificar o nome da tarefa"
+  rotate:
+    description: "Rotacionar tarefas"
+    options:
+      privateEvent:
+        description: "especificar evento privado para girar tarefas para inicialização,
+          desligamento, login, logout"

@@ -1,22 +1,22 @@
 vso:
-  description: "The Vanilla System Operator is a package manager, a system updater
-    and a task automator."
+  description: "De Vanilla System Operator is een pakketbeheerder, een systeemupdater
+    en een taakautomatiseerder."
   errors:
-    unknownCommand: "Unknown command: %s"
-    invalidInput: "Invalid input."
-    invalidChoice: "Invalid choice."
+    unknownCommand: "Onbekende opdracht: %s"
+    invalidInput: "Ongeldige invoer"
+    invalidChoice: "Ongeldige keuze"
   info:
-    aborting: "Aborting as requested."
+    aborting: "Afbreken zoals verzocht"
   terminal:
     yes: "ja"
     no: "nee"
 
 config:
-  description: "Manage the system configuration."
+  description: "Beheer de systeem­configuratie"
   get:
-    description: "Get the system configuration"
+    description: "Verkrijg de systeemconfiguratie"
     error:
-      noKey: "No key specified."
+      noKey: "Geen sleutel opgegeven"
       noValue: "No value found for key: %s"
     options:
       key:
@@ -24,13 +24,15 @@ config:
   set:
     description: "Set the system configuration"
     error:
-      noKey: "No key specified."
-      noValue: "No value specified."
+      noKey: "Geen sleutel opgegeven"
+      noValue: "Geen waarde opgegeven"
     options:
       key: "key of the configuration to set"
       value: "value of the configuration to set"
-    success: "Configuration updated successfully."
+    success: "Configuratie succesvol bijgewerkt"
 
+  show:
+    description: Show the system configuration
 pico:
   description: "Manage the Pico subsystem"
   error:
@@ -45,12 +47,12 @@ pico:
     unexportingApp: "An error occurred while unexporting the application: %s"
     unexportingBin: "An error occurred while unexporting the binary: %s"
   errors:
-    unknownCommand: "Unknown command: %s"
+    unknownCommand: "Onbekende opdracht: %s"
   info:
     initialized: "The Pico subsystem has been initialized."
-    exported: "Exported %s\n"
-    unexported: "Unexported %s\n"
-    exportedApps: "Exported %d applications"
+    exported: "%s geëxporteerd\n"
+    unexported: "%s geontexporteerd\n"
+    exportedApps: "%d apps geëxporteerd"
     unexportedApps: "Unexported %d applications"
   export:
     description: "Export an application or binary from the subsystem"
@@ -91,120 +93,130 @@ pico:
     description: "Upgrade the packages inside the subsystem"
 
 sys-upgrade:
-  description: "Upgrade the system"
-  check:
-    asExitCode: "Checks for upgrade but doesn't print anything. Return exit code 0
-      if no upgrade is available and 1 otherwise."
-    description: "Check for system updates"
-    error:
-      asExitCodeAndJson: "An error occured when checking for updates. See the JSON
-        output for more details."
-    info:
-      checking: "Checking for updates..."
-      noUpdates: "No updates available."
-      updatesAvailable: "Updates available."
-  sys-upgrade:
-    description: "Upgrade the system"
-    error:
-      updating: "An error occured when updating the system."
-    info:
-      updating: "Updating the system..."
-    now: "Trigger a system upgrade now"
-
+  check: {}
   tasks:
-    description: "Create and manage tasks"
     stacks:
-      new:
-        error:
-          emptyCommand: "The command cannot be empty."
-          emptyDescription: "The description cannot be empty."
-          emptyName: "The name cannot be empty."
-          noCommand: "No command specified."
-          noDescription: "No description specified."
-          noName: "No name specified."
-        info:
-          askCommand: "Opdracht: "
-          askDescription: "Description: "
-          askName: "Name: "
-          taskCreated: "Task has been created successfully."
+      new: {}
     list:
-      description: "List all tasks"
-      noTasks: "No tasks found."
-      info:
-        foundTasks: "Found %d tasks."
-      options:
-        json:
-          description: "output the tasks in JSON format"
+      options: {}
     new:
-      description: "Create a new task"
-      options:
-        assumeYes:
-          description: "assume yes for all prompts"
-        at:
-          description: "schedule the task to execute at a specific time (hh:mm)"
-        command:
-          description: "specify the command to execute"
-        description:
-          description: "specify the task's description"
-        every:
-          description: "schedule the task to execute every X time (minutes, hours,
-            days)"
-        name:
-          description: "specify the task's name"
-        needConfirm:
-          description: "ask for confirmation before executing the task"
-        onBattery:
-          description: "execute the task only when the system is on battery"
-        onCharge:
-          description: "execute the task only when the system is charging"
-        onConditionCommand:
-          description: "execute the task on condition command"
-        onCpuTemp:
-          description: "execute the task when CPU temperature is higher than 60°C"
-        onCpuUsage:
-          description: "execute the task when CPU usage is higher than X%"
-        onDeviceConnect:
-          description: "execute the task when a device is connected"
-        onDeviceDisconnect:
-          description: "execute the task when a device is disconnected"
-        onDisconnect:
-          description: "execute the task when the system is disconnected from the
-            network"
-        onFullBattery:
-          description: "execute the task when the system is fully charged"
-        onHighCpuUsage:
-          description: "execute the task when CPU usage is higher than 50%"
-        onHighInternetUsage:
-          description: "execute the task when internet usage is higher than 500Kb/s"
-        onHighMemoryUsage:
-          description: "execute the task when memory usage is higher than 50%"
-        onInternetUsage:
-          description: "execute the task when internet usage is higher than XKb/s"
-        onLowBattery:
-          description: "execute the task when the system is low on battery (20%)"
-        onMemoryUsage:
-          description: "execute the task when memory usage is higher than X%"
-        onNetwork:
-          description: "execute the task when the system is connected to the network"
-        onProcess:
-          description: "execute the task when a process starts"
+      options: {}
     rm:
-      description: "Remove a task"
-      error:
-        cannotDelete: "Cannot delete task: %s"
-        noName: "No task name specified."
-        notFound: "Task not found."
-      info:
-        askConfirmation: "Are you sure you want to delete the task %s? [y/N]"
-        taskDeleted: "Task has been deleted successfully."
-      options:
-        force:
-          description: "force the deletion of the task"
-        name:
-          description: "specify the task's name"
+      options: {}
     rotate:
-      description: "Rotate tasks"
-      options:
-        privateEvent:
-          description: "specify private event to rotate tasks for boot, shutdown,
-            login, logout"
+      options: {}
+tasks:
+  new:
+    options:
+      at:
+        description: schedule the task to execute at a specific time (hh:mm)
+      command:
+        description: specify the command to execute
+      onProcess:
+        description: execute the task when a process starts
+      assumeYes:
+        description: assume yes for all prompts
+      description:
+        description: specify the task's description
+      every:
+        description: schedule the task to execute every X time (minutes, hours, days)
+      name:
+        description: specify the task's name
+      needConfirm:
+        description: ask for confirmation before executing the task
+      onBattery:
+        description: execute the task only when the system is on battery
+      onCharge:
+        description: execute the task only when the system is charging
+      onConditionCommand:
+        description: execute the task on condition command
+      onCpuTemp:
+        description: execute the task when CPU temperature is higher than 60°C
+      onCpuUsage:
+        description: execute the task when CPU usage is higher than X%
+      onDeviceConnect:
+        description: execute the task when a device is connected
+      onDeviceDisconnect:
+        description: execute the task when a device is disconnected
+      onDisconnect:
+        description: execute the task when the system is disconnected from the network
+      onFullBattery:
+        description: execute the task when the system is fully charged
+      onHighCpuUsage:
+        description: execute the task when CPU usage is higher than 50%
+      onHighInternetUsage:
+        description: execute the task when internet usage is higher than 500Kb/s
+      onHighMemoryUsage:
+        description: execute the task when memory usage is higher than 50%
+      onInternetUsage:
+        description: execute the task when internet usage is higher than XKb/s
+      onLowBattery:
+        description: execute the task when the system is low on battery (20%)
+      onMemoryUsage:
+        description: execute the task when memory usage is higher than X%
+      onNetwork:
+        description: execute the task when the system is connected to the network
+    description: Create a new task
+  rm:
+    description: Remove a task
+    error:
+      cannotDelete: 'Cannot delete task: %s'
+      noName: No task name specified.
+      notFound: Task not found.
+    info:
+      askConfirmation: Are you sure you want to delete the task %s? [y/N]
+      taskDeleted: Task has been deleted successfully.
+    options:
+      force:
+        description: force the deletion of the task
+      name:
+        description: specify the task's name
+  description: Create and manage tasks
+  stacks:
+    new:
+      error:
+        emptyCommand: The command cannot be empty.
+        emptyDescription: The description cannot be empty.
+        emptyName: The name cannot be empty.
+        noCommand: No command specified.
+        noDescription: No description specified.
+        noName: No name specified.
+      info:
+        askCommand: 'Opdracht: '
+        askDescription: 'Omschrijving: '
+        askName: 'Naam: '
+        taskCreated: Task has been created successfully.
+  list:
+    description: List all tasks
+    noTasks: No tasks found.
+    info:
+      foundTasks: Found %d tasks.
+    options:
+      json:
+        description: output the tasks in JSON format
+  rotate:
+    description: Taken roteren
+    options:
+      privateEvent:
+        description: specify private event to rotate tasks for boot, shutdown, login,
+          logout
+sysUpgrade:
+  description: Upgrade the system
+  check:
+    asExitCode: Checks for upgrade but doesn't print anything. Return exit code 0
+      if no upgrade is available and 1 otherwise.
+    description: Check for system updates
+    error:
+      asExitCodeAndJson: An error occured when checking for updates. See the JSON
+        output for more details.
+    info:
+      checking: Checking for updates...
+      noUpdates: No updates available.
+      updatesAvailable: Updates beschikbaar
+  sysUpgrade:
+    description: Upgrade the system
+    error:
+      updating: An error occured when updating the system.
+    info:
+      updating: Updating the system...
+    now: Trigger a system upgrade now

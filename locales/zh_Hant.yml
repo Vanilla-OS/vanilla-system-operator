@@ -1,0 +1,204 @@
+vso:
+  description: "Vanilla 系統操作程式是軟體包管理器、系統更新器及工作自動化程式。"
+  errors:
+    unknownCommand: "未知的命令：%s"
+    invalidInput: "輸入無效。"
+    invalidChoice: "選項無效。"
+  info:
+    aborting: "應使用者要求中止操作。"
+  terminal:
+    yes: "是"
+    no: "否"
+
+config:
+  description: "管理系統組態。"
+  get:
+    description: "取得系統組態"
+    error:
+      noKey: "沒有指定鍵。"
+      noValue: "無法為鍵找到對應值：%s"
+    options:
+      key:
+        description: "按鍵名取得組態值"
+  set:
+    description: "設定系統組態"
+    error:
+      noKey: "沒有指定鍵。"
+      noValue: "沒有指定值。"
+    options:
+      key: "要設定的組態的鍵"
+      value: "要設定的組態的值"
+    success: "已成功更新組態。"
+  show:
+    description: "顯示系統組態"
+
+pico:
+  description: "管理 Pico 子系統"
+  error:
+    notInitialized: "Pico 子系統尚未初始化。請執行 `vso pico-init` 以初始化子系統。"
+    alreadyInitialized: "Pico 子系統已經初始化。請使用 --force 以強制初始化。"
+    noAppNameOrBin: "必須指定 --app-name 或是 --bin。"
+    sameAppOrBin: "不能同時指定 --app-name 及 --bin。"
+    exportingApp: "匯出應用程式時發生錯誤：%s"
+    exportingBin: "匯出二進位檔案時發生錯誤：%s"
+    unexportingApp: "移除匯出的應用程式時發生錯誤：%s"
+    unexportingBin: "移除匯出的二進位檔案時發生錯誤：%s"
+  errors:
+    unknownCommand: "未知的命令：%s"
+  info:
+    initialized: "Pico 子系統已經初始化。"
+    exported: "已匯出 %s\n"
+    unexported: "已移除匯出 %s\n"
+    exportedApps: "已匯出 %d 個應用程式"
+    unexportedApps: "已移除匯出的 %d 個應用程式"
+  export:
+    description: "從子系統匯出應用程式或是二進位檔案"
+    options:
+      app:
+        description: "要匯出的應用程式的名稱"
+      bin:
+        description: "要匯出的二進位檔案的名稱"
+      binOutput:
+        description: "二進位輸出的路徑（預設：~/.local/bin/）"
+  unexport:
+    description: "從子系統移除匯出的應用程式或是二進位檔案"
+    options:
+      app:
+        description: "要移除匯出的應用程式的名稱"
+      bin:
+        description: "要移除匯出的二進位檔案的名稱"
+      binOutput:
+        description: "二進位輸出的路徑（預設：~/.local/bin/）"
+  init:
+    description: "初始化 Pico 子系統，用於軟體包的管理"
+    options:
+      force:
+        description: "強制初始化，即便子系統已經初始化"
+  install:
+    description: "在子系統內安裝應用程式"
+  remove:
+    description: "從子系統中移除應用程式"
+  run:
+    description: "執行來自子系統的應用程式"
+  search:
+    description: "搜尋要在子系統內安裝的應用程式"
+  shell:
+    description: "進入子系統環境"
+  update:
+    description: "更新子系統的軟體庫"
+  upgrade:
+    description: "更新子系統內的軟體包"
+
+sysUpgrade:
+  description: "更新系統"
+  check:
+    asExitCode: "檢查更新但關閉輸出。沒有更新可用時退出碼為 0，否則為 1。"
+    description: "檢查系統更新"
+    error:
+      asExitCodeAndJson: "檢查更新時出現錯誤。查看 JSON 輸出以取得詳細資訊。"
+    info:
+      checking: "正在檢查更新…"
+      noUpdates: "沒有更新可用。"
+      updatesAvailable: "更新可用。"
+  sysUpgrade:
+    description: "更新系統"
+    error:
+      updating: "更新系統時發生錯誤。"
+    info:
+      updating: "正在更新系統…"
+    now: "立即執行系統更新"
+
+tasks:
+  description: "建立和管理工作"
+  stacks:
+    new:
+      error:
+        emptyCommand: "命令不能為空。"
+        emptyDescription: "描述不能為空。"
+        emptyName: "名稱不能為空。"
+        noCommand: "沒有指定命令。"
+        noDescription: "沒有指定描述。"
+        noName: "沒有指定名稱。"
+      info:
+        askCommand: "命令： "
+        askDescription: "描述： "
+        askName: "名稱： "
+        taskCreated: "已成功建立工作。"
+  list:
+    description: "列出所有工作"
+    noTasks: "沒有找到工作。"
+    info:
+      foundTasks: "找到 %d 個工作。"
+    options:
+      json:
+        description: "以 JSON 格式輸出工作"
+  new:
+    description: "建立新工作"
+    options:
+      assumeYes:
+        description: "為所有操作指定「是」"
+      at:
+        description: "排定工作於特定時間執行（hh:mm）"
+      command:
+        description: "指定要執行的命令"
+      description:
+        description: "指定工作描述"
+      every:
+        description: "排定工作於每……時執行（分、小時、天）"
+      name:
+        description: "指定工作名稱"
+      needConfirm:
+        description: "執行工作時要求確認"
+      onBattery:
+        description: "僅當系統使用電池時執行工作"
+      onCharge:
+        description: "僅當系統正在充電時執行工作"
+      onConditionCommand:
+        description: "按條件命令執行工作"
+      onCpuTemp:
+        description: "在 CPU 溫度高於 60°C 時執行工作"
+      onCpuUsage:
+        description: "在 CPU 使用率高於 …% 時執行工作"
+      onDeviceConnect:
+        description: "在某裝置連接時執行工作"
+      onDeviceDisconnect:
+        description: "在某裝置中斷連接時執行工作"
+      onDisconnect:
+        description: "在系統與網路中斷連線時執行工作"
+      onFullBattery:
+        description: "在系統充滿電時執行工作"
+      onHighCpuUsage:
+        description: "在 CPU 使用率高於 50% 時執行工作"
+      onHighInternetUsage:
+        description: "在網路使用量高於 500Kb/s 時執行工作"
+      onHighMemoryUsage:
+        description: "在記憶體使用率高於 50% 時執行工作"
+      onInternetUsage:
+        description: "在網路使用量高於 …Kb/s 時執行工作"
+      onLowBattery:
+        description: "在系統電量低（20%）時執行工作"
+      onMemoryUsage:
+        description: "在記憶體使用量高於 …% 時執行工作"
+      onNetwork:
+        description: "在系統連線到網路時執行工作"
+      onProcess:
+        description: "在某行程開始時執行工作"
+  rm:
+    description: "移除工作"
+    error:
+      cannotDelete: "無法刪除工作：%s"
+      noName: "沒有指定工作名稱。"
+      notFound: "未找到工作。"
+    info:
+      askConfirmation: "是否確實要刪除工作 %s？[y/N]"
+      taskDeleted: "已成功刪除工作。"
+    options:
+      force:
+        description: "強制刪除工作"
+      name:
+        description: "指定工作名稱"
+  rotate:
+    description: "輪值工作"
+    options:
+      privateEvent:
+        description: "指定私有事件以輪值開機、關機、登入、登出的工作"

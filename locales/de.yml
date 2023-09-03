@@ -1,0 +1,229 @@
+vso:
+  description: "Der Vanilla System Operator ist ein Paketmanager, kann das System
+    aktualisieren und Aufgaben automatisieren."
+  errors:
+    unknownCommand: "Unbekannter Befehl: %s"
+    invalidInput: "Ungültige Eingabe."
+    invalidChoice: "Ungültige Auswahl."
+  info:
+    aborting: "Wie gefordert abgebrochen."
+  terminal:
+    yes: "Ja"
+    no: "Nein"
+
+config:
+  description: "Systemkonfiguration verwalten."
+  get:
+    description: "Systemkonfiguration betrachten"
+    error:
+      noKey: "Kein Schlüssel angegeben."
+      noValue: "Kein Wert gefunden für Schlüssel: %s"
+    options:
+      key:
+        description: "Konfigurationswert mithilfe seines Schlüssels abrufen"
+  set:
+    description: "Systemkonfiguration festlegen"
+    error:
+      noKey: "Kein Schlüssel angegeben."
+      noValue: "Kein Wert festgelegt."
+    options:
+      key: "Key der festzulegenden Konfiguration"
+      value: "Wert der festzulegenden Konfiguration"
+    success: "Konfiguration erfolgreich aktualisiert."
+  show:
+    description: "Systemkonfiguration anzeigen"
+
+pico:
+  description: "Pico-Subsystem verwalten"
+  error:
+    notInitialized: "Das Pico-Subsystem ist nicht initialisiert. Bitte führe `vso
+      pico-init`aus, um es zu initialisieren."
+    alreadyInitialized: "Das Pico-Subsystem ist bereits initialisiert. Nutze die --force
+      Flag um die Initialisierung zu erzwingen."
+    noAppNameOrBin: "--app-name oder --bin muss spezifiziert sein."
+    sameAppOrBin: "--app-name und --bin können nicht beide spezifiziert sein."
+    exportingApp: "Beim Exportieren der Anwendung ist ein Fehler aufgetreten: %s"
+    exportingBin: "Beim Exportieren der Binärdatei ist ein Fehler aufgetreten: %s"
+    unexportingApp: "Beim Deexportieren der Anwendung ist ein Fehler aufgetreten:
+      %s"
+    unexportingBin: "Beim Deexportieren der Binärdatei ist ein Fehler aufgetreten:
+      %s"
+  errors:
+    unknownCommand: "Unbekannter Befehl: %s"
+  info:
+    initialized: "Das Pico-Subsystem wurde initialisiert."
+    exported: "%s exportiert\n"
+    unexported: "%s deexportiert\n"
+    exportedApps: "%d Anwendungen exportiert"
+    unexportedApps: "%d Anwendungen deexportiert"
+  export:
+    description: "Eine Anwendung oder eine Binärdatei aus dem Subsystem exportieren"
+    options:
+      app:
+        description: "der Name der zu exportierenden Anwendung"
+      bin:
+        description: "der Name der zu exportierenden Binärdatei"
+      binOutput:
+        description: "Pfad der Binärausgabe (Standard: ~/.local/bin/)"
+  unexport:
+    description: "Unexport an application or binary from the subsystem"
+    options:
+      app:
+        description: "der Name der zu deexportierenden Anwendung"
+      bin:
+        description: "der Name der zu deexportierenden Binärdatei"
+      binOutput:
+        description: "Pfad der Binärausgabe (Standard: ~/.local/bin/)"
+  init:
+    description: "Initialize the Pico subsystem, used for package management"
+    options:
+      force:
+        description: "Initialisierung erzwingen, wenn das Subsystem bereits initialisiert
+          ist"
+  install:
+    description: "Eine Anwendung innerhalb des Subsystems installieren"
+  remove:
+    description: "Eine Anwendung aus dem Subsystem entfernen"
+  run:
+    description: "Eine Anwendung vom Subsystem aus starten"
+  search:
+    description: "Nach einer Anwendung suchen, die innerhalb des Subsystems installiert
+      werden soll"
+  shell:
+    description: "Geben Sie die Subsystemumgebung ein"
+  update:
+    description: "Update the subsystem's package repository"
+  upgrade:
+    description: "Die Pakete innerhalb des Subsystems aktualisieren"
+
+sysUpgrade:
+  description: "Das System aktualisieren"
+  check:
+    asExitCode: "Prüft, ob eine Aktualisierung verfügbar ist, gibt aber nichts aus.
+      Gibt den Beendigungscode 0 zurück, wenn keine Aktualisierung verfügbar ist,
+      ansonsten 1."
+    description: "Auf Systemaktualisierungen prüfen"
+    error:
+      asExitCodeAndJson: "Bei der Prüfung auf Aktualisierungen ist ein Fehler aufgetreten.
+        Siehe die JSON-Ausgabe für weitere Details."
+    info:
+      checking: "Auf Aktualisierungen wird geprüft..."
+      noUpdates: "Keine Aktualisierungen verfügbar."
+      updatesAvailable: "Aktualisierungen verfügbar."
+  sysUpgrade:
+    description: "Das System aktualisieren"
+    error:
+      updating: "Beim Aktualisieren des Systems ist ein Fehler aufgetreten."
+    info:
+      updating: "Das System wird aktualisiert..."
+    now: "Jetzt eine Systemaktualisierung auslösen"
+
+tasks:
+  description: "Aufgaben erstellen und verwalten"
+  stacks:
+    new:
+      error:
+        emptyCommand: "Der Befehl darf nicht leer sein."
+        emptyDescription: "Die Beschreibung darf nicht leer sein."
+        emptyName: "Der Name darf nicht leer sein."
+        noCommand: "Kein Befehl angegeben."
+        noDescription: "Keine Beschreibung angegeben."
+        noName: "Kein Name angegeben."
+      info:
+        askCommand: "Befehl: "
+        askDescription: "Beschreibung: "
+        askName: "Name: "
+        taskCreated: "Aufgabe wurde erfolgreich erstellt."
+  list:
+    description: "Alle Aufgaben auflisten"
+    noTasks: "Keine Aufgaben gefunden."
+    info:
+      foundTasks: "%d Aufgaben gefunden."
+    options:
+      json:
+        description: "die Aufgaben im JSON-Format ausgeben"
+  new:
+    description: "Eine neue Aufgabe erstellen"
+    options:
+      assumeYes:
+        description: "alle Fragen mit Ja beantworten"
+      at:
+        description: "die Ausführung der Aufgabe zu einem bestimmten Zeitpunkt (hh:mm)
+          planen"
+      command:
+        description: "geben Sie den auszuführenden Befehl an"
+      description:
+        description: "geben Sie die Beschreibung der Aufgabe an"
+      every:
+        description: "die Aufgabe so planen, dass sie alle X Zeiten (Minuten, Stunden,
+          Tage) ausgeführt wird"
+      name:
+        description: "geben Sie den Namen der Aufgabe an"
+      needConfirm:
+        description: "vor der Ausführung der Aufgabe um eine Bestätigung fragen"
+      onBattery:
+        description: "die Aufgabe nur ausführen, wenn das System im Akkubetrieb läuft"
+      onCharge:
+        description: "die Aufgabe nur ausführen, wenn das System aufgeladen wird"
+      onConditionCommand:
+        description: "execute the task on condition command"
+      onCpuTemp:
+        description: "die Aufgabe ausführen, wenn die CPU-Temperatur höher als 60 °C
+          ist"
+      onCpuUsage:
+        description: "die Aufgabe ausführen, wenn die CPU-Auslastung höher als X %
+          ist"
+      onDeviceConnect:
+        description: "die Aufgabe ausführen, wenn ein Gerät angeschlossen ist"
+      onDeviceDisconnect:
+        description: "die Aufgabe ausführen, wenn ein Gerät nicht angeschlossen ist"
+      onDisconnect:
+        description: "die Aufgabe ausführen, wenn das System nicht mit dem Netzwerk
+          verbunden ist"
+      onFullBattery:
+        description: "die Aufgabe ausführen, wenn das System vollständig aufgeladen
+          ist"
+      onHighCpuUsage:
+        description: "die Aufgabe ausführen, wenn die CPU-Auslastung höher als 50
+          % ist"
+      onHighInternetUsage:
+        description: "die Aufgabe ausführen, wenn die Internetnutzung höher als 500
+          Kb/s ist"
+      onHighMemoryUsage:
+        description: "die Aufgabe ausführen, wenn der Speicherverbrauch höher als
+          50 % ist"
+      onInternetUsage:
+        description: "die Aufgabe ausführen, wenn die Internetnutzung höher als X
+          Kb/s ist"
+      onLowBattery:
+        description: "die Aufgabe ausführen, wenn der Akku des Systems schwach ist
+          (20 %)"
+      onMemoryUsage:
+        description: "die Aufgabe ausführen, wenn der Speicherverbrauch höher als
+          X % ist"
+      onNetwork:
+        description: "die Aufgabe ausführen, wenn das System mit dem Netzwerk verbunden
+          ist"
+      onProcess:
+        description: "die Aufgabe ausführen, wenn ein Prozess startet"
+  rm:
+    description: "Eine Aufgabe entfernen"
+    error:
+      cannotDelete: "Aufgabe kann nicht gelöscht werden: %s"
+      noName: "Kein Aufgabenname angegeben."
+      notFound: "Aufgabe nicht gefunden."
+    info:
+      askConfirmation: "Sind Sie sicher, dass Sie die Aufgabe %s löschen möchten?
+        [j/N]"
+      taskDeleted: "Aufgabe wurde erfolgreich gelöscht."
+    options:
+      force:
+        description: "Löschung der Aufgabe erzwingen"
+      name:
+        description: "geben Sie den Namen der Aufgabe an"
+  rotate:
+    description: "Aufgaben rotieren"
+    options:
+      privateEvent:
+        description: "geben Sie ein privates Ereignis an, um die Aufgaben für das
+          Hochfahren, Herunterfahren, Anmelden und Abmelden zu rotieren"
