@@ -95,7 +95,7 @@ pico:
 sysUpgrade:
   description: "Atualizar o sistema"
   check:
-    asExitCode: "Verifica se há atualização, mas não imprime nada. Retorna o código
+    asExitCode: "verifica se há atualização, mas não imprime nada. Retorna o código
       de saída 0 se nenhuma atualização estiver disponível e 1 caso contrário."
     description: "Verificar se há atualizações do sistema"
     error:
@@ -106,7 +106,7 @@ sysUpgrade:
       noUpdates: "Não há atualizações disponíveis."
       updatesAvailable: "Atualizações disponíveis."
     json:
-      description: output the result in JSON format
+      description: saída do resultado no formato JSON
   sysUpgrade:
     description: "Atualizar o sistema"
     error:
