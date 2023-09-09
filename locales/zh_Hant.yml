@@ -101,7 +101,7 @@ sysUpgrade:
       noUpdates: "沒有更新可用。"
       updatesAvailable: "更新可用。"
     json:
-      description: output the result in JSON format
+      description: 輸出結果為 JSON 格式
   sysUpgrade:
     description: "更新系統"
     error:
