@@ -1,212 +1,213 @@
 vso:
-  description: "The Vanilla System Operator is a package manager, a system updater
-    and a task automator."
+  description: "Vanilla-systemoperatören är en pakethanterare, en systemuppdaterare
+    och en uppgiftsautomatiserare."
   errors:
-    unknownCommand: "Unknown command: %s"
-    invalidInput: "Invalid input."
-    invalidChoice: "Invalid choice."
+    unknownCommand: "Okänt kommando: %s"
+    invalidInput: "Ogiltig inmatning."
+    invalidChoice: "Ogiltigt val."
   info:
-    aborting: "Aborting as requested."
+    aborting: "Avbryter som begärt."
   terminal:
-    yes: "yes"
-    no: "no"
+    yes: "ja"
+    no: "nej"
 
 config:
-  description: "Manage the system configuration."
+  description: "Hantera systemkonfigurationen."
   get:
-    description: "Get the system configuration"
+    description: "Hämta systemkonfigurationen"
     error:
-      noKey: "No key specified."
-      noValue: "No value found for key: %s"
+      noKey: "Ingen nyckel specificerad."
+      noValue: "Inget värde hittades för nyckel: %s"
     options:
       key:
-        description: "retrieve configuration value by using its key"
+        description: "hämta konfigurationsvärde genom att använda dess nyckel"
   set:
-    description: "Set the system configuration"
+    description: "Ställ in systemkonfiguration"
     error:
-      noKey: "No key specified."
-      noValue: "No value specified."
+      noKey: "Ingen nyckel specifiecerad."
+      noValue: "Inget värde specificerat."
     options:
-      key: "key of the configuration to set"
-      value: "value of the configuration to set"
-    success: "Configuration updated successfully."
+      key: "nyckeln för den konfiguration som ska ställas in"
+      value: "värdet för den konfiguration som ska ställas in"
+    success: "Konfigurationen uppdaterades framgångsrikt."
   show:
-    description: "Show the system configuration"
+    description: "Visa systemkonfiguration"
 
 pico:
-  description: "Manage the Pico subsystem"
+  description: "Hantera Pico undersystem"
   error:
-    notInitialized: "The Pico subsystem is not initialized. Please run `vso pico-init`
-      to initialize it."
-    alreadyInitialized: "The Pico subsystem is already initialized. Use the --force
-      flag to force the initialization."
-    noAppNameOrBin: "--app-name or --bin must be specified."
-    sameAppOrBin: "--app-name and --bin cannot be both specified."
-    exportingApp: "An error occurred while exporting the application: %s"
-    exportingBin: "An error occurred while exporting the binary: %s"
-    unexportingApp: "An error occurred while unexporting the application: %s"
-    unexportingBin: "An error occurred while unexporting the binary: %s"
+    notInitialized: "Pico-undersystemet är inte initierat. Kör `vso pico-init` för
+      att initiera det."
+    alreadyInitialized: "Pico-undersystemet är redan initierat. Använd flaggan --force
+      för att tvinga fram initieringen."
+    noAppNameOrBin: "--app-name eller --bin måste anges."
+    sameAppOrBin: "--app-name och --bin kan inte båda specificeras."
+    exportingApp: "Ett fel uppstod vid export av program: %s"
+    exportingBin: "Ett fel inträffade vid export av binär: %s"
+    unexportingApp: "Ett fel uppstod när programmet skulle avexporteras: %s"
+    unexportingBin: "Ett fel uppstod när binären: %s skulle avexporteras"
   errors:
-    unknownCommand: "Unknown command: %s"
+    unknownCommand: "Okänt kommando: %s"
   info:
-    initialized: "The Pico subsystem has been initialized."
-    exported: "Exported %s\n"
-    unexported: "Unexported %s\n"
-    exportedApps: "Exported %d applications"
-    unexportedApps: "Unexported %d applications"
+    initialized: "Pico-undersystemet har initierats."
+    exported: "Exporterad %s\n"
+    unexported: "Oexporterad %s\n"
+    exportedApps: "Exporterade %d program"
+    unexportedApps: "Oexporterade %d program"
   export:
-    description: "Export an application or binary from the subsystem"
+    description: "Exporterade ett program eller binär från undersystemet"
     options:
       app:
-        description: "the name of the application to export"
+        description: "Namnet på programmet du vill exportera"
       bin:
-        description: "the name of the binary to export"
+        description: "Namnet på binären du vill exportera"
       binOutput:
-        description: "path of the binary output (default: ~/.local/bin/)"
+        description: "sökväg för den binära utdatan (standard: ~/.local/bin/)"
   unexport:
-    description: "Unexport an application or binary from the subsystem"
+    description: "Avexportera ett program eller binär från undersystemet"
     options:
       app:
-        description: "the name of the application to unexport"
+        description: "namnet på programmet som ska avexporteras"
       bin:
-        description: "the name of the binary to unexport"
+        description: "namnet på den binär som ska avexporteras"
       binOutput:
-        description: "path of the binary output (default: ~/.local/bin/)"
+        description: "sökväg för den binära utdatan (standard: ~/.local/bin/)"
   init:
-    description: "Initialize the Pico subsystem, used for package management"
+    description: "Initiera Pico-undersystemet, som används för pakethantering"
     options:
       force:
-        description: "force the initialization if the subsystem is already initialized"
+        description: "tvinga fram initieringen om undersystemet redan är initierat"
   install:
-    description: "Install an application inside the subsystem"
+    description: "Installera ett program inuti undersystemet"
   remove:
-    description: "Remove an application from the subsystem"
+    description: "Ta bort ett program från undersystemet"
   run:
-    description: "Run an application from the subsystem"
+    description: "Kör ett program från delsystem"
   search:
-    description: "Search for an application to install inside the subsystem"
+    description: "Sök efter ett program att installera inuti delsystemet"
   shell:
-    description: "Enter the subsystem environment"
+    description: "Gå in i undersystemetsmiljö"
   update:
-    description: "Update the subsystem's package repository"
+    description: "Uppdatera undersystemets paketarkiv"
   upgrade:
-    description: "Upgrade the packages inside the subsystem"
+    description: "Uppdatera paketen inuti undersystemet"
 
 sysUpgrade:
-  description: "Upgrade the system"
+  description: "Uppgradera systemet"
   check:
-    asExitCode: "checks for upgrade but doesn't print anything. Return exit code 0
-      if no upgrade is available and 1 otherwise."
-    description: "Check for system updates"
+    asExitCode: "söker efter uppgraderingar men skriver inte ut något. Returnerar
+      utgångskod 0 om ingen uppgradering är tillgänglig och 1 annars."
+    description: "Sök efter systemuppdateringar"
     error:
-      asExitCodeAndJson: "An error occured when checking for updates. See the JSON
-        output for more details."
+      asExitCodeAndJson: "Ett fel uppstod vid sökning efter uppdateringar. Se JSON-utdata
+        för mer information."
     info:
-      checking: "Checking for updates..."
-      noUpdates: "No updates available."
-      updatesAvailable: "Updates available."
+      checking: "Kollar efter uppdateringar..."
+      noUpdates: "Inga uppdateringar tillgängliga."
+      updatesAvailable: "Uppdateringar tillgängliga."
     json:
-      description: "output the result in JSON format"
+      description: "Utdata av resultatet i JSON-format"
   sysUpgrade:
-    description: "Upgrade the system"
+    description: "Uppgradera systemet"
     error:
-      updating: "An error occured when updating the system."
+      updating: "Ett fel uppstod vid uppdatering av systemet."
     info:
-      updating: "Updating the system..."
-    now: "Trigger a system upgrade now"
+      updating: "Uppdaterar systemet..."
+    now: "Utlös en systemuppgradering nu"
 
 tasks:
-  description: "Create and manage tasks"
+  description: "Skapa och hantera uppgifter"
   stacks:
     new:
       error:
-        emptyCommand: "The command cannot be empty."
-        emptyDescription: "The description cannot be empty."
-        emptyName: "The name cannot be empty."
-        noCommand: "No command specified."
-        noDescription: "No description specified."
-        noName: "No name specified."
+        emptyCommand: "Kommandot kan inte vara tomt."
+        emptyDescription: "Beskrivningen kan inte vara tom."
+        emptyName: "Namnet kan inte vara tomt."
+        noCommand: "Inget kommando specificerat."
+        noDescription: "Ingen beskrivning specificerad."
+        noName: "Inget namn specificerat."
       info:
-        askCommand: "Command: "
-        askDescription: "Description: "
-        askName: "Name: "
-        taskCreated: "Task has been created successfully."
+        askCommand: "Kommando: "
+        askDescription: "Beskrivning: "
+        askName: "Namn: "
+        taskCreated: "Uppgift har skapats framgångsrikt."
   list:
-    description: "List all tasks"
-    noTasks: "No tasks found."
+    description: "Lista alla uppgifter"
+    noTasks: "Inga uppgifter hittades."
     info:
-      foundTasks: "Found %d tasks."
+      foundTasks: "Hittade %d uppgifter."
     options:
       json:
-        description: "output the tasks in JSON format"
+        description: "utdata uppgifterna i JSON-format"
   new:
-    description: "Create a new task"
+    description: "Skapa en ny uppgift"
     options:
       assumeYes:
-        description: "assume yes for all prompts"
+        description: "anta ja för alla inmatningar"
       at:
-        description: "schedule the task to execute at a specific time (hh:mm)"
+        description: "schemalägg uppgift att utföras vid en specifik tidpunkt (tt:mm)"
       command:
-        description: "specify the command to execute"
+        description: "specificera kommando som ska exekveras"
       description:
-        description: "specify the task's description"
+        description: "specificera uppgiftens beskrivning"
       every:
-        description: "schedule the task to execute every X time (minutes, hours, days)"
+        description: "schemalägg uppgiften att utföras varje X gång (minuter, timmar,
+          dagar)"
       name:
-        description: "specify the task's name"
+        description: "specificera uppgiftens namn"
       needConfirm:
-        description: "ask for confirmation before executing the task"
+        description: "be om bekräftelse innan uppgiften exekveras"
       onBattery:
-        description: "execute the task only when the system is on battery"
+        description: "Installera ett program inuti undersystemet"
       onCharge:
-        description: "execute the task only when the system is charging"
+        description: "utför den här uppgiften endast när systemet är på batteri"
       onConditionCommand:
-        description: "execute the task on condition command"
+        description: "exekvera uppgiften på villkorskommando"
       onCpuTemp:
-        description: "execute the task when CPU temperature is higher than 60°C"
+        description: "utför uppgiften när CPU-temperaturen är högre än 60°C"
       onCpuUsage:
-        description: "execute the task when CPU usage is higher than X%"
+        description: "utför uppgiften när CPU-användningen är högre än X%"
       onDeviceConnect:
-        description: "execute the task when a device is connected"
+        description: "utför uppgiften när en enhet är ansluten"
       onDeviceDisconnect:
-        description: "execute the task when a device is disconnected"
+        description: "utför uppgiften när en enhet kopplas från"
       onDisconnect:
-        description: "execute the task when the system is disconnected from the network"
+        description: "utför uppgiften när systemet är frånkopplat från nätverket"
       onFullBattery:
-        description: "execute the task when the system is fully charged"
+        description: "utför uppgiften när systemet är fulladdat"
       onHighCpuUsage:
-        description: "execute the task when CPU usage is higher than 50%"
+        description: "utför uppgiften när CPU-användningen är högre än 50 %"
       onHighInternetUsage:
-        description: "execute the task when internet usage is higher than 500Kb/s"
+        description: "utför uppgiften när internetanvändningen är högre än 500Kb/s"
       onHighMemoryUsage:
-        description: "execute the task when memory usage is higher than 50%"
+        description: "utför uppgiften när minnesanvändningen är högre än 50 %"
       onInternetUsage:
-        description: "execute the task when internet usage is higher than XKb/s"
+        description: "utför uppgiften när internetanvändningen är högre än XKb/s"
       onLowBattery:
-        description: "execute the task when the system is low on battery (20%)"
+        description: "utför uppgiften när systemet har låg batterinivå (20%)"
       onMemoryUsage:
-        description: "execute the task when memory usage is higher than X%"
+        description: "utför uppgiften när minnesanvändningen är högre än X%"
       onNetwork:
-        description: "execute the task when the system is connected to the network"
+        description: "utför uppgiften när systemet är anslutet till nätverket"
       onProcess:
-        description: "execute the task when a process starts"
+        description: "utför uppgiften när en process startar"
   rm:
-    description: "Remove a task"
+    description: "Ta bort en uppgift"
     error:
-      cannotDelete: "Cannot delete task: %s"
-      noName: "No task name specified."
-      notFound: "Task not found."
+      cannotDelete: "Kan inte ta bort uppgift: %s"
+      noName: "Inget uppgiftsnamn specificerat."
+      notFound: "Uppgift hittades inte."
     info:
-      askConfirmation: "Are you sure you want to delete the task %s? [y/N]"
-      taskDeleted: "Task has been deleted successfully."
+      askConfirmation: "Är du säker på att du vill ta bort uppgift %s? [j/N]"
+      taskDeleted: "Uppgiften har raderats framgångsrikt."
     options:
       force:
-        description: "force the deletion of the task"
+        description: "tvinga fram borttagningen av uppgift"
       name:
-        description: "specify the task's name"
+        description: "specificera uppgiftens namn"
   rotate:
-    description: "Rotate tasks"
+    description: "Rotera uppgifter"
     options:
       privateEvent:
-        description: "specify private event to rotate tasks for boot, shutdown, login,
-          logout"
+        description: "specificera privat händelse för att rotera uppgifter för start,
+          avstängning, inloggning, utloggning"
