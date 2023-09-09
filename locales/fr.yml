@@ -121,6 +121,8 @@ sysUpgrade:
     error:
       asExitCodeAndJson: Une erreur s'est produite lors de la vérification des mises
         à jour. Voir la sortie JSON pour plus de détails.
+    json:
+      description: output the result in JSON format
   sysUpgrade:
     description: Mise à jour du système
     error:

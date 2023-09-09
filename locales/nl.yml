@@ -213,6 +213,8 @@ sysUpgrade:
       checking: Checking for updates...
       noUpdates: No updates available.
       updatesAvailable: Updates beschikbaar
+    json:
+      description: output the result in JSON format
   sysUpgrade:
     description: Upgrade the system
     error:
