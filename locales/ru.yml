@@ -6,7 +6,7 @@ vso:
     invalidInput: "Недопустимый ввод."
     invalidChoice: "Недопустимый выбор."
   info:
-    aborting: "Aborting as requested."
+    aborting: "Прерывать по запросу."
   terminal:
     yes: "да"
     no: "нет"
