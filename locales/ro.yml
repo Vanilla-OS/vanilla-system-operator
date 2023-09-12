@@ -55,48 +55,49 @@ pico:
     exportedApps: "Au exportat %d aplicații"
     unexportedApps: "%d aplicații neexportate"
   export:
-    description: "Export an application or binary from the subsystem"
+    description: "Exportați o aplicație sau un fișier binar din subsistem"
     options:
       app:
-        description: "the name of the application to export"
+        description: "numele aplicației de exportat"
       bin:
-        description: "the name of the binary to export"
+        description: "numele binarului de exportat"
       binOutput:
-        description: "path of the binary output (default: ~/.local/bin/)"
+        description: "calea ieșirii binare (implicit: ~/.local/bin/)"
   unexport:
-    description: "Unexport an application or binary from the subsystem"
+    description: "Dezexportarea unei aplicații sau a unui fișier binar din subsistem"
     options:
       app:
-        description: "the name of the application to unexport"
+        description: "numele aplicației de dezexportat"
       bin:
-        description: "the name of the binary to unexport"
+        description: "numele binarului de dezexportat"
       binOutput:
-        description: "path of the binary output (default: ~/.local/bin/)"
+        description: "calea ieșirii binare (implicit: ~/.local/bin/)"
   init:
-    description: "Initialize the Pico subsystem, used for package management"
+    description: "Inițializarea subsistemului Pico, utilizat pentru gestionarea pachetelor"
     options:
       force:
-        description: "force the initialization if the subsystem is already initialized"
+        description: "forțează inițializarea în cazul în care subsistemul este deja
+          inițializat"
   install:
-    description: "Install an application inside the subsystem"
+    description: "Instalează o aplicație în cadrul subsistemului"
   remove:
-    description: "Remove an application from the subsystem"
+    description: "Eliminează o aplicație din subsistem"
   run:
-    description: "Run an application from the subsystem"
+    description: "Executați o aplicație din subsistem"
   search:
-    description: "Search for an application to install inside the subsystem"
+    description: "Căutați o aplicație care să fie instalată în cadrul subsistemului"
   shell:
-    description: "Enter the subsystem environment"
+    description: "Intrați în mediul subsitemului"
   update:
-    description: "Update the subsystem's package repository"
+    description: "Actualizați depozitul de pachete al subsistemului"
   upgrade:
-    description: "Upgrade the packages inside the subsystem"
+    description: "Actualizați pachetele din cadrul subsistemului"
 
 sysUpgrade:
-  description: "Upgrade the system"
+  description: "Actualizați sistemul"
   check:
-    asExitCode: "Checks for upgrade but doesn't print anything. Return exit code 0
-      if no upgrade is available and 1 otherwise."
+    asExitCode: "verifică dacă există o actualizare, dar nu imprimă nimic. Returnează
+      codul de ieșire 0 dacă nu este disponibilă nicio actualizare și 1 în caz contrar."
     description: "Check for system updates"
     error:
       asExitCodeAndJson: "An error occured when checking for updates. See the JSON
@@ -105,6 +106,8 @@ sysUpgrade:
       checking: "Checking for updates..."
       noUpdates: "No updates available."
       updatesAvailable: "Updates available."
+    json:
+      description: output the result in JSON format
   sysUpgrade:
     description: "Upgrade the system"
     error:

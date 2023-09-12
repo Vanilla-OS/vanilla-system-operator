@@ -110,6 +110,8 @@ sysUpgrade:
       checking: "Auf Aktualisierungen wird geprüft..."
       noUpdates: "Keine Aktualisierungen verfügbar."
       updatesAvailable: "Aktualisierungen verfügbar."
+    json:
+      description: output the result in JSON format
   sysUpgrade:
     description: "Das System aktualisieren"
     error:

@@ -1,0 +1,213 @@
+vso:
+  description: "Vanilla-systemoperatören är en pakethanterare, en systemuppdaterare
+    och en uppgiftsautomatiserare."
+  errors:
+    unknownCommand: "Okänt kommando: %s"
+    invalidInput: "Ogiltig inmatning."
+    invalidChoice: "Ogiltigt val."
+  info:
+    aborting: "Avbryter som begärt."
+  terminal:
+    yes: "ja"
+    no: "nej"
+
+config:
+  description: "Hantera systemkonfigurationen."
+  get:
+    description: "Hämta systemkonfigurationen"
+    error:
+      noKey: "Ingen nyckel specificerad."
+      noValue: "Inget värde hittades för nyckel: %s"
+    options:
+      key:
+        description: "hämta konfigurationsvärde genom att använda dess nyckel"
+  set:
+    description: "Ställ in systemkonfiguration"
+    error:
+      noKey: "Ingen nyckel specifiecerad."
+      noValue: "Inget värde specificerat."
+    options:
+      key: "nyckeln för den konfiguration som ska ställas in"
+      value: "värdet för den konfiguration som ska ställas in"
+    success: "Konfigurationen uppdaterades framgångsrikt."
+  show:
+    description: "Visa systemkonfiguration"
+
+pico:
+  description: "Hantera Pico undersystem"
+  error:
+    notInitialized: "Pico-undersystemet är inte initierat. Kör `vso pico-init` för
+      att initiera det."
+    alreadyInitialized: "Pico-undersystemet är redan initierat. Använd flaggan --force
+      för att tvinga fram initieringen."
+    noAppNameOrBin: "--app-name eller --bin måste anges."
+    sameAppOrBin: "--app-name och --bin kan inte båda specificeras."
+    exportingApp: "Ett fel uppstod vid export av program: %s"
+    exportingBin: "Ett fel inträffade vid export av binär: %s"
+    unexportingApp: "Ett fel uppstod när programmet skulle avexporteras: %s"
+    unexportingBin: "Ett fel uppstod när binären: %s skulle avexporteras"
+  errors:
+    unknownCommand: "Okänt kommando: %s"
+  info:
+    initialized: "Pico-undersystemet har initierats."
+    exported: "Exporterad %s\n"
+    unexported: "Oexporterad %s\n"
+    exportedApps: "Exporterade %d program"
+    unexportedApps: "Oexporterade %d program"
+  export:
+    description: "Exporterade ett program eller binär från undersystemet"
+    options:
+      app:
+        description: "Namnet på programmet du vill exportera"
+      bin:
+        description: "Namnet på binären du vill exportera"
+      binOutput:
+        description: "sökväg för den binära utdatan (standard: ~/.local/bin/)"
+  unexport:
+    description: "Avexportera ett program eller binär från undersystemet"
+    options:
+      app:
+        description: "namnet på programmet som ska avexporteras"
+      bin:
+        description: "namnet på den binär som ska avexporteras"
+      binOutput:
+        description: "sökväg för den binära utdatan (standard: ~/.local/bin/)"
+  init:
+    description: "Initiera Pico-undersystemet, som används för pakethantering"
+    options:
+      force:
+        description: "tvinga fram initieringen om undersystemet redan är initierat"
+  install:
+    description: "Installera ett program inuti undersystemet"
+  remove:
+    description: "Ta bort ett program från undersystemet"
+  run:
+    description: "Kör ett program från delsystem"
+  search:
+    description: "Sök efter ett program att installera inuti delsystemet"
+  shell:
+    description: "Gå in i undersystemetsmiljö"
+  update:
+    description: "Uppdatera undersystemets paketarkiv"
+  upgrade:
+    description: "Uppdatera paketen inuti undersystemet"
+
+sysUpgrade:
+  description: "Uppgradera systemet"
+  check:
+    asExitCode: "söker efter uppgraderingar men skriver inte ut något. Returnerar
+      utgångskod 0 om ingen uppgradering är tillgänglig och 1 annars."
+    description: "Sök efter systemuppdateringar"
+    error:
+      asExitCodeAndJson: "Ett fel uppstod vid sökning efter uppdateringar. Se JSON-utdata
+        för mer information."
+    info:
+      checking: "Kollar efter uppdateringar..."
+      noUpdates: "Inga uppdateringar tillgängliga."
+      updatesAvailable: "Uppdateringar tillgängliga."
+    json:
+      description: "Utdata av resultatet i JSON-format"
+  sysUpgrade:
+    description: "Uppgradera systemet"
+    error:
+      updating: "Ett fel uppstod vid uppdatering av systemet."
+    info:
+      updating: "Uppdaterar systemet..."
+    now: "Utlös en systemuppgradering nu"
+
+tasks:
+  description: "Skapa och hantera uppgifter"
+  stacks:
+    new:
+      error:
+        emptyCommand: "Kommandot kan inte vara tomt."
+        emptyDescription: "Beskrivningen kan inte vara tom."
+        emptyName: "Namnet kan inte vara tomt."
+        noCommand: "Inget kommando specificerat."
+        noDescription: "Ingen beskrivning specificerad."
+        noName: "Inget namn specificerat."
+      info:
+        askCommand: "Kommando: "
+        askDescription: "Beskrivning: "
+        askName: "Namn: "
+        taskCreated: "Uppgift har skapats framgångsrikt."
+  list:
+    description: "Lista alla uppgifter"
+    noTasks: "Inga uppgifter hittades."
+    info:
+      foundTasks: "Hittade %d uppgifter."
+    options:
+      json:
+        description: "utdata uppgifterna i JSON-format"
+  new:
+    description: "Skapa en ny uppgift"
+    options:
+      assumeYes:
+        description: "anta ja för alla inmatningar"
+      at:
+        description: "schemalägg uppgift att utföras vid en specifik tidpunkt (tt:mm)"
+      command:
+        description: "specificera kommando som ska exekveras"
+      description:
+        description: "specificera uppgiftens beskrivning"
+      every:
+        description: "schemalägg uppgiften att utföras varje X gång (minuter, timmar,
+          dagar)"
+      name:
+        description: "specificera uppgiftens namn"
+      needConfirm:
+        description: "be om bekräftelse innan uppgiften exekveras"
+      onBattery:
+        description: "Installera ett program inuti undersystemet"
+      onCharge:
+        description: "utför den här uppgiften endast när systemet är på batteri"
+      onConditionCommand:
+        description: "exekvera uppgiften på villkorskommando"
+      onCpuTemp:
+        description: "utför uppgiften när CPU-temperaturen är högre än 60°C"
+      onCpuUsage:
+        description: "utför uppgiften när CPU-användningen är högre än X%"
+      onDeviceConnect:
+        description: "utför uppgiften när en enhet är ansluten"
+      onDeviceDisconnect:
+        description: "utför uppgiften när en enhet kopplas från"
+      onDisconnect:
+        description: "utför uppgiften när systemet är frånkopplat från nätverket"
+      onFullBattery:
+        description: "utför uppgiften när systemet är fulladdat"
+      onHighCpuUsage:
+        description: "utför uppgiften när CPU-användningen är högre än 50 %"
+      onHighInternetUsage:
+        description: "utför uppgiften när internetanvändningen är högre än 500Kb/s"
+      onHighMemoryUsage:
+        description: "utför uppgiften när minnesanvändningen är högre än 50 %"
+      onInternetUsage:
+        description: "utför uppgiften när internetanvändningen är högre än XKb/s"
+      onLowBattery:
+        description: "utför uppgiften när systemet har låg batterinivå (20%)"
+      onMemoryUsage:
+        description: "utför uppgiften när minnesanvändningen är högre än X%"
+      onNetwork:
+        description: "utför uppgiften när systemet är anslutet till nätverket"
+      onProcess:
+        description: "utför uppgiften när en process startar"
+  rm:
+    description: "Ta bort en uppgift"
+    error:
+      cannotDelete: "Kan inte ta bort uppgift: %s"
+      noName: "Inget uppgiftsnamn specificerat."
+      notFound: "Uppgift hittades inte."
+    info:
+      askConfirmation: "Är du säker på att du vill ta bort uppgift %s? [j/N]"
+      taskDeleted: "Uppgiften har raderats framgångsrikt."
+    options:
+      force:
+        description: "tvinga fram borttagningen av uppgift"
+      name:
+        description: "specificera uppgiftens namn"
+  rotate:
+    description: "Rotera uppgifter"
+    options:
+      privateEvent:
+        description: "specificera privat händelse för att rotera uppgifter för start,
+          avstängning, inloggning, utloggning"

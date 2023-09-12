@@ -100,6 +100,8 @@ sysUpgrade:
       checking: "正在检查更新…"
       noUpdates: "没有更新可用。"
       updatesAvailable: "更新可用。"
+    json:
+      description: 输出结果为 JSON 格式
   sysUpgrade:
     description: "更新系统"
     error:

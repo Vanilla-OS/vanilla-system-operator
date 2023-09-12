@@ -116,11 +116,13 @@ sysUpgrade:
       checking: Vérifier les mises à jour ...
       noUpdates: Aucune mise à jour n'est disponible.
       updatesAvailable: Mises à jour disponibles.
-    asExitCode: Vérifie l'existence d'une mise à jour, mais n'imprime rien. Retourne
+    asExitCode: vérifie l'existence d'une mise à jour, mais n'affiche rien. Retourne
       le code de sortie 0 si aucune mise à jour n'est disponible et 1 sinon.
     error:
       asExitCodeAndJson: Une erreur s'est produite lors de la vérification des mises
         à jour. Voir la sortie JSON pour plus de détails.
+    json:
+      description: exporter le résultat au format JSON
   sysUpgrade:
     description: Mise à jour du système
     error:

@@ -22,7 +22,7 @@ config:
       key:
         description: "retrieve configuration value by using its key"
   set:
-    description: "Set the system configuration"
+    description: "Stelt de systeem­configuratie in"
     error:
       noKey: "Geen sleutel opgegeven"
       noValue: "Geen waarde opgegeven"
@@ -32,9 +32,9 @@ config:
     success: "Configuratie succesvol bijgewerkt"
 
   show:
-    description: Show the system configuration
+    description: Toont de systeemconfiguratie
 pico:
-  description: "Manage the Pico subsystem"
+  description: "Beheer het Pico-subsysteem"
   error:
     notInitialized: "The Pico subsystem is not initialized. Please run `vso pico-init`
       to initialize it."
@@ -53,7 +53,7 @@ pico:
     exported: "%s geëxporteerd\n"
     unexported: "%s geontexporteerd\n"
     exportedApps: "%d apps geëxporteerd"
-    unexportedApps: "Unexported %d applications"
+    unexportedApps: "%d apps geontexporteerd"
   export:
     description: "Export an application or binary from the subsystem"
     options:
@@ -86,7 +86,7 @@ pico:
   search:
     description: "Search for an application to install inside the subsystem"
   shell:
-    description: "Enter the subsystem environment"
+    description: "Betreed de subsysteem­omgeving"
   update:
     description: "Update the subsystem's package repository"
   upgrade:
@@ -117,7 +117,7 @@ tasks:
       assumeYes:
         description: assume yes for all prompts
       description:
-        description: specify the task's description
+        description: geef de taakbeschrijving op
       every:
         description: schedule the task to execute every X time (minutes, hours, days)
       name:
@@ -156,13 +156,13 @@ tasks:
         description: execute the task when memory usage is higher than X%
       onNetwork:
         description: execute the task when the system is connected to the network
-    description: Create a new task
+    description: Maakt een nieuwe taak aan
   rm:
-    description: Remove a task
+    description: Verwijdert een taak
     error:
       cannotDelete: 'Cannot delete task: %s'
       noName: No task name specified.
-      notFound: Task not found.
+      notFound: Taak niet gevonden.
     info:
       askConfirmation: Are you sure you want to delete the task %s? [y/N]
       taskDeleted: Task has been deleted successfully.
@@ -171,26 +171,26 @@ tasks:
         description: force the deletion of the task
       name:
         description: specify the task's name
-  description: Create and manage tasks
+  description: Maak taken aan en beheer ze
   stacks:
     new:
       error:
         emptyCommand: The command cannot be empty.
         emptyDescription: The description cannot be empty.
         emptyName: The name cannot be empty.
-        noCommand: No command specified.
-        noDescription: No description specified.
-        noName: No name specified.
+        noCommand: Geen opdracht opgegeven.
+        noDescription: Geen opdracht opgegeven.
+        noName: Geen naam opgegeven.
       info:
         askCommand: 'Opdracht: '
         askDescription: 'Omschrijving: '
         askName: 'Naam: '
         taskCreated: Task has been created successfully.
   list:
-    description: List all tasks
-    noTasks: No tasks found.
+    description: Somt alle taken op
+    noTasks: Geen taken gevonden.
     info:
-      foundTasks: Found %d tasks.
+      foundTasks: '%d taken gevonden.'
     options:
       json:
         description: output the tasks in JSON format
@@ -201,22 +201,24 @@ tasks:
         description: specify private event to rotate tasks for boot, shutdown, login,
           logout
 sysUpgrade:
-  description: Upgrade the system
+  description: Upgradet het systeem
   check:
     asExitCode: Checks for upgrade but doesn't print anything. Return exit code 0
       if no upgrade is available and 1 otherwise.
-    description: Check for system updates
+    description: Controleert op systeemupdates
     error:
       asExitCodeAndJson: An error occured when checking for updates. See the JSON
         output for more details.
     info:
-      checking: Checking for updates...
-      noUpdates: No updates available.
+      checking: Controleren op updates…
+      noUpdates: Geen updates beschikbaar.
       updatesAvailable: Updates beschikbaar
+    json:
+      description: output the result in JSON format
   sysUpgrade:
-    description: Upgrade the system
+    description: Upgradet het systeem
     error:
       updating: An error occured when updating the system.
     info:
-      updating: Updating the system...
+      updating: Systeem updaten…
     now: Trigger a system upgrade now
