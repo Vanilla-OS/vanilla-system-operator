@@ -40,11 +40,11 @@ pico:
       pico-init`, чтобы инициализировать его."
     alreadyInitialized: "Подсистема Pico уже инициализирована. Используйте флаг --force
       для принудительной инициализации."
-    noAppNameOrBin: "--app-name or --bin must be specified."
-    sameAppOrBin: "--app-name and --bin cannot be both specified."
+    noAppNameOrBin: "--app-name или --bin должно быть указано."
+    sameAppOrBin: "--app-name или --bin не могут быть указаны одновременно."
     exportingApp: "При экспорте приложения произошла ошибка: %s"
     exportingBin: "Произошла ошибка при экспорте двоичного файла: %s"
-    unexportingApp: "An error occurred while unexporting the application: %s"
+    unexportingApp: "Произошла ошибка при отмене экспорта приложения: %s"
     unexportingBin: "Произошла ошибка при отмене экспорта двоичного файла: %s"
   errors:
     unknownCommand: "Неизвестная команда: %s"
@@ -71,7 +71,7 @@ pico:
       bin:
         description: "имя двоичного файла, которому нужно отменить экспорт"
       binOutput:
-        description: "path of the binary output (default: ~/.local/bin/)"
+        description: "путь к бинарному выводу (по умолчанию: ~/.local/bin/)"
   init:
     description: "Инициализируйте подсистему Pico, используемую для управления пакетами."
     options:
@@ -86,7 +86,7 @@ pico:
   search:
     description: "Поиск приложения для установки внутри подсистемы"
   shell:
-    description: "Enter the subsystem environment"
+    description: "Введите среду подсистемы"
   update:
     description: "Обновите репозиторий пакетов подсистемы."
   upgrade:
@@ -108,8 +108,8 @@ sys-upgrade:
 sysUpgrade:
   description: Обновите систему
   check:
-    asExitCode: Checks for upgrade but doesn't print anything. Return exit code 0
-      if no upgrade is available and 1 otherwise.
+    asExitCode: Проверяет наличие обновления, но ничего не печатает. Возвращает код
+      завершения 0, если обновление недоступно, и 1 в противном случае.
     description: Проверьте наличие обновлений системы
     error:
       asExitCodeAndJson: Произошла ошибка при проверке обновлений. Дополнительные
@@ -123,7 +123,7 @@ sysUpgrade:
   sysUpgrade:
     info:
       updating: Обновление системы...
-    now: Trigger a system upgrade now
+    now: Запустить обновление системы прямо сейчас
     description: Обновите систему
     error:
       updating: Произошла ошибка при обновлении системы.
@@ -164,7 +164,7 @@ tasks:
     info:
       askConfirmation: Are you sure you want to delete the task %s? [y/N]
       taskDeleted: Задача успешно удалена.
-  description: Create and manage tasks
+  description: Создание и управление задачами
   new:
     description: Создать новую задачу
     options:
