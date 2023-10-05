@@ -27,8 +27,8 @@ config:
       noKey: "Нет выбранного ключа."
       noValue: "Значение не указано."
     options:
-      key: "key of the configuration to set"
-      value: "value of the configuration to set"
+      key: "ключ конфигурации для установки"
+      value: "значение конфигурации для установки"
     success: "Конфигурация успешно обновлена."
 
   show:
@@ -73,7 +73,7 @@ pico:
       binOutput:
         description: "путь к бинарному выводу (по умолчанию: ~/.local/bin/)"
   init:
-    description: "Инициализируйте подсистему Pico, используемую для управления пакетами."
+    description: "Инициализируйте подсистему Pico, используемую для управления пакетами"
     options:
       force:
         description: "принудительно выполнить инициализацию, если подсистема уже инициализирована"
@@ -88,7 +88,7 @@ pico:
   shell:
     description: "Введите среду подсистемы"
   update:
-    description: "Обновите репозиторий пакетов подсистемы."
+    description: "Обновите репозиторий пакетов подсистемы"
   upgrade:
     description: "Обновите пакеты внутри подсистемы"
 
@@ -162,14 +162,14 @@ tasks:
       noName: Имя задачи не указано.
       notFound: Задача не найдена.
     info:
-      askConfirmation: Are you sure you want to delete the task %s? [y/N]
+      askConfirmation: Вы точно хотите удалить задачу %s? [д/Н]
       taskDeleted: Задача успешно удалена.
   description: Создание и управление задачами
   new:
     description: Создать новую задачу
     options:
       assumeYes:
-        description: assume yes for all prompts
+        description: предполагать «да» на все запросы подтверждения
       description:
         description: укажите описание задачи
       every:
@@ -187,7 +187,7 @@ tasks:
       onCharge:
         description: выполнять задачу только тогда, когда система заряжается
       onConditionCommand:
-        description: execute the task on condition command
+        description: выполнить задачу при условии команды
       onCpuTemp:
         description: выполнить задачу, когда температура процессора превышает 60°C
       onCpuUsage:
@@ -197,9 +197,9 @@ tasks:
       onDeviceDisconnect:
         description: выполнить задачу, когда устройство отключено
       onDisconnect:
-        description: execute the task when the system is disconnected from the network
+        description: выполнить задачу при отключении системы от сети
       onFullBattery:
-        description: execute the task when the system is fully charged
+        description: выполнить задачу, когда система полностью заряжена
       onHighCpuUsage:
         description: выполнить задачу, когда загрузка ЦП превышает 50%
       onHighInternetUsage:
@@ -218,8 +218,8 @@ tasks:
       onProcess:
         description: выполнить задачу при запуске процесса
   rotate:
-    description: Rotate tasks
+    description: Чередовать задачи
     options:
       privateEvent:
-        description: specify private event to rotate tasks for boot, shutdown, login,
-          logout
+        description: укажите частное событие для чередования задач, для загрузки,
+          выключения, входа в систему и выхода из неё
