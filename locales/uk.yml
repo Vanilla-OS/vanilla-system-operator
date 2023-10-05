@@ -1,15 +1,15 @@
 vso:
-  description: "The Vanilla System Operator is a package manager, a system updater
-    and a task automator."
+  description: "Vanilla System Operator - це менеджер пакунків, оновлення системи
+    та автоматизатор завдань."
   errors:
     unknownCommand: "Unknown command: %s"
-    invalidInput: "Invalid input."
-    invalidChoice: "Invalid choice."
+    invalidInput: "Неправильне введення."
+    invalidChoice: "Неправильний вибір."
   info:
     aborting: "Aborting as requested."
   terminal:
-    yes: "yes"
-    no: "no"
+    yes: "так"
+    no: "ні"
 
 config:
   description: "Manage the system configuration."
