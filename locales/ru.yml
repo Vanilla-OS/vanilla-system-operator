@@ -20,77 +20,77 @@ config:
       noValue: "Не найдено значение для ключа: %s"
     options:
       key:
-        description: "retrieve configuration value by using its key"
+        description: "получить значение конфигурации, используя его ключ"
   set:
     description: "Установить конфигурацию системы"
     error:
       noKey: "Нет выбранного ключа."
-      noValue: "No value specified."
+      noValue: "Значение не указано."
     options:
       key: "key of the configuration to set"
       value: "value of the configuration to set"
-    success: "Configuration updated successfully."
+    success: "Конфигурация успешно обновлена."
 
   show:
-    description: Show the system configuration
+    description: Показать конфигурацию системы
 pico:
-  description: "Manage the Pico subsystem"
+  description: "Управление подсистемой Pico"
   error:
-    notInitialized: "The Pico subsystem is not initialized. Please run `vso pico-init`
-      to initialize it."
-    alreadyInitialized: "The Pico subsystem is already initialized. Use the --force
-      flag to force the initialization."
+    notInitialized: "Подсистема Pico не инициализирована. Пожалуйста, запустите `vso
+      pico-init`, чтобы инициализировать его."
+    alreadyInitialized: "Подсистема Pico уже инициализирована. Используйте флаг --force
+      для принудительной инициализации."
     noAppNameOrBin: "--app-name or --bin must be specified."
     sameAppOrBin: "--app-name and --bin cannot be both specified."
-    exportingApp: "An error occurred while exporting the application: %s"
-    exportingBin: "An error occurred while exporting the binary: %s"
+    exportingApp: "При экспорте приложения произошла ошибка: %s"
+    exportingBin: "Произошла ошибка при экспорте двоичного файла: %s"
     unexportingApp: "An error occurred while unexporting the application: %s"
-    unexportingBin: "An error occurred while unexporting the binary: %s"
+    unexportingBin: "Произошла ошибка при отмене экспорта двоичного файла: %s"
   errors:
-    unknownCommand: "Unknown command: %s"
+    unknownCommand: "Неизвестная команда: %s"
   info:
-    initialized: "The Pico subsystem has been initialized."
-    exported: "Exported %s\n"
-    unexported: "Unexported %s\n"
-    exportedApps: "Exported %d applications"
-    unexportedApps: "Unexported %d applications"
+    initialized: "Подсистема Pico инициализирована."
+    exported: "Экспортировано %s\n"
+    unexported: "Неэкспортировано %s\n"
+    exportedApps: "Экспортировано приложений %d"
+    unexportedApps: "Неэкспортированные приложения: %d"
   export:
-    description: "Export an application or binary from the subsystem"
+    description: "Экспорт приложения или двоичного файла из подсистемы"
     options:
       app:
-        description: "the name of the application to export"
+        description: "имя приложения для экспорта"
       bin:
-        description: "the name of the binary to export"
+        description: "имя двоичного файла для экспорта"
       binOutput:
-        description: "path of the binary output (default: ~/.local/bin/)"
+        description: "путь двоичного выхода (по умолчанию: ~/.local/bin/)"
   unexport:
-    description: "Unexport an application or binary from the subsystem"
+    description: "Отменить экспорт приложения или двоичного файла из подсистемы"
     options:
       app:
-        description: "the name of the application to unexport"
+        description: "имя приложения для отмены экспорта"
       bin:
-        description: "the name of the binary to unexport"
+        description: "имя двоичного файла, которому нужно отменить экспорт"
       binOutput:
         description: "path of the binary output (default: ~/.local/bin/)"
   init:
-    description: "Initialize the Pico subsystem, used for package management"
+    description: "Инициализируйте подсистему Pico, используемую для управления пакетами."
     options:
       force:
-        description: "force the initialization if the subsystem is already initialized"
+        description: "принудительно выполнить инициализацию, если подсистема уже инициализирована"
   install:
-    description: "Install an application inside the subsystem"
+    description: "Установить приложение внутри подсистемы"
   remove:
-    description: "Remove an application from the subsystem"
+    description: "Удаление приложения из подсистемы"
   run:
-    description: "Run an application from the subsystem"
+    description: "Запуск приложения из подсистемы"
   search:
-    description: "Search for an application to install inside the subsystem"
+    description: "Поиск приложения для установки внутри подсистемы"
   shell:
     description: "Enter the subsystem environment"
   update:
-    description: "Update the subsystem's package repository"
+    description: "Обновите репозиторий пакетов подсистемы."
   upgrade:
-    description: "Upgrade the packages inside the subsystem"
+    description: "Обновите пакеты внутри подсистемы"
 
 sys-upgrade:
   check: {}
@@ -106,116 +106,117 @@ sys-upgrade:
     rotate:
       options: {}
 sysUpgrade:
-  description: Upgrade the system
+  description: Обновите систему
   check:
     asExitCode: Checks for upgrade but doesn't print anything. Return exit code 0
       if no upgrade is available and 1 otherwise.
-    description: Check for system updates
+    description: Проверьте наличие обновлений системы
     error:
-      asExitCodeAndJson: An error occured when checking for updates. See the JSON
-        output for more details.
+      asExitCodeAndJson: Произошла ошибка при проверке обновлений. Дополнительные
+        сведения см. в выводе JSON.
     info:
-      checking: Checking for updates...
-      noUpdates: No updates available.
-      updatesAvailable: Updates available.
+      checking: Проверка обновлений...
+      noUpdates: Нет доступных обновлений.
+      updatesAvailable: Доступны обновления.
     json:
-      description: output the result in JSON format
+      description: вывести результат в формате JSON
   sysUpgrade:
     info:
-      updating: Updating the system...
+      updating: Обновление системы...
     now: Trigger a system upgrade now
-    description: Upgrade the system
+    description: Обновите систему
     error:
-      updating: An error occured when updating the system.
+      updating: Произошла ошибка при обновлении системы.
 tasks:
   stacks:
     new:
       error:
-        emptyName: The name cannot be empty.
-        noCommand: No command specified.
-        emptyCommand: The command cannot be empty.
-        emptyDescription: The description cannot be empty.
-        noDescription: No description specified.
-        noName: No name specified.
+        emptyName: Имя не может быть пустым.
+        noCommand: Команда не указана.
+        emptyCommand: Команда не может быть пустой.
+        emptyDescription: Описание не может быть пустым.
+        noDescription: Описание не указано.
+        noName: Имя не указано.
       info:
-        askCommand: 'Command: '
-        askDescription: 'Description: '
-        askName: 'Name: '
-        taskCreated: Task has been created successfully.
+        askCommand: 'Команда: '
+        askDescription: 'Описание: '
+        askName: 'Имя: '
+        taskCreated: Задача успешно создана.
   list:
-    description: List all tasks
-    noTasks: No tasks found.
+    description: Список всех задач
+    noTasks: Задачи не найдены.
     info:
-      foundTasks: Found %d tasks.
+      foundTasks: Найдено %d задач.
     options:
       json:
-        description: output the tasks in JSON format
+        description: выводить задачи в формате JSON
   rm:
     options:
       name:
-        description: specify the task's name
+        description: укажите название задачи
       force:
-        description: force the deletion of the task
-    description: Remove a task
+        description: принудительно удалить задачу
+    description: Удалить задачу
     error:
-      cannotDelete: 'Cannot delete task: %s'
-      noName: No task name specified.
-      notFound: Task not found.
+      cannotDelete: 'Невозможно удалить задачу: %s'
+      noName: Имя задачи не указано.
+      notFound: Задача не найдена.
     info:
       askConfirmation: Are you sure you want to delete the task %s? [y/N]
-      taskDeleted: Task has been deleted successfully.
+      taskDeleted: Задача успешно удалена.
   description: Create and manage tasks
   new:
-    description: Create a new task
+    description: Создать новую задачу
     options:
       assumeYes:
         description: assume yes for all prompts
       description:
-        description: specify the task's description
+        description: укажите описание задачи
       every:
-        description: schedule the task to execute every X time (minutes, hours, days)
+        description: запланировать выполнение задачи каждые X раз (минут, часов, дней)
       name:
-        description: specify the task's name
+        description: укажите название задачи
       at:
-        description: schedule the task to execute at a specific time (hh:mm)
+        description: запланировать выполнение задачи в определенное время (hh:mm)
       command:
-        description: specify the command to execute
+        description: укажите команду для выполнения
       needConfirm:
-        description: ask for confirmation before executing the task
+        description: запросить подтверждение перед выполнением задачи
       onBattery:
-        description: execute the task only when the system is on battery
+        description: выполнять задачу только тогда, когда система работает от батареи
       onCharge:
-        description: execute the task only when the system is charging
+        description: выполнять задачу только тогда, когда система заряжается
       onConditionCommand:
         description: execute the task on condition command
       onCpuTemp:
-        description: execute the task when CPU temperature is higher than 60°C
+        description: выполнить задачу, когда температура процессора превышает 60°C
       onCpuUsage:
-        description: execute the task when CPU usage is higher than X%
+        description: выполнить задачу, когда загрузка ЦП превышает X%
       onDeviceConnect:
-        description: execute the task when a device is connected
+        description: выполнить задачу при подключении устройства
       onDeviceDisconnect:
-        description: execute the task when a device is disconnected
+        description: выполнить задачу, когда устройство отключено
       onDisconnect:
         description: execute the task when the system is disconnected from the network
       onFullBattery:
         description: execute the task when the system is fully charged
       onHighCpuUsage:
-        description: execute the task when CPU usage is higher than 50%
+        description: выполнить задачу, когда загрузка ЦП превышает 50%
       onHighInternetUsage:
-        description: execute the task when internet usage is higher than 500Kb/s
+        description: выполнить задачу, когда использование интернета превышает 500Kb/s
       onHighMemoryUsage:
-        description: execute the task when memory usage is higher than 50%
+        description: выполнить задачу, когда использование памяти превышает 50%
       onInternetUsage:
-        description: execute the task when internet usage is higher than XKb/s
+        description: выполнить задачу, когда использование интернета превышает XKb/s
       onLowBattery:
-        description: execute the task when the system is low on battery (20%)
+        description: выполнить задачу, когда в системе низкий уровень заряда батареи
+          (20%)
       onMemoryUsage:
-        description: execute the task when memory usage is higher than X%
+        description: выполнить задачу, когда использование памяти превышает X%
       onNetwork:
-        description: execute the task when the system is connected to the network
+        description: выполнить задачу, когда система подключена к сети (network)
       onProcess:
-        description: execute the task when a process starts
+        description: выполнить задачу при запуске процесса
   rotate:
     description: Rotate tasks
     options:
