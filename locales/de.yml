@@ -168,7 +168,7 @@ tasks:
       onCharge:
         description: "die Aufgabe nur ausführen, wenn das System aufgeladen wird"
       onConditionCommand:
-        description: "execute the task on condition command"
+        description: "Führe den Task unter Bedingungen aus"
       onCpuTemp:
         description: "die Aufgabe ausführen, wenn die CPU-Temperatur höher als 60 °C
           ist"
