@@ -14,16 +14,29 @@ import (
 )
 
 type FdroidRepo struct {
+	Name           string
+	Key            string
+	IndexURL       string
+	RepoURL        string
+	PackageURL     string
+	PackageInfoURL string
+}
+
+type FdroidPackage struct {
 	Name       string
-	Key        string
-	IndexURL   string
-	RepoURL    string
-	PackageURL string
+	RDNSName   string
+	summary    string
+	author     string
+	source     string
+	license    string
+	repository FdroidRepo
+	versions   []byte
 }
 
 var Repositories []FdroidRepo
 var Indexes []os.DirEntry
-var CacheDir = fmt.Sprintf("%s/.cache/vso/indexes/", os.Getenv("HOME"))
+var IndexCacheDir = fmt.Sprintf("%s/.cache/vso/indexes/", os.Getenv("HOME"))
+var APKCacheDir = fmt.Sprintf("%s/.cache/vso/apks/", os.Getenv("HOME"))
 
 func getRepos() error {
 	configFiles, err := os.ReadDir("/etc/vso/fdroid.repos.d/")
@@ -89,9 +102,9 @@ func downloadIndex(index int) error {
 }
 
 func syncIndex() {
-	_, err := os.Stat(CacheDir)
+	_, err := os.Stat(IndexCacheDir)
 	if os.IsNotExist(err) {
-		err := os.MkdirAll(CacheDir, 0755)
+		err := os.MkdirAll(IndexCacheDir, 0755)
 		if err != nil {
 			fmt.Printf("err: %v\n", err)
 			return
@@ -102,7 +115,7 @@ func syncIndex() {
 		}
 		return
 	}
-	Indexes, err = os.ReadDir(CacheDir)
+	Indexes, err = os.ReadDir(IndexCacheDir)
 	if err != nil {
 		fmt.Printf("err: %v\n", err)
 	}
@@ -126,6 +139,10 @@ func syncIndex() {
 		currentTime := time.Now().Unix()
 		if currentTime-timestamp >= 604800 { // TODO: Consider if a different period is more suited (currently 1 week)
 			fmt.Printf("Index for repo %s outdated! Syncing...\n", indexFile[1])
+			err := os.Remove(fmt.Sprintf("%s/%s", IndexCacheDir, index))
+			if err != nil {
+				return
+			}
 			for i, repository := range Repositories {
 				if repository.Name == indexFile[1] {
 					err := downloadIndex(i)
@@ -134,8 +151,6 @@ func syncIndex() {
 					}
 				}
 			}
-		} else {
-			fmt.Printf("Index for repo %s not outdated!\n", indexFile[1])
 		}
 	}
 
@@ -150,29 +165,59 @@ func syncIndex() {
 	}
 }
 
-func searchIndex(search string) ([][]string, error) {
+func searchIndex(search string) ([]FdroidPackage, error) {
 	err := getRepos()
 	if err != nil {
 		return nil, err
 	}
 	syncIndex()
-	var matches [][]string
+	var matches []FdroidPackage
+	var processed []string
 	for _, repository := range Repositories {
 		for _, index := range Indexes {
-			if strings.Contains(index.Name(), repository.Name) {
-				indexContent, err := os.ReadFile(fmt.Sprintf("%s/%s", CacheDir, index.Name()))
+			if strings.Contains(index.Name(), repository.Name) && !slices.Contains(processed, repository.Name) {
+				processed = append(processed, repository.Name)
+				indexContent, err := os.ReadFile(fmt.Sprintf("%s/%s", IndexCacheDir, index.Name()))
 				if err != nil {
 					return nil, err
 				}
 				err = jsonparser.ObjectEach(indexContent, func(key []byte, value []byte, dataType jsonparser.ValueType, offset int) error {
 					name, err := jsonparser.GetString(value, "metadata", "name", "en-US")
 					if err != nil {
-						fmt.Printf("err: %v\n", err)
 						return err
 					}
-					//fmt.Println(name)
 					if strings.Contains(strings.ToLower(name), strings.ToLower(search)) {
-						match := []string{string(key), name}
+						summary, err := jsonparser.GetString(value, "metadata", "summary", "en-US")
+						if err != nil {
+							return err
+						}
+						author, err := jsonparser.GetString(value, "metadata", "authorName")
+						if err != nil {
+							return err
+						}
+						source, err := jsonparser.GetString(value, "metadata", "sourceCode")
+						if err != nil {
+							return err
+						}
+						license, err := jsonparser.GetString(value, "metadata", "license")
+						if err != nil {
+							return err
+						}
+						versions, _, _, err := jsonparser.Get(value, "versions")
+						if err != nil {
+							fmt.Printf("err")
+							return err
+						}
+						match := FdroidPackage{
+							Name:       name,
+							RDNSName:   string(key),
+							summary:    summary,
+							author:     author,
+							source:     source,
+							license:    license,
+							repository: repository,
+							versions:   versions,
+						}
 						matches = append(matches, match)
 					}
 					return nil
@@ -189,14 +234,67 @@ func SearchPackage(search string) error {
 		return err
 	}
 	for _, match := range matches {
-		fmt.Printf("%s - %s\n", match[1], match[0])
+		fmt.Printf("%s (%s) - %s [%s]\n", match.Name, match.RDNSName, match.summary, match.repository.Name)
 	}
 	return nil
 }
 
-/*
-func FetchPackage(package string) error {
-	bodyBytes, err := searchApi(package)
-	jsonparser.GetString(bodyBytes, "")
-	return nil
-}*/
+func getPackageVersion(pkg FdroidPackage) (string, error) {
+	req, err := http.NewRequest("GET", strings.ReplaceAll(pkg.repository.PackageInfoURL, "%s", pkg.RDNSName), nil)
+	if err != nil {
+		return "", err
+	}
+	req.Header.Set("Accept", "application/json")
+
+	resp, err := http.DefaultClient.Do(req)
+	if err != nil {
+		return "", err
+	}
+	defer resp.Body.Close()
+	bodyBytes, err := io.ReadAll(resp.Body)
+	if err != nil {
+		return "", err
+	}
+	suggestedVersion, _, _, err := jsonparser.Get(bodyBytes, "suggestedVersionCode")
+	return string(suggestedVersion), err
+}
+
+func FetchPackage(installPackage string) (string, error) {
+	_, err := os.Stat(APKCacheDir)
+	if os.IsNotExist(err) {
+		err := os.MkdirAll(APKCacheDir, 0755)
+		if err != nil {
+			return "", err
+		}
+	}
+	matches, err := searchIndex(installPackage)
+	if err != nil {
+		return "", err
+	}
+	version, err := getPackageVersion(matches[0])
+	if err != nil {
+		return "", err
+	}
+	apkName := fmt.Sprintf("%s_%s.apk", matches[0].RDNSName, version)
+	if err != nil {
+		return "", err
+	}
+	_, err = os.Stat(fmt.Sprintf("%s/%s", APKCacheDir, apkName))
+	if !os.IsNotExist(err) {
+		fmt.Println("APK already exists in cache, not downloading again")
+		return fmt.Sprintf("%s/%s", APKCacheDir, apkName), nil
+	}
+	out, err := os.Create(fmt.Sprintf("%s/%s", APKCacheDir, apkName))
+	defer out.Close()
+	if err != nil {
+		return "", err
+	}
+	fmt.Printf("Downloading %s", strings.ReplaceAll(matches[0].repository.PackageURL, "%s", apkName))
+	resp, err := http.Get(strings.ReplaceAll(matches[0].repository.PackageURL, "%s", apkName))
+	defer resp.Body.Close()
+	if err != nil {
+		return "", err
+	}
+	_, err = io.Copy(out, resp.Body)
+	return fmt.Sprintf("%s/%s", APKCacheDir, apkName), nil
+}

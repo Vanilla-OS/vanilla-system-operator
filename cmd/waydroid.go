@@ -10,10 +10,10 @@ package cmd
 */
 
 import (
-	"fmt"
 	"github.com/spf13/cobra"
 	"github.com/vanilla-os/orchid/cmdr"
 	"github.com/vanilla-os/vso/core"
+	"strings"
 )
 
 func NewWayCommand() []*cmdr.Command {
@@ -101,24 +101,18 @@ func wayInstall(cmd *cobra.Command, args []string) error {
 	if err != nil {
 		return err
 	}
-
-	if len(args) != 1 {
-		return fmt.Errorf("can only install one apk per run") // TODO: improve this error message
+	apk, err := core.FetchPackage(strings.Join(args, " ")) // Can only install one thing at once, so might as well merge everything as one term
+	if err != nil {
+		return err
 	}
-
-	finalArgs := []string{"ewaydroid", "app", "install", args[0]}
-	fmt.Print(finalArgs)
+	finalArgs := []string{"ewaydroid", "app", "install", apk}
+	//fmt.Println(finalArgs)
 	_, err = way.Exec(false, finalArgs...)
 	return err
 }
 
 func waySearch(cmd *cobra.Command, args []string) error {
-	if len(args) > 1 {
-		return fmt.Errorf("too many arguments")
-	} else if len(args) < 1 {
-		return fmt.Errorf("not enough arguments")
-	}
-	err := core.SearchPackage(args[0])
+	err := core.SearchPackage(strings.Join(args, " ")) // Can only search for one thing at once, so might as well merge everything as one term
 	return err
 }
 
