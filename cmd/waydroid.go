@@ -10,6 +10,7 @@ package cmd
 */
 
 import (
+	"fmt"
 	"github.com/spf13/cobra"
 	"github.com/vanilla-os/orchid/cmdr"
 	"github.com/vanilla-os/vso/core"
@@ -93,7 +94,12 @@ func wayInstall(cmd *cobra.Command, args []string) error {
 		return err
 	}
 
-	finalArgs := []string{"ewaydroid", "app", "install"}
+	if len(args) != 1 {
+		return fmt.Errorf("can only install one apk per run") // TODO: improve this error message
+	}
+
+	finalArgs := []string{"ewaydroid", "app", "install", args[0]}
+	fmt.Print(finalArgs)
 	_, err = way.Exec(false, finalArgs...)
 	return err
 }
