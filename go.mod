@@ -3,6 +3,8 @@ module github.com/vanilla-os/vso
 go 1.18
 
 require (
+	github.com/BurntSushi/toml v0.3.1
+	github.com/buger/jsonparser v1.1.1
 	github.com/olekukonko/tablewriter v0.0.5
 	github.com/spf13/cobra v1.7.0
 	github.com/vanilla-os/apx v1.7.0-1.0.20230921133324-c1323dc41f51

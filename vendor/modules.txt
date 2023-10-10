@@ -6,6 +6,12 @@ atomicgo.dev/cursor
 atomicgo.dev/keyboard
 atomicgo.dev/keyboard/internal
 atomicgo.dev/keyboard/keys
+# github.com/BurntSushi/toml v0.3.1
+## explicit
+github.com/BurntSushi/toml
+# github.com/buger/jsonparser v1.1.1
+## explicit; go 1.13
+github.com/buger/jsonparser
 # github.com/containerd/console v1.0.3
 ## explicit; go 1.13
 github.com/containerd/console

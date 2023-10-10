@@ -33,6 +33,13 @@ func NewWayCommand() []*cmdr.Command {
 		wayInstall,
 	)
 
+	searchCmd := cmdr.NewCommand(
+		"search",
+		vso.Trans("waydroid.search.description"),
+		vso.Trans("waydroid.search.descrioption"),
+		waySearch,
+	)
+
 	initCmd := cmdr.NewCommand(
 		"init",
 		vso.Trans("waydroid.init.description"),
@@ -64,6 +71,7 @@ func NewWayCommand() []*cmdr.Command {
 
 	// Add subcommands to root
 	cmd.AddCommand(installCmd)
+	cmd.AddCommand(searchCmd)
 	cmd.AddCommand(initCmd)
 	cmd.AddCommand(launchCmd)
 	cmd.AddCommand(launcherCmd)
@@ -101,6 +109,16 @@ func wayInstall(cmd *cobra.Command, args []string) error {
 	finalArgs := []string{"ewaydroid", "app", "install", args[0]}
 	fmt.Print(finalArgs)
 	_, err = way.Exec(false, finalArgs...)
+	return err
+}
+
+func waySearch(cmd *cobra.Command, args []string) error {
+	if len(args) > 1 {
+		return fmt.Errorf("too many arguments")
+	} else if len(args) < 1 {
+		return fmt.Errorf("not enough arguments")
+	}
+	err := core.SearchPackage(args[0])
 	return err
 }
 
