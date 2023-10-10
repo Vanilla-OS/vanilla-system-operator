@@ -10,6 +10,7 @@ package cmd
 */
 
 import (
+	"fmt"
 	"github.com/spf13/cobra"
 	"github.com/vanilla-os/orchid/cmdr"
 	"github.com/vanilla-os/vso/core"
@@ -31,13 +32,6 @@ func NewWayCommand() []*cmdr.Command {
 		vso.Trans("waydroid.export.description"),
 		vso.Trans("waydroid.export.description"),
 		wayInstall,
-	)
-
-	searchCmd := cmdr.NewCommand(
-		"search",
-		vso.Trans("waydroid.search.description"),
-		vso.Trans("waydroid.search.descrioption"),
-		waySearch,
 	)
 
 	initCmd := cmdr.NewCommand(
@@ -69,12 +63,27 @@ func NewWayCommand() []*cmdr.Command {
 		wayLauncher,
 	)
 
+	removeCmd := cmdr.NewCommand(
+		"remove",
+		vso.Trans("waydroid.remove.description"),
+		vso.Trans("waydroid.remove.description"),
+		wayRemove,
+	)
+
+	searchCmd := cmdr.NewCommand(
+		"search",
+		vso.Trans("waydroid.search.description"),
+		vso.Trans("waydroid.search.description"),
+		waySearch,
+	)
+
 	// Add subcommands to root
 	cmd.AddCommand(installCmd)
-	cmd.AddCommand(searchCmd)
 	cmd.AddCommand(initCmd)
 	cmd.AddCommand(launchCmd)
 	cmd.AddCommand(launcherCmd)
+	cmd.AddCommand(removeCmd)
+	cmd.AddCommand(searchCmd)
 
 	return []*cmdr.Command{cmd}
 }
@@ -111,11 +120,6 @@ func wayInstall(cmd *cobra.Command, args []string) error {
 	return err
 }
 
-func waySearch(cmd *cobra.Command, args []string) error {
-	err := core.SearchPackage(strings.Join(args, " ")) // Can only search for one thing at once, so might as well merge everything as one term
-	return err
-}
-
 func wayLaunch(cmd *cobra.Command, args []string) error {
 	way, err := core.GetWay()
 	if err != nil {
@@ -135,5 +139,29 @@ func wayLauncher(cmd *cobra.Command, args []string) error {
 
 	finalArgs := []string{"ewaydroid", "show-full-ui"}
 	_, err = way.Exec(false, finalArgs...)
+	return err
+}
+
+func wayRemove(cmd *cobra.Command, args []string) error {
+	way, err := core.GetWay()
+	if err != nil {
+		return err
+	}
+	search := strings.Join(args, " ")
+	packages, err := core.GetWayPackages(way)
+	var rem []string
+	for _, pkg := range packages {
+		if strings.Contains(pkg[0], search) || strings.Contains(pkg[1], search) {
+			fmt.Printf("Removing package %s (%s)\n", pkg[0], pkg[1])
+			rem = pkg
+		}
+	}
+	finalArgs := []string{"ewaydroid", "app", "remove", rem[1]}
+	_, err = way.Exec(false, finalArgs...)
+	return err
+}
+
+func waySearch(cmd *cobra.Command, args []string) error {
+	err := core.SearchPackage(strings.Join(args, " ")) // Can only search for one thing at once, so might as well merge everything as one term
 	return err
 }
