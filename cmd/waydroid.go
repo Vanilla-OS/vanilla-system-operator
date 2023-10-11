@@ -33,6 +33,13 @@ func NewWayCommand() []*cmdr.Command {
 		vso.Trans("waydroid.export.description"),
 		wayInstall,
 	)
+	installCmd.WithBoolFlag(
+		cmdr.NewBoolFlag(
+			"local",
+			"l",
+			vso.Trans("waydroid.export.options.local.description"), false,
+		),
+	)
 
 	initCmd := cmdr.NewCommand(
 		"init",
@@ -114,14 +121,24 @@ func wayInit(cmd *cobra.Command, args []string) error {
 }
 
 func wayInstall(cmd *cobra.Command, args []string) error {
+	if len(args) == 0 {
+		return fmt.Errorf("no arguments provided")
+	}
+	localFlag, _ := cmd.Flags().GetBool("local")
 	way, err := core.GetWay()
 	if err != nil {
 		return err
 	}
-	apk, err := core.FetchPackage(strings.Join(args, " ")) // Can only install one thing at once, so might as well merge everything as one term
-	if err != nil {
-		return err
+	var apk string
+	if !localFlag {
+		apk, err = core.FetchPackage(strings.Join(args, " ")) // Can only install one thing at once, so might as well merge everything as one term
+		if err != nil {
+			return err
+		}
+	} else {
+		apk = args[0]
 	}
+
 	finalArgs := []string{"ewaydroid", "app", "install", apk}
 	//fmt.Println(finalArgs)
 	_, err = way.Exec(false, finalArgs...)
