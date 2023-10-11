@@ -77,6 +77,13 @@ func NewWayCommand() []*cmdr.Command {
 		waySearch,
 	)
 
+	syncCmd := cmdr.NewCommand(
+		"sync",
+		vso.Trans("waydroid.sync.description"),
+		vso.Trans("waydroid.sync.description"),
+		waySync,
+	)
+
 	// Add subcommands to root
 	cmd.AddCommand(installCmd)
 	cmd.AddCommand(initCmd)
@@ -84,6 +91,7 @@ func NewWayCommand() []*cmdr.Command {
 	cmd.AddCommand(launcherCmd)
 	cmd.AddCommand(removeCmd)
 	cmd.AddCommand(searchCmd)
+	cmd.AddCommand(syncCmd)
 
 	return []*cmdr.Command{cmd}
 }
@@ -163,5 +171,14 @@ func wayRemove(cmd *cobra.Command, args []string) error {
 
 func waySearch(cmd *cobra.Command, args []string) error {
 	err := core.SearchPackage(strings.Join(args, " ")) // Can only search for one thing at once, so might as well merge everything as one term
+	return err
+}
+
+func waySync(cmd *cobra.Command, args []string) error {
+	err := core.GetRepos()
+	if err != nil {
+		return err
+	}
+	err = core.SyncIndex(true)
 	return err
 }

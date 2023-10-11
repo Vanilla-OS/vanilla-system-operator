@@ -38,7 +38,7 @@ var Indexes []os.DirEntry
 var IndexCacheDir = fmt.Sprintf("%s/.cache/vso/indexes/", os.Getenv("HOME"))
 var APKCacheDir = fmt.Sprintf("%s/.cache/vso/apks/", os.Getenv("HOME"))
 
-func getRepos() error {
+func GetRepos() error {
 	configFiles, err := os.ReadDir("/etc/vso/fdroid.repos.d/")
 	if err != nil {
 		return err
@@ -101,31 +101,37 @@ func downloadIndex(index int) error {
 	return nil
 }
 
-func syncIndex() {
+func SyncIndex(force bool) error {
 	_, err := os.Stat(IndexCacheDir)
 	if os.IsNotExist(err) {
 		err := os.MkdirAll(IndexCacheDir, 0755)
 		if err != nil {
-			fmt.Printf("err: %v\n", err)
-			return
+			return err
 		}
 		err = downloadIndex(-1)
-		if err != nil {
-			fmt.Printf("err: %v\n", err)
-		}
-		return
+		return err
 	}
+
+	if force {
+		err := os.RemoveAll(IndexCacheDir)
+		if err != nil {
+			return err
+		}
+		err = os.MkdirAll(IndexCacheDir, 07555)
+		if err != nil {
+			return err
+		}
+		err = downloadIndex(-1)
+		return err
+	}
+
 	Indexes, err = os.ReadDir(IndexCacheDir)
 	if err != nil {
-		fmt.Printf("err: %v\n", err)
+		return err
 	}
 	if len(Indexes) <= 0 {
 		err := downloadIndex(-1)
-		if err != nil {
-			fmt.Printf("err: %v\n", err)
-			return
-		}
-		return
+		return err
 	}
 	var indexRepos []string
 	for _, index := range Indexes {
@@ -141,13 +147,13 @@ func syncIndex() {
 			fmt.Printf("Index for repo %s outdated! Syncing...\n", indexFile[1])
 			err := os.Remove(fmt.Sprintf("%s/%s", IndexCacheDir, index))
 			if err != nil {
-				return
+				return err
 			}
 			for i, repository := range Repositories {
 				if repository.Name == indexFile[1] {
 					err := downloadIndex(i)
 					if err != nil {
-						fmt.Printf("err: %v\n", err)
+						fmt.Printf("Error: %v\n", err)
 					}
 				}
 			}
@@ -159,18 +165,22 @@ func syncIndex() {
 			fmt.Printf("Index for repo %s not synced! Syncing now...\n", repository.Name)
 			err := downloadIndex(index)
 			if err != nil {
-				fmt.Printf("err: %v\n", err)
+				fmt.Printf("Error: %v\n", err)
 			}
 		}
 	}
+	return nil
 }
 
 func searchIndex(search string) ([]FdroidPackage, error) {
-	err := getRepos()
+	err := GetRepos()
 	if err != nil {
 		return nil, err
 	}
-	syncIndex()
+	err = SyncIndex(false)
+	if err != nil {
+		return nil, err
+	}
 	var matches []FdroidPackage
 	var processed []string
 	for _, repository := range Repositories {
