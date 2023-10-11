@@ -220,6 +220,7 @@ waydroid:
       PackageInCache: "Application found in cache, not downloading again."
       ConfirmInstall: "Install application %s?"
       DownloadingPackage: "Downloading apk from %s"
+      PackageSelection: "Pick application to install"
     error:
       NotFound: "Application %s was not found."
       InstallCancelled: "Installation Cancelled"
@@ -228,12 +229,21 @@ waydroid:
     options:
       force:
         description: "Force the initialization"
+      noconfirm:
+        description: "Do not ask for confirmation during installation"
   launch:
     description: "Launch an installed application"
   launcher:
     description: "Show the waydroid launcher"
   remove:
     description: "Uninstall an application"
+    info:
+      RemovePackage: "Removing package %s"
+      PackageSelection: "Pick application to remove"
+      ConfirmRemove: "Remove application %s?"
+    error:
+      NoMatches: "Application %s not found"
+      RemoveCancelled: "Removal Cancelled"
   search:
     description: "Search for an application"
   sync:

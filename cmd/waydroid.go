@@ -46,7 +46,16 @@ func NewWayCommand() []*cmdr.Command {
 		cmdr.NewBoolFlag(
 			"local",
 			"l",
-			vso.Trans("waydroid.install.options.local.description"), false,
+			vso.Trans("waydroid.install.options.local.description"),
+			false,
+		),
+	)
+	installCmd.WithBoolFlag(
+		cmdr.NewBoolFlag(
+			"noconfirm",
+			"y",
+			vso.Trans("waydroid.install.options.noconfirm.description"),
+			false,
 		),
 	)
 
@@ -137,7 +146,7 @@ func wayInit(cmd *cobra.Command, args []string) error {
 	return nil
 }
 
-func wayInstallRemote(search string) (string, error) {
+func wayInstallRemote(search string, noconfirm bool) (string, error) {
 	_, err := os.Stat(core.APKCacheDir)
 	if os.IsNotExist(err) {
 		err := os.MkdirAll(core.APKCacheDir, 0755)
@@ -150,13 +159,26 @@ func wayInstallRemote(search string) (string, error) {
 	if err != nil {
 		return "", err
 	}
+	var match core.FdroidPackage
 	if len(matches) <= 0 {
 		return "", &core.NoMatchError{Search: search}
+	} else if len(matches) > 1 {
+		var options []string
+		for _, match := range matches {
+			options = append(options, fmt.Sprintf("%s - %s [%s]", match.Name, match.Summary, match.Repository.Name))
+		}
+		selection := core.PickOption(vso.Trans("waydroid.install.info.PackageSelection"), options, 1)
+		match = matches[selection]
+	} else {
+		match = matches[0]
 	}
 
-	if core.AskConfirmation(fmt.Sprintf(vso.Trans("waydroid.install.info.ConfirmInstall"), matches[0].Name), true) {
-		cmdr.Info.Printfln(vso.Trans("waydroid.install.info.DownloadingPackage"), fmt.Sprintf(matches[0].Repository.PackageURL, matches[0].RDNSName))
-		return core.FetchPackage(matches)
+	if noconfirm {
+		cmdr.Info.Printfln(vso.Trans("waydroid.install.info.DownloadingPackage"), fmt.Sprintf(match.Repository.PackageURL, match.RDNSName))
+		return core.FetchPackage(match)
+	} else if core.AskConfirmation(fmt.Sprintf(vso.Trans("waydroid.install.info.ConfirmInstall"), match.Name), true) {
+		cmdr.Info.Printfln(vso.Trans("waydroid.install.info.DownloadingPackage"), fmt.Sprintf(match.Repository.PackageURL, match.RDNSName))
+		return core.FetchPackage(match)
 	}
 	return "", &core.InstallDeclined{}
 }
@@ -167,11 +189,12 @@ func wayInstall(cmd *cobra.Command, args []string) error {
 		return nil
 	}
 	localFlag, _ := cmd.Flags().GetBool("local")
+	noconfirm, _ := cmd.Flags().GetBool("noconfirm")
 
 	var err error
 	var apk string
 	if !localFlag {
-		apk, err = wayInstallRemote(strings.Join(args, " "))
+		apk, err = wayInstallRemote(strings.Join(args, " "), noconfirm)
 		if err != nil {
 			var NoMatchError *core.NoMatchError
 			var PackageInCache *core.PackageInCache
@@ -231,12 +254,31 @@ func wayRemove(cmd *cobra.Command, args []string) error {
 	search := strings.Join(args, " ")
 	packages, err := core.GetWayPackages(way)
 	var rem []string
+	var matches [][]string
 	for _, pkg := range packages {
 		if strings.Contains(pkg[0], search) || strings.Contains(pkg[1], search) {
-			fmt.Printf("Removing package %s (%s)\n", pkg[0], pkg[1])
-			rem = pkg
+			matches = append(matches, pkg)
 		}
 	}
+	if len(matches) == 1 {
+		rem = matches[0]
+	} else if len(packages) > 1 {
+		var options []string
+		for _, match := range matches {
+			options = append(options, fmt.Sprintf("%s (%s)", match[0], match[1]))
+		}
+		selection := core.PickOption(vso.Trans("waydroid.remove.info.PackageSelection"), options, 1)
+		rem = matches[selection]
+	} else {
+		cmdr.Error.Printfln(vso.Trans("waydroid.remove.error.NoMatches"), strings.Join(args, " "))
+		return nil
+	}
+
+	if !core.AskConfirmation(fmt.Sprintf(vso.Trans("waydroid.remove.info.ConfirmRemove"), fmt.Sprintf("%s (%s)", rem[0], rem[1])), true) {
+		cmdr.Error.Println(vso.Trans("waydroid.remove.error.RemoveCancelled"))
+		return nil
+	}
+	cmdr.Info.Printfln(vso.Trans("waydroid.remove.info.RemovePackage"), fmt.Sprintf("%s (%s)", rem[0], rem[1]))
 	finalArgs := []string{"ewaydroid", "app", "remove", rem[1]}
 	_, err = way.Exec(false, finalArgs...)
 	return err

@@ -50,6 +50,26 @@ func AskConfirmation(s string, norm bool) bool {
 	return norm
 }
 
+func PickOption(s string, a []string, def int) int {
+	var response int
+	selected := -1
+	for selected > len(a) || selected < 0 {
+		selected = def
+		for i, opt := range a {
+			fmt.Printf("%d) %s\n", i+1, opt)
+		}
+		fmt.Printf("\n%s", s)
+		if def > -1 {
+			fmt.Printf(" (%d): ", def)
+		}
+		fmt.Scanln(&response)
+		if response != 0 {
+			selected = response
+		}
+	}
+	return selected - 1
+}
+
 func CheckConnection() bool {
 	_, err := http.Get("https://google.com") // TODO: use a better way to check connection
 	return err == nil

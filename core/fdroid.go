@@ -282,13 +282,13 @@ func getPackageVersion(pkg FdroidPackage) (string, error) {
 	return string(suggestedVersion), err
 }
 
-func FetchPackage(matches []FdroidPackage) (string, error) {
+func FetchPackage(match FdroidPackage) (string, error) {
 
-	version, err := getPackageVersion(matches[0])
+	version, err := getPackageVersion(match)
 	if err != nil {
 		return "", err
 	}
-	apkName := fmt.Sprintf("%s_%s.apk", matches[0].RDNSName, version)
+	apkName := fmt.Sprintf("%s_%s.apk", match.RDNSName, version)
 	if err != nil {
 		return "", err
 	}
@@ -302,7 +302,7 @@ func FetchPackage(matches []FdroidPackage) (string, error) {
 	if err != nil {
 		return "", err
 	}
-	resp, err := http.Get(strings.ReplaceAll(matches[0].Repository.PackageURL, "%s", apkName))
+	resp, err := http.Get(strings.ReplaceAll(match.Repository.PackageURL, "%s", apkName))
 	defer resp.Body.Close()
 	if err != nil {
 		return "", err
