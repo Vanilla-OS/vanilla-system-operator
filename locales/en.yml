@@ -204,3 +204,28 @@ tasks:
     options:
       privateEvent:
        description: "specify private event to rotate tasks for boot, shutdown, login, logout"
+
+waydroid:
+  description: "Manage the vso waydroid subsystem"
+  delete:
+    description: "Delete the waydroid subsystem"
+  export:
+    description: "Install an application"
+    options:
+      local:
+        description: "Install a local apk"
+  init:
+    description: "Initialize the waydroid subsystem"
+    options:
+      force:
+        description: "Force the initialization"
+  launch:
+    description: "Launch an installed application"
+  launcher:
+    description: "Show the waydroid launcher"
+  remove:
+    description: "Uninstall an application"
+  search:
+    description: "Search for an application"
+  sync:
+    description: "Sync the repositories"

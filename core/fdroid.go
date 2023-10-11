@@ -196,7 +196,7 @@ func searchIndex(search string) ([]FdroidPackage, error) {
 					if err != nil {
 						return err
 					}
-					if strings.Contains(strings.ToLower(name), strings.ToLower(search)) {
+					if strings.Contains(strings.ToLower(name), strings.ToLower(search)) || strings.Contains(strings.ToLower(string(key)), strings.ToLower(search)) {
 						summary, err := jsonparser.GetString(value, "metadata", "summary", "en-US")
 						if err != nil {
 							return err
@@ -280,6 +280,9 @@ func FetchPackage(installPackage string) (string, error) {
 	matches, err := searchIndex(installPackage)
 	if err != nil {
 		return "", err
+	}
+	if len(matches) == 0 {
+		return "", fmt.Errorf("no matches found")
 	}
 	version, err := getPackageVersion(matches[0])
 	if err != nil {

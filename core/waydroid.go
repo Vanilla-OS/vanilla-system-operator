@@ -65,17 +65,17 @@ func GetWayPackages(subsystem *core.SubSystem) ([][]string, error) {
 	out = strings.ReplaceAll(out, "Checking if Waydroid was initialized...\n", "")
 	lines := strings.Split(out, "\n")
 	var pairs = [][]string{{}}
-	j := 0
+	i := 0
 	for _, line := range lines {
 		if strings.Contains(line, "android.intent") {
-			j = j + 1
+			i = i + 1
 			pairs = append(pairs, []string{})
 			continue
 		}
 		if !strings.Contains(line, "categories") {
 			processedLine := strings.Split(line, ":")
 			if len(processedLine) > 1 {
-				pairs[j] = append(pairs[j], strings.Trim(processedLine[1], " "))
+				pairs[i] = append(pairs[i], strings.Trim(processedLine[1], " "))
 			}
 
 		}

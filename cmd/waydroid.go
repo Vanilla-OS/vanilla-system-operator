@@ -27,6 +27,13 @@ func NewWayCommand() []*cmdr.Command {
 	)
 
 	// Subcommands
+	deleteCmd := cmdr.NewCommand(
+		"delete",
+		vso.Trans("waydroid.delete.description"),
+		vso.Trans("waydroid.delete.description"),
+		wayDelete,
+	)
+
 	installCmd := cmdr.NewCommand(
 		"install",
 		vso.Trans("waydroid.export.description"),
@@ -92,6 +99,7 @@ func NewWayCommand() []*cmdr.Command {
 	)
 
 	// Add subcommands to root
+	cmd.AddCommand(deleteCmd)
 	cmd.AddCommand(installCmd)
 	cmd.AddCommand(initCmd)
 	cmd.AddCommand(launchCmd)
@@ -101,6 +109,11 @@ func NewWayCommand() []*cmdr.Command {
 	cmd.AddCommand(syncCmd)
 
 	return []*cmdr.Command{cmd}
+}
+
+func wayDelete(cmd *cobra.Command, args []string) error {
+	fmt.Println("Deleting waydroid container...")
+	return core.WayDelete()
 }
 
 func wayInit(cmd *cobra.Command, args []string) error {
@@ -140,7 +153,6 @@ func wayInstall(cmd *cobra.Command, args []string) error {
 	}
 
 	finalArgs := []string{"ewaydroid", "app", "install", apk}
-	//fmt.Println(finalArgs)
 	_, err = way.Exec(false, finalArgs...)
 	return err
 }
