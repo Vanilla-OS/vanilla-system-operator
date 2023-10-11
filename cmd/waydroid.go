@@ -10,10 +10,12 @@ package cmd
 */
 
 import (
+	"errors"
 	"fmt"
 	"github.com/spf13/cobra"
 	"github.com/vanilla-os/orchid/cmdr"
 	"github.com/vanilla-os/vso/core"
+	"os"
 	"strings"
 )
 
@@ -36,15 +38,15 @@ func NewWayCommand() []*cmdr.Command {
 
 	installCmd := cmdr.NewCommand(
 		"install",
-		vso.Trans("waydroid.export.description"),
-		vso.Trans("waydroid.export.description"),
+		vso.Trans("waydroid.install.description"),
+		vso.Trans("waydroid.install.description"),
 		wayInstall,
 	)
 	installCmd.WithBoolFlag(
 		cmdr.NewBoolFlag(
 			"local",
 			"l",
-			vso.Trans("waydroid.export.options.local.description"), false,
+			vso.Trans("waydroid.install.options.local.description"), false,
 		),
 	)
 
@@ -112,8 +114,10 @@ func NewWayCommand() []*cmdr.Command {
 }
 
 func wayDelete(cmd *cobra.Command, args []string) error {
-	fmt.Println("Deleting waydroid container...")
-	return core.WayDelete()
+	if core.AskConfirmation(vso.Trans("waydroid.delete.confirmation"), false) {
+		return core.WayDelete()
+	}
+	return fmt.Errorf(vso.Trans("waydroid.delete.cancelled"))
 }
 
 func wayInit(cmd *cobra.Command, args []string) error {
@@ -133,25 +137,65 @@ func wayInit(cmd *cobra.Command, args []string) error {
 	return nil
 }
 
+func wayInstallRemote(search string) (string, error) {
+	_, err := os.Stat(core.APKCacheDir)
+	if os.IsNotExist(err) {
+		err := os.MkdirAll(core.APKCacheDir, 0755)
+		if err != nil {
+			return "", err
+		}
+	}
+
+	matches, err := core.SearchIndex(search)
+	if err != nil {
+		return "", err
+	}
+	if len(matches) <= 0 {
+		return "", &core.NoMatchError{Search: search}
+	}
+
+	if core.AskConfirmation(fmt.Sprintf(vso.Trans("waydroid.install.info.ConfirmInstall"), matches[0].Name), true) {
+		cmdr.Info.Printfln(vso.Trans("waydroid.install.info.DownloadingPackage"), fmt.Sprintf(matches[0].Repository.PackageURL, matches[0].RDNSName))
+		return core.FetchPackage(matches)
+	}
+	return "", &core.InstallDeclined{}
+}
+
 func wayInstall(cmd *cobra.Command, args []string) error {
 	if len(args) == 0 {
-		return fmt.Errorf("no arguments provided")
+		cmdr.Error.Println(vso.Trans("waydroid.error.noArguments"))
+		return nil
 	}
 	localFlag, _ := cmd.Flags().GetBool("local")
-	way, err := core.GetWay()
-	if err != nil {
-		return err
-	}
+
+	var err error
 	var apk string
 	if !localFlag {
-		apk, err = core.FetchPackage(strings.Join(args, " ")) // Can only install one thing at once, so might as well merge everything as one term
+		apk, err = wayInstallRemote(strings.Join(args, " "))
 		if err != nil {
-			return err
+			var NoMatchError *core.NoMatchError
+			var PackageInCache *core.PackageInCache
+			var InstallDeclined *core.InstallDeclined
+			if errors.As(err, &NoMatchError) {
+				cmdr.Error.Printfln(vso.Trans("waydroid.install.error.NotFound"), strings.Join(args, " "))
+				return nil
+			} else if errors.As(err, &PackageInCache) {
+				cmdr.Info.Println(vso.Trans("waydroid.install.info.PackageInCache"))
+			} else if errors.As(err, &InstallDeclined) {
+				cmdr.Error.Println(vso.Trans("waydroid.install.error.InstallCancelled"))
+				return nil
+			} else {
+				return err
+			}
 		}
 	} else {
 		apk = args[0]
 	}
 
+	way, err := core.GetWay()
+	if err != nil {
+		return err
+	}
 	finalArgs := []string{"ewaydroid", "app", "install", apk}
 	_, err = way.Exec(false, finalArgs...)
 	return err
@@ -199,8 +243,19 @@ func wayRemove(cmd *cobra.Command, args []string) error {
 }
 
 func waySearch(cmd *cobra.Command, args []string) error {
-	err := core.SearchPackage(strings.Join(args, " ")) // Can only search for one thing at once, so might as well merge everything as one term
-	return err
+	if len(args) == 0 {
+		cmdr.Error.Println(vso.Trans("waydroid.error.noArguments"))
+		return nil
+	}
+	search := strings.Join(args, " ") // Can only search for one thing at once, so might as well merge everything as one term
+	matches, err := core.SearchIndex(search)
+	if err != nil {
+		return err
+	}
+	for _, match := range matches {
+		fmt.Printf("%s (%s) - %s [%s]\n", match.Name, match.RDNSName, match.Summary, match.Repository.Name)
+	}
+	return nil
 }
 
 func waySync(cmd *cobra.Command, args []string) error {

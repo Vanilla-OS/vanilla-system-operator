@@ -33,14 +33,21 @@ func RootCheck(display bool) bool {
 	return true
 }
 
-func AskConfirmation(s string) bool {
+func AskConfirmation(s string, norm bool) bool {
 	var response string
-	fmt.Print(s + " [y/N]: ")
-	fmt.Scanln(&response)
-	if response == "y" || response == "Y" {
-		return true
+	var defResponse string
+	if norm {
+		fmt.Print(s + " [Y/n]: ")
+		defResponse = "y"
+	} else {
+		fmt.Print(s + " [y/N]: ")
+		defResponse = "n"
 	}
-	return false
+	fmt.Scanln(&response)
+	if strings.ToLower(response) != strings.ToLower(defResponse) && len(strings.TrimSpace(response)) != 0 {
+		return !norm
+	}
+	return norm
 }
 
 func CheckConnection() bool {

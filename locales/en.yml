@@ -209,11 +209,20 @@ waydroid:
   description: "Manage the vso waydroid subsystem"
   delete:
     description: "Delete the waydroid subsystem"
-  export:
+  error:
+    noArguments: "No arguments provided."
+  install:
     description: "Install an application"
     options:
       local:
         description: "Install a local apk"
+    info:
+      PackageInCache: "Application found in cache, not downloading again."
+      ConfirmInstall: "Install application %s?"
+      DownloadingPackage: "Downloading apk from %s"
+    error:
+      NotFound: "Application %s was not found."
+      InstallCancelled: "Installation Cancelled"
   init:
     description: "Initialize the waydroid subsystem"
     options:

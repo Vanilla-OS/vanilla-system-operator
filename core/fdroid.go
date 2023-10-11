@@ -25,12 +25,36 @@ type FdroidRepo struct {
 type FdroidPackage struct {
 	Name       string
 	RDNSName   string
-	summary    string
-	author     string
-	source     string
+	Summary    string
+	Author     string
+	Source     string
 	license    string
-	repository FdroidRepo
-	versions   []byte
+	Repository FdroidRepo
+	Versions   []byte
+}
+
+type NoMatchError struct {
+	Search string
+	Err    error
+}
+
+func (n *NoMatchError) Error() string {
+	return fmt.Sprintf("%s not found", n.Search)
+}
+
+type PackageInCache struct {
+	Name string
+	Err  error
+}
+
+func (p *PackageInCache) Error() string {
+	return fmt.Sprintf("%s already in cache", p.Name)
+}
+
+type InstallDeclined struct{}
+
+func (i *InstallDeclined) Error() string {
+	return "Installation stopped"
 }
 
 var Repositories []FdroidRepo
@@ -172,7 +196,7 @@ func SyncIndex(force bool) error {
 	return nil
 }
 
-func searchIndex(search string) ([]FdroidPackage, error) {
+func SearchIndex(search string) ([]FdroidPackage, error) {
 	err := GetRepos()
 	if err != nil {
 		return nil, err
@@ -221,12 +245,12 @@ func searchIndex(search string) ([]FdroidPackage, error) {
 						match := FdroidPackage{
 							Name:       name,
 							RDNSName:   string(key),
-							summary:    summary,
-							author:     author,
-							source:     source,
+							Summary:    summary,
+							Author:     author,
+							Source:     source,
 							license:    license,
-							repository: repository,
-							versions:   versions,
+							Repository: repository,
+							Versions:   versions,
 						}
 						matches = append(matches, match)
 					}
@@ -238,19 +262,8 @@ func searchIndex(search string) ([]FdroidPackage, error) {
 	return matches, nil
 }
 
-func SearchPackage(search string) error {
-	matches, err := searchIndex(search)
-	if err != nil {
-		return err
-	}
-	for _, match := range matches {
-		fmt.Printf("%s (%s) - %s [%s]\n", match.Name, match.RDNSName, match.summary, match.repository.Name)
-	}
-	return nil
-}
-
 func getPackageVersion(pkg FdroidPackage) (string, error) {
-	req, err := http.NewRequest("GET", strings.ReplaceAll(pkg.repository.PackageInfoURL, "%s", pkg.RDNSName), nil)
+	req, err := http.NewRequest("GET", strings.ReplaceAll(pkg.Repository.PackageInfoURL, "%s", pkg.RDNSName), nil)
 	if err != nil {
 		return "", err
 	}
@@ -269,21 +282,8 @@ func getPackageVersion(pkg FdroidPackage) (string, error) {
 	return string(suggestedVersion), err
 }
 
-func FetchPackage(installPackage string) (string, error) {
-	_, err := os.Stat(APKCacheDir)
-	if os.IsNotExist(err) {
-		err := os.MkdirAll(APKCacheDir, 0755)
-		if err != nil {
-			return "", err
-		}
-	}
-	matches, err := searchIndex(installPackage)
-	if err != nil {
-		return "", err
-	}
-	if len(matches) == 0 {
-		return "", fmt.Errorf("no matches found")
-	}
+func FetchPackage(matches []FdroidPackage) (string, error) {
+
 	version, err := getPackageVersion(matches[0])
 	if err != nil {
 		return "", err
@@ -292,18 +292,17 @@ func FetchPackage(installPackage string) (string, error) {
 	if err != nil {
 		return "", err
 	}
+
 	_, err = os.Stat(fmt.Sprintf("%s/%s", APKCacheDir, apkName))
 	if !os.IsNotExist(err) {
-		fmt.Println("APK already exists in cache, not downloading again")
-		return fmt.Sprintf("%s/%s", APKCacheDir, apkName), nil
+		return fmt.Sprintf("%s/%s", APKCacheDir, apkName), &PackageInCache{Name: apkName}
 	}
 	out, err := os.Create(fmt.Sprintf("%s/%s", APKCacheDir, apkName))
 	defer out.Close()
 	if err != nil {
 		return "", err
 	}
-	fmt.Printf("Downloading %s", strings.ReplaceAll(matches[0].repository.PackageURL, "%s", apkName))
-	resp, err := http.Get(strings.ReplaceAll(matches[0].repository.PackageURL, "%s", apkName))
+	resp, err := http.Get(strings.ReplaceAll(matches[0].Repository.PackageURL, "%s", apkName))
 	defer resp.Body.Close()
 	if err != nil {
 		return "", err
