@@ -288,7 +288,6 @@ func FetchPackage(match FdroidPackage) (string, error) {
 	if err != nil {
 		return "", err
 	}
-	//version := "117"
 	versionAsInt, _ := strconv.ParseInt(version, 10, 0)
 	match.InstalledVersionCode = int(versionAsInt)
 	apkName := fmt.Sprintf("%s_%s.apk", match.RDNSName, version)
