@@ -39,6 +39,13 @@ func NewWayCommand() []*cmdr.Command {
 		wayDelete,
 	)
 
+	infoCmd := cmdr.NewCommand(
+		"info",
+		vso.Trans("waydroid.info.description"),
+		vso.Trans("waydroid.info.description"),
+		wayInfo,
+	)
+
 	installCmd := cmdr.NewCommand(
 		"install",
 		vso.Trans("waydroid.install.description"),
@@ -121,6 +128,7 @@ func NewWayCommand() []*cmdr.Command {
 
 	// Add subcommands to root
 	cmd.AddCommand(deleteCmd)
+	cmd.AddCommand(infoCmd)
 	cmd.AddCommand(installCmd)
 	cmd.AddCommand(initCmd)
 	cmd.AddCommand(launchCmd)
@@ -138,6 +146,38 @@ func wayDelete(cmd *cobra.Command, args []string) error {
 		return core.WayDelete()
 	}
 	return fmt.Errorf(vso.Trans("waydroid.delete.cancelled"))
+}
+
+func wayInfo(cmd *cobra.Command, args []string) error {
+	search := strings.Join(args, " ")
+	matches, err := core.SearchIndex(search)
+	if err != nil {
+		return err
+	}
+	var app core.FdroidPackage
+	if len(matches) > 1 {
+		var options []string
+		for _, match := range matches {
+			options = append(options, fmt.Sprintf("%s - %s [%s]", match.Name, match.Summary, match.Repository.Name))
+		}
+		selection := core.PickOption(vso.Trans("waydroid.info.info.PackageSelection"), options, 1)
+		app = matches[selection]
+	} else {
+		app = matches[0]
+	}
+	fmt.Printf(vso.Trans("waydroid.info.PackageName"), app.Name)
+	fmt.Println()
+	fmt.Printf(vso.Trans("waydroid.info.InternalName"), app.RDNSName)
+	fmt.Println()
+	fmt.Printf(vso.Trans("waydroid.info.Summary"), app.Summary)
+	fmt.Println()
+	fmt.Printf(vso.Trans("waydroid.info.Author"), app.Author)
+	fmt.Println()
+	fmt.Printf(vso.Trans("waydroid.info.License"), app.License)
+	fmt.Println()
+	fmt.Printf(vso.Trans("waydroid.info.Repository"), app.Repository.Name)
+	fmt.Println()
+	return nil
 }
 
 func wayInit(cmd *cobra.Command, args []string) error {

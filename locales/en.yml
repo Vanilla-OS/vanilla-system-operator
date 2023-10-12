@@ -260,3 +260,13 @@ waydroid:
       FailUpdatePackageInstall: "Failed to install update for %s"
     info:
       NoUpdates: "Nothing to update"
+  info:
+    description: "Display information about an application"
+    info:
+      PackageSelection: "Select application to display information from"
+    PackageName: "Name: %s"
+    InternalName: "Internal name: %s"
+    Summary: "Summary: %s"
+    Author: "Author: %s"
+    License: "License: %s"
+    Repository: "Repository: %s"
