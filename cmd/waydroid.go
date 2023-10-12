@@ -270,7 +270,7 @@ func wayLaunch(cmd *cobra.Command, args []string) error {
 		return err
 	}
 
-	finalArgs := []string{"ewaydroid", "app", "launch"}
+	finalArgs := []string{"ewaydroid", "app", "launch", args[0]}
 	_, err = way.Exec(false, finalArgs...)
 	return err
 }
