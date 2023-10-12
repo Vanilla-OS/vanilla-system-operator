@@ -53,12 +53,13 @@ func AskConfirmation(s string, norm bool) bool {
 func PickOption(s string, a []string, def int) int {
 	var response int
 	selected := -1
+	for i, opt := range a {
+		fmt.Printf("%d) %s\n", i+1, opt)
+	}
+	fmt.Println()
 	for selected > len(a) || selected < 0 {
 		selected = def
-		for i, opt := range a {
-			fmt.Printf("%d) %s\n", i+1, opt)
-		}
-		fmt.Printf("\n%s", s)
+		fmt.Printf("%s", s)
 		if def > -1 {
 			fmt.Printf(" (%d): ", def)
 		}
