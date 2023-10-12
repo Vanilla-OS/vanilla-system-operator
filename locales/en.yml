@@ -209,6 +209,8 @@ waydroid:
   description: "Manage the vso waydroid subsystem"
   delete:
     description: "Delete the waydroid subsystem"
+    confirmation: "Deleting the waydroid subsystem will delete any data stored in it. Continue?"
+    cancelled: "Cancelled removal of subsystem."
   error:
     noArguments: "No arguments provided."
   install:
@@ -248,3 +250,13 @@ waydroid:
     description: "Search for an application"
   sync:
     description: "Sync the repositories"
+  update:
+    description: "Update installed applications"
+    finished: "Finished updating applications"
+    error:
+      FailGetVersion: "Failed to get version code for %s"
+      FailUpdatePackageDownload: "Failed to download APK for %s"
+      FailUpdatePackageDatabase: "Failed to update database entry for %s"
+      FailUpdatePackageInstall: "Failed to install update for %s"
+    info:
+      NoUpdates: "Nothing to update"

@@ -23,14 +23,15 @@ type FdroidRepo struct {
 }
 
 type FdroidPackage struct {
-	Name       string
-	RDNSName   string
-	Summary    string
-	Author     string
-	Source     string
-	license    string
-	Repository FdroidRepo
-	Versions   []byte
+	Name                 string
+	RDNSName             string
+	Summary              string
+	Author               string
+	Source               string
+	License              string
+	InstalledVersionCode int
+	Repository           FdroidRepo
+	Versions             []byte
 }
 
 type NoMatchError struct {
@@ -128,7 +129,7 @@ func downloadIndex(index int) error {
 func SyncIndex(force bool) error {
 	_, err := os.Stat(IndexCacheDir)
 	if os.IsNotExist(err) {
-		err := os.MkdirAll(IndexCacheDir, 0755)
+		err := os.MkdirAll(IndexCacheDir, 0777)
 		if err != nil {
 			return err
 		}
@@ -141,7 +142,7 @@ func SyncIndex(force bool) error {
 		if err != nil {
 			return err
 		}
-		err = os.MkdirAll(IndexCacheDir, 07555)
+		err = os.MkdirAll(IndexCacheDir, 0777)
 		if err != nil {
 			return err
 		}
@@ -223,23 +224,22 @@ func SearchIndex(search string) ([]FdroidPackage, error) {
 					if strings.Contains(strings.ToLower(name), strings.ToLower(search)) || strings.Contains(strings.ToLower(string(key)), strings.ToLower(search)) {
 						summary, err := jsonparser.GetString(value, "metadata", "summary", "en-US")
 						if err != nil {
-							return err
+							summary = "No summary found"
 						}
 						author, err := jsonparser.GetString(value, "metadata", "authorName")
 						if err != nil {
-							return err
+							author = "No author found"
 						}
 						source, err := jsonparser.GetString(value, "metadata", "sourceCode")
 						if err != nil {
-							return err
+							source = "No link to source code found"
 						}
 						license, err := jsonparser.GetString(value, "metadata", "license")
 						if err != nil {
-							return err
+							license = "No license found"
 						}
 						versions, _, _, err := jsonparser.Get(value, "versions")
 						if err != nil {
-							fmt.Printf("err")
 							return err
 						}
 						match := FdroidPackage{
@@ -248,7 +248,7 @@ func SearchIndex(search string) ([]FdroidPackage, error) {
 							Summary:    summary,
 							Author:     author,
 							Source:     source,
-							license:    license,
+							License:    license,
 							Repository: repository,
 							Versions:   versions,
 						}
@@ -262,7 +262,7 @@ func SearchIndex(search string) ([]FdroidPackage, error) {
 	return matches, nil
 }
 
-func getPackageVersion(pkg FdroidPackage) (string, error) {
+func GetPackageVersion(pkg FdroidPackage) (string, error) {
 	req, err := http.NewRequest("GET", strings.ReplaceAll(pkg.Repository.PackageInfoURL, "%s", pkg.RDNSName), nil)
 	if err != nil {
 		return "", err
@@ -284,14 +284,14 @@ func getPackageVersion(pkg FdroidPackage) (string, error) {
 
 func FetchPackage(match FdroidPackage) (string, error) {
 
-	version, err := getPackageVersion(match)
+	version, err := GetPackageVersion(match)
 	if err != nil {
 		return "", err
 	}
+	//version := "117"
+	versionAsInt, _ := strconv.ParseInt(version, 10, 0)
+	match.InstalledVersionCode = int(versionAsInt)
 	apkName := fmt.Sprintf("%s_%s.apk", match.RDNSName, version)
-	if err != nil {
-		return "", err
-	}
 
 	_, err = os.Stat(fmt.Sprintf("%s/%s", APKCacheDir, apkName))
 	if !os.IsNotExist(err) {

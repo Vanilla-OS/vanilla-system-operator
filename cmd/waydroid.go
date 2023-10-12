@@ -10,12 +10,15 @@ package cmd
 */
 
 import (
+	"encoding/json"
 	"errors"
 	"fmt"
 	"github.com/spf13/cobra"
 	"github.com/vanilla-os/orchid/cmdr"
 	"github.com/vanilla-os/vso/core"
+	bolt "go.etcd.io/bbolt"
 	"os"
+	"strconv"
 	"strings"
 )
 
@@ -109,6 +112,13 @@ func NewWayCommand() []*cmdr.Command {
 		waySync,
 	)
 
+	updateCmd := cmdr.NewCommand(
+		"update",
+		vso.Trans("waydroid.update.description"),
+		vso.Trans("waydroid.update.description"),
+		wayUpdate,
+	)
+
 	// Add subcommands to root
 	cmd.AddCommand(deleteCmd)
 	cmd.AddCommand(installCmd)
@@ -118,6 +128,7 @@ func NewWayCommand() []*cmdr.Command {
 	cmd.AddCommand(removeCmd)
 	cmd.AddCommand(searchCmd)
 	cmd.AddCommand(syncCmd)
+	cmd.AddCommand(updateCmd)
 
 	return []*cmdr.Command{cmd}
 }
@@ -146,22 +157,34 @@ func wayInit(cmd *cobra.Command, args []string) error {
 	return nil
 }
 
-func wayInstallRemote(search string, noconfirm bool) (string, error) {
+func wayInstallRemote(search string, noconfirm bool, noprompt bool) (string, core.FdroidPackage, error) {
 	_, err := os.Stat(core.APKCacheDir)
 	if os.IsNotExist(err) {
 		err := os.MkdirAll(core.APKCacheDir, 0755)
 		if err != nil {
-			return "", err
+			return "", core.FdroidPackage{}, err
 		}
 	}
 
 	matches, err := core.SearchIndex(search)
 	if err != nil {
-		return "", err
+		return "", core.FdroidPackage{}, err
 	}
 	var match core.FdroidPackage
 	if len(matches) <= 0 {
-		return "", &core.NoMatchError{Search: search}
+		fmt.Println("no match")
+		return "", core.FdroidPackage{}, &core.NoMatchError{Search: search}
+	} else if noprompt {
+		useFirst := true
+		for _, pkg := range matches {
+			if strings.EqualFold(pkg.Name, search) {
+				match = pkg
+				useFirst = false
+			}
+		}
+		if useFirst {
+			match = matches[0]
+		}
 	} else if len(matches) > 1 {
 		var options []string
 		for _, match := range matches {
@@ -175,12 +198,14 @@ func wayInstallRemote(search string, noconfirm bool) (string, error) {
 
 	if noconfirm {
 		cmdr.Info.Printfln(vso.Trans("waydroid.install.info.DownloadingPackage"), fmt.Sprintf(match.Repository.PackageURL, match.RDNSName))
-		return core.FetchPackage(match)
+		apk, err := core.FetchPackage(match)
+		return apk, match, err
 	} else if core.AskConfirmation(fmt.Sprintf(vso.Trans("waydroid.install.info.ConfirmInstall"), match.Name), true) {
 		cmdr.Info.Printfln(vso.Trans("waydroid.install.info.DownloadingPackage"), fmt.Sprintf(match.Repository.PackageURL, match.RDNSName))
-		return core.FetchPackage(match)
+		apk, err := core.FetchPackage(match)
+		return apk, match, err
 	}
-	return "", &core.InstallDeclined{}
+	return "", core.FdroidPackage{}, &core.InstallDeclined{}
 }
 
 func wayInstall(cmd *cobra.Command, args []string) error {
@@ -193,8 +218,9 @@ func wayInstall(cmd *cobra.Command, args []string) error {
 
 	var err error
 	var apk string
+	var pkg core.FdroidPackage
 	if !localFlag {
-		apk, err = wayInstallRemote(strings.Join(args, " "), noconfirm)
+		apk, pkg, err = wayInstallRemote(strings.Join(args, " "), noconfirm, false)
 		if err != nil {
 			var NoMatchError *core.NoMatchError
 			var PackageInCache *core.PackageInCache
@@ -212,6 +238,16 @@ func wayInstall(cmd *cobra.Command, args []string) error {
 			}
 		}
 	} else {
+		fileName := strings.Split(args[0], "/")
+		pkg = core.FdroidPackage{
+			Name:       strings.ReplaceAll(fileName[len(fileName)-1], ".apk", ""),
+			RDNSName:   strings.ReplaceAll(fileName[len(fileName)-1], ".apk", ""),
+			Summary:    "",
+			Author:     "",
+			Source:     "",
+			Repository: core.FdroidRepo{Name: "local"},
+			Versions:   nil,
+		}
 		apk = args[0]
 	}
 
@@ -220,6 +256,10 @@ func wayInstall(cmd *cobra.Command, args []string) error {
 		return err
 	}
 	finalArgs := []string{"ewaydroid", "app", "install", apk}
+	err = core.WayPutAppIntoDatabase(pkg, nil)
+	if err != nil {
+		return err
+	}
 	_, err = way.Exec(false, finalArgs...)
 	return err
 }
@@ -252,17 +292,39 @@ func wayRemove(cmd *cobra.Command, args []string) error {
 		return err
 	}
 	search := strings.Join(args, " ")
-	packages, err := core.GetWayPackages(way)
-	var rem []string
 	var matches [][]string
-	for _, pkg := range packages {
-		if strings.Contains(pkg[0], search) || strings.Contains(pkg[1], search) {
-			matches = append(matches, pkg)
-		}
+	var rem []string
+	db, err := core.GetWayDatabase()
+	if err != nil {
+		return err
 	}
+	err = db.View(func(tx *bolt.Tx) error {
+		apps := tx.Bucket([]byte("Apps"))
+		if apps == nil {
+			return &core.BucketNotFoundError{
+				BucketName: "Apps",
+			}
+		}
+		cursor := apps.Cursor()
+		for key, value := cursor.First(); key != nil; key, value = cursor.Next() {
+			var pkg core.FdroidPackage
+			err := json.Unmarshal(value, &pkg)
+			if err != nil {
+				return err
+			}
+			if strings.Contains(strings.ToLower(pkg.Name), strings.ToLower(search)) || strings.Contains(strings.ToLower(pkg.RDNSName), strings.ToLower(search)) {
+				matches = append(matches, []string{pkg.Name, pkg.RDNSName})
+			}
+		}
+		return nil
+	})
+	if err != nil {
+		return err
+	}
+	//defer db.Close()
 	if len(matches) == 1 {
 		rem = matches[0]
-	} else if len(packages) > 1 {
+	} else if len(matches) > 1 {
 		var options []string
 		for _, match := range matches {
 			options = append(options, fmt.Sprintf("%s (%s)", match[0], match[1]))
@@ -280,6 +342,11 @@ func wayRemove(cmd *cobra.Command, args []string) error {
 	}
 	cmdr.Info.Printfln(vso.Trans("waydroid.remove.info.RemovePackage"), fmt.Sprintf("%s (%s)", rem[0], rem[1]))
 	finalArgs := []string{"ewaydroid", "app", "remove", rem[1]}
+	err = core.WayRemoveAppFromDatabase(rem[1], db)
+	fmt.Println("here")
+	if err != nil {
+		return err
+	}
 	_, err = way.Exec(false, finalArgs...)
 	return err
 }
@@ -307,4 +374,89 @@ func waySync(cmd *cobra.Command, args []string) error {
 	}
 	err = core.SyncIndex(true)
 	return err
+}
+
+func wayUpdate(cmd *cobra.Command, args []string) error {
+	db, err := core.GetWayDatabase()
+	if err != nil {
+		return err
+	}
+	var updates []core.FdroidPackage
+	err = db.View(func(tx *bolt.Tx) error {
+		apps := tx.Bucket([]byte("Apps"))
+		if apps == nil {
+			return &core.BucketNotFoundError{
+				BucketName: "Apps",
+			}
+		}
+		cursor := apps.Cursor()
+		for key, value := cursor.First(); key != nil; key, value = cursor.Next() {
+			var pkg core.FdroidPackage
+			err := json.Unmarshal(value, &pkg)
+			if err != nil {
+				return err
+			}
+			latestVersion, err := core.GetPackageVersion(pkg)
+			if err != nil {
+				cmdr.Error.Printfln(vso.Trans("waydroid.update.error.FailGetVersion"), fmt.Sprintf("%s (%s)", pkg.Name, pkg.RDNSName))
+				continue
+			}
+			latestVersionInt, err := strconv.ParseInt(latestVersion, 10, 0)
+			if err != nil {
+				continue
+			}
+			if !strings.Contains(pkg.Repository.Name, "local") && pkg.InstalledVersionCode < int(latestVersionInt) {
+				updates = append(updates, pkg)
+			}
+		}
+		return nil
+	})
+	if err != nil {
+		return err
+	}
+
+	if len(updates) == 0 {
+		defer db.Close()
+		cmdr.Info.Println(vso.Trans("waydroid.update.info.NoUpdates"))
+		return nil
+	}
+
+	way, err := core.GetWay()
+	if err != nil {
+		return err
+	}
+	var PackageInCache *core.PackageInCache
+	for _, update := range updates {
+		apk, _, err := wayInstallRemote(update.RDNSName, true, true)
+		if errors.As(err, &PackageInCache) {
+			cmdr.Info.Println(vso.Trans("waydroid.install.info.PackageInCache"))
+		} else if err != nil {
+			cmdr.Error.Printfln(vso.Trans("waydroid.update.error.FailUpdatePackageDownload"), fmt.Sprintf("%s (%s)", update.Name, update.RDNSName))
+			continue
+		}
+		finalArgs := []string{"ewaydroid", "app", "install", apk}
+		latestVersion, err := core.GetPackageVersion(update)
+		if err != nil {
+			cmdr.Error.Printfln(vso.Trans("waydroid.update.error.FailGetVersion"), fmt.Sprintf("%s (%s)", update.Name, update.RDNSName))
+			continue
+		}
+		latestVersionInt, err := strconv.ParseInt(latestVersion, 10, 0)
+		if err != nil {
+			continue
+		}
+		update.InstalledVersionCode = int(latestVersionInt)
+		err = core.WayPutAppIntoDatabase(update, db)
+		if err != nil {
+			cmdr.Error.Printfln(vso.Trans("waydroid.update.error.FailUpdatePackageDatabase"), fmt.Sprintf("%s (%s)", update.Name, update.RDNSName))
+			continue
+		}
+		_, err = way.Exec(false, finalArgs...)
+		if err != nil {
+			cmdr.Error.Printfln(vso.Trans("waydroid.update.error.FailUpdatePackageInstall"), fmt.Sprintf("%s (%s)", update.Name, update.RDNSName))
+			continue
+		}
+	}
+	defer db.Close()
+	cmdr.Info.Println(vso.Trans("waydroid.update.finished"))
+	return nil
 }

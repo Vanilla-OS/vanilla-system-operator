@@ -9,6 +9,7 @@ require (
 	github.com/spf13/cobra v1.7.0
 	github.com/vanilla-os/apx v1.7.0-1.0.20230921133324-c1323dc41f51
 	github.com/vanilla-os/orchid v0.4.0
+	go.etcd.io/bbolt v1.3.7
 )
 
 require (
