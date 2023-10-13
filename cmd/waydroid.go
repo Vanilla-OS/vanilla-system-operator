@@ -32,6 +32,12 @@ func NewWayCommand() []*cmdr.Command {
 	)
 
 	// Subcommands
+	cleanCmd := cmdr.NewCommand(
+		"clean",
+		vso.Trans("waydroid.clean.description"),
+		vso.Trans("waydroid.clean.description"),
+		wayClean)
+
 	deleteCmd := cmdr.NewCommand(
 		"delete",
 		vso.Trans("waydroid.delete.description"),
@@ -127,6 +133,7 @@ func NewWayCommand() []*cmdr.Command {
 	)
 
 	// Add subcommands to root
+	cmd.AddCommand(cleanCmd)
 	cmd.AddCommand(deleteCmd)
 	cmd.AddCommand(infoCmd)
 	cmd.AddCommand(installCmd)
@@ -141,6 +148,28 @@ func NewWayCommand() []*cmdr.Command {
 	return []*cmdr.Command{cmd}
 }
 
+func wayClean(cmd *cobra.Command, args []string) error {
+	cmdr.Info.Println(vso.Trans("waydroid.clean.info.index"))
+	_, err := os.Stat(core.IndexCacheDir)
+	if !os.IsNotExist(err) {
+		err = os.RemoveAll(core.IndexCacheDir)
+		if err != nil {
+			cmdr.Error.Println(vso.Trans("waydroid.clean.error.index"))
+			fmt.Println(err)
+		}
+	}
+	cmdr.Info.Println(vso.Trans("waydroid.clean.info.apk"))
+	_, err = os.Stat(core.APKCacheDir)
+	if !os.IsNotExist(err) {
+		err = os.RemoveAll(core.APKCacheDir)
+		if err != nil {
+			cmdr.Error.Println(vso.Trans("waydroid.clean.error.apk"))
+		}
+	}
+	cmdr.Info.Println(vso.Trans("waydroid.clean.info.success"))
+	return nil
+}
+
 func wayDelete(cmd *cobra.Command, args []string) error {
 	if core.AskConfirmation(vso.Trans("waydroid.delete.confirmation"), false) {
 		return core.WayDelete()
@@ -150,7 +179,7 @@ func wayDelete(cmd *cobra.Command, args []string) error {
 
 func wayInfo(cmd *cobra.Command, args []string) error {
 	search := strings.Join(args, " ")
-	matches, err := core.SearchIndex(search)
+	matches, err := core.SearchIndex(search, vso.Trans("waydroid.downloadIndex"))
 	if err != nil {
 		return err
 	}
@@ -206,7 +235,7 @@ func wayInstallRemote(search string, noconfirm bool, noprompt bool) (string, cor
 		}
 	}
 
-	matches, err := core.SearchIndex(search)
+	matches, err := core.SearchIndex(search, vso.Trans("waydroid.downloadIndex"))
 	if err != nil {
 		return "", core.FdroidPackage{}, err
 	}
@@ -397,7 +426,7 @@ func waySearch(cmd *cobra.Command, args []string) error {
 		return nil
 	}
 	search := strings.Join(args, " ") // Can only search for one thing at once, so might as well merge everything as one term
-	matches, err := core.SearchIndex(search)
+	matches, err := core.SearchIndex(search, vso.Trans("waydroid.downloadIndex"))
 	if err != nil {
 		return err
 	}
@@ -412,7 +441,7 @@ func waySync(cmd *cobra.Command, args []string) error {
 	if err != nil {
 		return err
 	}
-	err = core.SyncIndex(true)
+	err = core.SyncIndex(true, vso.Trans("waydroid.downloadIndex"))
 	return err
 }
 

@@ -96,11 +96,10 @@ func parseRepoFile(file string) {
 // Download the index of a repo
 // the index argument specifies which index of the Repositories variable to download
 // if index is set to -1, then the indexes from all Repositories will be downloaded
-func downloadIndex(index int) error {
+func downloadIndex(index int, downTrans string) error {
 	if index == -1 {
-		fmt.Println("syncing everything")
 		for i := 0; i < len(Repositories); i++ {
-			err := downloadIndex(i)
+			err := downloadIndex(i, downTrans)
 			if err != nil {
 				return err
 			}
@@ -108,7 +107,8 @@ func downloadIndex(index int) error {
 	} else if len(Repositories)-1 < index {
 		return fmt.Errorf("index out of range")
 	} else {
-		fmt.Printf("Downloading repo %s\n", Repositories[index].Name)
+		fmt.Printf(downTrans, Repositories[index].Name) // I don't know how to get vso.Trans here so this will have to do
+		fmt.Println()
 		currTime := time.Now().Unix()
 		out, err := os.Create(fmt.Sprintf("%s/index-%s-%d.json", fmt.Sprintf("%s/.cache/vso/indexes/", os.Getenv("HOME")), Repositories[index].Name, currTime))
 		defer out.Close()
@@ -121,19 +121,20 @@ func downloadIndex(index int) error {
 			return err
 		}
 		_, err = io.Copy(out, resp.Body)
+		os.Chmod(fmt.Sprintf("%s/index-%s-%d.json", fmt.Sprintf("%s/.cache/vso/indexes/", os.Getenv("HOME")), Repositories[index].Name, currTime), 0777)
 		return err
 	}
 	return nil
 }
 
-func SyncIndex(force bool) error {
+func SyncIndex(force bool, downTrans string) error {
 	_, err := os.Stat(IndexCacheDir)
 	if os.IsNotExist(err) {
 		err := os.MkdirAll(IndexCacheDir, 0777)
 		if err != nil {
 			return err
 		}
-		err = downloadIndex(-1)
+		err = downloadIndex(-1, downTrans)
 		return err
 	}
 
@@ -146,7 +147,7 @@ func SyncIndex(force bool) error {
 		if err != nil {
 			return err
 		}
-		err = downloadIndex(-1)
+		err = downloadIndex(-1, downTrans)
 		return err
 	}
 
@@ -155,7 +156,7 @@ func SyncIndex(force bool) error {
 		return err
 	}
 	if len(Indexes) <= 0 {
-		err := downloadIndex(-1)
+		err := downloadIndex(-1, downTrans)
 		return err
 	}
 	var indexRepos []string
@@ -176,7 +177,7 @@ func SyncIndex(force bool) error {
 			}
 			for i, repository := range Repositories {
 				if repository.Name == indexFile[1] {
-					err := downloadIndex(i)
+					err := downloadIndex(i, downTrans)
 					if err != nil {
 						fmt.Printf("Error: %v\n", err)
 					}
@@ -188,7 +189,7 @@ func SyncIndex(force bool) error {
 	for index, repository := range Repositories {
 		if !slices.Contains(indexRepos, repository.Name) {
 			fmt.Printf("Index for repo %s not synced! Syncing now...\n", repository.Name)
-			err := downloadIndex(index)
+			err := downloadIndex(index, downTrans)
 			if err != nil {
 				fmt.Printf("Error: %v\n", err)
 			}
@@ -197,12 +198,12 @@ func SyncIndex(force bool) error {
 	return nil
 }
 
-func SearchIndex(search string) ([]FdroidPackage, error) {
+func SearchIndex(search string, downTrans string) ([]FdroidPackage, error) {
 	err := GetRepos()
 	if err != nil {
 		return nil, err
 	}
-	err = SyncIndex(false)
+	err = SyncIndex(false, downTrans)
 	if err != nil {
 		return nil, err
 	}

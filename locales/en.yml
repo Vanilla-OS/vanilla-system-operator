@@ -207,6 +207,16 @@ tasks:
 
 waydroid:
   description: "Manage the vso waydroid subsystem"
+  downloadIndex: "Downloading index for repository %s"
+  clean:
+    description: "Cleans the waydroid vso cache"
+    info:
+      index: "Deleting index cache"
+      apk: "Deleting apk cache"
+      success: "Successfully deleted waydroid vso cache"
+    error:
+      index: "Failed to delete index cache"
+      apk: "Failed to delete apk cache"
   delete:
     description: "Delete the waydroid subsystem"
     confirmation: "Deleting the waydroid subsystem will delete any data stored in it. Continue?"
