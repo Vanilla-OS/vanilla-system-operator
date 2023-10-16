@@ -204,3 +204,79 @@ tasks:
     options:
       privateEvent:
        description: "specify private event to rotate tasks for boot, shutdown, login, logout"
+
+waydroid:
+  description: "Manage the vso waydroid subsystem"
+  downloadIndex: "Downloading index for repository %s"
+  clean:
+    description: "Cleans the waydroid vso cache"
+    info:
+      index: "Deleting index cache"
+      apk: "Deleting apk cache"
+      success: "Successfully deleted waydroid vso cache"
+    error:
+      index: "Failed to delete index cache"
+      apk: "Failed to delete apk cache"
+  delete:
+    description: "Delete the waydroid subsystem"
+    confirmation: "Deleting the waydroid subsystem will delete any data stored in it. Continue?"
+    cancelled: "Cancelled removal of subsystem."
+  error:
+    noArguments: "No arguments provided."
+  install:
+    description: "Install an application"
+    options:
+      local:
+        description: "Install a local apk"
+    info:
+      PackageInCache: "Application found in cache, not downloading again."
+      ConfirmInstall: "Install application %s?"
+      DownloadingPackage: "Downloading apk from %s"
+      PackageSelection: "Pick application to install"
+    error:
+      NotFound: "Application %s was not found."
+      InstallCancelled: "Installation Cancelled"
+  init:
+    description: "Initialize the waydroid subsystem"
+    options:
+      force:
+        description: "Force the initialization"
+      noconfirm:
+        description: "Do not ask for confirmation during installation"
+  launch:
+    description: "Launch an installed application"
+  launcher:
+    description: "Show the waydroid launcher"
+  remove:
+    description: "Uninstall an application"
+    info:
+      RemovePackage: "Removing package %s"
+      PackageSelection: "Pick application to remove"
+      ConfirmRemove: "Remove application %s?"
+    error:
+      NoMatches: "Application %s not found"
+      RemoveCancelled: "Removal Cancelled"
+  search:
+    description: "Search for an application"
+  sync:
+    description: "Sync the repositories"
+  update:
+    description: "Update installed applications"
+    finished: "Finished updating applications"
+    error:
+      FailGetVersion: "Failed to get version code for %s"
+      FailUpdatePackageDownload: "Failed to download APK for %s"
+      FailUpdatePackageDatabase: "Failed to update database entry for %s"
+      FailUpdatePackageInstall: "Failed to install update for %s"
+    info:
+      NoUpdates: "Nothing to update"
+  info:
+    description: "Display information about an application"
+    info:
+      PackageSelection: "Select application to display information from"
+    PackageName: "Name: %s"
+    InternalName: "Internal name: %s"
+    Summary: "Summary: %s"
+    Author: "Author: %s"
+    License: "License: %s"
+    Repository: "Repository: %s"

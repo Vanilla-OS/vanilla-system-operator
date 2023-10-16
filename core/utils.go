@@ -33,14 +33,42 @@ func RootCheck(display bool) bool {
 	return true
 }
 
-func AskConfirmation(s string) bool {
+func AskConfirmation(s string, norm bool) bool {
 	var response string
-	fmt.Print(s + " [y/N]: ")
-	fmt.Scanln(&response)
-	if response == "y" || response == "Y" {
-		return true
+	var defResponse string
+	if norm {
+		fmt.Print(s + " [Y/n]: ")
+		defResponse = "y"
+	} else {
+		fmt.Print(s + " [y/N]: ")
+		defResponse = "n"
 	}
-	return false
+	fmt.Scanln(&response)
+	if strings.ToLower(response) != strings.ToLower(defResponse) && len(strings.TrimSpace(response)) != 0 {
+		return !norm
+	}
+	return norm
+}
+
+func PickOption(s string, a []string, def int) int {
+	var response int
+	selected := -1
+	for i, opt := range a {
+		fmt.Printf("%d) %s\n", i+1, opt)
+	}
+	fmt.Println()
+	for selected > len(a) || selected < 0 {
+		selected = def
+		fmt.Printf("%s", s)
+		if def > -1 {
+			fmt.Printf(" (%d): ", def)
+		}
+		fmt.Scanln(&response)
+		if response != 0 {
+			selected = response
+		}
+	}
+	return selected - 1
 }
 
 func CheckConnection() bool {
@@ -164,4 +192,13 @@ func CreateVsoTable(writer io.Writer) *tablewriter.Table {
 	table.SetRowLine(true)
 
 	return table
+}
+
+func sliceContains(slice []string, item string) bool {
+	for _, s := range slice {
+		if s == item {
+			return true
+		}
+	}
+	return false
 }
