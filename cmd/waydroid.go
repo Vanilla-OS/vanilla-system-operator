@@ -13,13 +13,14 @@ import (
 	"encoding/json"
 	"errors"
 	"fmt"
+	"os"
+	"strconv"
+	"strings"
+
 	"github.com/spf13/cobra"
 	"github.com/vanilla-os/orchid/cmdr"
 	"github.com/vanilla-os/vso/core"
 	bolt "go.etcd.io/bbolt"
-	"os"
-	"strconv"
-	"strings"
 )
 
 func NewWayCommand() []*cmdr.Command {
@@ -425,14 +426,20 @@ func waySearch(cmd *cobra.Command, args []string) error {
 		cmdr.Error.Println(vso.Trans("waydroid.error.noArguments"))
 		return nil
 	}
+
 	search := strings.Join(args, " ") // Can only search for one thing at once, so might as well merge everything as one term
 	matches, err := core.SearchIndex(search, vso.Trans("waydroid.downloadIndex"))
 	if err != nil {
 		return err
 	}
+
+	table := core.CreateVsoTable(os.Stdout)
+	table.SetHeader([]string{"App", "Id", "Repository"})
 	for _, match := range matches {
-		fmt.Printf("%s (%s) - %s [%s]\n", match.Name, match.RDNSName, match.Summary, match.Repository.Name)
+		table.Append([]string{match.Name + " - " + match.Summary, match.RDNSName, match.Repository.Name})
 	}
+	table.Render()
+
 	return nil
 }
 
