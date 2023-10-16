@@ -111,15 +111,15 @@ func downloadIndex(index int, downTrans string) error {
 		fmt.Println()
 		currTime := time.Now().Unix()
 		out, err := os.Create(fmt.Sprintf("%s/index-%s-%d.json", fmt.Sprintf("%s/.cache/vso/indexes/", os.Getenv("HOME")), Repositories[index].Name, currTime))
+		if err != nil {
+			return err
+		}
 		defer out.Close()
-		if err != nil {
-			return err
-		}
 		resp, err := http.Get(Repositories[index].IndexURL)
-		defer resp.Body.Close()
 		if err != nil {
 			return err
 		}
+		defer resp.Body.Close()
 		_, err = io.Copy(out, resp.Body)
 		os.Chmod(fmt.Sprintf("%s/index-%s-%d.json", fmt.Sprintf("%s/.cache/vso/indexes/", os.Getenv("HOME")), Repositories[index].Name, currTime), 0777)
 		return err
@@ -257,6 +257,9 @@ func SearchIndex(search string, downTrans string) ([]FdroidPackage, error) {
 					}
 					return nil
 				}, "packages")
+				if err != nil {
+					return nil, err
+				}
 			}
 		}
 	}
@@ -298,15 +301,18 @@ func FetchPackage(match FdroidPackage) (string, error) {
 		return fmt.Sprintf("%s/%s", APKCacheDir, apkName), &PackageInCache{Name: apkName}
 	}
 	out, err := os.Create(fmt.Sprintf("%s/%s", APKCacheDir, apkName))
+	if err != nil {
+		return "", err
+	}
 	defer out.Close()
-	if err != nil {
-		return "", err
-	}
 	resp, err := http.Get(strings.ReplaceAll(match.Repository.PackageURL, "%s", apkName))
-	defer resp.Body.Close()
 	if err != nil {
 		return "", err
 	}
+	defer resp.Body.Close()
 	_, err = io.Copy(out, resp.Body)
+	if err != nil {
+		return "", err
+	}
 	return fmt.Sprintf("%s/%s", APKCacheDir, apkName), nil
 }
