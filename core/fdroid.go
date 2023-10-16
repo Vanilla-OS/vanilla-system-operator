@@ -169,7 +169,7 @@ func SyncIndex(force bool, downTrans string) error {
 			fmt.Printf("err: %v\n", err)
 		}
 		currentTime := time.Now().Unix()
-		if currentTime-timestamp >= 604800 { // TODO: Consider if a different period is more suited (currently 1 week)
+		if currentTime-timestamp >= 604800 {
 			fmt.Printf("Index for repo %s outdated! Syncing...\n", indexFile[1])
 			err := os.Remove(fmt.Sprintf("%s/%s", IndexCacheDir, index))
 			if err != nil {
