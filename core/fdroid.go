@@ -2,15 +2,15 @@ package core
 
 import (
 	"fmt"
-	"github.com/BurntSushi/toml"
-	"github.com/buger/jsonparser"
 	"io"
 	"net/http"
 	"os"
-	"slices"
 	"strconv"
 	"strings"
 	"time"
+
+	"github.com/BurntSushi/toml"
+	"github.com/buger/jsonparser"
 )
 
 type FdroidRepo struct {
@@ -187,7 +187,7 @@ func SyncIndex(force bool, downTrans string) error {
 	}
 
 	for index, repository := range Repositories {
-		if !slices.Contains(indexRepos, repository.Name) {
+		if !sliceContains(indexRepos, repository.Name) {
 			fmt.Printf("Index for repo %s not synced! Syncing now...\n", repository.Name)
 			err := downloadIndex(index, downTrans)
 			if err != nil {
@@ -211,7 +211,7 @@ func SearchIndex(search string, downTrans string) ([]FdroidPackage, error) {
 	var processed []string
 	for _, repository := range Repositories {
 		for _, index := range Indexes {
-			if strings.Contains(index.Name(), repository.Name) && !slices.Contains(processed, repository.Name) {
+			if strings.Contains(index.Name(), repository.Name) && !sliceContains(processed, repository.Name) {
 				processed = append(processed, repository.Name)
 				indexContent, err := os.ReadFile(fmt.Sprintf("%s/%s", IndexCacheDir, index.Name()))
 				if err != nil {
