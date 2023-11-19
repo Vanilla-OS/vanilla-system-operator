@@ -41,6 +41,12 @@ func NewPicoCommand() []*cmdr.Command {
 		vso.Trans("pico.remove.description"),
 		handleFunc(),
 	)
+	sideloadCmd := cmdr.NewCommand(
+		"sideload",
+		vso.Trans("pico.sideload.description"),
+		vso.Trans("pico.sideload.description"),
+		handleFunc(),
+	)
 	updateCmd := cmdr.NewCommand(
 		"update",
 		vso.Trans("pico.update.description"),
@@ -135,6 +141,7 @@ func NewPicoCommand() []*cmdr.Command {
 	return []*cmdr.Command{
 		installCmd,
 		removeCmd,
+		sideloadCmd,
 		updateCmd,
 		upgradeCmd,
 		searchCmd,
@@ -232,6 +239,8 @@ func runPicoCmd(command string, cmd *cobra.Command, args []string) error {
 		realCommand = pkgManager.CmdClean
 	case "install":
 		realCommand = pkgManager.CmdInstall
+	case "sideload":
+		realCommand = pkgManager.CmdInstall
 	case "list":
 		realCommand = pkgManager.CmdList
 	case "purge":
@@ -257,14 +266,19 @@ func runPicoCmd(command string, cmd *cobra.Command, args []string) error {
 		}
 	}
 
+	if command == "sideload" {
+		// we need to handle possible broken/missing dependencies while
+		// sideloading, so we use the --fix-broken flag, assuming VSO is
+		// being used in Vanilla OS (which is the only supported use case)
+		args = append([]string{"--fix-broken"}, args...)
+	}
 	finalArgs := pkgManager.GenCmd(realCommand, args...)
-
 	_, err = pico.Exec(false, finalArgs...)
 	if err != nil {
 		return err
 	}
 
-	if command == "install" {
+	if command == "install" || command == "sideload" {
 		exportedN, err := pico.ExportDesktopEntries(args...)
 		if err == nil {
 			cmdr.Info.Printfln(vso.Trans("pico.info.exportedApps"), exportedN)
