@@ -23,10 +23,10 @@ func PicoInit() error {
 	subsystem, err := core.NewSubSystem(
 		"vso-pico",
 		stack,
-		true,
+		false,
 		true,
 		false,
-		false,
+		true,
 	)
 
 	if err != nil {
