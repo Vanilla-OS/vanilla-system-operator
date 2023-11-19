@@ -149,9 +149,16 @@ func NewPicoCommand() []*cmdr.Command {
 func picoInit(cmd *cobra.Command, args []string) error {
 	force, _ := cmd.Flags().GetBool("force")
 
-	if core.PicoExists() && !force {
-		cmdr.Error.Println(vso.Trans("pico.error.alreadyInitialized"))
-		return nil
+	if core.PicoExists() {
+		if !force {
+			cmdr.Error.Println(vso.Trans("pico.error.alreadyInitialized"))
+			return nil
+		}
+
+		err := core.PicoDelete()
+		if err != nil {
+			return err
+		}
 	}
 
 	err := core.PicoInit()
