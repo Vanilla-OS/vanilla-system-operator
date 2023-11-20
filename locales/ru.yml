@@ -169,7 +169,7 @@ tasks:
     description: Создать новую задачу
     options:
       assumeYes:
-        description: предполагать «да» на все запросы подтверждения
+        description: предполагать «да» на все вопросы
       description:
         description: укажите описание задачи
       every:
@@ -225,77 +225,77 @@ tasks:
           выключения, входа в систему и выхода из неё
 waydroid:
   error:
-    noArguments: No arguments provided.
+    noArguments: Нет аргументов.
   install:
     info:
-      DownloadingPackage: Downloading apk from %s
-      PackageSelection: Pick application to install
-      PackageInCache: Application found in cache, not downloading again.
-      ConfirmInstall: Install application %s?
+      DownloadingPackage: Загрузка apk из %s
+      PackageSelection: Выберите приложение для установки
+      PackageInCache: Приложение найдено в кэше, повторная загрузка не производится.
+      ConfirmInstall: Установить приложение %s?
     error:
-      InstallCancelled: Installation Cancelled
-      NotFound: Application %s was not found.
-    description: Install an application
+      InstallCancelled: Установка отменена
+      NotFound: Приложение %s не найдено.
+    description: Установить приложение
     options:
       local:
-        description: Install a local apk
+        description: Установить локальный apk
   info:
-    Author: 'Author: %s'
-    PackageName: 'Name: %s'
-    InternalName: 'Internal name: %s'
-    License: 'License: %s'
-    Summary: 'Summary: %s'
-    Repository: 'Repository: %s'
-    description: Display information about an application
+    Author: 'Автор: %s'
+    PackageName: 'Имя: %s'
+    InternalName: 'Внутреннее имя: %s'
+    License: 'Лицензия: %s'
+    Summary: 'Сводка: %s'
+    Repository: 'Репозиторий: %s'
+    description: Показать информацию о приложении
     info:
-      PackageSelection: Select application to display information from
+      PackageSelection: Выберете приложение для показа информации
   update:
     info:
-      NoUpdates: Nothing to update
+      NoUpdates: Нечего обновлять
     error:
-      FailUpdatePackageDownload: Failed to download APK for %s
-      FailUpdatePackageDatabase: Failed to update database entry for %s
-      FailUpdatePackageInstall: Failed to install update for %s
-      FailGetVersion: Failed to get version code for %s
-    finished: Finished updating applications
-    description: Update installed applications
+      FailUpdatePackageDownload: Не удалось загрузить APK для %s
+      FailUpdatePackageDatabase: Не удалось обновить запись в базе данных для %s
+      FailUpdatePackageInstall: Не удалось установить обновление для %s
+      FailGetVersion: Не удалось получить код версии для %s
+    finished: Обновление приложений завершено
+    description: Обновить установленные приложения
   remove:
     info:
-      PackageSelection: Pick application to remove
-      ConfirmRemove: Remove application %s?
-      RemovePackage: Removing package %s
-    description: Uninstall an application
+      PackageSelection: Выберете приложение для удаления
+      ConfirmRemove: Удалить приложение %s?
+      RemovePackage: Удаление пакета %s
+    description: Удалить приложение
     error:
-      RemoveCancelled: Removal Cancelled
-      NoMatches: Application %s not found
+      RemoveCancelled: Удаление отменено
+      NoMatches: Приложение %s не найдено
   clean:
     info:
-      success: Successfully deleted waydroid vso cache
-      apk: Deleting apk cache
-      index: Deleting index cache
+      success: Кэш waydroid vso успешно удалён
+      apk: Удаление кэша apk
+      index: Удаление индексного кэша
     error:
-      apk: Failed to delete apk cache
-      index: Failed to delete index cache
-    description: Cleans the waydroid vso cache
-  description: Manage the vso waydroid subsystem
+      apk: Не удалось удалить кэш apk
+      index: Не удалось удалить индексный кэш
+    description: Очистка кеша waydroid vso
+  description: Управление waydroid - подсистемой vso
   delete:
-    description: Delete the waydroid subsystem
-    confirmation: Deleting the waydroid subsystem will delete any data stored in it.
-      Continue?
-    cancelled: Cancelled removal of subsystem.
+    description: Удалить подсистему waydroid
+    confirmation: Удаление подсистемы waydroid приведет к удалению всех хранящихся
+      в ней данных. Продолжить?
+    cancelled: Удаление подсистемы отменено.
   init:
     options:
       force:
-        description: Force the initialization
+        description: Принудительная инициализация
       noconfirm:
-        description: Do not ask for confirmation during installation
-    description: Initialize the waydroid subsystem
+        description: Не запрашивать подтверждения при установке
+    description: Инициализировать подсистему waydroid
   search:
-    description: Search for an application
-  downloadIndex: Downloading index for repository %s
+    description: Выполнить поиск приложения
+  downloadIndex: Загрузка индекса для репозитория %s
   sync:
-    description: Sync the repositories
+    description: Синхронизировать репозитории
   launcher:
-    description: Show the waydroid launcher
+    description: Показать панель запуска waydroid
   launch:
-    description: Launch an installed application
+    description: Запустить установленное приложение
