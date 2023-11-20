@@ -222,3 +222,79 @@ sysUpgrade:
     info:
       updating: Systeem updaten…
     now: Trigger a system upgrade now
+waydroid:
+  error:
+    noArguments: No arguments provided.
+  install:
+    info:
+      DownloadingPackage: Downloading apk from %s
+      PackageSelection: Pick application to install
+      PackageInCache: Application found in cache, not downloading again.
+      ConfirmInstall: Install application %s?
+    error:
+      InstallCancelled: Installation Cancelled
+      NotFound: Application %s was not found.
+    description: Install an application
+    options:
+      local:
+        description: Install a local apk
+  info:
+    Author: 'Author: %s'
+    PackageName: 'Name: %s'
+    InternalName: 'Internal name: %s'
+    License: 'License: %s'
+    Summary: 'Summary: %s'
+    Repository: 'Repository: %s'
+    description: Display information about an application
+    info:
+      PackageSelection: Select application to display information from
+  update:
+    info:
+      NoUpdates: Nothing to update
+    error:
+      FailUpdatePackageDownload: Failed to download APK for %s
+      FailUpdatePackageDatabase: Failed to update database entry for %s
+      FailUpdatePackageInstall: Failed to install update for %s
+      FailGetVersion: Failed to get version code for %s
+    finished: Finished updating applications
+    description: Update installed applications
+  remove:
+    info:
+      PackageSelection: Pick application to remove
+      ConfirmRemove: Remove application %s?
+      RemovePackage: Removing package %s
+    description: Uninstall an application
+    error:
+      RemoveCancelled: Removal Cancelled
+      NoMatches: Application %s not found
+  clean:
+    info:
+      success: Successfully deleted waydroid vso cache
+      apk: Deleting apk cache
+      index: Deleting index cache
+    error:
+      apk: Failed to delete apk cache
+      index: Failed to delete index cache
+    description: Cleans the waydroid vso cache
+  description: Manage the vso waydroid subsystem
+  delete:
+    description: Delete the waydroid subsystem
+    confirmation: Deleting the waydroid subsystem will delete any data stored in it.
+      Continue?
+    cancelled: Cancelled removal of subsystem.
+  init:
+    options:
+      force:
+        description: Force the initialization
+      noconfirm:
+        description: Do not ask for confirmation during installation
+    description: Initialize the waydroid subsystem
+  search:
+    description: Search for an application
+  downloadIndex: Downloading index for repository %s
+  sync:
+    description: Sync the repositories
+  launcher:
+    description: Show the waydroid launcher
+  launch:
+    description: Launch an installed application
