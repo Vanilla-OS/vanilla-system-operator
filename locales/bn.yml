@@ -1,22 +1,22 @@
 vso:
-  description: "Vanilla System Operator - це менеджер пакунків, оновлення системи
-    та автоматизатор завдань."
+  description: "The Vanilla System Operator is a package manager, a system updater
+    and a task automator।"
   errors:
     unknownCommand: "Unknown command: %s"
-    invalidInput: "Неправильне введення."
-    invalidChoice: "Неправильний вибір."
+    invalidInput: "Invalid input।"
+    invalidChoice: "Invalid choice।"
   info:
-    aborting: "Aborting as requested."
+    aborting: "Aborting as requested।"
   terminal:
-    yes: "так"
-    no: "ні"
+    yes: "yes"
+    no: "no"
 
 config:
-  description: "Manage the system configuration."
+  description: "Manage the system configuration।"
   get:
     description: "Get the system configuration"
     error:
-      noKey: "No key specified."
+      noKey: "No key specified।"
       noValue: "No value found for key: %s"
     options:
       key:
@@ -24,12 +24,12 @@ config:
   set:
     description: "Set the system configuration"
     error:
-      noKey: "No key specified."
-      noValue: "No value specified."
+      noKey: "No key specified।"
+      noValue: "No value specified।"
     options:
       key: "key of the configuration to set"
       value: "value of the configuration to set"
-    success: "Configuration updated successfully."
+    success: "Configuration updated successfully।"
   show:
     description: "Show the system configuration"
 
@@ -37,11 +37,11 @@ pico:
   description: "Manage the Pico subsystem"
   error:
     notInitialized: "The Pico subsystem is not initialized. Please run `vso pico-init`
-      to initialize it."
+      to initialize it।"
     alreadyInitialized: "The Pico subsystem is already initialized. Use the --force
-      flag to force the initialization."
-    noAppNameOrBin: "--app-name or --bin must be specified."
-    sameAppOrBin: "--app-name and --bin cannot be both specified."
+      flag to force the initialization।"
+    noAppNameOrBin: "--app-name or --bin must be specified।"
+    sameAppOrBin: "--app-name and --bin cannot be both specified।"
     exportingApp: "An error occurred while exporting the application: %s"
     exportingBin: "An error occurred while exporting the binary: %s"
     unexportingApp: "An error occurred while unexporting the application: %s"
@@ -49,7 +49,7 @@ pico:
   errors:
     unknownCommand: "Unknown command: %s"
   info:
-    initialized: "The Pico subsystem has been initialized."
+    initialized: "The Pico subsystem has been initialized।"
     exported: "Exported %s\n"
     unexported: "Unexported %s\n"
     exportedApps: "Exported %d applications"
@@ -96,23 +96,23 @@ sysUpgrade:
   description: "Upgrade the system"
   check:
     asExitCode: "checks for upgrade but doesn't print anything. Return exit code 0
-      if no upgrade is available and 1 otherwise."
+      if no upgrade is available and 1 otherwise।"
     description: "Check for system updates"
     error:
       asExitCodeAndJson: "An error occured when checking for updates. See the JSON
-        output for more details."
+        output for more details।"
     info:
-      checking: "Checking for updates..."
-      noUpdates: "No updates available."
-      updatesAvailable: "Updates available."
+      checking: "Checking for updates..।"
+      noUpdates: "No updates available।"
+      updatesAvailable: "Updates available।"
     json:
       description: "output the result in JSON format"
   sysUpgrade:
     description: "Upgrade the system"
     error:
-      updating: "An error occured when updating the system."
+      updating: "An error occured when updating the system।"
     info:
-      updating: "Updating the system..."
+      updating: "Updating the system..।"
     now: "Trigger a system upgrade now"
 
 tasks:
@@ -120,22 +120,22 @@ tasks:
   stacks:
     new:
       error:
-        emptyCommand: "The command cannot be empty."
-        emptyDescription: "The description cannot be empty."
-        emptyName: "The name cannot be empty."
-        noCommand: "No command specified."
-        noDescription: "No description specified."
-        noName: "No name specified."
+        emptyCommand: "The command cannot be empty।"
+        emptyDescription: "The description cannot be empty।"
+        emptyName: "The name cannot be empty।"
+        noCommand: "No command specified।"
+        noDescription: "No description specified।"
+        noName: "No name specified।"
       info:
         askCommand: "Command: "
         askDescription: "Description: "
         askName: "Name: "
-        taskCreated: "Task has been created successfully."
+        taskCreated: "Task has been created successfully।"
   list:
     description: "List all tasks"
-    noTasks: "No tasks found."
+    noTasks: "No tasks found।"
     info:
-      foundTasks: "Found %d tasks."
+      foundTasks: "Found %d tasks।"
     options:
       json:
         description: "output the tasks in JSON format"
@@ -194,11 +194,11 @@ tasks:
     description: "Remove a task"
     error:
       cannotDelete: "Cannot delete task: %s"
-      noName: "No task name specified."
-      notFound: "Task not found."
+      noName: "No task name specified।"
+      notFound: "Task not found।"
     info:
       askConfirmation: "Are you sure you want to delete the task %s? [y/N]"
-      taskDeleted: "Task has been deleted successfully."
+      taskDeleted: "Task has been deleted successfully।"
     options:
       force:
         description: "force the deletion of the task"
@@ -210,79 +210,80 @@ tasks:
       privateEvent:
         description: "specify private event to rotate tasks for boot, shutdown, login,
           logout"
+
 waydroid:
-  error:
-    noArguments: No arguments provided.
-  install:
+  description: "Manage the vso waydroid subsystem"
+  downloadIndex: "Downloading index for repository %s"
+  clean:
+    description: "Cleans the waydroid vso cache"
     info:
-      DownloadingPackage: Downloading apk from %s
-      PackageSelection: Pick application to install
-      PackageInCache: Application found in cache, not downloading again.
-      ConfirmInstall: Install application %s?
+      index: "Deleting index cache"
+      apk: "Deleting apk cache"
+      success: "Successfully deleted waydroid vso cache"
     error:
-      InstallCancelled: Installation Cancelled
-      NotFound: Application %s was not found.
-    description: Install an application
+      index: "Failed to delete index cache"
+      apk: "Failed to delete apk cache"
+  delete:
+    description: "Delete the waydroid subsystem"
+    confirmation: "Deleting the waydroid subsystem will delete any data stored in
+      it. Continue?"
+    cancelled: "Cancelled removal of subsystem।"
+  error:
+    noArguments: "No arguments provided।"
+  install:
+    description: "Install an application"
     options:
       local:
-        description: Install a local apk
-  info:
-    Author: 'Author: %s'
-    PackageName: 'Name: %s'
-    InternalName: 'Internal name: %s'
-    License: 'License: %s'
-    Summary: 'Summary: %s'
-    Repository: 'Repository: %s'
-    description: Display information about an application
+        description: "Install a local apk"
     info:
-      PackageSelection: Select application to display information from
-  update:
-    info:
-      NoUpdates: Nothing to update
+      PackageInCache: "Application found in cache, not downloading again।"
+      ConfirmInstall: "Install application %s?"
+      DownloadingPackage: "Downloading apk from %s"
+      PackageSelection: "Pick application to install"
     error:
-      FailUpdatePackageDownload: Failed to download APK for %s
-      FailUpdatePackageDatabase: Failed to update database entry for %s
-      FailUpdatePackageInstall: Failed to install update for %s
-      FailGetVersion: Failed to get version code for %s
-    finished: Finished updating applications
-    description: Update installed applications
-  remove:
-    info:
-      PackageSelection: Pick application to remove
-      ConfirmRemove: Remove application %s?
-      RemovePackage: Removing package %s
-    description: Uninstall an application
-    error:
-      RemoveCancelled: Removal Cancelled
-      NoMatches: Application %s not found
-  clean:
-    info:
-      success: Successfully deleted waydroid vso cache
-      apk: Deleting apk cache
-      index: Deleting index cache
-    error:
-      apk: Failed to delete apk cache
-      index: Failed to delete index cache
-    description: Cleans the waydroid vso cache
-  description: Manage the vso waydroid subsystem
-  delete:
-    description: Delete the waydroid subsystem
-    confirmation: Deleting the waydroid subsystem will delete any data stored in it.
-      Continue?
-    cancelled: Cancelled removal of subsystem.
+      NotFound: "Application %s was not found।"
+      InstallCancelled: "Installation Cancelled"
   init:
+    description: "Initialize the waydroid subsystem"
     options:
       force:
-        description: Force the initialization
+        description: "Force the initialization"
       noconfirm:
-        description: Do not ask for confirmation during installation
-    description: Initialize the waydroid subsystem
-  search:
-    description: Search for an application
-  downloadIndex: Downloading index for repository %s
-  sync:
-    description: Sync the repositories
-  launcher:
-    description: Show the waydroid launcher
+        description: "Do not ask for confirmation during installation"
   launch:
-    description: Launch an installed application
+    description: "Launch an installed application"
+  launcher:
+    description: "Show the waydroid launcher"
+  remove:
+    description: "Uninstall an application"
+    info:
+      RemovePackage: "Removing package %s"
+      PackageSelection: "Pick application to remove"
+      ConfirmRemove: "Remove application %s?"
+    error:
+      NoMatches: "Application %s not found"
+      RemoveCancelled: "Removal Cancelled"
+  search:
+    description: "Search for an application"
+  sync:
+    description: "Sync the repositories"
+  update:
+    description: "Update installed applications"
+    finished: "Finished updating applications"
+    error:
+      FailGetVersion: "Failed to get version code for %s"
+      FailUpdatePackageDownload: "Failed to download APK for %s"
+      FailUpdatePackageDatabase: "Failed to update database entry for %s"
+      FailUpdatePackageInstall: "Failed to install update for %s"
+    info:
+      NoUpdates: "Nothing to update"
+  info:
+    description: "Display information about an application"
+    info:
+      PackageSelection: "Select application to display information from"
+    PackageName: "Name: %s"
+    InternalName: "Internal name: %s"
+    Summary: "Summary: %s"
+    Author: "Author: %s"
+    License: "License: %s"
+    Repository: "Repository: %s"
