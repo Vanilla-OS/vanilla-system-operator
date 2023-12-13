@@ -1,122 +1,125 @@
 vso:
-  description: "The Vanilla System Operator is a package manager, a system updater
-    and a task automator."
+  description: "L'Operador del Sistema Vanilla és un gestor de paquets, un actualitzador
+    del sistema i un automatitzador de tasques."
   errors:
-    unknownCommand: "Unknown command: %s"
-    invalidInput: "Invalid input."
-    invalidChoice: "Invalid choice."
+    unknownCommand: "Comanda desconeguda: %s"
+    invalidInput: "Entrada no vàlida."
+    invalidChoice: "Opció invàlida."
   info:
-    aborting: "Aborting as requested."
+    aborting: "Avortant com s'ha demanat."
   terminal:
-    yes: "yes"
+    yes: "Sí"
     no: "no"
 
 config:
-  description: "Manage the system configuration."
+  description: "Gestiona la configuració del sistema."
   get:
-    description: "Get the system configuration"
+    description: "Obtenir la configuració del sistema"
     error:
-      noKey: "No key specified."
-      noValue: "No value found for key: %s"
+      noKey: "Clau no especificada."
+      noValue: "No s'ha trobat el valor per la clau: %s"
     options:
       key:
-        description: "retrieve configuration value by using its key"
+        description: "Obtenir el valor de la configuració fent servir la seva clau"
   set:
-    description: "Set the system configuration"
+    description: "Gestionar la configuració del sistema"
     error:
-      noKey: "No key specified."
-      noValue: "No value specified."
+      noKey: "Clau no especificada."
+      noValue: "Cap valor especificat."
     options:
-      key: "key of the configuration to set"
-      value: "value of the configuration to set"
-    success: "Configuration updated successfully."
+      key: "clau de la configuració per establir"
+      value: "valor de la configuració a establir"
+    success: "La configuració s'ha actualitzat correctament."
   show:
-    description: "Show the system configuration"
+    description: "Mostrar la configuració del sistema"
 
 pico:
-  description: "Manage the Pico subsystem"
+  description: "Gestionar el subsistema Pico"
   error:
-    notInitialized: "The Pico subsystem is not initialized. Please run `vso pico-init`
-      to initialize it."
-    alreadyInitialized: "The Pico subsystem is already initialized. Use the --force
-      flag to force the initialization."
-    noAppNameOrBin: "--app-name or --bin must be specified."
-    sameAppOrBin: "--app-name and --bin cannot be both specified."
-    exportingApp: "An error occurred while exporting the application: %s"
-    exportingBin: "An error occurred while exporting the binary: %s"
-    unexportingApp: "An error occurred while unexporting the application: %s"
-    unexportingBin: "An error occurred while unexporting the binary: %s"
+    notInitialized: "El subsistema Pico no és inicialitzat. Si us plau, fes servir
+      la comanda `vso pico-init` per inicialitzar-lo."
+    alreadyInitialized: "El subsistema Pico ja es troba inicialitzat. Si us plau fes
+      servir l'opció --force per forçar la inicialització."
+    noAppNameOrBin: "S'ha d'especificar el nom de la --aplicació o del --binari."
+    sameAppOrBin: "No es poden declarar a la vegada --nom-aplicació i --binari."
+    exportingApp: "S'ha trobat un error exportant la aplicació: %s"
+    exportingBin: "S'ha trobat un error exportant el binari: %s"
+    unexportingApp: "S'ha trobat un error mentre es desfeia l'exportació de l'aplicació:
+      %s"
+    unexportingBin: "S'ha trobat un error mentre es desfeia l'exportació del binari:
+      %s"
   errors:
-    unknownCommand: "Unknown command: %s"
+    unknownCommand: "Ordre desconeguda: %s"
   info:
-    initialized: "The Pico subsystem has been initialized."
-    exported: "Exported %s\n"
-    unexported: "Unexported %s\n"
-    exportedApps: "Exported %d applications"
-    unexportedApps: "Unexported %d applications"
+    initialized: "El subsistema Pico s'ha inicialitzat."
+    exported: "%s Exportat\n"
+    unexported: "%s Exportació desfeta\n"
+    exportedApps: "Aplicacions exportades %d"
+    unexportedApps: "Aplicacions amb exportacions desfetes %d"
   export:
-    description: "Export an application or binary from the subsystem"
+    description: "Exportar una aplicació o binari del subsistema"
     options:
       app:
-        description: "the name of the application to export"
+        description: "el no de la aplicació a exportar"
       bin:
-        description: "the name of the binary to export"
+        description: "el nom del binari a exportar"
       binOutput:
-        description: "path of the binary output (default: ~/.local/bin/)"
+        description: "camí de sortida del binari (per defecte: ~/.local/bin)"
   unexport:
-    description: "Unexport an application or binary from the subsystem"
+    description: "Desfés la exportació d'una aplicació o binari del subsistema"
     options:
       app:
-        description: "the name of the application to unexport"
+        description: "el nom de la aplicació per desfer l'exportació"
       bin:
-        description: "the name of the binary to unexport"
+        description: "el nom del binari per desfer l'exportació"
       binOutput:
-        description: "path of the binary output (default: ~/.local/bin/)"
+        description: "camí de la sortida del binari (per defecte: ~/.local/bin/)"
   init:
-    description: "Initialize the Pico subsystem, used for package management"
+    description: "Inicialitzar el subsistema Pic, es fa servir per a la gestió de
+      paquets"
     options:
       force:
-        description: "force the initialization if the subsystem is already initialized"
+        description: "força la inicialització del subsistema si ja es troba inicialitzat"
   install:
-    description: "Install an application inside the subsystem"
+    description: "Instal·lar una aplicació dintre del subsistema"
   remove:
-    description: "Remove an application from the subsystem"
+    description: "Suprimir una aplicació del subsistema"
   run:
-    description: "Run an application from the subsystem"
+    description: "Executar una aplicació del subsistema"
   search:
-    description: "Search for an application to install inside the subsystem"
+    description: "Cercar una aplicació per instal·lar dintre del subsistema"
   shell:
-    description: "Enter the subsystem environment"
+    description: "Entrar a l'entorn del subsistema"
   update:
-    description: "Update the subsystem's package repository"
+    description: "Actualitzar el repositori de paquets del subsistema"
   upgrade:
-    description: "Upgrade the packages inside the subsystem"
+    description: "Actualitzar els paquets dintre del subsistema"
 
 sysUpgrade:
-  description: "Upgrade the system"
+  description: "Actualitzar el sistema"
   check:
-    asExitCode: "checks for upgrade but doesn't print anything. Return exit code 0
-      if no upgrade is available and 1 otherwise."
-    description: "Check for system updates"
+    asExitCode: "comprova les actualitzacions però no imprimeix res. Retorna 0 si
+      no hi han actualitzacions i 1 per la resta."
+    description: "Comprovar actualitzacions del sistema"
     error:
-      asExitCodeAndJson: "An error occured when checking for updates. See the JSON
-        output for more details."
+      asExitCodeAndJson: "S'ha trobat un error al comprovar les actualitzacions. Fes
+        una ullada al JSON per més detalls."
     info:
-      checking: "Checking for updates..."
-      noUpdates: "No updates available."
-      updatesAvailable: "Updates available."
+      checking: "Comprovant les actualitzacions..."
+      noUpdates: "No hi han actualitzacions disponibles."
+      updatesAvailable: "Actualitzacions disponibles."
     json:
-      description: "output the result in JSON format"
+      description: "sortida dels resultats en format JSON"
   sysUpgrade:
-    description: "Upgrade the system"
+    description: "Actualitzar el sistema"
     error:
-      updating: "An error occured when updating the system."
+      updating: "S'ha trobat un error mentre s'actualitzava el sistema."
     info:
-      updating: "Updating the system..."
-    now: "Trigger a system upgrade now"
+      updating: "Actualitzant el sistema..."
+    now: "Provoca una actualització del sistema ara"
 
 tasks:
-  description: "Create and manage tasks"
+  description: "Crear i gestionar tasques"
   stacks:
     new:
       error:
