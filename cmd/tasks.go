@@ -376,45 +376,45 @@ func newTask(cmd *cobra.Command, args []string) error {
 
 	if name == "" {
 		if !assumeYes {
-			cmdr.Info.Println(vso.Trans("stacks.new.info.askName"))
+			cmdr.Info.Println(vso.Trans("tasks.stacks.new.info.askName"))
 			reader := bufio.NewReader(os.Stdin)
 			name, _ = reader.ReadString('\n')
 			if name == "" {
-				cmdr.Error.Println(vso.Trans("stacks.new.error.emptyName"))
+				cmdr.Error.Println(vso.Trans("tasks.stacks.new.error.emptyName"))
 				return nil
 			}
 		} else {
-			cmdr.Error.Println(vso.Trans("stacks.new.error.noName"))
+			cmdr.Error.Println(vso.Trans("tasks.stacks.new.error.noName"))
 			return nil
 		}
 	}
 
 	if description == "" {
 		if !assumeYes {
-			cmdr.Info.Println(vso.Trans("stacks.new.info.askDescription"))
+			cmdr.Info.Println(vso.Trans("tasks.stacks.new.info.askDescription"))
 			reader := bufio.NewReader(os.Stdin)
 			description, _ = reader.ReadString('\n')
 			if description == "" {
-				cmdr.Error.Println(vso.Trans("stacks.new.error.emptyDescription"))
+				cmdr.Error.Println(vso.Trans("tasks.stacks.new.error.emptyDescription"))
 				return nil
 			}
 		} else {
-			cmdr.Error.Println(vso.Trans("stacks.new.error.noDescription"))
+			cmdr.Error.Println(vso.Trans("tasks.stacks.new.error.noDescription"))
 			return nil
 		}
 	}
 
 	if command == "" {
 		if !assumeYes {
-			cmdr.Info.Println(vso.Trans("stacks.new.info.askCommand"))
+			cmdr.Info.Println(vso.Trans("tasks.stacks.new.info.askCommand"))
 			reader := bufio.NewReader(os.Stdin)
 			command, _ = reader.ReadString('\n')
 			if command == "" {
-				cmdr.Error.Println(vso.Trans("stacks.new.error.emptyCommand"))
+				cmdr.Error.Println(vso.Trans("tasks.stacks.new.error.emptyCommand"))
 				return nil
 			}
 		} else {
-			cmdr.Error.Println(vso.Trans("stacks.new.error.noCommand"))
+			cmdr.Error.Println(vso.Trans("tasks.stacks.new.error.noCommand"))
 			return nil
 		}
 	}
@@ -450,7 +450,7 @@ func newTask(cmd *cobra.Command, args []string) error {
 		return err
 	}
 
-	fmt.Printf(vso.Trans("stacks.new.info.taskCreated"), name)
+	fmt.Printf(vso.Trans("tasks.stacks.new.info.taskCreated"), name)
 	return nil
 }
 
