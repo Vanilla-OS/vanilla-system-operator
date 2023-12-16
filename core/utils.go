@@ -44,7 +44,7 @@ func AskConfirmation(s string, norm bool) bool {
 		defResponse = "n"
 	}
 	fmt.Scanln(&response)
-	if strings.ToLower(response) != strings.ToLower(defResponse) && len(strings.TrimSpace(response)) != 0 {
+	if !strings.EqualFold(response, defResponse) && len(strings.TrimSpace(response)) != 0 {
 		return !norm
 	}
 	return norm
