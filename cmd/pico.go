@@ -77,6 +77,7 @@ func NewPicoCommand() []*cmdr.Command {
 		vso.Trans("pico.run.description"),
 		handleFunc(),
 	)
+	runCmd.Flags().SetInterspersed(false)
 
 	exportCmd := cmdr.NewCommand(
 		"export",
@@ -219,9 +220,10 @@ func runPicoCmd(command string, cmd *cobra.Command, args []string) error {
 		return err
 	}
 
-	if command == "shell" {
+	switch command {
+	case "shell":
 		return pico.Enter()
-	} else if command == "run" {
+	case "run":
 		_, err := pico.Exec(false, args...)
 		return err
 	}
