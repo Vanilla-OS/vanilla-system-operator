@@ -13,6 +13,7 @@ import (
 	"encoding/json"
 	"fmt"
 	"os"
+	"path/filepath"
 	"strings"
 	"time"
 )
@@ -338,5 +339,10 @@ func getUserTasksLocation() string {
 		return ""
 	}
 
-	return "/home/" + curUser + TasksLocation
+	location := filepath.Join("/home", curUser, TasksLocation)
+	if _, err := os.Stat(location); os.IsNotExist(err) {
+		os.MkdirAll(location, 0755)
+	}
+
+	return location
 }
