@@ -1,0 +1,289 @@
+vso:
+  description: "The Vanilla System Operator is a package manager, a system updater
+    and a task automator."
+  errors:
+    unknownCommand: "Nekonata komando: %s"
+    invalidInput: "Nevalida enigo."
+    invalidChoice: "Nevalida elekto."
+  info:
+    aborting: "Aborting as requested."
+  terminal:
+    yes: "jes"
+    no: "ne"
+
+config:
+  description: "Manage the system configuration."
+  get:
+    description: "Get the system configuration"
+    error:
+      noKey: "Neniu ŝlosilo specifiĝis."
+      noValue: "No value found for key: %s"
+    options:
+      key:
+        description: "retrieve configuration value by using its key"
+  set:
+    description: "Set the system configuration"
+    error:
+      noKey: "Neniu ŝlosilo specifiĝis."
+      noValue: "Neniu valoro specifiĝis."
+    options:
+      key: "key of the configuration to set"
+      value: "value of the configuration to set"
+    success: "Configuration updated successfully."
+  show:
+    description: "Show the system configuration"
+
+pico:
+  description: "Manage the Pico subsystem"
+  error:
+    notInitialized: "The Pico subsystem is not initialized. Please run `vso pico-init`
+      to initialize it."
+    alreadyInitialized: "The Pico subsystem is already initialized. Use the --force
+      flag to force the initialization."
+    noAppNameOrBin: "--app-name or --bin must be specified."
+    sameAppOrBin: "--app-name and --bin cannot be both specified."
+    exportingApp: "An error occurred while exporting the application: %s"
+    exportingBin: "An error occurred while exporting the binary: %s"
+    unexportingApp: "An error occurred while unexporting the application: %s"
+    unexportingBin: "An error occurred while unexporting the binary: %s"
+  errors:
+    unknownCommand: "Nekonata komando: %s"
+  info:
+    initialized: "The Pico subsystem has been initialized."
+    exported: "Elportita %s\n"
+    unexported: "Neelportita %s\n"
+    exportedApps: "Exported %d applications"
+    unexportedApps: "Unexported %d applications"
+  export:
+    description: "Export an application or binary from the subsystem"
+    options:
+      app:
+        description: "the name of the application to export"
+      bin:
+        description: "the name of the binary to export"
+      binOutput:
+        description: "path of the binary output (default: ~/.local/bin/)"
+  unexport:
+    description: "Unexport an application or binary from the subsystem"
+    options:
+      app:
+        description: "the name of the application to unexport"
+      bin:
+        description: "the name of the binary to unexport"
+      binOutput:
+        description: "path of the binary output (default: ~/.local/bin/)"
+  init:
+    description: "Initialize the Pico subsystem, used for package management"
+    options:
+      force:
+        description: "force the initialization if the subsystem is already initialized"
+  install:
+    description: "Install an application inside the subsystem"
+  remove:
+    description: "Remove an application from the subsystem"
+  run:
+    description: "Run an application from the subsystem"
+  search:
+    description: "Search for an application to install inside the subsystem"
+  shell:
+    description: "Enter the subsystem environment"
+  update:
+    description: "Update the subsystem's package repository"
+  upgrade:
+    description: "Upgrade the packages inside the subsystem"
+
+sysUpgrade:
+  description: "Ĝisdatigi la sistemon"
+  check:
+    asExitCode: "checks for upgrade but doesn't print anything. Return exit code 0
+      if no upgrade is available and 1 otherwise."
+    description: "Check for system updates"
+    error:
+      asExitCodeAndJson: "An error occured when checking for updates. See the JSON
+        output for more details."
+    info:
+      checking: "Kontrolante ĝisdatigojn…"
+      noUpdates: "Neniu ĝisdatigo disponeblas."
+      updatesAvailable: "Ĝisdatigoj disponeblas."
+    json:
+      description: "output the result in JSON format"
+  sysUpgrade:
+    description: "Ĝisdatigi la sistemon"
+    error:
+      updating: "An error occured when updating the system."
+    info:
+      updating: "Ĝisdatigante la sistemon…"
+    now: "Trigger a system upgrade now"
+
+tasks:
+  description: "Krei kaj administri taskojn"
+  stacks:
+    new:
+      error:
+        emptyCommand: "La komando devas esti nemalplena."
+        emptyDescription: "La priskribo devas esti nemalplena."
+        emptyName: "La nomo devas esti nemalplena."
+        noCommand: "Neniu komando specifiĝis."
+        noDescription: "Neniu priskribo specifiĝis."
+        noName: "Neniu nomo specifiĝis."
+      info:
+        askCommand: "Komando: "
+        askDescription: "Priskribo: "
+        askName: "Nomo: "
+        taskCreated: "Tasko sukcese kreiĝis."
+  list:
+    description: "Listigi ĉiujn taskojn"
+    noTasks: "Neniu tasko troviĝis."
+    info:
+      foundTasks: "Troviĝis %d taskoj."
+    options:
+      json:
+        description: "output the tasks in JSON format"
+  new:
+    description: "Krei novan taskon"
+    options:
+      assumeYes:
+        description: "assume yes for all prompts"
+      at:
+        description: "schedule the task to execute at a specific time (hh:mm)"
+      command:
+        description: "specify the command to execute"
+      description:
+        description: "specifi la priskribon de la tasko"
+      every:
+        description: "schedule the task to execute every X time (minutes, hours, days)"
+      name:
+        description: "specifi la nomon de la tasko"
+      needConfirm:
+        description: "ask for confirmation before executing the task"
+      onBattery:
+        description: "execute the task only when the system is on battery"
+      onCharge:
+        description: "execute the task only when the system is charging"
+      onConditionCommand:
+        description: "execute the task on condition command"
+      onCpuTemp:
+        description: "execute the task when CPU temperature is higher than 60°C"
+      onCpuUsage:
+        description: "execute the task when CPU usage is higher than X%"
+      onDeviceConnect:
+        description: "execute the task when a device is connected"
+      onDeviceDisconnect:
+        description: "execute the task when a device is disconnected"
+      onDisconnect:
+        description: "execute the task when the system is disconnected from the network"
+      onFullBattery:
+        description: "execute the task when the system is fully charged"
+      onHighCpuUsage:
+        description: "execute the task when CPU usage is higher than 50%"
+      onHighInternetUsage:
+        description: "execute the task when internet usage is higher than 500Kb/s"
+      onHighMemoryUsage:
+        description: "execute the task when memory usage is higher than 50%"
+      onInternetUsage:
+        description: "execute the task when internet usage is higher than XKb/s"
+      onLowBattery:
+        description: "execute the task when the system is low on battery (20%)"
+      onMemoryUsage:
+        description: "execute the task when memory usage is higher than X%"
+      onNetwork:
+        description: "execute the task when the system is connected to the network"
+      onProcess:
+        description: "execute the task when a process starts"
+  rm:
+    description: "Forigi taskon"
+    error:
+      cannotDelete: "Ne povas forigi taskon: %s"
+      noName: "Neniu nomo de tasko specifiĝis."
+      notFound: "Tasko ne troviĝis."
+    info:
+      askConfirmation: "Are you sure you want to delete the task %s? [y/N]"
+      taskDeleted: "Task has been deleted successfully."
+    options:
+      force:
+        description: "force the deletion of the task"
+      name:
+        description: "specifi la nomon de la tasko"
+  rotate:
+    description: "Rotate tasks"
+    options:
+      privateEvent:
+        description: "specify private event to rotate tasks for boot, shutdown, login,
+          logout"
+
+waydroid:
+  description: "Manage the vso waydroid subsystem"
+  downloadIndex: "Downloading index for repository %s"
+  clean:
+    description: "Cleans the waydroid vso cache"
+    info:
+      index: "Deleting index cache"
+      apk: "Deleting apk cache"
+      success: "Successfully deleted waydroid vso cache"
+    error:
+      index: "Failed to delete index cache"
+      apk: "Failed to delete apk cache"
+  delete:
+    description: "Delete the waydroid subsystem"
+    confirmation: "Deleting the waydroid subsystem will delete any data stored in
+      it. Continue?"
+    cancelled: "Cancelled removal of subsystem."
+  error:
+    noArguments: "No arguments provided."
+  install:
+    description: "Install an application"
+    options:
+      local:
+        description: "Install a local apk"
+    info:
+      PackageInCache: "Application found in cache, not downloading again."
+      ConfirmInstall: "Ĉu instali la programon %s?"
+      DownloadingPackage: "Downloading apk from %s"
+      PackageSelection: "Elektu instalotan programon"
+    error:
+      NotFound: "Application %s was not found."
+      InstallCancelled: "Instalado nuliĝis"
+  init:
+    description: "Initialize the waydroid subsystem"
+    options:
+      force:
+        description: "Force the initialization"
+      noconfirm:
+        description: "Do not ask for confirmation during installation"
+  launch:
+    description: "Launch an installed application"
+  launcher:
+    description: "Show the waydroid launcher"
+  remove:
+    description: "Malinstali programon"
+    info:
+      RemovePackage: "Removing package %s"
+      PackageSelection: "Pick application to remove"
+      ConfirmRemove: "Remove application %s?"
+    error:
+      NoMatches: "Programo %s ne troviĝis"
+      RemoveCancelled: "Forigado nuliĝis"
+  search:
+    description: "Serĉi programon"
+  sync:
+    description: "Sync the repositories"
+  update:
+    description: "Update installed applications"
+    finished: "Finished updating applications"
+    error:
+      FailGetVersion: "Failed to get version code for %s"
+      FailUpdatePackageDownload: "Failed to download APK for %s"
+      FailUpdatePackageDatabase: "Failed to update database entry for %s"
+      FailUpdatePackageInstall: "Failed to install update for %s"
+    info:
+      NoUpdates: "Nothing to update"
+  info:
+    description: "Display information about an application"
+    info:
+      PackageSelection: "Select application to display information from"
+    PackageName: "Nomo: %s"
+    InternalName: "Interna nomo: %s"
+    Summary: "Resumo: %s"
+    Author: "Aŭtoro: %s"
+    License: "Licenco: %s"
+    Repository: "Deponejo: %s"

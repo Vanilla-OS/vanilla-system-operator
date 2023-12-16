@@ -206,77 +206,76 @@ tasks:
         description: "指定私有事件以轮换开机、关机、登录、注销的任务"
 waydroid:
   error:
-    noArguments: No arguments provided.
+    noArguments: 没有提供参数。
   install:
     info:
-      DownloadingPackage: Downloading apk from %s
-      PackageSelection: Pick application to install
-      PackageInCache: Application found in cache, not downloading again.
-      ConfirmInstall: Install application %s?
+      DownloadingPackage: 正在从 %s 下载 apk
+      PackageSelection: 选择要安装的应用程序
+      PackageInCache: 已在缓存中找到应用程序，不再重复下载。
+      ConfirmInstall: 安装应用程序 %s 吗？
     error:
-      InstallCancelled: Installation Cancelled
-      NotFound: Application %s was not found.
-    description: Install an application
+      InstallCancelled: 已取消安装
+      NotFound: 找不到应用程序 %s。
+    description: 安装应用程序
     options:
       local:
-        description: Install a local apk
+        description: 安装本地 apk
   info:
-    Author: 'Author: %s'
-    PackageName: 'Name: %s'
-    InternalName: 'Internal name: %s'
-    License: 'License: %s'
-    Summary: 'Summary: %s'
-    Repository: 'Repository: %s'
-    description: Display information about an application
+    Author: '作者：%s'
+    PackageName: '名称：%s'
+    InternalName: '内部名称：%s'
+    License: '许可证：%s'
+    Summary: '简介：%s'
+    Repository: '软件仓库：%s'
+    description: 显示有关某应用程序的信息
     info:
-      PackageSelection: Select application to display information from
+      PackageSelection: 选择要显示信息的应用程序
   update:
     info:
-      NoUpdates: Nothing to update
+      NoUpdates: 没有要升级的应用程序
     error:
-      FailUpdatePackageDownload: Failed to download APK for %s
-      FailUpdatePackageDatabase: Failed to update database entry for %s
-      FailUpdatePackageInstall: Failed to install update for %s
-      FailGetVersion: Failed to get version code for %s
-    finished: Finished updating applications
-    description: Update installed applications
+      FailUpdatePackageDownload: 无法下载 %s 的 apk
+      FailUpdatePackageDatabase: 无法更新 %s 的数据库条目
+      FailUpdatePackageInstall: 无法安装 %s 的升级
+      FailGetVersion: 无法获取 %s 的版本号
+    finished: 已完成应用程序的升级
+    description: 升级已安装的应用程序
   remove:
     info:
-      PackageSelection: Pick application to remove
-      ConfirmRemove: Remove application %s?
-      RemovePackage: Removing package %s
-    description: Uninstall an application
+      PackageSelection: 选择要移除的应用程序
+      ConfirmRemove: 移除应用程序 %s 吗？
+      RemovePackage: 正在移除软件包 %s
+    description: 卸载应用程序
     error:
-      RemoveCancelled: Removal Cancelled
-      NoMatches: Application %s not found
+      RemoveCancelled: 已取消移除
+      NoMatches: 找不到应用程序 %s
   clean:
     info:
-      success: Successfully deleted waydroid vso cache
-      apk: Deleting apk cache
-      index: Deleting index cache
+      success: 已成功删除 Waydroid 的 VSO 缓存
+      apk: 正在删除 apk 缓存
+      index: 正在删除索引缓存
     error:
-      apk: Failed to delete apk cache
-      index: Failed to delete index cache
-    description: Cleans the waydroid vso cache
-  description: Manage the vso waydroid subsystem
+      apk: 无法删除 apk 缓存
+      index: 无法删除索引缓存
+    description: 清理 Waydroid 的 VSO 缓存
+  description: 管理 VSO 的 Waydroid 子系统
   delete:
-    description: Delete the waydroid subsystem
-    confirmation: Deleting the waydroid subsystem will delete any data stored in it.
-      Continue?
-    cancelled: Cancelled removal of subsystem.
+    description: 删除 Waydroid 子系统
+    confirmation: 删除 Waydroid 子系统会同时删除其中存储的所有数据。要继续吗？
+    cancelled: 已取消子系统的移除操作。
   init:
     options:
       force:
-        description: Force the initialization
+        description: 强制初始化
       noconfirm:
-        description: Do not ask for confirmation during installation
-    description: Initialize the waydroid subsystem
+        description: 安装过程中不再要求用户确认
+    description: 初始化 Waydroid 子系统
   search:
-    description: Search for an application
-  downloadIndex: Downloading index for repository %s
+    description: 搜索应用程序
+  downloadIndex: 正在下载软件仓库 %s 的索引
   sync:
-    description: Sync the repositories
+    description: 同步软件仓库
   launcher:
-    description: Show the waydroid launcher
+    description: 显示 Waydroid 启动器
   launch:
-    description: Launch an installed application
+    description: 启动已安装的应用程序

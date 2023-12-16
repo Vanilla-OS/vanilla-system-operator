@@ -1,0 +1,292 @@
+vso:
+  description: "L'Operador del Sistema Vanilla és un gestor de paquets, un actualitzador
+    del sistema i un automatitzador de tasques."
+  errors:
+    unknownCommand: "Comanda desconeguda: %s"
+    invalidInput: "Entrada no vàlida."
+    invalidChoice: "Opció invàlida."
+  info:
+    aborting: "Avortant com s'ha demanat."
+  terminal:
+    yes: "Sí"
+    no: "no"
+
+config:
+  description: "Gestiona la configuració del sistema."
+  get:
+    description: "Obtenir la configuració del sistema"
+    error:
+      noKey: "Clau no especificada."
+      noValue: "No s'ha trobat el valor per la clau: %s"
+    options:
+      key:
+        description: "Obtenir el valor de la configuració fent servir la seva clau"
+  set:
+    description: "Gestionar la configuració del sistema"
+    error:
+      noKey: "Clau no especificada."
+      noValue: "Cap valor especificat."
+    options:
+      key: "clau de la configuració per establir"
+      value: "valor de la configuració a establir"
+    success: "La configuració s'ha actualitzat correctament."
+  show:
+    description: "Mostrar la configuració del sistema"
+
+pico:
+  description: "Gestionar el subsistema Pico"
+  error:
+    notInitialized: "El subsistema Pico no és inicialitzat. Si us plau, fes servir
+      la comanda `vso pico-init` per inicialitzar-lo."
+    alreadyInitialized: "El subsistema Pico ja es troba inicialitzat. Si us plau fes
+      servir l'opció --force per forçar la inicialització."
+    noAppNameOrBin: "S'ha d'especificar el nom de la --aplicació o del --binari."
+    sameAppOrBin: "No es poden declarar a la vegada --nom-aplicació i --binari."
+    exportingApp: "S'ha trobat un error exportant la aplicació: %s"
+    exportingBin: "S'ha trobat un error exportant el binari: %s"
+    unexportingApp: "S'ha trobat un error mentre es desfeia l'exportació de l'aplicació:
+      %s"
+    unexportingBin: "S'ha trobat un error mentre es desfeia l'exportació del binari:
+      %s"
+  errors:
+    unknownCommand: "Ordre desconeguda: %s"
+  info:
+    initialized: "El subsistema Pico s'ha inicialitzat."
+    exported: "%s Exportat\n"
+    unexported: "%s Exportació desfeta\n"
+    exportedApps: "Aplicacions exportades %d"
+    unexportedApps: "Aplicacions amb exportacions desfetes %d"
+  export:
+    description: "Exportar una aplicació o binari del subsistema"
+    options:
+      app:
+        description: "el no de la aplicació a exportar"
+      bin:
+        description: "el nom del binari a exportar"
+      binOutput:
+        description: "camí de sortida del binari (per defecte: ~/.local/bin)"
+  unexport:
+    description: "Desfés la exportació d'una aplicació o binari del subsistema"
+    options:
+      app:
+        description: "el nom de la aplicació per desfer l'exportació"
+      bin:
+        description: "el nom del binari per desfer l'exportació"
+      binOutput:
+        description: "camí de la sortida del binari (per defecte: ~/.local/bin/)"
+  init:
+    description: "Inicialitzar el subsistema Pic, es fa servir per a la gestió de
+      paquets"
+    options:
+      force:
+        description: "força la inicialització del subsistema si ja es troba inicialitzat"
+  install:
+    description: "Instal·lar una aplicació dintre del subsistema"
+  remove:
+    description: "Suprimir una aplicació del subsistema"
+  run:
+    description: "Executar una aplicació del subsistema"
+  search:
+    description: "Cercar una aplicació per instal·lar dintre del subsistema"
+  shell:
+    description: "Entrar a l'entorn del subsistema"
+  update:
+    description: "Actualitzar el repositori de paquets del subsistema"
+  upgrade:
+    description: "Actualitzar els paquets dintre del subsistema"
+
+sysUpgrade:
+  description: "Actualitzar el sistema"
+  check:
+    asExitCode: "comprova les actualitzacions però no imprimeix res. Retorna 0 si
+      no hi han actualitzacions i 1 per la resta."
+    description: "Comprovar actualitzacions del sistema"
+    error:
+      asExitCodeAndJson: "S'ha trobat un error al comprovar les actualitzacions. Fes
+        una ullada al JSON per més detalls."
+    info:
+      checking: "Comprovant les actualitzacions..."
+      noUpdates: "No hi han actualitzacions disponibles."
+      updatesAvailable: "Actualitzacions disponibles."
+    json:
+      description: "sortida dels resultats en format JSON"
+  sysUpgrade:
+    description: "Actualitzar el sistema"
+    error:
+      updating: "S'ha trobat un error mentre s'actualitzava el sistema."
+    info:
+      updating: "Actualitzant el sistema..."
+    now: "Provoca una actualització del sistema ara"
+
+tasks:
+  description: "Crear i gestionar tasques"
+  stacks:
+    new:
+      error:
+        emptyCommand: "The command cannot be empty."
+        emptyDescription: "The description cannot be empty."
+        emptyName: "The name cannot be empty."
+        noCommand: "No command specified."
+        noDescription: "No description specified."
+        noName: "No name specified."
+      info:
+        askCommand: "Command: "
+        askDescription: "Description: "
+        askName: "Name: "
+        taskCreated: "Task has been created successfully."
+  list:
+    description: "List all tasks"
+    noTasks: "No tasks found."
+    info:
+      foundTasks: "Found %d tasks."
+    options:
+      json:
+        description: "output the tasks in JSON format"
+  new:
+    description: "Create a new task"
+    options:
+      assumeYes:
+        description: "assume yes for all prompts"
+      at:
+        description: "schedule the task to execute at a specific time (hh:mm)"
+      command:
+        description: "specify the command to execute"
+      description:
+        description: "specify the task's description"
+      every:
+        description: "schedule the task to execute every X time (minutes, hours, days)"
+      name:
+        description: "specify the task's name"
+      needConfirm:
+        description: "ask for confirmation before executing the task"
+      onBattery:
+        description: "execute the task only when the system is on battery"
+      onCharge:
+        description: "execute the task only when the system is charging"
+      onConditionCommand:
+        description: "execute the task on condition command"
+      onCpuTemp:
+        description: "execute the task when CPU temperature is higher than 60°C"
+      onCpuUsage:
+        description: "execute the task when CPU usage is higher than X%"
+      onDeviceConnect:
+        description: "execute the task when a device is connected"
+      onDeviceDisconnect:
+        description: "execute the task when a device is disconnected"
+      onDisconnect:
+        description: "execute the task when the system is disconnected from the network"
+      onFullBattery:
+        description: "execute the task when the system is fully charged"
+      onHighCpuUsage:
+        description: "execute the task when CPU usage is higher than 50%"
+      onHighInternetUsage:
+        description: "execute the task when internet usage is higher than 500Kb/s"
+      onHighMemoryUsage:
+        description: "execute the task when memory usage is higher than 50%"
+      onInternetUsage:
+        description: "execute the task when internet usage is higher than XKb/s"
+      onLowBattery:
+        description: "execute the task when the system is low on battery (20%)"
+      onMemoryUsage:
+        description: "execute the task when memory usage is higher than X%"
+      onNetwork:
+        description: "execute the task when the system is connected to the network"
+      onProcess:
+        description: "execute the task when a process starts"
+  rm:
+    description: "Remove a task"
+    error:
+      cannotDelete: "Cannot delete task: %s"
+      noName: "No task name specified."
+      notFound: "Task not found."
+    info:
+      askConfirmation: "Are you sure you want to delete the task %s? [y/N]"
+      taskDeleted: "Task has been deleted successfully."
+    options:
+      force:
+        description: "force the deletion of the task"
+      name:
+        description: "specify the task's name"
+  rotate:
+    description: "Rotate tasks"
+    options:
+      privateEvent:
+        description: "specify private event to rotate tasks for boot, shutdown, login,
+          logout"
+
+waydroid:
+  description: "Manage the vso waydroid subsystem"
+  downloadIndex: "Downloading index for repository %s"
+  clean:
+    description: "Cleans the waydroid vso cache"
+    info:
+      index: "Deleting index cache"
+      apk: "Deleting apk cache"
+      success: "Successfully deleted waydroid vso cache"
+    error:
+      index: "Failed to delete index cache"
+      apk: "Failed to delete apk cache"
+  delete:
+    description: "Delete the waydroid subsystem"
+    confirmation: "Deleting the waydroid subsystem will delete any data stored in
+      it. Continue?"
+    cancelled: "Cancelled removal of subsystem."
+  error:
+    noArguments: "No arguments provided."
+  install:
+    description: "Install an application"
+    options:
+      local:
+        description: "Install a local apk"
+    info:
+      PackageInCache: "Application found in cache, not downloading again."
+      ConfirmInstall: "Install application %s?"
+      DownloadingPackage: "Downloading apk from %s"
+      PackageSelection: "Pick application to install"
+    error:
+      NotFound: "Application %s was not found."
+      InstallCancelled: "Installation Cancelled"
+  init:
+    description: "Initialize the waydroid subsystem"
+    options:
+      force:
+        description: "Force the initialization"
+      noconfirm:
+        description: "Do not ask for confirmation during installation"
+  launch:
+    description: "Launch an installed application"
+  launcher:
+    description: "Show the waydroid launcher"
+  remove:
+    description: "Uninstall an application"
+    info:
+      RemovePackage: "Removing package %s"
+      PackageSelection: "Pick application to remove"
+      ConfirmRemove: "Remove application %s?"
+    error:
+      NoMatches: "Application %s not found"
+      RemoveCancelled: "Removal Cancelled"
+  search:
+    description: "Search for an application"
+  sync:
+    description: "Sync the repositories"
+  update:
+    description: "Update installed applications"
+    finished: "Finished updating applications"
+    error:
+      FailGetVersion: "Failed to get version code for %s"
+      FailUpdatePackageDownload: "Failed to download APK for %s"
+      FailUpdatePackageDatabase: "Failed to update database entry for %s"
+      FailUpdatePackageInstall: "Failed to install update for %s"
+    info:
+      NoUpdates: "Nothing to update"
+  info:
+    description: "Display information about an application"
+    info:
+      PackageSelection: "Select application to display information from"
+    PackageName: "Name: %s"
+    InternalName: "Internal name: %s"
+    Summary: "Summary: %s"
+    Author: "Author: %s"
+    License: "License: %s"
+    Repository: "Repository: %s"

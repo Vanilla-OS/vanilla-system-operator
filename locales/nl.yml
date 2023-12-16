@@ -17,10 +17,10 @@ config:
     description: "Verkrijg de systeemconfiguratie"
     error:
       noKey: "Geen sleutel opgegeven"
-      noValue: "No value found for key: %s"
+      noValue: "Geen waarde gevonden voor sleutel %s"
     options:
       key:
-        description: "retrieve configuration value by using its key"
+        description: "verkrijg configuratiewaarde d.m.v. sleutel"
   set:
     description: "Stelt de systeem­configuratie in"
     error:
@@ -232,18 +232,18 @@ waydroid:
       PackageInCache: Application found in cache, not downloading again.
       ConfirmInstall: Install application %s?
     error:
-      InstallCancelled: Installation Cancelled
+      InstallCancelled: Installatie geannuleerd
       NotFound: Application %s was not found.
     description: Install an application
     options:
       local:
         description: Install a local apk
   info:
-    Author: 'Author: %s'
-    PackageName: 'Name: %s'
+    Author: 'Auteur: %s'
+    PackageName: 'Naan: %s'
     InternalName: 'Internal name: %s'
-    License: 'License: %s'
-    Summary: 'Summary: %s'
+    License: 'Licentie: %s'
+    Summary: 'Samenvatting: %s'
     Repository: 'Repository: %s'
     description: Display information about an application
     info:
@@ -265,13 +265,13 @@ waydroid:
       RemovePackage: Removing package %s
     description: Uninstall an application
     error:
-      RemoveCancelled: Removal Cancelled
+      RemoveCancelled: Verwijdering geannuleerd
       NoMatches: Application %s not found
   clean:
     info:
       success: Successfully deleted waydroid vso cache
       apk: Deleting apk cache
-      index: Deleting index cache
+      index: Index-cache verwijderen
     error:
       apk: Failed to delete apk cache
       index: Failed to delete index cache

@@ -213,77 +213,78 @@ tasks:
           avstängning, inloggning, utloggning"
 waydroid:
   error:
-    noArguments: No arguments provided.
+    noArguments: Inga argument har angetts.
   install:
     info:
-      DownloadingPackage: Downloading apk from %s
-      PackageSelection: Pick application to install
-      PackageInCache: Application found in cache, not downloading again.
-      ConfirmInstall: Install application %s?
+      DownloadingPackage: Laddar ner apk från %s
+      PackageSelection: Välj den applikation som ska installeras
+      PackageInCache: Applikationen hittades i cachen, laddas inte ned igen.
+      ConfirmInstall: Installera applikationen %s?
     error:
-      InstallCancelled: Installation Cancelled
-      NotFound: Application %s was not found.
-    description: Install an application
+      InstallCancelled: Installationen avbruten
+      NotFound: Applikationen %s hittades inte.
+    description: Installera en applikation
     options:
       local:
-        description: Install a local apk
+        description: Installera en lokal apk
   info:
-    Author: 'Author: %s'
-    PackageName: 'Name: %s'
-    InternalName: 'Internal name: %s'
-    License: 'License: %s'
-    Summary: 'Summary: %s'
-    Repository: 'Repository: %s'
-    description: Display information about an application
+    Author: 'Författare: %s'
+    PackageName: 'Namn: %s'
+    InternalName: 'Internt namn: %s'
+    License: 'Licens: %s'
+    Summary: 'Sammanfattning: %s'
+    Repository: 'Arkiv: %s'
+    description: Visa information om en applikation
     info:
-      PackageSelection: Select application to display information from
+      PackageSelection: Välj applikation att visa information från
   update:
     info:
-      NoUpdates: Nothing to update
+      NoUpdates: Inget att uppdatera
     error:
-      FailUpdatePackageDownload: Failed to download APK for %s
-      FailUpdatePackageDatabase: Failed to update database entry for %s
-      FailUpdatePackageInstall: Failed to install update for %s
-      FailGetVersion: Failed to get version code for %s
-    finished: Finished updating applications
-    description: Update installed applications
+      FailUpdatePackageDownload: Misslyckades med att ladda ner APK för %s
+      FailUpdatePackageDatabase: Misslyckades med att uppdatera databasposten för
+        %s
+      FailUpdatePackageInstall: Misslyckades med att installera uppdatering för %s
+      FailGetVersion: Misslyckades med att hämta versionskoden för %s
+    finished: Uppdatering av applikationer har slutförts
+    description: Uppdatera installerade applikationer
   remove:
     info:
-      PackageSelection: Pick application to remove
-      ConfirmRemove: Remove application %s?
-      RemovePackage: Removing package %s
-    description: Uninstall an application
+      PackageSelection: Välj en applikation att ta bort
+      ConfirmRemove: Ta bort applikation %s?
+      RemovePackage: Tar bort paket %s
+    description: Avinstallera en applikation
     error:
-      RemoveCancelled: Removal Cancelled
-      NoMatches: Application %s not found
+      RemoveCancelled: Borttagning avbröts
+      NoMatches: Applikation %s hittades inte
   clean:
     info:
-      success: Successfully deleted waydroid vso cache
-      apk: Deleting apk cache
-      index: Deleting index cache
+      success: Waydroid vso cache har raderats framgångsrikt
+      apk: Raderar apk cache
+      index: Raderar indexcache
     error:
-      apk: Failed to delete apk cache
-      index: Failed to delete index cache
-    description: Cleans the waydroid vso cache
-  description: Manage the vso waydroid subsystem
+      apk: Misslyckades att ta bort apk cache
+      index: Misslyckades att ta bort index cache
+    description: Rensar waydroid vso cache
+  description: Hantera vso waydroid undersystem
   delete:
-    description: Delete the waydroid subsystem
-    confirmation: Deleting the waydroid subsystem will delete any data stored in it.
-      Continue?
-    cancelled: Cancelled removal of subsystem.
+    description: Ta bort waydroid undersystem
+    confirmation: Om du tar bort waydroid-undersystemet raderas all data som lagras
+      i det. Fortsätta?
+    cancelled: Avbruten borttagning av undersystem.
   init:
     options:
       force:
-        description: Force the initialization
+        description: Forcera initieringen
       noconfirm:
-        description: Do not ask for confirmation during installation
-    description: Initialize the waydroid subsystem
+        description: Be inte om bekräftelse under installationen
+    description: Initiera waydroid-undersystemet
   search:
-    description: Search for an application
-  downloadIndex: Downloading index for repository %s
+    description: Sök efter en applikation
+  downloadIndex: Hämtar index för arkiv %s
   sync:
-    description: Sync the repositories
+    description: Synkronisera arkiven
   launcher:
-    description: Show the waydroid launcher
+    description: Visa waydroid launcher
   launch:
-    description: Launch an installed application
+    description: Starta en installerad applikation
