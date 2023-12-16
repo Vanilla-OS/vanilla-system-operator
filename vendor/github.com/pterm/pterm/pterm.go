@@ -6,7 +6,9 @@
 // View the animated examples here: https://github.com/pterm/pterm#-examples
 package pterm
 
-import "github.com/gookit/color"
+import (
+	"github.com/gookit/color"
+)
 
 var (
 	// Output completely disables output from pterm if set to false. Can be used in CLI application quiet mode.
@@ -61,7 +63,7 @@ func DisableStyling() {
 	DisableColor()
 }
 
-// RecalculateTerminalSize updates already initialized terminal dimensions. Has to be called after a termina resize to guarantee proper rendering. Applies only to new instances.
+// RecalculateTerminalSize updates already initialized terminal dimensions. Has to be called after a terminal resize to guarantee proper rendering. Applies only to new instances.
 func RecalculateTerminalSize() {
 	// keep in sync with DefaultBarChart
 	DefaultBarChart.Width = GetTerminalWidth() * 2 / 3

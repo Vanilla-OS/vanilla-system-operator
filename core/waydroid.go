@@ -3,10 +3,11 @@ package core
 import (
 	"encoding/json"
 	"fmt"
-	"github.com/vanilla-os/apx/core"
-	bolt "go.etcd.io/bbolt"
 	"os"
 	"strings"
+
+	"github.com/vanilla-os/apx/v2/core"
+	bolt "go.etcd.io/bbolt"
 )
 
 type BucketNotFoundError struct {
