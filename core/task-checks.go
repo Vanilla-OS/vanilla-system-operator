@@ -11,7 +11,6 @@ package core
 
 import (
 	"fmt"
-	"io/ioutil"
 	"os"
 	"os/exec"
 	"path"
@@ -90,18 +89,18 @@ func IsNetworkUp() bool {
 func GetBatteryStats() (bool, bool, bool) {
 	battery, lowBattery, fullBattery := false, false, false
 
-	files, err := ioutil.ReadDir("/sys/class/power_supply/")
+	files, err := os.ReadDir("/sys/class/power_supply/")
 	if err == nil {
 		for _, file := range files {
 			if strings.Contains(file.Name(), "BAT") {
-				status, err := ioutil.ReadFile(path.Join("/sys/class/power_supply/", file.Name(), "status"))
+				status, err := os.ReadFile(path.Join("/sys/class/power_supply/", file.Name(), "status"))
 				if err == nil {
 					if strings.Contains(string(status), "Discharging") {
 						battery = true
 					}
 				}
 
-				capacity, err := ioutil.ReadFile(path.Join("/sys/class/power_supply/", file.Name(), "capacity"))
+				capacity, err := os.ReadFile(path.Join("/sys/class/power_supply/", file.Name(), "capacity"))
 				if err == nil {
 					percent, err := strconv.Atoi(strings.TrimSpace(string(capacity)))
 					if err == nil {
@@ -201,7 +200,7 @@ func IsInternetUnderHighUsage() (bool, int) {
 
 // IsMemoryUnderHighUsage checks if the memory is being used (false if exceeds 50%)
 func IsMemoryUnderHighUsage() (bool, int) {
-	out, err := ioutil.ReadFile("/proc/meminfo")
+	out, err := os.ReadFile("/proc/meminfo")
 	if err != nil {
 		return false, 0
 	}
@@ -255,7 +254,7 @@ func IsCPUUnderHighUsage() (bool, int) {
 
 // GetCPUTemp gets the CPU temperature
 func GetCPUTemp() int {
-	b, err := ioutil.ReadFile("/sys/class/thermal/thermal_zone0/temp")
+	b, err := os.ReadFile("/sys/class/thermal/thermal_zone0/temp")
 	if err != nil {
 		return 0
 	}

@@ -12,8 +12,8 @@ package main
 import (
 	"embed"
 
-	"github.com/vanilla-os/apx/core"
-	"github.com/vanilla-os/apx/settings"
+	"github.com/vanilla-os/apx/v2/core"
+	"github.com/vanilla-os/apx/v2/settings"
 	"github.com/vanilla-os/orchid/cmdr"
 	"github.com/vanilla-os/vso/cmd"
 )

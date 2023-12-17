@@ -10,6 +10,7 @@ package cmd
 */
 
 import (
+	"errors"
 	"fmt"
 
 	"github.com/spf13/cobra"
@@ -77,6 +78,7 @@ func NewPicoCommand() []*cmdr.Command {
 		vso.Trans("pico.run.description"),
 		handleFunc(),
 	)
+	runCmd.Flags().SetInterspersed(false)
 
 	exportCmd := cmdr.NewCommand(
 		"export",
@@ -188,10 +190,20 @@ func picoExport(cmd *cobra.Command, args []string) error {
 
 	err := core.PicoExport(app, bin)
 	if err != nil {
-		return err
+		var errMsg string
+		if app != "" {
+			errMsg = vso.Trans("pico.error.exportingApp", err.Error())
+		} else {
+			errMsg = vso.Trans("pico.error.exportingBin", err.Error())
+		}
+		return errors.New(errMsg)
 	}
 
-	cmdr.Success.Println(vso.Trans("pico.info.exported"))
+	if app != "" {
+		cmdr.Success.Printf(vso.Trans("pico.info.exported"), app)
+	} else {
+		cmdr.Success.Printf(vso.Trans("pico.info.exported"), bin)
+	}
 	return nil
 }
 
@@ -206,10 +218,20 @@ func picoUnexport(cmd *cobra.Command, args []string) error {
 
 	err := core.PicoUnexport(app, bin)
 	if err != nil {
-		return err
+		var errMsg string
+		if app != "" {
+			errMsg = vso.Trans("pico.error.unexportingApp", err.Error())
+		} else {
+			errMsg = vso.Trans("pico.error.unexportingBin", err.Error())
+		}
+		return errors.New(errMsg)
 	}
 
-	cmdr.Success.Println(vso.Trans("pico.info.unexported"))
+	if app != "" {
+		cmdr.Success.Printf(vso.Trans("pico.info.unexported"), app)
+	} else {
+		cmdr.Success.Printf(vso.Trans("pico.info.unexported"), bin)
+	}
 	return nil
 }
 
@@ -219,9 +241,10 @@ func runPicoCmd(command string, cmd *cobra.Command, args []string) error {
 		return err
 	}
 
-	if command == "shell" {
+	switch command {
+	case "shell":
 		return pico.Enter()
-	} else if command == "run" {
+	case "run":
 		_, err := pico.Exec(false, args...)
 		return err
 	}
@@ -256,7 +279,7 @@ func runPicoCmd(command string, cmd *cobra.Command, args []string) error {
 	case "upgrade":
 		realCommand = pkgManager.CmdUpgrade
 	default:
-		return fmt.Errorf(vso.Trans("pico.errors.unknownCommand"), command)
+		return fmt.Errorf(vso.Trans("pico.error.unknownCommand"), command)
 	}
 
 	if command == "remove" {

@@ -1,6 +1,111 @@
 <a name="unreleased"></a>
 ## [Unreleased]
 
+### Bug Fixes
+- buggy basic text input ([#551](https://github.com/pterm/pterm/issues/551))
+- **textinput:** fixed buggy behavior ([#550](https://github.com/pterm/pterm/issues/550))
+
+
+<a name="v0.12.64"></a>
+## [v0.12.64] - 2023-08-03
+### Features
+- add custom delimiters to select printers ([#545](https://github.com/pterm/pterm/issues/545))
+
+
+<a name="v0.12.63"></a>
+## [v0.12.63] - 2023-07-18
+### Features
+- add filter option for `select`
+
+### Bug Fixes
+- fixed area on Windows
+- **box:** fixed wrong title length calculation
+
+### Code Refactoring
+- use WithBoolean on multiselect printer
+- use WithBoolean on multiselect printer
+- use WithBoolean method on WithFilter method of select printer
+
+
+<a name="v0.12.62"></a>
+## [v0.12.62] - 2023-05-24
+### Bug Fixes
+- fixed not being able to add a custom graceful shutdown
+
+
+<a name="v0.12.61"></a>
+## [v0.12.61] - 2023-05-14
+### Bug Fixes
+- **table:** fixed table when a column contained a whitespace at the start or end
+
+
+<a name="v0.12.60"></a>
+## [v0.12.60] - 2023-05-11
+### Features
+- **progressbar:** various progressbar improvements
+- **progressbar:** various progressbar improvements
+- **progressbar:** various progressbar improvements
+- **rgb:** added RGBStyle
+
+### Test
+- **rgb:** added RGBStyle tests
+
+### Code Refactoring
+- **rgb:** removed 'GetValues' for 'RGBStyle'
+
+
+<a name="v0.12.59"></a>
+## [v0.12.59] - 2023-04-15
+### Features
+- add optional mask to InteractiveTextInputPrinter
+
+
+<a name="v0.12.58"></a>
+## [v0.12.58] - 2023-04-03
+### Features
+- **logger:** implemented structured logging
+- **logger:** implemented structured logging
+- **logger:** implemented structured logging
+- **logger:** added logger
+- **logger:** create logger
+- **rgb:** made it possible to use RGB colors as background
+- **rgb:** made it possible to use RGB colors as background
+- **rgb:** made it possible to use RGB colors as background
+
+### Bug Fixes
+- **rgb:** fix Fade maxValue == current not displaying the last color
+
+
+<a name="v0.12.57"></a>
+## [v0.12.57] - 2023-03-28
+### Code Refactoring
+- use `pterm.Print` instead of `fmt.Print` functions
+
+
+<a name="v0.12.56"></a>
+## [v0.12.56] - 2023-03-14
+### Bug Fixes
+- **table:** fixed panic when multiple lines contained color in a single row
+
+
+<a name="v0.12.55"></a>
+## [v0.12.55] - 2023-03-04
+### Features
+- **table:** multiline support for table printer
+- **table:** multiline support for table printer
+
+### Code Refactoring
+- **table:** fixed linting
+
+
+<a name="v0.12.54"></a>
+## [v0.12.54] - 2023-01-22
+### Bug Fixes
+- **tree:** print top node [#443](https://github.com/pterm/pterm/issues/443)
+
+
+<a name="v0.12.53"></a>
+## [v0.12.53] - 2023-01-05
 ### Features
 - **color:** added `color.ToStyle()`
 - **color:** added `color.ToStyle()`
@@ -1106,7 +1211,19 @@ removed `Header` and put it's content directly into `HeaderPrinter`
 - initial commit
 
 
-[Unreleased]: https://github.com/pterm/pterm/compare/v0.12.52...HEAD
+[Unreleased]: https://github.com/pterm/pterm/compare/v0.12.64...HEAD
+[v0.12.64]: https://github.com/pterm/pterm/compare/v0.12.63...v0.12.64
+[v0.12.63]: https://github.com/pterm/pterm/compare/v0.12.62...v0.12.63
+[v0.12.62]: https://github.com/pterm/pterm/compare/v0.12.61...v0.12.62
+[v0.12.61]: https://github.com/pterm/pterm/compare/v0.12.60...v0.12.61
+[v0.12.60]: https://github.com/pterm/pterm/compare/v0.12.59...v0.12.60
+[v0.12.59]: https://github.com/pterm/pterm/compare/v0.12.58...v0.12.59
+[v0.12.58]: https://github.com/pterm/pterm/compare/v0.12.57...v0.12.58
+[v0.12.57]: https://github.com/pterm/pterm/compare/v0.12.56...v0.12.57
+[v0.12.56]: https://github.com/pterm/pterm/compare/v0.12.55...v0.12.56
+[v0.12.55]: https://github.com/pterm/pterm/compare/v0.12.54...v0.12.55
+[v0.12.54]: https://github.com/pterm/pterm/compare/v0.12.53...v0.12.54
+[v0.12.53]: https://github.com/pterm/pterm/compare/v0.12.52...v0.12.53
 [v0.12.52]: https://github.com/pterm/pterm/compare/v0.12.51...v0.12.52
 [v0.12.51]: https://github.com/pterm/pterm/compare/v0.12.50...v0.12.51
 [v0.12.50]: https://github.com/pterm/pterm/compare/v0.12.49...v0.12.50
