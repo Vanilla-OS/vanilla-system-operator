@@ -24,7 +24,7 @@ type UpdatesConfig struct {
 	Smart    bool   `json:"smart"`
 }
 
-var Cnf *Config
+var Cnf Config
 
 func init() {
 	viper.AddConfigPath("/etc/vso/")
@@ -37,6 +37,8 @@ func init() {
 		panic("Config error!")
 	}
 
+	fmt.Println("Config loaded from " + viper.ConfigFileUsed())
+
 	err = viper.Unmarshal(&Cnf)
 
 	if err != nil {
@@ -44,7 +46,7 @@ func init() {
 	}
 }
 
-func GetConfig() *Config {
+func GetConfig() Config {
 	return Cnf
 }
 
