@@ -90,15 +90,16 @@ func HasUpdates() (bool, []string, error) {
 	update_cmd := exec.Command("abroot", "upgrade", "--check-only")
 
 	err := update_cmd.Run()
-
-	if exitError, ok := err.(*exec.ExitError); ok {
-		if exitError.ExitCode() == 0 {
-			// TODO: blocked by https://github.com/Vanilla-OS/ABRoot/issues/115
-			list_updates := []string{}
-			return true, list_updates, nil
-		} else if exitError.ExitCode() == 1 {
-			return false, nil, nil
+	if err != nil {
+		if exitError, ok := err.(*exec.ExitError); ok {
+			if exitError.ExitCode() == 1 {
+				return false, nil, nil
+			}
 		}
+	} else {
+		// TODO: blocked by https://github.com/Vanilla-OS/ABRoot/issues/115
+		list_updates := []string{}
+		return true, list_updates, nil
 	}
 
 	return false, nil, err
