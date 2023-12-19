@@ -1,0 +1,4 @@
+#!/bin/sh
+
+target_shell=$(echo $SHELL)
+exec "$target_shell" "$@"

@@ -47,3 +47,12 @@ Use "vso [command] --help" for more information about a command.
 ## Documentation
 
 The official **documentation and manpage** for `vso` are available at <https://documentation.vanillaos.org/docs/vso/>.
+
+## VSO as system Shell
+To use VSO as your system shell, you can copy the `usr/bin/vso-os-shell` script
+to your system's `/usr/bin` directory and set it as your default shell. Your
+image needs to implement the `usr/bin/os-shell` script, which will expand the
+`$SHELL` environment variable, this is much needed for login shells and other
+flags, this also ensures that the user's default shell is respected.
+
+Our `vso-image` already implements this script.
