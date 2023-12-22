@@ -33,10 +33,10 @@ config:
     description: "Show the system configuration"
 
 pico:
-  description: "Manage the Pico subsystem"
+  description: "Manage the VSO subsystem"
   error:
-    notInitialized: "The Pico subsystem is not initialized. Please run `vso pico-init` to initialize it."
-    alreadyInitialized: "The Pico subsystem is already initialized. Use the --force flag to force the initialization."
+    notInitialized: "The VSO subsystem is not initialized. Please run `vso pico-init` to initialize it."
+    alreadyInitialized: "The VSO subsystem is already initialized. Use the --force flag to force the initialization."
     noAppNameOrBin: "--app-name or --bin must be specified."
     sameAppOrBin: "--app-name and --bin cannot be both specified."
     exportingApp: "An error occurred while exporting the application: %s"
@@ -44,12 +44,17 @@ pico:
     unexportingApp: "An error occurred while unexporting the application: %s"
     unexportingBin: "An error occurred while unexporting the binary: %s"
     unknownCommand: "Unknown command: %s"
+    shellReset: "It is impossible to reach the VSO shell. Do you want to reset it? (This will remove all your software installed in the subsystem) [y/N]"
   info:
-    initialized: "The Pico subsystem has been initialized."
+    deleting: "Deleting the VSO subsystem..."
+    initializing: "Initializing the VSO subsystem..."
+    initialized: "The VSO subsystem has been initialized."
     exported: "Exported %s\n"
     unexported: "Unexported %s\n"
     exportedApps: "Exported %d applications"
     unexportedApps: "Unexported %d applications"
+    shellInit: "Looks like your shell is not initialized yet. Do you want to initialize it now? (Highly recommended) [y/N]"
+    fallbackShell: "Fallback to the host shell? This could lead to unexpected behavior. [y/N]"
   export:
     description: "Export an application or binary from the subsystem"
     options:
@@ -69,7 +74,7 @@ pico:
       binOutput:
         description: "path of the binary output (default: ~/.local/bin/)"
   init:
-    description: "Initialize the Pico subsystem, used for package management"
+    description: "Initialize the VSO subsystem, used for package management"
     options:
       force:
         description: "force the initialization if the subsystem is already initialized"

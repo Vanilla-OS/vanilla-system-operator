@@ -12,6 +12,9 @@ package cmd
 import (
 	"errors"
 	"fmt"
+	"os"
+	"os/exec"
+	"strings"
 
 	"github.com/spf13/cobra"
 	"github.com/vanilla-os/orchid/cmdr"
@@ -70,13 +73,13 @@ func NewPicoCommand() []*cmdr.Command {
 		"shell",
 		vso.Trans("pico.shell.description"),
 		vso.Trans("pico.shell.description"),
-		handleFunc(),
+		picoShell,
 	)
 	runCmd := cmdr.NewCommand(
 		"run",
 		vso.Trans("pico.run.description"),
 		vso.Trans("pico.run.description"),
-		handleFunc(),
+		picoRun,
 	)
 	runCmd.Flags().SetInterspersed(false)
 
@@ -155,28 +158,143 @@ func NewPicoCommand() []*cmdr.Command {
 	}
 }
 
-func picoInit(cmd *cobra.Command, args []string) error {
-	force, _ := cmd.Flags().GetBool("force")
-
+func initializePico(force bool) error {
 	if core.PicoExists() {
 		if !force {
-			cmdr.Error.Println(vso.Trans("pico.error.alreadyInitialized"))
+			cmdr.Warning.Println(vso.Trans("pico.error.alreadyInitialized"))
 			return nil
 		}
 
+		cmdr.Info.Println(vso.Trans("pico.info.deleting"))
 		err := core.PicoDelete()
 		if err != nil {
 			return err
 		}
 	}
 
+	cmdr.Info.Println(vso.Trans("pico.info.initializing"))
+
 	err := core.PicoInit()
 	if err != nil {
-		return err
+		return fallbackShell()
 	}
 
-	cmdr.Success.Println(vso.Trans("pico.info.initialized"))
 	return nil
+}
+
+func picoInit(cmd *cobra.Command, args []string) error {
+	force, _ := cmd.Flags().GetBool("force")
+	return initializePico(force)
+}
+
+func resetShell(runAction func()) error {
+	cmdr.Warning.Printfln(vso.Trans("pico.error.shellReset"))
+
+	var confirmation string
+	fmt.Scanln(&confirmation)
+	if strings.ToLower(confirmation) != "y" {
+		return fallbackShell()
+	}
+
+	err := initializePico(true)
+	if err != nil {
+		return fallbackShell()
+	}
+
+	runAction()
+
+	return nil
+}
+
+func picoShell(cmd *cobra.Command, args []string) error {
+	needInit := false
+
+	if !core.PicoExists() {
+		needInit = true
+	}
+
+	pico, err := core.GetPico()
+	if err != nil {
+		needInit = true
+	}
+
+	if needInit {
+		cmdr.Info.Printfln(vso.Trans("pico.info.shellInit"))
+
+		var confirmation string
+		fmt.Scanln(&confirmation)
+		if strings.ToLower(confirmation) != "y" {
+			return fallbackShell()
+		}
+
+		err := initializePico(false)
+		if err != nil {
+			return fallbackShell()
+		}
+	}
+
+	err = pico.Enter()
+	if err != nil {
+		fn := func() {
+			picoShell(cmd, args)
+		}
+		return resetShell(fn)
+	}
+
+	return nil
+}
+
+func picoRun(cmd *cobra.Command, args []string) error {
+	needInit := false
+
+	if !core.PicoExists() {
+		needInit = true
+	}
+
+	pico, err := core.GetPico()
+	if err != nil {
+		needInit = true
+	}
+
+	if needInit {
+		cmdr.Info.Printfln(vso.Trans("pico.info.shellInit"))
+
+		var confirmation string
+		fmt.Scanln(&confirmation)
+		if strings.ToLower(confirmation) != "y" {
+			return fallbackShell()
+		}
+
+		err := initializePico(false)
+		if err != nil {
+			return fallbackShell()
+		}
+	}
+
+	_, err = pico.Exec(false, args...)
+	if err != nil {
+		fn := func() {
+			picoRun(cmd, args)
+		}
+		return resetShell(fn)
+	}
+
+	return nil
+}
+
+func fallbackShell() error {
+	cmdr.Warning.Printfln(vso.Trans("pico.info.fallbackShell"))
+	var confirmation string
+	fmt.Scanln(&confirmation)
+	if strings.ToLower(confirmation) != "y" {
+		return nil
+	}
+
+	cmd := exec.Command("/bin/bash")
+	cmd.Stdin = os.Stdin
+	cmd.Stdout = os.Stdout
+	cmd.Stderr = os.Stderr
+	return cmd.Run()
 }
 
 func picoExport(cmd *cobra.Command, args []string) error {
@@ -238,14 +356,6 @@ func picoUnexport(cmd *cobra.Command, args []string) error {
 func runPicoCmd(command string, cmd *cobra.Command, args []string) error {
 	pico, err := core.GetPico()
 	if err != nil {
-		return err
-	}
-
-	switch command {
-	case "shell":
-		return pico.Enter()
-	case "run":
-		_, err := pico.Exec(false, args...)
 		return err
 	}
 
