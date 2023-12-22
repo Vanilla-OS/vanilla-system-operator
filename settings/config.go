@@ -62,21 +62,23 @@ func GetConfigValue(key string) interface{} {
 }
 
 func SetConfigValue(key string, value interface{}) {
-	if key == "updates.schedule" {
+	switch key {
+	case "updates.schedule":
 		if value != "daily" && value != "weekly" && value != "monthly" {
 			fmt.Println("Invalid value for updates.schedule!")
 			return
 		}
-	} else if key == "updates.smart" {
+	case "updates.smart":
 		if value != true && value != false && value != "true" && value != "false" {
 			fmt.Println("Invalid value for updates.smart!")
 			return
 		}
 	}
 
-	if value == "true" {
+	switch value {
+	case "true":
 		value = true
-	} else if value == "false" {
+	case "false":
 		value = false
 	}
 

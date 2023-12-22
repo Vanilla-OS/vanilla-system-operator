@@ -10,9 +10,7 @@ package cmd
 */
 
 import (
-	"fmt"
 	"os"
-	"strings"
 
 	"github.com/spf13/cobra"
 	"github.com/vanilla-os/orchid/cmdr"
@@ -89,54 +87,34 @@ func checkUpgrade(cmd *cobra.Command, args []string) error {
 		cmdr.Info.Println(vso.Trans("sysUpgrade.check.info.checking"))
 	}
 
-	status, updates, err := core.HasUpdates()
-
 	if asExitCode {
+		status, err := core.HasUpdates()
+		if err != nil {
+			cmdr.Error.Println(vso.Trans("sysUpgrade.check.error.asExitCodeAndJson"))
+			return err
+		}
 		if status {
 			os.Exit(1)
 		}
 		os.Exit(0)
 	}
 
+	var err error
 	if !json {
+		err = core.RunUpgradeCheck()
 		if err != nil {
 			cmdr.Error.Println(err)
 			return nil
 		}
-
-		if !status {
-			cmdr.Info.Println(vso.Trans("sysUpgrade.check.info.noUpdates"))
-			return nil
-		}
-
-		fmt.Println("--------------------------------------------")
-		fmt.Println(vso.Trans("sysUpgrade.check.info.updatesAvailable"))
-		fmt.Println(strings.Join(updates, "\n"))
-		fmt.Println("--------------------------------------------")
-
-		return nil
 	} else {
-		if err != nil {
-			cmdr.Error.Println(err)
-			return nil
-		}
-
-		if !status {
-			fmt.Println(`{"status": "ok", "updates": []}`)
-			return nil
-		}
-
-		fmt.Println(`{"status": "ok", "updates": [`)
-		for i, update := range updates {
-			if i == len(updates)-1 {
-				fmt.Printf(`	"%s"`, update)
-			} else {
-				fmt.Printf(`	"%s",`, update)
-			}
-		}
-		fmt.Println("\n]}")
+		_, err = core.RunUpgradeCheckJSON()
+	}
+	if err != nil {
+		cmdr.Error.Println(err)
 		return nil
 	}
+
+	return nil
 }
 
 func upgrade(cmd *cobra.Command, args []string) error {
