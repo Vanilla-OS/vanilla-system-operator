@@ -10,6 +10,7 @@ package core
 */
 
 import (
+	"encoding/json"
 	"fmt"
 	"os"
 	"os/exec"
@@ -77,7 +78,10 @@ func NeedUpdate() bool {
 		}
 	}
 
-	status, _, _ := HasUpdates()
+	status, err := HasUpdates()
+	if err != nil {
+		return false
+	}
 	if status {
 		res = true
 	}
@@ -85,24 +89,65 @@ func NeedUpdate() bool {
 	return res
 }
 
-// HasUpdates checks if the system has updates available
-func HasUpdates() (bool, []string, error) {
-	update_cmd := exec.Command("abroot", "upgrade", "--check-only")
+func runABRootCheck(asJson, showStdout bool) (bool, map[string]any, error) {
+	update_cmd := exec.Command("/home/matbme/Projects/Vanilla/ABRoot/abroot", "upgrade", "--check-only")
 
-	err := update_cmd.Run()
+	var out []byte
+	var err error
+	if asJson {
+		update_cmd.Env = append(update_cmd.Environ(), "ABROOT_JSON_OUTPUT=1")
+	}
+
+	if showStdout {
+		update_cmd.Stdout = os.Stdout
+		update_cmd.Stderr = os.Stderr
+		err = update_cmd.Run()
+	} else {
+		out, err = update_cmd.Output()
+	}
+
 	if err != nil {
 		if exitError, ok := err.(*exec.ExitError); ok {
 			if exitError.ExitCode() == 1 {
-				return false, nil, nil
+				return false, map[string]any{}, nil
 			}
+			return false, map[string]any{}, err
 		}
-	} else {
-		// TODO: blocked by https://github.com/Vanilla-OS/ABRoot/issues/115
-		list_updates := []string{}
-		return true, list_updates, nil
 	}
 
-	return false, nil, err
+	if !asJson || showStdout {
+		return true, map[string]any{}, nil
+	}
+
+	capturedOutput := map[string]any{}
+	err = json.Unmarshal(out, &capturedOutput)
+	if err != nil {
+		return false, map[string]any{}, err
+	}
+
+	return capturedOutput["hasUpdate"].(bool), capturedOutput, nil
+}
+
+// HasUpdates checks if the system has updates available
+func HasUpdates() (bool, error) {
+	hasUpdate, _, err := runABRootCheck(false, false)
+	if err != nil {
+		return false, err
+	}
+
+	return hasUpdate, nil
+}
+
+// RunUpgradeCheck asks ABRoot to check for updates and passes its output to stdout
+func RunUpgradeCheck() error {
+	_, _, err := runABRootCheck(false, true)
+	return err
+}
+
+// RunUpgradeCheckJSON asks ABRoot to check for updates and return a JSON-formatted result
+func RunUpgradeCheckJSON() (bool, error) {
+	hasUpdate, _, err := runABRootCheck(true, true)
+	return hasUpdate, err
 }
 
 func okToUpdate() bool {
