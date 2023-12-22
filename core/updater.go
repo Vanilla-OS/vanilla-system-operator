@@ -90,7 +90,7 @@ func NeedUpdate() bool {
 }
 
 func runABRootCheck(asJson, showStdout bool) (bool, map[string]any, error) {
-	update_cmd := exec.Command("/home/matbme/Projects/Vanilla/ABRoot/abroot", "upgrade", "--check-only")
+	update_cmd := exec.Command("abroot", "upgrade", "--check-only")
 
 	var out []byte
 	var err error
