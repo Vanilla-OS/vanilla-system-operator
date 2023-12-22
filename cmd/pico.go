@@ -207,18 +207,7 @@ func resetShell(runAction func()) error {
 }
 
 func picoShell(cmd *cobra.Command, args []string) error {
-	needInit := false
-
 	if !core.PicoExists() {
-		needInit = true
-	}
-
-	pico, err := core.GetPico()
-	if err != nil {
-		needInit = true
-	}
-
-	if needInit {
 		cmdr.Info.Printfln(vso.Trans("pico.info.shellInit"))
 
 		var confirmation string
@@ -231,6 +220,11 @@ func picoShell(cmd *cobra.Command, args []string) error {
 		if err != nil {
 			return fallbackShell()
 		}
+	}
+
+	pico, err := core.GetPico()
+	if err != nil {
+		picoShell(cmd, args)
 	}
 
 	err = pico.Enter()
@@ -245,18 +239,7 @@ func picoShell(cmd *cobra.Command, args []string) error {
 }
 
 func picoRun(cmd *cobra.Command, args []string) error {
-	needInit := false
-
 	if !core.PicoExists() {
-		needInit = true
-	}
-
-	pico, err := core.GetPico()
-	if err != nil {
-		needInit = true
-	}
-
-	if needInit {
 		cmdr.Info.Printfln(vso.Trans("pico.info.shellInit"))
 
 		var confirmation string
@@ -269,6 +252,11 @@ func picoRun(cmd *cobra.Command, args []string) error {
 		if err != nil {
 			return fallbackShell()
 		}
+	}
+
+	pico, err := core.GetPico()
+	if err != nil {
+		picoRun(cmd, args)
 	}
 
 	_, err = pico.Exec(false, args...)
