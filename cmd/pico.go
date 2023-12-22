@@ -81,6 +81,14 @@ func NewPicoCommand() []*cmdr.Command {
 		vso.Trans("pico.run.description"),
 		picoRun,
 	)
+	runCmd.WithBoolFlag(
+		cmdr.NewBoolFlag(
+			"no-reset",
+			"n",
+			vso.Trans("pico.run.options.noReset.description"),
+			false,
+		),
+	)
 	runCmd.Flags().SetInterspersed(false)
 
 	exportCmd := cmdr.NewCommand(
@@ -239,6 +247,8 @@ func picoShell(cmd *cobra.Command, args []string) error {
 }
 
 func picoRun(cmd *cobra.Command, args []string) error {
+	noReset, _ := cmd.Flags().GetBool("no-reset")
+
 	if !core.PicoExists() {
 		cmdr.Info.Printfln(vso.Trans("pico.info.shellInit"))
 
@@ -261,6 +271,10 @@ func picoRun(cmd *cobra.Command, args []string) error {
 
 	_, err = pico.Exec(false, args...)
 	if err != nil {
+		if noReset {
+			return err
+		}
+
 		fn := func() {
 			picoRun(cmd, args)
 		}

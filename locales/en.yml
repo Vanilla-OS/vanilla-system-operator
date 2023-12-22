@@ -84,6 +84,9 @@ pico:
     description: "Remove an application from the subsystem"
   run:
     description: "Run an application from the subsystem"
+    options:
+      noReset:
+        description: "do not propose to reset the subsystem if something goes wrong"
   search:
     description: "Search for an application to install inside the subsystem"
   shell:
