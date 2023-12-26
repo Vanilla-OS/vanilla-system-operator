@@ -239,7 +239,12 @@ func TryUpdate(force bool) error {
 
 	err := cmd.Run()
 	if err != nil {
-		return err
+		return fmt.Errorf("failed to update system: %s", err)
+	}
+
+	err = PicoUpgrade()
+	if err != nil {
+		return fmt.Errorf("failed to update VSO Shell: %s", err)
 	}
 
 	SendNotification("Update", "System updated successfully, restart to apply changes.")

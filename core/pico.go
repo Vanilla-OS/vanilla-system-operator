@@ -80,3 +80,29 @@ func PicoUnexport(app string, binary string) error {
 
 	return err
 }
+
+func PicoUpgrade() error {
+	pico, err := GetPico()
+	if err != nil {
+		return err
+	}
+
+	pkgManager, err := pico.Stack.GetPkgManager()
+	if err != nil {
+		return err
+	}
+
+	finalArgs := pkgManager.GenCmd(pkgManager.CmdUpdate, []string{}...)
+	_, err = pico.Exec(false, finalArgs...)
+	if err != nil {
+		return err
+	}
+
+	finalArgs = pkgManager.GenCmd(pkgManager.CmdUpgrade, []string{}...)
+	_, err = pico.Exec(false, finalArgs...)
+	if err != nil {
+		return err
+	}
+
+	return nil
+}
