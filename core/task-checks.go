@@ -28,6 +28,7 @@ type CommonChecks struct {
 	IsLaptop          bool
 	HighInternetUsage bool
 	InternetUsage     int
+	MeteredConnection bool
 	HighMemoryUsage   bool
 	MemoryUsage       int
 	HighCPUUsage      bool
@@ -51,6 +52,9 @@ func GetCommonChecks() *CommonChecks {
 	// Internet usage
 	cChecks.HighInternetUsage, cChecks.InternetUsage = IsInternetUnderHighUsage()
 
+	// Metered connection
+	cChecks.MeteredConnection = IsMeteredConnection()
+
 	// Memory usage
 	cChecks.HighMemoryUsage, cChecks.MemoryUsage = IsMemoryUnderHighUsage()
 
@@ -68,6 +72,7 @@ func GetCommonChecks() *CommonChecks {
 		fmt.Printf("Is laptop: %t\n", cChecks.IsLaptop)
 		fmt.Printf("High internet usage: %t\n", cChecks.HighInternetUsage)
 		fmt.Printf("Internet usage: %d\n", cChecks.InternetUsage)
+		fmt.Printf("Metered connection: %t\n", cChecks.MeteredConnection)
 		fmt.Printf("High memory usage: %t\n", cChecks.HighMemoryUsage)
 		fmt.Printf("Memory usage: %d\n", cChecks.MemoryUsage)
 		fmt.Printf("High CPU usage: %t\n", cChecks.HighCPUUsage)
@@ -196,6 +201,13 @@ func IsInternetUnderHighUsage() (bool, int) {
 	}
 
 	return false, 0
+}
+
+// IsMeteredConnection checks if the connection is metered
+func IsMeteredConnection() bool {
+	cmd := exec.Command("sh", "-c", " nmcli -t -f GENERAL.DEVICE,GENERAL.METERED dev show `ip route list 0/0 | sed -r 's/.*dev (\\S*).*/\\1/g'` | grep yes")
+	err := cmd.Run()
+	return err == nil
 }
 
 // IsMemoryUnderHighUsage checks if the memory is being used (false if exceeds 50%)
