@@ -104,6 +104,7 @@ func (d *dbox) RunCommand(command string, args []string, engineFlags []string, u
 	cmd.Stdin = os.Stdin
 
 	cmd.Env = os.Environ()
+	cmd.Env = append(cmd.Env, "DBX_SUDO_PROGRAM=pkexec")
 
 	// NOTE: the custom storage is not being used since it prevent other
 	//		 utilities, like VSCode, to access the container.
@@ -291,6 +292,25 @@ func (d *dbox) ContainerEnter(name string, rootFull bool) error {
 	engineFlags := []string{}
 
 	_, err := d.RunCommand("enter", finalArgs, engineFlags, false, false, false, rootFull)
+	return err
+}
+
+func (d *dbox) ContainerStart(name string, rootFull bool) error {
+	_, err := d.RunCommand("start", []string{
+		name,
+	}, []string{}, true, false, false, rootFull)
+	return err
+}
+
+func (d *dbox) ContainerStop(name string, rootFull bool) error {
+	finalArgs := []string{
+		name,
+		"--yes",
+	}
+
+	engineFlags := []string{}
+
+	_, err := d.RunCommand("stop", finalArgs, engineFlags, false, false, false, rootFull)
 	return err
 }
 

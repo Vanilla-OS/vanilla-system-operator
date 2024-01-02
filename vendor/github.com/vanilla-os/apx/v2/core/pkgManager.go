@@ -11,15 +11,24 @@ package core
 
 import (
 	"errors"
+	"fmt"
 	"io"
 	"os"
 	"path/filepath"
+	"strings"
 
 	"gopkg.in/yaml.v2"
 )
 
 // PkgManager represents a package manager in Apx, a set of instructions to handle a package manager.
 type PkgManager struct {
+	// Model values:
+	// 1: name will be used as the main command;
+	// 2: each command is the whole command
+	// Default: 2
+	// DEPRECATION WARNING: Model 1 will be removed in the future, please
+	// update your configuration files to use model 2.
+	Model         int
 	Name          string
 	NeedSudo      bool
 	CmdAutoRemove string
@@ -32,7 +41,11 @@ type PkgManager struct {
 	CmdShow       string
 	CmdUpdate     string
 	CmdUpgrade    string
-	BuiltIn       bool // If true, the package manager is built-in (stored in /usr/share/apx/pkg-managers) and cannot be removed by the user
+
+	// BuiltIn:
+	// If true, the package manager is built-in (stored in
+	// /usr/share/apx/pkg-managers) and cannot be removed by the user
+	BuiltIn bool
 }
 
 // NewPkgManager creates a new PkgManager instance.
@@ -51,6 +64,7 @@ func NewPkgManager(name string, needSudo bool, autoRemove, clean, install, list,
 		CmdUpdate:     update,
 		CmdUpgrade:    upgrade,
 		BuiltIn:       builtIn,
+		Model:         2,
 	}
 }
 
@@ -116,9 +130,17 @@ func (pkgManager *PkgManager) GenCmd(cmd string, args ...string) []string {
 		finalArgs = append(finalArgs, "sudo")
 	}
 
-	finalArgs = append(finalArgs, pkgManager.Name)
-	finalArgs = append(finalArgs, cmd)
-	finalArgs = append(finalArgs, args...)
+	if pkgManager.Model == 0 || pkgManager.Model == 1 {
+		// no-translate (DEPRECATION WARNING)
+		fmt.Println("!!! DEPRECATION WARNING: Model 1 will be removed in the future, please update your Apx package manager to use model 2.")
+		finalArgs = append(finalArgs, pkgManager.Name)
+		finalArgs = append(finalArgs, cmd)
+		finalArgs = append(finalArgs, args...)
+	} else {
+		cmdItems := strings.Fields(cmd)
+		finalArgs = append(finalArgs, cmdItems...)
+		finalArgs = append(finalArgs, args...)
+	}
 
 	return finalArgs
 }
@@ -167,4 +189,53 @@ func listPkgManagersFromPath(path string) []*PkgManager {
 func PkgManagerExists(name string) bool {
 	_, err := LoadPkgManager(name)
 	return err == nil
+}
+
+// LoadPkgManagerFromPath loads a package manager from the specified path.
+func LoadPkgManagerFromPath(path string) (*PkgManager, error) {
+	pkgManager := &PkgManager{}
+
+	f, err := os.Open(path)
+	if err != nil {
+		return nil, errors.New("package manager not found")
+	}
+
+	data, err := io.ReadAll(f)
+	if err != nil {
+		return nil, err
+	}
+
+	err = yaml.Unmarshal(data, pkgManager)
+	if err != nil {
+		return nil, err
+	}
+
+	if pkgManager.Model == 0 {
+		pkgManager.Model = 1 // assuming old model if not specified
+	}
+
+	return pkgManager, nil
+}
+
+// Export exports the package manager to the specified path.
+func (pkgManager *PkgManager) Export(path string) error {
+	if _, err := os.Stat(path); os.IsNotExist(err) {
+		err = os.MkdirAll(path, 0755)
+		if err != nil {
+			return err
+		}
+	}
+
+	filePath := filepath.Join(path, pkgManager.Name+".yaml")
+	data, err := yaml.Marshal(pkgManager)
+	if err != nil {
+		return err
+	}
+
+	err = os.WriteFile(filePath, data, 0644)
+	if err != nil {
+		return err
+	}
+
+	return nil
 }

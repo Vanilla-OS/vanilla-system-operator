@@ -123,7 +123,7 @@ github.com/spf13/viper/internal/encoding/yaml
 # github.com/subosito/gotenv v1.6.0
 ## explicit; go 1.18
 github.com/subosito/gotenv
-# github.com/vanilla-os/apx/v2 v2.1.1
+# github.com/vanilla-os/apx/v2 v2.1.2
 ## explicit; go 1.18
 github.com/vanilla-os/apx/v2/core
 github.com/vanilla-os/apx/v2/settings
