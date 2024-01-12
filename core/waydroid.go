@@ -147,7 +147,6 @@ func WayInit() error {
 		return err
 	}
 
-	_, err = subsystem.Exec(false, "ewaydroid", "--version")
 	return err
 }
 
