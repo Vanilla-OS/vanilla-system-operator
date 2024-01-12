@@ -135,6 +135,7 @@ func WayInit() error {
 		true,
 		true,
 		true,
+		false,
 	)
 
 	if err != nil {

@@ -27,6 +27,7 @@ func PicoInit() error {
 		true,
 		false,
 		true,
+		true,
 	)
 
 	if err != nil {
