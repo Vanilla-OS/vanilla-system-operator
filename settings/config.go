@@ -27,6 +27,7 @@ type UpdatesConfig struct {
 var Cnf Config
 
 func init() {
+	viper.AddConfigPath("/usr/share/vso/")
 	viper.AddConfigPath("/etc/vso/")
 	viper.AddConfigPath("config/")
 	viper.SetConfigName("config")
