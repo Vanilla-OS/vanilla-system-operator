@@ -213,9 +213,13 @@ func wayInfo(cmd *cobra.Command, args []string) error {
 func wayInit(cmd *cobra.Command, args []string) error {
 	force, _ := cmd.Flags().GetBool("force")
 
-	if core.WayExists() && !force {
-		cmdr.Error.Println(vso.Trans("waydroid.init.error.alreadyInitialized"))
-		return nil
+	if core.WayExists() {
+		if !force {
+			cmdr.Error.Println(vso.Trans("waydroid.init.error.alreadyInitialized"))
+			return nil
+		} else {
+			core.WayDelete()
+		}
 	}
 
 	err := core.WayInit()
