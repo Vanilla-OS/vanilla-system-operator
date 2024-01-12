@@ -234,8 +234,8 @@ func wayInit(cmd *cobra.Command, args []string) error {
 
 	// this is the only way I found to start the waydroid process without
 	// errors, the first time it always fails, then it works. Do not ask me why.
-	way.Exec(false, "ewaydroid", "container", "start")
-	_, err = way.Exec(false, "ewaydroid", "container", "start")
+	way.Exec(false, "ewaydroid", "--version")
+	_, err = way.Exec(false, "ewaydroid", "--version")
 	if err != nil {
 		return err
 	}
