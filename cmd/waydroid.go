@@ -340,21 +340,45 @@ func wayInstall(cmd *cobra.Command, args []string) error {
 
 	way, err := core.GetWay()
 	if err != nil {
+		err := core.WayInit()
+		if err != nil {
+			return err
+		}
+	}
+
+	way, err = core.GetWay()
+	if err != nil {
 		return err
 	}
-	finalArgs := []string{"ewaydroid", "app", "install", apk}
+
+	// this is the only way I found to start the waydroid process without
+	// errors, the first time it always fails, then it works. Do not ask me why.
+	way.Exec(false, "ewaydroid", "--version")
+	_, err = way.Exec(false, "ewaydroid", "--version")
+	if err != nil {
+		return err
+	}
+
 	err = core.WayPutAppIntoDatabase(pkg, nil)
 	if err != nil {
 		return err
 	}
+
+	finalArgs := []string{"ewaydroid", "app", "install", apk}
 	_, err = way.Exec(false, finalArgs...)
-	return err
+	if err != nil {
+		return err
+	}
+	return nil
 }
 
 func wayLaunch(cmd *cobra.Command, args []string) error {
 	way, err := core.GetWay()
 	if err != nil {
-		return err
+		err = core.WayInit()
+		if err != nil {
+			return err
+		}
 	}
 
 	finalArgs := []string{"ewaydroid", "app", "launch", args[0]}
@@ -365,7 +389,10 @@ func wayLaunch(cmd *cobra.Command, args []string) error {
 func wayLauncher(cmd *cobra.Command, args []string) error {
 	way, err := core.GetWay()
 	if err != nil {
-		return err
+		err = core.WayInit()
+		if err != nil {
+			return err
+		}
 	}
 
 	finalArgs := []string{"ewaydroid", "show-full-ui"}
@@ -378,6 +405,7 @@ func wayRemove(cmd *cobra.Command, args []string) error {
 	if err != nil {
 		return err
 	}
+
 	search := strings.Join(args, " ")
 	var matches [][]string
 	var rem []string
