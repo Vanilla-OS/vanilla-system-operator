@@ -23,6 +23,7 @@ func PicoInit() error {
 	subsystem, err := core.NewSubSystem(
 		"vso-pico",
 		stack,
+		"",
 		true,
 		true,
 		false,

@@ -131,10 +131,11 @@ func WayInit() error {
 	subsystem, err := core.NewSubSystem(
 		"vso-waydroid",
 		stack,
+		"",
 		true,
 		true,
 		true,
-		true,
+		false,
 		false,
 	)
 
