@@ -302,10 +302,10 @@ waydroid:
         description: Не запрашивать подтверждения при установке
     description: Инициализировать подсистему waydroid
     info:
-      initialized: The waydroid subsystem has been initialized.
+      initialized: Подсистема waydroid была инициализирована.
     error:
-      alreadyInitialized: The waydroid subsystem is already initialized. Use the --force
-        flag to force the initialization.
+      alreadyInitialized: Подсистема waydroid уже инициализирована. Используйте флаг
+        --force для принудительной инициализации.
   search:
     description: Поиск приложения
   downloadIndex: Загрузка индекса для репозитория %s
