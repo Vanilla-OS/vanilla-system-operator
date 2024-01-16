@@ -6,7 +6,7 @@ vso:
     invalidInput: "Entrée invalide."
     invalidChoice: "Choix invalide."
   info:
-    aborting: "Annulation comme demandé."
+    aborting: "Annulation."
   terminal:
     yes: "oui"
     no: "non"
@@ -34,11 +34,11 @@ config:
   show:
     description: Afficher la configuration du système
 pico:
-  description: "Gestion du sous-système Pico"
+  description: "Gestion du sous-système VSO"
   error:
-    notInitialized: "Le sous-système Pico n'est pas initialisé. Veuillez lancer `vso
+    notInitialized: "Le sous-système VSO n'est pas initialisé. Veuillez lancer `vso
       pico-init` pour l'initialiser."
-    alreadyInitialized: "Le sous-système Pico est déjà initialisé. Utilisez l'option
+    alreadyInitialized: "Le sous-système VSO est déjà initialisé. Utilisez l'option
       --force pour forcer l'initialisation."
     noAppNameOrBin: "Les options --app-name ou --bin doivent être spécifiées."
     sameAppOrBin: "--app-name et --bin ne peuvent pas être spécifiés tous les deux."
@@ -49,21 +49,21 @@ pico:
       de l'application : %s"
     unexportingBin: "Une erreur s'est produite lors de la suppression de l'exportation
       du binaire : %s"
-    unknownCommand: 'Unknown command : %s'
-    shellReset: It is impossible to reach the VSO shell. Do you want to reset it ?
-      (This will remove all your software installed in the subsystem) [y/N]
+    unknownCommand: 'Commande inconnu  : %s'
+    shellReset: Il est impossible d'atteindre le shell VSO. Voulez-vous le réinitialiser ?
+      (Cela supprimera tous vos logiciels installés dans le sous-système) [y/N]
   info:
-    initialized: "Le sous-système Pico a été initialisé."
+    initialized: "Le sous-système VSO a été initialisé."
     exported: "Exportation de %s\n"
     unexported: "Suppression de l'exportation de %s\n"
     exportedApps: "Exportation de l'application %d"
     unexportedApps: "Suppression de l'exportation de l'application %d"
-    shellInit: Looks like your shell is not initialized yet. Do you want to initialize
-      it now ? (Highly recommended) [y/N]
-    fallbackShell: Fallback to the host shell ? This could lead to unexpected behavior.
-      [y/N]
-    deleting: Deleting the VSO subsystem...
-    initializing: Initializing the VSO subsystem...
+    shellInit: On dirait que votre shell n'est pas encore initialisé. Voulez-vous
+      l'initialiser maintenant ? (Fortement recommandé) [y/N]
+    fallbackShell: Revenir au shell hôte ? Cela pourrait conduire à un comportement
+      inattendu. [y/N]
+    deleting: Suppression du sous-système VSO...
+    initializing: Initialisation du sous-système VSO...
   export:
     description: "Exporter une application ou un binaire du sous-système"
     options:
@@ -83,7 +83,7 @@ pico:
       binOutput:
         description: "chemin de la sortie du binaire (par défaut : ~/.local/bin/)"
   init:
-    description: "Initialiser le sous-système Pico, utilisé pour la gestion des paquets"
+    description: "Initialiser le sous-système VSO, utilisé pour la gestion des paquets"
     options:
       force:
         description: "forcer l'initialisation si le sous-système est déjà initialisé"
@@ -95,7 +95,7 @@ pico:
     description: "Exécuter une application à partir du sous-système"
     options:
       noReset:
-        description: do not propose to reset the subsystem if something goes wrong
+        description: ne proposez pas de réinitialiser le sous-système en cas de problème
   search:
     description: "Recherche d'une application à installer dans le sous-système"
   shell:
@@ -245,77 +245,79 @@ tasks:
           d'arrêt, de connexion et de déconnexion
 waydroid:
   error:
-    noArguments: No arguments provided.
+    noArguments: Aucun arguments fourni.
   install:
     info:
-      DownloadingPackage: Downloading apk from %s
-      PackageSelection: Pick application to install
-      PackageInCache: Application found in cache, not downloading again.
-      ConfirmInstall: Install application %s?
+      DownloadingPackage: Télécharge l'apk depuis %s
+      PackageSelection: Choisir l'applications à installer
+      PackageInCache: Application trouvé dans le cache, ne se télécharge pas à nouveau.
+      ConfirmInstall: Installer l'application %s ?
     error:
-      InstallCancelled: Installation Cancelled
-      NotFound: Application %s was not found.
-    description: Install an application
+      InstallCancelled: Installation annuler
+      NotFound: L'application %s n'a pas été trouver.
+    description: Installer une application
     options:
       local:
-        description: Install a local apk
+        description: Installer un apk localement
   info:
-    Author: 'Author: %s'
-    PackageName: 'Name: %s'
-    InternalName: 'Internal name: %s'
-    License: 'License: %s'
-    Summary: 'Summary: %s'
-    Repository: 'Repository: %s'
-    description: Display information about an application
+    Author: 'Auteur : %s'
+    PackageName: 'Nom : %s'
+    InternalName: 'Nom interne : %s'
+    License: 'License : %s'
+    Summary: 'Sommaire : %s'
+    Repository: 'Répositoire : %s'
+    description: Afficher les informations sur une application
     info:
-      PackageSelection: Select application to display information from
+      PackageSelection: Sélectionnez l'application pour afficher les informations
+        de
   update:
     info:
-      NoUpdates: Nothing to update
+      NoUpdates: Rien à mettre à jour
     error:
-      FailUpdatePackageDownload: Failed to download APK for %s
-      FailUpdatePackageDatabase: Failed to update database entry for %s
-      FailUpdatePackageInstall: Failed to install update for %s
-      FailGetVersion: Failed to get version code for %s
-    finished: Finished updating applications
-    description: Update installed applications
+      FailUpdatePackageDownload: Échec du téléchargement de l'APK pour %s
+      FailUpdatePackageDatabase: Échec de la mise à jour de l'entrée de base de données
+        pour %s
+      FailUpdatePackageInstall: Échec de l'installation de la mise à jour pour %s
+      FailGetVersion: Impossible d'obtenir la version du code pour %s
+    finished: Fin de la mise à jour des applications
+    description: Mettre à jour les applications installées
   remove:
     info:
-      PackageSelection: Pick application to remove
-      ConfirmRemove: Remove application %s?
-      RemovePackage: Removing package %s
-    description: Uninstall an application
+      PackageSelection: Choisir l'application à retirer
+      ConfirmRemove: Retirer l'application %s ?
+      RemovePackage: Retirer le paquet %s
+    description: Désinstaller une application
     error:
-      RemoveCancelled: Removal Cancelled
-      NoMatches: Application %s not found
+      RemoveCancelled: Suppression annulée
+      NoMatches: L'application %s n'a pas été trouvé
   clean:
     info:
-      success: Successfully deleted waydroid vso cache
-      apk: Deleting apk cache
-      index: Deleting index cache
+      success: Cache waydroid supprimé avec succès
+      apk: Suppression du cache apk
+      index: Suppression le cache de l'index
     error:
-      apk: Failed to delete apk cache
-      index: Failed to delete index cache
-    description: Cleans the waydroid vso cache
-  description: Manage the vso waydroid subsystem
+      apk: Échec de la suppression du cache apk
+      index: Échec de la suppression du cache de l'index
+    description: Nettoyer le cache de waydroid
+  description: Gérer le sous-système waydroid
   delete:
-    description: Delete the waydroid subsystem
-    confirmation: Deleting the waydroid subsystem will delete any data stored in it.
-      Continue?
-    cancelled: Cancelled removal of subsystem.
+    description: Supprimer le sous-système waydroid
+    confirmation: La suppression du sous-système waydroid supprimera toutes les données
+      qui y sont stockées. Continuer ?
+    cancelled: Annulation de la suppression du sous-système.
   init:
     options:
       force:
-        description: Force the initialization
+        description: Forcer l'installation
       noconfirm:
-        description: Do not ask for confirmation during installation
-    description: Initialize the waydroid subsystem
+        description: Ne pas demander confirmation durant l'installation
+    description: Initialisation du sous-sytème waydroid
   search:
-    description: Search for an application
-  downloadIndex: Downloading index for repository %s
+    description: Rechercher pour une application
+  downloadIndex: Téléchargement de l'index pour le répositoire %s
   sync:
-    description: Sync the repositories
+    description: Synchroniser les répositoires
   launcher:
-    description: Show the waydroid launcher
+    description: Afficher le launcher waydroid
   launch:
-    description: Launch an installed application
+    description: Lancer une application installé
