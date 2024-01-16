@@ -277,10 +277,9 @@ waydroid:
         description: 安裝過程中不再要求使用者確認
     description: 初始化 Waydroid 子系統
     error:
-      alreadyInitialized: The waydroid subsystem is already initialized. Use the --force
-        flag to force the initialization.
+      alreadyInitialized: Waydroid 子系統已經初始化。請使用 --force 以強制初始化。
     info:
-      initialized: The waydroid subsystem has been initialized.
+      initialized: Waydroid 子系統已初始化。
   search:
     description: 搜尋應用程式
   downloadIndex: 正在下載軟體庫 %s 的索引
