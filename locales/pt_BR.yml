@@ -46,7 +46,7 @@ pico:
     exportingBin: "Ocorreu um erro ao exportar o binário: %s"
     unexportingApp: "Ocorreu um erro ao cancelar a exportação do aplicativo: %s"
     unexportingBin: "Ocorreu um erro ao cancelar a exportação do binário: %s"
-    unknownCommand: 'Unknown command: %s'
+    unknownCommand: 'Comando desconhecido: %s'
   info:
     initialized: "O subsistema Pico foi inicializado."
     exported: "Exportado %s\n"
