@@ -46,7 +46,7 @@ pico:
     exportingBin: "An error occurred while exporting the binary: %s"
     unexportingApp: "An error occurred while unexporting the application: %s"
     unexportingBin: "An error occurred while unexporting the binary: %s"
-    unknownCommand: 'Unknown command: %s'
+    unknownCommand: 'Onbekende opdracht: %s'
   info:
     initialized: "The Pico subsystem has been initialized."
     exported: "%s geëxporteerd\n"
@@ -120,7 +120,7 @@ tasks:
       every:
         description: schedule the task to execute every X time (minutes, hours, days)
       name:
-        description: specify the task's name
+        description: Geef de taaknaam op
       needConfirm:
         description: ask for confirmation before executing the task
       onBattery:
@@ -159,8 +159,8 @@ tasks:
   rm:
     description: Verwijdert een taak
     error:
-      cannotDelete: 'Cannot delete task: %s'
-      noName: No task name specified.
+      cannotDelete: 'Kan taak niet verwijderen: %s'
+      noName: Geen taaknaam opgegeven
       notFound: Taak niet gevonden.
     info:
       askConfirmation: Are you sure you want to delete the task %s? [y/N]
@@ -169,7 +169,7 @@ tasks:
       force:
         description: force the deletion of the task
       name:
-        description: specify the task's name
+        description: Geef de taaknaam op
   description: Maak taken aan en beheer ze
   stacks:
     new:
@@ -222,24 +222,24 @@ sysUpgrade:
     now: Trigger a system upgrade now
 waydroid:
   error:
-    noArguments: No arguments provided.
+    noArguments: Geen argumenten opgegeven
   install:
     info:
       DownloadingPackage: Downloading apk from %s
       PackageSelection: Pick application to install
       PackageInCache: Application found in cache, not downloading again.
-      ConfirmInstall: Install application %s?
+      ConfirmInstall: App %s installeren?
     error:
       InstallCancelled: Installatie geannuleerd
       NotFound: Application %s was not found.
-    description: Install an application
+    description: Installeert een app
     options:
       local:
-        description: Install a local apk
+        description: Installeert een lokaal APK-bestand
   info:
     Author: 'Auteur: %s'
     PackageName: 'Naan: %s'
-    InternalName: 'Internal name: %s'
+    InternalName: 'Interne naam: %s'
     License: 'Licentie: %s'
     Summary: 'Samenvatting: %s'
     Repository: 'Repository: %s'
@@ -248,27 +248,27 @@ waydroid:
       PackageSelection: Select application to display information from
   update:
     info:
-      NoUpdates: Nothing to update
+      NoUpdates: Niets om bij te werken
     error:
       FailUpdatePackageDownload: Failed to download APK for %s
       FailUpdatePackageDatabase: Failed to update database entry for %s
       FailUpdatePackageInstall: Failed to install update for %s
       FailGetVersion: Failed to get version code for %s
-    finished: Finished updating applications
-    description: Update installed applications
+    finished: Apps bijwerken voltooid
+    description: Werkt geïnstalleerde apps bij
   remove:
     info:
       PackageSelection: Pick application to remove
-      ConfirmRemove: Remove application %s?
-      RemovePackage: Removing package %s
-    description: Uninstall an application
+      ConfirmRemove: App %s verwijderen?
+      RemovePackage: Pakket %s verwijderen
+    description: Deïnstalleert een app
     error:
       RemoveCancelled: Verwijdering geannuleerd
       NoMatches: Application %s not found
   clean:
     info:
       success: Successfully deleted waydroid vso cache
-      apk: Deleting apk cache
+      apk: APK-cache verwijderen
       index: Index-cache verwijderen
     error:
       apk: Failed to delete apk cache
@@ -276,14 +276,14 @@ waydroid:
     description: Cleans the waydroid vso cache
   description: Manage the vso waydroid subsystem
   delete:
-    description: Delete the waydroid subsystem
+    description: Verwijdert het Waydroid-subsysteem
     confirmation: Deleting the waydroid subsystem will delete any data stored in it.
       Continue?
-    cancelled: Cancelled removal of subsystem.
+    cancelled: Verwijdering van subsysteem geannuleerd
   init:
     options:
       force:
-        description: Force the initialization
+        description: Forceert de initialisatie
       noconfirm:
         description: Do not ask for confirmation during installation
     description: Initialize the waydroid subsystem
@@ -291,7 +291,7 @@ waydroid:
     description: Search for an application
   downloadIndex: Downloading index for repository %s
   sync:
-    description: Sync the repositories
+    description: Synchroniseert de repositories
   launcher:
     description: Show the waydroid launcher
   launch:
