@@ -49,12 +49,20 @@ pico:
     unexportingBin: "S'ha trobat un error mentre es desfeia l'exportació del binari:
       %s"
     unknownCommand: 'Unknown command: %s'
+    shellReset: It is impossible to reach the VSO shell. Do you want to reset it?
+      (This will remove all your software installed in the subsystem) [y/N]
   info:
     initialized: "El subsistema Pico s'ha inicialitzat."
     exported: "%s Exportat\n"
     unexported: "%s Exportació desfeta\n"
     exportedApps: "Aplicacions exportades %d"
     unexportedApps: "Aplicacions amb exportacions desfetes %d"
+    shellInit: Looks like your shell is not initialized yet. Do you want to initialize
+      it now? (Highly recommended) [y/N]
+    fallbackShell: Fallback to the host shell? This could lead to unexpected behavior.
+      [y/N]
+    deleting: Deleting the VSO subsystem...
+    initializing: Initializing the VSO subsystem...
   export:
     description: "Exportar una aplicació o binari del subsistema"
     options:
@@ -85,6 +93,9 @@ pico:
     description: "Suprimir una aplicació del subsistema"
   run:
     description: "Executar una aplicació del subsistema"
+    options:
+      noReset:
+        description: do not propose to reset the subsystem if something goes wrong
   search:
     description: "Cercar una aplicació per instal·lar dintre del subsistema"
   shell:

@@ -47,12 +47,20 @@ pico:
     unexportingApp: "Ett fel uppstod när programmet skulle avexporteras: %s"
     unexportingBin: "Ett fel uppstod när binären: %s skulle avexporteras"
     unknownCommand: 'Okänt kommando: %s'
+    shellReset: It is impossible to reach the VSO shell. Do you want to reset it?
+      (This will remove all your software installed in the subsystem) [y/N]
   info:
     initialized: "Pico-undersystemet har initierats."
     exported: "Exporterad %s\n"
     unexported: "Oexporterad %s\n"
     exportedApps: "Exporterade %d program"
     unexportedApps: "Oexporterade %d program"
+    shellInit: Looks like your shell is not initialized yet. Do you want to initialize
+      it now? (Highly recommended) [y/N]
+    fallbackShell: Fallback to the host shell? This could lead to unexpected behavior.
+      [y/N]
+    deleting: Deleting the VSO subsystem...
+    initializing: Initializing the VSO subsystem...
   export:
     description: "Exporterade ett program eller binär från undersystemet"
     options:
@@ -82,6 +90,9 @@ pico:
     description: "Ta bort ett program från undersystemet"
   run:
     description: "Kör ett program från delsystem"
+    options:
+      noReset:
+        description: do not propose to reset the subsystem if something goes wrong
   search:
     description: "Sök efter ett program att installera inuti delsystemet"
   shell:

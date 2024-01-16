@@ -44,12 +44,20 @@ pico:
     unexportingApp: "移除导出的应用程序时发生错误：%s"
     unexportingBin: "移除导出的二进制文件时发生错误：%s"
     unknownCommand: '未知的命令：%s'
+    shellReset: It is impossible to reach the VSO shell. Do you want to reset it?
+      (This will remove all your software installed in the subsystem) [y/N]
   info:
     initialized: "Pico 子系统已经初始化。"
     exported: "已导出 %s\n"
     unexported: "已移除导出 %s\n"
     exportedApps: "已导出 %d 个应用程序"
     unexportedApps: "已移除导出的 %d 个应用程序"
+    shellInit: Looks like your shell is not initialized yet. Do you want to initialize
+      it now? (Highly recommended) [y/N]
+    fallbackShell: Fallback to the host shell? This could lead to unexpected behavior.
+      [y/N]
+    deleting: Deleting the VSO subsystem...
+    initializing: Initializing the VSO subsystem...
   export:
     description: "从子系统导出应用程序或二进制文件"
     options:
@@ -79,6 +87,9 @@ pico:
     description: "从子系统中移除应用程序"
   run:
     description: "运行来自子系统的应用程序"
+    options:
+      noReset:
+        description: do not propose to reset the subsystem if something goes wrong
   search:
     description: "搜索要在子系统内安装的应用程序"
   shell:

@@ -47,12 +47,20 @@ pico:
     unexportingApp: "A apărut o eroare la dezexportarea aplicației: %s"
     unexportingBin: "A apărut o eroare la dezexportarea binarului: %s"
     unknownCommand: 'Unknown command: %s'
+    shellReset: It is impossible to reach the VSO shell. Do you want to reset it?
+      (This will remove all your software installed in the subsystem) [y/N]
   info:
     initialized: "Subsistemul Pico a fost inițializat."
     exported: "Exportat %s\n"
     unexported: "Exportat %s\n"
     exportedApps: "Au exportat %d aplicații"
     unexportedApps: "%d aplicații neexportate"
+    shellInit: Looks like your shell is not initialized yet. Do you want to initialize
+      it now? (Highly recommended) [y/N]
+    fallbackShell: Fallback to the host shell? This could lead to unexpected behavior.
+      [y/N]
+    deleting: Deleting the VSO subsystem...
+    initializing: Initializing the VSO subsystem...
   export:
     description: "Exportați o aplicație sau un fișier binar din subsistem"
     options:
@@ -83,6 +91,9 @@ pico:
     description: "Eliminează o aplicație din subsistem"
   run:
     description: "Executați o aplicație din subsistem"
+    options:
+      noReset:
+        description: do not propose to reset the subsystem if something goes wrong
   search:
     description: "Căutați o aplicație care să fie instalată în cadrul subsistemului"
   shell:
