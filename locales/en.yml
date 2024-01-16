@@ -25,6 +25,7 @@ config:
     error:
       noKey: "No key specified."
       noValue: "No value specified."
+      failed: "Failed to set configuration: %s"
     options:
       key: "key of the configuration to set"
       value: "value of the configuration to set"

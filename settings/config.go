@@ -62,17 +62,17 @@ func GetConfigValue(key string) interface{} {
 	return viper.Get(key)
 }
 
-func SetConfigValue(key string, value interface{}) {
+func SetConfigValue(key string, value interface{}) error {
 	switch key {
 	case "updates.schedule":
 		if value != "daily" && value != "weekly" && value != "monthly" {
 			fmt.Println("Invalid value for updates.schedule!")
-			return
+			return fmt.Errorf("invalid value for updates.schedule")
 		}
 	case "updates.smart":
 		if value != true && value != false && value != "true" && value != "false" {
 			fmt.Println("Invalid value for updates.smart!")
-			return
+			return fmt.Errorf("invalid value for updates.smart")
 		}
 	}
 
@@ -84,6 +84,13 @@ func SetConfigValue(key string, value interface{}) {
 	}
 
 	viper.Set(key, value)
+
+	err := SaveConfig()
+	if err != nil {
+		return err
+	}
+
+	return nil
 }
 
 func SaveConfig() error {
