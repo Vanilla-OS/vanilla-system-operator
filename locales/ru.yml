@@ -46,6 +46,7 @@ pico:
     exportingBin: "Произошла ошибка при экспорте двоичного файла: %s"
     unexportingApp: "Произошла ошибка при отмене экспорта приложения: %s"
     unexportingBin: "Произошла ошибка при отмене экспорта двоичного файла: %s"
+    unknownCommand: 'Unknown command: %s'
   info:
     initialized: "Подсистема Pico инициализирована."
     exported: "Экспортировано %s\n"

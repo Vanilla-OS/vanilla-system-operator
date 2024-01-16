@@ -49,12 +49,21 @@ pico:
       de l'application : %s"
     unexportingBin: "Une erreur s'est produite lors de la suppression de l'exportation
       du binaire : %s"
+    unknownCommand: 'Unknown command : %s'
+    shellReset: It is impossible to reach the VSO shell. Do you want to reset it ?
+      (This will remove all your software installed in the subsystem) [y/N]
   info:
     initialized: "Le sous-système Pico a été initialisé."
     exported: "Exportation de %s\n"
     unexported: "Suppression de l'exportation de %s\n"
     exportedApps: "Exportation de l'application %d"
     unexportedApps: "Suppression de l'exportation de l'application %d"
+    shellInit: Looks like your shell is not initialized yet. Do you want to initialize
+      it now ? (Highly recommended) [y/N]
+    fallbackShell: Fallback to the host shell ? This could lead to unexpected behavior.
+      [y/N]
+    deleting: Deleting the VSO subsystem...
+    initializing: Initializing the VSO subsystem...
   export:
     description: "Exporter une application ou un binaire du sous-système"
     options:
@@ -84,6 +93,9 @@ pico:
     description: "Supprimer une application du sous-système"
   run:
     description: "Exécuter une application à partir du sous-système"
+    options:
+      noReset:
+        description: do not propose to reset the subsystem if something goes wrong
   search:
     description: "Recherche d'une application à installer dans le sous-système"
   shell:

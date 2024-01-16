@@ -43,6 +43,7 @@ pico:
     exportingBin: "匯出二進位檔案時發生錯誤：%s"
     unexportingApp: "移除匯出的應用程式時發生錯誤：%s"
     unexportingBin: "移除匯出的二進位檔案時發生錯誤：%s"
+    unknownCommand: 'Unknown command: %s'
   info:
     initialized: "Pico 子系統已經初始化。"
     exported: "已匯出 %s\n"

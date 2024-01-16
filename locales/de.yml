@@ -48,6 +48,7 @@ pico:
       %s"
     unexportingBin: "Beim Deexportieren der Binärdatei ist ein Fehler aufgetreten:
       %s"
+    unknownCommand: 'Unknown command: %s'
   info:
     initialized: "Das Pico-Subsystem wurde initialisiert."
     exported: "%s exportiert\n"

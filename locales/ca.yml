@@ -48,6 +48,7 @@ pico:
       %s"
     unexportingBin: "S'ha trobat un error mentre es desfeia l'exportació del binari:
       %s"
+    unknownCommand: 'Unknown command: %s'
   info:
     initialized: "El subsistema Pico s'ha inicialitzat."
     exported: "%s Exportat\n"
