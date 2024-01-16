@@ -319,7 +319,7 @@ waydroid:
       initialized: The waydroid subsystem has been initialized.
   search:
     description: Rechercher pour une application
-  downloadIndex: Téléchargement de l'index pour le répositoire %s
+  downloadIndex: Téléchargement de l'index pour le dépôt %s
   sync:
     description: Synchroniser les répositoires
   launcher:
