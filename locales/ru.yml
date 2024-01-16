@@ -34,11 +34,11 @@ config:
   show:
     description: Показать конфигурацию системы
 pico:
-  description: "Управление подсистемой Pico"
+  description: "Управление подсистемой VSO"
   error:
-    notInitialized: "Подсистема Pico не инициализирована. Пожалуйста, запустите `vso
-      pico-init`, чтобы инициализировать его."
-    alreadyInitialized: "Подсистема Pico уже инициализирована. Используйте флаг --force
+    notInitialized: "Подсистема VSO не инициализирована. Пожалуйста, выполните `vso
+      pico-init`, чтобы инициализировать её."
+    alreadyInitialized: "Подсистема VSO уже инициализирована. Используйте флаг --force
       для принудительной инициализации."
     noAppNameOrBin: "--app-name или --bin должно быть указано."
     sameAppOrBin: "--app-name или --bin не могут быть указаны одновременно."
@@ -47,20 +47,20 @@ pico:
     unexportingApp: "Произошла ошибка при отмене экспорта приложения: %s"
     unexportingBin: "Произошла ошибка при отмене экспорта двоичного файла: %s"
     unknownCommand: 'Неизвестная команда: %s'
-    shellReset: It is impossible to reach the VSO shell. Do you want to reset it?
-      (This will remove all your software installed in the subsystem) [y/N]
+    shellReset: Невозможно получить доступ к оболочке VSO. Вы хотите её сбросить?
+      (Это удалит всё ПО, установленное в подсистеме) [д/Н]
   info:
-    initialized: "Подсистема Pico инициализирована."
+    initialized: "Подсистема VSO инициализирована."
     exported: "Экспортировано %s\n"
     unexported: "Неэкспортировано %s\n"
     exportedApps: "Экспортировано приложений %d"
     unexportedApps: "Неэкспортированные приложения: %d"
-    shellInit: Looks like your shell is not initialized yet. Do you want to initialize
-      it now? (Highly recommended) [y/N]
-    fallbackShell: Fallback to the host shell? This could lead to unexpected behavior.
-      [y/N]
-    deleting: Deleting the VSO subsystem...
-    initializing: Initializing the VSO subsystem...
+    shellInit: Похоже, Ваша оболочка ещё не инициализирована. Вы хотите инициализировать
+      её сейчас? (Настоятельно рекомендуется) [д/Н]
+    fallbackShell: Произвести откат к оболочке хоста? Это может привести к неожиданному
+      поведению. [д/Н]
+    deleting: Удаление подсистемы VSO...
+    initializing: Инициализация подсистемы VSO...
   export:
     description: "Экспорт приложения или двоичного файла из подсистемы"
     options:
@@ -80,7 +80,7 @@ pico:
       binOutput:
         description: "путь к бинарному выводу (по умолчанию: ~/.local/bin/)"
   init:
-    description: "Инициализируйте подсистему Pico, используемую для управления пакетами"
+    description: "Инициализируйте подсистему VSO, используемую для управления пакетами"
     options:
       force:
         description: "принудительно выполнить инициализацию, если подсистема уже инициализирована"
@@ -92,7 +92,8 @@ pico:
     description: "Запуск приложения из подсистемы"
     options:
       noReset:
-        description: do not propose to reset the subsystem if something goes wrong
+        description: не предлагать перезагрузить подсистему, если что-то пойдёт не
+          так
   search:
     description: "Поиск приложения для установки внутри подсистемы"
   shell:
