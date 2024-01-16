@@ -33,10 +33,10 @@ config:
     description: "顯示系統組態"
 
 pico:
-  description: "管理 Pico 子系統"
+  description: "管理 VSO 子系統"
   error:
-    notInitialized: "Pico 子系統尚未初始化。請執行 `vso pico-init` 以初始化子系統。"
-    alreadyInitialized: "Pico 子系統已經初始化。請使用 --force 以強制初始化。"
+    notInitialized: "VSO 子系統尚未初始化。請執行 `vso pico-init` 以初始化子系統。"
+    alreadyInitialized: "VSO 子系統已經初始化。請使用 --force 以強制初始化。"
     noAppNameOrBin: "必須指定 --app-name 或是 --bin。"
     sameAppOrBin: "不能同時指定 --app-name 及 --bin。"
     exportingApp: "匯出應用程式時發生錯誤：%s"
@@ -44,20 +44,17 @@ pico:
     unexportingApp: "移除匯出的應用程式時發生錯誤：%s"
     unexportingBin: "移除匯出的二進位檔案時發生錯誤：%s"
     unknownCommand: '未知的命令：%s'
-    shellReset: It is impossible to reach the VSO shell. Do you want to reset it?
-      (This will remove all your software installed in the subsystem) [y/N]
+    shellReset: 無法存取 VSO shell。要重設嗎？（這將移除子系統中安裝的所有軟體）[y/N]
   info:
-    initialized: "Pico 子系統已經初始化。"
+    initialized: "VSO 子系統已經初始化。"
     exported: "已匯出 %s\n"
     unexported: "已移除匯出 %s\n"
     exportedApps: "已匯出 %d 個應用程式"
     unexportedApps: "已移除匯出的 %d 個應用程式"
-    shellInit: Looks like your shell is not initialized yet. Do you want to initialize
-      it now? (Highly recommended) [y/N]
-    fallbackShell: Fallback to the host shell? This could lead to unexpected behavior.
-      [y/N]
-    deleting: Deleting the VSO subsystem...
-    initializing: Initializing the VSO subsystem...
+    shellInit: shell 似乎尚未初始化。要現在初始化嗎？（十分推薦）[y/N]
+    fallbackShell: 備選使用主機 shell 嗎？這可能會導致意外的行為。[y/N]
+    deleting: 正在刪除 VSO 子系統…
+    initializing: 正在初始化 VSO 子系統…
   export:
     description: "從子系統匯出應用程式或是二進位檔案"
     options:
@@ -77,7 +74,7 @@ pico:
       binOutput:
         description: "二進位輸出的路徑（預設：~/.local/bin/）"
   init:
-    description: "初始化 Pico 子系統，用於軟體包的管理"
+    description: "初始化 VSO 子系統，用於軟體包的管理"
     options:
       force:
         description: "強制初始化，即便子系統已經初始化"
@@ -89,7 +86,7 @@ pico:
     description: "執行來自子系統的應用程式"
     options:
       noReset:
-        description: do not propose to reset the subsystem if something goes wrong
+        description: 如果出現問題，不要建議重設子系統
   search:
     description: "搜尋要在子系統內安裝的應用程式"
   shell:

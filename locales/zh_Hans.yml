@@ -33,10 +33,10 @@ config:
     description: "显示系统配置"
 
 pico:
-  description: "管理 Pico 子系统"
+  description: "管理 VSO 子系统"
   error:
-    notInitialized: "Pico 子系统尚未初始化。请运行 `vso pico-init` 以初始化子系统。"
-    alreadyInitialized: "Pico 子系统已经初始化。请使用 --force 标记以强制初始化。"
+    notInitialized: "VSO 子系统尚未初始化。请运行 `vso pico-init` 以初始化子系统。"
+    alreadyInitialized: "VSO 子系统已经初始化。请使用 --force 标记以强制初始化。"
     noAppNameOrBin: "必须指定 --app-name 或 --bin。"
     sameAppOrBin: "不能同时指定 --app-name 和 --bin。"
     exportingApp: "导出应用程序时发生错误：%s"
@@ -44,20 +44,17 @@ pico:
     unexportingApp: "移除导出的应用程序时发生错误：%s"
     unexportingBin: "移除导出的二进制文件时发生错误：%s"
     unknownCommand: '未知的命令：%s'
-    shellReset: It is impossible to reach the VSO shell. Do you want to reset it?
-      (This will remove all your software installed in the subsystem) [y/N]
+    shellReset: 无法访问 VSO shell。要重置吗？（这将移除子系统中安装的所有软件）[y/N]
   info:
-    initialized: "Pico 子系统已经初始化。"
+    initialized: "VSO 子系统已经初始化。"
     exported: "已导出 %s\n"
     unexported: "已移除导出 %s\n"
     exportedApps: "已导出 %d 个应用程序"
     unexportedApps: "已移除导出的 %d 个应用程序"
-    shellInit: Looks like your shell is not initialized yet. Do you want to initialize
-      it now? (Highly recommended) [y/N]
-    fallbackShell: Fallback to the host shell? This could lead to unexpected behavior.
-      [y/N]
-    deleting: Deleting the VSO subsystem...
-    initializing: Initializing the VSO subsystem...
+    shellInit: shell 似乎尚未初始化。要现在初始化吗？（非常推荐）[y/N]
+    fallbackShell: 回退到主机 shell 吗？这可能会导致意外的行为。[y/N]
+    deleting: 正在删除 VSO 子系统…
+    initializing: 正在初始化 VSO 子系统…
   export:
     description: "从子系统导出应用程序或二进制文件"
     options:
@@ -77,7 +74,7 @@ pico:
       binOutput:
         description: "二进制输出的路径（默认：~/.local/bin/）"
   init:
-    description: "初始化 Pico 子系统，用于包管理"
+    description: "初始化 VSO 子系统，用于包管理"
     options:
       force:
         description: "子系统已经初始化时强制初始化"
@@ -89,7 +86,7 @@ pico:
     description: "运行来自子系统的应用程序"
     options:
       noReset:
-        description: do not propose to reset the subsystem if something goes wrong
+        description: 如果出现问题，不要建议重置子系统
   search:
     description: "搜索要在子系统内安装的应用程序"
   shell:
