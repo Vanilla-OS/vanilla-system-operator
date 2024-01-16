@@ -259,6 +259,11 @@ waydroid:
         description: "Force the initialization"
       noconfirm:
         description: "Do not ask for confirmation during installation"
+    error:
+      alreadyInitialized: The waydroid subsystem is already initialized. Use the --force
+        flag to force the initialization।
+    info:
+      initialized: The waydroid subsystem has been initialized।
   launch:
     description: "Launch an installed application"
   launcher:

@@ -312,6 +312,11 @@ waydroid:
       noconfirm:
         description: Ne pas demander confirmation durant l'installation
     description: Initialisation du sous-sytème waydroid
+    error:
+      alreadyInitialized: The waydroid subsystem is already initialized. Use the --force
+        flag to force the initialization.
+    info:
+      initialized: The waydroid subsystem has been initialized.
   search:
     description: Rechercher pour une application
   downloadIndex: Téléchargement de l'index pour le répositoire %s

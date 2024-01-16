@@ -287,6 +287,11 @@ waydroid:
       noconfirm:
         description: Be inte om bekräftelse under installationen
     description: Initiera waydroid-undersystemet
+    info:
+      initialized: The waydroid subsystem has been initialized.
+    error:
+      alreadyInitialized: The waydroid subsystem is already initialized. Use the --force
+        flag to force the initialization.
   search:
     description: Sök efter en applikation
   downloadIndex: Hämtar index för arkiv %s

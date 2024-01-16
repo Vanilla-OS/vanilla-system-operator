@@ -276,6 +276,11 @@ waydroid:
       noconfirm:
         description: 安装过程中不再要求用户确认
     description: 初始化 Waydroid 子系统
+    info:
+      initialized: The waydroid subsystem has been initialized.
+    error:
+      alreadyInitialized: The waydroid subsystem is already initialized. Use the --force
+        flag to force the initialization.
   search:
     description: 搜索应用程序
   downloadIndex: 正在下载软件仓库 %s 的索引
