@@ -34,12 +34,12 @@ config:
     description: "Mostra la configurazione di sistema"
 
 pico:
-  description: "Gestisci il VSO subsystem"
+  description: "Gestisci il sottosistema VSO"
   error:
-    notInitialized: "Il VSO subsystem non è inizializzato. Per favore lanciare `vso
-      pico-init` per inizializzarlo."
-    alreadyInitialized: "Il VSO subsystem è già inizializzato. Usa --force per forzare
-      l'inizializzazione."
+    notInitialized: "Il sottosistema VSO non è inizializzato. Per favore lanciare
+      `vso pico-init` per inizializzarlo."
+    alreadyInitialized: "Il sottosistema VSO è già inizializzato. Usa --force per
+      forzare l'inizializzazione."
     noAppNameOrBin: "L'opzione --app-name o --bin deve essere specificata."
     sameAppOrBin: "Le opzioni --app-name e --bin non possono essere usate contemporaneamente."
     exportingApp: "Si è verificato un errore durante l'esportazione dell'applicazione:
@@ -51,11 +51,11 @@ pico:
       del binario: %s"
     unknownCommand: "Comando sconosciuto: %s"
     shellReset: "È impossibile raggiungere la VSO shell. Vuoi ripristinarla? (Questo
-      cancellerà tutti i tuoi programmi installati nel subsystem) [s/N]"
+      cancellerà tutti i tuoi programmi installati nel sottosistema) [s/N]"
   info:
-    deleting: "Cancellazione del VSO subsystem..."
-    initializing: "Inizializzazione del VSO subsystem..."
-    initialized: "Il VSO subsystem è stato inizializzato."
+    deleting: "Cancellazione del sottosistema VSO..."
+    initializing: "Inizializzazione del sottosistema VSO..."
+    initialized: "Il sottosistema VSO è stato inizializzato."
     exported: "Esportato %s\n"
     unexported: "Annullata l'esportazione %s\n"
     exportedApps: "Esportate %d applicazioni"
@@ -65,7 +65,7 @@ pico:
     fallbackShell: "Ripiegare sulla shell host? Questo potrebbe causare comportamenti
       imprevisti. [s/N]"
   export:
-    description: "Esporta un'applicazione o un binario dal subsystem"
+    description: "Esporta un'applicazione o un binario dal sottosistema"
     options:
       app:
         description: "il nome dell'applicazione da esportare"
@@ -74,7 +74,7 @@ pico:
       binOutput:
         description: "percorso del output del binario (default: ~/.local/bin/)"
   unexport:
-    description: "Annulla esportazione di un'applicazione o di un binario dal subsystem"
+    description: "Annulla esportazione di un'applicazione o di un binario dal sottosistema"
     options:
       app:
         description: "il nome dell'applicazione da non esportare"
@@ -83,28 +83,28 @@ pico:
       binOutput:
         description: "percorso del output del binario (default: ~/.local/bin/)"
   init:
-    description: "Inizializza il VSO subsystem, usato dal gestore pacchetti"
+    description: "Inizializza il sottosistema VSO, usato dal gestore pacchetti"
     options:
       force:
-        description: "forza l'inizializzazione se il subsystem è già inizializzato"
+        description: "forza l'inizializzazione se il sottosistema è già inizializzato"
   install:
-    description: "Installa un'applicazione nel subsystem"
+    description: "Installa un'applicazione nel sottosistema"
   remove:
-    description: "Cancella un'applicazione dal subsystem"
+    description: "Cancella un'applicazione dal sottosistema"
   run:
-    description: "Lancia un'applicazione dal subsystem"
+    description: "Lancia un'applicazione dal sottosistema"
     options:
       noReset:
-        description: "non proporre il reset del subsystem se qualcosa non funziona
+        description: "non proporre il reset del sottosistema se qualcosa non funziona
           correttamente"
   search:
-    description: "Cerca un'applicazione da installare nel subsystem"
+    description: "Cerca un'applicazione da installare nel sottosistema"
   shell:
-    description: "Accedi all'ambiente del subsystem"
+    description: "Accedi all'ambiente del sottosistema"
   update:
-    description: "Aggiorna il repository dei pacchetti del subsystem"
+    description: "Aggiorna il repository dei pacchetti del sottosistema"
   upgrade:
-    description: "Aggiorna i pacchetti nel subsystem"
+    description: "Aggiorna i pacchetti nel sottosistema"
 
 sysUpgrade:
   description: "Aggiorna il sistema"
@@ -235,7 +235,7 @@ tasks:
           shutdown, login, logout"
 
 waydroid:
-  description: "Gestisci il subsystem di waydroid vso"
+  description: "Gestisci il sottosistema di waydroid vso"
   downloadIndex: "Scarica l'indice del repository %s"
   clean:
     description: "Pulisci la cache di waydroid vso"
@@ -247,10 +247,10 @@ waydroid:
       index: "Cancellazione della cache degli indici non riuscita"
       apk: "Cancellazione della cache degli apk non riuscita"
   delete:
-    description: "Cancella il subsystem di waydroid"
-    confirmation: "L'eliminazione del subsystem di waydroid cancellerà tutti i dati
-      salvati al suo interno. Continuare?"
-    cancelled: "Eliminazione del subsystem annullata."
+    description: "Cancella il sottosistema di waydroid"
+    confirmation: "L'eliminazione del sottosistema di waydroid cancellerà tutti i
+      dati salvati al suo interno. Continuare?"
+    cancelled: "Eliminazione del sottosistema annullata."
   error:
     noArguments: "Nessun argomento è stato fornito."
   install:
@@ -267,17 +267,17 @@ waydroid:
       NotFound: "L'applicazione %s non è stata trovata."
       InstallCancelled: "Installazione Annullata"
   init:
-    description: "Inizializza il subsystem di waydroid"
+    description: "Inizializza il sottosistema di waydroid"
     options:
       force:
         description: "Forza l'inizializzazione"
       noconfirm:
         description: "Non chiedere conferma durante l'installazione"
     error:
-      alreadyInitialized: The waydroid subsystem is already initialized. Use the --force
-        flag to force the initialization.
+      alreadyInitialized: Il sottosistema di waydroid è già inizializzato. Usa il
+        flag --force per forzare l'inizializzazione.
     info:
-      initialized: The waydroid subsystem has been initialized.
+      initialized: Il sottosistema di waydroid è stato inizializzato.
   launch:
     description: "Esegui un'applicazione installata"
   launcher:
