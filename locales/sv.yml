@@ -34,11 +34,11 @@ config:
     description: "Visa systemkonfiguration"
 
 pico:
-  description: "Hantera Pico undersystem"
+  description: "Hantera VSO undersystem"
   error:
-    notInitialized: "Pico-undersystemet är inte initierat. Kör `vso pico-init` för
+    notInitialized: "VSO-undersystemet är inte initierat. Kör `vso pico-init` för
       att initiera det."
-    alreadyInitialized: "Pico-undersystemet är redan initierat. Använd flaggan --force
+    alreadyInitialized: "VSO-undersystemet är redan initierat. Använd flaggan --force
       för att tvinga fram initieringen."
     noAppNameOrBin: "--app-name eller --bin måste anges."
     sameAppOrBin: "--app-name och --bin kan inte båda specificeras."
@@ -46,14 +46,20 @@ pico:
     exportingBin: "Ett fel inträffade vid export av binär: %s"
     unexportingApp: "Ett fel uppstod när programmet skulle avexporteras: %s"
     unexportingBin: "Ett fel uppstod när binären: %s skulle avexporteras"
-  errors:
-    unknownCommand: "Okänt kommando: %s"
+    unknownCommand: 'Okänt kommando: %s'
+    shellReset: Det är omöjligt att nå VSO-skalet. Vill du återställa det? (Detta
+      tar bort all programvara som är installerad i undersystemet) [j/N]
   info:
-    initialized: "Pico-undersystemet har initierats."
+    initialized: "VSO-undersystemet har initierats."
     exported: "Exporterad %s\n"
     unexported: "Oexporterad %s\n"
     exportedApps: "Exporterade %d program"
     unexportedApps: "Oexporterade %d program"
+    shellInit: Det verkar som om ditt skal inte är initierat ännu. Vill du initiera
+      det nu? (rekommenderas starkt) [j/N]
+    fallbackShell: Återgå till värdskalet? Detta kan leda till oväntat beteende. [j/N]
+    deleting: Tar bort VSO-undersystemet...
+    initializing: Initierar VSO-undersystemet...
   export:
     description: "Exporterade ett program eller binär från undersystemet"
     options:
@@ -73,7 +79,7 @@ pico:
       binOutput:
         description: "sökväg för den binära utdatan (standard: ~/.local/bin/)"
   init:
-    description: "Initiera Pico-undersystemet, som används för pakethantering"
+    description: "Initiera VSO-undersystemet, som används för pakethantering"
     options:
       force:
         description: "tvinga fram initieringen om undersystemet redan är initierat"
@@ -83,6 +89,9 @@ pico:
     description: "Ta bort ett program från undersystemet"
   run:
     description: "Kör ett program från delsystem"
+    options:
+      noReset:
+        description: Föreslå inte att återställa undersystemet om något går fel
   search:
     description: "Sök efter ett program att installera inuti delsystemet"
   shell:
@@ -104,7 +113,6 @@ sysUpgrade:
     info:
       checking: "Kollar efter uppdateringar..."
       noUpdates: "Inga uppdateringar tillgängliga."
-      updatesAvailable: "Uppdateringar tillgängliga."
     json:
       description: "Utdata av resultatet i JSON-format"
   sysUpgrade:
@@ -279,6 +287,11 @@ waydroid:
       noconfirm:
         description: Be inte om bekräftelse under installationen
     description: Initiera waydroid-undersystemet
+    info:
+      initialized: Waydroid undersystemet har initierats.
+    error:
+      alreadyInitialized: Waydroid undersystemet är redan initierat. Använd flaggan
+        --force för att tvinga fram initieringen.
   search:
     description: Sök efter en applikation
   downloadIndex: Hämtar index för arkiv %s

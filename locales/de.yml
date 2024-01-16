@@ -48,14 +48,21 @@ pico:
       %s"
     unexportingBin: "Beim Deexportieren der Binärdatei ist ein Fehler aufgetreten:
       %s"
-  errors:
-    unknownCommand: "Unbekannter Befehl: %s"
+    unknownCommand: 'Unknown command: %s'
+    shellReset: It is impossible to reach the VSO shell. Do you want to reset it?
+      (This will remove all your software installed in the subsystem) [y/N]
   info:
     initialized: "Das Pico-Subsystem wurde initialisiert."
     exported: "%s exportiert\n"
     unexported: "%s deexportiert\n"
     exportedApps: "%d Anwendungen exportiert"
     unexportedApps: "%d Anwendungen deexportiert"
+    shellInit: Looks like your shell is not initialized yet. Do you want to initialize
+      it now? (Highly recommended) [y/N]
+    fallbackShell: Fallback to the host shell? This could lead to unexpected behavior.
+      [y/N]
+    deleting: Deleting the VSO subsystem...
+    initializing: Initializing the VSO subsystem...
   export:
     description: "Eine Anwendung oder eine Binärdatei aus dem Subsystem exportieren"
     options:
@@ -86,6 +93,9 @@ pico:
     description: "Eine Anwendung aus dem Subsystem entfernen"
   run:
     description: "Eine Anwendung vom Subsystem aus starten"
+    options:
+      noReset:
+        description: do not propose to reset the subsystem if something goes wrong
   search:
     description: "Nach einer Anwendung suchen, die innerhalb des Subsystems installiert
       werden soll"
@@ -109,7 +119,6 @@ sysUpgrade:
     info:
       checking: "Auf Aktualisierungen wird geprüft..."
       noUpdates: "Keine Aktualisierungen verfügbar."
-      updatesAvailable: "Aktualisierungen verfügbar."
     json:
       description: output the result in JSON format
   sysUpgrade:
@@ -296,6 +305,11 @@ waydroid:
       noconfirm:
         description: Do not ask for confirmation during installation
     description: Initialize the waydroid subsystem
+    error:
+      alreadyInitialized: The waydroid subsystem is already initialized. Use the --force
+        flag to force the initialization.
+    info:
+      initialized: The waydroid subsystem has been initialized.
   search:
     description: Search for an application
   downloadIndex: Downloading index for repository %s

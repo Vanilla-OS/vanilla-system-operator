@@ -1,0 +1,318 @@
+vso:
+  description: "The Vanilla System Operator è un programma per gestire pacchetti,
+    aggiornare il sistema e automatizzare attività."
+  errors:
+    unknownCommand: "Comando sconosciuto: %s"
+    invalidInput: "Input non valido."
+    invalidChoice: "Scelta non valida."
+  info:
+    aborting: "Annullamento come richiesto."
+  terminal:
+    yes: "si"
+    no: "no"
+
+config:
+  description: "Gestisci la configurazione di sistema."
+  get:
+    description: "Ottieni la configurazione di sistema"
+    error:
+      noKey: "Nessuna chiave specificata."
+      noValue: "Nessun valore trovato con la chiave: %s"
+    options:
+      key:
+        description: "recupera il valore di configurazione usando la sua chiave"
+  set:
+    description: "Imposta la configurazione di sistema"
+    error:
+      noKey: "Nessuna chiave specificata."
+      noValue: "Nessuno valore specificato."
+    options:
+      key: "chiave della configurazione da impostare"
+      value: "valore della configurazione da impostare"
+    success: "Aggiornamento della configurazione avvenuto con successo."
+  show:
+    description: "Mostra la configurazione di sistema"
+
+pico:
+  description: "Gestisci il sottosistema VSO"
+  error:
+    notInitialized: "Il sottosistema VSO non è inizializzato. Per favore lanciare
+      `vso pico-init` per inizializzarlo."
+    alreadyInitialized: "Il sottosistema VSO è già inizializzato. Usa --force per
+      forzare l'inizializzazione."
+    noAppNameOrBin: "L'opzione --app-name o --bin deve essere specificata."
+    sameAppOrBin: "Le opzioni --app-name e --bin non possono essere usate contemporaneamente."
+    exportingApp: "Si è verificato un errore durante l'esportazione dell'applicazione:
+      %s"
+    exportingBin: "Si è verificato un errore durante l'esportazione del binario: %s"
+    unexportingApp: "Si è verificato un errore durante l'annullamento dell'esportazione
+      dell'applicazione: %s"
+    unexportingBin: "Si è verificato un errore durante l'annullamento dell'esportazione
+      del binario: %s"
+    unknownCommand: "Comando sconosciuto: %s"
+    shellReset: "È impossibile raggiungere la VSO shell. Vuoi ripristinarla? (Questo
+      cancellerà tutti i tuoi programmi installati nel sottosistema) [s/N]"
+  info:
+    deleting: "Cancellazione del sottosistema VSO..."
+    initializing: "Inizializzazione del sottosistema VSO..."
+    initialized: "Il sottosistema VSO è stato inizializzato."
+    exported: "Esportato %s\n"
+    unexported: "Annullata l'esportazione %s\n"
+    exportedApps: "Esportate %d applicazioni"
+    unexportedApps: "Esportazione %d applicazioni annullata"
+    shellInit: "Sembra che la tua shell non è ancora inizializzata. Vuoi inizializzarla
+      ora? (Altamente raccomandato) [s/N]"
+    fallbackShell: "Ripiegare sulla shell host? Questo potrebbe causare comportamenti
+      imprevisti. [s/N]"
+  export:
+    description: "Esporta un'applicazione o un binario dal sottosistema"
+    options:
+      app:
+        description: "il nome dell'applicazione da esportare"
+      bin:
+        description: "il nome del binario da esportare"
+      binOutput:
+        description: "percorso del output del binario (default: ~/.local/bin/)"
+  unexport:
+    description: "Annulla esportazione di un'applicazione o di un binario dal sottosistema"
+    options:
+      app:
+        description: "il nome dell'applicazione da non esportare"
+      bin:
+        description: "il nome del binario da non esportare"
+      binOutput:
+        description: "percorso del output del binario (default: ~/.local/bin/)"
+  init:
+    description: "Inizializza il sottosistema VSO, usato dal gestore pacchetti"
+    options:
+      force:
+        description: "forza l'inizializzazione se il sottosistema è già inizializzato"
+  install:
+    description: "Installa un'applicazione nel sottosistema"
+  remove:
+    description: "Cancella un'applicazione dal sottosistema"
+  run:
+    description: "Lancia un'applicazione dal sottosistema"
+    options:
+      noReset:
+        description: "non proporre il reset del sottosistema se qualcosa non funziona
+          correttamente"
+  search:
+    description: "Cerca un'applicazione da installare nel sottosistema"
+  shell:
+    description: "Accedi all'ambiente del sottosistema"
+  update:
+    description: "Aggiorna il repository dei pacchetti del sottosistema"
+  upgrade:
+    description: "Aggiorna i pacchetti nel sottosistema"
+
+sysUpgrade:
+  description: "Aggiorna il sistema"
+  check:
+    asExitCode: "Controlla se ci sono aggiornamenti, ma non stampare nulla. Restituisci
+      il codice 0 se non ci sono aggiornamenti disponibili e 1 in caso contrario."
+    description: "Controlla gli aggiornamenti di sistema"
+    error:
+      asExitCodeAndJson: "Si è verificato un errore durante il controllo degli aggiornamenti.
+        Per maggiori dettagli controlla l'output JSON."
+    info:
+      checking: "Controllo aggiornamenti..."
+      noUpdates: "Nessuno aggiornamento disponibile."
+    json:
+      description: "stampa il risultato in formato JSON"
+  sysUpgrade:
+    description: "Aggiorna il sistema"
+    error:
+      updating: "Si è verificato un errore durante l'aggiornamento del sistema."
+    info:
+      updating: "Aggiornamento del sistema..."
+    now: "Avvia l'aggiornamento del sistema adesso"
+
+tasks:
+  description: "Crea e gestisci attività"
+  stacks:
+    new:
+      error:
+        emptyCommand: "Il comando non può essere vuoto."
+        emptyDescription: "La descrizione non può essere vuota."
+        emptyName: "Il nome non può essere vuoto."
+        noCommand: "Nessun comando specificato."
+        noDescription: "Nessuna descrizione specificata."
+        noName: "Nessun nome specificato."
+      info:
+        askCommand: "Comando: "
+        askDescription: "Descrizione: "
+        askName: "Nome: "
+        taskCreated: "L'attività è stata creata con successo."
+  list:
+    description: "Lista delle attività"
+    noTasks: "Nessuna attività trovata."
+    info:
+      foundTasks: "Trovate %d attività."
+    options:
+      json:
+        description: "output delle attività in formato JSON"
+  new:
+    description: "Crea una nuova attività"
+    options:
+      assumeYes:
+        description: "imposta si per tutte le domande"
+      at:
+        description: "pianifica l'attività da eseguire ad una specifica ora (hh:mm)"
+      command:
+        description: "specifica il comando da eseguire"
+      description:
+        description: "specifica la descrizione dell'attività"
+      every:
+        description: "pianifica l'attività da eseguire ogni X volte (minuti, ore,
+          giorni)"
+      name:
+        description: "specifica il nome dell'attività"
+      needConfirm:
+        description: "chiedi la conferma prima di eseguire l'attività"
+      onBattery:
+        description: "esegui l'attività solo quando il sistema sta usando la batteria"
+      onCharge:
+        description: "esegui l'attività solo quando il sistema è in carica"
+      onConditionCommand:
+        description: "esegui l'attività sotto determinate condizioni"
+      onCpuTemp:
+        description: "esegui l'attività quando la temperatura della CPU è maggiore
+          di 60°C"
+      onCpuUsage:
+        description: "esegui l'attività quando l'utilizzo della CPU è maggiore di
+          X%"
+      onDeviceConnect:
+        description: "esegui l'attività quando un dispositivo viene connesso"
+      onDeviceDisconnect:
+        description: "esegui l'attvità quando un dispositivo viene disconnesso"
+      onDisconnect:
+        description: "esegui l'attività quando il sistema viene disconnesso dalla
+          rete"
+      onFullBattery:
+        description: "esegui l'attività quando il sistema è completamente carico"
+      onHighCpuUsage:
+        description: "esegui l'attività quando l'utilizzo della CPU è maggiore del
+          50%"
+      onHighInternetUsage:
+        description: "esegui l'attività quando l'utilizzo di internet è maggiore di
+          500Kb/s"
+      onHighMemoryUsage:
+        description: "esegui l'attività quando la memoria utilizzata è maggiore del
+          50%"
+      onInternetUsage:
+        description: "esegui l'attività quando l'utilizzo di internet è maggiore di
+          XKb/s"
+      onLowBattery:
+        description: "esegui l'attività quando il sistema ha un basso livello di batteria
+          (20%)"
+      onMemoryUsage:
+        description: "esegui l'attività quando la memoria utilizzata è maggiore del
+          X%"
+      onNetwork:
+        description: "esegui l'attività quando il sistema è connesso alla rete"
+      onProcess:
+        description: "esegui l'attività quando si avvia un processo"
+  rm:
+    description: "Rimuovi un'attività"
+    error:
+      cannotDelete: "Impossibile cancellare l'attività: %s"
+      noName: "Nessun nome di attività specificato."
+      notFound: "Attività non trovata."
+    info:
+      askConfirmation: "Sei sicuro di voler cancellare l'attività %s? [s/N]"
+      taskDeleted: "L'attività è stata cancellata con successo."
+    options:
+      force:
+        description: "forza la cancellazione dell'attività"
+      name:
+        description: "specifica il nome dell'attività"
+  rotate:
+    description: "Ruota le attività"
+    options:
+      privateEvent:
+        description: "specifica un evento privato per ruotare le attività di boot,
+          shutdown, login, logout"
+
+waydroid:
+  description: "Gestisci il sottosistema di waydroid vso"
+  downloadIndex: "Scarica l'indice del repository %s"
+  clean:
+    description: "Pulisci la cache di waydroid vso"
+    info:
+      index: "Cancellazione della cache degli indici"
+      apk: "Cancellazione della cache degli apk"
+      success: "Cancellazione della cache di waydroid vso avvenuta con successo"
+    error:
+      index: "Cancellazione della cache degli indici non riuscita"
+      apk: "Cancellazione della cache degli apk non riuscita"
+  delete:
+    description: "Cancella il sottosistema di waydroid"
+    confirmation: "L'eliminazione del sottosistema di waydroid cancellerà tutti i
+      dati salvati al suo interno. Continuare?"
+    cancelled: "Eliminazione del sottosistema annullata."
+  error:
+    noArguments: "Nessun argomento è stato fornito."
+  install:
+    description: "Installa un'applicazione"
+    options:
+      local:
+        description: "Installa un apk locale"
+    info:
+      PackageInCache: "Un applicazione trovata nella cache, non viene scaricata nuovamente."
+      ConfirmInstall: "Installare l'applicazione %s?"
+      DownloadingPackage: "Scaricare l'apk da %s"
+      PackageSelection: "Scegli l'applicazione da installare"
+    error:
+      NotFound: "L'applicazione %s non è stata trovata."
+      InstallCancelled: "Installazione Annullata"
+  init:
+    description: "Inizializza il sottosistema di waydroid"
+    options:
+      force:
+        description: "Forza l'inizializzazione"
+      noconfirm:
+        description: "Non chiedere conferma durante l'installazione"
+    error:
+      alreadyInitialized: Il sottosistema di waydroid è già inizializzato. Usa il
+        flag --force per forzare l'inizializzazione.
+    info:
+      initialized: Il sottosistema di waydroid è stato inizializzato.
+  launch:
+    description: "Esegui un'applicazione installata"
+  launcher:
+    description: "Mostra il launcher di waydroid"
+  remove:
+    description: "Disinstalla un'applicazione"
+    info:
+      RemovePackage: "Rimuovere il pacchetto %s"
+      PackageSelection: "Scegli un'applicazione da rimuovere"
+      ConfirmRemove: "Rimuovere l'applicazione %s?"
+    error:
+      NoMatches: "L'applicazione %s non è stata trovata"
+      RemoveCancelled: "Rimozione Annullata"
+  search:
+    description: "Cerca un'applicazione"
+  sync:
+    description: "Sincronizza i repositories"
+  update:
+    description: "Aggiorna le applicazioni installate"
+    finished: "Completato l'aggiornamento delle applicazioni"
+    error:
+      FailGetVersion: "Impossibile ottenere il codice di versione per %s"
+      FailUpdatePackageDownload: "Impossibile scaricare l'APK per %s"
+      FailUpdatePackageDatabase: "Impossibile aggiornare la voce nel database per
+        %s"
+      FailUpdatePackageInstall: "Impossibile installare l'aggiornamento per %s"
+    info:
+      NoUpdates: "Niente da aggiornare"
+  info:
+    description: "Mostra informazioni relative ad un'applicazione"
+    info:
+      PackageSelection: "Seleziona l'applicazione per la quale visualizzare le informazioni"
+    PackageName: "Nome: %s"
+    InternalName: "Nome interno: %s"
+    Summary: "Riassunto: %s"
+    Author: "Autore: %s"
+    License: "Licenza: %s"
+    Repository: "Repository: %s"

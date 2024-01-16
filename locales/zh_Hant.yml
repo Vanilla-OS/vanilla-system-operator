@@ -33,24 +33,28 @@ config:
     description: "顯示系統組態"
 
 pico:
-  description: "管理 Pico 子系統"
+  description: "管理 VSO 子系統"
   error:
-    notInitialized: "Pico 子系統尚未初始化。請執行 `vso pico-init` 以初始化子系統。"
-    alreadyInitialized: "Pico 子系統已經初始化。請使用 --force 以強制初始化。"
+    notInitialized: "VSO 子系統尚未初始化。請執行 `vso pico-init` 以初始化子系統。"
+    alreadyInitialized: "VSO 子系統已經初始化。請使用 --force 以強制初始化。"
     noAppNameOrBin: "必須指定 --app-name 或是 --bin。"
     sameAppOrBin: "不能同時指定 --app-name 及 --bin。"
     exportingApp: "匯出應用程式時發生錯誤：%s"
     exportingBin: "匯出二進位檔案時發生錯誤：%s"
     unexportingApp: "移除匯出的應用程式時發生錯誤：%s"
     unexportingBin: "移除匯出的二進位檔案時發生錯誤：%s"
-  errors:
-    unknownCommand: "未知的命令：%s"
+    unknownCommand: '未知的命令：%s'
+    shellReset: 無法存取 VSO shell。要重設嗎？（這將移除子系統中安裝的所有軟體）[y/N]
   info:
-    initialized: "Pico 子系統已經初始化。"
+    initialized: "VSO 子系統已經初始化。"
     exported: "已匯出 %s\n"
     unexported: "已移除匯出 %s\n"
     exportedApps: "已匯出 %d 個應用程式"
     unexportedApps: "已移除匯出的 %d 個應用程式"
+    shellInit: shell 似乎尚未初始化。要現在初始化嗎？（十分推薦）[y/N]
+    fallbackShell: 備選使用主機 shell 嗎？這可能會導致意外的行為。[y/N]
+    deleting: 正在刪除 VSO 子系統…
+    initializing: 正在初始化 VSO 子系統…
   export:
     description: "從子系統匯出應用程式或是二進位檔案"
     options:
@@ -70,7 +74,7 @@ pico:
       binOutput:
         description: "二進位輸出的路徑（預設：~/.local/bin/）"
   init:
-    description: "初始化 Pico 子系統，用於軟體包的管理"
+    description: "初始化 VSO 子系統，用於軟體包的管理"
     options:
       force:
         description: "強制初始化，即便子系統已經初始化"
@@ -80,6 +84,9 @@ pico:
     description: "從子系統中移除應用程式"
   run:
     description: "執行來自子系統的應用程式"
+    options:
+      noReset:
+        description: 如果出現問題，不要建議重設子系統
   search:
     description: "搜尋要在子系統內安裝的應用程式"
   shell:
@@ -99,7 +106,6 @@ sysUpgrade:
     info:
       checking: "正在檢查更新…"
       noUpdates: "沒有更新可用。"
-      updatesAvailable: "更新可用。"
     json:
       description: 輸出結果為 JSON 格式
   sysUpgrade:
@@ -270,6 +276,10 @@ waydroid:
       noconfirm:
         description: 安裝過程中不再要求使用者確認
     description: 初始化 Waydroid 子系統
+    error:
+      alreadyInitialized: Waydroid 子系統已經初始化。請使用 --force 以強制初始化。
+    info:
+      initialized: Waydroid 子系統已初始化。
   search:
     description: 搜尋應用程式
   downloadIndex: 正在下載軟體庫 %s 的索引

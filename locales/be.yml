@@ -46,14 +46,21 @@ pico:
     exportingBin: "An error occurred while exporting the binary: %s"
     unexportingApp: "An error occurred while unexporting the application: %s"
     unexportingBin: "An error occurred while unexporting the binary: %s"
-  errors:
-    unknownCommand: "Unknown command: %s"
+    unknownCommand: 'Unknown command: %s'
+    shellReset: It is impossible to reach the VSO shell. Do you want to reset it?
+      (This will remove all your software installed in the subsystem) [y/N]
   info:
     initialized: "The Pico subsystem has been initialized."
     exported: "Exported %s\n"
     unexported: "Unexported %s\n"
     exportedApps: "Exported %d applications"
     unexportedApps: "Unexported %d applications"
+    shellInit: Looks like your shell is not initialized yet. Do you want to initialize
+      it now? (Highly recommended) [y/N]
+    fallbackShell: Fallback to the host shell? This could lead to unexpected behavior.
+      [y/N]
+    deleting: Deleting the VSO subsystem...
+    initializing: Initializing the VSO subsystem...
   export:
     description: "Export an application or binary from the subsystem"
     options:
@@ -83,6 +90,9 @@ pico:
     description: "Remove an application from the subsystem"
   run:
     description: "Run an application from the subsystem"
+    options:
+      noReset:
+        description: do not propose to reset the subsystem if something goes wrong
   search:
     description: "Search for an application to install inside the subsystem"
   shell:
@@ -104,7 +114,6 @@ sysUpgrade:
     info:
       checking: "Checking for updates..."
       noUpdates: "No updates available."
-      updatesAvailable: "Updates available."
     json:
       description: output the result in JSON format
   sysUpgrade:
@@ -277,6 +286,11 @@ waydroid:
       noconfirm:
         description: Do not ask for confirmation during installation
     description: Initialize the waydroid subsystem
+    error:
+      alreadyInitialized: The waydroid subsystem is already initialized. Use the --force
+        flag to force the initialization.
+    info:
+      initialized: The waydroid subsystem has been initialized.
   search:
     description: Search for an application
   downloadIndex: Downloading index for repository %s

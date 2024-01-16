@@ -46,14 +46,21 @@ pico:
     exportingBin: "Ocorreu um erro ao exportar o binário: %s"
     unexportingApp: "Ocorreu um erro ao cancelar a exportação do aplicativo: %s"
     unexportingBin: "Ocorreu um erro ao cancelar a exportação do binário: %s"
-  errors:
-    unknownCommand: "Comando desconhecido: %s"
+    unknownCommand: 'Comando desconhecido: %s'
+    shellReset: It is impossible to reach the VSO shell. Do you want to reset it?
+      (This will remove all your software installed in the subsystem) [y/N]
   info:
     initialized: "O subsistema Pico foi inicializado."
     exported: "Exportado %s\n"
     unexported: "Desfeita a exportação de %s\n"
     exportedApps: "Exportados %d aplicativos"
     unexportedApps: "Desfeita a exportação de %d aplicativos"
+    shellInit: Looks like your shell is not initialized yet. Do you want to initialize
+      it now? (Highly recommended) [y/N]
+    fallbackShell: Fallback to the host shell? This could lead to unexpected behavior.
+      [y/N]
+    deleting: Deleting the VSO subsystem...
+    initializing: Initializing the VSO subsystem...
   export:
     description: "Exportar um aplicativo ou binário do subsistema"
     options:
@@ -83,6 +90,9 @@ pico:
     description: "Remover um aplicativo do subsistema"
   run:
     description: "Executar um aplicativo a partir do subsistema"
+    options:
+      noReset:
+        description: do not propose to reset the subsystem if something goes wrong
   search:
     description: "Procurar um aplicativo para instalar dentro do subsistema"
   shell:
@@ -104,7 +114,6 @@ sysUpgrade:
     info:
       checking: "Verificando se há atualizações..."
       noUpdates: "Não há atualizações disponíveis."
-      updatesAvailable: "Atualizações disponíveis."
     json:
       description: saída do resultado no formato JSON
   sysUpgrade:
@@ -281,6 +290,11 @@ waydroid:
       noconfirm:
         description: Não pergunte por confirmação durante a instalação
     description: Inicializar o subsistema waydroid
+    error:
+      alreadyInitialized: The waydroid subsystem is already initialized. Use the --force
+        flag to force the initialization.
+    info:
+      initialized: The waydroid subsystem has been initialized.
   search:
     description: Busque por um aplicativo
   downloadIndex: Baixando o índice do repositório %s
