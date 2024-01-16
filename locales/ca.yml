@@ -48,8 +48,6 @@ pico:
       %s"
     unexportingBin: "S'ha trobat un error mentre es desfeia l'exportació del binari:
       %s"
-  errors:
-    unknownCommand: "Ordre desconeguda: %s"
   info:
     initialized: "El subsistema Pico s'ha inicialitzat."
     exported: "%s Exportat\n"
@@ -107,7 +105,6 @@ sysUpgrade:
     info:
       checking: "Comprovant les actualitzacions..."
       noUpdates: "No hi han actualitzacions disponibles."
-      updatesAvailable: "Actualitzacions disponibles."
     json:
       description: "sortida dels resultats en format JSON"
   sysUpgrade:

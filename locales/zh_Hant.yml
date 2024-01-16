@@ -43,8 +43,6 @@ pico:
     exportingBin: "匯出二進位檔案時發生錯誤：%s"
     unexportingApp: "移除匯出的應用程式時發生錯誤：%s"
     unexportingBin: "移除匯出的二進位檔案時發生錯誤：%s"
-  errors:
-    unknownCommand: "未知的命令：%s"
   info:
     initialized: "Pico 子系統已經初始化。"
     exported: "已匯出 %s\n"
@@ -99,7 +97,6 @@ sysUpgrade:
     info:
       checking: "正在檢查更新…"
       noUpdates: "沒有更新可用。"
-      updatesAvailable: "更新可用。"
     json:
       description: 輸出結果為 JSON 格式
   sysUpgrade:

@@ -49,8 +49,6 @@ pico:
       de l'application : %s"
     unexportingBin: "Une erreur s'est produite lors de la suppression de l'exportation
       du binaire : %s"
-  errors:
-    unknownCommand: "Commande inconnue : %s"
   info:
     initialized: "Le sous-système Pico a été initialisé."
     exported: "Exportation de %s\n"
@@ -115,7 +113,6 @@ sysUpgrade:
     info:
       checking: Vérifier les mises à jour ...
       noUpdates: Aucune mise à jour n'est disponible.
-      updatesAvailable: Mises à jour disponibles.
     asExitCode: vérifie l'existence d'une mise à jour, mais n'affiche rien. Retourne
       le code de sortie 0 si aucune mise à jour n'est disponible et 1 sinon.
     error:

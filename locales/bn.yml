@@ -46,8 +46,6 @@ pico:
     exportingBin: "An error occurred while exporting the binary: %s"
     unexportingApp: "An error occurred while unexporting the application: %s"
     unexportingBin: "An error occurred while unexporting the binary: %s"
-  errors:
-    unknownCommand: "Unknown command: %s"
   info:
     initialized: "The Pico subsystem has been initialized।"
     exported: "Exported %s\n"
@@ -104,7 +102,6 @@ sysUpgrade:
     info:
       checking: "Checking for updates..।"
       noUpdates: "No updates available।"
-      updatesAvailable: "Updates available।"
     json:
       description: "output the result in JSON format"
   sysUpgrade:

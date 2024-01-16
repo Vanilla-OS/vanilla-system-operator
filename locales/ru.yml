@@ -46,8 +46,6 @@ pico:
     exportingBin: "Произошла ошибка при экспорте двоичного файла: %s"
     unexportingApp: "Произошла ошибка при отмене экспорта приложения: %s"
     unexportingBin: "Произошла ошибка при отмене экспорта двоичного файла: %s"
-  errors:
-    unknownCommand: "Неизвестная команда: %s"
   info:
     initialized: "Подсистема Pico инициализирована."
     exported: "Экспортировано %s\n"
@@ -117,7 +115,6 @@ sysUpgrade:
     info:
       checking: Проверка обновлений...
       noUpdates: Нет доступных обновлений.
-      updatesAvailable: Доступны обновления.
     json:
       description: вывести результат в формате JSON
   sysUpgrade:

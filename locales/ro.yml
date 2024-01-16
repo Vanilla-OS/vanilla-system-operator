@@ -46,8 +46,6 @@ pico:
     exportingBin: "A apărut o eroare la exportul binarului: %s"
     unexportingApp: "A apărut o eroare la dezexportarea aplicației: %s"
     unexportingBin: "A apărut o eroare la dezexportarea binarului: %s"
-  errors:
-    unknownCommand: "Comanda necunoscută: %s"
   info:
     initialized: "Subsistemul Pico a fost inițializat."
     exported: "Exportat %s\n"
@@ -105,7 +103,6 @@ sysUpgrade:
     info:
       checking: "Checking for updates..."
       noUpdates: "No updates available."
-      updatesAvailable: "Updates available."
     json:
       description: output the result in JSON format
   sysUpgrade:

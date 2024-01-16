@@ -48,8 +48,6 @@ pico:
       %s"
     unexportingBin: "Beim Deexportieren der Binärdatei ist ein Fehler aufgetreten:
       %s"
-  errors:
-    unknownCommand: "Unbekannter Befehl: %s"
   info:
     initialized: "Das Pico-Subsystem wurde initialisiert."
     exported: "%s exportiert\n"
@@ -109,7 +107,6 @@ sysUpgrade:
     info:
       checking: "Auf Aktualisierungen wird geprüft..."
       noUpdates: "Keine Aktualisierungen verfügbar."
-      updatesAvailable: "Aktualisierungen verfügbar."
     json:
       description: output the result in JSON format
   sysUpgrade:
