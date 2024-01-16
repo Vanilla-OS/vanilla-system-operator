@@ -288,10 +288,10 @@ waydroid:
         description: Be inte om bekräftelse under installationen
     description: Initiera waydroid-undersystemet
     info:
-      initialized: The waydroid subsystem has been initialized.
+      initialized: Waydroid undersystemet har initierats.
     error:
-      alreadyInitialized: The waydroid subsystem is already initialized. Use the --force
-        flag to force the initialization.
+      alreadyInitialized: Waydroid undersystemet är redan initierat. Använd flaggan
+        --force för att tvinga fram initieringen.
   search:
     description: Sök efter en applikation
   downloadIndex: Hämtar index för arkiv %s
