@@ -34,11 +34,11 @@ config:
     description: "Visa systemkonfiguration"
 
 pico:
-  description: "Hantera Pico undersystem"
+  description: "Hantera VSO undersystem"
   error:
-    notInitialized: "Pico-undersystemet är inte initierat. Kör `vso pico-init` för
+    notInitialized: "VSO-undersystemet är inte initierat. Kör `vso pico-init` för
       att initiera det."
-    alreadyInitialized: "Pico-undersystemet är redan initierat. Använd flaggan --force
+    alreadyInitialized: "VSO-undersystemet är redan initierat. Använd flaggan --force
       för att tvinga fram initieringen."
     noAppNameOrBin: "--app-name eller --bin måste anges."
     sameAppOrBin: "--app-name och --bin kan inte båda specificeras."
@@ -47,20 +47,19 @@ pico:
     unexportingApp: "Ett fel uppstod när programmet skulle avexporteras: %s"
     unexportingBin: "Ett fel uppstod när binären: %s skulle avexporteras"
     unknownCommand: 'Okänt kommando: %s'
-    shellReset: It is impossible to reach the VSO shell. Do you want to reset it?
-      (This will remove all your software installed in the subsystem) [y/N]
+    shellReset: Det är omöjligt att nå VSO-skalet. Vill du återställa det? (Detta
+      tar bort all programvara som är installerad i undersystemet) [j/N]
   info:
-    initialized: "Pico-undersystemet har initierats."
+    initialized: "VSO-undersystemet har initierats."
     exported: "Exporterad %s\n"
     unexported: "Oexporterad %s\n"
     exportedApps: "Exporterade %d program"
     unexportedApps: "Oexporterade %d program"
-    shellInit: Looks like your shell is not initialized yet. Do you want to initialize
-      it now? (Highly recommended) [y/N]
-    fallbackShell: Fallback to the host shell? This could lead to unexpected behavior.
-      [y/N]
-    deleting: Deleting the VSO subsystem...
-    initializing: Initializing the VSO subsystem...
+    shellInit: Det verkar som om ditt skal inte är initierat ännu. Vill du initiera
+      det nu? (rekommenderas starkt) [j/N]
+    fallbackShell: Återgå till värdskalet? Detta kan leda till oväntat beteende. [j/N]
+    deleting: Tar bort VSO-undersystemet...
+    initializing: Initierar VSO-undersystemet...
   export:
     description: "Exporterade ett program eller binär från undersystemet"
     options:
@@ -80,7 +79,7 @@ pico:
       binOutput:
         description: "sökväg för den binära utdatan (standard: ~/.local/bin/)"
   init:
-    description: "Initiera Pico-undersystemet, som används för pakethantering"
+    description: "Initiera VSO-undersystemet, som används för pakethantering"
     options:
       force:
         description: "tvinga fram initieringen om undersystemet redan är initierat"
@@ -92,7 +91,7 @@ pico:
     description: "Kör ett program från delsystem"
     options:
       noReset:
-        description: do not propose to reset the subsystem if something goes wrong
+        description: Föreslå inte att återställa undersystemet om något går fel
   search:
     description: "Sök efter ett program att installera inuti delsystemet"
   shell:
