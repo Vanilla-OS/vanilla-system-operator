@@ -40,8 +40,8 @@ pico:
       pentru a-l inițializa."
     alreadyInitialized: "Subsistemul Pico este deja inițializat. Utilizați indicatorul
       --force pentru a forța inițializarea."
-    noAppNameOrBin: "Trebuie specificat --app-name sau --bin."
-    sameAppOrBin: "--app-name și --bin nu pot fi ambele specificate."
+    noAppNameOrBin: "Trebuie specificat --app sau --bin."
+    sameAppOrBin: "--app și --bin nu pot fi ambele specificate."
     exportingApp: "A apărut o eroare la exportul aplicației: %s"
     exportingBin: "A apărut o eroare la exportul binarului: %s"
     unexportingApp: "A apărut o eroare la dezexportarea aplicației: %s"

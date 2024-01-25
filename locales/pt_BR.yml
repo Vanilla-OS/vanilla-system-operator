@@ -40,8 +40,8 @@ pico:
       pico-init' para inicializá-lo."
     alreadyInitialized: "O subsistema Pico já foi inicializado. Use o sinalizador
       --force para forçar a inicialização."
-    noAppNameOrBin: "--app-name ou --bin devem ser especificados."
-    sameAppOrBin: "--app-name e --bin não podem ser especificados ao mesmo tempo."
+    noAppNameOrBin: "--app ou --bin devem ser especificados."
+    sameAppOrBin: "--app e --bin não podem ser especificados ao mesmo tempo."
     exportingApp: "Ocorreu um erro ao exportar o aplicativo: %s"
     exportingBin: "Ocorreu um erro ao exportar o binário: %s"
     unexportingApp: "Ocorreu um erro ao cancelar a exportação do aplicativo: %s"

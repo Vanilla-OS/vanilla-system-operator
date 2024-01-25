@@ -40,8 +40,8 @@ pico:
       `vso pico-init` per inizializzarlo."
     alreadyInitialized: "Il sottosistema VSO è già inizializzato. Usa --force per
       forzare l'inizializzazione."
-    noAppNameOrBin: "L'opzione --app-name o --bin deve essere specificata."
-    sameAppOrBin: "Le opzioni --app-name e --bin non possono essere usate contemporaneamente."
+    noAppNameOrBin: "L'opzione --app o --bin deve essere specificata."
+    sameAppOrBin: "Le opzioni --app e --bin non possono essere usate contemporaneamente."
     exportingApp: "Si è verificato un errore durante l'esportazione dell'applicazione:
       %s"
     exportingBin: "Si è verificato un errore durante l'esportazione del binario: %s"

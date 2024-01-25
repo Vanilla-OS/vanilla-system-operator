@@ -40,8 +40,8 @@ pico:
       pico-init`aus, um es zu initialisieren."
     alreadyInitialized: "Das Pico-Subsystem ist bereits initialisiert. Nutze die --force
       Flag um die Initialisierung zu erzwingen."
-    noAppNameOrBin: "--app-name oder --bin muss spezifiziert sein."
-    sameAppOrBin: "--app-name und --bin können nicht beide spezifiziert sein."
+    noAppNameOrBin: "--app oder --bin muss spezifiziert sein."
+    sameAppOrBin: "--app und --bin können nicht beide spezifiziert sein."
     exportingApp: "Beim Exportieren der Anwendung ist ein Fehler aufgetreten: %s"
     exportingBin: "Beim Exportieren der Binärdatei ist ein Fehler aufgetreten: %s"
     unexportingApp: "Beim Deexportieren der Anwendung ist ein Fehler aufgetreten:

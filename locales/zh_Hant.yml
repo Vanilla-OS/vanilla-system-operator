@@ -37,8 +37,8 @@ pico:
   error:
     notInitialized: "VSO 子系統尚未初始化。請執行 `vso pico-init` 以初始化子系統。"
     alreadyInitialized: "VSO 子系統已經初始化。請使用 --force 以強制初始化。"
-    noAppNameOrBin: "必須指定 --app-name 或是 --bin。"
-    sameAppOrBin: "不能同時指定 --app-name 及 --bin。"
+    noAppNameOrBin: "必須指定 --app 或是 --bin。"
+    sameAppOrBin: "不能同時指定 --app 及 --bin。"
     exportingApp: "匯出應用程式時發生錯誤：%s"
     exportingBin: "匯出二進位檔案時發生錯誤：%s"
     unexportingApp: "移除匯出的應用程式時發生錯誤：%s"

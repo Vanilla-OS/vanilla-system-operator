@@ -40,8 +40,8 @@ pico:
       att initiera det."
     alreadyInitialized: "VSO-undersystemet är redan initierat. Använd flaggan --force
       för att tvinga fram initieringen."
-    noAppNameOrBin: "--app-name eller --bin måste anges."
-    sameAppOrBin: "--app-name och --bin kan inte båda specificeras."
+    noAppNameOrBin: "--app eller --bin måste anges."
+    sameAppOrBin: "--app och --bin kan inte båda specificeras."
     exportingApp: "Ett fel uppstod vid export av program: %s"
     exportingBin: "Ett fel inträffade vid export av binär: %s"
     unexportingApp: "Ett fel uppstod när programmet skulle avexporteras: %s"
