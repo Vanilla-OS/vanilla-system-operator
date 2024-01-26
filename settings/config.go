@@ -11,6 +11,7 @@ package settings
 
 import (
 	"fmt"
+	"os"
 
 	"github.com/spf13/viper"
 )
@@ -38,7 +39,9 @@ func init() {
 		panic("Config error!")
 	}
 
-	fmt.Println("Config loaded from " + viper.ConfigFileUsed())
+	if os.Getenv("VSO_DEBUG") != "" {
+		fmt.Println("Config loaded from " + viper.ConfigFileUsed())
+	}
 
 	err = viper.Unmarshal(&Cnf)
 
