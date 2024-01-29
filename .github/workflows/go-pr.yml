@@ -31,7 +31,7 @@ jobs:
           - name: Compress
             run: tar -czvf vso.tar.gz vso
           
-          - uses: actions/upload-artifact@v3
+          - uses: actions/upload-artifact@v4
             with:
               name: vso
               path: vso.tar.gz

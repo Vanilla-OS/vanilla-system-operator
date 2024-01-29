@@ -1,4 +1,4 @@
-.TH VSO 1 "2023-08-24" "vso" "User Manual"
+.TH VSO 1 "2024-01-29" "vso" "User Manual"
 .SH NAME
 .RS 4
 vso - The Vanilla System Operator is a package manager, a system updater and a task automator\&.
@@ -39,6 +39,11 @@ Install an application inside the subsystem
 Remove an application from the subsystem
 .PP
 .RE
+\fBsideload\fP
+.RS 4
+pico\&.sideload\&.description
+.PP
+.RE
 \fBupdate\fP
 .RS 4
 Update the subsystem's package repository
@@ -76,7 +81,12 @@ Unexport an application or binary from the subsystem
 .RE
 \fBpico-init\fP
 .RS 4
-Initialize the Pico subsystem, used for package management
+Initialize the VSO subsystem, used for package management
+.PP
+.RE
+\fBandroid\fP
+.RS 4
+Manage the vso waydroid subsystem
 .PP
 .RE
 .RE
@@ -210,6 +220,21 @@ Remove an application from the subsystem
 .RE
 .SS OPTIONS
 .SS GLOBAL OPTIONS
+.SH SUBCOMMAND SIDELOAD
+.RS 4
+pico\&.sideload\&.description
+.RE
+.SS SYNOPSIS
+.RS 4
+\fBsideload\fP [command] [flags] [arguments]
+.RE
+.SS DESCRIPTION
+.RS 4
+.TP 4
+pico\&.sideload\&.description
+.RE
+.SS OPTIONS
+.SS GLOBAL OPTIONS
 .SH SUBCOMMAND UPDATE
 .RS 4
 Update the subsystem's package repository
@@ -284,6 +309,8 @@ Run an application from the subsystem
 Run an application from the subsystem
 .RE
 .SS OPTIONS
+  -n, --no-reset   do not propose to reset the subsystem if something goes wrong
+.PP
 .SS GLOBAL OPTIONS
 .SH SUBCOMMAND EXPORT
 .RS 4
@@ -325,7 +352,7 @@ Unexport an application or binary from the subsystem
 .SS GLOBAL OPTIONS
 .SH SUBCOMMAND PICO-INIT
 .RS 4
-Initialize the Pico subsystem, used for package management
+Initialize the VSO subsystem, used for package management
 .RE
 .SS SYNOPSIS
 .RS 4
@@ -334,10 +361,80 @@ Initialize the Pico subsystem, used for package management
 .SS DESCRIPTION
 .RS 4
 .TP 4
-Initialize the Pico subsystem, used for package management
+Initialize the VSO subsystem, used for package management
 .RE
 .SS OPTIONS
   -f, --force   force the initialization if the subsystem is already initialized
 .PP
 .SS GLOBAL OPTIONS
+.SH SUBCOMMAND ANDROID
+.RS 4
+Manage the vso waydroid subsystem
+.RE
+.SS SYNOPSIS
+.RS 4
+\fBandroid\fP [command] [flags] [arguments]
+.RE
+.SS DESCRIPTION
+.RS 4
+.TP 4
+Manage the vso waydroid subsystem
+.RE
+.SS OPTIONS
+.SS GLOBAL OPTIONS
+.SH CLEAN
+.RS 4
+Cleans the waydroid vso cache
+.PP
+.RE
+.SH DELETE
+.RS 4
+Delete the waydroid subsystem
+.PP
+.RE
+.SH INFO
+.RS 4
+Display information about an application
+.PP
+.RE
+.SH INSTALL
+.RS 4
+Install an application
+.PP
+.RE
+.SH INIT
+.RS 4
+Initialize the waydroid subsystem
+.PP
+.RE
+.SH LAUNCH
+.RS 4
+Launch an installed application
+.PP
+.RE
+.SH LAUNCHER
+.RS 4
+Show the waydroid launcher
+.PP
+.RE
+.SH REMOVE
+.RS 4
+Uninstall an application
+.PP
+.RE
+.SH SEARCH
+.RS 4
+Search for an application
+.PP
+.RE
+.SH SYNC
+.RS 4
+Sync the repositories
+.PP
+.RE
+.SH UPDATE
+.RS 4
+Update installed applications
+.PP
+.RE
 

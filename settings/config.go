@@ -4,7 +4,7 @@ package settings
 	Authors:
 		Mirko Brombin <send@mirko.pm>
 		Vanilla OS Contributors <https://github.com/vanilla-os/>
-	Copyright: 2023
+	Copyright: 2024
 	Description: VSO is a utility which allows you to perform maintenance
 	tasks on your Vanilla OS installation.
 */

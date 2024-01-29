@@ -3,7 +3,7 @@ Upstream-Name: Vanilla OS First Setup
 Source: https://github.com/vanilla-os/
 
 Files: *
-Copyright: 2023 Vanilla-OS contributors
+Copyright: 2024 Vanilla-OS contributors
 License: GPL-3.0
 
 License: GPL-3.0
@@ -21,3 +21,4 @@ License: GPL-3.0
  .
  On Debian systems, the complete text of the GNU General
  Public License version 3 can be found in "/usr/share/common-licenses/GPL-3".
+ 
