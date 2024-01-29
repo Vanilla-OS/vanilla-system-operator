@@ -4,7 +4,7 @@ package core
 	Authors:
 		Mirko Brombin <send@mirko.pm>
 		Vanilla OS Contributors <https://github.com/vanilla-os/>
-	Copyright: 2023
+	Copyright: 2024
 	Description:
 		Apx is a wrapper around multiple package managers to install Packages and run commands inside a managed container.
 */
@@ -64,6 +64,10 @@ func LoadStackFromPath(path string) (*Stack, error) {
 	err = yaml.Unmarshal(data, stack)
 	if err != nil {
 		return nil, err
+	}
+
+	if stack.Name == "" || stack.Base == "" || stack.PkgManager == "" {
+		return nil, errors.New("invalid stack file")
 	}
 
 	return stack, nil
