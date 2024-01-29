@@ -4,9 +4,9 @@ package cmd
 	Authors:
 		Mirko Brombin <send@mirko.pm>
 		Pietro di Caprio <pietro@fabricators.ltd>
-	Copyright: 2023
-	Description: VSO is a utility which allows you to perform maintenance
-	tasks on your Vanilla OS installation.
+	Copyright: 2024
+	Description: The Vanilla System Operator is a package manager,
+	a system updater and a task automator.
 */
 
 import (

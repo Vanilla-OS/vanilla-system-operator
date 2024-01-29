@@ -1,5 +1,14 @@
 package core
 
+/*	License: GPLv3
+	Authors:
+		Mirko Brombin <send@mirko.pm>
+		Pietro di Caprio <pietro@fabricators.ltd>
+	Copyright: 2024
+	Description: The Vanilla System Operator is a package manager,
+	a system updater and a task automator.
+*/
+
 import (
 	"github.com/vanilla-os/apx/v2/core"
 )
