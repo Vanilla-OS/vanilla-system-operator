@@ -240,6 +240,7 @@ waydroid:
       ConfirmInstall: "Install application %s?"
       DownloadingPackage: "Downloading apk from %s"
       PackageSelection: "Pick application to install"
+      InstallSuccess: "Installation successful"
     error:
       NotFound: "Application %s was not found."
       InstallCancelled: "Installation Cancelled"
@@ -291,3 +292,5 @@ waydroid:
     Author: "Author: %s"
     License: "License: %s"
     Repository: "Repository: %s"
+  status:
+    description: "Return the internal status code of the Android subsystem. For development purposes."

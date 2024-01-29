@@ -95,13 +95,13 @@ func PicoUpgrade() error {
 	}
 
 	finalArgs := pkgManager.GenCmd(pkgManager.CmdUpdate, []string{}...)
-	_, err = pico.Exec(false, finalArgs...)
+	_, err = pico.Exec(false, false, finalArgs...)
 	if err != nil {
 		return err
 	}
 
 	finalArgs = pkgManager.GenCmd(pkgManager.CmdUpgrade, []string{}...)
-	_, err = pico.Exec(false, finalArgs...)
+	_, err = pico.Exec(false, false, finalArgs...)
 	if err != nil {
 		return err
 	}

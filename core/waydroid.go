@@ -30,6 +30,31 @@ func GetWay() (*core.SubSystem, error) {
 	return subsystem, nil
 }
 
+func EnsureWayStarted() error {
+	subsystem, err := GetWay()
+	if err != nil {
+		return err
+	}
+
+	finalArgs := []string{
+		"ewaydroid",
+		"status",
+	}
+	subsystem.Exec(true, false, finalArgs...)
+	out, err := subsystem.Exec(true, false, finalArgs...)
+	if err != nil {
+		return err
+	}
+
+	if strings.Contains(out, "STOPPED") {
+		fmt.Println("Waydroid session is stopped, starting...")
+		WayLXCStart()
+		WaySessionStart()
+	}
+
+	return nil
+}
+
 func GetWayDatabase() (*bolt.DB, error) {
 	_, exist := os.Stat(DatabasePath)
 	if os.IsNotExist(exist) {
@@ -148,6 +173,60 @@ func WayInit() error {
 		return err
 	}
 
+	way, err := GetWay()
+	if err != nil {
+		return err
+	}
+
+	finalArgs := []string{"sudo", "ewaydroid", "init"}
+	way.Exec(false, false, finalArgs...)
+	_, err = way.Exec(false, false, finalArgs...)
+	// oh, the above? yeah, it's a hack. I don't know why it doesn't work the
+	// first time, but it doesn't. I guess it's fine for now
+
+	// we need to manage the waydroid session ourselves and since the waydroid
+	// method to stop the session is not reliable, we need to stop the whole
+	// container
+	way.Stop()
+
+	return err
+}
+
+func WayLXCStart() error {
+	WayLXCStop() // ensure even systemd service is stopped
+
+	way, err := GetWay()
+	if err != nil {
+		return err
+	}
+
+	finalArgs := []string{"sudo", "ewaydroid", "container", "start"}
+	_, err = way.Exec(false, true, finalArgs...)
+	return err
+}
+
+func WayLXCStop() error {
+	way, err := GetWay()
+	if err != nil {
+		return err
+	}
+
+	finalArgs := []string{"sudo", "systemctl", "stop", "waydroid-container.service"}
+	way.Exec(false, false, finalArgs...) // we do not really care if it fails
+
+	finalArgs = []string{"sudo", "ewaydroid", "container", "stop"}
+	_, err = way.Exec(false, false, finalArgs...)
+	return err
+}
+
+func WaySessionStart() error {
+	way, err := GetWay()
+	if err != nil {
+		return err
+	}
+
+	finalArgs := []string{"ewaydroid", "session", "start"}
+	_, err = way.Exec(false, true, finalArgs...)
 	return err
 }
 

@@ -269,7 +269,7 @@ func picoRun(cmd *cobra.Command, args []string) error {
 		picoRun(cmd, args)
 	}
 
-	_, err = pico.Exec(false, args...)
+	_, err = pico.Exec(false, false, args...)
 	if err != nil {
 		if noReset {
 			return err
@@ -408,7 +408,7 @@ func runPicoCmd(command string, cmd *cobra.Command, args []string) error {
 		args = append([]string{"--fix-broken"}, args...)
 	}
 	finalArgs := pkgManager.GenCmd(realCommand, args...)
-	_, err = pico.Exec(false, finalArgs...)
+	_, err = pico.Exec(false, false, finalArgs...)
 	if err != nil {
 		return err
 	}

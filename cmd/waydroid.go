@@ -53,6 +53,13 @@ func NewWayCommand() []*cmdr.Command {
 		wayInfo,
 	)
 
+	statusCmd := cmdr.NewCommand(
+		"status",
+		vso.Trans("waydroid.status.description"),
+		vso.Trans("waydroid.status.description"),
+		wayStatus,
+	)
+
 	installCmd := cmdr.NewCommand(
 		"install",
 		vso.Trans("waydroid.install.description"),
@@ -137,6 +144,7 @@ func NewWayCommand() []*cmdr.Command {
 	cmd.AddCommand(cleanCmd)
 	cmd.AddCommand(deleteCmd)
 	cmd.AddCommand(infoCmd)
+	cmd.AddCommand(statusCmd)
 	cmd.AddCommand(installCmd)
 	cmd.AddCommand(initCmd)
 	cmd.AddCommand(launchCmd)
@@ -192,9 +200,12 @@ func wayInfo(cmd *cobra.Command, args []string) error {
 		}
 		selection := core.PickOption(vso.Trans("waydroid.info.info.PackageSelection"), options, 1)
 		app = matches[selection]
-	} else {
+	} else if len(matches) == 0 {
 		app = matches[0]
+	} else {
+		return nil
 	}
+
 	fmt.Printf(vso.Trans("waydroid.info.PackageName"), app.Name)
 	fmt.Println()
 	fmt.Printf(vso.Trans("waydroid.info.InternalName"), app.RDNSName)
@@ -207,6 +218,19 @@ func wayInfo(cmd *cobra.Command, args []string) error {
 	fmt.Println()
 	fmt.Printf(vso.Trans("waydroid.info.Repository"), app.Repository.Name)
 	fmt.Println()
+	return nil
+}
+
+func wayStatus(cmd *cobra.Command, args []string) error {
+	_, err := core.GetWay()
+	if err != nil {
+		fmt.Println("NOT_INITIALIZED")
+		os.Exit(1)
+		return err
+	}
+
+	fmt.Println("INITIALIZED")
+	os.Exit(0)
 	return nil
 }
 
@@ -223,19 +247,6 @@ func wayInit(cmd *cobra.Command, args []string) error {
 	}
 
 	err := core.WayInit()
-	if err != nil {
-		return err
-	}
-
-	way, err := core.GetWay()
-	if err != nil {
-		return err
-	}
-
-	// this is the only way I found to start the waydroid process without
-	// errors, the first time it always fails, then it works. Do not ask me why.
-	way.Exec(false, "ewaydroid", "--version")
-	_, err = way.Exec(false, "ewaydroid", "--version")
 	if err != nil {
 		return err
 	}
@@ -340,10 +351,7 @@ func wayInstall(cmd *cobra.Command, args []string) error {
 
 	way, err := core.GetWay()
 	if err != nil {
-		err := core.WayInit()
-		if err != nil {
-			return err
-		}
+		return err
 	}
 
 	way, err = core.GetWay()
@@ -351,10 +359,7 @@ func wayInstall(cmd *cobra.Command, args []string) error {
 		return err
 	}
 
-	// this is the only way I found to start the waydroid process without
-	// errors, the first time it always fails, then it works. Do not ask me why.
-	way.Exec(false, "ewaydroid", "--version")
-	_, err = way.Exec(false, "ewaydroid", "--version")
+	err = core.EnsureWayStarted()
 	if err != nil {
 		return err
 	}
@@ -365,43 +370,55 @@ func wayInstall(cmd *cobra.Command, args []string) error {
 	}
 
 	finalArgs := []string{"ewaydroid", "app", "install", apk}
-	_, err = way.Exec(false, finalArgs...)
+	_, err = way.Exec(false, false, finalArgs...)
 	if err != nil {
 		return err
 	}
+
+	cmdr.Info.Println(vso.Trans("waydroid.install.info.InstallSuccess"))
+
 	return nil
 }
 
 func wayLaunch(cmd *cobra.Command, args []string) error {
 	way, err := core.GetWay()
 	if err != nil {
-		err = core.WayInit()
-		if err != nil {
-			return err
-		}
+		return err
+	}
+
+	err = core.EnsureWayStarted()
+	if err != nil {
+		return err
 	}
 
 	finalArgs := []string{"ewaydroid", "app", "launch", args[0]}
-	_, err = way.Exec(false, finalArgs...)
+	_, err = way.Exec(false, false, finalArgs...)
 	return err
 }
 
 func wayLauncher(cmd *cobra.Command, args []string) error {
 	way, err := core.GetWay()
 	if err != nil {
-		err = core.WayInit()
-		if err != nil {
-			return err
-		}
+		return err
+	}
+
+	err = core.EnsureWayStarted()
+	if err != nil {
+		return err
 	}
 
 	finalArgs := []string{"ewaydroid", "show-full-ui"}
-	_, err = way.Exec(false, finalArgs...)
+	_, err = way.Exec(false, false, finalArgs...)
 	return err
 }
 
 func wayRemove(cmd *cobra.Command, args []string) error {
 	way, err := core.GetWay()
+	if err != nil {
+		return err
+	}
+
+	err = core.EnsureWayStarted()
 	if err != nil {
 		return err
 	}
@@ -462,7 +479,7 @@ func wayRemove(cmd *cobra.Command, args []string) error {
 	if err != nil {
 		return err
 	}
-	_, err = way.Exec(false, finalArgs...)
+	_, err = way.Exec(false, false, finalArgs...)
 	return err
 }
 
@@ -491,6 +508,7 @@ func waySearch(cmd *cobra.Command, args []string) error {
 func waySync(cmd *cobra.Command, args []string) error {
 	err := core.GetRepos()
 	if err != nil {
+		cmdr.Error.Println(vso.Trans("waydroid.error.noRepos"))
 		return err
 	}
 	err = core.SyncIndex(true, vso.Trans("waydroid.downloadIndex"))
@@ -546,6 +564,12 @@ func wayUpdate(cmd *cobra.Command, args []string) error {
 	if err != nil {
 		return err
 	}
+
+	err = core.EnsureWayStarted()
+	if err != nil {
+		return err
+	}
+
 	var PackageInCache *core.PackageInCache
 	for _, update := range updates {
 		apk, _, err := wayInstallRemote(update.RDNSName, true, true)
@@ -571,7 +595,7 @@ func wayUpdate(cmd *cobra.Command, args []string) error {
 			cmdr.Error.Printfln(vso.Trans("waydroid.update.error.FailUpdatePackageDatabase"), fmt.Sprintf("%s (%s)", update.Name, update.RDNSName))
 			continue
 		}
-		_, err = way.Exec(false, finalArgs...)
+		_, err = way.Exec(false, false, finalArgs...)
 		if err != nil {
 			cmdr.Error.Printfln(vso.Trans("waydroid.update.error.FailUpdatePackageInstall"), fmt.Sprintf("%s (%s)", update.Name, update.RDNSName))
 			continue
