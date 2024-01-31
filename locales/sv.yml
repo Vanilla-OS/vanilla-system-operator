@@ -286,8 +286,6 @@ waydroid:
     options:
       force:
         description: Forcera initieringen
-      noconfirm:
-        description: Be inte om bekräftelse under installationen
     description: Initiera waydroid-undersystemet
     info:
       initialized: Waydroid undersystemet har initierats.

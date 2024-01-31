@@ -275,8 +275,6 @@ waydroid:
     options:
       force:
         description: 强制初始化
-      noconfirm:
-        description: 安装过程中不再要求用户确认
     description: 初始化 Waydroid 子系统
     info:
       initialized: Waydroid 子系统已初始化。

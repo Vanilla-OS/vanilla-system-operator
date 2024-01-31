@@ -259,8 +259,6 @@ waydroid:
     options:
       force:
         description: "Force the initialization"
-      noconfirm:
-        description: "Do not ask for confirmation during installation"
     error:
       alreadyInitialized: The waydroid subsystem is already initialized. Use the --force
         flag to force the initialization.

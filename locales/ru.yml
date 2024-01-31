@@ -300,8 +300,6 @@ waydroid:
     options:
       force:
         description: Принудительная инициализация
-      noconfirm:
-        description: Не запрашивать подтверждения при установке
     description: Инициализировать подсистему waydroid
     info:
       initialized: Подсистема waydroid была инициализирована.

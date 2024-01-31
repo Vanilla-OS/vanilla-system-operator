@@ -289,8 +289,6 @@ waydroid:
     options:
       force:
         description: Forçar a inicialização
-      noconfirm:
-        description: Não pergunte por confirmação durante a instalação
     description: Inicializar o subsistema waydroid
     error:
       alreadyInitialized: The waydroid subsystem is already initialized. Use the --force
