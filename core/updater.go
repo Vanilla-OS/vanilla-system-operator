@@ -242,10 +242,10 @@ func TryUpdate(force bool) error {
 		return fmt.Errorf("failed to update system: %s", err)
 	}
 
-	err = PicoUpgrade()
-	if err != nil {
-		return fmt.Errorf("failed to update VSO Shell: %s", err)
-	}
+	// FIXME: the pico upgrade could fail if APT is locked by another process
+	// or it simply fails, but since we are also upgrading the system, we
+	// cannot fail the whole operation, so just ignore the error for now
+	PicoUpgrade()
 
 	SendNotification("Update", "System updated successfully, restart to apply changes.")
 	return nil
