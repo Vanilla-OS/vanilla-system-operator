@@ -210,7 +210,7 @@ tasks:
     description: "Rotate tasks"
     options:
       privateEvent:
-       description: "specify private event to rotate tasks for boot, shutdown, login, logout"
+       description: "specify the private event to rotate tasks for boot, shutdown, login, and logout"
 
 waydroid:
   description: "Manage the vso waydroid subsystem"
@@ -235,11 +235,13 @@ waydroid:
     options:
       local:
         description: "Install a local apk"
+      noconfirm:
+        description: "Do not ask for confirmation during installation"
     info:
       PackageInCache: "Application found in cache, not downloading again."
       ConfirmInstall: "Install application %s?"
       DownloadingPackage: "Downloading apk from %s"
-      PackageSelection: "Pick application to install"
+      PackageSelection: "Pick an application to install"
       InstallSuccess: "Installation successful"
     error:
       NotFound: "Application %s was not found."
@@ -249,8 +251,6 @@ waydroid:
     options:
       force:
         description: "Force the initialization"
-      noconfirm:
-        description: "Do not ask for confirmation during installation"
     info:
       initialized: "The waydroid subsystem has been initialized."
     error:
@@ -263,7 +263,7 @@ waydroid:
     description: "Uninstall an application"
     info:
       RemovePackage: "Removing package %s"
-      PackageSelection: "Pick application to remove"
+      PackageSelection: "Pick an application to remove"
       ConfirmRemove: "Remove application %s?"
     error:
       NoMatches: "Application %s not found"
@@ -279,13 +279,13 @@ waydroid:
       FailGetVersion: "Failed to get version code for %s"
       FailUpdatePackageDownload: "Failed to download APK for %s"
       FailUpdatePackageDatabase: "Failed to update database entry for %s"
-      FailUpdatePackageInstall: "Failed to install update for %s"
+      FailUpdatePackageInstall: "Failed to install the update for %s"
     info:
       NoUpdates: "Nothing to update"
   info:
     description: "Display information about an application"
     info:
-      PackageSelection: "Select application to display information from"
+      PackageSelection: "Select an application to display information from"
     PackageName: "Name: %s"
     InternalName: "Internal name: %s"
     Summary: "Summary: %s"
