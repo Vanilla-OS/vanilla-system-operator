@@ -26,6 +26,7 @@ config:
     error:
       noKey: "Aucune clé n'est spécifiée."
       noValue: "Aucune valeur n'est spécifiée."
+      failed: 'Failed to set configuration: %s'
     options:
       key: "clé de la configuration à définir"
       value: "valeur de la configuration à définir"
@@ -252,6 +253,7 @@ waydroid:
       PackageSelection: Choisir l'applications à installer
       PackageInCache: Application trouvé dans le cache, ne se télécharge pas à nouveau.
       ConfirmInstall: Installer l'application %s ?
+      InstallSuccess: Installation successful
     error:
       InstallCancelled: Installation annuler
       NotFound: L'application %s n'a pas été trouver.
@@ -326,3 +328,6 @@ waydroid:
     description: Afficher le launcher waydroid
   launch:
     description: Lancer une application installé
+  status:
+    description: Return the internal status code of the Android subsystem. For development
+      purposes.

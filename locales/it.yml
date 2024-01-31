@@ -26,6 +26,7 @@ config:
     error:
       noKey: "Nessuna chiave specificata."
       noValue: "Nessuno valore specificato."
+      failed: 'Failed to set configuration: %s'
     options:
       key: "chiave della configurazione da impostare"
       value: "valore della configurazione da impostare"
@@ -263,6 +264,7 @@ waydroid:
       ConfirmInstall: "Installare l'applicazione %s?"
       DownloadingPackage: "Scaricare l'apk da %s"
       PackageSelection: "Scegli l'applicazione da installare"
+      InstallSuccess: Installation successful
     error:
       NotFound: "L'applicazione %s non è stata trovata."
       InstallCancelled: "Installazione Annullata"
@@ -316,3 +318,6 @@ waydroid:
     Author: "Autore: %s"
     License: "Licenza: %s"
     Repository: "Repository: %s"
+  status:
+    description: Return the internal status code of the Android subsystem. For development
+      purposes.

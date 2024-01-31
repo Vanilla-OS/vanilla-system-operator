@@ -25,6 +25,7 @@ config:
     error:
       noKey: "没有指定键。"
       noValue: "没有指定值。"
+      failed: 'Failed to set configuration: %s'
     options:
       key: "要设置的配置的键"
       value: "要设置的配置的值"
@@ -219,6 +220,7 @@ waydroid:
       PackageSelection: 选择要安装的应用程序
       PackageInCache: 已在缓存中找到应用程序，不再重复下载。
       ConfirmInstall: 安装应用程序 %s 吗？
+      InstallSuccess: Installation successful
     error:
       InstallCancelled: 已取消安装
       NotFound: 找不到应用程序 %s。
@@ -289,3 +291,6 @@ waydroid:
     description: 显示 Waydroid 启动器
   launch:
     description: 启动已安装的应用程序
+  status:
+    description: Return the internal status code of the Android subsystem. For development
+      purposes.
