@@ -237,6 +237,8 @@ waydroid:
     options:
       local:
         description: Install a local apk
+      noconfirm:
+        description: Do not ask for confirmation during installation
   info:
     Author: 'Author: %s'
     PackageName: 'Name: %s'
@@ -285,8 +287,6 @@ waydroid:
     options:
       force:
         description: Force the initialization
-      noconfirm:
-        description: Do not ask for confirmation during installation
     description: Initialize the waydroid subsystem
     error:
       alreadyInitialized: The waydroid subsystem is already initialized. Use the --force

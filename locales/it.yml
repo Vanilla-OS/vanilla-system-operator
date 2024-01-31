@@ -259,6 +259,8 @@ waydroid:
     options:
       local:
         description: "Installa un apk locale"
+      noconfirm:
+        description: Do not ask for confirmation during installation
     info:
       PackageInCache: "Un applicazione trovata nella cache, non viene scaricata nuovamente."
       ConfirmInstall: "Installare l'applicazione %s?"
@@ -273,8 +275,6 @@ waydroid:
     options:
       force:
         description: "Forza l'inizializzazione"
-      noconfirm:
-        description: "Non chiedere conferma durante l'installazione"
     error:
       alreadyInitialized: Il sottosistema di waydroid è già inizializzato. Usa il
         flag --force per forzare l'inizializzazione.

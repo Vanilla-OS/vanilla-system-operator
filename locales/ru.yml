@@ -252,6 +252,8 @@ waydroid:
     options:
       local:
         description: Установить локальный apk
+      noconfirm:
+        description: Do not ask for confirmation during installation
   info:
     Author: 'Автор: %s'
     PackageName: 'Имя: %s'
@@ -300,8 +302,6 @@ waydroid:
     options:
       force:
         description: Принудительная инициализация
-      noconfirm:
-        description: Не запрашивать подтверждения при установке
     description: Инициализировать подсистему waydroid
     info:
       initialized: Подсистема waydroid была инициализирована.

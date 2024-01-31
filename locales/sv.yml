@@ -237,6 +237,8 @@ waydroid:
     options:
       local:
         description: Installera en lokal apk
+      noconfirm:
+        description: Do not ask for confirmation during installation
   info:
     Author: 'Författare: %s'
     PackageName: 'Namn: %s'
@@ -286,8 +288,6 @@ waydroid:
     options:
       force:
         description: Forcera initieringen
-      noconfirm:
-        description: Be inte om bekräftelse under installationen
     description: Initiera waydroid-undersystemet
     info:
       initialized: Waydroid undersystemet har initierats.

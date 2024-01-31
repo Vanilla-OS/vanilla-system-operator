@@ -228,6 +228,8 @@ waydroid:
     options:
       local:
         description: 安裝本機 apk
+      noconfirm:
+        description: Do not ask for confirmation during installation
   info:
     Author: '作者：%s'
     PackageName: '名稱：%s'
@@ -275,8 +277,6 @@ waydroid:
     options:
       force:
         description: 強制初始化
-      noconfirm:
-        description: 安裝過程中不再要求使用者確認
     description: 初始化 Waydroid 子系統
     error:
       alreadyInitialized: Waydroid 子系統已經初始化。請使用 --force 以強制初始化。
