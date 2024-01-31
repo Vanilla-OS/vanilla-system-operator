@@ -240,6 +240,8 @@ waydroid:
     options:
       local:
         description: Instalar um apk local
+      noconfirm:
+        description: Do not ask for confirmation during installation
   info:
     Author: 'Autor: %s'
     PackageName: 'Nome: %s'

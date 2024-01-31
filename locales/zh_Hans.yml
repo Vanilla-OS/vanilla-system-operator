@@ -228,6 +228,8 @@ waydroid:
     options:
       local:
         description: 安装本地 apk
+      noconfirm:
+        description: Do not ask for confirmation during installation
   info:
     Author: '作者：%s'
     PackageName: '名称：%s'

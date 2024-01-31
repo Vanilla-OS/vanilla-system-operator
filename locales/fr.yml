@@ -261,6 +261,8 @@ waydroid:
     options:
       local:
         description: Installer un apk localement
+      noconfirm:
+        description: Do not ask for confirmation during installation
   info:
     Author: 'Auteur : %s'
     PackageName: 'Nom : %s'

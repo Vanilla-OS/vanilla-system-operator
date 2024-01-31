@@ -248,6 +248,8 @@ waydroid:
     options:
       local:
         description: "Install a local apk"
+      noconfirm:
+        description: Do not ask for confirmation during installation
     info:
       PackageInCache: "Application found in cache, not downloading again."
       ConfirmInstall: "Install application %s?"
