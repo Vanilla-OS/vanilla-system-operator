@@ -25,6 +25,7 @@ config:
     error:
       noKey: "沒有指定鍵。"
       noValue: "沒有指定值。"
+      failed: 'Failed to set configuration: %s'
     options:
       key: "要設定的組態的鍵"
       value: "要設定的組態的值"
@@ -219,6 +220,7 @@ waydroid:
       PackageSelection: 選取要安裝的應用程式
       PackageInCache: 已在快取中找到應用程式，不再重複下載。
       ConfirmInstall: 安裝應用程式 %s？
+      InstallSuccess: Installation successful
     error:
       InstallCancelled: 已取消安裝
       NotFound: 找不到應用程式 %s。
@@ -289,3 +291,6 @@ waydroid:
     description: 顯示 Waydroid 啟動器
   launch:
     description: 啟動已安裝的應用程式
+  status:
+    description: Return the internal status code of the Android subsystem. For development
+      purposes.

@@ -26,6 +26,7 @@ config:
     error:
       noKey: "Нет выбранного ключа."
       noValue: "Значение не указано."
+      failed: 'Failed to set configuration: %s'
     options:
       key: "ключ конфигурации для установки"
       value: "значение конфигурации для установки"
@@ -243,6 +244,7 @@ waydroid:
       PackageSelection: Выберите приложение для установки
       PackageInCache: Приложение найдено в кеше, повторная загрузка не производится.
       ConfirmInstall: Установить приложение %s?
+      InstallSuccess: Installation successful
     error:
       InstallCancelled: Установка отменена
       NotFound: Приложение %s не найдено.
@@ -315,3 +317,6 @@ waydroid:
     description: Показать панель запуска waydroid
   launch:
     description: Запустить установленное приложение
+  status:
+    description: Return the internal status code of the Android subsystem. For development
+      purposes.

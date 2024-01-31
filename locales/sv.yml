@@ -26,6 +26,7 @@ config:
     error:
       noKey: "Ingen nyckel specifiecerad."
       noValue: "Inget värde specificerat."
+      failed: 'Failed to set configuration: %s'
     options:
       key: "nyckeln för den konfiguration som ska ställas in"
       value: "värdet för den konfiguration som ska ställas in"
@@ -228,6 +229,7 @@ waydroid:
       PackageSelection: Välj den applikation som ska installeras
       PackageInCache: Applikationen hittades i cachen, laddas inte ned igen.
       ConfirmInstall: Installera applikationen %s?
+      InstallSuccess: Installation successful
     error:
       InstallCancelled: Installationen avbruten
       NotFound: Applikationen %s hittades inte.
@@ -301,3 +303,6 @@ waydroid:
     description: Visa waydroid launcher
   launch:
     description: Starta en installerad applikation
+  status:
+    description: Return the internal status code of the Android subsystem. For development
+      purposes.
