@@ -14,6 +14,7 @@ import (
 	"fmt"
 	"os"
 	"strings"
+	"time"
 
 	"github.com/vanilla-os/apx/v2/core"
 	bolt "go.etcd.io/bbolt"
@@ -59,6 +60,22 @@ func EnsureWayStarted() error {
 		fmt.Println("Waydroid session is stopped, starting...")
 		WayLXCStart()
 		WaySessionStart()
+
+		// we have to wait (max 15s) for the status command to return 0 STOPPED
+		// otherwise we might get a false positive
+		fmt.Println("Waiting for waydroid session to start...")
+		for i := 0; i < 15; i++ {
+			time.Sleep(1 * time.Second)
+			out, err = subsystem.Exec(true, false, finalArgs...)
+			if err != nil {
+				return err
+			}
+			if strings.Contains(out, "STOPPED") {
+				continue
+			}
+			fmt.Println("Waydroid session came up!")
+			break
+		}
 	}
 
 	return nil
@@ -197,6 +214,15 @@ func WayInit() error {
 	// method to stop the session is not reliable, we need to stop the whole
 	// container
 	way.Stop()
+
+	err = EnsureWayStarted()
+	if err != nil {
+		return err
+	}
+
+	// we want to enable multi-window support
+	finalArgs = []string{"ewaydroid", "prop", "set", "persist.waydroid.multi_windows", "true"}
+	_, err = way.Exec(false, false, finalArgs...)
 
 	return err
 }
