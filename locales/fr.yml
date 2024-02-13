@@ -256,7 +256,7 @@ waydroid:
       InstallSuccess: Installation réussie
     error:
       InstallCancelled: Installation annuler
-      NotFound: L'application %s n'a pas été trouver.
+      NotFound: L'application %s n'a pas été trouvée.
     description: Installer une application
     options:
       local:
