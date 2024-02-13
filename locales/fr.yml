@@ -1,6 +1,6 @@
 vso:
-  description: "Le centre de contrôle de Vanilla OS est un gestionnaire de paquets,
-    un outil de mise à jour du système et un automate de tâches."
+  description: "Le centre de contrôle de Vanilla OS est un gestionnaire de paquets
+    et de tâches ainsi qu'un outil de mise à jour du système."
   errors:
     unknownCommand: "Commande inconnue : %s"
     invalidInput: "Entrée invalide."
