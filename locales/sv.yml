@@ -26,7 +26,7 @@ config:
     error:
       noKey: "Ingen nyckel specifiecerad."
       noValue: "Inget värde specificerat."
-      failed: 'Failed to set configuration: %s'
+      failed: 'Misslyckades med att ställa in konfiguration: %s'
     options:
       key: "nyckeln för den konfiguration som ska ställas in"
       value: "värdet för den konfiguration som ska ställas in"
@@ -218,18 +218,18 @@ tasks:
     description: "Rotera uppgifter"
     options:
       privateEvent:
-        description: "specificera privat händelse för att rotera uppgifter för start,
-          avstängning, inloggning, utloggning"
+        description: "specificera den privata händelse för att rotera uppgifter för
+          start, avstängning, inloggning, och utloggning"
 waydroid:
   error:
     noArguments: Inga argument har angetts.
   install:
     info:
       DownloadingPackage: Laddar ner apk från %s
-      PackageSelection: Välj den applikation som ska installeras
+      PackageSelection: Välj en applikation som ska installeras
       PackageInCache: Applikationen hittades i cachen, laddas inte ned igen.
       ConfirmInstall: Installera applikationen %s?
-      InstallSuccess: Installation successful
+      InstallSuccess: Installationen lyckades
     error:
       InstallCancelled: Installationen avbruten
       NotFound: Applikationen %s hittades inte.
@@ -238,7 +238,7 @@ waydroid:
       local:
         description: Installera en lokal apk
       noconfirm:
-        description: Do not ask for confirmation during installation
+        description: Be inte om bekräftelse under installationen
   info:
     Author: 'Författare: %s'
     PackageName: 'Namn: %s'
@@ -248,7 +248,7 @@ waydroid:
     Repository: 'Arkiv: %s'
     description: Visa information om en applikation
     info:
-      PackageSelection: Välj applikation att visa information från
+      PackageSelection: Välj en applikation att visa information från
   update:
     info:
       NoUpdates: Inget att uppdatera
@@ -256,7 +256,8 @@ waydroid:
       FailUpdatePackageDownload: Misslyckades med att ladda ner APK för %s
       FailUpdatePackageDatabase: Misslyckades med att uppdatera databasposten för
         %s
-      FailUpdatePackageInstall: Misslyckades med att installera uppdatering för %s
+      FailUpdatePackageInstall: Misslyckades med att installera uppdateringen för
+        %s
       FailGetVersion: Misslyckades med att hämta versionskoden för %s
     finished: Uppdatering av applikationer har slutförts
     description: Uppdatera installerade applikationer
@@ -304,5 +305,4 @@ waydroid:
   launch:
     description: Starta en installerad applikation
   status:
-    description: Return the internal status code of the Android subsystem. For development
-      purposes.
+    description: Returnera den interna statuskoden för Android-delsystemet. För utvecklingsändamål.
