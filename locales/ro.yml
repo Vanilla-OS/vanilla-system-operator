@@ -26,7 +26,7 @@ config:
     error:
       noKey: "Nicio cheie specificată."
       noValue: "Nu este specificată nicio valoare."
-      failed: 'Failed to set configuration: %s'
+      failed: 'Setarea configurației eșuată: %s'
     options:
       key: "tasta configurației de setat"
       value: "valoarea configurației de setat"
@@ -35,11 +35,11 @@ config:
     description: "Afișați configurația sistemului"
 
 pico:
-  description: "Gestionați subsistemul Pico"
+  description: "Gestionează subsistemul VSO"
   error:
-    notInitialized: "Subsistemul Pico nu este inițializat. Rulați `vso pico-init`
+    notInitialized: "Subsistemul VSO nu este inițializat. Rulează `vso pico-init`
       pentru a-l inițializa."
-    alreadyInitialized: "Subsistemul Pico este deja inițializat. Utilizați indicatorul
+    alreadyInitialized: "Subsistemul VSO este deja inițializat. Utilizați indicatorul
       --force pentru a forța inițializarea."
     noAppNameOrBin: "Trebuie specificat --app sau --bin."
     sameAppOrBin: "--app și --bin nu pot fi ambele specificate."
@@ -47,21 +47,21 @@ pico:
     exportingBin: "A apărut o eroare la exportul binarului: %s"
     unexportingApp: "A apărut o eroare la dezexportarea aplicației: %s"
     unexportingBin: "A apărut o eroare la dezexportarea binarului: %s"
-    unknownCommand: 'Unknown command: %s'
-    shellReset: It is impossible to reach the VSO shell. Do you want to reset it?
-      (This will remove all your software installed in the subsystem) [y/N]
+    unknownCommand: 'Comandă necunoscută: %s'
+    shellReset: Este imposibil să se ajungă la VSO shell. Dorești să îl resetezi?
+      (Acest lucru va elimina toate programele instalate în subsistem) [y/N]
   info:
-    initialized: "Subsistemul Pico a fost inițializat."
+    initialized: "Subsistemul VSO a fost inițializat."
     exported: "Exportat %s\n"
     unexported: "Exportat %s\n"
     exportedApps: "Au exportat %d aplicații"
     unexportedApps: "%d aplicații neexportate"
-    shellInit: Looks like your shell is not initialized yet. Do you want to initialize
-      it now? (Highly recommended) [y/N]
-    fallbackShell: Fallback to the host shell? This could lead to unexpected behavior.
-      [y/N]
-    deleting: Deleting the VSO subsystem...
-    initializing: Initializing the VSO subsystem...
+    shellInit: Se pare că shell-ul tău nu a fost inițializat încă. Dorești să îl inițializezi
+      acum? (Foarte recomandat) [y/N]
+    fallbackShell: Revenire la shell gazdă? Acest lucru ar putea duce la comportamente
+      neașteptate. [y/N]
+    deleting: Stergerea subsistemului VSO...
+    initializing: Inițializarea subsistemului VSO...
   export:
     description: "Exportați o aplicație sau un fișier binar din subsistem"
     options:
@@ -81,7 +81,7 @@ pico:
       binOutput:
         description: "calea ieșirii binare (implicit: ~/.local/bin/)"
   init:
-    description: "Inițializarea subsistemului Pico, utilizat pentru gestionarea pachetelor"
+    description: "Inițializarea subsistemului VSO, utilizat pentru gestionarea pachetelor"
     options:
       force:
         description: "forțează inițializarea în cazul în care subsistemul este deja
@@ -94,11 +94,11 @@ pico:
     description: "Executați o aplicație din subsistem"
     options:
       noReset:
-        description: do not propose to reset the subsystem if something goes wrong
+        description: nu propune resetarea subsitemului dacă se întâmplă ceva greșit
   search:
     description: "Căutați o aplicație care să fie instalată în cadrul subsistemului"
   shell:
-    description: "Intrați în mediul subsitemului"
+    description: "Intrați în mediul subsistemului"
   update:
     description: "Actualizați depozitul de pachete al subsistemului"
   upgrade:
@@ -109,200 +109,205 @@ sysUpgrade:
   check:
     asExitCode: "verifică dacă există o actualizare, dar nu imprimă nimic. Returnează
       codul de ieșire 0 dacă nu este disponibilă nicio actualizare și 1 în caz contrar."
-    description: "Check for system updates"
+    description: "Verifică după actualizări de sistem"
     error:
-      asExitCodeAndJson: "An error occured when checking for updates. See the JSON
-        output for more details."
+      asExitCodeAndJson: "S-a întâmplat o eroare în timpul verificării după actualizări.
+        Pentru mai multe detalii vezi rezultatul JSON."
     info:
-      checking: "Checking for updates..."
-      noUpdates: "No updates available."
+      checking: "Verificare după actualizări..."
+      noUpdates: "Nu există actualizări disponibile."
     json:
-      description: output the result in JSON format
+      description: exportă rezultatul în format JSON
   sysUpgrade:
-    description: "Upgrade the system"
+    description: "Efectuează upgrade la sistem"
     error:
-      updating: "An error occured when updating the system."
+      updating: "S-a întâmplat o eroare în timpul actualizării sistemului."
     info:
-      updating: "Updating the system..."
-    now: "Trigger a system upgrade now"
+      updating: "Actualizarea sistemului..."
+    now: "Declanșează un upgrade al sistemului acum"
 
 tasks:
-  description: "Create and manage tasks"
+  description: "Crează și gestionează sarcini"
   stacks:
     new:
       error:
-        emptyCommand: "The command cannot be empty."
-        emptyDescription: "The description cannot be empty."
-        emptyName: "The name cannot be empty."
-        noCommand: "No command specified."
-        noDescription: "No description specified."
-        noName: "No name specified."
+        emptyCommand: "Comanda nu poate fi goală."
+        emptyDescription: "Descrierea nu poate fi goală."
+        emptyName: "Numele nu poate fi gol."
+        noCommand: "Nicio comandă specificată."
+        noDescription: "Nicio descriere specificată."
+        noName: "Niciun nume specificat."
       info:
-        askCommand: "Command: "
-        askDescription: "Description: "
-        askName: "Name: "
-        taskCreated: "Task has been created successfully."
+        askCommand: "Comandă: "
+        askDescription: "Descriere: "
+        askName: "Nume: "
+        taskCreated: "Sarcină creată cu succes."
   list:
-    description: "List all tasks"
-    noTasks: "No tasks found."
+    description: "Listează toate sarcinile"
+    noTasks: "Nu a fost găsită nicio sarcină."
     info:
-      foundTasks: "Found %d tasks."
+      foundTasks: "%d sarcini găsite."
     options:
       json:
-        description: "output the tasks in JSON format"
+        description: "exportă sarcinile în format JSON"
   new:
-    description: "Create a new task"
+    description: "Crează o nouă sarcină"
     options:
       assumeYes:
-        description: "assume yes for all prompts"
+        description: "aplică da tuturor dialogurilor"
       at:
-        description: "schedule the task to execute at a specific time (hh:mm)"
+        description: "programează execuția unei sarcini la o oră anume (hh:mm)"
       command:
-        description: "specify the command to execute"
+        description: "specifică comanda care să se execute"
       description:
-        description: "specify the task's description"
+        description: "specifică descrierea sarcinii"
       every:
-        description: "schedule the task to execute every X time (minutes, hours, days)"
+        description: "programează executarea sarcinii la fiecare X (minute, ore, zile)"
       name:
-        description: "specify the task's name"
+        description: "specifică numele sarcinii"
       needConfirm:
-        description: "ask for confirmation before executing the task"
+        description: "cere confirmare înainte de execuția sarcinii"
       onBattery:
-        description: "execute the task only when the system is on battery"
+        description: "execută sarcina doar când sistemul este pe baterie"
       onCharge:
-        description: "execute the task only when the system is charging"
+        description: "execută sarcina doar când sistemul se încarcă de la priză"
       onConditionCommand:
-        description: "execute the task on condition command"
+        description: "execută sarcina când comanda este condițională"
       onCpuTemp:
-        description: "execute the task when CPU temperature is higher than 60°C"
+        description: "execută sarcina când temperatura procesorului este mai mare
+          de 60°C"
       onCpuUsage:
-        description: "execute the task when CPU usage is higher than X%"
+        description: "execută sarcina când utilizarea procesorului este mai mare de
+          X%"
       onDeviceConnect:
-        description: "execute the task when a device is connected"
+        description: "execută sarcina când se conectează un dispozitiv"
       onDeviceDisconnect:
-        description: "execute the task when a device is disconnected"
+        description: "execută sarcina când se deconectează un dispozitiv"
       onDisconnect:
-        description: "execute the task when the system is disconnected from the network"
+        description: "execută o sarcină când sistemul e deconectat de la rețea"
       onFullBattery:
-        description: "execute the task when the system is fully charged"
+        description: "execută o sarcină când sistemul e complet încărcat cu curent"
       onHighCpuUsage:
-        description: "execute the task when CPU usage is higher than 50%"
+        description: "execută o sarcină când utilizarea procesorului e mai mare de
+          50%"
       onHighInternetUsage:
-        description: "execute the task when internet usage is higher than 500Kb/s"
+        description: "execută o sarcină când utilizarea internetului e mai mare de
+          500Kb/s"
       onHighMemoryUsage:
-        description: "execute the task when memory usage is higher than 50%"
+        description: "execută o sarcină când utilizarea memoriei e mai mare de 50%"
       onInternetUsage:
-        description: "execute the task when internet usage is higher than XKb/s"
+        description: "execută o sarcină când utilizarea internetului e mai mare de
+          XKb/s"
       onLowBattery:
-        description: "execute the task when the system is low on battery (20%)"
+        description: "execută o sarcină când sistemul are baterie puțină (20%)"
       onMemoryUsage:
-        description: "execute the task when memory usage is higher than X%"
+        description: "execută o sarcină când utilizarea memoriei e mai mare de X%"
       onNetwork:
-        description: "execute the task when the system is connected to the network"
+        description: "execută o sarcină când sistemul e conectat la rețea"
       onProcess:
-        description: "execute the task when a process starts"
+        description: "execută o sarcină când se pornește un proces"
   rm:
-    description: "Remove a task"
+    description: "Elimină o sarcină"
     error:
-      cannotDelete: "Cannot delete task: %s"
-      noName: "No task name specified."
-      notFound: "Task not found."
+      cannotDelete: "Nu se poate șterge sarcina: %s"
+      noName: "Numele sarcinii nu e specificat."
+      notFound: "Sarcina nu a fost găsită."
     info:
-      askConfirmation: "Are you sure you want to delete the task %s? [y/N]"
-      taskDeleted: "Task has been deleted successfully."
+      askConfirmation: "Ești sigur că vrei să ștergi sarcina %s? [y/N]"
+      taskDeleted: "Sarcina a fost ștearsă cu succes."
     options:
       force:
-        description: "force the deletion of the task"
+        description: "forțează ștergerea sarcinii"
       name:
-        description: "specify the task's name"
+        description: "specifică numele sarcinii"
   rotate:
-    description: "Rotate tasks"
+    description: "Rotește sarcinile"
     options:
       privateEvent:
-        description: "specify private event to rotate tasks for boot, shutdown, login,
-          logout"
+        description: "specifică evenimentul privat pentru a rotii sarcinile pentru
+          resetare, închidere, login, și logout"
 waydroid:
   error:
-    noArguments: No arguments provided.
+    noArguments: Niciun argument furnizat.
   install:
     info:
-      DownloadingPackage: Downloading apk from %s
-      PackageSelection: Pick application to install
-      PackageInCache: Application found in cache, not downloading again.
-      ConfirmInstall: Install application %s?
-      InstallSuccess: Installation successful
+      DownloadingPackage: Descărcare apk de la %s
+      PackageSelection: Alege o aplicație pe care să o instalezi
+      PackageInCache: Aplicație găsită în memoria cache, nu se descarcă din nou.
+      ConfirmInstall: Instalează aplicație %s?
+      InstallSuccess: Instalare cu succes
     error:
-      InstallCancelled: Installation Cancelled
-      NotFound: Application %s was not found.
-    description: Install an application
+      InstallCancelled: Instalare anulată
+      NotFound: Aplicația %s nu a fost găsită.
+    description: Instalează o aplicație
     options:
       local:
-        description: Install a local apk
+        description: Instalează un apk local
       noconfirm:
-        description: Do not ask for confirmation during installation
+        description: Nu cere confirmări pe durata instalării
   info:
-    Author: 'Author: %s'
-    PackageName: 'Name: %s'
-    InternalName: 'Internal name: %s'
-    License: 'License: %s'
-    Summary: 'Summary: %s'
-    Repository: 'Repository: %s'
-    description: Display information about an application
+    Author: 'Autor: %s'
+    PackageName: 'Nume: %s'
+    InternalName: 'Nume intern: %s'
+    License: 'Licență: %s'
+    Summary: 'Sumar: %s'
+    Repository: 'Depozit: %s'
+    description: Arată informații despre o aplicație
     info:
-      PackageSelection: Select application to display information from
+      PackageSelection: Alege o aplicație de la care să arăți informații
   update:
     info:
-      NoUpdates: Nothing to update
+      NoUpdates: Nimic de actualizat
     error:
-      FailUpdatePackageDownload: Failed to download APK for %s
-      FailUpdatePackageDatabase: Failed to update database entry for %s
-      FailUpdatePackageInstall: Failed to install update for %s
-      FailGetVersion: Failed to get version code for %s
-    finished: Finished updating applications
-    description: Update installed applications
+      FailUpdatePackageDownload: Descărcarea APK pentru %s eșuată
+      FailUpdatePackageDatabase: Actualizarea intrării în baza de date pentru %s eșuată
+      FailUpdatePackageInstall: Instalarea actualizării pentru %s eșuată
+      FailGetVersion: Nu s-a putut lua codul versiunii pentru %s
+    finished: Actualizarea aplicațiilor efectuată
+    description: Actualizează aplicațiile instalate
   remove:
     info:
-      PackageSelection: Pick application to remove
-      ConfirmRemove: Remove application %s?
-      RemovePackage: Removing package %s
-    description: Uninstall an application
+      PackageSelection: Alege ce aplicație să elimini
+      ConfirmRemove: Elimină aplicația %s?
+      RemovePackage: Eliminarea pachetului %s
+    description: Dezinstalează o aplicație
     error:
-      RemoveCancelled: Removal Cancelled
-      NoMatches: Application %s not found
+      RemoveCancelled: Eliminare anulată
+      NoMatches: Aplicația %s nu a fost găsită
   clean:
     info:
-      success: Successfully deleted waydroid vso cache
-      apk: Deleting apk cache
-      index: Deleting index cache
+      success: Ștergerea memoriei cache a waydroid vso efectuată cu succes
+      apk: Ștergere apk al memoriei cache
+      index: Ștergere index al memoriei cache
     error:
-      apk: Failed to delete apk cache
-      index: Failed to delete index cache
-    description: Cleans the waydroid vso cache
-  description: Manage the vso waydroid subsystem
+      apk: Ștergerea apk-ului memoriei cache eșuată
+      index: Ștergerea indexului memoriei cache eșuată
+    description: Curăță memoria cache pentru waydroid vso
+  description: Gestionează subsistemul vso waydroid
   delete:
-    description: Delete the waydroid subsystem
-    confirmation: Deleting the waydroid subsystem will delete any data stored in it.
-      Continue?
-    cancelled: Cancelled removal of subsystem.
+    description: Șterge subsistemul waydroid
+    confirmation: Ștergerea subsistemului waydroid va șterge orice date stocate în
+      interiorul lui. Continui?
+    cancelled: Îndepărtarea subsistemlui anulată.
   init:
     options:
       force:
-        description: Force the initialization
-    description: Initialize the waydroid subsystem
+        description: Forțează inițializarea
+    description: Inițializează subsistemul waydroid
     error:
-      alreadyInitialized: The waydroid subsystem is already initialized. Use the --force
-        flag to force the initialization.
+      alreadyInitialized: Subsistemul waydroid este deja inițializat. Folosește --force
+        flag pentru a forța inițializarea.
     info:
-      initialized: The waydroid subsystem has been initialized.
+      initialized: Subsistemul waydroid a fost inițializat.
   search:
-    description: Search for an application
-  downloadIndex: Downloading index for repository %s
+    description: Caută aplicație
+  downloadIndex: Descărcarea indexului pentru depozit %s
   sync:
-    description: Sync the repositories
+    description: Sincronizare depozite
   launcher:
-    description: Show the waydroid launcher
+    description: Arată lansatorul waydroid
   launch:
-    description: Launch an installed application
+    description: Lansează o aplicație instalată
   status:
-    description: Return the internal status code of the Android subsystem. For development
-      purposes.
+    description: Întoarce codul pentru statusul intern al subsistemului Android. Pentru
+      scopuri de dezvoltare.
