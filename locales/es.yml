@@ -47,20 +47,20 @@ pico:
     exportingBin: "Se ha producido un error al exportar el binario: %s"
     unexportingApp: "Se ha encontrado un error mientras se deshacía la exportación
       de la aplicación: %s"
-    unexportingBin: "An error occurred while unexporting the binary: %s"
-    unknownCommand: "Unknown command: %s"
-    shellReset: "It is impossible to reach the VSO shell. Do you want to reset it?
-      (This will remove all your software installed in the subsystem) [y/N]"
+    unexportingBin: "Ha ocurrido un error mientras se desexportaba el binario: %s"
+    unknownCommand: "Comando desconocido: %s"
+    shellReset: "Es imposible entrar en la shell de VSO. Quieres resetearla? (Esto
+      removerá todo el software instalado en el subsistema) [y/N]"
   info:
-    deleting: "Deleting the VSO subsystem..."
-    initializing: "Initializing the VSO subsystem..."
-    initialized: "The VSO subsystem has been initialized."
-    exported: "Exported %s\n"
-    unexported: "Unexported %s\n"
-    exportedApps: "Exported %d applications"
-    unexportedApps: "Unexported %d applications"
-    shellInit: "Looks like your shell is not initialized yet. Do you want to initialize
-      it now? (Highly recommended) [y/N]"
+    deleting: "Eliminando el subsistema de VSO..."
+    initializing: "Inicializando el subsistema de VSO..."
+    initialized: "El subsistema de VSO ha sido inicializado."
+    exported: "Exportado %s\n"
+    unexported: "Desexportado %s\n"
+    exportedApps: "Se han desexportado %d aplicaciones"
+    unexportedApps: "Se han desexportado %d aplicaciones"
+    shellInit: "Al parecer tu shell no está inicializada aún. Quieres inicializarla
+      ahora? (Altamente recomendado) [y/N]"
     fallbackShell: "Fallback to the host shell? This could lead to unexpected behavior.
       [y/N]"
   export:
