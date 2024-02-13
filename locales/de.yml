@@ -26,7 +26,7 @@ config:
     error:
       noKey: "Kein Schlüssel angegeben."
       noValue: "Kein Wert festgelegt."
-      failed: 'Failed to set configuration: %s'
+      failed: 'Fehler beim setzen der Konfiguration: %s'
     options:
       key: "Key der festzulegenden Konfiguration"
       value: "Wert der festzulegenden Konfiguration"
@@ -49,21 +49,21 @@ pico:
       %s"
     unexportingBin: "Beim Deexportieren der Binärdatei ist ein Fehler aufgetreten:
       %s"
-    unknownCommand: 'Unknown command: %s'
-    shellReset: It is impossible to reach the VSO shell. Do you want to reset it?
-      (This will remove all your software installed in the subsystem) [y/N]
+    unknownCommand: 'Unbekannter Befehl: %s'
+    shellReset: Es ist nicht möglich, die VSO shell aufzurufen. Wollen Sie sie zurücksetzen?
+      (Dies wird ihr gesamte Software im Subsystem entfernen) [y/N]
   info:
-    initialized: "Das Pico-Subsystem wurde initialisiert."
+    initialized: "Das VSO Subsystem wurde initialisiert."
     exported: "%s exportiert\n"
     unexported: "%s deexportiert\n"
     exportedApps: "%d Anwendungen exportiert"
     unexportedApps: "%d Anwendungen deexportiert"
-    shellInit: Looks like your shell is not initialized yet. Do you want to initialize
-      it now? (Highly recommended) [y/N]
+    shellInit: Es sieht so aus, als sei Ihre Shell noch nicht initialisiert. Möchten
+      Sie sie jetzt initialisieren? (Sehr empfohlen) [y/N]
     fallbackShell: Fallback to the host shell? This could lead to unexpected behavior.
       [y/N]
-    deleting: Deleting the VSO subsystem...
-    initializing: Initializing the VSO subsystem...
+    deleting: VSO Subsystem wird gelöscht...
+    initializing: VSO Subsystem wir initialisiert...
   export:
     description: "Eine Anwendung oder eine Binärdatei aus dem Subsystem exportieren"
     options:
