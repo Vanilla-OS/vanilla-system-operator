@@ -26,82 +26,87 @@ config:
     error:
       noKey: "Geen sleutel opgegeven"
       noValue: "Geen waarde opgegeven"
-      failed: 'Failed to set configuration: %s'
+      failed: 'Configuratie instellen mislukt: %s'
     options:
-      key: "key of the configuration to set"
-      value: "value of the configuration to set"
+      key: "sleutel van de configuratie om in te stellen"
+      value: "waarde van de configuratie om in te stellen"
     success: "Configuratie succesvol bijgewerkt"
 
   show:
     description: Toont de systeemconfiguratie
 pico:
-  description: "Beheer het Pico-subsysteem"
+  description: "Beheer het VSO-subsysteem"
   error:
-    notInitialized: "The Pico subsystem is not initialized. Please run `vso pico-init`
-      to initialize it."
-    alreadyInitialized: "The Pico subsystem is already initialized. Use the --force
-      flag to force the initialization."
-    noAppNameOrBin: "--app or --bin must be specified."
-    sameAppOrBin: "--app and --bin cannot be both specified."
-    exportingApp: "An error occurred while exporting the application: %s"
-    exportingBin: "An error occurred while exporting the binary: %s"
-    unexportingApp: "An error occurred while unexporting the application: %s"
-    unexportingBin: "An error occurred while unexporting the binary: %s"
+    notInitialized: "Het VSO-subsysteem is niet geïnitialiseerd. Voer `vso pico-init`
+      uit om deze te initialiseren."
+    alreadyInitialized: "Het VSO-subsysteem is al geïnitialiseerd. Gebruik de vlag
+      --force om de initialisatie te forceren."
+    noAppNameOrBin: "‘--app’ of ‘--bin’ moet worden opgegeven."
+    sameAppOrBin: "‘--app’ en ‘--bin’ kunnen niet beide worden opgegeven."
+    exportingApp: "Er is een fout opgetreden tijdens het exporteren van de app: %s"
+    exportingBin: "Er is een fout opgetreden tijdens het exporteren van het programma­bestand:
+      %s"
+    unexportingApp: "Er is een fout opgetreden tijdens het ontexporteren van de app:
+      %s"
+    unexportingBin: "Er is een fout opgetreden tijdens het ontexporteren van het programma­bestand:
+      %s"
     unknownCommand: 'Onbekende opdracht: %s'
-    shellReset: It is impossible to reach the VSO shell. Do you want to reset it?
-      (This will remove all your software installed in the subsystem) [y/N]
+    shellReset: Het is onmogelijk om de VSO-shell te bereiken. Wilt u deze resetten?
+      (Hiermee wordt al uw software verwijderd die in het subsysteem is geïnstalleerd)
+      [y/N]
   info:
-    initialized: "The Pico subsystem has been initialized."
+    initialized: "Het VSO-subsysteem is geïnitialiseerd."
     exported: "%s geëxporteerd\n"
     unexported: "%s geontexporteerd\n"
     exportedApps: "%d apps geëxporteerd"
     unexportedApps: "%d apps geontexporteerd"
-    shellInit: Looks like your shell is not initialized yet. Do you want to initialize
-      it now? (Highly recommended) [y/N]
-    fallbackShell: Fallback to the host shell? This could lead to unexpected behavior.
+    shellInit: Het lijkt erop dat uw shell nog niet is geïnitialiseerd. Wilt u deze
+      nu initialiseren? (Sterk aanbevolen) [y/N]
+    fallbackShell: Terugvallen op de host-shell? Dit kan tot onverwacht gedrag leiden.
       [y/N]
-    deleting: Deleting the VSO subsystem...
-    initializing: Initializing the VSO subsystem...
+    deleting: VSO-subsysteem verwijderen…
+    initializing: VSO-subsysteem initialiseren…
   export:
-    description: "Export an application or binary from the subsystem"
+    description: "Een app of programmabestand van het subsysteem exporteren"
     options:
       app:
-        description: "the name of the application to export"
+        description: "de naam van de te exporteren app"
       bin:
-        description: "the name of the binary to export"
+        description: "de naam van het te exporteren programmabestand"
       binOutput:
-        description: "path of the binary output (default: ~/.local/bin/)"
+        description: "uitvoerpad van het programmabestand (standaard: ~/.local/bin/)"
   unexport:
-    description: "Unexport an application or binary from the subsystem"
+    description: "Ontexporteert een app of programmabestand van het subsysteem"
     options:
       app:
-        description: "the name of the application to unexport"
+        description: "de naam van de app om te ontexporteren"
       bin:
-        description: "the name of the binary to unexport"
+        description: "de naam van het programmabestand om te ontexporteren"
       binOutput:
-        description: "path of the binary output (default: ~/.local/bin/)"
+        description: "uitvoerpad van het programmabestand (standaard: ~/.local/bin/)"
   init:
-    description: "Initialize the Pico subsystem, used for package management"
+    description: "Initialiseert het VSO-subsysteem, gebruikt voor pakketbeheer"
     options:
       force:
-        description: "force the initialization if the subsystem is already initialized"
+        description: "forceert de initialisatie als het subsysteem al is geïnitialiseerd"
   install:
-    description: "Install an application inside the subsystem"
+    description: "Installeert een app in het subsysteem"
   remove:
-    description: "Remove an application from the subsystem"
+    description: "Verwijdert een app van het subsysteem"
   run:
-    description: "Run an application from the subsystem"
+    description: "Start een app van het subsysteem"
     options:
       noReset:
-        description: do not propose to reset the subsystem if something goes wrong
+        description: niet voorstellen om het subsysteem te resetten als er iets fout
+          gaat
   search:
-    description: "Search for an application to install inside the subsystem"
+    description: "Zoek naar een app om in het subsysteem te installeren"
   shell:
     description: "Betreed de subsysteem­omgeving"
   update:
-    description: "Update the subsystem's package repository"
+    description: "Werkt de pakket-repository van het subsysteem bij"
   upgrade:
-    description: "Upgrade the packages inside the subsystem"
+    description: "Werkt de pakketten in het subsysteem bij"
 
 sys-upgrade:
   check: {}
@@ -120,53 +125,59 @@ tasks:
   new:
     options:
       at:
-        description: schedule the task to execute at a specific time (hh:mm)
+        description: plan de taak om op een specifiek tijdstip uit te voeren (uu:mm)
       command:
-        description: specify the command to execute
+        description: geef de opdracht om uit te voeren op
       onProcess:
-        description: execute the task when a process starts
+        description: voert de taak uit als er een proces start
       assumeYes:
-        description: assume yes for all prompts
+        description: antwoord ja op alle prompts
       description:
         description: geef de taakbeschrijving op
       every:
-        description: schedule the task to execute every X time (minutes, hours, days)
+        description: Plan de taak om met een interval te worden uitgevoerd (minuten,
+          uren, dagen)
       name:
         description: Geef de taaknaam op
       needConfirm:
-        description: ask for confirmation before executing the task
+        description: vraag om bevestiging voor het uitvoeren van de taak
       onBattery:
-        description: execute the task only when the system is on battery
+        description: voer de taak alleen uit als het systeem niet wordt opgeladen
       onCharge:
-        description: execute the task only when the system is charging
+        description: voer de taak alleen uit als het systeem wordt opgeladen
       onConditionCommand:
-        description: execute the task on condition command
+        description: voert de taak uit na statusopdracht
       onCpuTemp:
-        description: execute the task when CPU temperature is higher than 60°C
+        description: voert de taak uit als CPU-temperatuur hoger is dan 60 °C
       onCpuUsage:
-        description: execute the task when CPU usage is higher than X%
+        description: voert de taak uit als CPU-gebruik hoger is dan het opgegeven
+          percentage
       onDeviceConnect:
-        description: execute the task when a device is connected
+        description: voert de taak uit als een apparaat wordt verbonden
       onDeviceDisconnect:
-        description: execute the task when a device is disconnected
+        description: voert de taak uit als een apparaat wordt losgekoppeld
       onDisconnect:
-        description: execute the task when the system is disconnected from the network
+        description: voert de taak uit als het systeem verbinding met het netwerk
+          verliest
       onFullBattery:
-        description: execute the task when the system is fully charged
+        description: voert de taak uit als het systeem volledig is opgeladen
       onHighCpuUsage:
-        description: execute the task when CPU usage is higher than 50%
+        description: voert de taak uit als CPU-gebruik hoger is dan 50%
       onHighInternetUsage:
-        description: execute the task when internet usage is higher than 500Kb/s
+        description: voert de taak uit als internetgebruik hoger is dan 500 Kb/s
       onHighMemoryUsage:
-        description: execute the task when memory usage is higher than 50%
+        description: voert de taak uit als geheugengebruik hoger is dan 50%
       onInternetUsage:
-        description: execute the task when internet usage is higher than XKb/s
+        description: voert de taak uit als internetgebruik hoger is dan de opgegeven
+          snelheid (Kb/s)
       onLowBattery:
-        description: execute the task when the system is low on battery (20%)
+        description: voert de taak uit als de batterij minder dan 20% energie resterend
+          heeft
       onMemoryUsage:
-        description: execute the task when memory usage is higher than X%
+        description: voert de taak uit als geheugengebruik hoger is dan het opgegeven
+          percentage
       onNetwork:
-        description: execute the task when the system is connected to the network
+        description: voert de taak uit als het systeem met een netwerk verbindt
     description: Maakt een nieuwe taak aan
   rm:
     description: Verwijdert een taak
@@ -175,20 +186,20 @@ tasks:
       noName: Geen taaknaam opgegeven
       notFound: Taak niet gevonden.
     info:
-      askConfirmation: Are you sure you want to delete the task %s? [y/N]
-      taskDeleted: Task has been deleted successfully.
+      askConfirmation: Weet u zeker dat u de taak ‘%s’ wilt verwijderen? [y/N]
+      taskDeleted: De taak is succesvol verwijderd.
     options:
       force:
-        description: force the deletion of the task
+        description: forceert verwijdering van de taak
       name:
         description: Geef de taaknaam op
   description: Maak taken aan en beheer ze
   stacks:
     new:
       error:
-        emptyCommand: The command cannot be empty.
-        emptyDescription: The description cannot be empty.
-        emptyName: The name cannot be empty.
+        emptyCommand: De opdracht mag niet leeg zijn.
+        emptyDescription: De omschrijving mag niet leeg zijn.
+        emptyName: De naam mag niet leeg zijn.
         noCommand: Geen opdracht opgegeven.
         noDescription: Geen opdracht opgegeven.
         noName: Geen naam opgegeven.
@@ -196,7 +207,7 @@ tasks:
         askCommand: 'Opdracht: '
         askDescription: 'Omschrijving: '
         askName: 'Naam: '
-        taskCreated: Task has been created successfully.
+        taskCreated: Taak succesvol aangemaakt.
   list:
     description: Somt alle taken op
     noTasks: Geen taken gevonden.
@@ -204,53 +215,53 @@ tasks:
       foundTasks: '%d taken gevonden.'
     options:
       json:
-        description: output the tasks in JSON format
+        description: voer de taken uit in JSON-formaat
   rotate:
     description: Taken roteren
     options:
       privateEvent:
-        description: specify private event to rotate tasks for boot, shutdown, login,
-          logout
+        description: specificeer de privégebeurtenis om taken voor opstarten, afsluiten,
+          inloggen en uitloggen te roteren
 sysUpgrade:
   description: Upgradet het systeem
   check:
-    asExitCode: Checks for upgrade but doesn't print anything. Return exit code 0
-      if no upgrade is available and 1 otherwise.
+    asExitCode: controleert op upgrades, maar print niets. Geeft afsluitcode 0 terug
+      als er geen upgrade beschikbaar is en anders 1.
     description: Controleert op systeemupdates
     error:
-      asExitCodeAndJson: An error occured when checking for updates. See the JSON
-        output for more details.
+      asExitCodeAndJson: Er is een fout opgetreden bij het controleren op updates.
+        Zie de JSON-uitvoer voor meer details.
     info:
       checking: Controleren op updates…
       noUpdates: Geen updates beschikbaar.
     json:
-      description: output the result in JSON format
+      description: voer het resultaat uit in JSON-formaat
   sysUpgrade:
     description: Upgradet het systeem
     error:
-      updating: An error occured when updating the system.
+      updating: Er is een fout opgetreden bij het bijwerken van het systeem.
     info:
       updating: Systeem updaten…
-    now: Trigger a system upgrade now
+    now: Activeer nu een systeemupgrade
 waydroid:
   error:
     noArguments: Geen argumenten opgegeven
   install:
     info:
-      DownloadingPackage: Downloading apk from %s
-      PackageSelection: Pick application to install
-      PackageInCache: Application found in cache, not downloading again.
+      DownloadingPackage: APK downloaden van %s
+      PackageSelection: Kies een app om te installeren
+      PackageInCache: App in cache gevonden, wordt niet opnieuw gedownload.
       ConfirmInstall: App %s installeren?
-      InstallSuccess: Installation successful
+      InstallSuccess: Installatie succesvol
     error:
       InstallCancelled: Installatie geannuleerd
-      NotFound: Application %s was not found.
+      NotFound: De app ‘%s’ is niet gevonden.
     description: Installeert een app
     options:
       local:
         description: Installeert een lokaal APK-bestand
       noconfirm:
-        description: Do not ask for confirmation during installation
+        description: Niet vragen om bevestiging tijdens de installatie
   info:
     Author: 'Auteur: %s'
     PackageName: 'Naan: %s'
@@ -258,62 +269,62 @@ waydroid:
     License: 'Licentie: %s'
     Summary: 'Samenvatting: %s'
     Repository: 'Repository: %s'
-    description: Display information about an application
+    description: Geeft informatie over een app weer
     info:
-      PackageSelection: Select application to display information from
+      PackageSelection: Selecteer een app om informatie over te tonen
   update:
     info:
       NoUpdates: Niets om bij te werken
     error:
-      FailUpdatePackageDownload: Failed to download APK for %s
-      FailUpdatePackageDatabase: Failed to update database entry for %s
-      FailUpdatePackageInstall: Failed to install update for %s
-      FailGetVersion: Failed to get version code for %s
+      FailUpdatePackageDownload: APK downloaden voor ‘%s’ mislukt
+      FailUpdatePackageDatabase: Database-entry voor ‘%s’ bijwerken mislukt
+      FailUpdatePackageInstall: Update voor ‘%s’ installeren mislukt
+      FailGetVersion: Versiecode voor ‘%s’ verkrijgen mislukt
     finished: Apps bijwerken voltooid
     description: Werkt geïnstalleerde apps bij
   remove:
     info:
-      PackageSelection: Pick application to remove
+      PackageSelection: Kies een app om te verwijderen
       ConfirmRemove: App %s verwijderen?
       RemovePackage: Pakket %s verwijderen
     description: Deïnstalleert een app
     error:
       RemoveCancelled: Verwijdering geannuleerd
-      NoMatches: Application %s not found
+      NoMatches: App ‘%s’ niet gevonden
   clean:
     info:
-      success: Successfully deleted waydroid vso cache
+      success: Waydroid-VSO-cavhe succesvol verwijderd
       apk: APK-cache verwijderen
       index: Index-cache verwijderen
     error:
-      apk: Failed to delete apk cache
-      index: Failed to delete index cache
-    description: Cleans the waydroid vso cache
-  description: Manage the vso waydroid subsystem
+      apk: APK-cache verwijderen mislukt
+      index: Index-cache verwijderen mislukt
+    description: Schoont de Waydroid-VSO-cavhe op
+  description: Beheer het VSO-Waydroid-subsysteem
   delete:
     description: Verwijdert het Waydroid-subsysteem
-    confirmation: Deleting the waydroid subsystem will delete any data stored in it.
-      Continue?
+    confirmation: Door het Waydroid-subsysteem te verwijderen zullen ook alle gegevens
+      hierin verloren gaan. Doorgaan?
     cancelled: Verwijdering van subsysteem geannuleerd
   init:
     options:
       force:
         description: Forceert de initialisatie
-    description: Initialize the waydroid subsystem
+    description: Initialiseert het Waydroid-subsysteem
     error:
-      alreadyInitialized: The waydroid subsystem is already initialized. Use the --force
-        flag to force the initialization.
+      alreadyInitialized: Het Waydroid-subsysteem is al geïnitialiseerd. Gebruik de
+        vlag ‘--force’ om de initialisatie te forceren.
     info:
-      initialized: The waydroid subsystem has been initialized.
+      initialized: Het Waydroid-subsysteem is geïnstalleerd.
   search:
-    description: Search for an application
-  downloadIndex: Downloading index for repository %s
+    description: Zoek naar een app
+  downloadIndex: Index downloaden voor repository ‘%s’
   sync:
     description: Synchroniseert de repositories
   launcher:
-    description: Show the waydroid launcher
+    description: Toont de Waydroid-launcher
   launch:
-    description: Launch an installed application
+    description: Voert een geïnstalleerde app uit
   status:
-    description: Return the internal status code of the Android subsystem. For development
-      purposes.
+    description: Geeft de interne statuscode van het Android-subsysteem terug. Voor
+      ontwikkelingsdoeleinden.
