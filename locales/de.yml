@@ -35,12 +35,12 @@ config:
     description: "Systemkonfiguration anzeigen"
 
 pico:
-  description: "Pico-Subsystem verwalten"
+  description: "VSO-Subsystem verwalten"
   error:
-    notInitialized: "Das Pico-Subsystem ist nicht initialisiert. Bitte führe `vso
+    notInitialized: "Das VSO-Subsystem ist nicht initialisiert. Bitte führen Sie `vso
       pico-init`aus, um es zu initialisieren."
-    alreadyInitialized: "Das Pico-Subsystem ist bereits initialisiert. Nutze die --force
-      Flag um die Initialisierung zu erzwingen."
+    alreadyInitialized: "Das Pico-Subsystem ist bereits initialisiert. Verwenden Sie
+      die Option --force, um die Initialisierung zu erzwingen."
     noAppNameOrBin: "--app oder --bin muss spezifiziert sein."
     sameAppOrBin: "--app und --bin können nicht beide spezifiziert sein."
     exportingApp: "Beim Exportieren der Anwendung ist ein Fehler aufgetreten: %s"
