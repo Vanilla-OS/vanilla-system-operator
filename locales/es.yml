@@ -1,51 +1,52 @@
 vso:
-  description: "The Vanilla System Operator is a package manager, a system updater
-    and a task automator."
+  description: "Vanilla System Operator es un gestor de paquetes, un actualizador
+    del sistema y un automatizador de tareas."
   errors:
-    unknownCommand: "Unknown command: %s"
-    invalidInput: "Invalid input."
-    invalidChoice: "Invalid choice."
+    unknownCommand: "Comando desconocido: %s"
+    invalidInput: "Entrada incorrecta."
+    invalidChoice: "Opción no válida."
   info:
-    aborting: "Aborting as requested."
+    aborting: "Cancelado según lo solicitado."
   terminal:
-    yes: "yes"
-    no: "no"
+    yes: "Sí"
+    no: "No"
 
 config:
-  description: "Manage the system configuration."
+  description: "Gestionar la configuración del sistema."
   get:
-    description: "Get the system configuration"
+    description: "Obtener la configuración del sistema"
     error:
-      noKey: "No key specified."
-      noValue: "No value found for key: %s"
+      noKey: "No se ha especificado ninguna clave."
+      noValue: "No se encontró ningún valor para la clave: %s"
     options:
       key:
-        description: "retrieve configuration value by using its key"
+        description: "recuperar el valor de la configuración usando su clave"
   set:
-    description: "Set the system configuration"
+    description: "Establecer la configuración del sistema"
     error:
-      noKey: "No key specified."
-      noValue: "No value specified."
-      failed: "Failed to set configuration: %s"
+      noKey: "No se ha especificado ninguna clave."
+      noValue: "No se especifica ningún valor."
+      failed: "No se pudo establecer la configuración: %s"
     options:
-      key: "key of the configuration to set"
-      value: "value of the configuration to set"
-    success: "Configuration updated successfully."
+      key: "clave de la configuración a configurar"
+      value: "valor de la configuración a establecer"
+    success: "Configuración actualizada exitosamente."
   show:
-    description: "Show the system configuration"
+    description: "Mostrar la configuración del sistema"
 
 pico:
-  description: "Manage the VSO subsystem"
+  description: "Administrar el subsistema VSO"
   error:
-    notInitialized: "The VSO subsystem is not initialized. Please run `vso pico-init`
-      to initialize it."
-    alreadyInitialized: "The VSO subsystem is already initialized. Use the --force
-      flag to force the initialization."
-    noAppNameOrBin: "--app or --bin must be specified."
-    sameAppOrBin: "--app and --bin cannot be both specified."
-    exportingApp: "An error occurred while exporting the application: %s"
-    exportingBin: "An error occurred while exporting the binary: %s"
-    unexportingApp: "An error occurred while unexporting the application: %s"
+    notInitialized: "El subsistema VSO no está inicializado. Ejecute `vso pico-init`
+      para inicializarlo."
+    alreadyInitialized: "El subsistema VSO ya está inicializado. Utilice el indicador
+      --force para forzar la inicialización."
+    noAppNameOrBin: "Se debe especificar --app o --bin."
+    sameAppOrBin: "--aplicación y --bin no pueden especificarse a la vez."
+    exportingApp: "Se ha producido un error al exportar la aplicación: %s"
+    exportingBin: "Se ha producido un error al exportar el binario: %s"
+    unexportingApp: "Se ha encontrado un error mientras se deshacía la exportación
+      de la aplicación: %s"
     unexportingBin: "An error occurred while unexporting the binary: %s"
     unknownCommand: "Unknown command: %s"
     shellReset: "It is impossible to reach the VSO shell. Do you want to reset it?
