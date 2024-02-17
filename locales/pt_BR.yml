@@ -26,7 +26,7 @@ config:
     error:
       noKey: "Nenhuma chave especificada."
       noValue: "Nenhum valor especificado."
-      failed: 'Failed to set configuration: %s'
+      failed: 'Falha ao definir a configuração: %s'
     options:
       key: "chave da configuração a ser definida"
       value: "valor da configuração a ser definida"
@@ -35,12 +35,12 @@ config:
     description: "Mostrar a configuração do sistema"
 
 pico:
-  description: "Gerenciar o subsistema Pico"
+  description: "Gerenciar o subsistema VSO"
   error:
-    notInitialized: "O subsistema Pico não foi inicializado. Por favor, execute 'vso
+    notInitialized: "O subsistema VSO não foi inicializado. Por favor, execute 'vso
       pico-init' para inicializá-lo."
-    alreadyInitialized: "O subsistema Pico já foi inicializado. Use o sinalizador
-      --force para forçar a inicialização."
+    alreadyInitialized: "O subsistema VSO já foi inicializado. Use o sinalizador --force
+      para forçar a inicialização."
     noAppNameOrBin: "--app ou --bin devem ser especificados."
     sameAppOrBin: "--app e --bin não podem ser especificados ao mesmo tempo."
     exportingApp: "Ocorreu um erro ao exportar o aplicativo: %s"
@@ -48,20 +48,20 @@ pico:
     unexportingApp: "Ocorreu um erro ao cancelar a exportação do aplicativo: %s"
     unexportingBin: "Ocorreu um erro ao cancelar a exportação do binário: %s"
     unknownCommand: 'Comando desconhecido: %s'
-    shellReset: It is impossible to reach the VSO shell. Do you want to reset it?
-      (This will remove all your software installed in the subsystem) [y/N]
+    shellReset: É impossível alcançar o shell VSO. Deseja redefini-lo? (Isso removerá
+      todos os softwares instalados no subsistema) [s/n]
   info:
-    initialized: "O subsistema Pico foi inicializado."
+    initialized: "O subsistema VSO foi inicializado."
     exported: "Exportado %s\n"
     unexported: "Desfeita a exportação de %s\n"
     exportedApps: "Exportados %d aplicativos"
     unexportedApps: "Desfeita a exportação de %d aplicativos"
-    shellInit: Looks like your shell is not initialized yet. Do you want to initialize
-      it now? (Highly recommended) [y/N]
-    fallbackShell: Fallback to the host shell? This could lead to unexpected behavior.
-      [y/N]
-    deleting: Deleting the VSO subsystem...
-    initializing: Initializing the VSO subsystem...
+    shellInit: Parece que seu shell ainda não foi inicializado. Deseja inicializá-lo
+      agora? (Altamente recomendado) [s/n]
+    fallbackShell: Fallback para o shell do host? Isso pode levar a comportamentos
+      inesperados. [s/n]
+    deleting: Excluindo o subsistema VSO...
+    initializing: Inicializando o subsistema VSO...
   export:
     description: "Exportar um aplicativo ou binário do subsistema"
     options:
@@ -81,7 +81,7 @@ pico:
       binOutput:
         description: "caminho de saída do binário (padrão: ~/.local/bin/)"
   init:
-    description: "Inicializar o subsistema Pico, usado para gerenciamento de pacotes"
+    description: "Inicializar o subsistema VSO, usado para gerenciamento de pacotes"
     options:
       force:
         description: "força a inicialização se o subsistema já estiver inicializado"
@@ -93,7 +93,7 @@ pico:
     description: "Executar um aplicativo a partir do subsistema"
     options:
       noReset:
-        description: do not propose to reset the subsystem if something goes wrong
+        description: não propor redefinir o subsistema se algo der errado
   search:
     description: "Procurar um aplicativo para instalar dentro do subsistema"
   shell:
@@ -221,8 +221,8 @@ tasks:
     description: "Rotacionar tarefas"
     options:
       privateEvent:
-        description: "especifique um evento privado para alternar tarefas de inicialização,
-          desligamento, login, logout"
+        description: "especifique o evento privado para alternar tarefas de inicialização,
+          desligamento, login, e logout"
 waydroid:
   error:
     noArguments: Nenhum argumento fornecido.
@@ -232,7 +232,7 @@ waydroid:
       PackageSelection: Selecione um aplicativo para instalar
       PackageInCache: Aplicativo encontrado em cache, não será transferido novamente.
       ConfirmInstall: Instalar aplicativo %s?
-      InstallSuccess: Installation successful
+      InstallSuccess: Instalação bem-sucedida
     error:
       InstallCancelled: Instalação Cancelada
       NotFound: O aplicativo %s não foi encontrado.
@@ -241,7 +241,7 @@ waydroid:
       local:
         description: Instalar um apk local
       noconfirm:
-        description: Do not ask for confirmation during installation
+        description: Não solicite confirmação durante a instalação
   info:
     Author: 'Autor: %s'
     PackageName: 'Nome: %s'
@@ -259,7 +259,7 @@ waydroid:
       FailUpdatePackageDownload: Falha ao transferir APK para %s
       FailUpdatePackageDatabase: Falha ao atualizar entrada no banco de dados para
         %s
-      FailUpdatePackageInstall: Falha ao instalar atualização para %s
+      FailUpdatePackageInstall: Falha ao instalar a atualização para %s
       FailGetVersion: Falha ao obter o código da versão para %s
     finished: Atualização de aplicativos concluída
     description: Atualizar aplicativos instalados
@@ -293,10 +293,10 @@ waydroid:
         description: Forçar a inicialização
     description: Inicializar o subsistema waydroid
     error:
-      alreadyInitialized: The waydroid subsystem is already initialized. Use the --force
-        flag to force the initialization.
+      alreadyInitialized: O subsistema waydroid já foi inicializado. Use o sinalizador
+        --force para forçar a inicialização.
     info:
-      initialized: The waydroid subsystem has been initialized.
+      initialized: O subsistema waydroid foi inicializado.
   search:
     description: Busque por um aplicativo
   downloadIndex: Baixando o índice do repositório %s
@@ -307,5 +307,5 @@ waydroid:
   launch:
     description: Lançar um aplicativo instalado
   status:
-    description: Return the internal status code of the Android subsystem. For development
-      purposes.
+    description: Retornar o código de status interno do subsistema Android. Para fins
+      de desenvolvimento.

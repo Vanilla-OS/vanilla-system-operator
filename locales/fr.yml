@@ -1,6 +1,6 @@
 vso:
-  description: "Le centre de contrôle de Vanilla OS est un gestionnaire de paquets,
-    un outil de mise à jour du système et un automate de tâches."
+  description: "Le centre de contrôle de Vanilla OS est un gestionnaire de paquets
+    et de tâches ainsi qu'un outil de mise à jour du système."
   errors:
     unknownCommand: "Commande inconnue : %s"
     invalidInput: "Entrée invalide."
@@ -26,7 +26,7 @@ config:
     error:
       noKey: "Aucune clé n'est spécifiée."
       noValue: "Aucune valeur n'est spécifiée."
-      failed: 'Failed to set configuration: %s'
+      failed: 'Échec à définir la configuration: %s'
     options:
       key: "clé de la configuration à définir"
       value: "valeur de la configuration à définir"
@@ -242,7 +242,7 @@ tasks:
     description: Rotation des tâches
     options:
       privateEvent:
-        description: spécifier un événement privé pour alterner les tâches de démarrage,
+        description: spécifier l'événement privé pour alterner les tâches de démarrage,
           d'arrêt, de connexion et de déconnexion
 waydroid:
   error:
@@ -250,19 +250,19 @@ waydroid:
   install:
     info:
       DownloadingPackage: Télécharge l'apk depuis %s
-      PackageSelection: Choisir l'applications à installer
+      PackageSelection: Choisir une application à installer
       PackageInCache: Application trouvé dans le cache, ne se télécharge pas à nouveau.
       ConfirmInstall: Installer l'application %s ?
-      InstallSuccess: Installation successful
+      InstallSuccess: Installation réussie
     error:
       InstallCancelled: Installation annuler
-      NotFound: L'application %s n'a pas été trouver.
+      NotFound: L'application %s n'a pas été trouvée.
     description: Installer une application
     options:
       local:
         description: Installer un apk localement
       noconfirm:
-        description: Do not ask for confirmation during installation
+        description: Ne pas demander de confirmation lors de l'installation
   info:
     Author: 'Auteur : %s'
     PackageName: 'Nom : %s'
@@ -272,8 +272,7 @@ waydroid:
     Repository: 'Répositoire : %s'
     description: Afficher les informations sur une application
     info:
-      PackageSelection: Sélectionnez l'application pour afficher les informations
-        de
+      PackageSelection: Sélectionnez une application pour afficher ses informations
   update:
     info:
       NoUpdates: Rien à mettre à jour
@@ -287,7 +286,7 @@ waydroid:
     description: Mettre à jour les applications installées
   remove:
     info:
-      PackageSelection: Choisir l'application à retirer
+      PackageSelection: Choisissez une application à supprimer
       ConfirmRemove: Retirer l'application %s ?
       RemovePackage: Retirer le paquet %s
     description: Désinstaller une application
@@ -315,10 +314,10 @@ waydroid:
         description: Forcer l'installation
     description: Initialisation du sous-sytème waydroid
     error:
-      alreadyInitialized: The waydroid subsystem is already initialized. Use the --force
-        flag to force the initialization.
+      alreadyInitialized: Le sous-système waydroid est déjà initialisé. Utilisez l'option
+        --force pour forcer l'initialisation.
     info:
-      initialized: The waydroid subsystem has been initialized.
+      initialized: Le sous-système waydroid a été initialisé.
   search:
     description: Rechercher pour une application
   downloadIndex: Téléchargement de l'index pour le dépôt %s
@@ -329,5 +328,5 @@ waydroid:
   launch:
     description: Lancer une application installé
   status:
-    description: Return the internal status code of the Android subsystem. For development
-      purposes.
+    description: Renvoie le code d'état interne du sous-système Android. À des fins
+      de développement.

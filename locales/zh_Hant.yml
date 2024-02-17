@@ -25,7 +25,7 @@ config:
     error:
       noKey: "沒有指定鍵。"
       noValue: "沒有指定值。"
-      failed: 'Failed to set configuration: %s'
+      failed: '無法設定組態：%s'
     options:
       key: "要設定的組態的鍵"
       value: "要設定的組態的值"
@@ -220,7 +220,7 @@ waydroid:
       PackageSelection: 選取要安裝的應用程式
       PackageInCache: 已在快取中找到應用程式，不再重複下載。
       ConfirmInstall: 安裝應用程式 %s？
-      InstallSuccess: Installation successful
+      InstallSuccess: 安裝成功
     error:
       InstallCancelled: 已取消安裝
       NotFound: 找不到應用程式 %s。
@@ -229,7 +229,7 @@ waydroid:
       local:
         description: 安裝本機 apk
       noconfirm:
-        description: Do not ask for confirmation during installation
+        description: 安裝過程中不再要求使用者確認
   info:
     Author: '作者：%s'
     PackageName: '名稱：%s'
@@ -246,7 +246,7 @@ waydroid:
     error:
       FailUpdatePackageDownload: 無法下載 %s 的 apk
       FailUpdatePackageDatabase: 無法更新 %s 的資料庫條目
-      FailUpdatePackageInstall: 無法安裝 %s 的升級
+      FailUpdatePackageInstall: 無法安裝 %s 的更新
       FailGetVersion: 無法取得 %s 的版本號碼
     finished: 已完成應用程式的升級
     description: 升級已安裝的應用程式
@@ -292,5 +292,4 @@ waydroid:
   launch:
     description: 啟動已安裝的應用程式
   status:
-    description: Return the internal status code of the Android subsystem. For development
-      purposes.
+    description: 回傳 Android 子系統的內部狀態碼。僅供開發用途。

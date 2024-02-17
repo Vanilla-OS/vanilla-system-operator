@@ -2,52 +2,53 @@ vso:
   description: "Vanilla System Operator - це менеджер пакунків, оновлення системи
     та автоматизатор завдань."
   errors:
-    unknownCommand: "Unknown command: %s"
+    unknownCommand: "Невідома команда: %s"
     invalidInput: "Неправильне введення."
     invalidChoice: "Неправильний вибір."
   info:
-    aborting: "Aborting as requested."
+    aborting: "Скасування за запитом."
   terminal:
     yes: "так"
     no: "ні"
 
 config:
-  description: "Manage the system configuration."
+  description: "Керування конфігурацією системи."
   get:
-    description: "Get the system configuration"
+    description: "Отримати конфігурацію системи"
     error:
-      noKey: "No key specified."
-      noValue: "No value found for key: %s"
+      noKey: "Ключ не вказано."
+      noValue: "Не знайдено значення для ключа: %s"
     options:
       key:
-        description: "retrieve configuration value by using its key"
+        description: "отримати значення конфігурації за його ключем"
   set:
-    description: "Set the system configuration"
+    description: "Встановити конфігурацію системи"
     error:
-      noKey: "No key specified."
-      noValue: "No value specified."
-      failed: 'Failed to set configuration: %s'
+      noKey: "Ключ не вказано."
+      noValue: "Значення не вказано."
+      failed: 'Не вдалося встановити конфігурацію: %s'
     options:
-      key: "key of the configuration to set"
-      value: "value of the configuration to set"
-    success: "Configuration updated successfully."
+      key: "ключ конфігурації для встановлення"
+      value: "значення конфігурації для встановлення"
+    success: "Конфігурацію успішно оновлено."
   show:
-    description: "Show the system configuration"
+    description: "Показати конфігурацію системи"
 
 pico:
-  description: "Manage the Pico subsystem"
+  description: "Керування підсистемою VSO"
   error:
-    notInitialized: "The Pico subsystem is not initialized. Please run `vso pico-init`
-      to initialize it."
-    alreadyInitialized: "The Pico subsystem is already initialized. Use the --force
-      flag to force the initialization."
+    notInitialized: "Підсистему VSO не ініціалізовано. Будь ласка, виконайте `vso
+      pico-init` для її ініціалізації."
+    alreadyInitialized: "Підсистему VSO вже ініціалізовано. Використовуйте прапорець
+      --force для примусової ініціалізації."
     noAppNameOrBin: "--app or --bin must be specified."
     sameAppOrBin: "--app and --bin cannot be both specified."
-    exportingApp: "An error occurred while exporting the application: %s"
-    exportingBin: "An error occurred while exporting the binary: %s"
-    unexportingApp: "An error occurred while unexporting the application: %s"
-    unexportingBin: "An error occurred while unexporting the binary: %s"
-    unknownCommand: 'Unknown command: %s'
+    exportingApp: "Виникла помилка під час експорту застосунку: %s"
+    exportingBin: "Виникла помилка під час бінарного файлу : %s"
+    unexportingApp: "Виникла помилка під час скасування експорту програми: %s"
+    unexportingBin: "Виникла помилка під час скасування експорту бінарного файлу:
+      %s"
+    unknownCommand: 'Невідома команда: %s'
     shellReset: It is impossible to reach the VSO shell. Do you want to reset it?
       (This will remove all your software installed in the subsystem) [y/N]
   info:

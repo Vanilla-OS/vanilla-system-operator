@@ -26,7 +26,7 @@ config:
     error:
       noKey: "Nessuna chiave specificata."
       noValue: "Nessuno valore specificato."
-      failed: 'Failed to set configuration: %s'
+      failed: 'Impossibile  applicare la configurazione: %s'
     options:
       key: "chiave della configurazione da impostare"
       value: "valore della configurazione da impostare"
@@ -232,8 +232,8 @@ tasks:
     description: "Ruota le attività"
     options:
       privateEvent:
-        description: "specifica un evento privato per ruotare le attività di boot,
-          shutdown, login, logout"
+        description: "specifica l'evento privato per ruotare le attività di boot,
+          shutdown, login, e logout"
 
 waydroid:
   description: "Gestisci il sottosistema di waydroid vso"
@@ -260,13 +260,13 @@ waydroid:
       local:
         description: "Installa un apk locale"
       noconfirm:
-        description: Do not ask for confirmation during installation
+        description: Non richiedere conferma durante l'installazione
     info:
       PackageInCache: "Un applicazione trovata nella cache, non viene scaricata nuovamente."
       ConfirmInstall: "Installare l'applicazione %s?"
       DownloadingPackage: "Scaricare l'apk da %s"
-      PackageSelection: "Scegli l'applicazione da installare"
-      InstallSuccess: Installation successful
+      PackageSelection: "Scegli un'applicazione da installare"
+      InstallSuccess: Installazione avvenuta con successo
     error:
       NotFound: "L'applicazione %s non è stata trovata."
       InstallCancelled: "Installazione Annullata"
@@ -296,7 +296,7 @@ waydroid:
   search:
     description: "Cerca un'applicazione"
   sync:
-    description: "Sincronizza i repositories"
+    description: "Sincronizza i repository"
   update:
     description: "Aggiorna le applicazioni installate"
     finished: "Completato l'aggiornamento delle applicazioni"
@@ -311,7 +311,7 @@ waydroid:
   info:
     description: "Mostra informazioni relative ad un'applicazione"
     info:
-      PackageSelection: "Seleziona l'applicazione per la quale visualizzare le informazioni"
+      PackageSelection: "Seleziona un'applicazione per la quale visualizzare le informazioni"
     PackageName: "Nome: %s"
     InternalName: "Nome interno: %s"
     Summary: "Riassunto: %s"
@@ -319,5 +319,6 @@ waydroid:
     License: "Licenza: %s"
     Repository: "Repository: %s"
   status:
-    description: Return the internal status code of the Android subsystem. For development
-      purposes.
+    description: "Return the internal status code of the Android subsystem. For development
+      purposes.\nRestituire il codice di stato interno del sottosistema Android. Per
+      scopi di sviluppo."

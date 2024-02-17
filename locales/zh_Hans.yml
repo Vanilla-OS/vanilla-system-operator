@@ -25,7 +25,7 @@ config:
     error:
       noKey: "没有指定键。"
       noValue: "没有指定值。"
-      failed: 'Failed to set configuration: %s'
+      failed: '无法设置配置：%s'
     options:
       key: "要设置的配置的键"
       value: "要设置的配置的值"
@@ -220,7 +220,7 @@ waydroid:
       PackageSelection: 选择要安装的应用程序
       PackageInCache: 已在缓存中找到应用程序，不再重复下载。
       ConfirmInstall: 安装应用程序 %s 吗？
-      InstallSuccess: Installation successful
+      InstallSuccess: 安装成功
     error:
       InstallCancelled: 已取消安装
       NotFound: 找不到应用程序 %s。
@@ -229,7 +229,7 @@ waydroid:
       local:
         description: 安装本地 apk
       noconfirm:
-        description: Do not ask for confirmation during installation
+        description: 安装过程中不再要求用户确认
   info:
     Author: '作者：%s'
     PackageName: '名称：%s'
@@ -246,7 +246,7 @@ waydroid:
     error:
       FailUpdatePackageDownload: 无法下载 %s 的 apk
       FailUpdatePackageDatabase: 无法更新 %s 的数据库条目
-      FailUpdatePackageInstall: 无法安装 %s 的升级
+      FailUpdatePackageInstall: 无法安装 %s 的更新
       FailGetVersion: 无法获取 %s 的版本号
     finished: 已完成应用程序的升级
     description: 升级已安装的应用程序
@@ -292,5 +292,4 @@ waydroid:
   launch:
     description: 启动已安装的应用程序
   status:
-    description: Return the internal status code of the Android subsystem. For development
-      purposes.
+    description: 返回 Android 子系统的内部状态码。仅供开发用途。

@@ -26,7 +26,7 @@ config:
     error:
       noKey: "Kein Schlüssel angegeben."
       noValue: "Kein Wert festgelegt."
-      failed: 'Failed to set configuration: %s'
+      failed: 'Fehler beim setzen der Konfiguration: %s'
     options:
       key: "Key der festzulegenden Konfiguration"
       value: "Wert der festzulegenden Konfiguration"
@@ -35,12 +35,12 @@ config:
     description: "Systemkonfiguration anzeigen"
 
 pico:
-  description: "Pico-Subsystem verwalten"
+  description: "VSO-Subsystem verwalten"
   error:
-    notInitialized: "Das Pico-Subsystem ist nicht initialisiert. Bitte führe `vso
+    notInitialized: "Das VSO-Subsystem ist nicht initialisiert. Bitte führen Sie `vso
       pico-init`aus, um es zu initialisieren."
-    alreadyInitialized: "Das Pico-Subsystem ist bereits initialisiert. Nutze die --force
-      Flag um die Initialisierung zu erzwingen."
+    alreadyInitialized: "Das Pico-Subsystem ist bereits initialisiert. Verwenden Sie
+      die Option --force, um die Initialisierung zu erzwingen."
     noAppNameOrBin: "--app oder --bin muss spezifiziert sein."
     sameAppOrBin: "--app und --bin können nicht beide spezifiziert sein."
     exportingApp: "Beim Exportieren der Anwendung ist ein Fehler aufgetreten: %s"
@@ -49,21 +49,21 @@ pico:
       %s"
     unexportingBin: "Beim Deexportieren der Binärdatei ist ein Fehler aufgetreten:
       %s"
-    unknownCommand: 'Unknown command: %s'
-    shellReset: It is impossible to reach the VSO shell. Do you want to reset it?
-      (This will remove all your software installed in the subsystem) [y/N]
+    unknownCommand: 'Unbekannter Befehl: %s'
+    shellReset: Es ist nicht möglich, die VSO shell aufzurufen. Wollen Sie sie zurücksetzen?
+      (Dies wird ihr gesamte Software im Subsystem entfernen) [y/N]
   info:
-    initialized: "Das Pico-Subsystem wurde initialisiert."
+    initialized: "Das VSO Subsystem wurde initialisiert."
     exported: "%s exportiert\n"
     unexported: "%s deexportiert\n"
     exportedApps: "%d Anwendungen exportiert"
     unexportedApps: "%d Anwendungen deexportiert"
-    shellInit: Looks like your shell is not initialized yet. Do you want to initialize
-      it now? (Highly recommended) [y/N]
-    fallbackShell: Fallback to the host shell? This could lead to unexpected behavior.
-      [y/N]
-    deleting: Deleting the VSO subsystem...
-    initializing: Initializing the VSO subsystem...
+    shellInit: Es sieht so aus, als sei Ihre Shell noch nicht initialisiert. Möchten
+      Sie sie jetzt initialisieren? (Sehr empfohlen) [y/N]
+    fallbackShell: Fallback zur Host-Shell? Dies könnte zu unerwartetem Verhalten
+      führen. [y/N]
+    deleting: VSO Subsystem wird gelöscht...
+    initializing: VSO Subsystem wir initialisiert...
   export:
     description: "Eine Anwendung oder eine Binärdatei aus dem Subsystem exportieren"
     options:
@@ -83,7 +83,8 @@ pico:
       binOutput:
         description: "Pfad der Binärausgabe (Standard: ~/.local/bin/)"
   init:
-    description: "Initialize the Pico subsystem, used for package management"
+    description: "Initialisiere das VSO-Subsystem, das für die Paketverwaltung verwendet
+      wird"
     options:
       force:
         description: "Initialisierung erzwingen, wenn das Subsystem bereits initialisiert
@@ -96,7 +97,8 @@ pico:
     description: "Eine Anwendung vom Subsystem aus starten"
     options:
       noReset:
-        description: do not propose to reset the subsystem if something goes wrong
+        description: nicht vorschlagen, das Subsystem zurückzusetzen, wenn etwas schief
+          geht
   search:
     description: "Nach einer Anwendung suchen, die innerhalb des Subsystems installiert
       werden soll"
@@ -237,90 +239,90 @@ tasks:
     description: "Aufgaben rotieren"
     options:
       privateEvent:
-        description: "geben Sie ein privates Ereignis an, um die Aufgaben für das
-          Hochfahren, Herunterfahren, Anmelden und Abmelden zu rotieren"
+        description: "gib das private Ereignis an, um die Aufgaben für Hochfahren,
+          Herunterfahren, Einloggen und Ausloggen zu rotieren"
 waydroid:
   error:
-    noArguments: No arguments provided.
+    noArguments: Keine Argumente angegeben.
   install:
     info:
-      DownloadingPackage: Downloading apk from %s
+      DownloadingPackage: APK wird von %s heruntergeladen
       PackageSelection: Pick application to install
-      PackageInCache: Application found in cache, not downloading again.
-      ConfirmInstall: Install application %s?
-      InstallSuccess: Installation successful
+      PackageInCache: Anwendung im Cache gefunden, wird nicht erneut heruntergeladen.
+      ConfirmInstall: Anwendung installieren %s?
+      InstallSuccess: Installation erfolgreich
     error:
-      InstallCancelled: Installation Cancelled
-      NotFound: Application %s was not found.
-    description: Install an application
+      InstallCancelled: Installation abgebrochen
+      NotFound: Anwendung %s wurde nicht gefunden.
+    description: Installiere eine Anwendung
     options:
       local:
-        description: Install a local apk
+        description: Installiere eine lokale apk
       noconfirm:
-        description: Do not ask for confirmation during installation
+        description: Bei der Installation nicht nach einer Bestätigung fragen
   info:
-    Author: 'Author: %s'
+    Author: 'Autor: %s'
     PackageName: 'Name: %s'
-    InternalName: 'Internal name: %s'
-    License: 'License: %s'
-    Summary: 'Summary: %s'
+    InternalName: 'Interner Name: %s'
+    License: 'Lizenz: %s'
+    Summary: 'Zusammenfassung: %s'
     Repository: 'Repository: %s'
-    description: Display information about an application
+    description: Informationen über eine Anwendung anzeigen
     info:
-      PackageSelection: Select application to display information from
+      PackageSelection: Wähle eine Anwendung aus, um Informationen anzuzeigen
   update:
     info:
-      NoUpdates: Nothing to update
+      NoUpdates: Nichts zu aktualisieren
     error:
       FailUpdatePackageDownload: Failed to download APK for %s
-      FailUpdatePackageDatabase: Failed to update database entry for %s
-      FailUpdatePackageInstall: Failed to install update for %s
+      FailUpdatePackageDatabase: Datenbankeintrag für %s konnte nicht aktualisiert
+        werden
+      FailUpdatePackageInstall: Installation des Updates für %s ist fehlgeschlagen
       FailGetVersion: Failed to get version code for %s
-    finished: Finished updating applications
-    description: Update installed applications
+    finished: Aktualisierung der Anwendungen abgeschlossen
+    description: Installierte Anwendungen aktualisieren
   remove:
     info:
-      PackageSelection: Pick application to remove
+      PackageSelection: Wähle eine Anwendung zum Entfernen
       ConfirmRemove: Remove application %s?
       RemovePackage: Removing package %s
-    description: Uninstall an application
+    description: Deinstallation einer Anwendung
     error:
-      RemoveCancelled: Removal Cancelled
-      NoMatches: Application %s not found
+      RemoveCancelled: Entfernung abgebrochen
+      NoMatches: Anwendung %s nicht gefunden
   clean:
     info:
-      success: Successfully deleted waydroid vso cache
+      success: Erfolgreich den waydroid vso Cache gelöscht
       apk: Deleting apk cache
-      index: Deleting index cache
+      index: Löschen des Index-Cache
     error:
-      apk: Failed to delete apk cache
-      index: Failed to delete index cache
-    description: Cleans the waydroid vso cache
-  description: Manage the vso waydroid subsystem
+      apk: Apk-Cache kann nicht gelöscht werden
+      index: Index-Cache konnte nicht gelöscht werden
+    description: Löscht den waydroid vso-Cache
+  description: Verwalte das vso waydroid Subsystem
   delete:
-    description: Delete the waydroid subsystem
-    confirmation: Deleting the waydroid subsystem will delete any data stored in it.
-      Continue?
-    cancelled: Cancelled removal of subsystem.
+    description: Lösche das waydroid Subsystem
+    confirmation: Beim Löschen des waydroid-Subsystems werden alle darin gespeicherten
+      Daten gelöscht. Fortfahren?
+    cancelled: Entfernung des Subsystems abgebrochen.
   init:
     options:
       force:
-        description: Force the initialization
-    description: Initialize the waydroid subsystem
+        description: Erzwinge die Initialisierung
+    description: Initialisiere das waydroid Subsystem
     error:
-      alreadyInitialized: The waydroid subsystem is already initialized. Use the --force
-        flag to force the initialization.
+      alreadyInitialized: Das waydroid-Subsystem ist bereits initialisiert. Verwende
+        das --force Flag, um die Initialisierung zu erzwingen.
     info:
-      initialized: The waydroid subsystem has been initialized.
+      initialized: Das waydroid-Subsystem wurde initialisiert.
   search:
-    description: Search for an application
-  downloadIndex: Downloading index for repository %s
+    description: Suche nach einer Anwendung
+  downloadIndex: Herunterladen des Index für das Repository %s
   sync:
     description: Sync the repositories
   launcher:
-    description: Show the waydroid launcher
+    description: Den waydroid Launcher anzeigen
   launch:
-    description: Launch an installed application
+    description: Starte eine installierte Anwendung
   status:
-    description: Return the internal status code of the Android subsystem. For development
-      purposes.
+    description: Gibt den internen Statuscode des Android-Subsystems zurück. Für Entwicklungszwecke.

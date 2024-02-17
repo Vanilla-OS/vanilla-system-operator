@@ -26,7 +26,7 @@ config:
     error:
       noKey: "Нет выбранного ключа."
       noValue: "Значение не указано."
-      failed: 'Failed to set configuration: %s'
+      failed: 'Не удалось установить конфигурацию: %s'
     options:
       key: "ключ конфигурации для установки"
       value: "значение конфигурации для установки"
@@ -233,8 +233,8 @@ tasks:
     description: Чередовать задачи
     options:
       privateEvent:
-        description: укажите частное событие для чередования задач, для загрузки,
-          выключения, входа в систему и выхода из неё
+        description: укажите частное событие для чередования задач загрузки, выключения,
+          входа в систему и выхода из неё
 waydroid:
   error:
     noArguments: Нет аргументов.
@@ -244,7 +244,7 @@ waydroid:
       PackageSelection: Выберите приложение для установки
       PackageInCache: Приложение найдено в кеше, повторная загрузка не производится.
       ConfirmInstall: Установить приложение %s?
-      InstallSuccess: Installation successful
+      InstallSuccess: Установка прошла успешно
     error:
       InstallCancelled: Установка отменена
       NotFound: Приложение %s не найдено.
@@ -253,7 +253,7 @@ waydroid:
       local:
         description: Установить локальный apk
       noconfirm:
-        description: Do not ask for confirmation during installation
+        description: Не запрашивать подтверждения во время установки
   info:
     Author: 'Автор: %s'
     PackageName: 'Имя: %s'
@@ -318,5 +318,5 @@ waydroid:
   launch:
     description: Запустить установленное приложение
   status:
-    description: Return the internal status code of the Android subsystem. For development
-      purposes.
+    description: Возвращает внутренний код состояния подсистемы Android. Для целей
+      разработки.
