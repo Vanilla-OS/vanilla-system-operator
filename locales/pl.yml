@@ -1,67 +1,68 @@
 vso:
-  description: "The Vanilla System Operator is a package manager, a system updater
-    and a task automator."
+  description: "Vanilla System Operator to menedżer pakietów, aktualizator systemu
+    i automatyzator zadań."
   errors:
-    unknownCommand: "Unknown command: %s"
-    invalidInput: "Invalid input."
-    invalidChoice: "Invalid choice."
+    unknownCommand: "Nieznane polecenie: %s"
+    invalidInput: "Nieprawidłowe dane wejściowe."
+    invalidChoice: "Nieprawidłowy wybór."
   info:
-    aborting: "Aborting as requested."
+    aborting: "Przerywanie na żądanie."
   terminal:
-    yes: "yes"
-    no: "no"
+    yes: "tak"
+    no: "nie"
 
 config:
-  description: "Manage the system configuration."
+  description: "Zarządzaj konfiguracją systemu."
   get:
-    description: "Get the system configuration"
+    description: "Uzyskaj konfiguracje systemu"
     error:
-      noKey: "No key specified."
-      noValue: "No value found for key: %s"
+      noKey: "Nie określono klucza."
+      noValue: "Nie znaleziono wartości odpowiadającej kluczowi: %s"
     options:
       key:
-        description: "retrieve configuration value by using its key"
+        description: "przywróć wartość konfiguracji przy użyciu jej klucza"
   set:
-    description: "Set the system configuration"
+    description: "Ustaw konfiguracje systemu"
     error:
-      noKey: "No key specified."
-      noValue: "No value specified."
-      failed: "Failed to set configuration: %s"
+      noKey: "Nie określono klucza."
+      noValue: "Nie określono wartości."
+      failed: "Nie udało się ustawić konfiguracji: %s"
     options:
-      key: "key of the configuration to set"
-      value: "value of the configuration to set"
-    success: "Configuration updated successfully."
+      key: "klucz konfiguracji do ustawienia"
+      value: "wartość konfiguracji do ustawienia"
+    success: "Zaktualizowano konfiguracje pomyślnie."
   show:
-    description: "Show the system configuration"
+    description: "Pokaż konfiguracje systemu"
 
 pico:
-  description: "Manage the VSO subsystem"
+  description: "Zarządzaj podsystemem VSO"
   error:
-    notInitialized: "The VSO subsystem is not initialized. Please run `vso pico-init`
-      to initialize it."
-    alreadyInitialized: "The VSO subsystem is already initialized. Use the --force
-      flag to force the initialization."
-    noAppNameOrBin: "--app or --bin must be specified."
-    sameAppOrBin: "--app and --bin cannot be both specified."
-    exportingApp: "An error occurred while exporting the application: %s"
-    exportingBin: "An error occurred while exporting the binary: %s"
-    unexportingApp: "An error occurred while unexporting the application: %s"
-    unexportingBin: "An error occurred while unexporting the binary: %s"
-    unknownCommand: "Unknown command: %s"
-    shellReset: "It is impossible to reach the VSO shell. Do you want to reset it?
-      (This will remove all your software installed in the subsystem) [y/N]"
+    notInitialized: "Podsystem VSO nie jest zainicjowany. Proszę uruchom`vso pico-init`,
+      aby zainicjować go."
+    alreadyInitialized: "Podsystem VSO jest aktualnie zainicjowany. Użyj flagi --force
+      aby wymusić inicjowanie."
+    noAppNameOrBin: "--app lub --bin muszą być określone."
+    sameAppOrBin: "--app i --bin nie mogą być jednocześnie określone."
+    exportingApp: "Wystąpił błąd podczas eksportowania aplikacji: %s"
+    exportingBin: "Wystąpił błąd podczas eksportowania pliku binarnego: %s"
+    unexportingApp: "Wystąpił błąd podczas usuwania eksportu aplikacji: %s"
+    unexportingBin: "Wystąpił błąd podczas usuwania eksportu pliku binarnego: %s"
+    unknownCommand: "Nieznane polecenie: %s"
+    shellReset: "Uzyskanie dostępu do powłoki VSO jest nie możliwe. Czy chcesz ją
+      zresetować? (Spowoduje to usunięcie całego oprogramowania zainstalowanego w
+      podsystemie) [y/N]"
   info:
-    deleting: "Deleting the VSO subsystem..."
-    initializing: "Initializing the VSO subsystem..."
-    initialized: "The VSO subsystem has been initialized."
-    exported: "Exported %s\n"
-    unexported: "Unexported %s\n"
-    exportedApps: "Exported %d applications"
-    unexportedApps: "Unexported %d applications"
-    shellInit: "Looks like your shell is not initialized yet. Do you want to initialize
-      it now? (Highly recommended) [y/N]"
-    fallbackShell: "Fallback to the host shell? This could lead to unexpected behavior.
-      [y/N]"
+    deleting: "Usuwanie podsystemu VSO..."
+    initializing: "inicjalizacja podsystemu VSO..."
+    initialized: "Podsystem VSO został zainicjowany."
+    exported: "Wyeksportowano %s\n"
+    unexported: "Usunięto eksport %s\n"
+    exportedApps: "Wyeksportowano %d aplikacji"
+    unexportedApps: "Usunięto eksporty %d aplikacji"
+    shellInit: "Wygląda na to że nie zainicjowałeś Swojej powłoki . Czy chcesz zainicjować
+      ją teraz? (Wysoce rekomendowane) [y/N]"
+    fallbackShell: "Powrócić do powłoki hosta? Może to prowadzić do niespodziewanych
+      zachowań. [y/N]"
   export:
     description: "Export an application or binary from the subsystem"
     options:
@@ -135,7 +136,7 @@ tasks:
         emptyName: "The name cannot be empty."
         noCommand: "No command specified."
         noDescription: "No description specified."
-        noName: "No name specified."
+        noName: "Nie określono nazwy."
       info:
         askCommand: "Command: "
         askDescription: "Description: "
