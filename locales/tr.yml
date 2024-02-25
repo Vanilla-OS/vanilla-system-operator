@@ -49,7 +49,7 @@ pico:
     unexportingBin: "İkili dışa aktarımı geri alınırken hata oluştu: %s"
     unknownCommand: "Bilinmeyen komut: %s"
     shellReset: "VSO kabuğuna erişmek olanaksız. Sıfırlamak ister misiniz? (Bu, alt
-      sisteminizde kurulu yazılımların tümünü kaldıracaktır. [e/H]"
+      sisteminizde kurulu yazılımların tümünü kaldıracaktır. [y/N]"
   info:
     deleting: "VSO alt sistemi siliniyor..."
     initializing: "VSO alt sistemi ilklendiriliyor..."
@@ -59,9 +59,9 @@ pico:
     exportedApps: "%d uygulama dışa aktarıldı"
     unexportedApps: "%d uygulama dışa aktarımı geri alındı"
     shellInit: "Görünüşe göre kabuğunuz henüz ilklendirilmemiş. Şimdi ilklendirmek
-      ister misiniz? (Şiddetle önerilir) [e/H]"
+      ister misiniz? (Şiddetle önerilir) [y/N]"
     fallbackShell: "Ana makine kabuğuna geri dönülsün mü? Bu beklenmedik davranışlara
-      neden olabilir. [e/H]"
+      neden olabilir. [y/N]"
   export:
     description: "Alt sistemden uygulama ya da ikili dışa aktar"
     options:
@@ -207,7 +207,7 @@ tasks:
       noName: "Görev adı belirtilmedi."
       notFound: "Görev bulunamadı."
     info:
-      askConfirmation: "%s görevini kaldırmak istediğinize emin misiniz? [e/H]"
+      askConfirmation: "%s görevini kaldırmak istediğinize emin misiniz? [y/N]"
       taskDeleted: "Görev başarıyla silindi."
     options:
       force:
