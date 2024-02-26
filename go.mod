@@ -11,7 +11,7 @@ require (
 	github.com/spf13/cobra v1.8.0
 	github.com/vanilla-os/apx/v2 v2.4.0
 	github.com/vanilla-os/orchid v0.5.0
-	go.etcd.io/bbolt v1.3.8
+	go.etcd.io/bbolt v1.3.9
 )
 
 require (
