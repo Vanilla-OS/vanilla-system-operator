@@ -92,6 +92,8 @@ pico:
     description: "Search for an application to install inside the subsystem"
   shell:
     description: "Enter the subsystem environment"
+  sideload:
+    description: "Sideload DEB/APK packages inside the subsystem"
   update:
     description: "Update the subsystem's package repository"
   upgrade:

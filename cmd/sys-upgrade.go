@@ -46,7 +46,7 @@ func NewUpgradeCommand() *cmdr.Command {
 		cmdr.NewBoolFlag(
 			"json",
 			"j",
-			vso.Trans("sysUpgrade.check.json"),
+			vso.Trans("sysUpgrade.check.json.description"),
 			false,
 		),
 	)
