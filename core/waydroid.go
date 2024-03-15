@@ -278,3 +278,7 @@ func WayDelete() error {
 
 	return nil
 }
+
+func IsWayland() bool {
+	return os.Getenv("XDG_SESSION_TYPE") == "wayland"
+}

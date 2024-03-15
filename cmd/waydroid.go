@@ -37,7 +37,8 @@ func NewWayCommand() []*cmdr.Command {
 		"clean",
 		vso.Trans("waydroid.clean.description"),
 		vso.Trans("waydroid.clean.description"),
-		wayClean)
+		wayClean,
+	)
 
 	deleteCmd := cmdr.NewCommand(
 		"delete",
@@ -158,6 +159,11 @@ func NewWayCommand() []*cmdr.Command {
 }
 
 func wayClean(cmd *cobra.Command, args []string) error {
+	if !core.IsWayland() {
+		cmdr.Error.Println(vso.Trans("waydroid.vso.errors.notWayland"))
+		return nil
+	}
+
 	cmdr.Info.Println(vso.Trans("waydroid.clean.info.index"))
 	_, err := os.Stat(core.IndexCacheDir)
 	if !os.IsNotExist(err) {
@@ -180,6 +186,11 @@ func wayClean(cmd *cobra.Command, args []string) error {
 }
 
 func wayDelete(cmd *cobra.Command, args []string) error {
+	if !core.IsWayland() {
+		cmdr.Error.Println(vso.Trans("waydroid.vso.errors.notWayland"))
+		return nil
+	}
+
 	if core.AskConfirmation(vso.Trans("waydroid.delete.confirmation"), false) {
 		return core.WayDelete()
 	}
@@ -187,6 +198,11 @@ func wayDelete(cmd *cobra.Command, args []string) error {
 }
 
 func wayInfo(cmd *cobra.Command, args []string) error {
+	if !core.IsWayland() {
+		cmdr.Error.Println(vso.Trans("waydroid.vso.errors.notWayland"))
+		return nil
+	}
+
 	search := strings.Join(args, " ")
 	matches, err := core.SearchIndex(search, vso.Trans("waydroid.downloadIndex"))
 	if err != nil {
@@ -222,6 +238,11 @@ func wayInfo(cmd *cobra.Command, args []string) error {
 }
 
 func wayStatus(cmd *cobra.Command, args []string) error {
+	if !core.IsWayland() {
+		cmdr.Error.Println(vso.Trans("waydroid.vso.errors.notWayland"))
+		return nil
+	}
+
 	_, err := core.GetWay()
 	if err != nil {
 		fmt.Println("NOT_INITIALIZED")
@@ -235,6 +256,11 @@ func wayStatus(cmd *cobra.Command, args []string) error {
 }
 
 func wayInit(cmd *cobra.Command, args []string) error {
+	if !core.IsWayland() {
+		cmdr.Error.Println(vso.Trans("waydroid.vso.errors.notWayland"))
+		return nil
+	}
+
 	force, _ := cmd.Flags().GetBool("force")
 
 	if core.WayExists() {
@@ -256,6 +282,11 @@ func wayInit(cmd *cobra.Command, args []string) error {
 }
 
 func wayInstallRemote(search string, noconfirm bool, noprompt bool) (string, core.FdroidPackage, error) {
+	if !core.IsWayland() {
+		cmdr.Error.Println(vso.Trans("waydroid.vso.errors.notWayland"))
+		return "", core.FdroidPackage{}, nil
+	}
+
 	_, err := os.Stat(core.APKCacheDir)
 	if os.IsNotExist(err) {
 		err := os.MkdirAll(core.APKCacheDir, 0755)
@@ -307,6 +338,11 @@ func wayInstallRemote(search string, noconfirm bool, noprompt bool) (string, cor
 }
 
 func wayInstall(cmd *cobra.Command, args []string) error {
+	if !core.IsWayland() {
+		cmdr.Error.Println(vso.Trans("waydroid.vso.errors.notWayland"))
+		return nil
+	}
+
 	if len(args) == 0 {
 		cmdr.Error.Println(vso.Trans("waydroid.error.noArguments"))
 		return nil
@@ -349,12 +385,12 @@ func wayInstall(cmd *cobra.Command, args []string) error {
 		apk = args[0]
 	}
 
-	way, err := core.GetWay()
+	_, err = core.GetWay()
 	if err != nil {
 		return err
 	}
 
-	way, err = core.GetWay()
+	way, err := core.GetWay()
 	if err != nil {
 		return err
 	}
@@ -381,6 +417,11 @@ func wayInstall(cmd *cobra.Command, args []string) error {
 }
 
 func wayLaunch(cmd *cobra.Command, args []string) error {
+	if !core.IsWayland() {
+		cmdr.Error.Println(vso.Trans("waydroid.vso.errors.notWayland"))
+		return nil
+	}
+
 	way, err := core.GetWay()
 	if err != nil {
 		return err
@@ -397,6 +438,11 @@ func wayLaunch(cmd *cobra.Command, args []string) error {
 }
 
 func wayLauncher(cmd *cobra.Command, args []string) error {
+	if !core.IsWayland() {
+		cmdr.Error.Println(vso.Trans("waydroid.vso.errors.notWayland"))
+		return nil
+	}
+
 	way, err := core.GetWay()
 	if err != nil {
 		return err
@@ -413,6 +459,11 @@ func wayLauncher(cmd *cobra.Command, args []string) error {
 }
 
 func wayRemove(cmd *cobra.Command, args []string) error {
+	if !core.IsWayland() {
+		cmdr.Error.Println(vso.Trans("waydroid.vso.errors.notWayland"))
+		return nil
+	}
+
 	way, err := core.GetWay()
 	if err != nil {
 		return err
@@ -484,6 +535,11 @@ func wayRemove(cmd *cobra.Command, args []string) error {
 }
 
 func waySearch(cmd *cobra.Command, args []string) error {
+	if !core.IsWayland() {
+		cmdr.Error.Println(vso.Trans("waydroid.vso.errors.notWayland"))
+		return nil
+	}
+
 	if len(args) == 0 {
 		cmdr.Error.Println(vso.Trans("waydroid.error.noArguments"))
 		return nil
@@ -506,6 +562,11 @@ func waySearch(cmd *cobra.Command, args []string) error {
 }
 
 func waySync(cmd *cobra.Command, args []string) error {
+	if !core.IsWayland() {
+		cmdr.Error.Println(vso.Trans("waydroid.vso.errors.notWayland"))
+		return nil
+	}
+
 	err := core.GetRepos()
 	if err != nil {
 		cmdr.Error.Println(vso.Trans("waydroid.error.noRepos"))
@@ -516,6 +577,11 @@ func waySync(cmd *cobra.Command, args []string) error {
 }
 
 func wayUpdate(cmd *cobra.Command, args []string) error {
+	if !core.IsWayland() {
+		cmdr.Error.Println(vso.Trans("waydroid.vso.errors.notWayland"))
+		return nil
+	}
+
 	db, err := core.GetWayDatabase()
 	if err != nil {
 		return err

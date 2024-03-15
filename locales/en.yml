@@ -4,6 +4,7 @@ vso:
     unknownCommand: "Unknown command: %s"
     invalidInput: "Invalid input."
     invalidChoice: "Invalid choice."
+    notWayland: "This feature is only available on Wayland."
   info:
     aborting: "Aborting as requested."
   terminal:
