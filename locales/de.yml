@@ -111,7 +111,7 @@ pico:
     description: "Die Pakete innerhalb des Subsystems aktualisieren"
 
   sideload:
-    description: Sideload DEB/APK packages inside the subsystem
+    description: DEB/APK-Pakete innerhalb des Subsystems querladen
 sysUpgrade:
   description: "Das System aktualisieren"
   check:
@@ -250,7 +250,7 @@ waydroid:
   install:
     info:
       DownloadingPackage: APK wird von %s heruntergeladen
-      PackageSelection: Pick application to install
+      PackageSelection: Wählen Sie eine Anwendung zum Installieren aus
       PackageInCache: Anwendung im Cache gefunden, wird nicht erneut heruntergeladen.
       ConfirmInstall: Anwendung installieren %s?
       InstallSuccess: Installation erfolgreich
@@ -277,18 +277,18 @@ waydroid:
     info:
       NoUpdates: Nichts zu aktualisieren
     error:
-      FailUpdatePackageDownload: Failed to download APK for %s
+      FailUpdatePackageDownload: APK für %s konnte nicht heruntergeladen werden
       FailUpdatePackageDatabase: Datenbankeintrag für %s konnte nicht aktualisiert
         werden
       FailUpdatePackageInstall: Installation des Updates für %s ist fehlgeschlagen
-      FailGetVersion: Failed to get version code for %s
+      FailGetVersion: Versionscode für %s konnte nicht abgerufen werden
     finished: Aktualisierung der Anwendungen abgeschlossen
     description: Installierte Anwendungen aktualisieren
   remove:
     info:
       PackageSelection: Wähle eine Anwendung zum Entfernen
-      ConfirmRemove: Remove application %s?
-      RemovePackage: Removing package %s
+      ConfirmRemove: Anwendung %s entfernen?
+      RemovePackage: Paket %s wird entfernt
     description: Deinstallation einer Anwendung
     error:
       RemoveCancelled: Entfernung abgebrochen
@@ -296,7 +296,7 @@ waydroid:
   clean:
     info:
       success: Erfolgreich den waydroid vso Cache gelöscht
-      apk: Deleting apk cache
+      apk: APK-Cache wird gelöscht
       index: Löschen des Index-Cache
     error:
       apk: Apk-Cache kann nicht gelöscht werden
@@ -322,7 +322,7 @@ waydroid:
     description: Suche nach einer Anwendung
   downloadIndex: Herunterladen des Index für das Repository %s
   sync:
-    description: Sync the repositories
+    description: Repositorien synchronisieren
   launcher:
     description: Den waydroid Launcher anzeigen
   launch:
