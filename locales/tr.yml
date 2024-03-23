@@ -146,7 +146,7 @@ tasks:
         taskCreated: "Görev başarıyla oluşturuldu."
   list:
     description: "Tüm görevleri listele"
-    noTasks: "Görev bulunamadı."
+    noTasks: "Hiçbir görev bulunamadı."
     info:
       foundTasks: "%d görev bulundu."
     options:
