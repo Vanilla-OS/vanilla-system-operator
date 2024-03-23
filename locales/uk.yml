@@ -5,6 +5,7 @@ vso:
     unknownCommand: "Невідома команда: %s"
     invalidInput: "Неправильне введення."
     invalidChoice: "Неправильний вибір."
+    notWayland: This feature is only available on Wayland.
   info:
     aborting: "Скасування за запитом."
   terminal:
@@ -104,6 +105,8 @@ pico:
   upgrade:
     description: "Upgrade the packages inside the subsystem"
 
+  sideload:
+    description: Sideload DEB/APK packages inside the subsystem
 sysUpgrade:
   description: "Upgrade the system"
   check:

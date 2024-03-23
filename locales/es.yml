@@ -5,6 +5,7 @@ vso:
     unknownCommand: "Comando desconocido: %s"
     invalidInput: "Entrada incorrecta."
     invalidChoice: "Opción no válida."
+    notWayland: This feature is only available on Wayland.
   info:
     aborting: "Cancelado según lo solicitado."
   terminal:
@@ -105,6 +106,8 @@ pico:
   upgrade:
     description: "Actualizar los paquetes dentro del subsistema"
 
+  sideload:
+    description: Sideload DEB/APK packages inside the subsystem
 sysUpgrade:
   description: "Actualizar el sistema"
   check:

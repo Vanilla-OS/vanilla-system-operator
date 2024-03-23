@@ -4,6 +4,7 @@ vso:
     unknownCommand: "未知的命令：%s"
     invalidInput: "输入无效。"
     invalidChoice: "选择无效。"
+    notWayland: This feature is only available on Wayland.
   info:
     aborting: "应用户要求取消操作。"
   terminal:
@@ -97,6 +98,8 @@ pico:
   upgrade:
     description: "更新子系统内的软件包"
 
+  sideload:
+    description: Sideload DEB/APK packages inside the subsystem
 sysUpgrade:
   description: "更新系统"
   check:

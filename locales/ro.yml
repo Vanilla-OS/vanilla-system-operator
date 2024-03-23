@@ -5,6 +5,7 @@ vso:
     unknownCommand: "Comanda necunoscută: %s"
     invalidInput: "Intrare nevalidă."
     invalidChoice: "Alegere nevalidă."
+    notWayland: This feature is only available on Wayland.
   info:
     aborting: "Se anulează conform solicitării."
   terminal:
@@ -104,6 +105,8 @@ pico:
   upgrade:
     description: "Actualizați pachetele din cadrul subsistemului"
 
+  sideload:
+    description: Sideload DEB/APK packages inside the subsystem
 sysUpgrade:
   description: "Actualizați sistemul"
   check:

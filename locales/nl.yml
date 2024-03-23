@@ -5,6 +5,7 @@ vso:
     unknownCommand: "Onbekende opdracht: %s"
     invalidInput: "Ongeldige invoer"
     invalidChoice: "Ongeldige keuze"
+    notWayland: This feature is only available on Wayland.
   info:
     aborting: "Afbreken zoals verzocht"
   terminal:
@@ -108,6 +109,8 @@ pico:
   upgrade:
     description: "Werkt de pakketten in het subsysteem bij"
 
+  sideload:
+    description: Sideload DEB/APK packages inside the subsystem
 sys-upgrade:
   check: {}
   tasks:
