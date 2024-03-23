@@ -1,311 +1,314 @@
 vso:
-  description: "The Vanilla System Operator is a package manager, a system updater
-    and a task automator."
+  description: "O Vanilla System Operator é um gestor de pacotes, um atualizador do
+    sistema e um automatizador de tarefas."
   errors:
-    unknownCommand: "Unknown command: %s"
-    invalidInput: "Invalid input."
-    invalidChoice: "Invalid choice."
-    notWayland: "This feature is only available on Wayland."
+    unknownCommand: "Comando desconhecido: %s"
+    invalidInput: "Entrada inválida."
+    invalidChoice: "Escolha inválida."
+    notWayland: "Esse recurso só está disponível no Wayland."
   info:
-    aborting: "Aborting as requested."
+    aborting: "A abortar conforme solicitado."
   terminal:
-    yes: "yes"
-    no: "no"
+    yes: "sim"
+    no: "não"
 
 config:
-  description: "Manage the system configuration."
+  description: "Gerir a configuração do sistema."
   get:
-    description: "Get the system configuration"
+    description: "Obter a configuração do sistema"
     error:
-      noKey: "No key specified."
-      noValue: "No value found for key: %s"
+      noKey: "Nenhuma chave especificada."
+      noValue: "Nenhum valor encontrado para a chave: %s"
     options:
       key:
-        description: "retrieve configuration value by using its key"
+        description: "recupere o valor de configuração usando a sua chave"
   set:
-    description: "Set the system configuration"
+    description: "Definir a configuração do sistema"
     error:
-      noKey: "No key specified."
-      noValue: "No value specified."
-      failed: "Failed to set configuration: %s"
+      noKey: "Nenhuma chave especificada."
+      noValue: "Nenhum valor especificado."
+      failed: "Falha ao definir a configuração: %s"
     options:
-      key: "key of the configuration to set"
-      value: "value of the configuration to set"
-    success: "Configuration updated successfully."
+      key: "chave da configuração a ser definida"
+      value: "valor da configuração a ser definida"
+    success: "Configuração atualizada com sucesso."
   show:
-    description: "Show the system configuration"
+    description: "Mostrar a configuração do sistema"
 
 pico:
-  description: "Manage the VSO subsystem"
+  description: "Gerir o subsistema VSO"
   error:
-    notInitialized: "The VSO subsystem is not initialized. Please run `vso pico-init`
-      to initialize it."
-    alreadyInitialized: "The VSO subsystem is already initialized. Use the --force
-      flag to force the initialization."
-    noAppNameOrBin: "--app or --bin must be specified."
-    sameAppOrBin: "--app and --bin cannot be both specified."
-    exportingApp: "An error occurred while exporting the application: %s"
-    exportingBin: "An error occurred while exporting the binary: %s"
-    unexportingApp: "An error occurred while unexporting the application: %s"
-    unexportingBin: "An error occurred while unexporting the binary: %s"
-    unknownCommand: "Unknown command: %s"
-    shellReset: "It is impossible to reach the VSO shell. Do you want to reset it?
-      (This will remove all your software installed in the subsystem) [y/N]"
+    notInitialized: "O subsistema VSO não foi inicializado. Por favor, execute 'vso
+      pico-init' para inicializá-lo."
+    alreadyInitialized: "O subsistema VSO já foi inicializado. Use o sinalizador --force
+      para forçar a inicialização."
+    noAppNameOrBin: "--app ou --bin devem ser especificados."
+    sameAppOrBin: "--app e --bin não podem ser especificados ao mesmo tempo."
+    exportingApp: "Ocorreu um erro ao exportar a aplicação: %s"
+    exportingBin: "Ocorreu um erro ao exportar o binário: %s"
+    unexportingApp: "Ocorreu um erro ao cancelar a exportação da aplicação: %s"
+    unexportingBin: "Ocorreu um erro ao cancelar a exportação do binário: %s"
+    unknownCommand: "Comando desconhecido: %s"
+    shellReset: "É impossível alcançar o shell VSO. Deseja redefini-lo? (Isso removerá
+      todos os softwares instalados no subsistema) [s/n]"
   info:
-    deleting: "Deleting the VSO subsystem..."
-    initializing: "Initializing the VSO subsystem..."
-    initialized: "The VSO subsystem has been initialized."
-    exported: "Exported %s\n"
-    unexported: "Unexported %s\n"
-    exportedApps: "Exported %d applications"
-    unexportedApps: "Unexported %d applications"
-    shellInit: "Looks like your shell is not initialized yet. Do you want to initialize
-      it now? (Highly recommended) [y/N]"
-    fallbackShell: "Fallback to the host shell? This could lead to unexpected behavior.
-      [y/N]"
+    deleting: "A apagar o subsistema VSO..."
+    initializing: "A inicializar o subsistema VSO..."
+    initialized: "O subsistema VSO foi inicializado."
+    exported: "Exportado %s\n"
+    unexported: "Desfeita a exportação de %s\n"
+    exportedApps: "%d aplicações exportados"
+    unexportedApps: "Exportação de %d aplicações desfeita"
+    shellInit: "Parece que o seu shell ainda não foi inicializado. Deseja inicializá-lo
+      agora? (Altamente recomendado) [s/n]"
+    fallbackShell: "Fallback para o shell do host? Isso pode levar a comportamentos
+      inesperados. [s/n]"
   export:
-    description: "Export an application or binary from the subsystem"
+    description: "Exportar uma aplicação ou binário do subsistema"
     options:
       app:
-        description: "the name of the application to export"
+        description: "o nome da aplicação a ser exportada"
       bin:
-        description: "the name of the binary to export"
+        description: "o nome do binário a ser exportado"
       binOutput:
-        description: "path of the binary output (default: ~/.local/bin/)"
+        description: "caminho de saída do binário (padrão: ~/.local/bin/)"
   unexport:
-    description: "Unexport an application or binary from the subsystem"
+    description: "Desfazer a exportação de uma aplicação ou binário do subsistema"
     options:
       app:
-        description: "the name of the application to unexport"
+        description: "o nome da aplicação para desfazer a exportação"
       bin:
-        description: "the name of the binary to unexport"
+        description: "o nome do binário para desfazer a exportação"
       binOutput:
-        description: "path of the binary output (default: ~/.local/bin/)"
+        description: "caminho de saída do binário (padrão: ~/.local/bin/)"
   init:
-    description: "Initialize the VSO subsystem, used for package management"
+    description: "Inicializar o subsistema VSO, usado para a gestão de pacotes"
     options:
       force:
-        description: "force the initialization if the subsystem is already initialized"
+        description: "força a inicialização se o subsistema já estiver inicializado"
   install:
-    description: "Install an application inside the subsystem"
+    description: "Instalar uma aplicação no subsistema"
   remove:
-    description: "Remove an application from the subsystem"
+    description: "Remover uma aplicação do subsistema"
   run:
-    description: "Run an application from the subsystem"
+    description: "Executar uma aplicação no subsistema"
     options:
       noReset:
-        description: "do not propose to reset the subsystem if something goes wrong"
+        description: "não propor redefinir o subsistema se algo der errado"
   search:
-    description: "Search for an application to install inside the subsystem"
+    description: "Procurar uma aplicação para instalar no subsistema"
   shell:
-    description: "Enter the subsystem environment"
+    description: "Entrar no ambiente do subsistema"
   sideload:
-    description: "Sideload DEB/APK packages inside the subsystem"
+    description: "Realize sideload de pacotes DEB/APK dentro do subsistema"
   update:
-    description: "Update the subsystem's package repository"
+    description: "Atualizar o repositório de pacotes do subsistema"
   upgrade:
-    description: "Upgrade the packages inside the subsystem"
+    description: "Atualizar os pacotes dentro do subsistema"
 
 sysUpgrade:
-  description: "Upgrade the system"
+  description: "Atualizar o sistema"
   check:
-    asExitCode: "checks for upgrade but doesn't print anything. Return exit code 0
-      if no upgrade is available and 1 otherwise."
-    description: "Check for system updates"
+    asExitCode: "verifica se há atualização, mas não imprime nada. Retorna o código
+      de saída 0 se nenhuma atualização estiver disponível e 1 caso contrário."
+    description: "Verificar se há atualizações do sistema"
     error:
-      asExitCodeAndJson: "An error occured when checking for updates. See the JSON
-        output for more details."
+      asExitCodeAndJson: "Ocorreu um erro ao verificar se há atualizações. Consulte
+        a saída JSON para obter mais pormenores."
     info:
-      checking: "Checking for updates..."
-      noUpdates: "No updates available."
+      checking: "A verificar se há atualizações..."
+      noUpdates: "Não há atualizações disponíveis."
     json:
-      description: "output the result in JSON format"
+      description: "saída do resultado no formato JSON"
   sysUpgrade:
-    description: "Upgrade the system"
+    description: "Atualizar o sistema"
     error:
-      updating: "An error occured when updating the system."
+      updating: "Ocorreu um erro ao atualizar o sistema."
     info:
-      updating: "Updating the system..."
-    now: "Trigger a system upgrade now"
+      updating: "A atualizar o sistema..."
+    now: "Acionar uma atualização do sistema agora"
 
 tasks:
-  description: "Create and manage tasks"
+  description: "Criar e gerir tarefas"
   stacks:
     new:
       error:
-        emptyCommand: "The command cannot be empty."
-        emptyDescription: "The description cannot be empty."
-        emptyName: "The name cannot be empty."
-        noCommand: "No command specified."
-        noDescription: "No description specified."
-        noName: "No name specified."
+        emptyCommand: "O comando não pode estar vazio."
+        emptyDescription: "A descrição não pode estar vazia."
+        emptyName: "O nome não pode estar vazio."
+        noCommand: "Nenhum comando especificado."
+        noDescription: "Nenhuma descrição especificada."
+        noName: "Nenhum nome especificado."
       info:
-        askCommand: "Command: "
-        askDescription: "Description: "
-        askName: "Name: "
-        taskCreated: "Task has been created successfully."
+        askCommand: "Comando: "
+        askDescription: "Descrição: "
+        askName: "Nome: "
+        taskCreated: "A tarefa foi criada com sucesso."
   list:
-    description: "List all tasks"
-    noTasks: "No tasks found."
+    description: "Listar todas as tarefas"
+    noTasks: "Nenhuma tarefa encontrada."
     info:
-      foundTasks: "Found %d tasks."
+      foundTasks: "Encontradas %d tarefas."
     options:
       json:
-        description: "output the tasks in JSON format"
+        description: "saída das tarefas no formato JSON"
   new:
-    description: "Create a new task"
+    description: "Criar uma nova tarefa"
     options:
       assumeYes:
-        description: "assume yes for all prompts"
+        description: "suponha que sim para todos os prompts"
       at:
-        description: "schedule the task to execute at a specific time (hh:mm)"
+        description: "agende a execução da tarefa num horário específico (hh:mm)"
       command:
-        description: "specify the command to execute"
+        description: "especifique o comando a ser executado"
       description:
-        description: "specify the task's description"
+        description: "especifique a descrição da tarefa"
       every:
-        description: "schedule the task to execute every X time (minutes, hours, days)"
+        description: "agende a tarefa para ser executada a cada X tempo (minutos,
+          horas, dias)"
       name:
-        description: "specify the task's name"
+        description: "especifique o nome da tarefa"
       needConfirm:
-        description: "ask for confirmation before executing the task"
+        description: "peça confirmação antes de executar a tarefa"
       onBattery:
-        description: "execute the task only when the system is on battery"
+        description: "execute a tarefa somente quando o sistema estiver na pilha"
       onCharge:
-        description: "execute the task only when the system is charging"
+        description: "execute a tarefa somente quando o sistema estiver a carregar"
       onConditionCommand:
-        description: "execute the task on condition command"
+        description: "execute a tarefa dependendo da condição do comando"
       onCpuTemp:
-        description: "execute the task when CPU temperature is higher than 60°C"
+        description: "execute a tarefa quando a temperatura da CPU for superior a
+          60°C"
       onCpuUsage:
-        description: "execute the task when CPU usage is higher than X%"
+        description: "execute a tarefa quando o uso da CPU for maior que X%"
       onDeviceConnect:
-        description: "execute the task when a device is connected"
+        description: "execute a tarefa quando um dispositivo for conectado"
       onDeviceDisconnect:
-        description: "execute the task when a device is disconnected"
+        description: "execute a tarefa quando um dispositivo for desconectado"
       onDisconnect:
-        description: "execute the task when the system is disconnected from the network"
+        description: "execute a tarefa quando o sistema for desconectado da rede"
       onFullBattery:
-        description: "execute the task when the system is fully charged"
+        description: "execute a tarefa quando o sistema estiver totalmente carregado"
       onHighCpuUsage:
-        description: "execute the task when CPU usage is higher than 50%"
+        description: "execute a tarefa quando o uso da CPU for superior a 50%"
       onHighInternetUsage:
-        description: "execute the task when internet usage is higher than 500Kb/s"
+        description: "execute a tarefa quando o uso da Internet for superior a 500Kb/s"
       onHighMemoryUsage:
-        description: "execute the task when memory usage is higher than 50%"
+        description: "execute a tarefa quando o uso de memória for superior a 50%"
       onInternetUsage:
-        description: "execute the task when internet usage is higher than XKb/s"
+        description: "execute a tarefa quando o uso da Internet for maior que XKb/s"
       onLowBattery:
-        description: "execute the task when the system is low on battery (20%)"
+        description: "execute a tarefa quando o sistema estiver com pouca pilha (20%)"
       onMemoryUsage:
-        description: "execute the task when memory usage is higher than X%"
+        description: "execute a tarefa quando o uso de memória for maior que X%"
       onNetwork:
-        description: "execute the task when the system is connected to the network"
+        description: "execute a tarefa quando o sistema for conectado à rede"
       onProcess:
-        description: "execute the task when a process starts"
+        description: "execute a tarefa quando um processo for iniciado"
   rm:
-    description: "Remove a task"
+    description: "Remover uma tarefa"
     error:
-      cannotDelete: "Cannot delete task: %s"
-      noName: "No task name specified."
-      notFound: "Task not found."
+      cannotDelete: "Não é possível apagar tarefa: %s"
+      noName: "Nenhum nome de tarefa especificado."
+      notFound: "Tarefa não encontrada."
     info:
-      askConfirmation: "Are you sure you want to delete the task %s? [y/N]"
-      taskDeleted: "Task has been deleted successfully."
+      askConfirmation: "Tem certeza de que deseja apagar a tarefa %s? [y/N]"
+      taskDeleted: "A tarefa foi excluída com sucesso."
     options:
       force:
-        description: "force the deletion of the task"
+        description: "forçar a exclusão da tarefa"
       name:
-        description: "specify the task's name"
+        description: "especificar o nome da tarefa"
   rotate:
-    description: "Rotate tasks"
+    description: "Rotacionar tarefas"
     options:
       privateEvent:
-        description: "specify the private event to rotate tasks for boot, shutdown,
-          login, and logout"
+        description: "especifique o evento privado para alternar tarefas de inicialização,
+          desligar, login e logout"
 
 waydroid:
-  description: "Manage the vso waydroid subsystem"
-  downloadIndex: "Downloading index for repository %s"
+  description: "Gerir o subsistema vso do waydroid"
+  downloadIndex: "A descarregar o índice do repositório %s"
   clean:
-    description: "Cleans the waydroid vso cache"
+    description: "Limpa o cache do vso waydroid"
     info:
-      index: "Deleting index cache"
-      apk: "Deleting apk cache"
-      success: "Successfully deleted waydroid vso cache"
+      index: "A apagar o cache de índice"
+      apk: "A apagar o cache apk"
+      success: "Cache vso waydroid excluído com sucesso"
     error:
-      index: "Failed to delete index cache"
-      apk: "Failed to delete apk cache"
+      index: "Falha ao apagar o cache de índice"
+      apk: "Falha ao apagar o cache apk"
   delete:
-    description: "Delete the waydroid subsystem"
-    confirmation: "Deleting the waydroid subsystem will delete any data stored in
-      it. Continue?"
-    cancelled: "Cancelled removal of subsystem."
+    description: "Apagar o subsistema waydroid"
+    confirmation: "Apagar o subsistema waydroid apagará todos os dados armazenados
+      nele. Continuar?"
+    cancelled: "Remoção de subsistema cancelada."
   error:
-    noArguments: "No arguments provided."
+    noArguments: "Nenhum argumento fornecido."
   install:
-    description: "Install an application"
+    description: "Instalar uma aplicação"
     options:
       local:
-        description: "Install a local apk"
+        description: "Instalar um apk local"
       noconfirm:
-        description: "Do not ask for confirmation during installation"
+        description: "Não solicite confirmação durante a instalação"
     info:
-      PackageInCache: "Application found in cache, not downloading again."
-      ConfirmInstall: "Install application %s?"
-      DownloadingPackage: "Downloading apk from %s"
-      PackageSelection: "Pick an application to install"
-      InstallSuccess: "Installation successful"
+      PackageInCache: "Aplicação encontrada em cache, não será descarregada novamente."
+      ConfirmInstall: "Instalar aplicação %s?"
+      DownloadingPackage: "A descarregar apk de %s"
+      PackageSelection: "Selecione uma aplicação a instalar"
+      InstallSuccess: "Instalação bem-sucedida"
     error:
-      NotFound: "Application %s was not found."
-      InstallCancelled: "Installation Cancelled"
+      NotFound: "A aplicação %s não foi encontrada."
+      InstallCancelled: "Instalação Cancelada"
   init:
-    description: "Initialize the waydroid subsystem"
+    description: "Inicializar o subsistema waydroid"
     options:
       force:
-        description: "Force the initialization"
+        description: "Forçar a inicialização"
     info:
-      initialized: "The waydroid subsystem has been initialized."
+      initialized: "O subsistema waydroid foi inicializado."
     error:
-      alreadyInitialized: "The waydroid subsystem is already initialized. Use the
-        --force flag to force the initialization."
+      alreadyInitialized: "O subsistema waydroid já foi inicializado. Use o sinalizador
+        --force para forçar a inicialização."
   launch:
-    description: "Launch an installed application"
+    description: "Lançar uma aplicação instalada"
   launcher:
-    description: "Show the waydroid launcher"
+    description: "Exibir o lançador waydroid"
   remove:
-    description: "Uninstall an application"
+    description: "Desinstalar uma aplicação"
     info:
-      RemovePackage: "Removing package %s"
-      PackageSelection: "Pick an application to remove"
-      ConfirmRemove: "Remove application %s?"
+      RemovePackage: "A remover pacote %s"
+      PackageSelection: "Selecione uma aplicação a remover"
+      ConfirmRemove: "Remover aplicação %s?"
     error:
-      NoMatches: "Application %s not found"
-      RemoveCancelled: "Removal Cancelled"
+      NoMatches: "Aplicaçºao %s não encontrada"
+      RemoveCancelled: "Remoção Cancelada"
   search:
-    description: "Search for an application"
+    description: "Procurar uma aplicação"
   sync:
-    description: "Sync the repositories"
+    description: "Sincronizar os repositórios"
   update:
-    description: "Update installed applications"
-    finished: "Finished updating applications"
+    description: "Atualizar aplicações instaladas"
+    finished: "Atualização de aplicações concluída"
     error:
-      FailGetVersion: "Failed to get version code for %s"
-      FailUpdatePackageDownload: "Failed to download APK for %s"
-      FailUpdatePackageDatabase: "Failed to update database entry for %s"
-      FailUpdatePackageInstall: "Failed to install the update for %s"
+      FailGetVersion: "Falha ao obter o código da versão para %s"
+      FailUpdatePackageDownload: "Falha ao descarregar APK para %s"
+      FailUpdatePackageDatabase: "Falha ao atualizar entrada no banco de dados para
+        %s"
+      FailUpdatePackageInstall: "Falha ao instalar a atualização para %s"
     info:
-      NoUpdates: "Nothing to update"
+      NoUpdates: "Nada a atualizar"
   info:
-    description: "Display information about an application"
+    description: "Mostrar informação sobre uma aplicação"
     info:
-      PackageSelection: "Select an application to display information from"
-    PackageName: "Name: %s"
-    InternalName: "Internal name: %s"
-    Summary: "Summary: %s"
-    Author: "Author: %s"
-    License: "License: %s"
-    Repository: "Repository: %s"
+      PackageSelection: "Selecione uma aplicação para mostrar informações"
+    PackageName: "Nome: %s"
+    InternalName: "Nome interno: %s"
+    Summary: "Resumo: %s"
+    Author: "Autor: %s"
+    License: "Licença: %s"
+    Repository: "Repositório: %s"
   status:
-    description: "Return the internal status code of the Android subsystem. For development
-      purposes."
+    description: "Retornar o código de estado interno do subsistema Android. Para
+      fins de desenvolvimento."
