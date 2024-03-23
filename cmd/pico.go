@@ -195,25 +195,6 @@ func picoInit(cmd *cobra.Command, args []string) error {
 	return initializePico(force)
 }
 
-func resetShell(runAction func()) error {
-	cmdr.Warning.Printfln(vso.Trans("pico.error.shellReset"))
-
-	var confirmation string
-	fmt.Scanln(&confirmation)
-	if strings.ToLower(confirmation) != "y" {
-		return fallbackShell()
-	}
-
-	err := initializePico(true)
-	if err != nil {
-		return fallbackShell()
-	}
-
-	runAction()
-
-	return nil
-}
-
 func picoShell(cmd *cobra.Command, args []string) error {
 	if !core.PicoExists() {
 		cmdr.Info.Printfln(vso.Trans("pico.info.shellInit"))
@@ -235,20 +216,10 @@ func picoShell(cmd *cobra.Command, args []string) error {
 		picoShell(cmd, args)
 	}
 
-	err = pico.Enter()
-	if err != nil {
-		fn := func() {
-			picoShell(cmd, args)
-		}
-		return resetShell(fn)
-	}
-
-	return nil
+	return pico.Enter()
 }
 
 func picoRun(cmd *cobra.Command, args []string) error {
-	noReset, _ := cmd.Flags().GetBool("no-reset")
-
 	if !core.PicoExists() {
 		cmdr.Info.Printfln(vso.Trans("pico.info.shellInit"))
 
@@ -270,18 +241,7 @@ func picoRun(cmd *cobra.Command, args []string) error {
 	}
 
 	_, err = pico.Exec(false, false, args...)
-	if err != nil {
-		if noReset {
-			return err
-		}
-
-		fn := func() {
-			picoRun(cmd, args)
-		}
-		return resetShell(fn)
-	}
-
-	return nil
+	return err
 }
 
 func fallbackShell() error {
