@@ -5,6 +5,7 @@ vso:
     unknownCommand: "Неизвестная команда: %s"
     invalidInput: "Недопустимый ввод."
     invalidChoice: "Недопустимый выбор."
+    notWayland: Эта функция доступна только на Wayland.
   info:
     aborting: "Прерывать по запросу."
   terminal:
@@ -104,6 +105,8 @@ pico:
   upgrade:
     description: "Обновите пакеты внутри подсистемы"
 
+  sideload:
+    description: Загрузка пакетов DEB/APK через Sideload внутри подсистемы
 sys-upgrade:
   check: {}
   tasks:

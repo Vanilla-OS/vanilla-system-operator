@@ -5,6 +5,7 @@ vso:
     unknownCommand: "Bilinmeyen komut: %s"
     invalidInput: "Geçersiz girdi."
     invalidChoice: "Geçersiz seçim."
+    notWayland: This feature is only available on Wayland.
   info:
     aborting: "İstendiği için vazgeçiliyor."
   terminal:
@@ -103,6 +104,8 @@ pico:
   upgrade:
     description: "Alt sistemin içindeki paketleri yükselt"
 
+  sideload:
+    description: Sideload DEB/APK packages inside the subsystem
 sysUpgrade:
   description: "Alt sistemi yükselt"
   check:
@@ -143,7 +146,7 @@ tasks:
         taskCreated: "Görev başarıyla oluşturuldu."
   list:
     description: "Tüm görevleri listele"
-    noTasks: "Görev bulunamadı."
+    noTasks: "Hiçbir görev bulunamadı."
     info:
       foundTasks: "%d görev bulundu."
     options:

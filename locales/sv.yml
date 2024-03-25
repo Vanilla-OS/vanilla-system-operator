@@ -5,6 +5,7 @@ vso:
     unknownCommand: "Okänt kommando: %s"
     invalidInput: "Ogiltig inmatning."
     invalidChoice: "Ogiltigt val."
+    notWayland: Den här funktionen är endast tillgänglig på Wayland.
   info:
     aborting: "Avbryter som begärt."
   terminal:
@@ -102,6 +103,8 @@ pico:
   upgrade:
     description: "Uppdatera paketen inuti undersystemet"
 
+  sideload:
+    description: Sidladda DEB/APK-paket inuti undersystemet
 sysUpgrade:
   description: "Uppgradera systemet"
   check:

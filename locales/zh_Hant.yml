@@ -4,6 +4,7 @@ vso:
     unknownCommand: "未知的命令：%s"
     invalidInput: "輸入無效。"
     invalidChoice: "選項無效。"
+    notWayland: 此功能僅在 Wayland 下可以使用。
   info:
     aborting: "應使用者要求中止操作。"
   terminal:
@@ -97,6 +98,8 @@ pico:
   upgrade:
     description: "更新子系統內的軟體包"
 
+  sideload:
+    description: 在子系統內側載 DEB/APK 軟體包
 sysUpgrade:
   description: "更新系統"
   check:

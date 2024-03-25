@@ -1,19 +1,19 @@
 vso:
-  description: "O Vanilla System Operator é um gerenciador de pacotes, um atualizador
-    do sistema e um automatizador de tarefas."
+  description: "O Vanilla System Operator é um gestor de pacotes, um atualizador do
+    sistema e um automatizador de tarefas."
   errors:
     unknownCommand: "Comando desconhecido: %s"
     invalidInput: "Entrada inválida."
     invalidChoice: "Escolha inválida."
-    notWayland: Esse recurso só está disponível no Wayland.
+    notWayland: "Esse recurso só está disponível no Wayland."
   info:
-    aborting: "Abortando conforme solicitado."
+    aborting: "A abortar conforme solicitado."
   terminal:
     yes: "sim"
     no: "não"
 
 config:
-  description: "Gerenciar a configuração do sistema."
+  description: "Gerir a configuração do sistema."
   get:
     description: "Obter a configuração do sistema"
     error:
@@ -21,13 +21,13 @@ config:
       noValue: "Nenhum valor encontrado para a chave: %s"
     options:
       key:
-        description: "recupere o valor de configuração usando sua chave"
+        description: "recupere o valor de configuração usando a sua chave"
   set:
     description: "Definir a configuração do sistema"
     error:
       noKey: "Nenhuma chave especificada."
       noValue: "Nenhum valor especificado."
-      failed: 'Falha ao definir a configuração: %s'
+      failed: "Falha ao definir a configuração: %s"
     options:
       key: "chave da configuração a ser definida"
       value: "valor da configuração a ser definida"
@@ -36,7 +36,7 @@ config:
     description: "Mostrar a configuração do sistema"
 
 pico:
-  description: "Gerenciar o subsistema VSO"
+  description: "Gerir o subsistema VSO"
   error:
     notInitialized: "O subsistema VSO não foi inicializado. Por favor, execute 'vso
       pico-init' para inicializá-lo."
@@ -44,68 +44,68 @@ pico:
       para forçar a inicialização."
     noAppNameOrBin: "--app ou --bin devem ser especificados."
     sameAppOrBin: "--app e --bin não podem ser especificados ao mesmo tempo."
-    exportingApp: "Ocorreu um erro ao exportar o aplicativo: %s"
+    exportingApp: "Ocorreu um erro ao exportar a aplicação: %s"
     exportingBin: "Ocorreu um erro ao exportar o binário: %s"
-    unexportingApp: "Ocorreu um erro ao cancelar a exportação do aplicativo: %s"
+    unexportingApp: "Ocorreu um erro ao cancelar a exportação da aplicação: %s"
     unexportingBin: "Ocorreu um erro ao cancelar a exportação do binário: %s"
-    unknownCommand: 'Comando desconhecido: %s'
-    shellReset: É impossível alcançar o shell VSO. Deseja redefini-lo? (Isso removerá
-      todos os softwares instalados no subsistema) [s/n]
+    unknownCommand: "Comando desconhecido: %s"
+    shellReset: "É impossível alcançar o shell VSO. Deseja redefini-lo? (Isso removerá
+      todos os softwares instalados no subsistema) [s/n]"
   info:
+    deleting: "A apagar o subsistema VSO..."
+    initializing: "A inicializar o subsistema VSO..."
     initialized: "O subsistema VSO foi inicializado."
     exported: "Exportado %s\n"
     unexported: "Desfeita a exportação de %s\n"
-    exportedApps: "Exportados %d aplicativos"
-    unexportedApps: "Desfeita a exportação de %d aplicativos"
-    shellInit: Parece que seu shell ainda não foi inicializado. Deseja inicializá-lo
-      agora? (Altamente recomendado) [s/n]
-    fallbackShell: Fallback para o shell do host? Isso pode levar a comportamentos
-      inesperados. [s/n]
-    deleting: Excluindo o subsistema VSO...
-    initializing: Inicializando o subsistema VSO...
+    exportedApps: "%d aplicações exportados"
+    unexportedApps: "Exportação de %d aplicações desfeita"
+    shellInit: "Parece que o seu shell ainda não foi inicializado. Deseja inicializá-lo
+      agora? (Altamente recomendado) [s/n]"
+    fallbackShell: "Fallback para o shell do host? Isso pode levar a comportamentos
+      inesperados. [s/n]"
   export:
-    description: "Exportar um aplicativo ou binário do subsistema"
+    description: "Exportar uma aplicação ou binário do subsistema"
     options:
       app:
-        description: "o nome do aplicativo a ser exportado"
+        description: "o nome da aplicação a ser exportada"
       bin:
         description: "o nome do binário a ser exportado"
       binOutput:
         description: "caminho de saída do binário (padrão: ~/.local/bin/)"
   unexport:
-    description: "Desfazer a exportação de um aplicativo ou binário do subsistema"
+    description: "Desfazer a exportação de uma aplicação ou binário do subsistema"
     options:
       app:
-        description: "o nome do aplicativo para desfazer a exportação"
+        description: "o nome da aplicação para desfazer a exportação"
       bin:
         description: "o nome do binário para desfazer a exportação"
       binOutput:
         description: "caminho de saída do binário (padrão: ~/.local/bin/)"
   init:
-    description: "Inicializar o subsistema VSO, usado para gerenciamento de pacotes"
+    description: "Inicializar o subsistema VSO, usado para a gestão de pacotes"
     options:
       force:
         description: "força a inicialização se o subsistema já estiver inicializado"
   install:
-    description: "Instalar um aplicativo dentro do subsistema"
+    description: "Instalar uma aplicação no subsistema"
   remove:
-    description: "Remover um aplicativo do subsistema"
+    description: "Remover uma aplicação do subsistema"
   run:
-    description: "Executar um aplicativo a partir do subsistema"
+    description: "Executar uma aplicação no subsistema"
     options:
       noReset:
-        description: não propor redefinir o subsistema se algo der errado
+        description: "não propor redefinir o subsistema se algo der errado"
   search:
-    description: "Procurar um aplicativo para instalar dentro do subsistema"
+    description: "Procurar uma aplicação para instalar no subsistema"
   shell:
     description: "Entrar no ambiente do subsistema"
+  sideload:
+    description: "Realize sideload de pacotes DEB/APK dentro do subsistema"
   update:
     description: "Atualizar o repositório de pacotes do subsistema"
   upgrade:
     description: "Atualizar os pacotes dentro do subsistema"
 
-  sideload:
-    description: Realize sideload de pacotes DEB/APK dentro do subsistema
 sysUpgrade:
   description: "Atualizar o sistema"
   check:
@@ -114,22 +114,22 @@ sysUpgrade:
     description: "Verificar se há atualizações do sistema"
     error:
       asExitCodeAndJson: "Ocorreu um erro ao verificar se há atualizações. Consulte
-        a saída JSON para obter mais detalhes."
+        a saída JSON para obter mais pormenores."
     info:
-      checking: "Verificando se há atualizações..."
+      checking: "A verificar se há atualizações..."
       noUpdates: "Não há atualizações disponíveis."
     json:
-      description: saída do resultado no formato JSON
+      description: "saída do resultado no formato JSON"
   sysUpgrade:
     description: "Atualizar o sistema"
     error:
       updating: "Ocorreu um erro ao atualizar o sistema."
     info:
-      updating: "Atualizando o sistema..."
+      updating: "A atualizar o sistema..."
     now: "Acionar uma atualização do sistema agora"
 
 tasks:
-  description: "Criar e gerenciar tarefas"
+  description: "Criar e gerir tarefas"
   stacks:
     new:
       error:
@@ -158,7 +158,7 @@ tasks:
       assumeYes:
         description: "suponha que sim para todos os prompts"
       at:
-        description: "agende a execução da tarefa em um horário específico (hh:mm)"
+        description: "agende a execução da tarefa num horário específico (hh:mm)"
       command:
         description: "especifique o comando a ser executado"
       description:
@@ -171,9 +171,9 @@ tasks:
       needConfirm:
         description: "peça confirmação antes de executar a tarefa"
       onBattery:
-        description: "execute a tarefa somente quando o sistema estiver na bateria"
+        description: "execute a tarefa somente quando o sistema estiver na pilha"
       onCharge:
-        description: "execute a tarefa somente quando o sistema estiver carregando"
+        description: "execute a tarefa somente quando o sistema estiver a carregar"
       onConditionCommand:
         description: "execute a tarefa dependendo da condição do comando"
       onCpuTemp:
@@ -198,8 +198,7 @@ tasks:
       onInternetUsage:
         description: "execute a tarefa quando o uso da Internet for maior que XKb/s"
       onLowBattery:
-        description: "execute a tarefa quando o sistema estiver com pouca bateria
-          (20%)"
+        description: "execute a tarefa quando o sistema estiver com pouca pilha (20%)"
       onMemoryUsage:
         description: "execute a tarefa quando o uso de memória for maior que X%"
       onNetwork:
@@ -209,11 +208,11 @@ tasks:
   rm:
     description: "Remover uma tarefa"
     error:
-      cannotDelete: "Não é possível excluir tarefa: %s"
+      cannotDelete: "Não é possível apagar tarefa: %s"
       noName: "Nenhum nome de tarefa especificado."
       notFound: "Tarefa não encontrada."
     info:
-      askConfirmation: "Tem certeza de que deseja excluir a tarefa %s? [y/N]"
+      askConfirmation: "Tem certeza de que deseja apagar a tarefa %s? [y/N]"
       taskDeleted: "A tarefa foi excluída com sucesso."
     options:
       force:
@@ -225,90 +224,91 @@ tasks:
     options:
       privateEvent:
         description: "especifique o evento privado para alternar tarefas de inicialização,
-          desligamento, login, e logout"
+          desligar, login e logout"
+
 waydroid:
-  error:
-    noArguments: Nenhum argumento fornecido.
-  install:
+  description: "Gerir o subsistema vso do waydroid"
+  downloadIndex: "A descarregar o índice do repositório %s"
+  clean:
+    description: "Limpa o cache do vso waydroid"
     info:
-      DownloadingPackage: Transferindo apk de %s
-      PackageSelection: Selecione um aplicativo para instalar
-      PackageInCache: Aplicativo encontrado em cache, não será transferido novamente.
-      ConfirmInstall: Instalar aplicativo %s?
-      InstallSuccess: Instalação bem-sucedida
+      index: "A apagar o cache de índice"
+      apk: "A apagar o cache apk"
+      success: "Cache vso waydroid excluído com sucesso"
     error:
-      InstallCancelled: Instalação Cancelada
-      NotFound: O aplicativo %s não foi encontrado.
-    description: Instalar um aplicativo
+      index: "Falha ao apagar o cache de índice"
+      apk: "Falha ao apagar o cache apk"
+  delete:
+    description: "Apagar o subsistema waydroid"
+    confirmation: "Apagar o subsistema waydroid apagará todos os dados armazenados
+      nele. Continuar?"
+    cancelled: "Remoção de subsistema cancelada."
+  error:
+    noArguments: "Nenhum argumento fornecido."
+  install:
+    description: "Instalar uma aplicação"
     options:
       local:
-        description: Instalar um apk local
+        description: "Instalar um apk local"
       noconfirm:
-        description: Não solicite confirmação durante a instalação
-  info:
-    Author: 'Autor: %s'
-    PackageName: 'Nome: %s'
-    InternalName: 'Nome interno: %s'
-    License: 'Licença: %s'
-    Summary: 'Resumo: %s'
-    Repository: 'Repositório: %s'
-    description: Mostrar informação sobre um aplicativo
+        description: "Não solicite confirmação durante a instalação"
     info:
-      PackageSelection: Selecione um aplicativo para mostrar informações
-  update:
-    info:
-      NoUpdates: Nada a atualizar
+      PackageInCache: "Aplicação encontrada em cache, não será descarregada novamente."
+      ConfirmInstall: "Instalar aplicação %s?"
+      DownloadingPackage: "A descarregar apk de %s"
+      PackageSelection: "Selecione uma aplicação a instalar"
+      InstallSuccess: "Instalação bem-sucedida"
     error:
-      FailUpdatePackageDownload: Falha ao transferir APK para %s
-      FailUpdatePackageDatabase: Falha ao atualizar entrada no banco de dados para
-        %s
-      FailUpdatePackageInstall: Falha ao instalar a atualização para %s
-      FailGetVersion: Falha ao obter o código da versão para %s
-    finished: Atualização de aplicativos concluída
-    description: Atualizar aplicativos instalados
-  remove:
-    info:
-      PackageSelection: Selecione um aplicativo para remover
-      ConfirmRemove: Remover aplicativo %s?
-      RemovePackage: Removendo pacote %s
-    description: Desinstalar um aplicativo
-    error:
-      RemoveCancelled: Remoção Cancelada
-      NoMatches: Aplicativo %s não encontrado
-  clean:
-    info:
-      success: Cache vso waydroid excluído com sucesso
-      apk: Excluindo o cache apk
-      index: Excluindo o cache de índice
-    error:
-      apk: Falha ao excluir o cache apk
-      index: Falha ao excluir o cache de índice
-    description: Limpa o cache do vso waydroid
-  description: Gerenciar o subsistema vso do waydroid
-  delete:
-    description: Apagar o subsistema waydroid
-    confirmation: Excluir o subsistema waydroid apagará todos os dados armazenados
-      nele. Continuar?
-    cancelled: Remoção de subsistema cancelada.
+      NotFound: "A aplicação %s não foi encontrada."
+      InstallCancelled: "Instalação Cancelada"
   init:
+    description: "Inicializar o subsistema waydroid"
     options:
       force:
-        description: Forçar a inicialização
-    description: Inicializar o subsistema waydroid
-    error:
-      alreadyInitialized: O subsistema waydroid já foi inicializado. Use o sinalizador
-        --force para forçar a inicialização.
+        description: "Forçar a inicialização"
     info:
-      initialized: O subsistema waydroid foi inicializado.
-  search:
-    description: Busque por um aplicativo
-  downloadIndex: Baixando o índice do repositório %s
-  sync:
-    description: Sincronizar os repositórios
-  launcher:
-    description: Exibir o lançador waydroid
+      initialized: "O subsistema waydroid foi inicializado."
+    error:
+      alreadyInitialized: "O subsistema waydroid já foi inicializado. Use o sinalizador
+        --force para forçar a inicialização."
   launch:
-    description: Lançar um aplicativo instalado
+    description: "Lançar uma aplicação instalada"
+  launcher:
+    description: "Exibir o lançador waydroid"
+  remove:
+    description: "Desinstalar uma aplicação"
+    info:
+      RemovePackage: "A remover pacote %s"
+      PackageSelection: "Selecione uma aplicação a remover"
+      ConfirmRemove: "Remover aplicação %s?"
+    error:
+      NoMatches: "Aplicaçºao %s não encontrada"
+      RemoveCancelled: "Remoção Cancelada"
+  search:
+    description: "Procurar uma aplicação"
+  sync:
+    description: "Sincronizar os repositórios"
+  update:
+    description: "Atualizar aplicações instaladas"
+    finished: "Atualização de aplicações concluída"
+    error:
+      FailGetVersion: "Falha ao obter o código da versão para %s"
+      FailUpdatePackageDownload: "Falha ao descarregar APK para %s"
+      FailUpdatePackageDatabase: "Falha ao atualizar entrada no banco de dados para
+        %s"
+      FailUpdatePackageInstall: "Falha ao instalar a atualização para %s"
+    info:
+      NoUpdates: "Nada a atualizar"
+  info:
+    description: "Mostrar informação sobre uma aplicação"
+    info:
+      PackageSelection: "Selecione uma aplicação para mostrar informações"
+    PackageName: "Nome: %s"
+    InternalName: "Nome interno: %s"
+    Summary: "Resumo: %s"
+    Author: "Autor: %s"
+    License: "Licença: %s"
+    Repository: "Repositório: %s"
   status:
-    description: Retornar o código de status interno do subsistema Android. Para fins
-      de desenvolvimento.
+    description: "Retornar o código de estado interno do subsistema Android. Para
+      fins de desenvolvimento."
