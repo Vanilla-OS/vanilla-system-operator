@@ -33,7 +33,7 @@ jobs:
     - name: Compress-manpage
       run: tar -czvf vso-man.tar.gz man/vso.1
     
-    - uses: softprops/action-gh-release@v1
+    - uses: softprops/action-gh-release@v2
       with:
           token: "${{ secrets.GITHUB_TOKEN }}"
           tag_name: "continuous"
