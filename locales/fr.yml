@@ -108,7 +108,7 @@ pico:
     description: "Mise à jour des paquets à l'intérieur du sous-système"
 
   sideload:
-    description: Sideload DEB/APK packages inside the subsystem
+    description: Chargement des paquets DEB/APK dans le sous-système
 sys-upgrade:
   check: {}
   tasks:
