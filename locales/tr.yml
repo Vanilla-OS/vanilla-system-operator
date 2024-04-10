@@ -5,7 +5,7 @@ vso:
     unknownCommand: "Bilinmeyen komut: %s"
     invalidInput: "Geçersiz girdi."
     invalidChoice: "Geçersiz seçim."
-    notWayland: This feature is only available on Wayland.
+    notWayland: Bu özellik yalnızca Wayland’de bulunur.
   info:
     aborting: "İstendiği için vazgeçiliyor."
   terminal:
@@ -105,7 +105,7 @@ pico:
     description: "Alt sistemin içindeki paketleri yükselt"
 
   sideload:
-    description: Sideload DEB/APK packages inside the subsystem
+    description: DEB/APK paketleri alt sistemin içine yandan yükle
 sysUpgrade:
   description: "Alt sistemi yükselt"
   check:
