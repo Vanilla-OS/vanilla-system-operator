@@ -5,7 +5,7 @@ vso:
     unknownCommand: "Nieznane polecenie: %s"
     invalidInput: "Nieprawidłowe dane wejściowe."
     invalidChoice: "Nieprawidłowy wybór."
-    notWayland: This feature is only available on Wayland.
+    notWayland: Ta funkcja dostępna jest jedynie na Wayland.
   info:
     aborting: "Przerywanie na żądanie."
   terminal:
