@@ -5,7 +5,7 @@ vso:
     unknownCommand: "Commande inconnue : %s"
     invalidInput: "Entrée invalide."
     invalidChoice: "Choix invalide."
-    notWayland: This feature is only available on Wayland.
+    notWayland: Cette fonctionnalité est disponible seulement sur Wayland.
   info:
     aborting: "Annulation."
   terminal:
