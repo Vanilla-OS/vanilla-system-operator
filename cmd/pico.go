@@ -216,7 +216,12 @@ func picoShell(cmd *cobra.Command, args []string) error {
 		picoShell(cmd, args)
 	}
 
-	return pico.Enter()
+	if len(args) == 0 {
+		return pico.Enter()
+	}
+
+	_, err = pico.Exec(false, false, args...)
+	return err
 }
 
 func picoRun(cmd *cobra.Command, args []string) error {
