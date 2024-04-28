@@ -18,7 +18,7 @@ import (
 
 	"github.com/spf13/cobra"
 	"github.com/vanilla-os/orchid/cmdr"
-	"github.com/vanilla-os/vso/core"
+	"github.com/vanilla-os/vanilla-system-operator/core"
 )
 
 func NewPicoCommand() []*cmdr.Command {

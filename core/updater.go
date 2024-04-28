@@ -17,7 +17,7 @@ import (
 	"strings"
 	"time"
 
-	"github.com/vanilla-os/vso/settings"
+	"github.com/vanilla-os/vanilla-system-operator/settings"
 )
 
 var (

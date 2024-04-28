@@ -15,7 +15,7 @@ import (
 	"github.com/vanilla-os/apx/v2/core"
 	"github.com/vanilla-os/apx/v2/settings"
 	"github.com/vanilla-os/orchid/cmdr"
-	"github.com/vanilla-os/vso/cmd"
+	"github.com/vanilla-os/vanilla-system-operator/cmd"
 )
 
 var (

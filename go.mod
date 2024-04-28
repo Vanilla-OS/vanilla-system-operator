@@ -1,4 +1,4 @@
-module github.com/vanilla-os/vso
+module github.com/vanilla-os/vanilla-system-operator
 
 go 1.21.4
 
