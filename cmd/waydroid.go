@@ -205,6 +205,11 @@ func wayInfo(cmd *cobra.Command, args []string) error {
 		os.Exit(1)
 	}
 
+	if len(args) < 1 {
+		cmdr.Error.Println(vso.Trans("waydroid.error.noArguments"))
+		os.Exit(1)
+	}
+
 	search := strings.Join(args, " ")
 	matches, err := core.SearchIndex(search, vso.Trans("waydroid.downloadIndex"))
 	if err != nil {
