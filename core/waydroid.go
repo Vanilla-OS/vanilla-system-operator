@@ -13,6 +13,7 @@ import (
 	"encoding/json"
 	"fmt"
 	"os"
+	"os/exec"
 	"strings"
 	"time"
 
@@ -279,6 +280,25 @@ func WayDelete() error {
 	return nil
 }
 
-func IsWayland() bool {
+func isWayland() bool {
 	return os.Getenv("XDG_SESSION_TYPE") == "wayland"
+}
+
+func isSecureBootDisabled() bool {
+	cmd := exec.Command("mokutil", "--sb-state")
+	out, err := cmd.Output()
+	if err != nil {
+		return false
+	}
+	return !strings.Contains(string(out), "enabled")
+}
+
+func IsSupported() int {
+	if !isWayland() {
+		return 1
+	}
+	if !isSecureBootDisabled() {
+		return 2
+	}
+	return 0
 }
