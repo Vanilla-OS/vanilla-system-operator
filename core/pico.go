@@ -38,6 +38,7 @@ func PicoInit() error {
 		false,
 		false,
 		true,
+		"vso",
 	)
 
 	if err != nil {

@@ -189,6 +189,7 @@ func WayInit() error {
 		true,
 		false,
 		false,
+		"android",
 	)
 
 	if err != nil {
