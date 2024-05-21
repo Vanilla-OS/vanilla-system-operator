@@ -5,7 +5,7 @@ vso:
     unknownCommand: "Невідома команда: %s"
     invalidInput: "Неправильне введення."
     invalidChoice: "Неправильний вибір."
-    notWayland: This feature is only available on Wayland.
+    notWayland: Ця функція доступна лише на Wayland.
   info:
     aborting: "Скасування за запитом."
   terminal:
@@ -50,20 +50,21 @@ pico:
     unexportingBin: "Виникла помилка під час скасування експорту бінарного файлу:
       %s"
     unknownCommand: 'Невідома команда: %s'
-    shellReset: It is impossible to reach the VSO shell. Do you want to reset it?
-      (This will remove all your software installed in the subsystem) [y/N]
+    shellReset: Неможливо дістатися до оболонки VSO. Бажаєте скинути її? (Це призведе
+      до видалення всього вашого програмного забезпечення, встановленого у підсистемі)
+      [y/N]
   info:
-    initialized: "The Pico subsystem has been initialized."
-    exported: "Exported %s\n"
-    unexported: "Unexported %s\n"
-    exportedApps: "Exported %d applications"
+    initialized: "Підсистему VSO ініціалізовано."
+    exported: "Експортовано %s\n"
+    unexported: "Не експортовано %s\n"
+    exportedApps: "Експортовано %d застосунків"
     unexportedApps: "Unexported %d applications"
     shellInit: Looks like your shell is not initialized yet. Do you want to initialize
       it now? (Highly recommended) [y/N]
     fallbackShell: Fallback to the host shell? This could lead to unexpected behavior.
       [y/N]
-    deleting: Deleting the VSO subsystem...
-    initializing: Initializing the VSO subsystem...
+    deleting: Видалення підсистеми VSO...
+    initializing: Ініціалізація підсистеми VSO...
   export:
     description: "Export an application or binary from the subsystem"
     options:
