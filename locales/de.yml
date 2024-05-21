@@ -106,7 +106,7 @@ pico:
   shell:
     description: "Geben Sie die Subsystemumgebung ein"
   update:
-    description: "Update the subsystem's package repository"
+    description: "Aktualisieren der Paketquellen des Subsystems"
   upgrade:
     description: "Die Pakete innerhalb des Subsystems aktualisieren"
 
