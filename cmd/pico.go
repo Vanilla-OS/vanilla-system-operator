@@ -367,6 +367,15 @@ func runPicoCmd(command string, cmd *cobra.Command, args []string) error {
 	}
 
 	if command == "sideload" {
+		// Sometimes the repo can get out of sync, which causes the sideload
+		// operation to fail when fetching dependencies. This is a quirk of apt
+		// but usually fixed by a repo refresh.
+		updateArgs := pkgManager.GenCmd(pkgManager.CmdUpdate)
+		_, err = pico.Exec(false, false, updateArgs...)
+		if err != nil {
+			return err
+		}
+
 		// we need to handle possible broken/missing dependencies while
 		// sideloading, so we use the --fix-broken flag, assuming VSO is
 		// being used in Vanilla OS (which is the only supported use case)
