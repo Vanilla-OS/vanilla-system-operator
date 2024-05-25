@@ -26,13 +26,16 @@ jobs:
 
     - name: Build
       run: go build -o vso
-        
+
+    - name: Check for missing strings
+      uses: vanilla-os/missing-strings-golang-action@v0.1.0
+
     - name: Compress
       run: tar -czvf vso.tar.gz vso
 
     - name: Compress-manpage
       run: tar -czvf vso-man.tar.gz man/vso.1
-    
+
     - uses: softprops/action-gh-release@v2
       with:
           token: "${{ secrets.GITHUB_TOKEN }}"

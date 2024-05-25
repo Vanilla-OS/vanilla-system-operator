@@ -161,10 +161,10 @@ func NewWayCommand() []*cmdr.Command {
 func isSupported() {
 	switch core.IsSupported() {
 	case 1:
-		cmdr.Error.Println(vso.Trans("waydroid.vso.errors.notWayland"))
+		cmdr.Error.Println(vso.Trans("waydroid.error.notWayland"))
 		os.Exit(1)
 	case 2:
-		cmdr.Error.Println(vso.Trans("waydroid.vso.errors.secureBoot"))
+		cmdr.Error.Println(vso.Trans("waydroid.error.secureBoot"))
 		os.Exit(1)
 	}
 }
@@ -288,7 +288,7 @@ func wayInstallRemote(search string, noconfirm bool, noprompt bool) (string, cor
 
 	_, err := os.Stat(core.APKCacheDir)
 	if os.IsNotExist(err) {
-		err := os.MkdirAll(core.APKCacheDir, 0755)
+		err := os.MkdirAll(core.APKCacheDir, 0o755)
 		if err != nil {
 			return "", core.FdroidPackage{}, err
 		}
@@ -490,7 +490,7 @@ func wayRemove(cmd *cobra.Command, args []string) error {
 	if err != nil {
 		return err
 	}
-	//defer db.Close()
+	// defer db.Close()
 	if len(matches) == 1 {
 		rem = matches[0]
 	} else if len(matches) > 1 {

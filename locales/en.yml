@@ -4,7 +4,6 @@ vso:
     unknownCommand: "Unknown command: %s"
     invalidInput: "Invalid input."
     invalidChoice: "Invalid choice."
-    notWayland: "This feature is only available on Wayland."
   info:
     aborting: "Aborting as requested."
   terminal:
@@ -118,6 +117,7 @@ sysUpgrade:
       updating: "An error occured when updating the system."
     info:
       updating: "Updating the system..."
+      noUpdates: "Your system is already up-to-date."
     now: "Trigger a system upgrade now"
 
 tasks:
@@ -233,6 +233,9 @@ waydroid:
     cancelled: "Cancelled removal of subsystem."
   error:
     noArguments: "No arguments provided."
+    notWayland: "This feature is only available on Wayland."
+    secureBoot: "This feature requires secure boot to be enabled in the BIOS."
+    noRepos: "Could not find any repositories."
   install:
     description: "Install an application"
     options:
