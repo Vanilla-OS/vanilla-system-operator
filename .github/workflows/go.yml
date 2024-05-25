@@ -3,6 +3,8 @@ name: Go
 on:
   push:
     branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
 
 jobs:
 
@@ -10,6 +12,10 @@ jobs:
     runs-on: ubuntu-latest
     container:
       image: ghcr.io/vanilla-os/pico:main
+    permissions:
+      contents: write # to upload assets to releases
+      attestations: write # to upload assets attestation for build provenance
+      id-token: write # grant additional permission to attestation action to mint the OIDC token permission
 
     steps:
     - uses: actions/checkout@v4
@@ -17,7 +23,7 @@ jobs:
     - name: Set up Go
       uses: actions/setup-go@v5
       with:
-        go-version: 1.21
+        go-version: 1.22
 
     - name: Install build dependencies
       run: |
@@ -26,14 +32,23 @@ jobs:
 
     - name: Build
       run: go build -o vso
-        
+
+    - name: Check for missing strings
+      uses: vanilla-os/missing-strings-golang-action@v0.1.0
+ 
     - name: Compress
       run: tar -czvf vso.tar.gz vso
 
     - name: Compress-manpage
       run: tar -czvf vso-man.tar.gz man/vso.1
-    
+
+    - uses: actions/upload-artifact@v4
+      with:
+        name: vso
+        path: vso.tar.gz
+
     - uses: softprops/action-gh-release@v2
+      if: github.repository == 'vanilla-os/vanilla-system-operator' && github.ref == 'refs/heads/main'
       with:
           token: "${{ secrets.GITHUB_TOKEN }}"
           tag_name: "continuous"
@@ -42,3 +57,11 @@ jobs:
           files: |
             vso.tar.gz
             vso-man.tar.gz
+
+    - name: Attest continuous release files
+      if: github.repository == 'vanilla-os/vanilla-system-operator' && github.ref == 'refs/heads/main'
+      uses: actions/attest-build-provenance@v1
+      with:
+        subject-path: |
+          vso.tar.gz
+          vso-man.tar.gz

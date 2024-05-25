@@ -16,31 +16,32 @@ jobs:
       - name: Set up Go
         uses: actions/setup-go@v5
         with:
-          go-version: 1.21
+          go-version: 1.22
 
       - name: Run GoReleaser
         uses: goreleaser/goreleaser-action@v5
         with:
-          # either 'goreleaser' (default) or 'goreleaser-pro'
           distribution: goreleaser
           version: latest
           args: release --clean
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          # Your GoReleaser Pro key, if you are using the 'goreleaser-pro' distribution
-          # GORELEASER_KEY: ${{ secrets.GORELEASER_KEY }}
 
   upload-artifacts:
     runs-on: ubuntu-latest
     container:
       image: ghcr.io/vanilla-os/pico:main
+    permissions:
+      contents: write # Allow uploading assets to release
+      attestations: write # To create and write attestations
+      id-token: write # Additional permissions for persistence of the attestations
 
     steps:
       - uses: actions/checkout@v4
       - name: Set up Go
         uses: actions/setup-go@v5
         with:
-          go-version: 1.21
+          go-version: 1.22
 
       - name: Install build dependencies
         run: |
@@ -60,5 +61,12 @@ jobs:
         with:
           token: "${{ secrets.GITHUB_TOKEN }}"
           files: |
+            vso.tar.gz
+            vso-man.tar.gz
+      
+      - name: Attest release files
+        uses: actions/attest-build-provenance@v1
+        with:
+          subject-path: |
             vso.tar.gz
             vso-man.tar.gz
