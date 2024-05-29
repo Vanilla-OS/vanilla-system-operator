@@ -5,7 +5,6 @@ vso:
     unknownCommand: "Comanda desconeguda: %s"
     invalidInput: "Entrada no vàlida."
     invalidChoice: "Opció invàlida."
-    notWayland: This feature is only available on Wayland.
   info:
     aborting: "Avortant com s'ha demanat."
   terminal:
@@ -120,7 +119,6 @@ sysUpgrade:
         una ullada al JSON per més detalls."
     info:
       checking: "Comprovant les actualitzacions..."
-      noUpdates: "No hi han actualitzacions disponibles."
     json:
       description: "sortida dels resultats en format JSON"
   sysUpgrade:

@@ -5,7 +5,6 @@ vso:
     unknownCommand: "Bilinmeyen komut: %s"
     invalidInput: "Geçersiz girdi."
     invalidChoice: "Geçersiz seçim."
-    notWayland: Bu özellik yalnızca Wayland’de bulunur.
   info:
     aborting: "İstendiği için vazgeçiliyor."
   terminal:
@@ -117,7 +116,6 @@ sysUpgrade:
         için JSON çıktısına bakın."
     info:
       checking: "Güncellemeler denetleniyor..."
-      noUpdates: "Güncelleme yok."
     json:
       description: "sonucu JSON biçiminde çıkar"
   sysUpgrade:

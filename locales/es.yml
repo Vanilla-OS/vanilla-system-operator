@@ -5,7 +5,6 @@ vso:
     unknownCommand: "Comando desconocido: %s"
     invalidInput: "Entrada incorrecta."
     invalidChoice: "Opción no válida."
-    notWayland: Esta función sólo está disponible en Wayland.
   info:
     aborting: "Cancelado según lo solicitado."
   terminal:
@@ -119,7 +118,6 @@ sysUpgrade:
         Consulte la salida JSON para obtener más detalles."
     info:
       checking: "Buscando actualizaciones..."
-      noUpdates: "No hay actualizaciones disponibles."
     json:
       description: "salida del resultado en formato JSON"
   sysUpgrade:

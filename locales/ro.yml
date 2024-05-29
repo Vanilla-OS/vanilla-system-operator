@@ -5,7 +5,6 @@ vso:
     unknownCommand: "Comanda necunoscută: %s"
     invalidInput: "Intrare nevalidă."
     invalidChoice: "Alegere nevalidă."
-    notWayland: This feature is only available on Wayland.
   info:
     aborting: "Se anulează conform solicitării."
   terminal:
@@ -118,7 +117,6 @@ sysUpgrade:
         Pentru mai multe detalii vezi rezultatul JSON."
     info:
       checking: "Verificare după actualizări..."
-      noUpdates: "Nu există actualizări disponibile."
     json:
       description: exportă rezultatul în format JSON
   sysUpgrade:

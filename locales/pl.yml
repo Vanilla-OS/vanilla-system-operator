@@ -5,7 +5,6 @@ vso:
     unknownCommand: "Nieznane polecenie: %s"
     invalidInput: "Nieprawidłowe dane wejściowe."
     invalidChoice: "Nieprawidłowy wybór."
-    notWayland: Ta funkcja dostępna jest jedynie na Wayland.
   info:
     aborting: "Przerywanie na żądanie."
   terminal:
@@ -118,7 +117,6 @@ sysUpgrade:
         output for more details."
     info:
       checking: "Checking for updates..."
-      noUpdates: "No updates available."
     json:
       description: "output the result in JSON format"
   sysUpgrade:
