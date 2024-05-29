@@ -118,6 +118,7 @@ sysUpgrade:
       updating: "更新系统时发生错误。"
     info:
       updating: "正在更新系统…"
+      noUpdates: Your system is already up-to-date.
     now: "立即执行系统更新"
 
 tasks:
@@ -217,6 +218,9 @@ tasks:
 waydroid:
   error:
     noArguments: 没有提供参数。
+    notWayland: This feature is only available on Wayland.
+    secureBoot: This feature requires secure boot to be disabled in the BIOS.
+    noRepos: Could not find any repositories.
   install:
     info:
       DownloadingPackage: 正在从 %s 下载 apk

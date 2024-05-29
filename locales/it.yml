@@ -130,6 +130,7 @@ sysUpgrade:
       updating: "Si è verificato un errore durante l'aggiornamento del sistema."
     info:
       updating: "Aggiornamento del sistema..."
+      noUpdates: Your system is already up-to-date.
     now: "Avvia l'aggiornamento del sistema adesso"
 
 tasks:
@@ -257,6 +258,9 @@ waydroid:
     cancelled: "Eliminazione del sottosistema annullata."
   error:
     noArguments: "Nessun argomento è stato fornito."
+    notWayland: This feature is only available on Wayland.
+    secureBoot: This feature requires secure boot to be disabled in the BIOS.
+    noRepos: Could not find any repositories.
   install:
     description: "Installa un'applicazione"
     options:

@@ -129,6 +129,7 @@ sysUpgrade:
       updating: "Під час оновлення системи сталася помилка."
     info:
       updating: "Оновлення системи..."
+      noUpdates: Your system is already up-to-date.
     now: "Запустити оновлення системи прямо зараз"
 
 tasks:
@@ -229,6 +230,9 @@ tasks:
 waydroid:
   error:
     noArguments: No arguments provided.
+    notWayland: This feature is only available on Wayland.
+    secureBoot: This feature requires secure boot to be disabled in the BIOS.
+    noRepos: Could not find any repositories.
   install:
     info:
       DownloadingPackage: Downloading apk from %s

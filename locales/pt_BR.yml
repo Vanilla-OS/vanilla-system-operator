@@ -126,6 +126,7 @@ sysUpgrade:
       updating: "Ocorreu um erro ao atualizar o sistema."
     info:
       updating: "Atualizando o sistema..."
+      noUpdates: Your system is already up-to-date.
     now: "Acionar uma atualização do sistema agora"
 
 tasks:
@@ -229,6 +230,9 @@ tasks:
 waydroid:
   error:
     noArguments: Nenhum argumento fornecido.
+    notWayland: This feature is only available on Wayland.
+    secureBoot: This feature requires secure boot to be disabled in the BIOS.
+    noRepos: Could not find any repositories.
   install:
     info:
       DownloadingPackage: Transferindo apk de %s

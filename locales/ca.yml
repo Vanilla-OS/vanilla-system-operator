@@ -129,6 +129,7 @@ sysUpgrade:
       updating: "S'ha trobat un error mentre s'actualitzava el sistema."
     info:
       updating: "Actualitzant el sistema..."
+      noUpdates: Your system is already up-to-date.
     now: "Provoca una actualització del sistema ara"
 
 tasks:
@@ -246,6 +247,9 @@ waydroid:
     cancelled: "Cancelled removal of subsystem."
   error:
     noArguments: "No arguments provided."
+    secureBoot: This feature requires secure boot to be disabled in the BIOS.
+    noRepos: Could not find any repositories.
+    notWayland: This feature is only available on Wayland.
   install:
     description: "Install an application"
     options:

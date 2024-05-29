@@ -126,6 +126,7 @@ sysUpgrade:
       updating: "Sistem yükseltilirken hata oluştu."
     info:
       updating: "Sistem güncelleniyor..."
+      noUpdates: Your system is already up-to-date.
     now: "Şimdi sistem yükseltmesini tetikle"
 
 tasks:
@@ -243,6 +244,9 @@ waydroid:
     cancelled: "Alt sistemin kaldırılması iptal edildi."
   error:
     noArguments: "Argüman sağlanmadı."
+    notWayland: This feature is only available on Wayland.
+    secureBoot: This feature requires secure boot to be disabled in the BIOS.
+    noRepos: Could not find any repositories.
   install:
     description: "Uygulama kur"
     options:
