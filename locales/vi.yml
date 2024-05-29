@@ -124,6 +124,7 @@ sysUpgrade:
       updating: "Có một lỗi đã xảy ra khi cập nhật hệ thống."
     info:
       updating: "Đang cập nhật hệ thống..."
+      noUpdates: Your system is already up-to-date.
     now: "Kích hoạt bản cập nhật hệ thống ngay"
 
 tasks:
@@ -242,6 +243,9 @@ waydroid:
     cancelled: "Đã huỷ việc xoá hệ thống con"
   error:
     noArguments: "Không có tham số nào được cung cấp."
+    notWayland: This feature is only available on Wayland.
+    secureBoot: This feature requires secure boot to be disabled in the BIOS.
+    noRepos: Could not find any repositories.
   install:
     description: "Cài đặt một ứng dụng"
     options:
