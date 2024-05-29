@@ -127,6 +127,7 @@ sysUpgrade:
       updating: "S-a întâmplat o eroare în timpul actualizării sistemului."
     info:
       updating: "Actualizarea sistemului..."
+      noUpdates: Your system is already up-to-date.
     now: "Declanșează un upgrade al sistemului acum"
 
 tasks:
@@ -232,6 +233,9 @@ tasks:
 waydroid:
   error:
     noArguments: Niciun argument furnizat.
+    notWayland: This feature is only available on Wayland.
+    secureBoot: This feature requires secure boot to be disabled in the BIOS.
+    noRepos: Could not find any repositories.
   install:
     info:
       DownloadingPackage: Descărcare apk de la %s

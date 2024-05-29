@@ -245,10 +245,14 @@ sysUpgrade:
       updating: Er is een fout opgetreden bij het bijwerken van het systeem.
     info:
       updating: Systeem updaten…
+      noUpdates: Your system is already up-to-date.
     now: Activeer nu een systeemupgrade
 waydroid:
   error:
     noArguments: Geen argumenten opgegeven
+    notWayland: This feature is only available on Wayland.
+    secureBoot: This feature requires secure boot to be disabled in the BIOS.
+    noRepos: Could not find any repositories.
   install:
     info:
       DownloadingPackage: APK downloaden van %s

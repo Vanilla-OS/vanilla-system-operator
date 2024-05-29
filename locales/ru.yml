@@ -137,6 +137,7 @@ sysUpgrade:
   sysUpgrade:
     info:
       updating: Обновление системы...
+      noUpdates: Your system is already up-to-date.
     now: Запустить обновление системы прямо сейчас
     description: Обновите систему
     error:
@@ -241,6 +242,9 @@ tasks:
 waydroid:
   error:
     noArguments: Нет аргументов.
+    notWayland: This feature is only available on Wayland.
+    secureBoot: This feature requires secure boot to be disabled in the BIOS.
+    noRepos: Could not find any repositories.
   install:
     info:
       DownloadingPackage: Загрузка apk из %s

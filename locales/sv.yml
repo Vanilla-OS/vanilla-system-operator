@@ -125,6 +125,7 @@ sysUpgrade:
       updating: "Ett fel uppstod vid uppdatering av systemet."
     info:
       updating: "Uppdaterar systemet..."
+      noUpdates: Your system is already up-to-date.
     now: "Utlös en systemuppgradering nu"
 
 tasks:
@@ -226,6 +227,9 @@ tasks:
 waydroid:
   error:
     noArguments: Inga argument har angetts.
+    notWayland: This feature is only available on Wayland.
+    secureBoot: This feature requires secure boot to be disabled in the BIOS.
+    noRepos: Could not find any repositories.
   install:
     info:
       DownloadingPackage: Laddar ner apk från %s
