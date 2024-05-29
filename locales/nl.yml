@@ -15,13 +15,13 @@ vso:
 config:
   description: "Beheer de systeem­configuratie"
   get:
-    description: "Verkrijg de systeemconfiguratie"
+    description: "Verkrĳg de systeem­configuratie"
     error:
       noKey: "Geen sleutel opgegeven"
       noValue: "Geen waarde gevonden voor sleutel %s"
     options:
       key:
-        description: "verkrijg configuratiewaarde d.m.v. sleutel"
+        description: "verkrĳg configuratie­waarde d.m.v. sleutel"
   set:
     description: "Stelt de systeem­configuratie in"
     error:
@@ -31,7 +31,7 @@ config:
     options:
       key: "sleutel van de configuratie om in te stellen"
       value: "waarde van de configuratie om in te stellen"
-    success: "Configuratie succesvol bijgewerkt"
+    success: "Configuratie succesvol bĳgewerkt"
 
   show:
     description: Toont de systeemconfiguratie
@@ -44,7 +44,7 @@ pico:
       --force om de initialisatie te forceren."
     noAppNameOrBin: "‘--app’ of ‘--bin’ moet worden opgegeven."
     sameAppOrBin: "‘--app’ en ‘--bin’ kunnen niet beide worden opgegeven."
-    exportingApp: "Er is een fout opgetreden tijdens het exporteren van de app: %s"
+    exportingApp: "Er is een fout opgetreden tĳdens het exporteren van de app: %s"
     exportingBin: "Er is een fout opgetreden tijdens het exporteren van het programma­bestand:
       %s"
     unexportingApp: "Er is een fout opgetreden tijdens het ontexporteren van de app:
