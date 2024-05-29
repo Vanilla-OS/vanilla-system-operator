@@ -1,0 +1,299 @@
+vso:
+  description: ""
+  errors:
+    unknownCommand: ""
+    invalidInput: ""
+    invalidChoice: ""
+    notWayland: ""
+  info:
+    aborting: ""
+  terminal:
+    yes: ""
+    no: ""
+
+config:
+  description: ""
+  get:
+    description: ""
+    error:
+      noKey: ""
+      noValue: ""
+    options:
+      key:
+        description: ""
+  set:
+    description: ""
+    error:
+      noKey: ""
+      noValue: ""
+      failed: ""
+    options:
+      key: ""
+      value: ""
+    success: ""
+  show:
+    description: ""
+
+pico:
+  description: ""
+  error:
+    notInitialized: ""
+    alreadyInitialized: ""
+    noAppNameOrBin: ""
+    sameAppOrBin: ""
+    exportingApp: ""
+    exportingBin: ""
+    unexportingApp: ""
+    unexportingBin: ""
+    unknownCommand: ""
+    shellReset: ""
+  info:
+    deleting: ""
+    initializing: ""
+    initialized: ""
+    exported: ""
+    unexported: ""
+    exportedApps: ""
+    unexportedApps: ""
+    shellInit: ""
+    fallbackShell: ""
+  export:
+    description: ""
+    options:
+      app:
+        description: ""
+      bin:
+        description: ""
+      binOutput:
+        description: ""
+  unexport:
+    description: ""
+    options:
+      app:
+        description: ""
+      bin:
+        description: ""
+      binOutput:
+        description: ""
+  init:
+    description: ""
+    options:
+      force:
+        description: ""
+  install:
+    description: ""
+  remove:
+    description: ""
+  run:
+    description: ""
+    options:
+      noReset:
+        description: ""
+  search:
+    description: ""
+  shell:
+    description: ""
+  sideload:
+    description: ""
+  update:
+    description: ""
+  upgrade:
+    description: ""
+
+sysUpgrade:
+  description: ""
+  check:
+    asExitCode: ""
+    description: ""
+    error:
+      asExitCodeAndJson: ""
+    info:
+      checking: ""
+      noUpdates: ""
+    json:
+      description: ""
+  sysUpgrade:
+    description: ""
+    error:
+      updating: ""
+    info:
+      updating: ""
+    now: ""
+
+tasks:
+  description: ""
+  stacks:
+    new:
+      error:
+        emptyCommand: ""
+        emptyDescription: ""
+        emptyName: ""
+        noCommand: ""
+        noDescription: ""
+        noName: ""
+      info:
+        askCommand: ""
+        askDescription: ""
+        askName: ""
+        taskCreated: ""
+  list:
+    description: ""
+    noTasks: ""
+    info:
+      foundTasks: ""
+    options:
+      json:
+        description: ""
+  new:
+    description: ""
+    options:
+      assumeYes:
+        description: ""
+      at:
+        description: ""
+      command:
+        description: ""
+      description:
+        description: ""
+      every:
+        description: ""
+      name:
+        description: ""
+      needConfirm:
+        description: ""
+      onBattery:
+        description: ""
+      onCharge:
+        description: ""
+      onConditionCommand:
+        description: ""
+      onCpuTemp:
+        description: ""
+      onCpuUsage:
+        description: ""
+      onDeviceConnect:
+        description: ""
+      onDeviceDisconnect:
+        description: ""
+      onDisconnect:
+        description: ""
+      onFullBattery:
+        description: ""
+      onHighCpuUsage:
+        description: ""
+      onHighInternetUsage:
+        description: ""
+      onHighMemoryUsage:
+        description: ""
+      onInternetUsage:
+        description: ""
+      onLowBattery:
+        description: ""
+      onMemoryUsage:
+        description: ""
+      onNetwork:
+        description: ""
+      onProcess:
+        description: ""
+  rm:
+    description: ""
+    error:
+      cannotDelete: ""
+      noName: ""
+      notFound: ""
+    info:
+      askConfirmation: ""
+      taskDeleted: ""
+    options:
+      force:
+        description: ""
+      name:
+        description: ""
+  rotate:
+    description: ""
+    options:
+      privateEvent:
+        description: ""
+
+waydroid:
+  description: ""
+  downloadIndex: ""
+  clean:
+    description: ""
+    info:
+      index: ""
+      apk: ""
+      success: ""
+    error:
+      index: ""
+      apk: ""
+  delete:
+    description: ""
+    confirmation: ""
+    cancelled: ""
+  error:
+    noArguments: ""
+  install:
+    description: ""
+    options:
+      local:
+        description: ""
+      noconfirm:
+        description: ""
+    info:
+      PackageInCache: ""
+      ConfirmInstall: ""
+      DownloadingPackage: ""
+      PackageSelection: ""
+      InstallSuccess: ""
+    error:
+      NotFound: ""
+      InstallCancelled: ""
+  init:
+    description: ""
+    options:
+      force:
+        description: ""
+    info:
+      initialized: ""
+    error:
+      alreadyInitialized: ""
+  launch:
+    description: ""
+  launcher:
+    description: ""
+  remove:
+    description: ""
+    info:
+      RemovePackage: ""
+      PackageSelection: ""
+      ConfirmRemove: ""
+    error:
+      NoMatches: ""
+      RemoveCancelled: ""
+  search:
+    description: ""
+  sync:
+    description: ""
+  update:
+    description: ""
+    finished: ""
+    error:
+      FailGetVersion: ""
+      FailUpdatePackageDownload: ""
+      FailUpdatePackageDatabase: ""
+      FailUpdatePackageInstall: ""
+    info:
+      NoUpdates: ""
+  info:
+    description: ""
+    info:
+      PackageSelection: ""
+    PackageName: ""
+    InternalName: ""
+    Summary: ""
+    Author: ""
+    License: ""
+    Repository: ""
+  status:
+    description: ""
