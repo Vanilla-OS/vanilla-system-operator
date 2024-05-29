@@ -1,222 +1,223 @@
 vso:
-  description: "The Vanilla System Operator is a package manager, a system updater
-    and a task automator."
+  description: "Công cụ điều hành hệ thống Vanilla là một trình quản lí gói, một trình
+    cập nhật hệ thống và một trình tự động hoá công việc."
   errors:
-    unknownCommand: "Unknown command: %s"
-    invalidInput: "Invalid input."
-    invalidChoice: "Invalid choice."
-    notWayland: "This feature is only available on Wayland."
+    unknownCommand: "Lệnh không xác định: %s"
+    invalidInput: "Đầu vào không hợp lệ."
+    invalidChoice: "Lựa chọn không hợp lệ."
+    notWayland: "Tính năng này chỉ có sẵn trên Wayland."
   info:
-    aborting: "Aborting as requested."
+    aborting: "Đang huỷ bỏ như đã được yêu cầu."
   terminal:
-    yes: "yes"
-    no: "no"
+    yes: "có"
+    no: "không"
 
 config:
-  description: "Manage the system configuration."
+  description: "Quản lí cấu hình hệ thống."
   get:
-    description: "Get the system configuration"
+    description: "Lấy cấu hình hệ thống"
     error:
-      noKey: "No key specified."
-      noValue: "No value found for key: %s"
+      noKey: "Không có khoá nào được xác định."
+      noValue: "Không tìm thấy giá trị cho khoá: %s"
     options:
       key:
-        description: "retrieve configuration value by using its key"
+        description: "lấy giá trị của cài đặt bởi khoá của nó"
   set:
-    description: "Set the system configuration"
+    description: "Đặt cấu hình hệ thống"
     error:
-      noKey: "No key specified."
-      noValue: "No value specified."
-      failed: "Failed to set configuration: %s"
+      noKey: "Không có khoá nào được xác định."
+      noValue: "Không có giá trị nào được xác định."
+      failed: "Không thể cài đặt cấu hình: %s"
     options:
-      key: "key of the configuration to set"
-      value: "value of the configuration to set"
-    success: "Configuration updated successfully."
+      key: "khoá của cấu hình cần đặt"
+      value: "giá trị của cấu hình cần đặt"
+    success: "Cấu hình được cập nhật thành công."
   show:
-    description: "Show the system configuration"
+    description: "Hiển thị cấu hình hệ thống"
 
 pico:
-  description: "Manage the VSO subsystem"
+  description: "Quản lí hệ thống con VSO"
   error:
-    notInitialized: "The VSO subsystem is not initialized. Please run `vso pico-init`
-      to initialize it."
-    alreadyInitialized: "The VSO subsystem is already initialized. Use the --force
-      flag to force the initialization."
-    noAppNameOrBin: "--app or --bin must be specified."
-    sameAppOrBin: "--app and --bin cannot be both specified."
-    exportingApp: "An error occurred while exporting the application: %s"
-    exportingBin: "An error occurred while exporting the binary: %s"
-    unexportingApp: "An error occurred while unexporting the application: %s"
-    unexportingBin: "An error occurred while unexporting the binary: %s"
-    unknownCommand: "Unknown command: %s"
-    shellReset: "It is impossible to reach the VSO shell. Do you want to reset it?
-      (This will remove all your software installed in the subsystem) [y/N]"
+    notInitialized: "Hệ thống con VSO chưa được khởi tạo. Vui lòng khởi tạo bằng lệnh
+      `vso pico-init`."
+    alreadyInitialized: "Hệ thống con VSO đã được khởi tạo sẵn. Dùng flag --forces
+      để thực hiện khởi tạo bắt buộc."
+    noAppNameOrBin: "--app hoặc --bin phải được xác định."
+    sameAppOrBin: "không được xác định --app và --bin cùng lúc."
+    exportingApp: "Có một lỗi đã xảy ra khi xuất ứng dụng: %s"
+    exportingBin: "Có một lỗi đã xảy ra khi xuất mã nhị phân: %s"
+    unexportingApp: "Có một lỗi đã xảy ra khi ngừng xuất ứng dụng: %s"
+    unexportingBin: "Có một lỗi đã xảy ra khi ngừng xuất mã nhị phân: %s"
+    unknownCommand: "Lệnh không xác định: %s"
+    shellReset: "Không thể tiếp cận cửa sổ lệnh VSO. Bạn có muốn cài đặt lại không?
+      (Nếu có, tất cả phần mềm được cài đặt trong hệ thống con sẽ bị gỡ bỏ) [y/N]"
   info:
-    deleting: "Deleting the VSO subsystem..."
-    initializing: "Initializing the VSO subsystem..."
-    initialized: "The VSO subsystem has been initialized."
-    exported: "Exported %s\n"
-    unexported: "Unexported %s\n"
-    exportedApps: "Exported %d applications"
-    unexportedApps: "Unexported %d applications"
-    shellInit: "Looks like your shell is not initialized yet. Do you want to initialize
-      it now? (Highly recommended) [y/N]"
+    deleting: "Đang xoá hệ thống con VSO..."
+    initializing: "Đang khởi tạo hệ thống con VSO..."
+    initialized: "Hệ thống con VSO đã được khởi tạo."
+    exported: "Đã xuất %s\n"
+    unexported: "Đã ngừng xuất %s\n"
+    exportedApps: "Đã xuất %d ứng dụng"
+    unexportedApps: "Đã ngừng xuất %d ứng dụng"
+    shellInit: "Có vẻ như bạn chưa khởi tạo cửa sổ lệnh. Bạn có muốn khởi tạo ngay
+      không? (Nên làm) [y/N]"
     fallbackShell: "Fallback to the host shell? This could lead to unexpected behavior.
       [y/N]"
   export:
-    description: "Export an application or binary from the subsystem"
+    description: "Xuất một ứng dụng hoặc mã nhị phân từ hệ thống con"
     options:
       app:
-        description: "the name of the application to export"
+        description: "tên của ứng dụng cần xuất"
       bin:
-        description: "the name of the binary to export"
+        description: "tên của mã nhị phân cần xuất"
       binOutput:
-        description: "path of the binary output (default: ~/.local/bin/)"
+        description: "vị trí xuất mã nhị phân (mặc định: ~/.local/bin/)"
   unexport:
-    description: "Unexport an application or binary from the subsystem"
+    description: "Ngừng xuất một ứng dụng hoặc mã nhị phân từ hệ thống con"
     options:
       app:
-        description: "the name of the application to unexport"
+        description: "tên của ứng dụng cần ngừng xuất"
       bin:
-        description: "the name of the binary to unexport"
+        description: "tên của mã nhị phân cần ngừng xuất"
       binOutput:
-        description: "path of the binary output (default: ~/.local/bin/)"
+        description: "vị trí xuất mã nhị phân (mặc định: ~/.local/bin/)"
   init:
-    description: "Initialize the VSO subsystem, used for package management"
+    description: "Khởi tạo hệ thống con VSO để quản lí gói"
     options:
       force:
-        description: "force the initialization if the subsystem is already initialized"
+        description: "bắt buộc khởi tạo nếu hệ thống con đã được khởi tạo sẵn"
   install:
-    description: "Install an application inside the subsystem"
+    description: "Cài đặt một ứng dụng trong hệ thống con"
   remove:
-    description: "Remove an application from the subsystem"
+    description: "Xoá bỏ một ứng dụng trong hệ thống con"
   run:
-    description: "Run an application from the subsystem"
+    description: "Chạy một ứng dụng trong hệ thống con"
     options:
       noReset:
-        description: "do not propose to reset the subsystem if something goes wrong"
+        description: "đề nghị không cài lại hệ thống con nếu có gì đó không ổn"
   search:
-    description: "Search for an application to install inside the subsystem"
+    description: "Tìm kiếm một ứng dụng để cài đặt trong hệ thống con"
   shell:
-    description: "Enter the subsystem environment"
+    description: "Sử dụng môi trường trong hệ thống con"
   sideload:
-    description: "Sideload DEB/APK packages inside the subsystem"
+    description: "Cài đặt gói DEB/APK trong hệ thống con"
   update:
-    description: "Update the subsystem's package repository"
+    description: "Cập nhật kho lưu trữ gói của hệ thống con"
   upgrade:
-    description: "Upgrade the packages inside the subsystem"
+    description: "Nâng cấp các gói trong hệ thống con"
 
 sysUpgrade:
-  description: "Upgrade the system"
+  description: "Nâng cấp hệ thống"
   check:
-    asExitCode: "checks for upgrade but doesn't print anything. Return exit code 0
-      if no upgrade is available and 1 otherwise."
-    description: "Check for system updates"
+    asExitCode: "kiểm tra cập nhật và không xuất kết quả. Trả về mã 0 nếu không có
+      và 1 nếu có bản nâng cấp."
+    description: "Kiểm tra cập nhật hệ thống"
     error:
-      asExitCodeAndJson: "An error occured when checking for updates. See the JSON
-        output for more details."
+      asExitCodeAndJson: "Có một lỗi đã xảy ra khi kiểm tra cập nhật. Vui lòng xem
+        tệp JSON để biết thêm chi tiết."
     info:
-      checking: "Checking for updates..."
-      noUpdates: "No updates available."
+      checking: "Đang kiểm tra cập nhật..."
+      noUpdates: "Không có bản cập nhật nào."
     json:
-      description: "output the result in JSON format"
+      description: "xuất kết quả dưới dạng JSON"
   sysUpgrade:
-    description: "Upgrade the system"
+    description: "Nâng cấp hệ thống"
     error:
-      updating: "An error occured when updating the system."
+      updating: "Có một lỗi đã xảy ra khi cập nhật hệ thống."
     info:
-      updating: "Updating the system..."
-    now: "Trigger a system upgrade now"
+      updating: "Đang cập nhật hệ thống..."
+    now: "Kích hoạt bản cập nhật hệ thống ngay"
 
 tasks:
-  description: "Create and manage tasks"
+  description: "Tạo và quản lí công việc"
   stacks:
     new:
       error:
-        emptyCommand: "The command cannot be empty."
-        emptyDescription: "The description cannot be empty."
-        emptyName: "The name cannot be empty."
-        noCommand: "No command specified."
-        noDescription: "No description specified."
-        noName: "No name specified."
+        emptyCommand: "Không được để trống câu lệnh."
+        emptyDescription: "Không được để trống mô tả."
+        emptyName: "Không được để trống tên."
+        noCommand: "Không có câu lệnh nào được xác định."
+        noDescription: "Không có mô tả nào được xác định."
+        noName: "Không có tên nào được xác định."
       info:
-        askCommand: "Command: "
-        askDescription: "Description: "
-        askName: "Name: "
-        taskCreated: "Task has been created successfully."
+        askCommand: "Câu lệnh: "
+        askDescription: "Mô tả: "
+        askName: "Tên: "
+        taskCreated: "Công việc đã được tạo thành công."
   list:
-    description: "List all tasks"
-    noTasks: "No tasks found."
+    description: "Liệt kê tất cả công việc"
+    noTasks: "Không tìm thấy công việc nào."
     info:
-      foundTasks: "Found %d tasks."
+      foundTasks: "Đã tìm thấy %d công việc."
     options:
       json:
-        description: "output the tasks in JSON format"
+        description: "xuất công việc dưới dạng JSON"
   new:
-    description: "Create a new task"
+    description: "Tạo công việc mới"
     options:
       assumeYes:
         description: "assume yes for all prompts"
       at:
-        description: "schedule the task to execute at a specific time (hh:mm)"
+        description: "lên kế hoạch thực hiện công việc tại một thời điểm cụ thể (giờ:phút)"
       command:
-        description: "specify the command to execute"
+        description: "xác định câu lệnh để thực thi"
       description:
-        description: "specify the task's description"
+        description: "xác định mô tả công việc"
       every:
-        description: "schedule the task to execute every X time (minutes, hours, days)"
+        description: "lên kế hoạch thực hiện công việc sau mỗi khoảng thời gian cố
+          định (phút, giờ, ngày)"
       name:
-        description: "specify the task's name"
+        description: "xác định tên công việc"
       needConfirm:
-        description: "ask for confirmation before executing the task"
+        description: "yêu cầu xác nhận trước khi thực hiện công việc"
       onBattery:
-        description: "execute the task only when the system is on battery"
+        description: "chỉ thực hiện công việc khi hệ thống đang sử dụng pin"
       onCharge:
-        description: "execute the task only when the system is charging"
+        description: "chỉ thực hiện công việc khi hệ thống đang được sạc"
       onConditionCommand:
-        description: "execute the task on condition command"
+        description: "thực hiện công việc với câu lệnh điều kiện"
       onCpuTemp:
-        description: "execute the task when CPU temperature is higher than 60°C"
+        description: "thực hiện công việc khi nhiệt độ vi xử lý vượt quá 60°C"
       onCpuUsage:
-        description: "execute the task when CPU usage is higher than X%"
+        description: "thực hiện công việc khi vi xử lí đang chạy trên X% công suất"
       onDeviceConnect:
-        description: "execute the task when a device is connected"
+        description: "thực hiện công việc khi có một thiết bị được kết nối"
       onDeviceDisconnect:
-        description: "execute the task when a device is disconnected"
+        description: "thực hiện công việc khi có một thiết bị được ngắt kết nối"
       onDisconnect:
-        description: "execute the task when the system is disconnected from the network"
+        description: "thực hiện công việc khi hệ thống đã ngắt kết nối mạng"
       onFullBattery:
-        description: "execute the task when the system is fully charged"
+        description: "thực hiện công việc khi hệ thống được sạc đầy"
       onHighCpuUsage:
-        description: "execute the task when CPU usage is higher than 50%"
+        description: "thực hiện công việc khi vi xử lý chạy trên 50% công suất"
       onHighInternetUsage:
-        description: "execute the task when internet usage is higher than 500Kb/s"
+        description: "thực hiện công việc khi thông lượng mạng vượt quá 500Kb/s"
       onHighMemoryUsage:
-        description: "execute the task when memory usage is higher than 50%"
+        description: "thực hiện công việc khi RAM được sử dụng trên 50%"
       onInternetUsage:
-        description: "execute the task when internet usage is higher than XKb/s"
+        description: "thực hiện công việc khi thông lượng mạng vượt quá XKb/s"
       onLowBattery:
-        description: "execute the task when the system is low on battery (20%)"
+        description: "thực hiện công việc khi hệ thống sắp hết pin (20%)"
       onMemoryUsage:
-        description: "execute the task when memory usage is higher than X%"
+        description: "thực hiện công việc khi RAM được sử dụng trên X%"
       onNetwork:
-        description: "execute the task when the system is connected to the network"
+        description: "thực hiện công việc khi hệ thống đã kết nối mạng"
       onProcess:
-        description: "execute the task when a process starts"
+        description: "thực hiện công việc khi có một tiến trình được bắt đầu"
   rm:
-    description: "Remove a task"
+    description: "Xoá một công việc"
     error:
-      cannotDelete: "Cannot delete task: %s"
-      noName: "No task name specified."
-      notFound: "Task not found."
+      cannotDelete: "Không thể xoá công việc: %s"
+      noName: "Không có tên công việc nào được xác định."
+      notFound: "Không tìm thấy công việc."
     info:
-      askConfirmation: "Are you sure you want to delete the task %s? [y/N]"
-      taskDeleted: "Task has been deleted successfully."
+      askConfirmation: "Bạn có chắc chắn muốn xoá công việc %s? [y/N]"
+      taskDeleted: "Công việc đã được xoá thành công."
     options:
       force:
-        description: "force the deletion of the task"
+        description: "bắt buộc xoá công việc"
       name:
-        description: "specify the task's name"
+        description: "xác định tên công việc"
   rotate:
     description: "Rotate tasks"
     options:
@@ -225,87 +226,87 @@ tasks:
           login, and logout"
 
 waydroid:
-  description: "Manage the vso waydroid subsystem"
+  description: "Quản lí hệ thống con vso waydroid"
   downloadIndex: "Downloading index for repository %s"
   clean:
-    description: "Cleans the waydroid vso cache"
+    description: "Xoá bộ nhớ đệm waydroid vso"
     info:
       index: "Deleting index cache"
-      apk: "Deleting apk cache"
-      success: "Successfully deleted waydroid vso cache"
+      apk: "Xoá bộ nhớ đệm apk"
+      success: "Xoá thành công bộ nhớ đệm waydroid vso"
     error:
       index: "Failed to delete index cache"
-      apk: "Failed to delete apk cache"
+      apk: "Xoá bộ nhớ đệm apk thất bại"
   delete:
-    description: "Delete the waydroid subsystem"
-    confirmation: "Deleting the waydroid subsystem will delete any data stored in
-      it. Continue?"
-    cancelled: "Cancelled removal of subsystem."
+    description: "Xoá hệ thống con waydroid"
+    confirmation: "Việc xoá hệ thống con waydroid sẽ xoá tất cả dữ liệu được lưu trữ
+      bên trong. Bạn có muốn tiếp tục?"
+    cancelled: "Đã huỷ việc xoá hệ thống con"
   error:
-    noArguments: "No arguments provided."
+    noArguments: "Không có tham số nào được cung cấp."
   install:
-    description: "Install an application"
+    description: "Cài đặt một ứng dụng"
     options:
       local:
-        description: "Install a local apk"
+        description: "Cài đặt một tệp apk cục bộ"
       noconfirm:
-        description: "Do not ask for confirmation during installation"
+        description: "Không cần xác nhận trong quá trình cài đặt"
     info:
-      PackageInCache: "Application found in cache, not downloading again."
-      ConfirmInstall: "Install application %s?"
-      DownloadingPackage: "Downloading apk from %s"
-      PackageSelection: "Pick an application to install"
-      InstallSuccess: "Installation successful"
+      PackageInCache: "Đã tìm thấy ứng dụng trong bộ nhớ đệm, không cần tải lại nữa."
+      ConfirmInstall: "Cài đặt ứng dụng %s?"
+      DownloadingPackage: "Đang tải tệp apk từ %s"
+      PackageSelection: "Chọn một ứng dụng để cài đặt"
+      InstallSuccess: "Cài đặt thành công"
     error:
-      NotFound: "Application %s was not found."
-      InstallCancelled: "Installation Cancelled"
+      NotFound: "Không tìm thấy ứng dụng %s."
+      InstallCancelled: "Đã huỷ cài đặt"
   init:
-    description: "Initialize the waydroid subsystem"
+    description: "Khởi tạo hệ thống con waydroid"
     options:
       force:
-        description: "Force the initialization"
+        description: "Khởi tạo bắt buộc"
     info:
-      initialized: "The waydroid subsystem has been initialized."
+      initialized: "Hệ thống con waydroid đã được khởi tạo."
     error:
-      alreadyInitialized: "The waydroid subsystem is already initialized. Use the
-        --force flag to force the initialization."
+      alreadyInitialized: "Hệ thống con waydroid đã được khởi tạo sẵn. Dùng flag --force
+        để bắt buộc khởi tạo."
   launch:
-    description: "Launch an installed application"
+    description: "Khởi động một ứng dụng đã cài đặt"
   launcher:
-    description: "Show the waydroid launcher"
+    description: "Hiển thị trình khởi chạy waydroid"
   remove:
-    description: "Uninstall an application"
+    description: "Gỡ cài đặt một ứng dụng"
     info:
-      RemovePackage: "Removing package %s"
-      PackageSelection: "Pick an application to remove"
-      ConfirmRemove: "Remove application %s?"
+      RemovePackage: "Đang xoá gói %s"
+      PackageSelection: "Chọn một ứng dụng để xoá"
+      ConfirmRemove: "Xoá ứng dụng %s?"
     error:
-      NoMatches: "Application %s not found"
-      RemoveCancelled: "Removal Cancelled"
+      NoMatches: "Không tìm thấy ứng dụng %s"
+      RemoveCancelled: "Đã huỷ xoá"
   search:
-    description: "Search for an application"
+    description: "Tìm kiếm một ứng dụng"
   sync:
-    description: "Sync the repositories"
+    description: "Đồng bộ các kho lưu trữ"
   update:
-    description: "Update installed applications"
-    finished: "Finished updating applications"
+    description: "Cập nhật các ứng dụng đã được cài đặt"
+    finished: "Cập nhật ứng dụng hoàn tất"
     error:
-      FailGetVersion: "Failed to get version code for %s"
-      FailUpdatePackageDownload: "Failed to download APK for %s"
-      FailUpdatePackageDatabase: "Failed to update database entry for %s"
-      FailUpdatePackageInstall: "Failed to install the update for %s"
+      FailGetVersion: "Lấy mã phiên bản cho %s thất bại"
+      FailUpdatePackageDownload: "Tải tệp APK cho %s thất bại"
+      FailUpdatePackageDatabase: "Cập nhật đầu vào cơ sở dữ liệu cho %s thất bại"
+      FailUpdatePackageInstall: "Cài đặt cập nhật cho %s thất bại"
     info:
-      NoUpdates: "Nothing to update"
+      NoUpdates: "Không có bản cập nhật"
   info:
-    description: "Display information about an application"
+    description: "Hiển thị thông tin về một ứng dụng"
     info:
-      PackageSelection: "Select an application to display information from"
-    PackageName: "Name: %s"
+      PackageSelection: "Chọn một ứng dụng để hiển thị thông tin"
+    PackageName: "Tên: %s"
     InternalName: "Internal name: %s"
-    Summary: "Summary: %s"
-    Author: "Author: %s"
-    License: "License: %s"
-    Repository: "Repository: %s"
+    Summary: "Tóm tắt: %s"
+    Author: "Tác giả: %s"
+    License: "Giấy phép: %s"
+    Repository: "Kho lưu trữ: %s"
   status:
-    description: "Return the internal status code of the Android subsystem. For development
-      purposes."
+    description: "Trả về mã trạng thái của hệ thống con Android cho mục đích phát
+      triển."
