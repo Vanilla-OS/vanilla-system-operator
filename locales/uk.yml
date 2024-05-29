@@ -58,127 +58,128 @@ pico:
     exported: "Експортовано %s\n"
     unexported: "Не експортовано %s\n"
     exportedApps: "Експортовано %d застосунків"
-    unexportedApps: "Unexported %d applications"
-    shellInit: Looks like your shell is not initialized yet. Do you want to initialize
-      it now? (Highly recommended) [y/N]
-    fallbackShell: Fallback to the host shell? This could lead to unexpected behavior.
-      [y/N]
+    unexportedApps: "Не експортовано %d застосунків"
+    shellInit: Схоже, вашу оболонку ще не ініціалізовано. Бажаєте ініціалізувати її
+      зараз? (Настійно рекомендується) [y/N]
+    fallbackShell: Повернутися до основної оболонки? Це може призвести до неочікуваної
+      поведінки. [y/N]
     deleting: Видалення підсистеми VSO...
     initializing: Ініціалізація підсистеми VSO...
   export:
-    description: "Export an application or binary from the subsystem"
+    description: "Експортувати застосунок або бінарний файл з підсистеми"
     options:
       app:
-        description: "the name of the application to export"
+        description: "назва застосунку для експорту"
       bin:
-        description: "the name of the binary to export"
+        description: "назва бінарного файлу для експорту"
       binOutput:
-        description: "path of the binary output (default: ~/.local/bin/)"
+        description: "шлях бінарного виводу (типово: ~/.local/bin/)"
   unexport:
-    description: "Unexport an application or binary from the subsystem"
+    description: "Скасувати експорт застосунку або бінарного файлу з підсистеми"
     options:
       app:
-        description: "the name of the application to unexport"
+        description: "назву застосунку для скасування експорту"
       bin:
-        description: "the name of the binary to unexport"
+        description: "назва бінарного файлу для скасування експорту"
       binOutput:
-        description: "path of the binary output (default: ~/.local/bin/)"
+        description: "шлях до бінарного виводу (типово: ~/.local/bin/)"
   init:
-    description: "Initialize the Pico subsystem, used for package management"
+    description: "Ініціалізація підсистеми VSO, що використовується для управління
+      пакетами"
     options:
       force:
-        description: "force the initialization if the subsystem is already initialized"
+        description: "примусово ініціалізувати, якщо підсистема вже ініціалізована"
   install:
-    description: "Install an application inside the subsystem"
+    description: "Встановити застосунок всередині підсистеми"
   remove:
-    description: "Remove an application from the subsystem"
+    description: "Видалити застосунок з підсистеми"
   run:
-    description: "Run an application from the subsystem"
+    description: "Запустити застосунок з підсистеми"
     options:
       noReset:
-        description: do not propose to reset the subsystem if something goes wrong
+        description: не пропонувати скинути підсистему, якщо щось піде не так
   search:
-    description: "Search for an application to install inside the subsystem"
+    description: "Пошук застосунку для встановлення всередині підсистеми"
   shell:
-    description: "Enter the subsystem environment"
+    description: "Увійти в середовище підсистеми"
   update:
-    description: "Update the subsystem's package repository"
+    description: "Оновлення сховища пакетів підсистеми"
   upgrade:
-    description: "Upgrade the packages inside the subsystem"
+    description: "Оновлення пакетів всередині підсистеми"
 
   sideload:
-    description: Sideload DEB/APK packages inside the subsystem
+    description: Бокове завантаження пакетів DEB/APK всередині підсистеми
 sysUpgrade:
-  description: "Upgrade the system"
+  description: "Оновлення системи"
   check:
-    asExitCode: "checks for upgrade but doesn't print anything. Return exit code 0
-      if no upgrade is available and 1 otherwise."
-    description: "Check for system updates"
+    asExitCode: "перевіряє наявність оновлення, але нічого не друкує. Повертає код
+      виходу 0, якщо оновлення недоступне, і 1 в іншому випадку."
+    description: "Перевірка наявності оновлень системи"
     error:
-      asExitCodeAndJson: "An error occured when checking for updates. See the JSON
-        output for more details."
+      asExitCodeAndJson: "Під час перевірки оновлень сталася помилка. Перегляньте
+        вивід JSON для отримання додаткової інформації."
     info:
-      checking: "Checking for updates..."
-      noUpdates: "No updates available."
+      checking: "Перевірка оновлень..."
+      noUpdates: "Немає оновлень."
     json:
-      description: "output the result in JSON format"
+      description: "вивести результат у форматі JSON"
   sysUpgrade:
-    description: "Upgrade the system"
+    description: "Оновлення системи"
     error:
-      updating: "An error occured when updating the system."
+      updating: "Під час оновлення системи сталася помилка."
     info:
-      updating: "Updating the system..."
-    now: "Trigger a system upgrade now"
+      updating: "Оновлення системи..."
+    now: "Запустити оновлення системи прямо зараз"
 
 tasks:
-  description: "Create and manage tasks"
+  description: "Створюйте завдання та керуйте ними"
   stacks:
     new:
       error:
-        emptyCommand: "The command cannot be empty."
-        emptyDescription: "The description cannot be empty."
-        emptyName: "The name cannot be empty."
-        noCommand: "No command specified."
-        noDescription: "No description specified."
-        noName: "No name specified."
+        emptyCommand: "Команда не може бути пустою."
+        emptyDescription: "Опис не може бути пустим."
+        emptyName: "Назва не може бути пустою."
+        noCommand: "Не вказано жодної команди."
+        noDescription: "Не вказано жодного опису."
+        noName: "Не вказано жодної назви."
       info:
-        askCommand: "Command: "
-        askDescription: "Description: "
-        askName: "Name: "
-        taskCreated: "Task has been created successfully."
+        askCommand: "Команда: "
+        askDescription: "Опис: "
+        askName: "Назва: "
+        taskCreated: "Завдання успішно створено."
   list:
-    description: "List all tasks"
-    noTasks: "No tasks found."
+    description: "Список всіх завдань"
+    noTasks: "Завдань не знайдено."
     info:
-      foundTasks: "Found %d tasks."
+      foundTasks: "Знайдено %d завдань."
     options:
       json:
-        description: "output the tasks in JSON format"
+        description: "вивести завдання у форматі JSON"
   new:
-    description: "Create a new task"
+    description: "Створити нове завдання"
     options:
       assumeYes:
-        description: "assume yes for all prompts"
+        description: "припустимо «так» для всіх підказок"
       at:
-        description: "schedule the task to execute at a specific time (hh:mm)"
+        description: "запланувати виконання завдання на певний час (hh:mm)"
       command:
-        description: "specify the command to execute"
+        description: "вказати команду для виконання"
       description:
-        description: "specify the task's description"
+        description: "вкажіть опис завдання"
       every:
-        description: "schedule the task to execute every X time (minutes, hours, days)"
+        description: "запланувати виконання завдання кожні X (хвилини, години, дні)"
       name:
-        description: "specify the task's name"
+        description: "вкажіть назву завдання"
       needConfirm:
-        description: "ask for confirmation before executing the task"
+        description: "запитувати підтвердження перед виконанням завдання"
       onBattery:
-        description: "execute the task only when the system is on battery"
+        description: "виконувати завдання лише тоді, коли система працює від батареї"
       onCharge:
-        description: "execute the task only when the system is charging"
+        description: "виконувати завдання лише тоді, коли система заряджається"
       onConditionCommand:
-        description: "execute the task on condition command"
+        description: "виконувати завдання за умови команди"
       onCpuTemp:
-        description: "execute the task when CPU temperature is higher than 60°C"
+        description: "виконувати завдання, коли температура процесора перевищує 60°C"
       onCpuUsage:
         description: "execute the task when CPU usage is higher than X%"
       onDeviceConnect:
