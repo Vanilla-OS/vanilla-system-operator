@@ -5,7 +5,6 @@ vso:
     unknownCommand: "Okänt kommando: %s"
     invalidInput: "Ogiltig inmatning."
     invalidChoice: "Ogiltigt val."
-    notWayland: Den här funktionen är endast tillgänglig på Wayland.
   info:
     aborting: "Avbryter som begärt."
   terminal:
@@ -116,7 +115,6 @@ sysUpgrade:
         för mer information."
     info:
       checking: "Kollar efter uppdateringar..."
-      noUpdates: "Inga uppdateringar tillgängliga."
     json:
       description: "Utdata av resultatet i JSON-format"
   sysUpgrade:

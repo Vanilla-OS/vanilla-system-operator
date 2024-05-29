@@ -5,7 +5,6 @@ vso:
     unknownCommand: "Commande inconnue : %s"
     invalidInput: "Entrée invalide."
     invalidChoice: "Choix invalide."
-    notWayland: Cette fonctionnalité est disponible seulement sur Wayland.
   info:
     aborting: "Annulation."
   terminal:
@@ -128,7 +127,6 @@ sysUpgrade:
     description: Vérifier les mises à jour du système
     info:
       checking: Vérifier les mises à jour ...
-      noUpdates: Aucune mise à jour n'est disponible.
     asExitCode: vérifie l'existence d'une mise à jour, mais n'affiche rien. Retourne
       le code de sortie 0 si aucune mise à jour n'est disponible et 1 sinon.
     error:

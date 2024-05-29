@@ -5,7 +5,6 @@ vso:
     unknownCommand: "Неизвестная команда: %s"
     invalidInput: "Недопустимый ввод."
     invalidChoice: "Недопустимый выбор."
-    notWayland: Эта функция доступна только на Wayland.
   info:
     aborting: "Прерывать по запросу."
   terminal:
@@ -131,7 +130,6 @@ sysUpgrade:
         сведения см. в выводе JSON.
     info:
       checking: Проверка обновлений...
-      noUpdates: Нет доступных обновлений.
     json:
       description: вывести результат в формате JSON
   sysUpgrade:

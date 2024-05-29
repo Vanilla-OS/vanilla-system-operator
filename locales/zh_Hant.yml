@@ -4,7 +4,6 @@ vso:
     unknownCommand: "未知的命令：%s"
     invalidInput: "輸入無效。"
     invalidChoice: "選項無效。"
-    notWayland: 此功能僅在 Wayland 下可以使用。
   info:
     aborting: "應使用者要求中止操作。"
   terminal:
@@ -109,7 +108,6 @@ sysUpgrade:
       asExitCodeAndJson: "檢查更新時出現錯誤。查看 JSON 輸出以取得詳細資訊。"
     info:
       checking: "正在檢查更新…"
-      noUpdates: "沒有更新可用。"
     json:
       description: 輸出結果為 JSON 格式
   sysUpgrade:

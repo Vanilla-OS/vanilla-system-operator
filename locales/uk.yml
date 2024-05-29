@@ -5,7 +5,6 @@ vso:
     unknownCommand: "Невідома команда: %s"
     invalidInput: "Неправильне введення."
     invalidChoice: "Неправильний вибір."
-    notWayland: Ця функція доступна лише на Wayland.
   info:
     aborting: "Скасування за запитом."
   terminal:
@@ -120,7 +119,6 @@ sysUpgrade:
         вивід JSON для отримання додаткової інформації."
     info:
       checking: "Перевірка оновлень..."
-      noUpdates: "Немає оновлень."
     json:
       description: "вивести результат у форматі JSON"
   sysUpgrade:

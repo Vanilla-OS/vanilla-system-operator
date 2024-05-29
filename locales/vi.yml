@@ -5,7 +5,6 @@ vso:
     unknownCommand: "Lệnh không xác định: %s"
     invalidInput: "Đầu vào không hợp lệ."
     invalidChoice: "Lựa chọn không hợp lệ."
-    notWayland: "Tính năng này chỉ có sẵn trên Wayland."
   info:
     aborting: "Đang huỷ bỏ như đã được yêu cầu."
   terminal:
@@ -117,7 +116,6 @@ sysUpgrade:
         tệp JSON để biết thêm chi tiết."
     info:
       checking: "Đang kiểm tra cập nhật..."
-      noUpdates: "Không có bản cập nhật nào."
     json:
       description: "xuất kết quả dưới dạng JSON"
   sysUpgrade:

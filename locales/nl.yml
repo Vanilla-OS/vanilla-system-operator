@@ -5,7 +5,6 @@ vso:
     unknownCommand: "Onbekende opdracht: %s"
     invalidInput: "Ongeldige invoer"
     invalidChoice: "Ongeldige keuze"
-    notWayland: Deze functie is alleen beschikbaar op Wayland.
   info:
     aborting: "Afbreken zoals verzocht"
   terminal:
@@ -236,7 +235,6 @@ sysUpgrade:
         Zie de JSON-uitvoer voor meer details.
     info:
       checking: Controleren op updates…
-      noUpdates: Geen updates beschikbaar.
     json:
       description: voer het resultaat uit in JSON-formaat
   sysUpgrade:

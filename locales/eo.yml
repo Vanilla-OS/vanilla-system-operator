@@ -5,7 +5,6 @@ vso:
     unknownCommand: "Nekonata komando: %s"
     invalidInput: "Nevalida enigo."
     invalidChoice: "Nevalida elekto."
-    notWayland: This feature is only available on Wayland.
   info:
     aborting: "Aborting as requested."
   terminal:
@@ -117,7 +116,6 @@ sysUpgrade:
         output for more details."
     info:
       checking: "Kontrolante ĝisdatigojn…"
-      noUpdates: "Neniu ĝisdatigo disponeblas."
     json:
       description: "output the result in JSON format"
   sysUpgrade:
