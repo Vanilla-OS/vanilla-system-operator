@@ -253,6 +253,8 @@ waydroid:
       InstallCancelled: "Installation Cancelled"
   init:
     description: "Initialize the waydroid subsystem"
+    warnUnstable: "Waydroid functionality is currently unstable. Expect bugs and missing features. Continue anyway?"
+    warnUnstableForce: "Waydroid functionality is currently unstable. Expect bugs and missing features."
     options:
       force:
         description: "Force the initialization"
