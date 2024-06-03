@@ -264,6 +264,13 @@ func wayInit(cmd *cobra.Command, args []string) error {
 	isSupported()
 
 	force, _ := cmd.Flags().GetBool("force")
+	if !force {
+		if !core.AskConfirmation(vso.Trans("waydroid.init.warnUnstable"), false) {
+			return nil
+		}
+	} else {
+		cmdr.Warning.Println(vso.Trans("waydroid.init.warnUnstableForce"))
+	}
 
 	if core.WayExists() {
 		if !force {
