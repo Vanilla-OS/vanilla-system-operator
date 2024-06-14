@@ -54,39 +54,38 @@ func NeedUpdate() bool {
 		return false
 	}
 
-	res := false
 	currentTime := time.Now()
 	schedule := settings.GetConfigValue("updates.schedule")
+	if schedule == settings.ScheduleNever {
+		return false
+	}
+
 	latestCheck := getLatestCheck()
 	if latestCheck == nil {
 		fmt.Println("No previous update check found. Triggering update.")
 		return true
 	}
 
+	var timeOffset int
 	switch schedule {
-	case "daily":
-		if currentTime.Sub(*latestCheck).Hours() >= 24 {
-			res = true
-		}
-	case "weekly":
-		if currentTime.Sub(*latestCheck).Hours() >= 168 {
-			res = true
-		}
-	case "monthly":
-		if currentTime.Sub(*latestCheck).Hours() >= 720 {
-			res = true
-		}
+	case settings.ScheduleDaily:
+		timeOffset = 24
+	case settings.ScheduleWeekly:
+		timeOffset = 168
+	case settings.ScheduleMonthly:
+		timeOffset = 720
+	}
+
+	if currentTime.Sub(*latestCheck).Hours() < float64(timeOffset) {
+		return false
 	}
 
 	status, err := HasUpdates()
 	if err != nil {
 		return false
 	}
-	if status {
-		res = true
-	}
 
-	return res
+	return status
 }
 
 func runABRootCheck(asJson, showStdout bool) (bool, map[string]any, error) {
@@ -158,7 +157,6 @@ func okToUpdate() bool {
 			// first setup has not completed. don't try to update
 			return false
 		}
-
 	}
 	return true
 }
@@ -200,7 +198,7 @@ func getLatestCheck() *time.Time {
 
 // writeLatestCheck writes the latest check time to the log file
 func writeLatestCheck(t time.Time) error {
-	file, err := os.OpenFile(checkLogPath, os.O_WRONLY|os.O_CREATE, 0644)
+	file, err := os.OpenFile(checkLogPath, os.O_WRONLY|os.O_CREATE, 0o644)
 	if err != nil {
 		return err
 	}

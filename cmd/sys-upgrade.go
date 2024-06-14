@@ -10,11 +10,13 @@ package cmd
 */
 
 import (
+	"fmt"
 	"os"
 
 	"github.com/spf13/cobra"
 	"github.com/vanilla-os/orchid/cmdr"
 	"github.com/vanilla-os/vanilla-system-operator/core"
+	"github.com/vanilla-os/vanilla-system-operator/settings"
 )
 
 func NewUpgradeCommand() *cmdr.Command {
@@ -136,8 +138,24 @@ func upgrade(cmd *cobra.Command, args []string) error {
 			cmdr.Error.Println(vso.Trans("sysUpgrade.sysUpgrade.error.updating"))
 			return nil
 		}
-
 		return nil
+	} else {
+		// Checks whether the user can force an update
+		status, err := core.HasUpdates()
+		if err != nil {
+			cmdr.Error.Println(vso.Trans("sysUpgrade.sysUpgrade.error.onHasUpdate", err))
+			return nil
+		}
+		if status {
+			schedule := settings.GetConfigValue("updates.schedule")
+			if schedule == settings.ScheduleNever {
+				cmdr.Info.Println(vso.Trans("sysUpgrade.sysUpgrade.info.willNeverUpdate"))
+			} else {
+				scheduleTrans := vso.Trans(fmt.Sprintf("sysUpgrade.sysUpgrade.schedule.%s", schedule.(string)))
+				cmdr.Info.Println(vso.Trans("sysUpgrade.sysUpgrade.info.willUpdateLater", scheduleTrans))
+			}
+			return nil
+		}
 	}
 
 	cmdr.Info.Println(vso.Trans("sysUpgrade.sysUpgrade.info.noUpdates"))
