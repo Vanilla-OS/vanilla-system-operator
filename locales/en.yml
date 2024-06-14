@@ -114,8 +114,15 @@ sysUpgrade:
     description: "Upgrade the system"
     error:
       updating: "An error occured when updating the system."
+      onHasUpdate: "Error while searching for updates: %s."
+    schedule:
+      daily: "daily"
+      weekly: "weekly"
+      monthly: "monthly"
     info:
       updating: "Updating the system..."
+      willUpdateLater: "An update is available and will be automatically installed based on your %s schedule. You can force the update using 'vso sys-upgrade upgrade --now'."
+      willNeverUpdate: "An update is available, but will not be automatically installed because you disabled automatic updates. You can force the update using 'vso sys-upgrade upgrade --now'."
       noUpdates: "Your system is already up-to-date."
     now: "Trigger a system upgrade now"
 

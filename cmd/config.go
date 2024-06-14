@@ -125,10 +125,10 @@ func setConfig(cmd *cobra.Command, args []string) error {
 
 	err := settings.SetConfigValue(key, value)
 	if err != nil {
-		cmdr.Error.Println(vso.Trans("config.set.error.failed"), err)
+		cmdr.Error.Println(vso.Trans("config.set.error.failed", err))
 		return nil
 	}
 
-	cmdr.Info.Println(vso.Trans("config.set.success"), key, value)
+	cmdr.Info.Printf("%s '%s' = '%s'\n", vso.Trans("config.set.success"), key, value)
 	return nil
 }
