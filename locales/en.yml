@@ -100,7 +100,7 @@ pico:
     description: "Upgrade the packages inside the subsystem"
 
 sysUpgrade:
-  description: "Upgrade the system"
+  description: "Execute system commands, such as upgrading the system"
   check:
     asExitCode: "checks for upgrade but doesn't print anything. Return exit code 0 if no upgrade is available and 1 otherwise."
     description: "Check for system updates"
@@ -111,7 +111,7 @@ sysUpgrade:
     json:
       description: "output the result in JSON format"
   sysUpgrade:
-    description: "Upgrade the system"
+    description: "Execute system commands, such as upgrading the system"
     error:
       updating: "An error occured when updating the system."
       onHasUpdate: "Error while searching for updates: %s."
@@ -121,8 +121,8 @@ sysUpgrade:
       monthly: "monthly"
     info:
       updating: "Updating the system..."
-      willUpdateLater: "An update is available and will be automatically installed based on your %s schedule. You can force the update using 'vso sys-upgrade upgrade --now'."
-      willNeverUpdate: "An update is available, but will not be automatically installed because you disabled automatic updates. You can force the update using 'vso sys-upgrade upgrade --now'."
+      willUpdateLater: "An update is available and will be automatically installed based on your %s schedule. You can force the update using 'vso sys upgrade --now'."
+      willNeverUpdate: "An update is available, but will not be automatically installed because you disabled automatic updates. You can force the update using 'vso sys upgrade --now'."
       noUpdates: "Your system is already up-to-date."
     now: "Trigger a system upgrade now"
 

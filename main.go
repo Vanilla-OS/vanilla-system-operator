@@ -18,9 +18,7 @@ import (
 	"github.com/vanilla-os/vanilla-system-operator/cmd"
 )
 
-var (
-	Version = "2.0.1"
-)
+var Version = "2.0.1"
 
 //go:embed locales/*.yml
 var fs embed.FS
