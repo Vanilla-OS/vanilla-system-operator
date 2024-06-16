@@ -7,8 +7,8 @@
   <vendor_url>https://www.vanillaos.org/</vendor_url>
   <icon_name>package-x-generic</icon_name>
 
-  <action id="org.vanillaos.vso.sys-upgrade">
-    <description>Check for system package updates</description>
+  <action id="org.vanillaos.vso.sys">
+    <description>Execute system commands, such as upgrading the system</description>
     <message>Authentication is required to check for updates</message>
     <icon_name>package-x-generic</icon_name>
     <defaults>
@@ -17,6 +17,6 @@
       <allow_active>auth_admin_keep</allow_active>
     </defaults>
     <annotate key="org.freedesktop.policykit.exec.path">/usr/bin/vso</annotate>
-    <annotate key="org.freedesktop.policykit.exec.argv1">sys-upgrade</annotate>
+    <annotate key="org.freedesktop.policykit.exec.argv1">sys</annotate>
   </action>
 </policyconfig>

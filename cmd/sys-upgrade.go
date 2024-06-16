@@ -22,11 +22,14 @@ import (
 func NewUpgradeCommand() *cmdr.Command {
 	// Root command
 	cmd := cmdr.NewCommand(
-		"sys-upgrade",
+		"sys",
 		vso.Trans("sysUpgrade.description"),
 		vso.Trans("sysUpgrade.description"),
 		nil,
 	)
+
+	// Backward compatibility
+	cmd.Aliases = []string{"sys-upgrade"}
 
 	// Subcommands
 	check := cmdr.NewCommand(

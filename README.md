@@ -31,7 +31,7 @@ Available Commands:
   run         Run an application from the subsystem
   search      Search for an application to install inside the subsystem
   shell       Enter the subsystem environment
-  sys-upgrade Upgrade the system
+  sys         Execute system tasks, such as upgrading the system
   tasks       Create and manage tasks
   unexport    Unexport an application or binary from the subsystem
   update      Update the subsystem's package repository
