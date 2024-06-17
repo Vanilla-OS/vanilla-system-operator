@@ -124,27 +124,27 @@ sysUpgrade:
     info:
       checking: "Auf Aktualisierungen wird geprüft..."
     json:
-      description: Ausgabe des Resultats im JSON Format
+      description: Ergebnis im JSON-Format ausgeben
   sysUpgrade:
     description: "Das System aktualisieren"
     error:
       updating: "Beim Aktualisieren des Systems ist ein Fehler aufgetreten."
-      onHasUpdate: 'Error while searching for updates: %s.'
+      onHasUpdate: 'Fehler bei der Suche nach Aktualisierungen: %s.'
     info:
       updating: "Das System wird aktualisiert..."
       noUpdates: Dein System ist bereits auf dem neusten Stand.
-      willUpdateLater: An update is available and will be automatically installed
-        based on your %s schedule. You can force the update using 'vso sys-upgrade
-        upgrade --now'.
-      willNeverUpdate: An update is available, but will not be automatically installed
-        because you disabled automatic updates. You can force the update using 'vso
-        sys-upgrade upgrade --now'.
+      willUpdateLater: Eine Aktualisierung ist verfügbar und wird automatisch nach
+        Ihrem Zeitplan %s installiert. Sie können die Aktualisierung mit ‚vso sys-upgrade
+        upgrade --now‘ erzwingen.
+      willNeverUpdate: Eine Aktualisierung ist verfügbar, wird aber nicht automatisch
+        installiert, da Sie automatische Aktualisierungen deaktiviert haben. Sie können
+        die Aktualisierung mit ‚vso sys-upgrade upgrade --now‘ erzwingen.
     now: "Jetzt eine Systemaktualisierung auslösen"
 
     schedule:
-      monthly: monthly
-      daily: daily
-      weekly: weekly
+      monthly: monatlich
+      daily: täglich
+      weekly: wöchentlich
 tasks:
   description: "Aufgaben erstellen und verwalten"
   stacks:
@@ -299,7 +299,7 @@ waydroid:
     description: Installierte Anwendungen aktualisieren
   remove:
     info:
-      PackageSelection: Wähle eine Anwendung zum Entfernen
+      PackageSelection: Wählen Sie eine Anwendung zum Entfernen aus
       ConfirmRemove: Anwendung %s entfernen?
       RemovePackage: Paket %s wird entfernt
     description: Deinstallation einer Anwendung
@@ -324,25 +324,25 @@ waydroid:
   init:
     options:
       force:
-        description: Erzwinge die Initialisierung
+        description: Initialisierung erzwingen
     description: Initialisiere das waydroid Subsystem
     error:
-      alreadyInitialized: Das waydroid-Subsystem ist bereits initialisiert. Verwende
-        das --force Flag, um die Initialisierung zu erzwingen.
+      alreadyInitialized: Das Waydroid-Subsystem ist bereits initialisiert. Verwende
+        das Flag --force, um die Initialisierung zu erzwingen.
     info:
-      initialized: Das waydroid-Subsystem wurde initialisiert.
-    warnUnstable: Waydroid functionality is currently unstable. Expect bugs and missing
-      features. Continue anyway?
-    warnUnstableForce: Waydroid functionality is currently unstable. Expect bugs and
-      missing features.
+      initialized: Das Waydroid-Subsystem wurde initialisiert.
+    warnUnstable: Die Waydroid-Funktionalität ist derzeit instabil. Rechnen Sie mit
+      Fehlern und fehlenden Funktionen. Trotzdem weitermachen?
+    warnUnstableForce: Die Waydroid-Funktionalität ist derzeit instabil. Rechnen Sie
+      mit Fehlern und fehlenden Funktionen.
   search:
     description: Suche nach einer Anwendung
   downloadIndex: Herunterladen des Index für das Repository %s
   sync:
     description: Repositorien synchronisieren
   launcher:
-    description: Den waydroid Launcher anzeigen
+    description: Den Waydroid-Starter anzeigen
   launch:
-    description: Starte eine installierte Anwendung
+    description: Eine installierte Anwendung starten
   status:
     description: Gibt den internen Statuscode des Android-Subsystems zurück. Für Entwicklungszwecke.
