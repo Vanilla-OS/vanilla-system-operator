@@ -298,10 +298,8 @@ waydroid:
       alreadyInitialized: Waydroid 子系統已經初始化。請使用 --force 以強制初始化。
     info:
       initialized: Waydroid 子系統已初始化。
-    warnUnstable: Waydroid functionality is currently unstable. Expect bugs and missing
-      features. Continue anyway?
-    warnUnstableForce: Waydroid functionality is currently unstable. Expect bugs and
-      missing features.
+    warnUnstable: Waydroid 功能目前不穩定。出現錯誤及功能缺失是正常的。繼續執行？
+    warnUnstableForce: Waydroid 功能目前不穩定。出現錯誤及功能缺失是正常的。
   search:
     description: 搜尋應用程式
   downloadIndex: 正在下載軟體庫 %s 的索引
