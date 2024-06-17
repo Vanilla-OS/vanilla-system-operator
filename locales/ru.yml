@@ -1,6 +1,6 @@
 vso:
-  description: "Vanilla System Operator или VSO — это менеджер пакетов, программа
-    для обновления системы и автоматизации задач."
+  description: "Vanilla System Operator (VSO) — это менеджер пакетов, программа для
+    обновления системы и автоматизации задач."
   errors:
     unknownCommand: "Неизвестная команда: %s"
     invalidInput: "Недопустимый ввод."
@@ -135,7 +135,7 @@ sysUpgrade:
   sysUpgrade:
     info:
       updating: Обновление системы...
-      noUpdates: Your system is already up-to-date.
+      noUpdates: Ваша система уже обновлена.
     now: Запустить обновление системы прямо сейчас
     description: Обновите систему
     error:
@@ -240,9 +240,10 @@ tasks:
 waydroid:
   error:
     noArguments: Нет аргументов.
-    notWayland: This feature is only available on Wayland.
-    secureBoot: This feature requires secure boot to be disabled in the BIOS.
-    noRepos: Could not find any repositories.
+    notWayland: Эта функция доступна только на Wayland.
+    secureBoot: Для этой функции необходимо отключить безопасную загрузку (Secure
+      Boot) в BIOS.
+    noRepos: Не удалось найти репозитории.
   install:
     info:
       DownloadingPackage: Загрузка apk из %s
