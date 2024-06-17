@@ -138,10 +138,21 @@ sysUpgrade:
     description: Mise à jour du système
     error:
       updating: Une erreur s'est produite lors de la mise à jour du système.
+      onHasUpdate: 'Error while searching for updates: %s.'
     info:
       updating: Mise à jour du système ...
       noUpdates: Your system is already up-to-date.
+      willUpdateLater: An update is available and will be automatically installed
+        based on your %s schedule. You can force the update using 'vso sys-upgrade
+        upgrade --now'.
+      willNeverUpdate: An update is available, but will not be automatically installed
+        because you disabled automatic updates. You can force the update using 'vso
+        sys-upgrade upgrade --now'.
     now: Déclencher une mise à niveau du système maintenant
+    schedule:
+      monthly: monthly
+      daily: daily
+      weekly: weekly
 tasks:
   new:
     options:
@@ -323,6 +334,10 @@ waydroid:
         --force pour forcer l'initialisation.
     info:
       initialized: Le sous-système waydroid a été initialisé.
+    warnUnstable: Waydroid functionality is currently unstable. Expect bugs and missing
+      features. Continue anyway?
+    warnUnstableForce: Waydroid functionality is currently unstable. Expect bugs and
+      missing features.
   search:
     description: Rechercher pour une application
   downloadIndex: Téléchargement de l'index pour le dépôt %s

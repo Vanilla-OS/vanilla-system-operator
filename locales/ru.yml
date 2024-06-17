@@ -136,10 +136,21 @@ sysUpgrade:
     info:
       updating: Обновление системы...
       noUpdates: Ваша система уже обновлена.
+      willUpdateLater: An update is available and will be automatically installed
+        based on your %s schedule. You can force the update using 'vso sys-upgrade
+        upgrade --now'.
+      willNeverUpdate: An update is available, but will not be automatically installed
+        because you disabled automatic updates. You can force the update using 'vso
+        sys-upgrade upgrade --now'.
     now: Запустить обновление системы прямо сейчас
     description: Обновите систему
     error:
       updating: Произошла ошибка при обновлении системы.
+      onHasUpdate: 'Error while searching for updates: %s.'
+    schedule:
+      monthly: monthly
+      daily: daily
+      weekly: weekly
 tasks:
   stacks:
     new:
@@ -314,6 +325,10 @@ waydroid:
     error:
       alreadyInitialized: Подсистема waydroid уже инициализирована. Используйте флаг
         --force для принудительной инициализации.
+    warnUnstable: Waydroid functionality is currently unstable. Expect bugs and missing
+      features. Continue anyway?
+    warnUnstableForce: Waydroid functionality is currently unstable. Expect bugs and
+      missing features.
   search:
     description: Поиск приложения
   downloadIndex: Загрузка индекса для репозитория %s

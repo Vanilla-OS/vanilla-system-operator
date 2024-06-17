@@ -241,10 +241,21 @@ sysUpgrade:
     description: Upgradet het systeem
     error:
       updating: Er is een fout opgetreden bĳ het bĳwerken van het systeem.
+      onHasUpdate: 'Error while searching for updates: %s.'
     info:
       updating: Systeem updaten…
       noUpdates: Uw systeem is al up-to-date.
+      willUpdateLater: An update is available and will be automatically installed
+        based on your %s schedule. You can force the update using 'vso sys-upgrade
+        upgrade --now'.
+      willNeverUpdate: An update is available, but will not be automatically installed
+        because you disabled automatic updates. You can force the update using 'vso
+        sys-upgrade upgrade --now'.
     now: Activeer nu een systeemupgrade
+    schedule:
+      daily: daily
+      monthly: monthly
+      weekly: weekly
 waydroid:
   error:
     noArguments: Geen argumenten opgegeven
@@ -322,6 +333,10 @@ waydroid:
         vlag ‘--force’ om de initialisatie te forceren.
     info:
       initialized: Het Waydroid-subsysteem is geïnstalleerd.
+    warnUnstable: Waydroid functionality is currently unstable. Expect bugs and missing
+      features. Continue anyway?
+    warnUnstableForce: Waydroid functionality is currently unstable. Expect bugs and
+      missing features.
   search:
     description: Zoek naar een app
   downloadIndex: Index downloaden voor repository ‘%s’

@@ -122,11 +122,22 @@ sysUpgrade:
     description: "Upgrade the system"
     error:
       updating: "An error occured when updating the system."
+      onHasUpdate: 'Error while searching for updates: %s.'
     info:
       updating: "Updating the system..."
       noUpdates: Your system is already up-to-date.
+      willUpdateLater: An update is available and will be automatically installed
+        based on your %s schedule. You can force the update using 'vso sys-upgrade
+        upgrade --now'.
+      willNeverUpdate: An update is available, but will not be automatically installed
+        because you disabled automatic updates. You can force the update using 'vso
+        sys-upgrade upgrade --now'.
     now: "Trigger a system upgrade now"
 
+    schedule:
+      monthly: monthly
+      daily: daily
+      weekly: weekly
 tasks:
   description: "Create and manage tasks"
   stacks:
@@ -271,6 +282,10 @@ waydroid:
     error:
       alreadyInitialized: "The waydroid subsystem is already initialized. Use the
         --force flag to force the initialization."
+    warnUnstable: Waydroid functionality is currently unstable. Expect bugs and missing
+      features. Continue anyway?
+    warnUnstableForce: Waydroid functionality is currently unstable. Expect bugs and
+      missing features.
   launch:
     description: "Launch an installed application"
   launcher:
