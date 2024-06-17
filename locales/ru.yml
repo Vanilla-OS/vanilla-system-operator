@@ -136,21 +136,21 @@ sysUpgrade:
     info:
       updating: Обновление системы...
       noUpdates: Ваша система уже обновлена.
-      willUpdateLater: An update is available and will be automatically installed
-        based on your %s schedule. You can force the update using 'vso sys-upgrade
-        upgrade --now'.
-      willNeverUpdate: An update is available, but will not be automatically installed
-        because you disabled automatic updates. You can force the update using 'vso
-        sys-upgrade upgrade --now'.
+      willUpdateLater: Доступно обновление, которое будет автоматически установлено
+        по %s расписанию. Вы можете принудительно установить обновление, используя
+        'vso sys-upgrade upgrade --now'.
+      willNeverUpdate: Обновление доступно, но не будет установлено автоматически,
+        поскольку Вы отключили автоматическое обновление. Вы можете принудительно
+        установить обновление с помощью команды 'vso sys-upgrade upgrade --now'.
     now: Запустить обновление системы прямо сейчас
     description: Обновите систему
     error:
       updating: Произошла ошибка при обновлении системы.
-      onHasUpdate: 'Error while searching for updates: %s.'
+      onHasUpdate: 'Ошибка при поиске обновлений: %s.'
     schedule:
-      monthly: monthly
-      daily: daily
-      weekly: weekly
+      monthly: ежемесячному
+      daily: ежедневному
+      weekly: еженедельному
 tasks:
   stacks:
     new:
@@ -325,10 +325,10 @@ waydroid:
     error:
       alreadyInitialized: Подсистема waydroid уже инициализирована. Используйте флаг
         --force для принудительной инициализации.
-    warnUnstable: Waydroid functionality is currently unstable. Expect bugs and missing
-      features. Continue anyway?
-    warnUnstableForce: Waydroid functionality is currently unstable. Expect bugs and
-      missing features.
+    warnUnstable: Функциональность Waydroid в настоящее время нестабильна. Ожидаются
+      ошибки и отсутствие функций. Все равно продолжить?
+    warnUnstableForce: Функциональность Waydroid в настоящее время нестабильна. Ожидаются
+      ошибки и отсутствие функций.
   search:
     description: Поиск приложения
   downloadIndex: Загрузка индекса для репозитория %s
