@@ -44,15 +44,15 @@ pico:
     noAppNameOrBin: "‘--app’ of ‘--bin’ moet worden opgegeven."
     sameAppOrBin: "‘--app’ en ‘--bin’ kunnen niet beide worden opgegeven."
     exportingApp: "Er is een fout opgetreden tĳdens het exporteren van de app: %s"
-    exportingBin: "Er is een fout opgetreden tijdens het exporteren van het programma­bestand:
+    exportingBin: "Er is een fout opgetreden tĳdens het exporteren van het programma­bestand:
       %s"
-    unexportingApp: "Er is een fout opgetreden tijdens het ontexporteren van de app:
+    unexportingApp: "Er is een fout opgetreden tĳdens het ontexporteren van de app:
       %s"
-    unexportingBin: "Er is een fout opgetreden tijdens het ontexporteren van het programma­bestand:
+    unexportingBin: "Er is een fout opgetreden tĳdens het ontexporteren van het programma­bestand:
       %s"
     unknownCommand: 'Onbekende opdracht: %s'
-    shellReset: Het is onmogelijk om de VSO-shell te bereiken. Wilt u deze resetten?
-      (Hiermee wordt al uw software verwijderd die in het subsysteem is geïnstalleerd)
+    shellReset: Het is onmogelĳk om de VSO-shell te bereiken. Wilt u deze resetten?
+      (Hiermee wordt al uw software verwĳderd die in het subsysteem is geïnstalleerd)
       [y/N]
   info:
     initialized: "Het VSO-subsysteem is geïnitialiseerd."
@@ -60,11 +60,11 @@ pico:
     unexported: "%s geontexporteerd\n"
     exportedApps: "%d apps geëxporteerd"
     unexportedApps: "%d apps geontexporteerd"
-    shellInit: Het lijkt erop dat uw shell nog niet is geïnitialiseerd. Wilt u deze
-      nu initialiseren? (Sterk aanbevolen) [y/N]
+    shellInit: Het lĳkt erop dat uw shell nog niet is geïnitialiseerd. Wilt u deze
+      nu initialiseren? (sterk aanbevolen) [y/N]
     fallbackShell: Terugvallen op de host-shell? Dit kan tot onverwacht gedrag leiden.
       [y/N]
-    deleting: VSO-subsysteem verwijderen…
+    deleting: VSO-subsysteem verwĳderen…
     initializing: VSO-subsysteem initialiseren…
   export:
     description: "Een app of programmabestand van het subsysteem exporteren"
@@ -92,7 +92,7 @@ pico:
   install:
     description: "Installeert een app in het subsysteem"
   remove:
-    description: "Verwijdert een app van het subsysteem"
+    description: "Verwĳdert een app van het subsysteem"
   run:
     description: "Start een app van het subsysteem"
     options:
@@ -104,9 +104,9 @@ pico:
   shell:
     description: "Betreed de subsysteem­omgeving"
   update:
-    description: "Werkt de pakket-repository van het subsysteem bij"
+    description: "Werkt de pakket-repository van het subsysteem bĳ"
   upgrade:
-    description: "Werkt de pakketten in het subsysteem bij"
+    description: "Werkt de pakketten in het subsysteem bĳ"
 
   sideload:
     description: DEB-/APK-pakketten binnen het subsysteem sideloaden
@@ -127,7 +127,7 @@ tasks:
   new:
     options:
       at:
-        description: plan de taak om op een specifiek tijdstip uit te voeren (uu:mm)
+        description: plan de taak om op een specifiek tĳdstip uit te voeren (uu:mm)
       command:
         description: geef de opdracht om uit te voeren op
       onProcess:
@@ -135,7 +135,7 @@ tasks:
       assumeYes:
         description: antwoord ja op alle prompts
       description:
-        description: geef de taakbeschrijving op
+        description: geef de taakbeschrĳving op
       every:
         description: Plan de taak om met een interval te worden uitgevoerd (minuten,
           uren, dagen)
@@ -173,7 +173,7 @@ tasks:
         description: voert de taak uit als internetgebruik hoger is dan de opgegeven
           snelheid (Kb/s)
       onLowBattery:
-        description: voert de taak uit als de batterij minder dan 20% energie resterend
+        description: voert de taak uit als de accu minder dan 20% energie resterend
           heeft
       onMemoryUsage:
         description: voert de taak uit als geheugengebruik hoger is dan het opgegeven
@@ -182,32 +182,32 @@ tasks:
         description: voert de taak uit als het systeem met een netwerk verbindt
     description: Maakt een nieuwe taak aan
   rm:
-    description: Verwijdert een taak
+    description: Verwĳdert een taak
     error:
-      cannotDelete: 'Kan taak niet verwijderen: %s'
+      cannotDelete: 'Kan taak niet verwĳderen: %s'
       noName: Geen taaknaam opgegeven
       notFound: Taak niet gevonden.
     info:
-      askConfirmation: Weet u zeker dat u de taak ‘%s’ wilt verwijderen? [y/N]
-      taskDeleted: De taak is succesvol verwijderd.
+      askConfirmation: Weet u zeker dat u de taak ‘%s’ wilt verwĳderen? [y/N]
+      taskDeleted: De taak is succesvol verwĳderd.
     options:
       force:
-        description: forceert verwijdering van de taak
+        description: forceert verwĳdering van de taak
       name:
         description: Geef de taaknaam op
   description: Maak taken aan en beheer ze
   stacks:
     new:
       error:
-        emptyCommand: De opdracht mag niet leeg zijn.
-        emptyDescription: De omschrijving mag niet leeg zijn.
-        emptyName: De naam mag niet leeg zijn.
+        emptyCommand: De opdracht mag niet leeg zĳn.
+        emptyDescription: De omschrĳving mag niet leeg zĳn.
+        emptyName: De naam mag niet leeg zĳn.
         noCommand: Geen opdracht opgegeven.
         noDescription: Geen opdracht opgegeven.
         noName: Geen naam opgegeven.
       info:
         askCommand: 'Opdracht: '
-        askDescription: 'Omschrijving: '
+        askDescription: 'Omschrĳving: '
         askName: 'Naam: '
         taskCreated: Taak succesvol aangemaakt.
   list:
@@ -231,7 +231,7 @@ sysUpgrade:
       als er geen upgrade beschikbaar is en anders 1.
     description: Controleert op systeemupdates
     error:
-      asExitCodeAndJson: Er is een fout opgetreden bij het controleren op updates.
+      asExitCodeAndJson: Er is een fout opgetreden bĳ het controleren op updates.
         Zie de JSON-uitvoer voor meer details.
     info:
       checking: Controleren op updates…
@@ -240,17 +240,18 @@ sysUpgrade:
   sysUpgrade:
     description: Upgradet het systeem
     error:
-      updating: Er is een fout opgetreden bij het bijwerken van het systeem.
+      updating: Er is een fout opgetreden bĳ het bĳwerken van het systeem.
     info:
       updating: Systeem updaten…
-      noUpdates: Your system is already up-to-date.
+      noUpdates: Uw systeem is al up-to-date.
     now: Activeer nu een systeemupgrade
 waydroid:
   error:
     noArguments: Geen argumenten opgegeven
-    notWayland: This feature is only available on Wayland.
-    secureBoot: This feature requires secure boot to be disabled in the BIOS.
-    noRepos: Could not find any repositories.
+    notWayland: Deze functie is alleen beschikbaar op Wayland.
+    secureBoot: Deze functie vereist dat beveiligd opstarten is uitgeschakeld in de
+      BIOS.
+    noRepos: Kan geen repositories vinden.
   install:
     info:
       DownloadingPackage: APK downloaden van %s
@@ -266,7 +267,7 @@ waydroid:
       local:
         description: Installeert een lokaal APK-bestand
       noconfirm:
-        description: Niet vragen om bevestiging tijdens de installatie
+        description: Niet vragen om bevestiging tĳdens de installatie
   info:
     Author: 'Auteur: %s'
     PackageName: 'Naan: %s'
@@ -279,38 +280,38 @@ waydroid:
       PackageSelection: Selecteer een app om informatie over te tonen
   update:
     info:
-      NoUpdates: Niets om bij te werken
+      NoUpdates: Niets om bĳ te werken
     error:
       FailUpdatePackageDownload: APK downloaden voor ‘%s’ mislukt
-      FailUpdatePackageDatabase: Database-entry voor ‘%s’ bijwerken mislukt
+      FailUpdatePackageDatabase: Database-entry voor ‘%s’ bĳwerken mislukt
       FailUpdatePackageInstall: Update voor ‘%s’ installeren mislukt
-      FailGetVersion: Versiecode voor ‘%s’ verkrijgen mislukt
-    finished: Apps bijwerken voltooid
-    description: Werkt geïnstalleerde apps bij
+      FailGetVersion: Versiecode voor ‘%s’ verkrĳgen mislukt
+    finished: Apps bĳwerken voltooid
+    description: Werkt geïnstalleerde apps bĳ
   remove:
     info:
-      PackageSelection: Kies een app om te verwijderen
-      ConfirmRemove: App %s verwijderen?
-      RemovePackage: Pakket %s verwijderen
+      PackageSelection: Kies een app om te verwĳderen
+      ConfirmRemove: App %s verwĳderen?
+      RemovePackage: Pakket %s verwĳderen
     description: Deïnstalleert een app
     error:
-      RemoveCancelled: Verwijdering geannuleerd
+      RemoveCancelled: Verwĳdering geannuleerd
       NoMatches: App ‘%s’ niet gevonden
   clean:
     info:
-      success: Waydroid-VSO-cavhe succesvol verwijderd
-      apk: APK-cache verwijderen
-      index: Index-cache verwijderen
+      success: Waydroid-VSO-cavhe succesvol verwĳderd
+      apk: APK-cache verwĳderen
+      index: Index-cache verwĳderen
     error:
-      apk: APK-cache verwijderen mislukt
-      index: Index-cache verwijderen mislukt
+      apk: APK-cache verwĳderen mislukt
+      index: Index-cache verwĳderen mislukt
     description: Schoont de Waydroid-VSO-cavhe op
   description: Beheer het VSO-Waydroid-subsysteem
   delete:
-    description: Verwijdert het Waydroid-subsysteem
-    confirmation: Door het Waydroid-subsysteem te verwijderen zullen ook alle gegevens
+    description: Verwĳdert het Waydroid-subsysteem
+    confirmation: Door het Waydroid-subsysteem te verwĳderen zullen ook alle gegevens
       hierin verloren gaan. Doorgaan?
-    cancelled: Verwijdering van subsysteem geannuleerd
+    cancelled: Verwĳdering van subsysteem geannuleerd
   init:
     options:
       force:
