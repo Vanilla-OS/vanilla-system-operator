@@ -121,11 +121,22 @@ sysUpgrade:
     description: "Uppgradera systemet"
     error:
       updating: "Ett fel uppstod vid uppdatering av systemet."
+      onHasUpdate: 'Error while searching for updates: %s.'
     info:
       updating: "Uppdaterar systemet..."
       noUpdates: Ditt system är redan uppdaterat.
+      willUpdateLater: An update is available and will be automatically installed
+        based on your %s schedule. You can force the update using 'vso sys-upgrade
+        upgrade --now'.
+      willNeverUpdate: An update is available, but will not be automatically installed
+        because you disabled automatic updates. You can force the update using 'vso
+        sys-upgrade upgrade --now'.
     now: "Utlös en systemuppgradering nu"
 
+    schedule:
+      monthly: monthly
+      daily: daily
+      weekly: weekly
 tasks:
   description: "Skapa och hantera uppgifter"
   stacks:
@@ -300,6 +311,10 @@ waydroid:
     error:
       alreadyInitialized: Waydroid undersystemet är redan initierat. Använd flaggan
         --force för att tvinga fram initieringen.
+    warnUnstable: Waydroid functionality is currently unstable. Expect bugs and missing
+      features. Continue anyway?
+    warnUnstableForce: Waydroid functionality is currently unstable. Expect bugs and
+      missing features.
   search:
     description: Sök efter en applikation
   downloadIndex: Hämtar index för arkiv %s

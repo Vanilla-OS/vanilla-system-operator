@@ -122,11 +122,22 @@ sysUpgrade:
     description: "Sistemi yükselt"
     error:
       updating: "Sistem yükseltilirken hata oluştu."
+      onHasUpdate: 'Error while searching for updates: %s.'
     info:
       updating: "Sistem güncelleniyor..."
       noUpdates: Your system is already up-to-date.
+      willUpdateLater: An update is available and will be automatically installed
+        based on your %s schedule. You can force the update using 'vso sys-upgrade
+        upgrade --now'.
+      willNeverUpdate: An update is available, but will not be automatically installed
+        because you disabled automatic updates. You can force the update using 'vso
+        sys-upgrade upgrade --now'.
     now: "Şimdi sistem yükseltmesini tetikle"
 
+    schedule:
+      monthly: monthly
+      daily: daily
+      weekly: weekly
 tasks:
   description: "Görev oluştur ve yönet"
   stacks:
@@ -271,6 +282,10 @@ waydroid:
     error:
       alreadyInitialized: "Waydroid alt sistemi halihazırda ilklendirildi. İlklendirmeyi
         zorlamak için --force bayrağını kullan."
+    warnUnstable: Waydroid functionality is currently unstable. Expect bugs and missing
+      features. Continue anyway?
+    warnUnstableForce: Waydroid functionality is currently unstable. Expect bugs and
+      missing features.
   launch:
     description: "Kurulu uygulama başlat"
   launcher:

@@ -114,11 +114,22 @@ sysUpgrade:
     description: "更新系統"
     error:
       updating: "更新系統時發生錯誤。"
+      onHasUpdate: 'Error while searching for updates: %s.'
     info:
       updating: "正在更新系統…"
       noUpdates: 您的系統已經是最新的。
+      willUpdateLater: An update is available and will be automatically installed
+        based on your %s schedule. You can force the update using 'vso sys-upgrade
+        upgrade --now'.
+      willNeverUpdate: An update is available, but will not be automatically installed
+        because you disabled automatic updates. You can force the update using 'vso
+        sys-upgrade upgrade --now'.
     now: "立即執行系統更新"
 
+    schedule:
+      monthly: monthly
+      daily: daily
+      weekly: weekly
 tasks:
   description: "建立和管理工作"
   stacks:
@@ -287,6 +298,10 @@ waydroid:
       alreadyInitialized: Waydroid 子系統已經初始化。請使用 --force 以強制初始化。
     info:
       initialized: Waydroid 子系統已初始化。
+    warnUnstable: Waydroid functionality is currently unstable. Expect bugs and missing
+      features. Continue anyway?
+    warnUnstableForce: Waydroid functionality is currently unstable. Expect bugs and
+      missing features.
   search:
     description: 搜尋應用程式
   downloadIndex: 正在下載軟體庫 %s 的索引

@@ -122,11 +122,22 @@ sysUpgrade:
     description: "Nâng cấp hệ thống"
     error:
       updating: "Có một lỗi đã xảy ra khi cập nhật hệ thống."
+      onHasUpdate: 'Error while searching for updates: %s.'
     info:
       updating: "Đang cập nhật hệ thống..."
       noUpdates: Your system is already up-to-date.
+      willUpdateLater: An update is available and will be automatically installed
+        based on your %s schedule. You can force the update using 'vso sys-upgrade
+        upgrade --now'.
+      willNeverUpdate: An update is available, but will not be automatically installed
+        because you disabled automatic updates. You can force the update using 'vso
+        sys-upgrade upgrade --now'.
     now: "Kích hoạt bản cập nhật hệ thống ngay"
 
+    schedule:
+      monthly: monthly
+      daily: daily
+      weekly: weekly
 tasks:
   description: "Tạo và quản lí công việc"
   stacks:
@@ -272,6 +283,10 @@ waydroid:
     error:
       alreadyInitialized: "Hệ thống con waydroid đã được khởi tạo sẵn. Dùng flag --force
         để bắt buộc khởi tạo."
+    warnUnstable: Waydroid functionality is currently unstable. Expect bugs and missing
+      features. Continue anyway?
+    warnUnstableForce: Waydroid functionality is currently unstable. Expect bugs and
+      missing features.
   launch:
     description: "Khởi động một ứng dụng đã cài đặt"
   launcher:

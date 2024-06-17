@@ -123,11 +123,22 @@ sysUpgrade:
     description: "Efectuează upgrade la sistem"
     error:
       updating: "S-a întâmplat o eroare în timpul actualizării sistemului."
+      onHasUpdate: 'Error while searching for updates: %s.'
     info:
       updating: "Actualizarea sistemului..."
       noUpdates: Your system is already up-to-date.
+      willUpdateLater: An update is available and will be automatically installed
+        based on your %s schedule. You can force the update using 'vso sys-upgrade
+        upgrade --now'.
+      willNeverUpdate: An update is available, but will not be automatically installed
+        because you disabled automatic updates. You can force the update using 'vso
+        sys-upgrade upgrade --now'.
     now: "Declanșează un upgrade al sistemului acum"
 
+    schedule:
+      monthly: monthly
+      daily: daily
+      weekly: weekly
 tasks:
   description: "Crează și gestionează sarcini"
   stacks:
@@ -304,6 +315,10 @@ waydroid:
         flag pentru a forța inițializarea.
     info:
       initialized: Subsistemul waydroid a fost inițializat.
+    warnUnstable: Waydroid functionality is currently unstable. Expect bugs and missing
+      features. Continue anyway?
+    warnUnstableForce: Waydroid functionality is currently unstable. Expect bugs and
+      missing features.
   search:
     description: Caută aplicație
   downloadIndex: Descărcarea indexului pentru depozit %s
