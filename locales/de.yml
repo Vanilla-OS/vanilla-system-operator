@@ -74,7 +74,7 @@ pico:
       binOutput:
         description: "Pfad der Binärausgabe (Standard: ~/.local/bin/)"
   unexport:
-    description: "Unexport an application or binary from the subsystem"
+    description: "Deexportiere eine Anwendung oder eine Binärdatei aus dem Subsystem"
     options:
       app:
         description: "der Name der zu deexportierenden Anwendung"
@@ -124,14 +124,14 @@ sysUpgrade:
     info:
       checking: "Auf Aktualisierungen wird geprüft..."
     json:
-      description: output the result in JSON format
+      description: Ausgabe des Resultats im JSON Format
   sysUpgrade:
     description: "Das System aktualisieren"
     error:
       updating: "Beim Aktualisieren des Systems ist ein Fehler aufgetreten."
     info:
       updating: "Das System wird aktualisiert..."
-      noUpdates: Your system is already up-to-date.
+      noUpdates: Dein System ist bereits auf dem neusten Stand.
     now: "Jetzt eine Systemaktualisierung auslösen"
 
 tasks:
@@ -182,7 +182,7 @@ tasks:
       onCharge:
         description: "die Aufgabe nur ausführen, wenn das System aufgeladen wird"
       onConditionCommand:
-        description: "Führe den Task unter Bedingungen aus"
+        description: "Aufgabe abhängig von einem Befehl ausführen"
       onCpuTemp:
         description: "die Aufgabe ausführen, wenn die CPU-Temperatur höher als 60 °C
           ist"
@@ -246,9 +246,9 @@ tasks:
 waydroid:
   error:
     noArguments: Keine Argumente angegeben.
-    notWayland: This feature is only available on Wayland.
-    secureBoot: This feature requires secure boot to be disabled in the BIOS.
-    noRepos: Could not find any repositories.
+    notWayland: Dieses Feature ist nur auf Wayland verfügbar.
+    secureBoot: Für dieses Feature muss secure boot im BIOS deaktiviert sein.
+    noRepos: Konnte kein Repository finden.
   install:
     info:
       DownloadingPackage: APK wird von %s heruntergeladen
