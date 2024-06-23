@@ -268,40 +268,6 @@ func LoadTaskByUnitName(name string) (*Task, error) {
 	return &t, nil
 }
 
-// makeTasksRotatorAutostart creates an autostart file for vso if it doesn't exist
-func makeTasksRotatorAutostart() error {
-	curUser, err := getRealUser()
-	if err != nil {
-		fmt.Println("Cannot determine real user. Autostart will not be created.")
-		return err
-	}
-
-	autostartFolder := "/home/" + curUser + "/.config/autostart"
-	autostartFile := autostartFolder + "/vso.desktop"
-
-	if _, err := os.Stat(autostartFile); os.IsNotExist(err) {
-		fmt.Println("Creating vso autostart file for user in " + autostartFile)
-
-		err = os.MkdirAll(autostartFolder, 0755)
-		if err != nil {
-			return err
-		}
-
-		file, err := os.Create(autostartFile)
-		if err != nil {
-			return err
-		}
-		defer file.Close()
-
-		_, err = file.WriteString("[Desktop Entry]\nType=Application\nName=vso\nExec=/usr/bin/vso rotate-tasks\n")
-		if err != nil {
-			return err
-		}
-	}
-
-	return nil
-}
-
 // makeTasksLocation creates the tasks location for the user if it doesn't exist
 func makeTasksLocation() error {
 	userTasksLocation := getUserTasksLocation()
@@ -320,11 +286,6 @@ func makeTasksLocation() error {
 // TasksInit calls makeTasksLocation and makeTasksRotatorAutostart in one call
 func TasksInit() error {
 	err := makeTasksLocation()
-	if err != nil {
-		return err
-	}
-
-	err = makeTasksRotatorAutostart()
 	if err != nil {
 		return err
 	}
