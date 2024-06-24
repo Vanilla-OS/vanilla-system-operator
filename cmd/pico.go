@@ -387,7 +387,30 @@ func runPicoCmd(command string, cmd *cobra.Command, args []string) error {
 		return err
 	}
 
-	if command == "install" || command == "sideload" {
+	if command == "sideload" {
+		// Remove the --fix-broken flag
+		args[0] = args[len(args)-1]
+		args = args[:len(args)-1]
+
+		// Change args from filenames to package names
+		packageNames := []string{}
+		for _, v := range args {
+			out, _ := pico.Exec(true, false, "dpkg-deb", "--info", v)
+			for _, w := range strings.Split(out, "\n") {
+				wordsInLine := strings.Split(w, " ")
+				if len(wordsInLine) > 1 && wordsInLine[1] == "Package:" {
+					packageName := wordsInLine[2]
+					packageNames = append(packageNames, packageName)
+				}
+			}
+		}
+		exportedN, err := pico.ExportDesktopEntries(packageNames...)
+		if err == nil {
+			cmdr.Info.Printfln(vso.Trans("pico.info.exportedApps"), exportedN)
+		}
+	}
+
+	if command == "install" {
 		exportedN, err := pico.ExportDesktopEntries(args...)
 		if err == nil {
 			cmdr.Info.Printfln(vso.Trans("pico.info.exportedApps"), exportedN)
