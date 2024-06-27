@@ -108,7 +108,7 @@ pico:
   sideload:
     description: Carga lateral de paquetes DEB/APK dentro del subsistema
 sysUpgrade:
-  description: "Actualizar el sistema"
+  description: "Ejecutar comandos del sistema, como actualizar el sistema"
   check:
     asExitCode: "comprueba si hay actualización pero no imprime nada. Devuelve el
       código de salida 0 si no hay actualización disponible y 1 en caso contrario."
@@ -121,7 +121,7 @@ sysUpgrade:
     json:
       description: "salida del resultado en formato JSON"
   sysUpgrade:
-    description: "Actualizar el sistema"
+    description: "Ejecutar comandos del sistema, como actualizar el sistema"
     error:
       updating: "Se ha producido un error al actualizar el sistema."
       onHasUpdate: 'Error al buscar actualizaciones: %s.'
@@ -129,11 +129,11 @@ sysUpgrade:
       updating: "Actualizando el sistema..."
       noUpdates: Tu sistema ya está actualizado.
       willUpdateLater: Hay una actualización disponible y se instalará automáticamente
-        según su programación de %s. Puede forzar la actualización usando 'vso sys-upgrade
+        según su programación de %s. Puede forzar la actualización usando 'vso sys
         Upgrade --now'.
       willNeverUpdate: Hay una actualización disponible, pero no se instalará automáticamente
         porque deshabilitó las actualizaciones automáticas. Puede forzar la actualización
-        usando 'vso sys-upgrade Upgrade --now'.
+        usando 'vso sys Upgrade --now'.
     now: "Activar una actualización del sistema ahora"
 
     schedule:
