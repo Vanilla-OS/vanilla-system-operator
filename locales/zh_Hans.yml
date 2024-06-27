@@ -100,7 +100,7 @@ pico:
   sideload:
     description: 在子系统内侧载 DEB/APK 软件包
 sysUpgrade:
-  description: "更新系统"
+  description: "执行系统命令，例如更新系统"
   check:
     asExitCode: "检查更新但关闭输出。没有更新可用时返回码为 0，否则为 1。"
     description: "检查系统更新"
@@ -111,25 +111,22 @@ sysUpgrade:
     json:
       description: 输出结果为 JSON 格式
   sysUpgrade:
-    description: "更新系统"
+    description: "执行系统命令，例如更新系统"
     error:
       updating: "更新系统时发生错误。"
-      onHasUpdate: 'Error while searching for updates: %s.'
+      onHasUpdate: '查找更新时出现错误：%s。'
     info:
       updating: "正在更新系统…"
       noUpdates: 您的系统已经是最新的。
-      willUpdateLater: An update is available and will be automatically installed
-        based on your %s schedule. You can force the update using 'vso sys-upgrade
-        upgrade --now'.
-      willNeverUpdate: An update is available, but will not be automatically installed
-        because you disabled automatic updates. You can force the update using 'vso
-        sys-upgrade upgrade --now'.
+      willUpdateLater: 更新可用，将按照您指定的%s的频率自动安装。要强制更新，请执行 'vso sys-upgrade upgrade --now'。
+      willNeverUpdate: 更新可用，但因您已禁用自动更新，将不会自动安装。要强制更新，请执行 'vso sys-upgrade upgrade
+        --now'。
     now: "立即执行系统更新"
 
     schedule:
-      daily: daily
-      monthly: monthly
-      weekly: weekly
+      daily: 每天
+      monthly: 每个月
+      weekly: 每周
 tasks:
   description: "创建和管理任务"
   stacks:
