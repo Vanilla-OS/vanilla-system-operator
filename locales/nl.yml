@@ -225,7 +225,7 @@ tasks:
         description: specificeer de privégebeurtenis om taken voor opstarten, afsluiten,
           inloggen en uitloggen te roteren
 sysUpgrade:
-  description: Upgradet het systeem
+  description: Voer systeem­opdrachten uit, zoals het upgraden van het systeem
   check:
     asExitCode: controleert op upgrades, maar print niets. Geeft afsluitcode 0 terug
       als er geen upgrade beschikbaar is en anders 1.
@@ -238,7 +238,7 @@ sysUpgrade:
     json:
       description: voer het resultaat uit in JSON-formaat
   sysUpgrade:
-    description: Upgradet het systeem
+    description: Voer systeem­opdrachten uit, zoals het upgraden van het systeem
     error:
       updating: Er is een fout opgetreden bĳ het bĳwerken van het systeem.
       onHasUpdate: 'Fout bĳ zoeken naar updates: %s.'
@@ -246,11 +246,11 @@ sysUpgrade:
       updating: Systeem updaten…
       noUpdates: Uw systeem is al up-to-date.
       willUpdateLater: Er is een update beschikbaar die automatisch wordt geïnstalleerd
-        op basis van uw %s schema. U kunt de update forceren met ‘vso sys-upgrade
-        upgrade --now’.
+        op basis van uw %s schema. U kunt de update forceren met ‘vso sys upgrade
+        --now’.
       willNeverUpdate: Er is een update beschikbaar, maar deze wordt niet automatisch
         geïnstalleerd omdat u automatische updates heeft uitgeschakeld. U kunt de
-        update forceren met ‘vso sys-upgrade upgrade --now’.
+        update forceren met ‘vso sys upgrade --now’.
     now: Activeer nu een systeemupgrade
     schedule:
       daily: dagelĳkse
