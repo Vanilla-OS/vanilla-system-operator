@@ -106,7 +106,7 @@ pico:
   sideload:
     description: Realize sideload de pacotes DEB/APK dentro do subsistema
 sysUpgrade:
-  description: "Atualizar o sistema"
+  description: "Execute comandos do sistema, como atualizar o sistema"
   check:
     asExitCode: "verifica se há atualização, mas não imprime nada. Retorna o código
       de saída 0 se nenhuma atualização estiver disponível e 1 caso contrário."
@@ -119,25 +119,25 @@ sysUpgrade:
     json:
       description: saída do resultado no formato JSON
   sysUpgrade:
-    description: "Atualizar o sistema"
+    description: "Execute comandos do sistema, como atualizar o sistema"
     error:
       updating: "Ocorreu um erro ao atualizar o sistema."
-      onHasUpdate: 'Error while searching for updates: %s.'
+      onHasUpdate: 'Erro ao procurar atualizações: %s.'
     info:
       updating: "Atualizando o sistema..."
-      noUpdates: Your system is already up-to-date.
-      willUpdateLater: An update is available and will be automatically installed
-        based on your %s schedule. You can force the update using 'vso sys-upgrade
-        upgrade --now'.
-      willNeverUpdate: An update is available, but will not be automatically installed
-        because you disabled automatic updates. You can force the update using 'vso
-        sys-upgrade upgrade --now'.
+      noUpdates: Seu sistema já está atualizado.
+      willUpdateLater: Uma atualização está disponível e será instalada automaticamente
+        com base em sua programação %s. Você pode forçar a atualização usando 'vso
+        sys upgrade --now'.
+      willNeverUpdate: Uma atualização está disponível, mas não será instalada automaticamente
+        porque você desativou as atualizações automáticas. Você pode forçar a atualização
+        usando 'vso sys upgrade --now'.
     now: "Acionar uma atualização do sistema agora"
 
     schedule:
-      monthly: monthly
-      daily: daily
-      weekly: weekly
+      monthly: mensalmente
+      daily: diariamente
+      weekly: semanalmente
 tasks:
   description: "Criar e gerenciar tarefas"
   stacks:
@@ -239,9 +239,10 @@ tasks:
 waydroid:
   error:
     noArguments: Nenhum argumento fornecido.
-    notWayland: This feature is only available on Wayland.
-    secureBoot: This feature requires secure boot to be disabled in the BIOS.
-    noRepos: Could not find any repositories.
+    notWayland: Essa funcionalidade está disponível apenas no Wayland.
+    secureBoot: Essa funcionalidade exige que a inicialização segura seja desativada
+      no BIOS.
+    noRepos: Não foi possível encontrar nenhum repositório.
   install:
     info:
       DownloadingPackage: Transferindo apk de %s
@@ -313,10 +314,10 @@ waydroid:
         --force para forçar a inicialização.
     info:
       initialized: O subsistema waydroid foi inicializado.
-    warnUnstable: Waydroid functionality is currently unstable. Expect bugs and missing
-      features. Continue anyway?
-    warnUnstableForce: Waydroid functionality is currently unstable. Expect bugs and
-      missing features.
+    warnUnstable: A funcionalidade do Waydroid está instável no momento. Espere bugs
+      e recursos ausentes. Continuar mesmo assim?
+    warnUnstableForce: A funcionalidade do Waydroid está instável no momento. Espere
+      bugs e recursos ausentes.
   search:
     description: Busque por um aplicativo
   downloadIndex: Baixando o índice do repositório %s
