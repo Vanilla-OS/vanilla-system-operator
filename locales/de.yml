@@ -57,7 +57,7 @@ pico:
     exported: "%s exportiert\n"
     unexported: "%s deexportiert\n"
     exportedApps: "%d Anwendungen exportiert"
-    unexportedApps: "%d Anwendungen deexportiert"
+    unexportedApps: "Export von %d Anwendungen rückgängig gemacht"
     shellInit: Es sieht so aus, als sei Ihre Shell noch nicht initialisiert. Möchten
       Sie sie jetzt initialisieren? (Sehr empfohlen) [y/N]
     fallbackShell: Fallback zur Host-Shell? Dies könnte zu unerwartetem Verhalten
@@ -112,7 +112,7 @@ pico:
   sideload:
     description: DEB/APK-Pakete innerhalb des Subsystems querladen
 sysUpgrade:
-  description: "Das System aktualisieren"
+  description: "Systembefehle ausführen, z.B. ein Systemupgrade"
   check:
     asExitCode: "Prüft, ob eine Aktualisierung verfügbar ist, gibt aber nichts aus.
       Gibt den Beendigungscode 0 zurück, wenn keine Aktualisierung verfügbar ist,
@@ -126,7 +126,7 @@ sysUpgrade:
     json:
       description: Ergebnis im JSON-Format ausgeben
   sysUpgrade:
-    description: "Das System aktualisieren"
+    description: "Systembefehle ausführen, z.B. ein Systemupgrade"
     error:
       updating: "Beim Aktualisieren des Systems ist ein Fehler aufgetreten."
       onHasUpdate: 'Fehler bei der Suche nach Aktualisierungen: %s.'
@@ -134,11 +134,11 @@ sysUpgrade:
       updating: "Das System wird aktualisiert..."
       noUpdates: Dein System ist bereits auf dem neusten Stand.
       willUpdateLater: Eine Aktualisierung ist verfügbar und wird automatisch nach
-        Ihrem Zeitplan %s installiert. Sie können die Aktualisierung mit ‚vso sys-upgrade
-        upgrade --now‘ erzwingen.
+        Ihrem Zeitplan %s installiert. Sie können die Aktualisierung mit "vso sys
+        upgrade --now" erzwingen.
       willNeverUpdate: Eine Aktualisierung ist verfügbar, wird aber nicht automatisch
         installiert, da Sie automatische Aktualisierungen deaktiviert haben. Sie können
-        die Aktualisierung mit ‚vso sys-upgrade upgrade --now‘ erzwingen.
+        die Aktualisierung mit ‚vso sys upgrade --now‘ erzwingen.
     now: "Jetzt eine Systemaktualisierung auslösen"
 
     schedule:
