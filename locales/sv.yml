@@ -11,6 +11,18 @@ vso:
     yes: "ja"
     no: "nej"
 
+  msg:
+    examples: Examples
+    usage: Usage
+    aliases: Aliases
+    availableCommands: Available Commands
+    version: Show version for vso.
+    help: Show help for vso.
+    flags: Flags
+    moreInfo: Use %s for more information about a command
+    additionalHelpTopics: Additional help topics
+    globalFlags: Global Flags
+    additionalCommands: Additional Commands
 config:
   description: "Hantera systemkonfigurationen."
   get:

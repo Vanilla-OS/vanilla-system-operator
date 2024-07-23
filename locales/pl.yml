@@ -11,6 +11,18 @@ vso:
     yes: "tak"
     no: "nie"
 
+  msg:
+    usage: Usage
+    aliases: Aliases
+    globalFlags: Global Flags
+    flags: Flags
+    help: Show help for vso.
+    moreInfo: Use %s for more information about a command
+    examples: Examples
+    additionalHelpTopics: Additional help topics
+    availableCommands: Available Commands
+    version: Show version for vso.
+    additionalCommands: Additional Commands
 config:
   description: "Zarządzaj konfiguracją systemu."
   get:
