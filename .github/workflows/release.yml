@@ -1,4 +1,4 @@
-name: goreleaser
+name: Release
 
 on:
   push:
@@ -6,38 +6,16 @@ on:
       - '*'
 
 jobs:
-  goreleaser:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v4
-        with:
-          fetch-depth: 0
-      - name: Set up Go
-        uses: actions/setup-go@v5
-        with:
-          go-version: 1.22
-
-      - name: Run GoReleaser
-        uses: goreleaser/goreleaser-action@v6
-        with:
-          distribution: goreleaser
-          version: latest
-          args: release --clean
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-
-  upload-artifacts:
+  build-artifacts:
     runs-on: ubuntu-latest
     container:
       image: ghcr.io/vanilla-os/pico:main
     permissions:
-      contents: write # Allow uploading assets to release
-      attestations: write # To create and write attestations
-      id-token: write # Additional permissions for persistence of the attestations
+        contents: read
 
     steps:
       - uses: actions/checkout@v4
+
       - name: Set up Go
         uses: actions/setup-go@v5
         with:
@@ -49,24 +27,56 @@ jobs:
             apt-get install -y pkg-config build-essential
 
       - name: Build
-        run: go build -o vso
- 
+        run: go build -o vso -ldflags="-X 'main.Version=${{ github.ref_name }}'"
+
+      - name: Check for missing strings
+        uses: vanilla-os/missing-strings-golang-action@v0.1.0
+
       - name: Compress
         run: tar -czvf vso.tar.gz vso
 
       - name: Compress-manpage
         run: tar -czvf vso-man.tar.gz man/vso.1
 
-      - uses: softprops/action-gh-release@v2
+      - name: Calculate and Save Checksums
+        run: |
+          sha256sum vso.tar.gz >> checksums.txt
+          sha256sum vso-man.tar.gz >> checksums.txt
+
+      - uses: actions/upload-artifact@v4
         with:
-          token: "${{ secrets.GITHUB_TOKEN }}"
-          files: |
+          name: vso
+          path: |
+            checksums.txt
             vso.tar.gz
             vso-man.tar.gz
-      
-      - name: Attest release files
+
+  release:
+    runs-on: ubuntu-latest
+    needs: build-artifacts
+    permissions:
+      contents: write # to create and upload assets to releases
+      attestations: write # to upload assets attestation for build provenance
+      id-token: write # grant additional permission to attestation action to mint the OIDC token permission
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Download Artifact
+        uses: actions/download-artifact@v4
+        with:
+          name: vso
+
+      - name: Create Release
+        env:
+            GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: gh release create "${{ github.ref_name }}" --generate-notes *.tar.gz checksums.txt
+
+      - name: Attest Release Files
+        id: attest
         uses: actions/attest-build-provenance@v1
         with:
-          subject-path: |
-            vso.tar.gz
-            vso-man.tar.gz
+          subject-path: '*.tar.gz, checksums.txt'

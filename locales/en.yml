@@ -6,6 +6,18 @@ vso:
     invalidChoice: "Invalid choice."
   info:
     aborting: "Aborting as requested."
+  msg:
+    help: "Show help for vso."
+    version: "Show version for vso."
+    usage: "Usage"
+    aliases: "Aliases"
+    examples: "Examples"
+    availableCommands: "Available Commands"
+    additionalCommands: "Additional Commands"
+    flags: "Flags"
+    globalFlags: "Global Flags"
+    additionalHelpTopics: "Additional help topics"
+    moreInfo: "Use %s for more information about a command"
   terminal:
     yes: "yes"
     no: "no"

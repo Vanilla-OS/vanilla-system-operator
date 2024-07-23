@@ -18,7 +18,7 @@ import (
 	"github.com/vanilla-os/vanilla-system-operator/cmd"
 )
 
-var Version = "2.0.1"
+var Version = "development"
 
 //go:embed locales/*.yml
 var fs embed.FS
@@ -37,6 +37,20 @@ func main() {
 	// root command
 	root := cmd.NewRootCommand(Version)
 	vso.CreateRootCommand(root)
+	vso.CreateRootCommand(root, vso.Trans("vso.msg.help"), vso.Trans("vso.msg.version"))
+
+	msgs := cmdr.UsageStrings{
+		Usage:                vso.Trans("vso.msg.usage"),
+		Aliases:              vso.Trans("vso.msg.aliases"),
+		Examples:             vso.Trans("vso.msg.examples"),
+		AvailableCommands:    vso.Trans("vso.msg.availableCommands"),
+		AdditionalCommands:   vso.Trans("vso.msg.additionalCommands"),
+		Flags:                vso.Trans("vso.msg.flags"),
+		GlobalFlags:          vso.Trans("vso.msg.globalFlags"),
+		AdditionalHelpTopics: vso.Trans("vso.msg.additionalHelpTopics"),
+		MoreInfo:             vso.Trans("vso.msg.moreInfo"),
+	}
+	vso.SetUsageStrings(msgs)
 
 	// commands
 	tasks := cmd.NewTasksCommand()
