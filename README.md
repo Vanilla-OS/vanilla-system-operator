@@ -21,25 +21,27 @@ Usage:
   vso [command]
 
 Available Commands:
+  android     Manage the vso waydroid subsystem
   completion  Generate the autocompletion script for the specified shell
   config      Manage the system configuration.
   export      Export an application or binary from the subsystem
   help        Help about any command
   install     Install an application inside the subsystem
-  pico-init   Initialize the Pico subsystem, used for package management
+  pico-init   Initialize the VSO subsystem, used for package management
   remove      Remove an application from the subsystem
   run         Run an application from the subsystem
   search      Search for an application to install inside the subsystem
   shell       Enter the subsystem environment
-  sys         Execute system tasks, such as upgrading the system
+  sideload    Sideload DEB/APK packages inside the subsystem
+  sys         Execute system commands, such as upgrading the system
   tasks       Create and manage tasks
   unexport    Unexport an application or binary from the subsystem
   update      Update the subsystem's package repository
   upgrade     Upgrade the packages inside the subsystem
 
 Flags:
-  -h, --help      help for vso
-  -v, --version   version for vso
+  -h, --help      Show help for vso.
+  -v, --version   Show version for vso.
 
 Use "vso [command] --help" for more information about a command.
 ```

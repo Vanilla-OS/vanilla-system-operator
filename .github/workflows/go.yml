@@ -31,7 +31,7 @@ jobs:
           apt-get install -y pkg-config build-essential
 
     - name: Build
-      run: go build -o vso
+      run: go build -o vso -ldflags="-X 'main.Version=${{ github.sha }}'"
 
     - name: Check for missing strings
       uses: vanilla-os/missing-strings-golang-action@v0.1.0
@@ -42,26 +42,26 @@ jobs:
     - name: Compress-manpage
       run: tar -czvf vso-man.tar.gz man/vso.1
 
+    - name: Calculate and Save Checksums
+      run: |
+        sha256sum vso.tar.gz >> checksums.txt
+        sha256sum vso-man.tar.gz >> checksums.txt
+
     - uses: actions/upload-artifact@v4
       with:
         name: vso
-        path: vso.tar.gz
+        path: |
+          checksums.txt
+          vso.tar.gz
+          vso-man.tar.gz
 
     - uses: softprops/action-gh-release@v2
-      if: github.repository == 'vanilla-os/vanilla-system-operator' && github.ref == 'refs/heads/main'
       with:
           token: "${{ secrets.GITHUB_TOKEN }}"
           tag_name: "continuous"
           prerelease: true
           name: "Continuous Build"
           files: |
+            checksums.txt
             vso.tar.gz
             vso-man.tar.gz
-
-    - name: Attest continuous release files
-      if: github.repository == 'vanilla-os/vanilla-system-operator' && github.ref == 'refs/heads/main'
-      uses: actions/attest-build-provenance@v1
-      with:
-        subject-path: |
-          vso.tar.gz
-          vso-man.tar.gz

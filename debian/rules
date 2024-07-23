@@ -1,6 +1,0 @@
-#!/usr/bin/make -f
-
-export DH_GOPKG := github.com/vanilla-os/vanilla-system-operator
-
-%:
-	dh $@
