@@ -11,6 +11,18 @@ vso:
     yes: "evet"
     no: "hayır"
 
+  msg:
+    version: Show version for vso.
+    help: Show help for vso.
+    flags: Flags
+    moreInfo: Use %s for more information about a command
+    examples: Examples
+    usage: Usage
+    additionalHelpTopics: Additional help topics
+    aliases: Aliases
+    availableCommands: Available Commands
+    globalFlags: Global Flags
+    additionalCommands: Additional Commands
 config:
   description: "Sistem yapılandırmasını yönet."
   get:

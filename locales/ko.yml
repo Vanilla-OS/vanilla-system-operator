@@ -10,6 +10,18 @@ vso:
     yes: "예"
     no: "아니오"
 
+  msg:
+    moreInfo: Use %s for more information about a command
+    flags: Flags
+    examples: Examples
+    usage: Usage
+    additionalHelpTopics: Additional help topics
+    aliases: Aliases
+    availableCommands: Available Commands
+    version: Show version for vso.
+    globalFlags: Global Flags
+    help: Show help for vso.
+    additionalCommands: Additional Commands
 config:
   description: "시스템 구성을 관리하세요."
   get:

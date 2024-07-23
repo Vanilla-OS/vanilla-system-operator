@@ -10,6 +10,18 @@ vso:
     yes: "是"
     no: "否"
 
+  msg:
+    flags: Flags
+    moreInfo: Use %s for more information about a command
+    examples: Examples
+    usage: Usage
+    additionalHelpTopics: Additional help topics
+    aliases: Aliases
+    availableCommands: Available Commands
+    version: Show version for vso.
+    globalFlags: Global Flags
+    help: Show help for vso.
+    additionalCommands: Additional Commands
 config:
   description: "管理系統組態。"
   get:
