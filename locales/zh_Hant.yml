@@ -11,17 +11,17 @@ vso:
     no: "否"
 
   msg:
-    flags: Flags
-    moreInfo: Use %s for more information about a command
-    examples: Examples
-    usage: Usage
-    additionalHelpTopics: Additional help topics
-    aliases: Aliases
-    availableCommands: Available Commands
-    version: Show version for vso.
-    globalFlags: Global Flags
-    help: Show help for vso.
-    additionalCommands: Additional Commands
+    flags: 參數
+    moreInfo: 使用 %s 取得關於命令的詳細資訊
+    examples: 範例
+    usage: 用法
+    additionalHelpTopics: 附加說明主題
+    aliases: 別名
+    availableCommands: 可使用命令
+    version: 顯示 vso 的版本。
+    globalFlags: 全域參數
+    help: 顯示 vso 的說明。
+    additionalCommands: 附加命令
 config:
   description: "管理系統組態。"
   get:
