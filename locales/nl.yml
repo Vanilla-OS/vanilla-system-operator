@@ -12,17 +12,17 @@ vso:
     no: "nee"
 
   msg:
-    globalFlags: Global Flags
-    aliases: Aliases
-    flags: Flags
-    moreInfo: Use %s for more information about a command
-    examples: Examples
-    availableCommands: Available Commands
-    usage: Usage
-    version: Show version for vso.
-    additionalHelpTopics: Additional help topics
-    help: Show help for vso.
-    additionalCommands: Additional Commands
+    globalFlags: Globale vlaggen
+    aliases: Aliassen
+    flags: Vlaggen
+    moreInfo: Gebruik %s voor meer informatie over een opdracht
+    examples: Voorbeelden
+    availableCommands: Beschikbare opdrachten
+    usage: Gebruik
+    version: Toon versie van vso.
+    additionalHelpTopics: Aanvullende hulp­onderwerpen
+    help: Toon hulp voor vso.
+    additionalCommands: Aanvullende opdrachten
 config:
   description: "Beheer de systeem­configuratie"
   get:
