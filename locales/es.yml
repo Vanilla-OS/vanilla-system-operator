@@ -12,17 +12,17 @@ vso:
     no: "No"
 
   msg:
-    flags: Flags
-    moreInfo: Use %s for more information about a command
-    examples: Examples
-    usage: Usage
-    additionalHelpTopics: Additional help topics
-    aliases: Aliases
-    availableCommands: Available Commands
-    version: Show version for vso.
-    globalFlags: Global Flags
-    help: Show help for vso.
-    additionalCommands: Additional Commands
+    flags: Etiquetas
+    moreInfo: Utilice %s para obtener más información sobre un comando
+    examples: Ejemplos
+    usage: Uso
+    additionalHelpTopics: Temas de ayuda adicionales
+    aliases: Alias
+    availableCommands: Comandos disponibles
+    version: Mostrar la versión de vso.
+    globalFlags: Etiquetas generales
+    help: Mostrar ayuda para vso.
+    additionalCommands: Comandos adicionales
 config:
   description: "Gestionar la configuración del sistema."
   get:
