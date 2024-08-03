@@ -12,17 +12,17 @@ vso:
     no: "hayır"
 
   msg:
-    version: Show version for vso.
-    help: Show help for vso.
-    flags: Flags
-    moreInfo: Use %s for more information about a command
-    examples: Examples
-    usage: Usage
-    additionalHelpTopics: Additional help topics
-    aliases: Aliases
-    availableCommands: Available Commands
-    globalFlags: Global Flags
-    additionalCommands: Additional Commands
+    version: Vso için sürümü göster.
+    help: Vso için yardımı göster.
+    flags: İmler
+    moreInfo: Komutla ilgili daha çok bilgi için %s kullanın
+    examples: Örnekler
+    usage: Kullanım
+    additionalHelpTopics: Ek yardım konuları
+    aliases: Diğer Adlar
+    availableCommands: Uygun Komutlar
+    globalFlags: Küresel İmler
+    additionalCommands: Ek Komutlar
 config:
   description: "Sistem yapılandırmasını yönet."
   get:
@@ -118,7 +118,7 @@ pico:
   sideload:
     description: DEB/APK paketleri alt sistemin içine yandan yükle
 sysUpgrade:
-  description: "Alt sistemi yükselt"
+  description: "Sistemi yükseltmek gibi sistem komutlarını çalıştır"
   check:
     asExitCode: "yükseltmek için denetle ancak bir şey yazdırma. Yükseltme yoksa çıkış
       kodu olarak 0, varsa 1 döndür."
@@ -131,25 +131,24 @@ sysUpgrade:
     json:
       description: "sonucu JSON biçiminde çıkar"
   sysUpgrade:
-    description: "Sistemi yükselt"
+    description: "Sistemi yükseltmek gibi sistem komutlarını çalıştır"
     error:
       updating: "Sistem yükseltilirken hata oluştu."
-      onHasUpdate: 'Error while searching for updates: %s.'
+      onHasUpdate: 'Güncelleme aranırken hata: %s.'
     info:
       updating: "Sistem güncelleniyor..."
-      noUpdates: Your system is already up-to-date.
-      willUpdateLater: An update is available and will be automatically installed
-        based on your %s schedule. You can force the update using 'vso sys-upgrade
-        upgrade --now'.
-      willNeverUpdate: An update is available, but will not be automatically installed
-        because you disabled automatic updates. You can force the update using 'vso
-        sys-upgrade upgrade --now'.
+      noUpdates: Sisteminiz güncel.
+      willUpdateLater: Güncelleme var ve %s sıklığınıza uygun olarak kendiliğinden
+        kurulacaktır. Güncellemeyi 'vso sys upgrade --now' kullanarak hemen kurabilirsiniz.
+      willNeverUpdate: Güncelleme var ancak kendiliğinden güncellemeyi devre dışı
+        bıraktığınızdan kendiliğinden kurulmayacak. Güncellemeyi 'vso sys upgrade
+        --now' kullanarak hemen kurabilirsiniz.
     now: "Şimdi sistem yükseltmesini tetikle"
 
     schedule:
-      monthly: monthly
-      daily: daily
-      weekly: weekly
+      monthly: aylık
+      daily: günlük
+      weekly: haftalık
 tasks:
   description: "Görev oluştur ve yönet"
   stacks:
@@ -265,9 +264,10 @@ waydroid:
     cancelled: "Alt sistemin kaldırılması iptal edildi."
   error:
     noArguments: "Argüman sağlanmadı."
-    notWayland: This feature is only available on Wayland.
-    secureBoot: This feature requires secure boot to be disabled in the BIOS.
-    noRepos: Could not find any repositories.
+    notWayland: Bu özellik yalnızca Wayland'de kullanılabilir.
+    secureBoot: Bu özellik, BIOS'taki güvenli önyüklemenin devre dışı bırakılmasını
+      gerektirir.
+    noRepos: Herhangi bir depo bulunamadı.
   install:
     description: "Uygulama kur"
     options:
@@ -294,10 +294,10 @@ waydroid:
     error:
       alreadyInitialized: "Waydroid alt sistemi halihazırda ilklendirildi. İlklendirmeyi
         zorlamak için --force bayrağını kullan."
-    warnUnstable: Waydroid functionality is currently unstable. Expect bugs and missing
-      features. Continue anyway?
-    warnUnstableForce: Waydroid functionality is currently unstable. Expect bugs and
-      missing features.
+    warnUnstable: Waydroid işlevselliği şu anda kararsızdır. Hatalar ve eksik özelliklerle
+      karşılaşabilirsiniz. Yine de sürdürülsün mü?
+    warnUnstableForce: Waydroid işlevselliği şu anda kararsızdır. Hatalar ve eksik
+      özelliklerle karşılaşabilirsiniz.
   launch:
     description: "Kurulu uygulama başlat"
   launcher:
