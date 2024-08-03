@@ -12,17 +12,17 @@ vso:
     no: "nej"
 
   msg:
-    examples: Examples
-    usage: Usage
-    aliases: Aliases
-    availableCommands: Available Commands
-    version: Show version for vso.
-    help: Show help for vso.
-    flags: Flags
-    moreInfo: Use %s for more information about a command
-    additionalHelpTopics: Additional help topics
-    globalFlags: Global Flags
-    additionalCommands: Additional Commands
+    examples: Exempel
+    usage: Användning
+    aliases: Aliaser
+    availableCommands: Tillgängliga kommandon
+    version: Visa version av vso.
+    help: Visa hjälp för vso.
+    flags: Flaggor
+    moreInfo: Använd %s för mer information om ett kommando
+    additionalHelpTopics: Ytterligare hjälpämnen
+    globalFlags: Globala flaggor
+    additionalCommands: Ytterligare kommandon
 config:
   description: "Hantera systemkonfigurationen."
   get:
