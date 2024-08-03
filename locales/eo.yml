@@ -3,30 +3,30 @@ vso:
     and a task automator."
   errors:
     unknownCommand: "Nekonata komando: %s"
-    invalidInput: "Nevalida enigo."
+    invalidInput: "Nevalida enigaĵo."
     invalidChoice: "Nevalida elekto."
   info:
-    aborting: "Aborting as requested."
+    aborting: "Forlasante laŭ peto."
   terminal:
     yes: "jes"
     no: "ne"
 
   msg:
-    usage: Usage
-    flags: Flags
+    usage: Uzado
+    flags: Flagoj
     moreInfo: Use %s for more information about a command
-    examples: Examples
+    examples: Ekzemploj
     additionalHelpTopics: Additional help topics
-    aliases: Aliases
-    availableCommands: Available Commands
-    version: Show version for vso.
-    globalFlags: Global Flags
-    help: Show help for vso.
-    additionalCommands: Additional Commands
+    aliases: Sinonimoj
+    availableCommands: Haveblaj komandoj
+    version: Montri la version de vso.
+    globalFlags: Mallokaj flagoj
+    help: Montri helpon pri vso.
+    additionalCommands: Pliaj komandoj
 config:
-  description: "Manage the system configuration."
+  description: "Administri la sistemajn agordojn."
   get:
-    description: "Get the system configuration"
+    description: "Akiri la sistemajn agordojn"
     error:
       noKey: "Neniu ŝlosilo specifiĝis."
       noValue: "No value found for key: %s"
@@ -44,41 +44,41 @@ config:
       value: "value of the configuration to set"
     success: "Configuration updated successfully."
   show:
-    description: "Show the system configuration"
+    description: "Montri la sistemajn agordojn"
 
 pico:
-  description: "Manage the Pico subsystem"
+  description: "Administri la VSO-subsistemon"
   error:
     notInitialized: "The Pico subsystem is not initialized. Please run `vso pico-init`
       to initialize it."
     alreadyInitialized: "The Pico subsystem is already initialized. Use the --force
       flag to force the initialization."
-    noAppNameOrBin: "--app or --bin must be specified."
-    sameAppOrBin: "--app and --bin cannot be both specified."
-    exportingApp: "An error occurred while exporting the application: %s"
+    noAppNameOrBin: "Oni devas specifi aŭ «--app» aŭ «--bin»."
+    sameAppOrBin: "Oni devas ne specifi kaj «--app» kaj «--bin»."
+    exportingApp: "Okazis eraro dum eksportado de la programo: %s"
     exportingBin: "An error occurred while exporting the binary: %s"
-    unexportingApp: "An error occurred while unexporting the application: %s"
+    unexportingApp: "Okasis eraro dum maleksportado de la programo: %s"
     unexportingBin: "An error occurred while unexporting the binary: %s"
-    unknownCommand: 'Unknown command: %s'
+    unknownCommand: 'Nekonata komando: %s'
     shellReset: It is impossible to reach the VSO shell. Do you want to reset it?
       (This will remove all your software installed in the subsystem) [y/N]
   info:
     initialized: "The Pico subsystem has been initialized."
-    exported: "Elportita %s\n"
-    unexported: "Neelportita %s\n"
-    exportedApps: "Exported %d applications"
-    unexportedApps: "Unexported %d applications"
+    exported: "Eksportis %s\n"
+    unexported: "Maleksportis %s\n"
+    exportedApps: "Eksportis %d programojn"
+    unexportedApps: "Maleksportis %d programojn"
     shellInit: Looks like your shell is not initialized yet. Do you want to initialize
       it now? (Highly recommended) [y/N]
     fallbackShell: Fallback to the host shell? This could lead to unexpected behavior.
       [y/N]
-    deleting: Deleting the VSO subsystem...
+    deleting: Forviŝante la VSO-subsistemon…
     initializing: Initializing the VSO subsystem...
   export:
     description: "Export an application or binary from the subsystem"
     options:
       app:
-        description: "the name of the application to export"
+        description: "la nomo de la eksportota programo"
       bin:
         description: "the name of the binary to export"
       binOutput:
@@ -87,7 +87,7 @@ pico:
     description: "Unexport an application or binary from the subsystem"
     options:
       app:
-        description: "the name of the application to unexport"
+        description: "la nomo de la maleksportota programo"
       bin:
         description: "the name of the binary to unexport"
       binOutput:
@@ -98,31 +98,31 @@ pico:
       force:
         description: "force the initialization if the subsystem is already initialized"
   install:
-    description: "Install an application inside the subsystem"
+    description: "Instali programon en la subsistemo"
   remove:
-    description: "Remove an application from the subsystem"
+    description: "Malinstali programon el la subsistemo"
   run:
-    description: "Run an application from the subsystem"
+    description: "Ruli programon de la subsistemo"
     options:
       noReset:
         description: do not propose to reset the subsystem if something goes wrong
   search:
     description: "Search for an application to install inside the subsystem"
   shell:
-    description: "Enter the subsystem environment"
+    description: "Eniri la subsisteman medion"
   update:
     description: "Update the subsystem's package repository"
   upgrade:
     description: "Upgrade the packages inside the subsystem"
 
   sideload:
-    description: Sideload DEB/APK packages inside the subsystem
+    description: Flankinstali DEB/APK-pakojn en la subsistemon
 sysUpgrade:
   description: "Ĝisdatigi la sistemon"
   check:
     asExitCode: "checks for upgrade but doesn't print anything. Return exit code 0
       if no upgrade is available and 1 otherwise."
-    description: "Check for system updates"
+    description: "Kontroli sistemajn ĝisdatigojn"
     error:
       asExitCodeAndJson: "An error occured when checking for updates. See the JSON
         output for more details."
@@ -133,7 +133,7 @@ sysUpgrade:
   sysUpgrade:
     description: "Ĝisdatigi la sistemon"
     error:
-      updating: "An error occured when updating the system."
+      updating: "Okazis eraro dum ĝisdatigado de la sistemo."
       onHasUpdate: 'Error while searching for updates: %s.'
     info:
       updating: "Ĝisdatigante la sistemon…"
@@ -147,9 +147,9 @@ sysUpgrade:
     now: "Trigger a system upgrade now"
 
     schedule:
-      monthly: monthly
-      daily: daily
-      weekly: weekly
+      monthly: ĉiumonate
+      daily: ĉiutage
+      weekly: ĉiusemajne
 tasks:
   description: "Krei kaj administri taskojn"
   stacks:
@@ -247,7 +247,7 @@ tasks:
           logout"
 
 waydroid:
-  description: "Manage the vso waydroid subsystem"
+  description: "Administri la VSO-Waydroid-subsistemon"
   downloadIndex: "Downloading index for repository %s"
   clean:
     description: "Cleans the waydroid vso cache"
@@ -259,30 +259,30 @@ waydroid:
       index: "Failed to delete index cache"
       apk: "Failed to delete apk cache"
   delete:
-    description: "Delete the waydroid subsystem"
+    description: "Forviŝi la Waydroid-subsistemon"
     confirmation: "Deleting the waydroid subsystem will delete any data stored in
       it. Continue?"
-    cancelled: "Cancelled removal of subsystem."
+    cancelled: "Nuligis forviŝon de subsistemo."
   error:
     noArguments: "No arguments provided."
-    notWayland: This feature is only available on Wayland.
+    notWayland: Jen funkcio nur havebla por Wayland.
     secureBoot: This feature requires secure boot to be disabled in the BIOS.
     noRepos: Could not find any repositories.
   install:
-    description: "Install an application"
+    description: "Instali programon"
     options:
       local:
-        description: "Install a local apk"
+        description: "Instali lokan apk"
       noconfirm:
         description: Do not ask for confirmation during installation
     info:
       PackageInCache: "Application found in cache, not downloading again."
       ConfirmInstall: "Ĉu instali la programon %s?"
-      DownloadingPackage: "Downloading apk from %s"
+      DownloadingPackage: "Elŝutante la APK-dosieron de %s"
       PackageSelection: "Elektu instalotan programon"
-      InstallSuccess: Installation successful
+      InstallSuccess: Instalado sukcesis
     error:
-      NotFound: "Application %s was not found."
+      NotFound: "La programo «%s» ne troviĝis."
       InstallCancelled: "Instalado nuliĝis"
   init:
     description: "Initialize the waydroid subsystem"
@@ -299,34 +299,34 @@ waydroid:
     warnUnstableForce: Waydroid functionality is currently unstable. Expect bugs and
       missing features.
   launch:
-    description: "Launch an installed application"
+    description: "Lanĉi instalitan programon"
   launcher:
-    description: "Show the waydroid launcher"
+    description: "Montri la Waydroid-lanĉilon"
   remove:
     description: "Malinstali programon"
     info:
-      RemovePackage: "Removing package %s"
-      PackageSelection: "Pick application to remove"
-      ConfirmRemove: "Remove application %s?"
+      RemovePackage: "Malinstalante la pakon %s"
+      PackageSelection: "Elektu malinstalotan programon"
+      ConfirmRemove: "Ĉu malinstali la programon «%s»?"
     error:
       NoMatches: "Programo %s ne troviĝis"
       RemoveCancelled: "Forigado nuliĝis"
   search:
     description: "Serĉi programon"
   sync:
-    description: "Sync the repositories"
+    description: "Sinkronigi la deponejojn"
   update:
-    description: "Update installed applications"
-    finished: "Finished updating applications"
+    description: "Ĝisdatigi instalitajn programojn"
+    finished: "Sukcese finis ĝisdatigi programojn"
     error:
-      FailGetVersion: "Failed to get version code for %s"
-      FailUpdatePackageDownload: "Failed to download APK for %s"
+      FailGetVersion: "Malsukcesis akiri la versian kodon de %s"
+      FailUpdatePackageDownload: "Malsukcesis elŝuti la APK-dosieron por %s"
       FailUpdatePackageDatabase: "Failed to update database entry for %s"
-      FailUpdatePackageInstall: "Failed to install update for %s"
+      FailUpdatePackageInstall: "Malsukcesis instali ĝisdatigon por %s"
     info:
-      NoUpdates: "Nothing to update"
+      NoUpdates: "Neniu ĝisdatigota"
   info:
-    description: "Display information about an application"
+    description: "Montri informojn pri programo"
     info:
       PackageSelection: "Select application to display information from"
     PackageName: "Nomo: %s"
