@@ -1,340 +1,340 @@
 vso:
-  description: "The Vanilla System Operator is a package manager, a system updater
-    and a task automator."
+  description: "مشغل النظام Vanilla هو مدير حز م، محدث نظام ومنفذ مهام."
   errors:
-    unknownCommand: "Unknown command: %s"
-    invalidInput: "Invalid input."
-    invalidChoice: "Invalid choice."
+    unknownCommand: "الأمر غير معروف: %s"
+    invalidInput: "إدخال غير صالح."
+    invalidChoice: "اختيار غير صالح."
   info:
-    aborting: "Aborting as requested."
+    aborting: "إلغاء كما هو مطلوب."
   terminal:
-    yes: "yes"
-    no: "no"
+    yes: "نعم"
+    no: "لا"
 
   msg:
-    flags: Flags
-    moreInfo: Use %s for more information about a command
-    aliases: Aliases
-    examples: Examples
-    usage: Usage
-    additionalHelpTopics: Additional help topics
-    availableCommands: Available Commands
-    version: Show version for vso.
-    globalFlags: Global Flags
-    help: Show help for vso.
-    additionalCommands: Additional Commands
+    flags: أعلام
+    moreInfo: استخدم %s لمزيد من المعلومات حول الأمر
+    aliases: الأسماء المستعارة
+    examples: أمثلة
+    usage: الاستخدام
+    additionalHelpTopics: مواضيع مساعدة إضافية
+    availableCommands: الأوامر المتاحة
+    version: عرض إصدار vso.
+    globalFlags: الأعلام العالمية
+    help: عرض المساعدة لـ vso.
+    additionalCommands: الأوامر الإضافية
 config:
-  description: "Manage the system configuration."
+  description: "إدارة تكوين النظام."
   get:
-    description: "Get the system configuration"
+    description: "الحصول على تكوين النظام"
     error:
-      noKey: "No key specified."
-      noValue: "No value found for key: %s"
+      noKey: "لم يتم تحديد مفتاح."
+      noValue: "لم يتم العثور على قيمة للمفتاح: %s"
     options:
       key:
-        description: "retrieve configuration value by using its key"
+        description: "استرجاع قيمة التكوين باستخدام مفتاحه"
   set:
-    description: "Set the system configuration"
+    description: "تعيين تكوين النظام"
     error:
-      noKey: "No key specified."
-      noValue: "No value specified."
-      failed: "Failed to set configuration: %s"
+      noKey: "لم يتم تحديد مفتاح."
+      noValue: "لم يتم تحديد قيمة."
+      failed: "فشل في تعيين التكوين: %s"
     options:
-      key: "key of the configuration to set"
-      value: "value of the configuration to set"
-    success: "Configuration updated successfully."
+      key: "مفتاح التكوين المراد تعيينه"
+      value: "قيمة التكوين المراد تعيينها"
+    success: "تم تحديث التكوين بنجاح."
   show:
-    description: "Show the system configuration"
+    description: "عرض تكوين النظام"
 
 pico:
-  description: "Manage the VSO subsystem"
+  description: "إدارة نظام VSO الفرعي"
   error:
-    notInitialized: "The VSO subsystem is not initialized. Please run `vso pico-init`
-      to initialize it."
-    alreadyInitialized: "The VSO subsystem is already initialized. Use the --force
-      flag to force the initialization."
-    noAppNameOrBin: "--app or --bin must be specified."
-    sameAppOrBin: "--app and --bin cannot be both specified."
-    exportingApp: "An error occurred while exporting the application: %s"
-    exportingBin: "An error occurred while exporting the binary: %s"
-    unexportingApp: "An error occurred while unexporting the application: %s"
-    unexportingBin: "An error occurred while unexporting the binary: %s"
-    unknownCommand: "Unknown command: %s"
-    shellReset: "It is impossible to reach the VSO shell. Do you want to reset it?
-      (This will remove all your software installed in the subsystem) [y/N]"
+    notInitialized: "نظام VSO الفرعي غير مهيأ. يرجى تشغيل `vso pico-init` لتهيئته."
+    alreadyInitialized: "نظام VSO الفرعي مهيأ ب الفعل. استخدم العلامة --force لإجبار
+      التهيئة."
+    noAppNameOrBin: "--app أو --bin يجب تحديد واحد منهما."
+    sameAppOrBin: "--app و --bin لا يمكن تحديدهما معاً."
+    exportingApp: "حدث خطأ أثناء تصدير التطبيق: %s"
+    exportingBin: "حدث خطأ أثناء تصدير الملف التنفيذي: %s"
+    unexportingApp: "حدث خطأ أثناء إلغاء تصدير التطبيق: %s"
+    unexportingBin: "حدث خطأ أثناء إلغاء تصدير الملف التنفيذي: %s"
+    unknownCommand: "الأمر غير معروف: %s"
+    shellReset: "من المستحيل الوصول إلى قشرة VSO. هل تريد إعادة ضبطها؟ (سيؤدي هذا
+      إلى إزالة جميع البرامج المثبتة في النظام الفرعي) [y/N]"
   info:
-    deleting: "Deleting the VSO subsystem..."
-    initializing: "Initializing the VSO subsystem..."
-    initialized: "The VSO subsystem has been initialized."
-    exported: "Exported %s\n"
-    unexported: "Unexported %s\n"
-    exportedApps: "Exported %d applications"
-    unexportedApps: "Unexported %d applications"
-    shellInit: "Looks like your shell is not initialized yet. Do you want to initialize
-      it now? (Highly recommended) [y/N]"
-    fallbackShell: "Fallback to the host shell? This could lead to unexpected behavior.
-      [y/N]"
+    deleting: "حذف نظام VSO الفرعي..."
+    initializing: "تهيئة نظام VSO الفرعي..."
+    initialized: "تم تهيئة نظام VSO الفرعي."
+    exported: "تم تصدير %s\n"
+    unexported: "تم إلغاء تصدير %s\n"
+    exportedApps: "تم تصدير %d تطبيقات"
+    unexportedApps: "تم إلغاء تصدير %d تطبيقات"
+    shellInit: "يبدو أن قشرتك لم يتم تهيئتها بعد. ه ل تريد تهيئتها الآن؟ (موصى به
+      بشدة) [y/N]"
+    fallbackShell: "العودة إلى قشرة المضيف؟ قد يؤدي ذلك إلى سلوك غير متوقع. [y/N]"
   export:
-    description: "Export an application or binary from the subsystem"
+    description: "تصدير تطبيق أو ملف تنفيذي من النظام الفرعي"
     options:
       app:
-        description: "the name of the application to export"
+        description: "اسم التطبيق المراد تصديره"
       bin:
-        description: "the name of the binary to export"
+        description: "اسم الملف التنفيذي المراد تصديره"
       binOutput:
-        description: "path of the binary output (default: ~/.local/bin/)"
+        description: "مسار إخراج الملف التنفيذي (افتراضي: ~/.local/bin/)"
   unexport:
-    description: "Unexport an application or binary from the subsystem"
+    description: "إلغاء تصدير تطبيق أو ملف تنفيذي من النظام الفرعي"
     options:
       app:
-        description: "the name of the application to unexport"
+        description: "اسم التطبيق المراد إلغاء تصديره"
       bin:
-        description: "the name of the binary to unexport"
+        description: "اسم الملف التنفيذي المراد إلغاء تصديره"
       binOutput:
-        description: "path of the binary output (default: ~/.local/bin/)"
+        description: "مسار إخراج الملف التنفيذي (افتراضي: ~/.local/bin/)"
   init:
-    description: "Initialize the VSO subsystem, used for package management"
+    description: "تهيئة نظام VSO الفرعي، المستخدم لإدارة الحزم"
     options:
       force:
-        description: "force the initialization if the subsystem is already initialized"
+        description: "إجبار التهيئة إذا كان النظام الفرعي مهيأ بالفعل"
   install:
-    description: "Install an application inside the subsystem"
+    description: "تثبيت تطبيق داخل النظام الفرعي"
   remove:
-    description: "Remove an application from the subsystem"
+    description: "إزالة تطبيق من النظام الفرعي"
   run:
-    description: "Run an application from the subsystem"
+    description: "تشغيل تطبيق من النظام الفرعي"
     options:
       noReset:
-        description: "do not propose to reset the subsystem if something goes wrong"
+        description: "عدم اقتراح إعادة ضبط النظام الفرعي إذا حدث خطأ ما"
   search:
-    description: "Search for an application to install inside the subsystem"
+    description: "البحث عن تطبيق لتثبيته داخل النظام الفرعي"
   shell:
-    description: "Enter the subsystem environment"
+    description: "الدخول إلى بيئة النظام الفرعي"
   update:
-    description: "Update the subsystem's package repository"
+    description: "تحديث مستودع حزم النظام الفرعي"
   upgrade:
-    description: "Upgrade the packages inside the subsystem"
+    description: "ترقية الحزم داخل النظام الفرعي"
 
   sideload:
-    description: Sideload DEB/APK packages inside the subsystem
+    description: تثبيت حزم DEB/APK داخل النظام الفرعي
 sysUpgrade:
-  description: "Upgrade the system"
+  description: "ترقية النظام"
   check:
-    asExitCode: "checks for upgrade but doesn't print anything. Return exit code 0
-      if no upgrade is available and 1 otherwise."
-    description: "Check for system updates"
+    asExitCode: "التحقق من الترقية ولكن دون طباعة أي شي ء. العودة برمز خروج 0 إذا
+      لم تكن هناك ترقية متاحة و1 خلاف ذلك."
+    description: "التحقق من تحديثات النظام"
     error:
       asExitCodeAndJson: "An error occured when checking for updates. See the JSON
         output for more details."
     info:
-      checking: "Checking for updates..."
+      checking: "التحقق من التحديثات..."
     json:
-      description: "output the result in JSON format"
+      description: "عرض النتيجة بتنسيق JSON"
   sysUpgrade:
-    description: "Upgrade the system"
+    description: "ترقية النظام"
     error:
-      updating: "An error occured when updating the system."
-      onHasUpdate: 'Error while searching for updates: %s.'
+      updating: "حدث خطأ عند تحديث النظام."
+      onHasUpdate: 'خطأ أثناء البحث عن التحديثات: %s.'
     info:
-      updating: "Updating the system..."
-      noUpdates: Your system is already up-to-date.
+      updating: "تحديث النظام..."
+      noUpdates: نظامك محدث بالفعل.
       willUpdateLater: An update is available and will be automatically installed
         based on your %s schedule. You can force the update using 'vso sys-upgrade
         upgrade --now'.
       willNeverUpdate: An update is available, but will not be automatically installed
         because you disabled automatic updates. You can force the update using 'vso
         sys-upgrade upgrade --now'.
-    now: "Trigger a system upgrade now"
+    now: "تفعيل ترقية النظام الآن"
 
     schedule:
-      monthly: monthly
-      daily: daily
-      weekly: weekly
+      monthly: شهري
+      daily: يومي
+      weekly: أسبوعي
 tasks:
-  description: "Create and manage tasks"
+  description: "إنشاء وإدارة المهام"
   stacks:
     new:
       error:
-        emptyCommand: "The command cannot be empty."
-        emptyDescription: "The description cannot be empty."
-        emptyName: "The name cannot be empty."
-        noCommand: "No command specified."
-        noDescription: "No description specified."
-        noName: "No name specified."
+        emptyCommand: "الأمر لا يمكن أن يكون فارغًا."
+        emptyDescription: "الوصف لا يمكن أن يكون فارغًا."
+        emptyName: "الاسم لا يمكن أن يكون فارغًا."
+        noCommand: "لم يتم تحديد أمر."
+        noDescription: "لم يتم تحديد وصف."
+        noName: "لم يتم تحديد اسم."
       info:
-        askCommand: "Command: "
-        askDescription: "Description: "
-        askName: "Name: "
-        taskCreated: "Task has been created successfully."
+        askCommand: "الأمر: "
+        askDescription: "الوصف: "
+        askName: "الاسم: "
+        taskCreated: "تم إنشاء المهمة بنجاح."
   list:
-    description: "List all tasks"
-    noTasks: "No tasks found."
+    description: "عرض جميع المهام"
+    noTasks: "لم يتم العثور على مهام."
     info:
-      foundTasks: "Found %d tasks."
+      foundTasks: "تم العثور على %d مهام."
     options:
       json:
-        description: "output the tasks in JSON format"
+        description: "عرض المهام بتنسيق JSON"
   new:
-    description: "Create a new task"
+    description: "إنشاء مهمة جديدة"
     options:
       assumeYes:
-        description: "assume yes for all prompts"
+        description: "افترض الإجابة بنعم لجميع المطالبات"
       at:
-        description: "schedule the task to execute at a specific time (hh:mm)"
+        description: "جدولة المهمة للتنفيذ في وقت محدد (hh:mm)"
       command:
-        description: "specify the command to execute"
+        description: "تحديد الأمر للتنفيذ"
       description:
-        description: "specify the task's description"
+        description: "تحديد وصف المهمة"
       every:
-        description: "schedule the task to execute every X time (minutes, hours, days)"
+        description: "جدولة المهمة للتنفيذ كل X وقت (دقائق، ساعات، أيام)"
       name:
-        description: "specify the task's name"
+        description: "تحديد اسم المهمة"
       needConfirm:
-        description: "ask for confirmation before executing the task"
+        description: "طلب التأكيد قبل تنفيذ المهمة"
       onBattery:
-        description: "execute the task only when the system is on battery"
+        description: "تنفيذ المهمة فقط عندما يكون النظام على البطارية"
       onCharge:
-        description: "execute the task only when the system is charging"
+        description: "تنفيذ المهمة فقط عندما يكون النظام في حالة الشحن"
       onConditionCommand:
-        description: "execute the task on condition command"
+        description: "تنفيذ المهمة بأمر مشروط"
       onCpuTemp:
-        description: "execute the task when CPU temperature is higher than 60°C"
+        description: "تنفيذ المهمة عندما تكون درجة حرارة وحدة المعالجة المركزية أعلى
+          من 60 درجة مئوية"
       onCpuUsage:
-        description: "execute the task when CPU usage is higher than X%"
+        description: "تنفيذ المهمة عندما يكون استخدام وحدة المعالجة المركزية أعلى
+          من X%"
       onDeviceConnect:
-        description: "execute the task when a device is connected"
+        description: "تنفيذ المهمة عند توصيل جهاز"
       onDeviceDisconnect:
-        description: "execute the task when a device is disconnected"
+        description: "تنفيذ المهمة عندما يكون الجهاز مفصولاً"
       onDisconnect:
-        description: "execute the task when the system is disconnected from the network"
+        description: "تنفيذ المهمة عندما يكون النظام مفصولاً عن الشبكة"
       onFullBattery:
-        description: "execute the task when the system is fully charged"
+        description: "تنفيذ المهمة عندما يكون النظام مشحونًا بالكامل"
       onHighCpuUsage:
-        description: "execute the task when CPU usage is higher than 50%"
+        description: "تنفيذ المهمة عندما يكون استخدام وحدة المعالجة المركزية أعلى
+          من 50%"
       onHighInternetUsage:
-        description: "execute the task when internet usage is higher than 500Kb/s"
+        description: "تنفيذ المهمة عندما يكون استخدام الإنترنت أعلى من 500 كيلو بايت/ثانية"
       onHighMemoryUsage:
-        description: "execute the task when memory usage is higher than 50%"
+        description: "تنفيذ المهمة عندما يكون استخدام الذاكرة أعلى من 50%"
       onInternetUsage:
-        description: "execute the task when internet usage is higher than XKb/s"
+        description: "تنفيذ المهمة عندما يكون استخدام الإنترنت أعلى من X كيلو بايت/ثانية"
       onLowBattery:
-        description: "execute the task when the system is low on battery (20%)"
+        description: "تنفيذ المهمة عندما يكون مستوى البطارية في النظام منخفضًا (20%)"
       onMemoryUsage:
-        description: "execute the task when memory usage is higher than X%"
+        description: "تنفيذ المهمة عندما يكون استخدام الذاكرة أعلى من X%"
       onNetwork:
-        description: "execute the task when the system is connected to the network"
+        description: "تنفيذ المهمة عندما يكون النظام متصلاً بالشبكة"
       onProcess:
-        description: "execute the task when a process starts"
+        description: "تنفيذ المهمة عند بدء عملية"
   rm:
-    description: "Remove a task"
+    description: "إزالة مهمة"
     error:
-      cannotDelete: "Cannot delete task: %s"
-      noName: "No task name specified."
-      notFound: "Task not found."
+      cannotDelete: "لا يمكن حذف المهمة: %s"
+      noName: "لم يتم تحديد اسم المهمة."
+      notFound: "لم يتم العثور على المهمة."
     info:
-      askConfirmation: "Are you sure you want to delete the task %s? [y/N]"
-      taskDeleted: "Task has been deleted successfully."
+      askConfirmation: "هل أنت متأكد أنك تريد حذف المهمة %s؟ [y/N]"
+      taskDeleted: "تم حذف المهمة بنجاح."
     options:
       force:
-        description: "force the deletion of the task"
+        description: "فرض حذف المهمة"
       name:
-        description: "specify the task's name"
+        description: "حدد اسم المهمة"
   rotate:
-    description: "Rotate tasks"
+    description: "تدوير المهام"
     options:
       privateEvent:
-        description: "specify the private event to rotate tasks for boot, shutdown,
-          login, and logout"
+        description: "تحديد الحدث الخاص لتدوير المهام الخاصة بالتمهيد، والإيقاف، وتسجيل
+          الدخول، وتسجيل الخروج"
 
 waydroid:
-  description: "Manage the vso waydroid subsystem"
-  downloadIndex: "Downloading index for repository %s"
+  description: "إدارة النظام الفرعي vso waydroid"
+  downloadIndex: "جارٍ تنزيل الفهرس للمستودع %s"
   clean:
-    description: "Cleans the waydroid vso cache"
+    description: "تنظيف ذاكرة التخزين المؤقت لـ waydroid vso"
     info:
-      index: "Deleting index cache"
-      apk: "Deleting apk cache"
-      success: "Successfully deleted waydroid vso cache"
+      index: "حذف ذاكرة التخزين المؤقت للفهرس"
+      apk: "حذف ذاكرة التخزين المؤقت لملف apk"
+      success: "تم حذف ذاكرة التخزين المؤقت لـ waydroid vso بنجاح"
     error:
-      index: "Failed to delete index cache"
-      apk: "Failed to delete apk cache"
+      index: "فشل في حذف ذاكرة التخزين المؤقت للفهرس"
+      apk: "فشل في حذف ذاكرة التخزين المؤقت لملف apk"
   delete:
-    description: "Delete the waydroid subsystem"
-    confirmation: "Deleting the waydroid subsystem will delete any data stored in
-      it. Continue?"
-    cancelled: "Cancelled removal of subsystem."
+    description: "حذف النظام الفرعي waydroid"
+    confirmation: "سيؤدي حذف النظام الفرعي waydroid إلى حذف أي بيانات مخزنة فيه. هل
+      تريد المتابعة؟"
+    cancelled: "تم إلغاء إزالة النظام الفرعي."
   error:
-    noArguments: "No arguments provided."
-    notWayland: This feature is only available on Wayland.
-    secureBoot: This feature requires secure boot to be disabled in the BIOS.
-    noRepos: Could not find any repositories.
+    noArguments: "لم يتم تقديم أي حجج."
+    notWayland: هذه الميزة متاحة فقط على Wayland.
+    secureBoot: تتطلب هذه الميزة تعطيل التمهيد الآمن في BIOS.
+    noRepos: لم يتم العثور على أي مستودعات.
   install:
-    description: "Install an application"
+    description: "تثبيت تطبيق"
     options:
       local:
-        description: "Install a local apk"
+        description: "تثبيت ملف apk محلي"
       noconfirm:
-        description: "Do not ask for confirmation during installation"
+        description: "لا تطلب التأكيد أثناء التثبيت"
     info:
-      PackageInCache: "Application found in cache, not downloading again."
-      ConfirmInstall: "Install application %s?"
-      DownloadingPackage: "Downloading apk from %s"
-      PackageSelection: "Pick an application to install"
-      InstallSuccess: "Installation successful"
+      PackageInCache: "تم العثور على التطبيق في ذاكرة التخزين المؤقت، ولم يتم تنزيله
+        مرة أخرى."
+      ConfirmInstall: "هل تريد تثبيت التطبيق %s؟"
+      DownloadingPackage: "تنزيل ملف apk من %s"
+      PackageSelection: "اختر تطبيقًا لتثبيته"
+      InstallSuccess: "تم التثبيت بنجاح"
     error:
-      NotFound: "Application %s was not found."
-      InstallCancelled: "Installation Cancelled"
+      NotFound: "لم يتم العثور على التطبيق %s."
+      InstallCancelled: "تم إلغاء التثبيت"
   init:
-    description: "Initialize the waydroid subsystem"
+    description: "تهيئة النظام الفرعي Waydroid"
     options:
       force:
-        description: "Force the initialization"
+        description: "فرض التهيئة"
     info:
-      initialized: "The waydroid subsystem has been initialized."
+      initialized: "تم تهيئة النظام الفرعي Waydroid."
     error:
-      alreadyInitialized: "The waydroid subsystem is already initialized. Use the
-        --force flag to force the initialization."
-    warnUnstable: Waydroid functionality is currently unstable. Expect bugs and missing
-      features. Continue anyway?
-    warnUnstableForce: Waydroid functionality is currently unstable. Expect bugs and
-      missing features.
+      alreadyInitialized: "تم تهيئة نظام Waydroid الفرعي بالفعل. استخدم علامة --force
+        لفرض التهيئة."
+    warnUnstable: إن وظائف Waydroid غير مستقرة حاليًا. توقع وجود أخطاء وميزات مفقودة.
+      هل تريد الاستمرار على أي حال؟
+    warnUnstableForce: إن وظائف Waydroid غير مستقرة حاليًا. توقع وجود أخطاء وميزات
+      مفقودة.
   launch:
-    description: "Launch an installed application"
+    description: "تشغيل تطبيق مثبت"
   launcher:
-    description: "Show the waydroid launcher"
+    description: "إظهار مشغل Waydroid"
   remove:
-    description: "Uninstall an application"
+    description: "إلغاء تثبيت تطبيق"
     info:
-      RemovePackage: "Removing package %s"
-      PackageSelection: "Pick an application to remove"
-      ConfirmRemove: "Remove application %s?"
+      RemovePackage: "إزالة الحزمة %s"
+      PackageSelection: "اختر تطبيقًا لإزالته"
+      ConfirmRemove: "هل تريد إزالة التطبيق %s؟"
     error:
-      NoMatches: "Application %s not found"
-      RemoveCancelled: "Removal Cancelled"
+      NoMatches: "لم يتم العثور على التطبيق %s"
+      RemoveCancelled: "تم إلغاء الإزالة"
   search:
-    description: "Search for an application"
+    description: "ابحث عن تطبيق"
   sync:
-    description: "Sync the repositories"
+    description: "مزامنة المستودعات"
   update:
-    description: "Update installed applications"
-    finished: "Finished updating applications"
+    description: "تحديث التطبيقات المثبتة"
+    finished: "تم الانتهاء من تحديث التطبيقات"
     error:
-      FailGetVersion: "Failed to get version code for %s"
-      FailUpdatePackageDownload: "Failed to download APK for %s"
-      FailUpdatePackageDatabase: "Failed to update database entry for %s"
-      FailUpdatePackageInstall: "Failed to install the update for %s"
+      FailGetVersion: "فشل الحصول على رمز الإصدار لـ%s"
+      FailUpdatePackageDownload: "فشل تنزيل APK لـ%s"
+      FailUpdatePackageDatabase: "فشل تحديث إدخال قاعدة البيانات لـ%s"
+      FailUpdatePackageInstall: "فشل تثبيت التحديث لـ%s"
     info:
-      NoUpdates: "Nothing to update"
+      NoUpdates: "لا يوجد شيء لتحديثه"
   info:
-    description: "Display information about an application"
+    description: "عرض معلومات حول تطبيق"
     info:
-      PackageSelection: "Select an application to display information from"
-    PackageName: "Name: %s"
-    InternalName: "Internal name: %s"
-    Summary: "Summary: %s"
-    Author: "Author: %s"
-    License: "License: %s"
-    Repository: "Repository: %s"
+      PackageSelection: "حدد تطبيقًا لعرض المعلومات منه"
+    PackageName: "الاسم: %s"
+    InternalName: "الاسم الداخلي: %s"
+    Summary: "الملخص: %s"
+    Author: "المؤلف: %s"
+    License: "الترخيص: %s"
+    Repository: "المستودع: %s"
   status:
-    description: "Return the internal status code of the Android subsystem. For development
-      purposes."
+    description: "إرجاع رمز الحالة الداخلية لنظام Android الفرعي. لأغراض التطوير."
