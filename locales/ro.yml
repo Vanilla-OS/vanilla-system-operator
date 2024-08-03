@@ -12,17 +12,17 @@ vso:
     no: "nu"
 
   msg:
-    help: Show help for vso.
-    examples: Examples
-    usage: Usage
-    aliases: Aliases
-    availableCommands: Available Commands
-    version: Show version for vso.
-    flags: Flags
-    moreInfo: Use %s for more information about a command
-    additionalHelpTopics: Additional help topics
-    globalFlags: Global Flags
-    additionalCommands: Additional Commands
+    help: Afișați ajutor pentru vso.
+    examples: Exemple
+    usage: Utilizare
+    aliases: Aliasuri
+    availableCommands: Comenzi Disponibile
+    version: Afișați versiunea pentru vso.
+    flags: Parametri
+    moreInfo: Utilizați %s pentru mai multe informații despre o comandă
+    additionalHelpTopics: Alte subiecte de ajutor
+    globalFlags: Parametri globali
+    additionalCommands: Comenzi Suplimentare
 config:
   description: "Gestionați configurația sistemului."
   get:
@@ -117,9 +117,9 @@ pico:
     description: "Actualizați pachetele din cadrul subsistemului"
 
   sideload:
-    description: Sideload DEB/APK packages inside the subsystem
+    description: Încărcarea Sideload a pachetelor DEB/APK în interiorul subsistemului
 sysUpgrade:
-  description: "Actualizați sistemul"
+  description: "Executați comenzi de sistem, cum ar fi actualizarea sistemului"
   check:
     asExitCode: "verifică dacă există o actualizare, dar nu imprimă nimic. Returnează
       codul de ieșire 0 dacă nu este disponibilă nicio actualizare și 1 în caz contrar."
@@ -132,25 +132,25 @@ sysUpgrade:
     json:
       description: exportă rezultatul în format JSON
   sysUpgrade:
-    description: "Efectuează upgrade la sistem"
+    description: "Executați comenzi de sistem, cum ar fi actualizarea sistemului"
     error:
       updating: "S-a întâmplat o eroare în timpul actualizării sistemului."
-      onHasUpdate: 'Error while searching for updates: %s.'
+      onHasUpdate: 'Eroare în timpul căutării actualizărilor: %s.'
     info:
       updating: "Actualizarea sistemului..."
-      noUpdates: Your system is already up-to-date.
-      willUpdateLater: An update is available and will be automatically installed
-        based on your %s schedule. You can force the update using 'vso sys-upgrade
-        upgrade --now'.
-      willNeverUpdate: An update is available, but will not be automatically installed
-        because you disabled automatic updates. You can force the update using 'vso
-        sys-upgrade upgrade --now'.
+      noUpdates: Sistemul dvs. este deja actualizat.
+      willUpdateLater: O actualizare este disponibilă și va fi instalată automat pe
+        baza programului %s. Puteți forța actualizarea utilizând „vso sys upgrade
+        --now”.
+      willNeverUpdate: O actualizare este disponibilă, dar nu va fi instalată automat
+        deoarece ați dezactivat actualizările automate. Puteți forța actualizarea
+        utilizând „vso sys upgrade --now”.
     now: "Declanșează un upgrade al sistemului acum"
 
     schedule:
-      monthly: monthly
-      daily: daily
-      weekly: weekly
+      monthly: lunar
+      daily: zilnic
+      weekly: săptămânal
 tasks:
   description: "Crează și gestionează sarcini"
   stacks:
@@ -254,9 +254,10 @@ tasks:
 waydroid:
   error:
     noArguments: Niciun argument furnizat.
-    notWayland: This feature is only available on Wayland.
-    secureBoot: This feature requires secure boot to be disabled in the BIOS.
-    noRepos: Could not find any repositories.
+    notWayland: Această caracteristică este disponibilă numai pe Wayland.
+    secureBoot: Această caracteristică necesită ca secure boot să fie dezactivat în
+      BIOS.
+    noRepos: Nu s-a putut găsi niciun depozit.
   install:
     info:
       DownloadingPackage: Descărcare apk de la %s
@@ -327,10 +328,10 @@ waydroid:
         flag pentru a forța inițializarea.
     info:
       initialized: Subsistemul waydroid a fost inițializat.
-    warnUnstable: Waydroid functionality is currently unstable. Expect bugs and missing
-      features. Continue anyway?
-    warnUnstableForce: Waydroid functionality is currently unstable. Expect bugs and
-      missing features.
+    warnUnstable: Funcționalitatea Waydroid este în prezent instabilă. Așteptați-vă
+      la erori și caracteristici lipsă. Continuați oricum?
+    warnUnstableForce: Funcționalitatea Waydroid este în prezent instabilă. Așteptați-vă
+      la erori și caracteristici lipsă.
   search:
     description: Caută aplicație
   downloadIndex: Descărcarea indexului pentru depozit %s
