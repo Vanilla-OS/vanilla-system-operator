@@ -12,17 +12,17 @@ vso:
     no: "no"
 
   msg:
-    usage: Usage
-    moreInfo: Use %s for more information about a command
+    usage: Uso
+    moreInfo: Utilizza %s per maggiori informazioni su un comando
     flags: Flags
-    examples: Examples
-    additionalHelpTopics: Additional help topics
+    examples: Esempi
+    additionalHelpTopics: Suggerimenti Aggiuntivi
     aliases: Aliases
-    availableCommands: Available Commands
-    version: Show version for vso.
+    availableCommands: Comandi Disponibili
+    version: Visualizza la versione del  vso.
     globalFlags: Global Flags
-    help: Show help for vso.
-    additionalCommands: Additional Commands
+    help: Mostra l'aiuto per il vso.
+    additionalCommands: Comandi Aggiuntivi
 config:
   description: "Gestisci la configurazione di sistema."
   get:
@@ -122,7 +122,7 @@ pico:
   sideload:
     description: Sideload DEB/APK packages inside the subsystem
 sysUpgrade:
-  description: "Aggiorna il sistema"
+  description: "Esegui i comandi di sistema, come l'aggiornamento del sistema"
   check:
     asExitCode: "Controlla se ci sono aggiornamenti, ma non stampare nulla. Restituisci
       il codice 0 se non ci sono aggiornamenti disponibili e 1 in caso contrario."
@@ -138,22 +138,22 @@ sysUpgrade:
     description: "Aggiorna il sistema"
     error:
       updating: "Si è verificato un errore durante l'aggiornamento del sistema."
-      onHasUpdate: 'Error while searching for updates: %s.'
+      onHasUpdate: 'Errore nella ricerca di aggiornamenti: %s.'
     info:
       updating: "Aggiornamento del sistema..."
       noUpdates: Your system is already up-to-date.
-      willUpdateLater: An update is available and will be automatically installed
-        based on your %s schedule. You can force the update using 'vso sys-upgrade
-        upgrade --now'.
+      willUpdateLater: Un aggiornamento è disponibile e sarà installato automaticamente
+        in base alla tua pianificazione %s. Puoi forzare l'aggiornamento usando il
+        comando 'vso sys-upgrade upgrade --now'.
       willNeverUpdate: An update is available, but will not be automatically installed
         because you disabled automatic updates. You can force the update using 'vso
         sys-upgrade upgrade --now'.
     now: "Avvia l'aggiornamento del sistema adesso"
 
     schedule:
-      monthly: monthly
-      daily: daily
-      weekly: weekly
+      monthly: mensile
+      daily: giornaliero
+      weekly: settimanale
 tasks:
   description: "Crea e gestisci attività"
   stacks:
