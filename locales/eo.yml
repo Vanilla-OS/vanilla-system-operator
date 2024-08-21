@@ -1,6 +1,6 @@
 vso:
-  description: "The Vanilla System Operator is a package manager, a system updater
-    and a task automator."
+  description: "La Vanilla-Sistemoperatoro estas pakadministrilo, sistemĝisdatigilo,
+    kaj taskaŭtomatigilo."
   errors:
     unknownCommand: "Nekonata komando: %s"
     invalidInput: "Nevalida enigaĵo."
@@ -14,9 +14,9 @@ vso:
   msg:
     usage: Uzado
     flags: Flagoj
-    moreInfo: Use %s for more information about a command
+    moreInfo: Uzu %s por pliaj informoj pri komando
     examples: Ekzemploj
-    additionalHelpTopics: Additional help topics
+    additionalHelpTopics: Pliaj helpaj temoj
     aliases: Sinonimoj
     availableCommands: Haveblaj komandoj
     version: Montri la version de vso.
@@ -29,74 +29,74 @@ config:
     description: "Akiri la sistemajn agordojn"
     error:
       noKey: "Neniu ŝlosilo specifiĝis."
-      noValue: "No value found for key: %s"
+      noValue: "Neniu valoro por la ŝlosilo «%s»"
     options:
       key:
-        description: "retrieve configuration value by using its key"
+        description: "akiri la valoron de agordaĵo per ŝlosilo"
   set:
-    description: "Set the system configuration"
+    description: "Modifi la sistemajn agordojn"
     error:
       noKey: "Neniu ŝlosilo specifiĝis."
       noValue: "Neniu valoro specifiĝis."
-      failed: 'Failed to set configuration: %s'
+      failed: 'Malsukcesis modifi agordon: %s'
     options:
-      key: "key of the configuration to set"
-      value: "value of the configuration to set"
-    success: "Configuration updated successfully."
+      key: "ŝlosilo de la modifota agordo"
+      value: "valoro de la modifota agordo"
+    success: "Agordoj modifiĝis sukcese."
   show:
     description: "Montri la sistemajn agordojn"
 
 pico:
   description: "Administri la VSO-subsistemon"
   error:
-    notInitialized: "The Pico subsystem is not initialized. Please run `vso pico-init`
-      to initialize it."
-    alreadyInitialized: "The Pico subsystem is already initialized. Use the --force
-      flag to force the initialization."
+    notInitialized: "La VSO-subsistemo ne estas lanĉita. Bonvolu ruli `vso pico-init`
+      por lanĉi ĝin."
+    alreadyInitialized: "La VSO-subsistemo estas jam lanĉita. Uzu la flagon «--force»
+      por relanĉi."
     noAppNameOrBin: "Oni devas specifi aŭ «--app» aŭ «--bin»."
     sameAppOrBin: "Oni devas ne specifi kaj «--app» kaj «--bin»."
-    exportingApp: "Okazis eraro dum eksportado de la programo: %s"
-    exportingBin: "An error occurred while exporting the binary: %s"
-    unexportingApp: "Okasis eraro dum maleksportado de la programo: %s"
-    unexportingBin: "An error occurred while unexporting the binary: %s"
+    exportingApp: "Okazis eraro eksportante la programon: %s"
+    exportingBin: "Okazis eraro eksportante la binaraĵon: %s"
+    unexportingApp: "Okazis eraro maleksportante la programon: %s"
+    unexportingBin: "Okazis eraro maleksportante la binaraĵon: %s"
     unknownCommand: 'Nekonata komando: %s'
     shellReset: It is impossible to reach the VSO shell. Do you want to reset it?
       (This will remove all your software installed in the subsystem) [y/N]
   info:
-    initialized: "The Pico subsystem has been initialized."
+    initialized: "La VSO-subsistemo lanĉiĝis."
     exported: "Eksportis %s\n"
     unexported: "Maleksportis %s\n"
     exportedApps: "Eksportis %d programojn"
     unexportedApps: "Maleksportis %d programojn"
-    shellInit: Looks like your shell is not initialized yet. Do you want to initialize
-      it now? (Highly recommended) [y/N]
+    shellInit: Ŝajnas, ke via ŝelo ankoraŭ ne estas lanĉita. Ĉu lanĉi ĝin nun? (Rekomendegata)
+      [y/N]
     fallbackShell: Fallback to the host shell? This could lead to unexpected behavior.
       [y/N]
     deleting: Forviŝante la VSO-subsistemon…
-    initializing: Initializing the VSO subsystem...
+    initializing: Lanĉante la VSO-subsistemon…
   export:
-    description: "Export an application or binary from the subsystem"
+    description: "Eksporti programon aŭ binaraĵon de la subsistemo"
     options:
       app:
         description: "la nomo de la eksportota programo"
       bin:
-        description: "the name of the binary to export"
+        description: "la nomo de la eksportota binaraĵo"
       binOutput:
-        description: "path of the binary output (default: ~/.local/bin/)"
+        description: "loko de la eligota binaraĵo (implicite: ~/.local/bin/)"
   unexport:
-    description: "Unexport an application or binary from the subsystem"
+    description: "Maleksporti programon aŭ binaraĵon de la subsistemo"
     options:
       app:
         description: "la nomo de la maleksportota programo"
       bin:
-        description: "the name of the binary to unexport"
+        description: "la nomo de la maleksportota binaraĵo"
       binOutput:
-        description: "path of the binary output (default: ~/.local/bin/)"
+        description: "loko de la eligota binaraĵo (implicite: ~/.local/bin/)"
   init:
-    description: "Initialize the Pico subsystem, used for package management"
+    description: "Lanĉi la VSO-subsistemon por administri pakojn"
     options:
       force:
-        description: "force the initialization if the subsystem is already initialized"
+        description: "devige relanĉi, eĉ se la subsistemo estas jam lanĉita"
   install:
     description: "Instali programon en la subsistemo"
   remove:
@@ -105,46 +105,46 @@ pico:
     description: "Ruli programon de la subsistemo"
     options:
       noReset:
-        description: do not propose to reset the subsystem if something goes wrong
+        description: ne proponi restaŭri la subsistemo, se io fiaskos
   search:
-    description: "Search for an application to install inside the subsystem"
+    description: "Serĉi programon instalotan en la subsistemon"
   shell:
     description: "Eniri la subsisteman medion"
   update:
-    description: "Update the subsystem's package repository"
+    description: "Ĝisdatigi la pakdeponejon de la subsistemo"
   upgrade:
-    description: "Upgrade the packages inside the subsystem"
+    description: "Ĝisdatigi la pakojn en la subsistemo"
 
   sideload:
     description: Flankinstali DEB/APK-pakojn en la subsistemon
 sysUpgrade:
-  description: "Ĝisdatigi la sistemon"
+  description: "Ruli sistemajn komandojn, ekz. ĝisdatigi la sistemon"
   check:
     asExitCode: "checks for upgrade but doesn't print anything. Return exit code 0
       if no upgrade is available and 1 otherwise."
     description: "Kontroli sistemajn ĝisdatigojn"
     error:
-      asExitCodeAndJson: "An error occured when checking for updates. See the JSON
-        output for more details."
+      asExitCodeAndJson: "Okazis eraro dum kontrolado pri ĝisdatigoj. Vidu la JSON-eligaĵon
+        por pliaj detaloj."
     info:
       checking: "Kontrolante ĝisdatigojn…"
     json:
-      description: "output the result in JSON format"
+      description: "eligi la rezulton kiel JSON"
   sysUpgrade:
-    description: "Ĝisdatigi la sistemon"
+    description: "Ruli sistemajn komandojn, ekz. ĝisdatigi la sistemon"
     error:
       updating: "Okazis eraro dum ĝisdatigado de la sistemo."
-      onHasUpdate: 'Error while searching for updates: %s.'
+      onHasUpdate: 'Eraro dum serĉado pri ĝisdatigoj: %s.'
     info:
       updating: "Ĝisdatigante la sistemon…"
-      noUpdates: Your system is already up-to-date.
+      noUpdates: Via sistemo estas jam ĝisdata.
       willUpdateLater: An update is available and will be automatically installed
         based on your %s schedule. You can force the update using 'vso sys-upgrade
         upgrade --now'.
       willNeverUpdate: An update is available, but will not be automatically installed
         because you disabled automatic updates. You can force the update using 'vso
         sys-upgrade upgrade --now'.
-    now: "Trigger a system upgrade now"
+    now: "Ĝisdatigi la sistemon nun"
 
     schedule:
       monthly: ĉiumonate
@@ -173,58 +173,59 @@ tasks:
       foundTasks: "Troviĝis %d taskoj."
     options:
       json:
-        description: "output the tasks in JSON format"
+        description: "eligi la taskojn kiel JSON"
   new:
     description: "Krei novan taskon"
     options:
       assumeYes:
-        description: "assume yes for all prompts"
+        description: "jesi al ĉiuj demandoj"
       at:
-        description: "schedule the task to execute at a specific time (hh:mm)"
+        description: "plani taskon rulotan je specifa tempo (hh:mm)"
       command:
-        description: "specify the command to execute"
+        description: "specifi la rulotan komandon"
       description:
         description: "specifi la priskribon de la tasko"
       every:
-        description: "schedule the task to execute every X time (minutes, hours, days)"
+        description: "plani taskon ripetotan ĉiujn X temunuojn (minutojn, horojn,
+          tagojn)"
       name:
         description: "specifi la nomon de la tasko"
       needConfirm:
-        description: "ask for confirmation before executing the task"
+        description: "peti konfirmon antaŭ rulado de la tasko"
       onBattery:
-        description: "execute the task only when the system is on battery"
+        description: "ruli taskon, kiam la baterio estas uzata"
       onCharge:
-        description: "execute the task only when the system is charging"
+        description: "ruli taskon, kiam la baterio estas ŝargata"
       onConditionCommand:
-        description: "execute the task on condition command"
+        description: "ruli taskon laŭ kondiĉo-komando"
       onCpuTemp:
-        description: "execute the task when CPU temperature is higher than 60°C"
+        description: "ruli taskon, kiam la ĉefprocesoro estas pli varma ol 60 °C"
       onCpuUsage:
-        description: "execute the task when CPU usage is higher than X%"
+        description: "ruli taskon, kiam pli ol X% de la ĉefprocesoro estas uzata"
       onDeviceConnect:
-        description: "execute the task when a device is connected"
+        description: "ruli taskon, kiam aparato konektiĝas"
       onDeviceDisconnect:
-        description: "execute the task when a device is disconnected"
+        description: "ruli taskon, kiam aparato malkonektiĝas"
       onDisconnect:
-        description: "execute the task when the system is disconnected from the network"
+        description: "ruli taskon, kiam la sistemo estas malkonektita el la reto"
       onFullBattery:
-        description: "execute the task when the system is fully charged"
+        description: "ruli taskon, kiam la baterio estas plene ŝargita"
       onHighCpuUsage:
-        description: "execute the task when CPU usage is higher than 50%"
+        description: "ruli taskon, kiam pli ol 50% de la ĉefprocesoro estas uzata"
       onHighInternetUsage:
-        description: "execute the task when internet usage is higher than 500Kb/s"
+        description: "ruli taskon, kiam la Interreto estas uzata pli ol 500 kb/s"
       onHighMemoryUsage:
-        description: "execute the task when memory usage is higher than 50%"
+        description: "ruli taskon, kiam pli ol 50% de la memoro estas uzata"
       onInternetUsage:
-        description: "execute the task when internet usage is higher than XKb/s"
+        description: "ruli taskon, kiam la Interreto estas uzata pli ol X kb/s"
       onLowBattery:
-        description: "execute the task when the system is low on battery (20%)"
+        description: "ruli taskon, kiam la baterio estas malpli ŝargita ol 20%"
       onMemoryUsage:
-        description: "execute the task when memory usage is higher than X%"
+        description: "ruli taskon, kiam pli ol X% de la memoro estas uzata"
       onNetwork:
-        description: "execute the task when the system is connected to the network"
+        description: "ruli taskon, kiam la sistemo konektiĝas al la reto"
       onProcess:
-        description: "execute the task when a process starts"
+        description: "ruli taskon, kiam procezo lanĉiĝas"
   rm:
     description: "Forigi taskon"
     error:
@@ -232,15 +233,15 @@ tasks:
       noName: "Neniu nomo de tasko specifiĝis."
       notFound: "Tasko ne troviĝis."
     info:
-      askConfirmation: "Are you sure you want to delete the task %s? [y/N]"
-      taskDeleted: "Task has been deleted successfully."
+      askConfirmation: "Ĉu vi certe volas forigi la taskon %s? [y/N]"
+      taskDeleted: "Tasko estis sukcese forigita."
     options:
       force:
-        description: "force the deletion of the task"
+        description: "devigi la forigon de la tasko"
       name:
         description: "specifi la nomon de la tasko"
   rotate:
-    description: "Rotate tasks"
+    description: "Rotaciigi taskojn"
     options:
       privateEvent:
         description: "specify private event to rotate tasks for boot, shutdown, login,
@@ -248,35 +249,35 @@ tasks:
 
 waydroid:
   description: "Administri la VSO-Waydroid-subsistemon"
-  downloadIndex: "Downloading index for repository %s"
+  downloadIndex: "Elŝutante la indekson de la deponejo «%s»"
   clean:
-    description: "Cleans the waydroid vso cache"
+    description: "Forviŝi la Waydroid-VSO-kaŝmemoron"
     info:
-      index: "Deleting index cache"
-      apk: "Deleting apk cache"
-      success: "Successfully deleted waydroid vso cache"
+      index: "Forviŝante la indeksan kaŝmemoron"
+      apk: "Forviŝante apk-kaŝmemoron"
+      success: "Sukcese forviŝis la Waydroid-VSO-kaŝmemoron"
     error:
-      index: "Failed to delete index cache"
-      apk: "Failed to delete apk cache"
+      index: "Malsukcesis forviŝi indeksan kaŝmemoron"
+      apk: "Malsukcesis forviŝi apk-kaŝmemoron"
   delete:
     description: "Forviŝi la Waydroid-subsistemon"
-    confirmation: "Deleting the waydroid subsystem will delete any data stored in
-      it. Continue?"
+    confirmation: "Malinstalado de la Waydroid-subsistemo forviŝos ĉiajn datenojn
+      en ĝi. Ĉu daŭrigi?"
     cancelled: "Nuligis forviŝon de subsistemo."
   error:
-    noArguments: "No arguments provided."
+    noArguments: "Neniu argumento estis provizita."
     notWayland: Jen funkcio nur havebla por Wayland.
-    secureBoot: This feature requires secure boot to be disabled in the BIOS.
-    noRepos: Could not find any repositories.
+    secureBoot: Tiu funkcio postulas malŝalton de Sekura Starto en BIOS.
+    noRepos: Ne eblas trovi deponejojn.
   install:
     description: "Instali programon"
     options:
       local:
         description: "Instali lokan apk"
       noconfirm:
-        description: Do not ask for confirmation during installation
+        description: Ne peti konfirmon dum instalado
     info:
-      PackageInCache: "Application found in cache, not downloading again."
+      PackageInCache: "Programo troviĝis en la kaŝmemoro; tial ne reelŝutante."
       ConfirmInstall: "Ĉu instali la programon %s?"
       DownloadingPackage: "Elŝutante la APK-dosieron de %s"
       PackageSelection: "Elektu instalotan programon"
@@ -285,19 +286,19 @@ waydroid:
       NotFound: "La programo «%s» ne troviĝis."
       InstallCancelled: "Instalado nuliĝis"
   init:
-    description: "Initialize the waydroid subsystem"
+    description: "Lanĉi la Waydroid-subsistemon"
     options:
       force:
-        description: "Force the initialization"
+        description: "Devigi la lanĉadon"
     error:
-      alreadyInitialized: The waydroid subsystem is already initialized. Use the --force
-        flag to force the initialization.
+      alreadyInitialized: La Waydroid-subsistemo estas jam lanĉita. Uzu la flagon
+        «--force» por relanĉi.
     info:
-      initialized: The waydroid subsystem has been initialized.
-    warnUnstable: Waydroid functionality is currently unstable. Expect bugs and missing
-      features. Continue anyway?
-    warnUnstableForce: Waydroid functionality is currently unstable. Expect bugs and
-      missing features.
+      initialized: La Waydroid-subsistemo estas lanĉita.
+    warnUnstable: La funkcioj de Waydroid estas nuntempe malstabilaj. Atendu cimojn
+      kaj mankantajn funkciojn. Ĉu daŭrigi malgraŭe?
+    warnUnstableForce: La funkcioj de Waydroid estas nuntempe malstabilaj. Atendu
+      cimojn kaj mankantajn funkciojn.
   launch:
     description: "Lanĉi instalitan programon"
   launcher:
@@ -321,14 +322,14 @@ waydroid:
     error:
       FailGetVersion: "Malsukcesis akiri la versian kodon de %s"
       FailUpdatePackageDownload: "Malsukcesis elŝuti la APK-dosieron por %s"
-      FailUpdatePackageDatabase: "Failed to update database entry for %s"
+      FailUpdatePackageDatabase: "Malsukcesis ĝisdatigi la datenbankon pri %s"
       FailUpdatePackageInstall: "Malsukcesis instali ĝisdatigon por %s"
     info:
       NoUpdates: "Neniu ĝisdatigota"
   info:
     description: "Montri informojn pri programo"
     info:
-      PackageSelection: "Select application to display information from"
+      PackageSelection: "Elekti programon, kies informoj montriĝos"
     PackageName: "Nomo: %s"
     InternalName: "Interna nomo: %s"
     Summary: "Resumo: %s"
@@ -336,5 +337,4 @@ waydroid:
     License: "Licenco: %s"
     Repository: "Deponejo: %s"
   status:
-    description: Return the internal status code of the Android subsystem. For development
-      purposes.
+    description: Liveri la internan statokodon de la Android-subsistemo, por programistoj.
