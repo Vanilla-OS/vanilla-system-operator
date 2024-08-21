@@ -1,60 +1,60 @@
 vso:
-  description: "The Vanilla System Operator is a package manager, a system updater
-    and a task automator."
+  description: "Sistemski operater Vanilla je upravitelj paketov, posodabljalec sistema
+    in avtomatizator opravil."
   errors:
-    unknownCommand: "Unknown command: %s"
-    invalidInput: "Invalid input."
-    invalidChoice: "Invalid choice."
+    unknownCommand: "Neznan ukaz: %s"
+    invalidInput: "Neveljaven vnos."
+    invalidChoice: "Neveljavna izbira."
   info:
-    aborting: "Aborting as requested."
+    aborting: "Prekinitev po zahtevi."
   msg:
-    help: "Show help for vso."
-    version: "Show version for vso."
-    usage: "Usage"
-    aliases: "Aliases"
-    examples: "Examples"
-    availableCommands: "Available Commands"
-    additionalCommands: "Additional Commands"
-    flags: "Flags"
-    globalFlags: "Global Flags"
-    additionalHelpTopics: "Additional help topics"
-    moreInfo: "Use %s for more information about a command"
+    help: "Pokaži pomoč za vso."
+    version: "Pokaži različico za vso."
+    usage: "Uporaba"
+    aliases: "Vzdevki"
+    examples: "Primeri"
+    availableCommands: "Razpoložljivi ukazi"
+    additionalCommands: "Dodatni ukazi"
+    flags: "Zastave"
+    globalFlags: "Globalne zastave"
+    additionalHelpTopics: "Dodatne teme pomoči"
+    moreInfo: "Uporabite %s za več informacij o ukazu"
   terminal:
-    yes: "yes"
-    no: "no"
+    yes: "ja"
+    no: "ne"
 
 config:
-  description: "Manage the system configuration."
+  description: "Upravljajte konfiguracijo sistema."
   get:
-    description: "Get the system configuration"
+    description: "Pridobite konfiguracijo sistema"
     error:
-      noKey: "No key specified."
-      noValue: "No value found for key: %s"
+      noKey: "Ključ ni določen."
+      noValue: "Ni vrednosti za ključ: %s"
     options:
       key:
-        description: "retrieve configuration value by using its key"
+        description: "pridobi konfiguracijsko vrednost z uporabo njegovega ključa"
   set:
-    description: "Set the system configuration"
+    description: "Nastavite konfiguracijo sistema"
     error:
-      noKey: "No key specified."
-      noValue: "No value specified."
-      failed: "Failed to set configuration: %s"
+      noKey: "Ključ ni določen."
+      noValue: "Vrednost ni določena."
+      failed: "Nastavitev konfiguracije ni uspela: %s"
     options:
-      key: "key of the configuration to set"
-      value: "value of the configuration to set"
-    success: "Configuration updated successfully."
+      key: "ključ konfiguracije, ki ga želite nastaviti"
+      value: "Vrednost konfiguracije, ki ga želite nastaviti"
+    success: "Konfiguracija je bila uspešno posodobljena."
   show:
-    description: "Show the system configuration"
+    description: "Pokažite konfiguracijo sistema"
 
 pico:
-  description: "Manage the VSO subsystem"
+  description: "Upravljajte podsistem VSO"
   error:
-    notInitialized: "The VSO subsystem is not initialized. Please run `vso pico-init`
-      to initialize it."
-    alreadyInitialized: "The VSO subsystem is already initialized. Use the --force
-      flag to force the initialization."
-    noAppNameOrBin: "--app or --bin must be specified."
-    sameAppOrBin: "--app and --bin cannot be both specified."
+    notInitialized: "Podsistem VSO ni inicializiran. Za inicializacijo zaženite `vso
+      pico-init`."
+    alreadyInitialized: "Podsistem VSO je že inicializiran. Za prisilno inicializacijo
+      uporabite zastavico --force."
+    noAppNameOrBin: "Določiti je treba --app ali --bin."
+    sameAppOrBin: "--app in --bin ni mogoče podati hkrati."
     exportingApp: "An error occurred while exporting the application: %s"
     exportingBin: "An error occurred while exporting the binary: %s"
     unexportingApp: "An error occurred while unexporting the application: %s"
