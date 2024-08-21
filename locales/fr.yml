@@ -12,17 +12,17 @@ vso:
     no: "non"
 
   msg:
-    help: Show help for vso.
-    usage: Usage
-    flags: Flags
-    moreInfo: Use %s for more information about a command
-    examples: Examples
-    additionalHelpTopics: Additional help topics
-    aliases: Aliases
-    availableCommands: Available Commands
-    version: Show version for vso.
-    globalFlags: Global Flags
-    additionalCommands: Additional Commands
+    help: Affiche l'aide de vso.
+    usage: Utilisation
+    flags: Drapeaux
+    moreInfo: Utilisez %s pour plus d'informations à propos d'une commande
+    examples: Exemples
+    additionalHelpTopics: Autres sujets d'aide
+    aliases: Alias
+    availableCommands: Commandes Disponibles
+    version: Affiche la version de vso.
+    globalFlags: Drapeaux Globaux
+    additionalCommands: Commandes Additionnelles
 config:
   description: "Gestion de la configuration du système."
   get:
@@ -38,7 +38,7 @@ config:
     error:
       noKey: "Aucune clé n'est spécifiée."
       noValue: "Aucune valeur n'est spécifiée."
-      failed: 'Échec à définir la configuration: %s'
+      failed: 'Échec à définir la configuration : %s'
     options:
       key: "clé de la configuration à définir"
       value: "valeur de la configuration à définir"
@@ -134,7 +134,7 @@ sys-upgrade:
     rotate:
       options: {}
 sysUpgrade:
-  description: Mise à niveau du système
+  description: Exécuter des commandes système, comme celle pour mettre à jour le système
   check:
     description: Vérifier les mises à jour du système
     info:
@@ -147,24 +147,25 @@ sysUpgrade:
     json:
       description: exporter le résultat au format JSON
   sysUpgrade:
-    description: Mise à jour du système
+    description: Exécuter des commandes système, comme celle pour mettre à jour le
+      système
     error:
       updating: Une erreur s'est produite lors de la mise à jour du système.
-      onHasUpdate: 'Error while searching for updates: %s.'
+      onHasUpdate: 'Erreur durant la recherche de mises à jour : %s.'
     info:
       updating: Mise à jour du système ...
-      noUpdates: Your system is already up-to-date.
-      willUpdateLater: An update is available and will be automatically installed
-        based on your %s schedule. You can force the update using 'vso sys-upgrade
-        upgrade --now'.
-      willNeverUpdate: An update is available, but will not be automatically installed
-        because you disabled automatic updates. You can force the update using 'vso
-        sys-upgrade upgrade --now'.
+      noUpdates: Votre système est déjà à jour.
+      willUpdateLater: Une mise à jour est disponible et sera installée conformément
+        a votre programmation horaire %s. Vous pouvez l'installer maintenant en exécutant
+        'vso sys-upgrade upgrade --now'.
+      willNeverUpdate: Une mise à jour et disponible mais ne sera pas installée car
+        vous avez désactivé les mises à jour automatiques. Vous pouvez l'installer
+        manuellement avec la commande 'vso sys-upgrade upgrade --now'.
     now: Déclencher une mise à niveau du système maintenant
     schedule:
-      monthly: monthly
-      daily: daily
-      weekly: weekly
+      monthly: Chaque mois
+      daily: Chaque jour
+      weekly: Chaque semaine
 tasks:
   new:
     options:
@@ -272,9 +273,10 @@ tasks:
 waydroid:
   error:
     noArguments: Aucun arguments fourni.
-    notWayland: This feature is only available on Wayland.
-    secureBoot: This feature requires secure boot to be disabled in the BIOS.
-    noRepos: Could not find any repositories.
+    notWayland: Cette fonctionnalité n'est disponible que sur Wayland.
+    secureBoot: Cette fonctionnalité requiert la désactivation du Sécure Boot dans
+      le BIOS..
+    noRepos: Aucun dépôt n'a pu être trouvé.
   install:
     info:
       DownloadingPackage: Télécharge l'apk depuis %s
@@ -346,10 +348,10 @@ waydroid:
         --force pour forcer l'initialisation.
     info:
       initialized: Le sous-système waydroid a été initialisé.
-    warnUnstable: Waydroid functionality is currently unstable. Expect bugs and missing
-      features. Continue anyway?
-    warnUnstableForce: Waydroid functionality is currently unstable. Expect bugs and
-      missing features.
+    warnUnstable: La fonctionnalité Waydroid est encore instable. Attendez-vous à
+      rencontrer des bugs et des fonctionnalités manquantes. Souhaitez-vous continuer ?
+    warnUnstableForce: La fonctionnalité Waydroid est encore instable. Attendez-vous
+      à rencontrer des bugs et des fonctionnalités manquantes.
   search:
     description: Rechercher pour une application
   downloadIndex: Téléchargement de l'index pour le dépôt %s
