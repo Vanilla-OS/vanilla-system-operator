@@ -15,7 +15,7 @@ vso:
     moreInfo: Verwenden Sie %s für weitere Informationen zu einem Befehl
     flags: Bitschalter
     examples: Beispiele
-    usage: 'Usage'
+    usage: 'Aufruf'
     additionalHelpTopics: Zusätzliche Hilfethemen
     aliases: Aliase
     availableCommands: Verfügbare Befehle
