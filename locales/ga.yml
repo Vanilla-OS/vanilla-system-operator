@@ -1,340 +1,346 @@
 vso:
-  description: "The Vanilla System Operator is a package manager, a system updater
-    and a task automator."
+  description: "Is bainisteoir pacáiste, nuashonróir córais agus uathoibreoir tasc
+    é Oibreoir an Chórais Vanilla."
   errors:
-    unknownCommand: "Unknown command: %s"
-    invalidInput: "Invalid input."
-    invalidChoice: "Invalid choice."
+    unknownCommand: "Ordú anaithnid: %s"
+    invalidInput: "Ionchur neamhbhailí."
+    invalidChoice: "Rogha neamhbhailí."
   info:
-    aborting: "Aborting as requested."
+    aborting: "Tobscor de réir mar a iarrtar."
   msg:
-    help: "Show help for vso."
-    version: "Show version for vso."
-    usage: "Usage"
-    aliases: "Aliases"
-    examples: "Examples"
-    availableCommands: "Available Commands"
-    additionalCommands: "Additional Commands"
-    flags: "Flags"
-    globalFlags: "Global Flags"
-    additionalHelpTopics: "Additional help topics"
-    moreInfo: "Use %s for more information about a command"
+    help: "Taispeáin cabhair le haghaidh vso."
+    version: "Taispeáin leagan le haghaidh vso."
+    usage: "Úsáid"
+    aliases: "Ailiasanna"
+    examples: "Samplaí"
+    availableCommands: "Orduithe atá ar Fáil"
+    additionalCommands: "Orduithe Breise"
+    flags: "Bratacha"
+    globalFlags: "Bratacha Domhanda"
+    additionalHelpTopics: "Topaicí cabhrach breise"
+    moreInfo: "Úsáid %s le haghaidh tuilleadh eolais faoi ordú"
   terminal:
-    yes: "yes"
-    no: "no"
+    yes: "tá"
+    no: "Ní hea"
 
 config:
-  description: "Manage the system configuration."
+  description: "Bainistigh cumraíocht an chórais."
   get:
-    description: "Get the system configuration"
+    description: "Faigh cumraíocht an chórais"
     error:
-      noKey: "No key specified."
-      noValue: "No value found for key: %s"
+      noKey: "Níor sonraíodh eochair."
+      noValue: "Níor aimsíodh luach ar eochair: %s"
     options:
       key:
-        description: "retrieve configuration value by using its key"
+        description: "Aisghabh luach cumraíochta trína eochair a úsáid"
   set:
-    description: "Set the system configuration"
+    description: "Socraigh cumraíocht an chórais"
     error:
-      noKey: "No key specified."
-      noValue: "No value specified."
-      failed: "Failed to set configuration: %s"
+      noKey: "Níor sonraíodh eochair."
+      noValue: "Níor sonraíodh luach ar bith."
+      failed: "Theip ar chumraíocht a shocrú: %s"
     options:
-      key: "key of the configuration to set"
-      value: "value of the configuration to set"
-    success: "Configuration updated successfully."
+      key: "eochair na cumraíochta le socrú"
+      value: "luach na cumraíochta le socrú"
+    success: "D' éirigh leis an gcumraíocht."
   show:
-    description: "Show the system configuration"
+    description: "Taispeáin cumraíocht an chórais"
 
 pico:
-  description: "Manage the VSO subsystem"
+  description: "Bainistigh an fochóras VSO"
   error:
-    notInitialized: "The VSO subsystem is not initialized. Please run `vso pico-init`
-      to initialize it."
-    alreadyInitialized: "The VSO subsystem is already initialized. Use the --force
-      flag to force the initialization."
-    noAppNameOrBin: "--app or --bin must be specified."
-    sameAppOrBin: "--app and --bin cannot be both specified."
-    exportingApp: "An error occurred while exporting the application: %s"
-    exportingBin: "An error occurred while exporting the binary: %s"
-    unexportingApp: "An error occurred while unexporting the application: %s"
-    unexportingBin: "An error occurred while unexporting the binary: %s"
-    unknownCommand: "Unknown command: %s"
-    shellReset: "It is impossible to reach the VSO shell. Do you want to reset it?
-      (This will remove all your software installed in the subsystem) [y/N]"
+    notInitialized: "Níl an fochóras VSO túsaithe. Rith 'vso pico-init' chun é a thúsú."
+    alreadyInitialized: "Tá an fochóras VSO túsaithe cheana féin. Bain úsáid as an
+      bhratach --bhfeidhm chun an túsú a chur i bhfeidhm."
+    noAppNameOrBin: "--app nó --bin a shonrú."
+    sameAppOrBin: "--app agus --bin ní féidir an dá rud a shonrú."
+    exportingApp: "Tharla earráid agus an feidhmchlár á easpórtáil: %s"
+    exportingBin: "Tharla earráid agus an dénártha á easpórtáil: %s"
+    unexportingApp: "Tharla earráid agus an feidhmchlár á dhíchriptiú: %s"
+    unexportingBin: "Tharla earráid agus an dénártha á dhíchriptiú: %s"
+    unknownCommand: "Ordú anaithnid: %s"
+    shellReset: "Ní féidir an bhlaosc VSO a bhaint amach. An bhfuil fonn ort é a athshocrú?
+      (Bainfidh sé seo do bhogearraí go léir atá suiteáilte san fhochóras) [y/N]"
   info:
-    deleting: "Deleting the VSO subsystem..."
-    initializing: "Initializing the VSO subsystem..."
-    initialized: "The VSO subsystem has been initialized."
-    exported: "Exported %s\n"
-    unexported: "Unexported %s\n"
-    exportedApps: "Exported %d applications"
-    unexportedApps: "Unexported %d applications"
-    shellInit: "Looks like your shell is not initialized yet. Do you want to initialize
-      it now? (Highly recommended) [y/N]"
-    fallbackShell: "Fallback to the host shell? This could lead to unexpected behavior.
-      [y/N]"
+    deleting: "An fochóras VSO á scriosadh..."
+    initializing: "An fochóras VSO á thúsú..."
+    initialized: "Tá an fochóras VSO túsaithe."
+    exported: "Easpórtáil %s\n"
+    unexported: "%s gan easpórtáil\n"
+    exportedApps: "Easpórtáil %d feidhmchlár"
+    unexportedApps: "Feidhmchláir %d gan easpórtáil"
+    shellInit: "Breathnaíonn sé nach bhfuil do bhlaosc túsaithe go fóill. An bhfuil
+      fonn ort é a thúsú anois? (Moltar go hard) [y/N]"
+    fallbackShell: "Fallback leis an bhlaosc óstach? D'fhéadfadh iompar gan choinne
+      a bheith mar thoradh air seo. [y/N]"
   export:
-    description: "Export an application or binary from the subsystem"
+    description: "Easpórtáil feidhmchlár nó dénártha ón bhfochóras"
     options:
       app:
-        description: "the name of the application to export"
+        description: "ainm an iarratais ar onnmhairiú"
       bin:
-        description: "the name of the binary to export"
+        description: "ainm an dénártha a onnmhairiú"
       binOutput:
-        description: "path of the binary output (default: ~/.local/bin/)"
+        description: "conair an aschuir dhénártha (réamhshocrú: ~ / .local / bin /
+          )"
   unexport:
-    description: "Unexport an application or binary from the subsystem"
+    description: "Unexport iarratas nó dénártha ón bhfochóras"
     options:
       app:
-        description: "the name of the application to unexport"
+        description: "ainm an iarratais ar"
       bin:
-        description: "the name of the binary to unexport"
+        description: "ainm an dénártha a unexport"
       binOutput:
-        description: "path of the binary output (default: ~/.local/bin/)"
+        description: "conair an aschuir dhénártha (réamhshocrú: ~ / .local / bin /
+          )"
   init:
-    description: "Initialize the VSO subsystem, used for package management"
+    description: "Túsaigh an fochóras VSO, a úsáidtear le haghaidh bainistíochta pacáiste"
     options:
       force:
-        description: "force the initialization if the subsystem is already initialized"
+        description: "Cuir tús leis an túsú má tá an fochóras túsaithe cheana féin"
   install:
-    description: "Install an application inside the subsystem"
+    description: "Suiteáil feidhmchlár taobh istigh den fhochóras"
   remove:
-    description: "Remove an application from the subsystem"
+    description: "Bain feidhmchlár ón bhfochóras"
   run:
-    description: "Run an application from the subsystem"
+    description: "Rith feidhmchlár ón bhfochóras"
     options:
       noReset:
-        description: "do not propose to reset the subsystem if something goes wrong"
+        description: "ná mol an fochóras a athshocrú má théann rud éigin mícheart"
   search:
-    description: "Search for an application to install inside the subsystem"
+    description: "Cuardaigh feidhmchlár le suiteáil taobh istigh den fhochóras"
   shell:
-    description: "Enter the subsystem environment"
+    description: "Iontráil timpeallacht an fhochórais"
   sideload:
-    description: "Sideload DEB/APK packages inside the subsystem"
+    description: "Pacáistí DEB / APK Sideload taobh istigh den fhochóras"
   update:
-    description: "Update the subsystem's package repository"
+    description: "Nuashonraigh stór pacáiste an fhochórais"
   upgrade:
-    description: "Upgrade the packages inside the subsystem"
+    description: "Uasghrádú na pacáistí taobh istigh den fhochóras"
 
 sysUpgrade:
-  description: "Execute system commands, such as upgrading the system"
+  description: "Rith orduithe córais, mar shampla uasghrádú an chórais"
   check:
-    asExitCode: "checks for upgrade but doesn't print anything. Return exit code 0
-      if no upgrade is available and 1 otherwise."
-    description: "Check for system updates"
+    asExitCode: "seiceálacha le haghaidh uasghrádú ach ní phriontáil rud ar bith.
+      Fill cód scoir 0 mura bhfuil aon uasghrádú ar fáil agus 1 ar shlí eile."
+    description: "Seiceáil le haghaidh nuashonruithe córais"
     error:
-      asExitCodeAndJson: "An error occured when checking for updates. See the JSON
-        output for more details."
+      asExitCodeAndJson: "Tharla earráid agus nuashonruithe á seiceáil. Féach an t-aschur
+        JSON le haghaidh tuilleadh sonraí."
     info:
-      checking: "Checking for updates..."
+      checking: "Ag seiceáil le haghaidh nuashonruithe..."
     json:
-      description: "output the result in JSON format"
+      description: "aschur an toradh i bhformáid JSON"
   sysUpgrade:
-    description: "Execute system commands, such as upgrading the system"
+    description: "Rith orduithe córais, mar shampla uasghrádú an chórais"
     error:
-      updating: "An error occured when updating the system."
-      onHasUpdate: "Error while searching for updates: %s."
+      updating: "Tharla earráid agus an córas á nuashonrú."
+      onHasUpdate: "Earráid agus nuashonruithe á gcuardach: %s."
     schedule:
-      daily: "daily"
-      weekly: "weekly"
-      monthly: "monthly"
+      daily: "gach lá"
+      weekly: "seachtainiúil"
+      monthly: "míosúil"
     info:
-      updating: "Updating the system..."
-      willUpdateLater: "An update is available and will be automatically installed
-        based on your %s schedule. You can force the update using 'vso sys upgrade
-        --now'."
-      willNeverUpdate: "An update is available, but will not be automatically installed
-        because you disabled automatic updates. You can force the update using 'vso
-        sys upgrade --now'."
-      noUpdates: "Your system is already up-to-date."
-    now: "Trigger a system upgrade now"
+      updating: "An córas á nuashonrú..."
+      willUpdateLater: "Tá nuashonrú ar fáil agus déanfar é a shuiteáil go huathoibríoch
+        bunaithe ar do sceideal %s. Is féidir leat an nuashonrú a chur i bhfeidhm
+        ag baint úsáide as 'uasghrádú vso sys --now'."
+      willNeverUpdate: "Tá nuashonrú ar fáil, ach ní dhéanfar é a shuiteáil go huathoibríoch
+        toisc go ndearna tú nuashonruithe uathoibríocha a dhíchumasú. Is féidir leat
+        an nuashonrú a chur i bhfeidhm ag baint úsáide as 'uasghrádú vso sys --now'."
+      noUpdates: "Tá do chóras cothrom le dáta cheana féin."
+    now: "Tús a chur le huasghrádú córais anois"
 
 tasks:
-  description: "Create and manage tasks"
+  description: "Tascanna a chruthú agus a bhainistiú"
   stacks:
     new:
       error:
-        emptyCommand: "The command cannot be empty."
-        emptyDescription: "The description cannot be empty."
-        emptyName: "The name cannot be empty."
-        noCommand: "No command specified."
-        noDescription: "No description specified."
-        noName: "No name specified."
+        emptyCommand: "Ní féidir leis an ordú a bheith folamh."
+        emptyDescription: "Ní féidir leis an tuairisc a bheith folamh."
+        emptyName: "Ní féidir leis an ainm a bheith folamh."
+        noCommand: "Níor sonraíodh ordú."
+        noDescription: "Níor sonraíodh tuairisc ar bith."
+        noName: "Níor sonraíodh aon ainm."
       info:
-        askCommand: "Command: "
-        askDescription: "Description: "
-        askName: "Name: "
-        taskCreated: "Task has been created successfully."
+        askCommand: "Ordú: "
+        askDescription: "Cur síos: "
+        askName: "Ainm: "
+        taskCreated: "Cruthaíodh tasc go rathúil."
   list:
-    description: "List all tasks"
-    noTasks: "No tasks found."
+    description: "Liostaigh gach tasc"
+    noTasks: "Níor aimsíodh aon tascanna."
     info:
-      foundTasks: "Found %d tasks."
+      foundTasks: "Aimsíodh %d tascanna."
     options:
       json:
-        description: "output the tasks in JSON format"
+        description: "aschur na tascanna i bhformáid JSON"
   new:
-    description: "Create a new task"
+    description: "Cruthaigh tasc nua"
     options:
       assumeYes:
-        description: "assume yes for all prompts"
+        description: "Glac leis go bhfuil do gach leid"
       at:
-        description: "schedule the task to execute at a specific time (hh:mm)"
+        description: "Sceideal an tasc a fhorghníomhú ag am ar leith (HH: MM)"
       command:
-        description: "specify the command to execute"
+        description: "Sonraigh an t- ordú le rith"
       description:
-        description: "specify the task's description"
+        description: "sonraigh cur síos an taisc"
       every:
-        description: "schedule the task to execute every X time (minutes, hours, days)"
+        description: "sceideal an tasc a fhorghníomhú gach X am (nóiméad, uair an
+          chloig, laethanta)"
       name:
-        description: "specify the task's name"
+        description: "Sonraigh ainm an taisc"
       needConfirm:
-        description: "ask for confirmation before executing the task"
+        description: "deimhniú a iarraidh sula bhforghníomhóidh tú an tasc"
       onBattery:
-        description: "execute the task only when the system is on battery"
+        description: "rith an tasc ach amháin nuair a bhíonn an córas ar chadhnra"
       onCharge:
-        description: "execute the task only when the system is charging"
+        description: "an tasc a fhorghníomhú ach amháin nuair atá an córas ag gearradh"
       onConditionCommand:
-        description: "execute the task on condition command"
+        description: "rith an tasc ar ordú coinníoll"
       onCpuTemp:
-        description: "execute the task when CPU temperature is higher than 60°C"
+        description: "rith an tasc nuair a bhíonn teocht LAP níos airde ná 60 ° C"
       onCpuUsage:
-        description: "execute the task when CPU usage is higher than X%"
+        description: "rith an tasc nuair a bhíonn úsáid LAP níos airde ná X%"
       onDeviceConnect:
-        description: "execute the task when a device is connected"
+        description: "Rith an tasc nuair atá gléas ceangailte"
       onDeviceDisconnect:
-        description: "execute the task when a device is disconnected"
+        description: "Rith an tasc nuair atá gléas dícheangailte"
       onDisconnect:
-        description: "execute the task when the system is disconnected from the network"
+        description: "an tasc a fhorghníomhú nuair atá an córas dícheangailte ón líonra"
       onFullBattery:
-        description: "execute the task when the system is fully charged"
+        description: "an tasc a chur i gcrích nuair a ghearrtar an córas go hiomlán"
       onHighCpuUsage:
-        description: "execute the task when CPU usage is higher than 50%"
+        description: "rith an tasc nuair a bhíonn úsáid LAP níos airde ná 50%"
       onHighInternetUsage:
-        description: "execute the task when internet usage is higher than 500Kb/s"
+        description: "an tasc a fhorghníomhú nuair atá úsáid an idirlín níos airde
+          ná 500Kb/s"
       onHighMemoryUsage:
-        description: "execute the task when memory usage is higher than 50%"
+        description: "rith an tasc nuair a bhíonn úsáid chuimhne níos airde ná 50%"
       onInternetUsage:
-        description: "execute the task when internet usage is higher than XKb/s"
+        description: "an tasc a fhorghníomhú nuair atá úsáid an idirlín níos airde
+          ná XKb/s"
       onLowBattery:
-        description: "execute the task when the system is low on battery (20%)"
+        description: "rith an tasc nuair a bhíonn an córas íseal ar chadhnra (20%)"
       onMemoryUsage:
-        description: "execute the task when memory usage is higher than X%"
+        description: "rith an tasc nuair atá úsáid chuimhne níos airde ná X%"
       onNetwork:
-        description: "execute the task when the system is connected to the network"
+        description: "an tasc a rith nuair atá an córas ceangailte leis an líonra"
       onProcess:
-        description: "execute the task when a process starts"
+        description: "an tasc a chur i gcrích nuair a thosaíonn próiseas"
   rm:
-    description: "Remove a task"
+    description: "Bain tasc"
     error:
-      cannotDelete: "Cannot delete task: %s"
-      noName: "No task name specified."
-      notFound: "Task not found."
+      cannotDelete: "Ní féidir tasc a scriosadh: %s"
+      noName: "Níor sonraíodh ainm an taisc."
+      notFound: "Níor aimsíodh an tasc."
     info:
-      askConfirmation: "Are you sure you want to delete the task %s? [y/N]"
-      taskDeleted: "Task has been deleted successfully."
+      askConfirmation: "An bhfuil tú cinnte go bhfuil fonn ort an tasc %s a scriosadh?
+        [y/N]"
+      taskDeleted: "Scriosadh an tasc go rathúil."
     options:
       force:
-        description: "force the deletion of the task"
+        description: "cuir i bhfeidhm scriosadh an taisc"
       name:
-        description: "specify the task's name"
+        description: "Sonraigh ainm an taisc"
   rotate:
-    description: "Rotate tasks"
+    description: "Rothlaigh tascanna"
     options:
       privateEvent:
-        description: "specify the private event to rotate tasks for boot, shutdown,
-          login, and logout"
+        description: "Sonraigh an teagmhas príobháideach chun tascanna a rothlú le
+          haghaidh tosaithe, múchadh, logáil isteach, agus logáil amach"
 
 waydroid:
-  description: "Manage the vso waydroid subsystem"
-  downloadIndex: "Downloading index for repository %s"
+  description: "Bainistigh an fochóras vso waydroid"
+  downloadIndex: "Innéacs á íosluchtú don stór %s"
   clean:
-    description: "Cleans the waydroid vso cache"
+    description: "Cleans an taisce vso waydroid"
     info:
-      index: "Deleting index cache"
-      apk: "Deleting apk cache"
-      success: "Successfully deleted waydroid vso cache"
+      index: "Taisce innéacs á scriosadh"
+      apk: "Taisce apk á scriosadh"
+      success: "Scriosadh an taisce vso waydroid go rathúil"
     error:
-      index: "Failed to delete index cache"
-      apk: "Failed to delete apk cache"
+      index: "Theip ar scriosadh na taisce innéacs"
+      apk: "Theip ar scriosadh taisce apk"
   delete:
-    description: "Delete the waydroid subsystem"
-    confirmation: "Deleting the waydroid subsystem will delete any data stored in
-      it. Continue?"
-    cancelled: "Cancelled removal of subsystem."
+    description: "Scrios an fochóras waydroid"
+    confirmation: "Má scriostar an fochóras waydroid scriosfar aon sonraí atá stóráilte
+      ann. Lean ar aghaidh?"
+    cancelled: "Deireadh a chur leis an bhfochóras."
   error:
-    noArguments: "No arguments provided."
-    noRepos: "Could not find any repositories."
-    notWayland: "This feature is only available on Wayland."
-    secureBoot: "This feature requires secure boot to be disabled in the BIOS."
+    noArguments: "Níor cuireadh aon argóintí ar fáil."
+    noRepos: "Níorbh fhéidir stórtha ar bith a aimsiú."
+    notWayland: "Níl an ghné seo ar fáil ach ar Wayland."
+    secureBoot: "Éilíonn an ghné seo tosaithe slán a bheith díchumasaithe sa BIOS."
   install:
-    description: "Install an application"
+    description: "Suiteáil feidhmchlár"
     options:
       local:
-        description: "Install a local apk"
+        description: "Suiteáil apk logánta"
       noconfirm:
-        description: "Do not ask for confirmation during installation"
+        description: "Ná hiarr deimhniú le linn suiteála"
     info:
-      PackageInCache: "Application found in cache, not downloading again."
-      ConfirmInstall: "Install application %s?"
-      DownloadingPackage: "Downloading apk from %s"
-      PackageSelection: "Pick an application to install"
-      InstallSuccess: "Installation successful"
+      PackageInCache: "Aimsíodh an feidhmchlár i dtaisce, gan é a íoslódáil arís."
+      ConfirmInstall: "Suiteáil feidhmchlár %s?"
+      DownloadingPackage: "Apk á íosluchtú ó %s"
+      PackageSelection: "Roghnaigh feidhmchlár le suiteáil"
+      InstallSuccess: "D'éirigh leis an tsuiteáil"
     error:
-      NotFound: "Application %s was not found."
-      InstallCancelled: "Installation Cancelled"
+      NotFound: "Níor aimsíodh feidhmchlár %s."
+      InstallCancelled: "Cealaíodh an tsuiteáil"
   init:
-    description: "Initialize the waydroid subsystem"
-    warnUnstable: "Waydroid functionality is currently unstable. Expect bugs and missing
-      features. Continue anyway?"
-    warnUnstableForce: "Waydroid functionality is currently unstable. Expect bugs
-      and missing features."
+    description: "Túsaigh an fochóras waydroid"
+    warnUnstable: "Tá feidhmiúlacht Waydroid éagobhsaí faoi láthair. Bí ag súil le
+      fabhtanna agus gnéithe ar iarraidh. Lean ar aghaidh mar sin féin?"
+    warnUnstableForce: "Tá feidhmiúlacht Waydroid éagobhsaí faoi láthair. Bí ag súil
+      le fabhtanna agus gnéithe ar iarraidh."
     options:
       force:
-        description: "Force the initialization"
+        description: "Fórsáil an túsú"
     info:
-      initialized: "The waydroid subsystem has been initialized."
+      initialized: "Tá an fochóras waydroid túsaithe."
     error:
-      alreadyInitialized: "The waydroid subsystem is already initialized. Use the
-        --force flag to force the initialization."
+      alreadyInitialized: "Tá an fochóras waydroid túsaithe cheana féin. Bain úsáid
+        as an bhratach --bhfeidhm chun an túsú a chur i bhfeidhm."
   launch:
-    description: "Launch an installed application"
+    description: "Tosaigh feidhmchlár suiteáilte"
   launcher:
-    description: "Show the waydroid launcher"
+    description: "Taispeáin an tosaitheoir waydroid"
   remove:
-    description: "Uninstall an application"
+    description: "Díshuiteáil feidhmchlár"
     info:
-      RemovePackage: "Removing package %s"
-      PackageSelection: "Pick an application to remove"
-      ConfirmRemove: "Remove application %s?"
+      RemovePackage: "Pacáiste %s á bhaint"
+      PackageSelection: "Roghnaigh feidhmchlár le baint"
+      ConfirmRemove: "Bain feidhmchlár %s?"
     error:
-      NoMatches: "Application %s not found"
-      RemoveCancelled: "Removal Cancelled"
+      NoMatches: "Níor aimsíodh feidhmchlár %s"
+      RemoveCancelled: "Cealaíodh an t-aistriú"
   search:
-    description: "Search for an application"
+    description: "Cuardaigh iarratas"
   sync:
-    description: "Sync the repositories"
+    description: "Sioncronaigh na stórtha"
   update:
-    description: "Update installed applications"
-    finished: "Finished updating applications"
+    description: "Nuashonraigh feidhmchláir suiteáilte"
+    finished: "Feidhmchláir á nuashonrú críochnaithe"
     error:
-      FailGetVersion: "Failed to get version code for %s"
-      FailUpdatePackageDownload: "Failed to download APK for %s"
-      FailUpdatePackageDatabase: "Failed to update database entry for %s"
-      FailUpdatePackageInstall: "Failed to install the update for %s"
+      FailGetVersion: "Theip ar chód leagain a fháil do %s"
+      FailUpdatePackageDownload: "Níorbh fhéidir APK a íosluchtú le haghaidh %s"
+      FailUpdatePackageDatabase: "Theip ar iontráil an bhunachair sonraí a nuashonrú
+        le haghaidh %s"
+      FailUpdatePackageInstall: "Theip ar shuiteáil an nuashonraithe do %s"
     info:
-      NoUpdates: "Nothing to update"
+      NoUpdates: "Ní dhéanfaidh aon ní le nuashonrú"
   info:
-    description: "Display information about an application"
+    description: "Taispeáin faisnéis faoi fheidhmchlár"
     info:
-      PackageSelection: "Select an application to display information from"
-    PackageName: "Name: %s"
-    InternalName: "Internal name: %s"
-    Summary: "Summary: %s"
-    Author: "Author: %s"
-    License: "License: %s"
-    Repository: "Repository: %s"
+      PackageSelection: "Roghnaigh feidhmchlár chun faisnéis a thaispeáint ó"
+    PackageName: "Ainm: %s"
+    InternalName: "Ainm inmheánach: %s"
+    Summary: "Achoimre: %s"
+    Author: "Údar: %s"
+    License: "Ceadúnas: %s"
+    Repository: "Stór: %s"
   status:
-    description: "Return the internal status code of the Android subsystem. For development
-      purposes."
+    description: "Cuir cód stádais inmheánach an fhochórais Android ar ais. Chun críocha
+      forbartha."
