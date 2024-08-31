@@ -60,8 +60,8 @@ pico:
     unexportingApp: "Okazis eraro maleksportante la programon: %s"
     unexportingBin: "Okazis eraro maleksportante la binaraĵon: %s"
     unknownCommand: 'Nekonata komando: %s'
-    shellReset: It is impossible to reach the VSO shell. Do you want to reset it?
-      (This will remove all your software installed in the subsystem) [y/N]
+    shellReset: Ne eblas atingi la VSO-ŝelon. Ĉu restaŭri ĝin? (Tio malinstalos ĉiujn
+      programojn instalitajn en la subsistemo) [y/N]
   info:
     initialized: "La VSO-subsistemo lanĉiĝis."
     exported: "Eksportis %s\n"
@@ -70,7 +70,7 @@ pico:
     unexportedApps: "Maleksportis %d programojn"
     shellInit: Ŝajnas, ke via ŝelo ankoraŭ ne estas lanĉita. Ĉu lanĉi ĝin nun? (Rekomendegata)
       [y/N]
-    fallbackShell: Fallback to the host shell? This could lead to unexpected behavior.
+    fallbackShell: Ĉu uzi la gastigan ŝelon? Tio povas kaŭzi neatenditajn fenomenojn.
       [y/N]
     deleting: Forviŝante la VSO-subsistemon…
     initializing: Lanĉante la VSO-subsistemon…
@@ -120,8 +120,8 @@ pico:
 sysUpgrade:
   description: "Ruli sistemajn komandojn, ekz. ĝisdatigi la sistemon"
   check:
-    asExitCode: "checks for upgrade but doesn't print anything. Return exit code 0
-      if no upgrade is available and 1 otherwise."
+    asExitCode: "kontroli pri ĝisdatigoj, sed presi nenion, liverante la elirkodon
+      0 se neniu ĝisdatigo estas havebla kaj la elirkodon 1 alikaze."
     description: "Kontroli sistemajn ĝisdatigojn"
     error:
       asExitCodeAndJson: "Okazis eraro dum kontrolado pri ĝisdatigoj. Vidu la JSON-eligaĵon
