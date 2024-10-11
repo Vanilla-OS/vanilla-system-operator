@@ -11,17 +11,17 @@ vso:
     no: "아니오"
 
   msg:
-    moreInfo: Use %s for more information about a command
-    flags: Flags
-    examples: Examples
-    usage: Usage
-    additionalHelpTopics: Additional help topics
-    aliases: Aliases
-    availableCommands: Available Commands
-    version: Show version for vso.
-    globalFlags: Global Flags
-    help: Show help for vso.
-    additionalCommands: Additional Commands
+    moreInfo: 명령어에 대한 자세한 정보를 보려면 %s를 사용하세요
+    flags: 플래그
+    examples: 예제
+    usage: 사용법
+    additionalHelpTopics: 추가 도움말 항목
+    aliases: 별칭
+    availableCommands: 사용 가능한 명령어
+    version: vso 버전 표시.
+    globalFlags: 전역 플래그
+    help: vso에 대한 도움말을 표시합니다.
+    additionalCommands: 추가 명령어
 config:
   description: "시스템 구성을 관리하세요."
   get:
