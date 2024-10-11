@@ -10,18 +10,18 @@ vso:
   msg:
     help: "Show help for vso."
     version: "Show version for vso."
-    usage: "Usage"
+    usage: "Asemres"
     aliases: "Aliases"
-    examples: "Examples"
+    examples: "Imedyaten"
     availableCommands: "Available Commands"
     additionalCommands: "Additional Commands"
-    flags: "Flags"
+    flags: "Anayen"
     globalFlags: "Global Flags"
     additionalHelpTopics: "Additional help topics"
     moreInfo: "Use %s for more information about a command"
   terminal:
-    yes: "yes"
-    no: "no"
+    yes: "ih"
+    no: "uhu"
 
 config:
   description: "Manage the system configuration."
@@ -136,9 +136,9 @@ sysUpgrade:
       updating: "An error occured when updating the system."
       onHasUpdate: "Error while searching for updates: %s."
     schedule:
-      daily: "daily"
-      weekly: "weekly"
-      monthly: "monthly"
+      daily: "yal ass"
+      weekly: "yal imalass"
+      monthly: "yal aggur"
     info:
       updating: "Updating the system..."
       willUpdateLater: "An update is available and will be automatically installed
@@ -164,7 +164,7 @@ tasks:
       info:
         askCommand: "Command: "
         askDescription: "Description: "
-        askName: "Name: "
+        askName: "Isem: "
         taskCreated: "Task has been created successfully."
   list:
     description: "List all tasks"
@@ -329,12 +329,12 @@ waydroid:
     description: "Display information about an application"
     info:
       PackageSelection: "Select an application to display information from"
-    PackageName: "Name: %s"
+    PackageName: "Isem: %s"
     InternalName: "Internal name: %s"
     Summary: "Summary: %s"
-    Author: "Author: %s"
-    License: "License: %s"
-    Repository: "Repository: %s"
+    Author: "Ameskar : %s"
+    License: "Turagt: %s"
+    Repository: "Akufi: %s"
   status:
     description: "Return the internal status code of the Android subsystem. For development
       purposes."
