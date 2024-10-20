@@ -379,6 +379,7 @@ func newTask(cmd *cobra.Command, args []string) error {
 			cmdr.Info.Println(vso.Trans("tasks.stacks.new.info.askName"))
 			reader := bufio.NewReader(os.Stdin)
 			name, _ = reader.ReadString('\n')
+			name = strings.TrimSuffix(name, "\n")
 			if name == "" {
 				cmdr.Error.Println(vso.Trans("tasks.stacks.new.error.emptyName"))
 				return nil
@@ -394,6 +395,7 @@ func newTask(cmd *cobra.Command, args []string) error {
 			cmdr.Info.Println(vso.Trans("tasks.stacks.new.info.askDescription"))
 			reader := bufio.NewReader(os.Stdin)
 			description, _ = reader.ReadString('\n')
+			description = strings.TrimSuffix(description, "\n")
 			if description == "" {
 				cmdr.Error.Println(vso.Trans("tasks.stacks.new.error.emptyDescription"))
 				return nil
@@ -409,6 +411,7 @@ func newTask(cmd *cobra.Command, args []string) error {
 			cmdr.Info.Println(vso.Trans("tasks.stacks.new.info.askCommand"))
 			reader := bufio.NewReader(os.Stdin)
 			command, _ = reader.ReadString('\n')
+			command = strings.TrimSuffix(command, "\n")
 			if command == "" {
 				cmdr.Error.Println(vso.Trans("tasks.stacks.new.error.emptyCommand"))
 				return nil
