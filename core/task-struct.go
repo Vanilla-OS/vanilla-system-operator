@@ -300,7 +300,7 @@ func (t *Task) Unit() string {
 
 // Delete deletes a task
 func (t *Task) Delete() error {
-	err := os.Remove(getUserTasksLocation() + "/" + t.Name + ".vsotask")
+	err := os.Remove(getUserTasksLocation() + "/" + t.Slug + ".vsotask")
 	if err != nil {
 		return err
 	}
