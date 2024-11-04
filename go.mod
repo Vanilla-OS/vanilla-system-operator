@@ -8,7 +8,7 @@ require (
 	github.com/olekukonko/tablewriter v0.0.5
 	github.com/spf13/cobra v1.8.1
 	github.com/vanilla-os/apx/v2 v2.4.4
-	github.com/vanilla-os/orchid v0.6.0
+	github.com/vanilla-os/orchid v0.6.1
 	go.etcd.io/bbolt v1.3.11
 )
 
