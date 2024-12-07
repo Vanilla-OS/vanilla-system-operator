@@ -8,8 +8,8 @@ vso:
   info:
     aborting: "Aborting as requested."
   msg:
-    help: "Show help for vso."
-    version: "Show version for vso."
+    help: "Show help for VSO."
+    version: "Show version for VSO."
     usage: "Usage"
     aliases: "Aliases"
     examples: "Examples"
