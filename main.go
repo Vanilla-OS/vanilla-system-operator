@@ -11,6 +11,7 @@ package main
 
 import (
 	"embed"
+	"os"
 
 	"github.com/vanilla-os/apx/v2/core"
 	"github.com/vanilla-os/apx/v2/settings"
@@ -74,5 +75,6 @@ func main() {
 	err := vso.Run()
 	if err != nil {
 		cmdr.Error.Println(err)
+		os.Exit(1)
 	}
 }
