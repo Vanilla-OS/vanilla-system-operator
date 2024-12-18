@@ -49,10 +49,10 @@ config:
 pico:
   description: "Manage the VSO subsystem"
   error:
-    notInitialized: "The VSO subsystem is not initialized. Please run `vso pico-init`
-      to initialize it."
-    alreadyInitialized: "The VSO subsystem is already initialized. Use the --force
-      flag to force the initialization."
+    notInitialized: "The VSO subsystem is not initialised. Please run `vso pico-init`
+      to initialise it."
+    alreadyInitialized: "The VSO subsystem is already initialised. Use the --force
+      flag to force the initialisation."
     noAppNameOrBin: "--app or --bin must be specified."
     sameAppOrBin: "--app and --bin cannot be both specified."
     exportingApp: "An error occurred while exporting the application: %s"
