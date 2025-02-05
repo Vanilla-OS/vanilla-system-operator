@@ -49,10 +49,10 @@ config:
 pico:
   description: "Manage the VSO subsystem"
   error:
-    notInitialized: "The VSO subsystem is not initialized. Please run `vso pico-init`
-      to initialize it."
-    alreadyInitialized: "The VSO subsystem is already initialized. Use the --force
-      flag to force the initialization."
+    notInitialized: "The VSO subsystem is not initialised. Please run `vso pico-init`
+      to initialise it."
+    alreadyInitialized: "The VSO subsystem is already initialised. Use the --force
+      flag to force the initialisation."
     noAppNameOrBin: "--app or --bin must be specified."
     sameAppOrBin: "--app and --bin cannot be both specified."
     exportingApp: "An error occurred while exporting the application: %s"
@@ -65,14 +65,14 @@ pico:
   info:
     deleting: "Deleting the VSO subsystem..."
     initializing: "Initializing the VSO subsystem..."
-    initialized: "The VSO subsystem has been initialized."
+    initialized: "The VSO subsystem has been initialised."
     exported: "Exported %s\n"
     unexported: "Unexported %s\n"
     exportedApps: "Exported %d applications"
     unexportedApps: "Unexported %d applications"
-    shellInit: "Looks like your shell is not initialized yet. Do you want to initialize
+    shellInit: "Looks like your shell is not initialised yet. Do you want to initialise
       it now? (Highly recommended) [y/N]"
-    fallbackShell: "Fallback to the host shell? This could lead to unexpected behavior.
+    fallbackShell: "Fallback to the host shell? This could lead to unexpected behaviour.
       [y/N]"
   export:
     description: "Export an application or binary from the subsystem"
