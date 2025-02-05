@@ -12,17 +12,17 @@ vso:
     no: "ні"
 
   msg:
-    flags: Flags
-    moreInfo: Use %s for more information about a command
-    examples: Examples
-    usage: Usage
-    additionalHelpTopics: Additional help topics
-    aliases: Aliases
-    availableCommands: Available Commands
-    version: Show version for vso.
-    globalFlags: Global Flags
-    help: Show help for vso.
-    additionalCommands: Additional Commands
+    flags: Прапорці
+    moreInfo: Використовуйте %s для отримання додаткової інформації про команду
+    examples: Приклади
+    usage: Використання
+    additionalHelpTopics: Додаткові довідкові теми
+    aliases: Псевдоніми
+    availableCommands: Доступні команди
+    version: Показати версію vso.
+    globalFlags: Глобальні прапорці
+    help: Показати довідку для vso.
+    additionalCommands: Додаткові команди
 config:
   description: "Керування конфігурацією системи."
   get:
@@ -53,8 +53,8 @@ pico:
       pico-init` для її ініціалізації."
     alreadyInitialized: "Підсистему VSO вже ініціалізовано. Використовуйте прапорець
       --force для примусової ініціалізації."
-    noAppNameOrBin: "--app or --bin must be specified."
-    sameAppOrBin: "--app and --bin cannot be both specified."
+    noAppNameOrBin: "--app або --bin необхідно вказати."
+    sameAppOrBin: "--app та --bin не можуть бути вказані одночасно."
     exportingApp: "Виникла помилка під час експорту застосунку: %s"
     exportingBin: "Виникла помилка під час бінарного файлу : %s"
     unexportingApp: "Виникла помилка під час скасування експорту програми: %s"
@@ -121,7 +121,7 @@ pico:
   sideload:
     description: Бокове завантаження пакетів DEB/APK всередині підсистеми
 sysUpgrade:
-  description: "Оновлення системи"
+  description: "Виконання системних команд, таких як оновлення системи"
   check:
     asExitCode: "перевіряє наявність оновлення, але нічого не друкує. Повертає код
       виходу 0, якщо оновлення недоступне, і 1 в іншому випадку."
@@ -134,25 +134,25 @@ sysUpgrade:
     json:
       description: "вивести результат у форматі JSON"
   sysUpgrade:
-    description: "Оновлення системи"
+    description: "Виконання системних команд, таких як оновлення системи"
     error:
       updating: "Під час оновлення системи сталася помилка."
-      onHasUpdate: 'Error while searching for updates: %s.'
+      onHasUpdate: 'Помилка під час пошуку оновлень: %s.'
     info:
       updating: "Оновлення системи..."
-      noUpdates: Your system is already up-to-date.
-      willUpdateLater: An update is available and will be automatically installed
-        based on your %s schedule. You can force the update using 'vso sys-upgrade
-        upgrade --now'.
-      willNeverUpdate: An update is available, but will not be automatically installed
-        because you disabled automatic updates. You can force the update using 'vso
-        sys-upgrade upgrade --now'.
+      noUpdates: Ваша система вже оновлена.
+      willUpdateLater: Оновлення доступне і буде автоматично встановлене за розкладом
+        %s. Ви можете примусово оновити систему за допомогою команди «vso sys upgrade
+        --now».
+      willNeverUpdate: Оновлення доступне, але його не буде автоматично встановлено,
+        оскільки ви вимкнули автооновлення. Ви можете примусово оновити систему за
+        допомогою команди «vso sys upgrade --now».
     now: "Запустити оновлення системи прямо зараз"
 
     schedule:
-      monthly: monthly
-      daily: daily
-      weekly: weekly
+      monthly: щомісяця
+      daily: щоденно
+      weekly: щотижня
 tasks:
   description: "Створюйте завдання та керуйте ними"
   stacks:
@@ -203,140 +203,139 @@ tasks:
       onCpuTemp:
         description: "виконувати завдання, коли температура процесора перевищує 60°C"
       onCpuUsage:
-        description: "execute the task when CPU usage is higher than X%"
+        description: "виконувати задачу, коли використання процесора перевищує X%"
       onDeviceConnect:
-        description: "execute the task when a device is connected"
+        description: "виконувати задачу, коли пристрій під'єднано"
       onDeviceDisconnect:
-        description: "execute the task when a device is disconnected"
+        description: "виконувати задачу, коли пристрій від'єднано"
       onDisconnect:
-        description: "execute the task when the system is disconnected from the network"
+        description: "виконувати задачу, коли система від'єднана від мережі"
       onFullBattery:
-        description: "execute the task when the system is fully charged"
+        description: "виконувати задачу, коли система повністю заряджена"
       onHighCpuUsage:
-        description: "execute the task when CPU usage is higher than 50%"
+        description: "виконувати задачу, коли завантаження процесора перевищує 50%"
       onHighInternetUsage:
-        description: "execute the task when internet usage is higher than 500Kb/s"
+        description: "виконувати задачу, коли швидкість інтернету перевищує 500 кб/с"
       onHighMemoryUsage:
-        description: "execute the task when memory usage is higher than 50%"
+        description: "виконувати задачу, коли використання пам'яті перевищує 50%"
       onInternetUsage:
-        description: "execute the task when internet usage is higher than XKb/s"
+        description: "виконувати задаяу, коли швидкість інтернету перевищує X кб/с"
       onLowBattery:
-        description: "execute the task when the system is low on battery (20%)"
+        description: "виконувати задачу, коли низький заряд батареї (20%)"
       onMemoryUsage:
-        description: "execute the task when memory usage is higher than X%"
+        description: "виконувати задачу, коли використання пам'яті перевищує X%"
       onNetwork:
-        description: "execute the task when the system is connected to the network"
+        description: "виконувати задачу, коли система під'єднана до мережі"
       onProcess:
-        description: "execute the task when a process starts"
+        description: "виконувати задачу під час запуску процесу"
   rm:
-    description: "Remove a task"
+    description: "Видалити задачу"
     error:
-      cannotDelete: "Cannot delete task: %s"
-      noName: "No task name specified."
-      notFound: "Task not found."
+      cannotDelete: "Неможливо видалити задачу: %s"
+      noName: "Не вказано назву задачі."
+      notFound: "Задачу не знайдено."
     info:
-      askConfirmation: "Are you sure you want to delete the task %s? [y/N]"
-      taskDeleted: "Task has been deleted successfully."
+      askConfirmation: "Ви впевнені, що хочете видалити задачу %s? [y/N]"
+      taskDeleted: "Задачу успішно видалено."
     options:
       force:
-        description: "force the deletion of the task"
+        description: "примусово видалити задачу"
       name:
-        description: "specify the task's name"
+        description: "вкажіть назву задачі"
   rotate:
-    description: "Rotate tasks"
+    description: "Чергувати задачі"
     options:
       privateEvent:
-        description: "specify private event to rotate tasks for boot, shutdown, login,
-          logout"
+        description: "вказати приватну подію для чередування задач для завантаження,
+          завершення роботи, входу та виходу з системи"
 waydroid:
   error:
-    noArguments: No arguments provided.
-    notWayland: This feature is only available on Wayland.
-    secureBoot: This feature requires secure boot to be disabled in the BIOS.
-    noRepos: Could not find any repositories.
+    noArguments: Аргументів не надано.
+    notWayland: Ця функція доступна лише на Wayland.
+    secureBoot: Ця функція вимагає вимкнення безпечного завантаження у BIOS.
+    noRepos: Не вдалося знайти жодного репозиторію.
   install:
     info:
-      DownloadingPackage: Downloading apk from %s
-      PackageSelection: Pick application to install
-      PackageInCache: Application found in cache, not downloading again.
-      ConfirmInstall: Install application %s?
-      InstallSuccess: Installation successful
+      DownloadingPackage: Завантаження apk з %s
+      PackageSelection: Виберіть застосунок для встановлення
+      PackageInCache: Застосунок знайдено в кеші, повторно він не завантажиться.
+      ConfirmInstall: Встановити застосунок %s?
+      InstallSuccess: Успішно встановлено
     error:
-      InstallCancelled: Installation Cancelled
-      NotFound: Application %s was not found.
-    description: Install an application
+      InstallCancelled: Встановлення скасовано
+      NotFound: Застосунок %s не знайдено.
+    description: Встановити застосунок
     options:
       local:
-        description: Install a local apk
+        description: Встановити локальний apk
       noconfirm:
-        description: Do not ask for confirmation during installation
+        description: Не запитувати підтвердження під час встановлення
   info:
-    Author: 'Author: %s'
-    PackageName: 'Name: %s'
-    InternalName: 'Internal name: %s'
-    License: 'License: %s'
-    Summary: 'Summary: %s'
-    Repository: 'Repository: %s'
-    description: Display information about an application
+    Author: 'Автор: %s'
+    PackageName: 'Назва: %s'
+    InternalName: 'Внутрішня назва: %s'
+    License: 'Ліцензія: %s'
+    Summary: 'Підсумок: %s'
+    Repository: 'Репозиторій: %s'
+    description: Показує інформацію про застосунок
     info:
-      PackageSelection: Select application to display information from
+      PackageSelection: Виберіть застосунок для показу інформації
   update:
     info:
-      NoUpdates: Nothing to update
+      NoUpdates: Нічого оновлювати
     error:
-      FailUpdatePackageDownload: Failed to download APK for %s
-      FailUpdatePackageDatabase: Failed to update database entry for %s
-      FailUpdatePackageInstall: Failed to install update for %s
-      FailGetVersion: Failed to get version code for %s
-    finished: Finished updating applications
-    description: Update installed applications
+      FailUpdatePackageDownload: Не вдалося завантажити APK для %s
+      FailUpdatePackageDatabase: Не вдалося оновити запис у базі даних для %s
+      FailUpdatePackageInstall: Не вдалося встановити оновлення для %s
+      FailGetVersion: Не вдалося отримати код версії для %s
+    finished: Оновлення застосунків завершено
+    description: Оновити встановлені застосунки
   remove:
     info:
-      PackageSelection: Pick application to remove
-      ConfirmRemove: Remove application %s?
-      RemovePackage: Removing package %s
-    description: Uninstall an application
+      PackageSelection: Виберіть застосунок для видалення
+      ConfirmRemove: Видалити застосунок %s?
+      RemovePackage: Видалення пакета %s
+    description: Видалення застосунку
     error:
-      RemoveCancelled: Removal Cancelled
-      NoMatches: Application %s not found
+      RemoveCancelled: Видалення скасовано
+      NoMatches: Застосунок %s не знайдено
   clean:
     info:
-      success: Successfully deleted waydroid vso cache
-      apk: Deleting apk cache
-      index: Deleting index cache
+      success: Кеш waydroid vso успішно видалено
+      apk: Видалення кешу apk
+      index: Видалення індексного кешу
     error:
-      apk: Failed to delete apk cache
-      index: Failed to delete index cache
-    description: Cleans the waydroid vso cache
-  description: Manage the vso waydroid subsystem
+      apk: Не вдалося видалити кеш apk
+      index: Не вдалося видалити кеш індексу
+    description: Очищає кеш vso waydroid
+  description: Керування підсистемою vso waydroid
   delete:
-    description: Delete the waydroid subsystem
-    confirmation: Deleting the waydroid subsystem will delete any data stored in it.
-      Continue?
-    cancelled: Cancelled removal of subsystem.
+    description: Видалення підсистеми waydroid
+    confirmation: Видалення підсистеми waydroid призведе до видалення всіх даних,
+      що зберігаються у ній. Продовжити?
+    cancelled: Видалення підсистеми скасовано.
   init:
     options:
       force:
-        description: Force the initialization
-    description: Initialize the waydroid subsystem
+        description: Примусова ініціалізація
+    description: Ініціалізувати підсистему waydroid
     error:
-      alreadyInitialized: The waydroid subsystem is already initialized. Use the --force
-        flag to force the initialization.
+      alreadyInitialized: Підсистему waydroid вже ініціалізовано. Використовуйте прапорець
+        --force для примусової ініціалізації.
     info:
-      initialized: The waydroid subsystem has been initialized.
-    warnUnstable: Waydroid functionality is currently unstable. Expect bugs and missing
-      features. Continue anyway?
-    warnUnstableForce: Waydroid functionality is currently unstable. Expect bugs and
-      missing features.
+      initialized: Ініціалізовано підсистему waydroid.
+    warnUnstable: Функціональність Waydroid наразі нестабільна. Очікуйте на помилки
+      та відсутні функції. Все одно продовжувати?
+    warnUnstableForce: Функціональність Waydroid наразі нестабільна. Очікуйте на помилки
+      та відсутні функції.
   search:
-    description: Search for an application
-  downloadIndex: Downloading index for repository %s
+    description: Пошук застосунку
+  downloadIndex: Індекс завантаження для репозиторію %s
   sync:
-    description: Sync the repositories
+    description: Синхронізація репозиторіїв
   launcher:
-    description: Show the waydroid launcher
+    description: Показати панель запуску waydroid
   launch:
-    description: Launch an installed application
+    description: Запуск встановленого застосунку
   status:
-    description: Return the internal status code of the Android subsystem. For development
-      purposes.
+    description: Повертає внутрішній код стану підсистеми Android. З метою розробки.
