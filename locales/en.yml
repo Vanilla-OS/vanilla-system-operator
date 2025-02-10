@@ -232,6 +232,8 @@ tasks:
     options:
       privateEvent:
        description: "specify the private event to rotate tasks for boot, shutdown, login, and logout"
+      silent:
+       description: "don't output the status on each cycle"
 
 waydroid:
   description: "Manage the vso waydroid subsystem"

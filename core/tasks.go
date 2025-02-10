@@ -111,7 +111,7 @@ func RunTaskByUnitName(name string) error {
 
 // RotateTasks checks if no other rotators are running, then performs initial
 // checks and starts rotating every 5 seconds
-func RotateTasks(event string) error {
+func RotateTasks(event string, silent bool) error {
 	if isTasksRotatorIsRunning() {
 		fmt.Println("Rotator is already running")
 		return nil
@@ -128,9 +128,11 @@ func RotateTasks(event string) error {
 	}
 
 	for {
-		fmt.Println("---")
+		if !silent {
+			fmt.Println("---")
+		}
 		cChecks := GetCommonChecks()
-		err := runTasksRotator(cChecks, event)
+		err := runTasksRotator(cChecks, event, silent)
 		if err != nil {
 			fmt.Println(err)
 		}
@@ -140,7 +142,7 @@ func RotateTasks(event string) error {
 }
 
 // runTasksRotator checks which tasks should be run and starts rotating
-func runTasksRotator(cChecks *CommonChecks, event string) error {
+func runTasksRotator(cChecks *CommonChecks, event string, silent bool) error {
 	var err error
 	CurrentQueue, err = ListTasksDetailed()
 	if err != nil {
@@ -166,7 +168,9 @@ func runTasksRotator(cChecks *CommonChecks, event string) error {
 
 	CurrentQueue = []Task{}
 
-	fmt.Printf("Rotated %d tasks, %d failed, %d success\n", rotatedN, rotatedNFails, rotatedNSuccess)
+	if !silent {
+		fmt.Printf("Rotated %d tasks, %d failed, %d success\n", rotatedN, rotatedNFails, rotatedNSuccess)
+	}
 
 	return nil
 }
