@@ -132,9 +132,12 @@ func RotateTasks(event string, silent bool) error {
 			fmt.Println("---")
 		}
 		cChecks := GetCommonChecks()
-		err := runTasksRotator(cChecks, event, silent)
+		rotatedCount, err := runTasksRotator(cChecks, event, silent)
 		if err != nil {
 			fmt.Println(err)
+		} else if rotatedCount == 0 {
+			// avoid running constantly if no tasks are installed
+			time.Sleep(60 * time.Second)
 		}
 
 		time.Sleep(5 * time.Second)
@@ -142,11 +145,11 @@ func RotateTasks(event string, silent bool) error {
 }
 
 // runTasksRotator checks which tasks should be run and starts rotating
-func runTasksRotator(cChecks *CommonChecks, event string, silent bool) error {
+func runTasksRotator(cChecks *CommonChecks, event string, silent bool) (int, error) {
 	var err error
 	CurrentQueue, err = ListTasksDetailed()
 	if err != nil {
-		return err
+		return 0, err
 	}
 
 	rotatedN := 0
@@ -158,7 +161,7 @@ func runTasksRotator(cChecks *CommonChecks, event string, silent bool) error {
 			err = t.Run()
 			if err != nil {
 				rotatedNFails++
-				return err
+				return 0, err
 			}
 		}
 
@@ -172,7 +175,7 @@ func runTasksRotator(cChecks *CommonChecks, event string, silent bool) error {
 		fmt.Printf("Rotated %d tasks, %d failed, %d success\n", rotatedN, rotatedNFails, rotatedNSuccess)
 	}
 
-	return nil
+	return rotatedN, nil
 }
 
 // saveTasksRotatorRunning saves that the rotator is running
