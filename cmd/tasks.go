@@ -289,6 +289,15 @@ func NewTasksCommand() *cmdr.Command {
 		),
 	)
 
+	rotateCmd.WithBoolFlag(
+		cmdr.NewBoolFlag(
+			"silent",
+			"s",
+			vso.Trans("tasks.rotate.options.silent.description"),
+			false,
+		),
+	)
+
 	// Add subcommands to stacks
 	cmd.AddCommand(listCmd)
 	cmd.AddCommand(newCmd)
@@ -497,6 +506,10 @@ func rotateTasks(cmd *cobra.Command, args []string) error {
 	if err != nil {
 		event = "no-system-event"
 	}
+	silent, err := cmd.Flags().GetBool("silent")
+	if err != nil {
+		return err
+	}
 
-	return core.RotateTasks(event)
+	return core.RotateTasks(event, silent)
 }
