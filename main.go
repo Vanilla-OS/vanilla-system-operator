@@ -68,8 +68,9 @@ func main() {
 	root.AddCommand(pico...)
 
 	// waydroid
-	way := cmd.NewWayCommand()
-	root.AddCommand(way...)
+	// disabled until properly implemented again
+	// way := cmd.NewWayCommand()
+	// root.AddCommand(way...)
 
 	// run the app
 	err := vso.Run()
