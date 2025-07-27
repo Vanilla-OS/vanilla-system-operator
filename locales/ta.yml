@@ -1,342 +1,345 @@
 vso:
-  description: "The Vanilla System Operator is a package manager, a system updater
-    and a task automator."
+  description: "வெண்ணிலா சிச்டம் ஆபரேட்டர் ஒரு தொகுப்பு மேலாளர், கணினி புதுப்பிப்பாளர்
+    மற்றும் பணி ஆட்டோமேட்டர்."
   errors:
-    unknownCommand: "Unknown command: %s"
-    invalidInput: "Invalid input."
-    invalidChoice: "Invalid choice."
+    unknownCommand: "தெரியாத கட்டளை: %s"
+    invalidInput: "தவறான உள்ளீடு."
+    invalidChoice: "தவறான தேர்வு."
   info:
-    aborting: "Aborting as requested."
+    aborting: "கோரப்பட்டபடி கருக்கலைப்பு."
   msg:
-    help: "Show help for vso."
-    version: "Show version for vso."
-    usage: "Usage"
-    aliases: "Aliases"
-    examples: "Examples"
-    availableCommands: "Available Commands"
-    additionalCommands: "Additional Commands"
-    flags: "Flags"
-    globalFlags: "Global Flags"
-    additionalHelpTopics: "Additional help topics"
-    moreInfo: "Use %s for more information about a command"
+    help: "VSO க்கான உதவியைக் காட்டு."
+    version: "VSO க்கான பதிப்பைக் காட்டு."
+    usage: "பயன்பாடு"
+    aliases: "மாற்றுப்பெயர்கள்"
+    examples: "எடுத்துக்காட்டுகள்"
+    availableCommands: "கிடைக்கும் கட்டளைகள்"
+    additionalCommands: "கூடுதல் கட்டளைகள்"
+    flags: "கொடிகள்"
+    globalFlags: "உலகளாவிய கொடிகள்"
+    additionalHelpTopics: "கூடுதல் உதவி தலைப்புகள்"
+    moreInfo: "ஒரு கட்டளை பற்றிய கூடுதல் தகவலுக்கு %s ஐப் பயன்படுத்தவும்"
   terminal:
-    yes: "yes"
-    no: "no"
+    yes: "ஆம்"
+    no: "இல்லை"
 
 config:
-  description: "Manage the system configuration."
+  description: "கணினி உள்ளமைவை நிர்வகிக்கவும்."
   get:
-    description: "Get the system configuration"
+    description: "கணினி உள்ளமைவைப் பெறுங்கள்"
     error:
-      noKey: "No key specified."
-      noValue: "No value found for key: %s"
+      noKey: "எந்த விசையும் குறிப்பிடப்படவில்லை."
+      noValue: "விசைக்கு எந்த மதிப்பும் கிடைக்கவில்லை: %s"
     options:
       key:
-        description: "retrieve configuration value by using its key"
+        description: "அதன் விசையைப் பயன்படுத்தி உள்ளமைவு மதிப்பை மீட்டெடுக்கவும்"
   set:
-    description: "Set the system configuration"
+    description: "கணினி உள்ளமைவை அமைக்கவும்"
     error:
-      noKey: "No key specified."
-      noValue: "No value specified."
-      failed: "Failed to set configuration: %s"
+      noKey: "எந்த விசையும் குறிப்பிடப்படவில்லை."
+      noValue: "மதிப்பு குறிப்பிடப்படவில்லை."
+      failed: "உள்ளமைவை அமைப்பதில் தோல்வி: %s"
     options:
-      key: "key of the configuration to set"
-      value: "value of the configuration to set"
-    success: "Configuration updated successfully."
+      key: "அமைக்க உள்ளமைவின் விசை"
+      value: "அமைக்க உள்ளமைவின் மதிப்பு"
+    success: "உள்ளமைவு வெற்றிகரமாக புதுப்பிக்கப்பட்டது."
   show:
-    description: "Show the system configuration"
+    description: "கணினி உள்ளமைவைக் காட்டு"
 
 pico:
-  description: "Manage the VSO subsystem"
+  description: "VSO துணை அமைப்பை நிர்வகிக்கவும்"
   error:
-    notInitialized: "The VSO subsystem is not initialized. Please run `vso pico-init`
-      to initialize it."
-    alreadyInitialized: "The VSO subsystem is already initialized. Use the --force
-      flag to force the initialization."
-    noAppNameOrBin: "--app or --bin must be specified."
-    sameAppOrBin: "--app and --bin cannot be both specified."
-    exportingApp: "An error occurred while exporting the application: %s"
-    exportingBin: "An error occurred while exporting the binary: %s"
-    unexportingApp: "An error occurred while unexporting the application: %s"
-    unexportingBin: "An error occurred while unexporting the binary: %s"
-    unknownCommand: "Unknown command: %s"
-    shellReset: "It is impossible to reach the VSO shell. Do you want to reset it?
-      (This will remove all your software installed in the subsystem) [y/N]"
+    notInitialized: "VSO துணை அமைப்பு துவக்கப்படவில்லை. அதைத் தொடங்க `VSO Pico-init`
+      ஐ இயக்கவும்."
+    alreadyInitialized: "VSO துணை அமைப்பு ஏற்கனவே துவக்கப்பட்டுள்ளது. துவக்கத்தை கட்டாயப்படுத்த
+      -ஃபோர்ச் கொடியைப் பயன்படுத்தவும்."
+    noAppNameOrBin: "--app அல்லது--பின் குறிப்பிடப்பட வேண்டும்."
+    sameAppOrBin: "--app மற்றும்--பின் இரண்டையும் குறிப்பிட முடியாது."
+    exportingApp: "விண்ணப்பத்தை ஏற்றுமதி செய்யும் போது பிழை ஏற்பட்டது: %s"
+    exportingBin: "பைனரியை ஏற்றுமதி செய்யும் போது பிழை ஏற்பட்டது: %s"
+    unexportingApp: "பயன்பாடுகளை ஏற்றுமதி செய்யும் போது பிழை ஏற்பட்டது"
+    unexportingBin: "பைனரியை ஆய்வு செய்யும் போது பிழை ஏற்பட்டது: %s"
+    unknownCommand: "தெரியாத கட்டளை: %s"
+    shellReset: "VSO செல்லை அடைய முடியாது. அதை மீட்டமைக்க விரும்புகிறீர்களா? (இது
+      துணை அமைப்பில் நிறுவப்பட்ட உங்கள் எல்லா மென்பொருளையும் அகற்றும்) [y/n]"
   info:
-    deleting: "Deleting the VSO subsystem..."
-    initializing: "Initializing the VSO subsystem..."
-    initialized: "The VSO subsystem has been initialized."
-    exported: "Exported %s\n"
-    unexported: "Unexported %s\n"
-    exportedApps: "Exported %d applications"
-    unexportedApps: "Unexported %d applications"
-    shellInit: "Looks like your shell is not initialized yet. Do you want to initialize
-      it now? (Highly recommended) [y/N]"
-    fallbackShell: "Fallback to the host shell? This could lead to unexpected behavior.
-      [y/N]"
+    deleting: "VSO துணை அமைப்பை நீக்குகிறது ..."
+    initializing: "VSO துணை அமைப்பைத் தொடங்குதல் ..."
+    initialized: "VSO துணை அமைப்பு துவக்கப்பட்டுள்ளது."
+    exported: "ஏற்றுமதி %s\n"
+    unexported: "ஏற்றுக்கொள்ளப்பட்ட %s\n"
+    exportedApps: "ஏற்றுமதி செய்யப்பட்ட %d பயன்பாடுகள்"
+    unexportedApps: "ஏற்றுக்கொள்ளப்பட்ட %d பயன்பாடுகள்"
+    shellInit: "உங்கள் செல் இன்னும் துவக்கப்படவில்லை என்று தெரிகிறது. இப்போது அதைத்
+      தொடங்க விரும்புகிறீர்களா? (மிகவும் பரிந்துரைக்கப்படுகிறது) [y/n]"
+    fallbackShell: "புரவலன் செல்லுக்கு குறைவு? இது எதிர்பாராத நடத்தைக்கு வழிவகுக்கும்.
+      [y/n]"
   export:
-    description: "Export an application or binary from the subsystem"
+    description: "துணை அமைப்பிலிருந்து ஒரு விண்ணப்பம் அல்லது பைனரியை ஏற்றுமதி செய்யுங்கள்"
     options:
       app:
-        description: "the name of the application to export"
+        description: "ஏற்றுமதி செய்வதற்கான விண்ணப்பத்தின் பெயர்"
       bin:
-        description: "the name of the binary to export"
+        description: "ஏற்றுமதி செய்ய பைனரியின் பெயர்"
       binOutput:
-        description: "path of the binary output (default: ~/.local/bin/)"
+        description: "பைனரி வெளியீட்டின் பாதை (இயல்புநிலை: ~/.லோகல்/பின்/)"
   unexport:
-    description: "Unexport an application or binary from the subsystem"
+    description: "துணை அமைப்பிலிருந்து ஒரு விண்ணப்பம் அல்லது பைனரி விளக்கப்படம்"
     options:
       app:
-        description: "the name of the application to unexport"
+        description: "பயன்பாட்டின் பெயர்"
       bin:
-        description: "the name of the binary to unexport"
+        description: "பைனரியின் பெயர் முதல் விளக்கப்படம்"
       binOutput:
-        description: "path of the binary output (default: ~/.local/bin/)"
+        description: "பைனரி வெளியீட்டின் பாதை (இயல்புநிலை: ~/.லோகல்/பின்/)"
   init:
-    description: "Initialize the VSO subsystem, used for package management"
+    description: "தொகுப்பு நிர்வாகத்திற்குப் பயன்படுத்தப்படும் VSO துணை அமைப்பைத்
+      தொடங்கவும்"
     options:
       force:
-        description: "force the initialization if the subsystem is already initialized"
+        description: "துணை அமைப்பு ஏற்கனவே துவக்கப்பட்டால் துவக்கத்தை கட்டாயப்படுத்துங்கள்"
   install:
-    description: "Install an application inside the subsystem"
+    description: "துணை அமைப்பினுள் ஒரு பயன்பாட்டை நிறுவவும்"
   remove:
-    description: "Remove an application from the subsystem"
+    description: "துணை அமைப்பிலிருந்து ஒரு பயன்பாட்டை அகற்று"
   run:
-    description: "Run an application from the subsystem"
+    description: "துணை அமைப்பிலிருந்து ஒரு பயன்பாட்டை இயக்கவும்"
     options:
       noReset:
-        description: "do not propose to reset the subsystem if something goes wrong"
+        description: "ஏதேனும் தவறு நடந்தால் துணை அமைப்பை மீட்டமைக்க முன்மொழிய வேண்டாம்"
   search:
-    description: "Search for an application to install inside the subsystem"
+    description: "துணை அமைப்பினுள் நிறுவ ஒரு பயன்பாட்டைத் தேடுங்கள்"
   shell:
-    description: "Enter the subsystem environment"
+    description: "துணை அமைப்பு சூழலை உள்ளிடவும்"
   sideload:
-    description: "Sideload DEB/APK packages inside the subsystem"
+    description: "துணை அமைப்பினுள் பக்கவாட்டு/APK தொகுப்புகள்"
   update:
-    description: "Update the subsystem's package repository"
+    description: "துணை அமைப்பின் தொகுப்பு களஞ்சியத்தைப் புதுப்பிக்கவும்"
   upgrade:
-    description: "Upgrade the packages inside the subsystem"
+    description: "துணை அமைப்பினுள் தொகுப்புகளை மேம்படுத்தவும்"
 
 sysUpgrade:
-  description: "Execute system commands, such as upgrading the system"
+  description: "கணினியை மேம்படுத்துவது போன்ற கணினி கட்டளைகளை இயக்கவும்"
   check:
-    asExitCode: "checks for upgrade but doesn't print anything. Return exit code 0
-      if no upgrade is available and 1 otherwise."
-    description: "Check for system updates"
+    asExitCode: "மேம்படுத்தலுக்கான காசோலைகள் ஆனால் எதையும் அச்சிடாது. மேம்படுத்தல்
+      எதுவும் கிடைக்கவில்லை என்றால் வெளியேறும் குறியீடு 0 ஐ திரும்பவும், இல்லையெனில்
+      1."
+    description: "கணினி புதுப்பிப்புகளைச் சரிபார்க்கவும்"
     error:
-      asExitCodeAndJson: "An error occured when checking for updates. See the JSON
-        output for more details."
+      asExitCodeAndJson: "புதுப்பிப்புகளைச் சரிபார்க்கும்போது பிழை ஏற்பட்டது. மேலும்
+        விவரங்களுக்கு சாதொபொகு வெளியீட்டைப் பார்க்கவும்."
     info:
-      checking: "Checking for updates..."
+      checking: "புதுப்பிப்புகளைச் சரிபார்க்கிறது ..."
     json:
-      description: "output the result in JSON format"
+      description: "சாதொபொகு வடிவத்தில் முடிவை வெளியிடுங்கள்"
   sysUpgrade:
-    description: "Execute system commands, such as upgrading the system"
+    description: "கணினியை மேம்படுத்துவது போன்ற கணினி கட்டளைகளை இயக்கவும்"
     error:
-      updating: "An error occured when updating the system."
-      onHasUpdate: "Error while searching for updates: %s."
+      updating: "கணினியைப் புதுப்பிக்கும்போது பிழை ஏற்பட்டது."
+      onHasUpdate: "புதுப்பிப்புகளைத் தேடும்போது பிழை: %s."
     schedule:
-      daily: "daily"
-      weekly: "weekly"
-      monthly: "monthly"
+      daily: "நாள்தோறும்"
+      weekly: "வாராந்திர"
+      monthly: "மாதாந்திர"
     info:
-      updating: "Updating the system..."
-      willUpdateLater: "An update is available and will be automatically installed
-        based on your %s schedule. You can force the update using 'vso sys upgrade
-        --now'."
-      willNeverUpdate: "An update is available, but will not be automatically installed
-        because you disabled automatic updates. You can force the update using 'vso
-        sys upgrade --now'."
-      noUpdates: "Your system is already up-to-date."
-    now: "Trigger a system upgrade now"
+      updating: "கணினியைப் புதுப்பித்தல் ..."
+      willUpdateLater: "ஒரு புதுப்பிப்பு கிடைக்கிறது, மேலும் உங்கள் %s அட்டவணையின்
+        அடிப்படையில் தானாக நிறுவப்படும். 'VSO SYS மேம்படுத்தல் -now' ஐப் பயன்படுத்தி
+        புதுப்பிப்பை கட்டாயப்படுத்தலாம்."
+      willNeverUpdate: "புதுப்பிப்பு கிடைக்கிறது, ஆனால் தானியங்கி புதுப்பிப்புகளை
+        நீங்கள் முடக்கியுள்ளதால் தானாக நிறுவப்படாது. 'VSO SYS மேம்படுத்தல் -now' ஐப்
+        பயன்படுத்தி புதுப்பிப்பை கட்டாயப்படுத்தலாம்."
+      noUpdates: "உங்கள் கணினி ஏற்கனவே புதுப்பித்த நிலையில் உள்ளது."
+    now: "இப்போது ஒரு கணினி மேம்படுத்தலைத் தூண்டும்"
 
 tasks:
-  description: "Create and manage tasks"
+  description: "பணிகளை உருவாக்கி நிர்வகிக்கவும்"
   stacks:
     new:
       error:
-        emptyCommand: "The command cannot be empty."
-        emptyDescription: "The description cannot be empty."
-        emptyName: "The name cannot be empty."
-        noCommand: "No command specified."
-        noDescription: "No description specified."
-        noName: "No name specified."
+        emptyCommand: "கட்டளை காலியாக இருக்க முடியாது."
+        emptyDescription: "விளக்கம் காலியாக இருக்க முடியாது."
+        emptyName: "பெயர் காலியாக இருக்க முடியாது."
+        noCommand: "கட்டளை குறிப்பிடப்படவில்லை."
+        noDescription: "எந்த விளக்கமும் குறிப்பிடப்படவில்லை."
+        noName: "பெயர் குறிப்பிடப்படவில்லை."
       info:
-        askCommand: "Command: "
-        askDescription: "Description: "
-        askName: "Name: "
-        taskCreated: "Task has been created successfully."
+        askCommand: "கட்டளை: "
+        askDescription: "விளக்கம்: "
+        askName: "பெயர்: "
+        taskCreated: "பணி வெற்றிகரமாக உருவாக்கப்பட்டுள்ளது."
   list:
-    description: "List all tasks"
-    noTasks: "No tasks found."
+    description: "எல்லா பணிகளையும் பட்டியலிடுங்கள்"
+    noTasks: "பணிகள் எதுவும் கிடைக்கவில்லை."
     info:
-      foundTasks: "Found %d tasks."
+      foundTasks: "%d பணிகள் காணப்பட்டன."
     options:
       json:
-        description: "output the tasks in JSON format"
+        description: "சாதொபொகு வடிவத்தில் பணிகளை வெளியிடுங்கள்"
   new:
-    description: "Create a new task"
+    description: "புதிய பணியை உருவாக்கவும்"
     options:
       assumeYes:
-        description: "assume yes for all prompts"
+        description: "எல்லா தூண்டுதல்களுக்கும் ஆம் என்று வைத்துக் கொள்ளுங்கள்"
       at:
-        description: "schedule the task to execute at a specific time (hh:mm)"
+        description: "ஒரு குறிப்பிட்ட நேரத்தில் (HH: MM) செயல்படுத்த பணியை திட்டமிடுங்கள்"
       command:
-        description: "specify the command to execute"
+        description: "செயல்படுத்த கட்டளையைக் குறிப்பிடவும்"
       description:
-        description: "specify the task's description"
+        description: "பணியின் விளக்கத்தைக் குறிப்பிடவும்"
       every:
-        description: "schedule the task to execute every X time (minutes, hours, days)"
+        description: "ஒவ்வொரு ஃச் நேரத்தையும் (நிமிடங்கள், மணிநேரம், நாட்கள்) செயல்படுத்த
+          பணியைத் திட்டமிடுங்கள்"
       name:
-        description: "specify the task's name"
+        description: "பணியின் பெயரைக் குறிப்பிடவும்"
       needConfirm:
-        description: "ask for confirmation before executing the task"
+        description: "பணியைச் செயல்படுத்துவதற்கு முன் உறுதிப்படுத்தல் கேளுங்கள்"
       onBattery:
-        description: "execute the task only when the system is on battery"
+        description: "கணினி பேட்டரியில் இருக்கும்போது மட்டுமே பணியை இயக்கவும்"
       onCharge:
-        description: "execute the task only when the system is charging"
+        description: "கணினி கட்டணம் வசூலிக்கும்போது மட்டுமே பணியை இயக்கவும்"
       onConditionCommand:
-        description: "execute the task on condition command"
+        description: "நிபந்தனை கட்டளையில் பணியை இயக்கவும்"
       onCpuTemp:
-        description: "execute the task when CPU temperature is higher than 60°C"
+        description: "சிபியு வெப்பநிலை 60 ° C ஐ விட அதிகமாக இருக்கும்போது பணியை இயக்கவும்"
       onCpuUsage:
-        description: "execute the task when CPU usage is higher than X%"
+        description: "சிபியு பயன்பாடு x% ஐ விட அதிகமாக இருக்கும்போது பணியை இயக்கவும்"
       onDeviceConnect:
-        description: "execute the task when a device is connected"
+        description: "சாதனம் இணைக்கப்படும்போது பணியை இயக்கவும்"
       onDeviceDisconnect:
-        description: "execute the task when a device is disconnected"
+        description: "சாதனம் துண்டிக்கப்படும்போது பணியை இயக்கவும்"
       onDisconnect:
-        description: "execute the task when the system is disconnected from the network"
+        description: "நெட்வொர்க்கிலிருந்து கணினி துண்டிக்கப்படும்போது பணியை இயக்கவும்"
       onFullBattery:
-        description: "execute the task when the system is fully charged"
+        description: "கணினி முழுமையாக சார்ச் செய்யப்படும்போது பணியை இயக்கவும்"
       onHighCpuUsage:
-        description: "execute the task when CPU usage is higher than 50%"
+        description: "சிபியு பயன்பாடு 50% ஐ விட அதிகமாக இருக்கும்போது பணியை இயக்கவும்"
       onHighInternetUsage:
-        description: "execute the task when internet usage is higher than 500Kb/s"
+        description: "இணைய பயன்பாடு 500kb/s ஐ விட அதிகமாக இருக்கும்போது பணியை இயக்கவும்"
       onHighMemoryUsage:
-        description: "execute the task when memory usage is higher than 50%"
+        description: "நினைவக பயன்பாடு 50% ஐ விட அதிகமாக இருக்கும்போது பணியை இயக்கவும்"
       onInternetUsage:
-        description: "execute the task when internet usage is higher than XKb/s"
+        description: "இணைய பயன்பாடு xkb/s ஐ விட அதிகமாக இருக்கும்போது பணியை இயக்கவும்"
       onLowBattery:
-        description: "execute the task when the system is low on battery (20%)"
+        description: "கணினி பேட்டரியில் குறைவாக இருக்கும்போது பணியை இயக்கவும் (20%)"
       onMemoryUsage:
-        description: "execute the task when memory usage is higher than X%"
+        description: "நினைவக பயன்பாடு x% ஐ விட அதிகமாக இருக்கும்போது பணியை இயக்கவும்"
       onNetwork:
-        description: "execute the task when the system is connected to the network"
+        description: "கணினி பிணையத்துடன் இணைக்கப்படும்போது பணியை இயக்கவும்"
       onProcess:
-        description: "execute the task when a process starts"
+        description: "ஒரு செயல்முறை தொடங்கும் போது பணியை இயக்கவும்"
   rm:
-    description: "Remove a task"
+    description: "ஒரு பணியை அகற்று"
     error:
-      cannotDelete: "Cannot delete task: %s"
-      noName: "No task name specified."
-      notFound: "Task not found."
+      cannotDelete: "பணியை நீக்க முடியாது: %s"
+      noName: "பணி பெயர் குறிப்பிடப்படவில்லை."
+      notFound: "பணி கிடைக்கவில்லை."
     info:
-      askConfirmation: "Are you sure you want to delete the task %s? [y/N]"
-      taskDeleted: "Task has been deleted successfully."
+      askConfirmation: "பணி %s ஐ நீக்க விரும்புகிறீர்களா? [y/n]"
+      taskDeleted: "பணி வெற்றிகரமாக நீக்கப்பட்டுள்ளது."
     options:
       force:
-        description: "force the deletion of the task"
+        description: "பணியை நீக்க கட்டாயப்படுத்துங்கள்"
       name:
-        description: "specify the task's name"
+        description: "பணியின் பெயரைக் குறிப்பிடவும்"
   rotate:
-    description: "Rotate tasks"
+    description: "பணிகளை சுழற்றுங்கள்"
     options:
       privateEvent:
-        description: "specify the private event to rotate tasks for boot, shutdown,
-          login, and logout"
+        description: "துவக்க, பணிநிறுத்தம், உள்நுழைவு மற்றும் வெளியேறுவதற்கான பணிகளைச்
+          சுழற்ற தனிப்பட்ட நிகழ்வைக் குறிப்பிடவும்"
       silent:
-        description: "don't output the status on each cycle"
+        description: "ஒவ்வொரு சுழற்சியிலும் நிலையை வெளியிட வேண்டாம்"
 
 waydroid:
-  description: "Manage the vso waydroid subsystem"
-  downloadIndex: "Downloading index for repository %s"
+  description: "VSO வேட்ராய்டு துணை அமைப்பை நிர்வகிக்கவும்"
+  downloadIndex: "களஞ்சியத்திற்கான குறியீட்டு %s"
   clean:
-    description: "Cleans the waydroid vso cache"
+    description: "வேட்ராய்டு VSO கேச் சுத்தப்படுத்துகிறது"
     info:
-      index: "Deleting index cache"
-      apk: "Deleting apk cache"
-      success: "Successfully deleted waydroid vso cache"
+      index: "குறியீட்டு தற்காலிக சேமிப்பை நீக்குதல்"
+      apk: "APK தற்காலிக சேமிப்பை நீக்குகிறது"
+      success: "வெற்றிகரமாக நீக்கப்பட்டது வேட்ராய்டு VSO கேச்"
     error:
-      index: "Failed to delete index cache"
-      apk: "Failed to delete apk cache"
+      index: "குறியீட்டு தற்காலிக சேமிப்பை நீக்குவதில் தோல்வி"
+      apk: "APK தற்காலிக சேமிப்பை நீக்குவதில் தோல்வி"
   delete:
-    description: "Delete the waydroid subsystem"
-    confirmation: "Deleting the waydroid subsystem will delete any data stored in
-      it. Continue?"
-    cancelled: "Cancelled removal of subsystem."
+    description: "வேட்ராய்டு துணை அமைப்பை நீக்கவும்"
+    confirmation: "வேட்ராய்டு துணை அமைப்பை நீக்குவது அதில் சேமிக்கப்பட்ட எந்த தரவையும்
+      நீக்கிவிடும். தொடரவா?"
+    cancelled: "துணை அமைப்பை அகற்றுதல்."
   error:
-    noArguments: "No arguments provided."
-    noRepos: "Could not find any repositories."
-    notWayland: "This feature is only available on Wayland."
-    secureBoot: "This feature requires secure boot to be disabled in the BIOS."
+    noArguments: "எந்த வாதங்களும் வழங்கப்படவில்லை."
+    noRepos: "எந்த களஞ்சியங்களையும் கண்டுபிடிக்க முடியவில்லை."
+    notWayland: "இந்த நற்பொருத்தம் வேலண்டில் மட்டுமே கிடைக்கிறது."
+    secureBoot: "இந்த அம்சத்திற்கு பயாசில் பாதுகாப்பான துவக்கத்தை முடக்க வேண்டும்."
   install:
-    description: "Install an application"
+    description: "பயன்பாட்டை நிறுவவும்"
     options:
       local:
-        description: "Install a local apk"
+        description: "உள்ளக APK ஐ நிறுவவும்"
       noconfirm:
-        description: "Do not ask for confirmation during installation"
+        description: "நிறுவலின் போது உறுதிப்படுத்தலைக் கேட்க வேண்டாம்"
     info:
-      PackageInCache: "Application found in cache, not downloading again."
-      ConfirmInstall: "Install application %s?"
-      DownloadingPackage: "Downloading apk from %s"
-      PackageSelection: "Pick an application to install"
-      InstallSuccess: "Installation successful"
+      PackageInCache: "கேச்சில் காணப்படும் பயன்பாடு, மீண்டும் பதிவிறக்கவில்லை."
+      ConfirmInstall: "பயன்பாடுகளை நிறுவவா?"
+      DownloadingPackage: "%s இலிருந்து APK ஐ பதிவிறக்குகிறது"
+      PackageSelection: "நிறுவ ஒரு விண்ணப்பத்தைத் தேர்ந்தெடுக்கவும்"
+      InstallSuccess: "நிறுவல் வெற்றிகரமாக"
     error:
-      NotFound: "Application %s was not found."
-      InstallCancelled: "Installation Cancelled"
+      NotFound: "விண்ணப்பம் %s கண்டுபிடிக்கப்படவில்லை."
+      InstallCancelled: "நிறுவல் ரத்து செய்யப்பட்டது"
   init:
-    description: "Initialize the waydroid subsystem"
-    warnUnstable: "Waydroid functionality is currently unstable. Expect bugs and missing
-      features. Continue anyway?"
-    warnUnstableForce: "Waydroid functionality is currently unstable. Expect bugs
-      and missing features."
+    description: "வேட்ராய்டு துணை அமைப்பைத் தொடங்கவும்"
+    warnUnstable: "வேட்ராய்டு செயல்பாடு தற்போது நிலையற்றது. பிழைகள் மற்றும் காணாமல்
+      போன அம்சங்களை எதிர்பார்க்கலாம். எப்படியும் தொடரவா?"
+    warnUnstableForce: "வேட்ராய்டு செயல்பாடு தற்போது நிலையற்றது. பிழைகள் மற்றும் காணாமல்
+      போன அம்சங்களை எதிர்பார்க்கலாம்."
     options:
       force:
-        description: "Force the initialization"
+        description: "துவக்கத்தை கட்டாயப்படுத்துங்கள்"
     info:
-      initialized: "The waydroid subsystem has been initialized."
+      initialized: "வேட்ராய்டு துணை அமைப்பு துவக்கப்பட்டுள்ளது."
     error:
-      alreadyInitialized: "The waydroid subsystem is already initialized. Use the
-        --force flag to force the initialization."
+      alreadyInitialized: "வேட்ராய்டு துணை அமைப்பு ஏற்கனவே துவக்கப்பட்டுள்ளது. துவக்கத்தை
+        கட்டாயப்படுத்த -ஃபோர்ச் கொடியைப் பயன்படுத்தவும்."
   launch:
-    description: "Launch an installed application"
+    description: "நிறுவப்பட்ட பயன்பாட்டைத் தொடங்கவும்"
   launcher:
-    description: "Show the waydroid launcher"
+    description: "வேட்ராய்டு துவக்கியைக் காட்டு"
   remove:
-    description: "Uninstall an application"
+    description: "ஒரு பயன்பாட்டை நிறுவல் நீக்கவும்"
     info:
-      RemovePackage: "Removing package %s"
-      PackageSelection: "Pick an application to remove"
-      ConfirmRemove: "Remove application %s?"
+      RemovePackage: "தொகுப்பு %s ஐ நீக்குதல்"
+      PackageSelection: "அகற்ற ஒரு விண்ணப்பத்தைத் தேர்ந்தெடுக்கவும்"
+      ConfirmRemove: "பயன்பாடு %s ஐ அகற்றவா?"
     error:
-      NoMatches: "Application %s not found"
-      RemoveCancelled: "Removal Cancelled"
+      NoMatches: "விண்ணப்பம் %s காணப்படவில்லை"
+      RemoveCancelled: "அகற்றுதல் ரத்து செய்யப்பட்டது"
   search:
-    description: "Search for an application"
+    description: "பயன்பாட்டைத் தேடுங்கள்"
   sync:
-    description: "Sync the repositories"
+    description: "களஞ்சியங்களை ஒத்திசைக்கவும்"
   update:
-    description: "Update installed applications"
-    finished: "Finished updating applications"
+    description: "நிறுவப்பட்ட பயன்பாடுகளைப் புதுப்பிக்கவும்"
+    finished: "பயன்பாடுகளைப் புதுப்பித்தல் முடிந்தது"
     error:
-      FailGetVersion: "Failed to get version code for %s"
-      FailUpdatePackageDownload: "Failed to download APK for %s"
-      FailUpdatePackageDatabase: "Failed to update database entry for %s"
-      FailUpdatePackageInstall: "Failed to install the update for %s"
+      FailGetVersion: "%s க்கான பதிப்பு குறியீட்டைப் பெறுவதில் தோல்வி"
+      FailUpdatePackageDownload: "%s க்கு APK ஐ பதிவிறக்குவதில் தோல்வி"
+      FailUpdatePackageDatabase: "%s க்கான தரவுத்தள நுழைவைப் புதுப்பிப்பதில் தோல்வி"
+      FailUpdatePackageInstall: "%s க்கான புதுப்பிப்பை நிறுவுவதில் தோல்வி"
     info:
-      NoUpdates: "Nothing to update"
+      NoUpdates: "புதுப்பிக்க எதுவும் இல்லை"
   info:
-    description: "Display information about an application"
+    description: "பயன்பாடு பற்றிய தகவல்களைக் காண்பி"
     info:
-      PackageSelection: "Select an application to display information from"
-    PackageName: "Name: %s"
-    InternalName: "Internal name: %s"
-    Summary: "Summary: %s"
-    Author: "Author: %s"
-    License: "License: %s"
-    Repository: "Repository: %s"
+      PackageSelection: "தகவல்களைக் காண்பிக்க ஒரு பயன்பாட்டைத் தேர்ந்தெடுக்கவும்"
+    PackageName: "பெயர்: %s"
+    InternalName: "உள் பெயர்: %s"
+    Summary: "சுருக்கம்: %s"
+    Author: "ஆசிரியர்: %s"
+    License: "உரிமம்: %s"
+    Repository: "களஞ்சியம்: %s"
   status:
-    description: "Return the internal status code of the Android subsystem. For development
-      purposes."
+    description: "ஆண்ட்ராய்டு துணை அமைப்பின் உள் நிலை குறியீட்டைத் தரவும். வளர்ச்சி
+      நோக்கங்களுக்காக."
