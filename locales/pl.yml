@@ -12,13 +12,13 @@ vso:
     no: "nie"
 
   msg:
-    usage: Usage
-    aliases: Aliases
+    usage: Użycie
+    aliases: Aliasy
     globalFlags: Global Flags
-    flags: Flags
+    flags: Flagi
     help: Show help for vso.
     moreInfo: Use %s for more information about a command
-    examples: Examples
+    examples: Przykłady
     additionalHelpTopics: Additional help topics
     availableCommands: Available Commands
     version: Show version for vso.
@@ -148,9 +148,9 @@ sysUpgrade:
     now: "Trigger a system upgrade now"
 
     schedule:
-      monthly: monthly
-      daily: daily
-      weekly: weekly
+      monthly: co miesiąc
+      daily: codziennie
+      weekly: co tydzień
 tasks:
   description: "Create and manage tasks"
   stacks:
@@ -163,9 +163,9 @@ tasks:
         noDescription: "No description specified."
         noName: "Nie określono nazwy."
       info:
-        askCommand: "Command: "
-        askDescription: "Description: "
-        askName: "Name: "
+        askCommand: "Komenda: "
+        askDescription: "Opis: "
+        askName: "Nazwa: "
         taskCreated: "Task has been created successfully."
   list:
     description: "List all tasks"
@@ -283,10 +283,10 @@ waydroid:
       ConfirmInstall: "Install application %s?"
       DownloadingPackage: "Downloading apk from %s"
       PackageSelection: "Pick an application to install"
-      InstallSuccess: "Installation successful"
+      InstallSuccess: "Instalacja powiodła się"
     error:
       NotFound: "Application %s was not found."
-      InstallCancelled: "Installation Cancelled"
+      InstallCancelled: "Anulowano instalację"
   init:
     description: "Initialize the waydroid subsystem"
     options:
