@@ -1,6 +1,6 @@
 vso:
-  description: "O Vanilla System Operator é um gestor de pacotes, um atualizador do
-    sistema e um automatizador de tarefas."
+  description: "O Vanilla System Operator é um gerenciador de pacotes, um atualizador
+    do sistema e um automatizador de tarefas."
   errors:
     unknownCommand: "Comando desconhecido: %s"
     invalidInput: "Entrada inválida."
@@ -141,9 +141,9 @@ sysUpgrade:
       willUpdateLater: "Um update está disponível e será instalado automaticamente
         com base na sua configuração: %s. Você pode forçar a atualizando utilizando
         'vso sys upgrade --now'."
-      willNeverUpdate: Uma atualização está disponível, mas não será instalada por
-        que você desativou as atualizações automáticas. Você pode forçar a atualização
-        usando 'vso sys upgrade --now'.
+      willNeverUpdate: Uma atualização está disponível, mas não será instalada 
+        por que você desativou as atualizações automáticas. Você pode forçar a 
+        atualização usando 'vso sys upgrade --now'.
     now: "Acionar uma atualização do sistema agora"
 
     schedule:
@@ -269,8 +269,8 @@ waydroid:
     cancelled: "Remoção de subsistema cancelada."
   error:
     noArguments: "Nenhum argumento fornecido."
-    secureBoot: Essa funcionalidade requer que o secure boot esteja desativado na
-      BIOS.
+    secureBoot: Essa funcionalidade requer que o secure boot esteja desativado 
+      na BIOS.
     notWayland: Essa funcionalidade está disponível apenas no Wayland.
     noRepos: Não foi possível encontrar nenhum repositório.
   install:
@@ -299,10 +299,10 @@ waydroid:
     error:
       alreadyInitialized: "O subsistema waydroid já foi inicializado. Use o sinalizador
         --force para forçar a inicialização."
-    warnUnstable: O recurso Waydroid é instável. Bugs e recursos faltando podem aparecer.
-      Deseja continuar mesmo assim?
-    warnUnstableForce: O recurso Waydroid é instável. Bugs e recursos faltando podem
-      aparecer.
+    warnUnstable: O recurso Waydroid é instável. Bugs e recursos faltando podem 
+      aparecer. Deseja continuar mesmo assim?
+    warnUnstableForce: O recurso Waydroid é instável. Bugs e recursos faltando 
+      podem aparecer.
   launch:
     description: "Lançar uma aplicação instalada"
   launcher:
