@@ -251,6 +251,8 @@ tasks:
       privateEvent:
         description: "specifică evenimentul privat pentru a rotii sarcinile pentru
           resetare, închidere, login, și logout"
+      silent:
+        description: don't output the status on each cycle
 waydroid:
   error:
     noArguments: Niciun argument furnizat.

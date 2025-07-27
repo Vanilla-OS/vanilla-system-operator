@@ -236,6 +236,8 @@ tasks:
       privateEvent:
         description: specificeer de privégebeurtenis om taken voor opstarten, afsluiten,
           inloggen en uitloggen te roteren
+      silent:
+        description: don't output the status on each cycle
 sysUpgrade:
   description: Voer systeem­opdrachten uit, zoals het upgraden van het systeem
   check:

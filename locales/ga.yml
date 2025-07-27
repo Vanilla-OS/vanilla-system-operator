@@ -251,6 +251,8 @@ tasks:
         description: "Sonraigh an teagmhas príobháideach chun tascanna a rothlú le
           haghaidh tosaithe, múchadh, logáil isteach, agus logáil amach"
 
+      silent:
+        description: don't output the status on each cycle
 waydroid:
   description: "Bainistigh an fochóras vso waydroid"
   downloadIndex: "Innéacs á íosluchtú don stór %s"
