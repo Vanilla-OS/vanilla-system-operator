@@ -12,17 +12,17 @@ vso:
     no: "không"
 
   msg:
-    flags: Flags
-    moreInfo: Use %s for more information about a command
-    examples: Examples
-    usage: Usage
-    additionalHelpTopics: Additional help topics
-    aliases: Aliases
-    availableCommands: Available Commands
-    version: Show version for vso.
-    globalFlags: Global Flags
-    help: Show help for vso.
-    additionalCommands: Additional Commands
+    flags: Cờ
+    moreInfo: Sử dụng %s để biết thêm thông tin về lệnh
+    examples: Ví dụ
+    usage: Cách sử dụng
+    additionalHelpTopics: Các chủ đề trợ giúp bổ sung
+    aliases: Bí danh
+    availableCommands: Các lệnh có sẵn
+    version: Hiển thị phiên bản cho vso.
+    globalFlags: Cờ chung
+    help: Hiển thị trợ giúp cho vso.
+    additionalCommands: Các lệnh bổ sung
 config:
   description: "Quản lí cấu hình hệ thống."
   get:
@@ -72,8 +72,8 @@ pico:
     unexportedApps: "Đã ngừng xuất %d ứng dụng"
     shellInit: "Có vẻ như bạn chưa khởi tạo cửa sổ lệnh. Bạn có muốn khởi tạo ngay
       không? (Nên làm) [y/N]"
-    fallbackShell: "Fallback to the host shell? This could lead to unexpected behavior.
-      [y/N]"
+    fallbackShell: "Trở lại host shell? Điều này có thể dẫn đến hành vi không mong
+      muốn. [y/N]"
   export:
     description: "Xuất một ứng dụng hoặc mã nhị phân từ hệ thống con"
     options:
@@ -118,7 +118,7 @@ pico:
     description: "Nâng cấp các gói trong hệ thống con"
 
 sysUpgrade:
-  description: "Nâng cấp hệ thống"
+  description: "Thực hiện các lệnh hệ thống, chẳng hạn như nâng cấp hệ thống"
   check:
     asExitCode: "kiểm tra cập nhật và không xuất kết quả. Trả về mã 0 nếu không có
       và 1 nếu có bản nâng cấp."
@@ -131,25 +131,25 @@ sysUpgrade:
     json:
       description: "xuất kết quả dưới dạng JSON"
   sysUpgrade:
-    description: "Nâng cấp hệ thống"
+    description: "Thực hiện các lệnh hệ thống, chẳng hạn như nâng cấp hệ thống"
     error:
       updating: "Có một lỗi đã xảy ra khi cập nhật hệ thống."
-      onHasUpdate: 'Error while searching for updates: %s.'
+      onHasUpdate: 'Lỗi khi tìm kiếm bản cập nhật: %s.'
     info:
       updating: "Đang cập nhật hệ thống..."
-      noUpdates: Your system is already up-to-date.
-      willUpdateLater: An update is available and will be automatically installed
-        based on your %s schedule. You can force the update using 'vso sys-upgrade
+      noUpdates: Hệ thống của bạn đã được cập nhật.
+      willUpdateLater: Bản cập nhật hiện đã có và sẽ được tự động cài đặt dựa trên
+        lịch trình %s của bạn. Bạn có thể buộc cập nhật bằng cách sử dụng 'vso sys
         upgrade --now'.
-      willNeverUpdate: An update is available, but will not be automatically installed
-        because you disabled automatic updates. You can force the update using 'vso
-        sys-upgrade upgrade --now'.
+      willNeverUpdate: Có bản cập nhật, nhưng sẽ không tự động cài đặt vì bạn đã tắt
+        cập nhật tự động. Bạn có thể buộc cập nhật bằng cách sử dụng 'vso sys upgrade
+        --now'.
     now: "Kích hoạt bản cập nhật hệ thống ngay"
 
     schedule:
-      monthly: monthly
-      daily: daily
-      weekly: weekly
+      monthly: hàng tháng
+      daily: hằng ngày
+      weekly: hàng tuần
 tasks:
   description: "Tạo và quản lí công việc"
   stacks:
@@ -178,7 +178,7 @@ tasks:
     description: "Tạo công việc mới"
     options:
       assumeYes:
-        description: "assume yes for all prompts"
+        description: "giả sử có cho tất cả các lời nhắc"
       at:
         description: "lên kế hoạch thực hiện công việc tại một thời điểm cụ thể (giờ:phút)"
       command:
@@ -241,25 +241,25 @@ tasks:
       name:
         description: "xác định tên công việc"
   rotate:
-    description: "Rotate tasks"
+    description: "Xoay vòng nhiệm vụ"
     options:
       privateEvent:
-        description: "specify the private event to rotate tasks for boot, shutdown,
-          login, and logout"
+        description: "chỉ định sự kiện riêng tư để luân phiên các tác vụ khởi động,
+          tắt máy, đăng nhập và đăng xuất"
 
       silent:
-        description: don't output the status on each cycle
+        description: không đưa ra trạng thái trên mỗi chu kỳ
 waydroid:
   description: "Quản lí hệ thống con vso waydroid"
-  downloadIndex: "Downloading index for repository %s"
+  downloadIndex: "Đang tải xuống chỉ mục cho kho lưu trữ %s"
   clean:
     description: "Xoá bộ nhớ đệm waydroid vso"
     info:
-      index: "Deleting index cache"
+      index: "Xóa bộ nhớ đệm chỉ mục"
       apk: "Xoá bộ nhớ đệm apk"
       success: "Xoá thành công bộ nhớ đệm waydroid vso"
     error:
-      index: "Failed to delete index cache"
+      index: "Không xóa được bộ nhớ đệm chỉ mục"
       apk: "Xoá bộ nhớ đệm apk thất bại"
   delete:
     description: "Xoá hệ thống con waydroid"
@@ -268,9 +268,9 @@ waydroid:
     cancelled: "Đã huỷ việc xoá hệ thống con"
   error:
     noArguments: "Không có tham số nào được cung cấp."
-    notWayland: This feature is only available on Wayland.
-    secureBoot: This feature requires secure boot to be disabled in the BIOS.
-    noRepos: Could not find any repositories.
+    notWayland: Tính năng này chỉ có trên Wayland.
+    secureBoot: Tính năng này yêu cầu phải tắt khởi động an toàn trong BIOS.
+    noRepos: Không tìm thấy kho lưu trữ nào.
   install:
     description: "Cài đặt một ứng dụng"
     options:
@@ -297,10 +297,10 @@ waydroid:
     error:
       alreadyInitialized: "Hệ thống con waydroid đã được khởi tạo sẵn. Dùng flag --force
         để bắt buộc khởi tạo."
-    warnUnstable: Waydroid functionality is currently unstable. Expect bugs and missing
-      features. Continue anyway?
-    warnUnstableForce: Waydroid functionality is currently unstable. Expect bugs and
-      missing features.
+    warnUnstable: Chức năng Waydroid hiện không ổn định. Có thể có lỗi và thiếu tính
+      năng. Tiếp tục chứ?
+    warnUnstableForce: Chức năng Waydroid hiện không ổn định. Có thể có lỗi và thiếu
+      tính năng.
   launch:
     description: "Khởi động một ứng dụng đã cài đặt"
   launcher:
@@ -333,7 +333,7 @@ waydroid:
     info:
       PackageSelection: "Chọn một ứng dụng để hiển thị thông tin"
     PackageName: "Tên: %s"
-    InternalName: "Internal name: %s"
+    InternalName: "Tên nội bộ: %s"
     Summary: "Tóm tắt: %s"
     Author: "Tác giả: %s"
     License: "Giấy phép: %s"
