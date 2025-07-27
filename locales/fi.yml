@@ -1,342 +1,344 @@
 vso:
-  description: "The Vanilla System Operator is a package manager, a system updater
-    and a task automator."
+  description: "Vanilla System Operator on paketinhallinta, järjestelmän päivittäjä
+    ja tehtäväautomaatio."
   errors:
-    unknownCommand: "Unknown command: %s"
-    invalidInput: "Invalid input."
-    invalidChoice: "Invalid choice."
+    unknownCommand: "Tuntematon komento: %s"
+    invalidInput: "Epäkelvollinen syöte."
+    invalidChoice: "Epäkelvollinen valinta."
   info:
-    aborting: "Aborting as requested."
+    aborting: "Keskeytetään kuten pyydettiin."
   msg:
-    help: "Show help for vso."
-    version: "Show version for vso."
-    usage: "Usage"
-    aliases: "Aliases"
-    examples: "Examples"
-    availableCommands: "Available Commands"
-    additionalCommands: "Additional Commands"
-    flags: "Flags"
-    globalFlags: "Global Flags"
-    additionalHelpTopics: "Additional help topics"
-    moreInfo: "Use %s for more information about a command"
+    help: "Näytä apu vso:lle."
+    version: "Näytä versio vso:lle."
+    usage: "Käyttö"
+    aliases: "Aliakset"
+    examples: "Esimerkit"
+    availableCommands: "Saatavilla olevat komennot"
+    additionalCommands: "Lisäkomennot"
+    flags: "Liput"
+    globalFlags: "Yleispätevät liput"
+    additionalHelpTopics: "Lisäapuaiheet"
+    moreInfo: "Käytä %s saadaksesi lisätietoja komennosta"
   terminal:
-    yes: "yes"
-    no: "no"
+    yes: "kyllä"
+    no: "ei"
 
 config:
-  description: "Manage the system configuration."
+  description: "Hallitse järjestelmän kokoonpanoa."
   get:
-    description: "Get the system configuration"
+    description: "Hanki järjestelmän kokoonpano"
     error:
-      noKey: "No key specified."
-      noValue: "No value found for key: %s"
+      noKey: "Ei avainta määritetty."
+      noValue: "Arvoa ei löytynyt avaimelle: %s"
     options:
       key:
-        description: "retrieve configuration value by using its key"
+        description: "noutaa kokoonpanoarvon käyttämällä sen avainta"
   set:
-    description: "Set the system configuration"
+    description: "Aseta järjestelmän kokoonpano"
     error:
-      noKey: "No key specified."
-      noValue: "No value specified."
-      failed: "Failed to set configuration: %s"
+      noKey: "Avainta ei ole määritetty."
+      noValue: "Arvoa ei ole määritetty."
+      failed: "Kokoonpanon määrittäminen epäonnistui: %s"
     options:
-      key: "key of the configuration to set"
-      value: "value of the configuration to set"
-    success: "Configuration updated successfully."
+      key: "määritettävän kokoonpanon avain"
+      value: "määritettävän kokoonpanon arvo"
+    success: "Kokoonpanon päivitys onnistui."
   show:
-    description: "Show the system configuration"
+    description: "Näytä järjestelmän kokoonpano"
 
 pico:
-  description: "Manage the VSO subsystem"
+  description: "Hallinnoi VSO-alijärjestelmää"
   error:
-    notInitialized: "The VSO subsystem is not initialized. Please run `vso pico-init`
-      to initialize it."
-    alreadyInitialized: "The VSO subsystem is already initialized. Use the --force
-      flag to force the initialization."
-    noAppNameOrBin: "--app or --bin must be specified."
-    sameAppOrBin: "--app and --bin cannot be both specified."
-    exportingApp: "An error occurred while exporting the application: %s"
-    exportingBin: "An error occurred while exporting the binary: %s"
-    unexportingApp: "An error occurred while unexporting the application: %s"
-    unexportingBin: "An error occurred while unexporting the binary: %s"
-    unknownCommand: "Unknown command: %s"
-    shellReset: "It is impossible to reach the VSO shell. Do you want to reset it?
-      (This will remove all your software installed in the subsystem) [y/N]"
+    notInitialized: "VSO-alijärjestelmää ei ole alustettu. Suorita `vso pico-init`
+      alustaaksesi sen."
+    alreadyInitialized: "VSO-alijärjestelmä on jo alustettu. Käytä lippua `--force`
+      pakottaaksesi alustuksen."
+    noAppNameOrBin: "`--app` tai `--bin` on määritettävä."
+    sameAppOrBin: "`--app` ja `--bin` eivät voi olla molemmat määritettyjä."
+    exportingApp: "Sovellusta vietäessä tapahtui virhe: %s"
+    exportingBin: "Binaaritiedostoa vietäessä tapahtui virhe: %s"
+    unexportingApp: "Sovelluksen vientiä peruttaessa tapahtui virhe: %s"
+    unexportingBin: "Binaarin vientiä peruttaessa tapahtui virhe: %s"
+    unknownCommand: "Tuntematon komento: %s"
+    shellReset: "VSO-komentotulkkiin on mahdotonta päästä. Haluatko nollata sen? (Tämä
+      poistaa kaikki alijärjestelmään asennetut ohjelmistot) [k/E]"
   info:
-    deleting: "Deleting the VSO subsystem..."
-    initializing: "Initializing the VSO subsystem..."
-    initialized: "The VSO subsystem has been initialized."
-    exported: "Exported %s\n"
-    unexported: "Unexported %s\n"
-    exportedApps: "Exported %d applications"
-    unexportedApps: "Unexported %d applications"
-    shellInit: "Looks like your shell is not initialized yet. Do you want to initialize
-      it now? (Highly recommended) [y/N]"
-    fallbackShell: "Fallback to the host shell? This could lead to unexpected behavior.
-      [y/N]"
+    deleting: "Poistetaan VSO-alijärjestelmää..."
+    initializing: "Alustetaan VSO-alijärjestelmää..."
+    initialized: "VSO-alijärjestelmä on alustettu."
+    exported: "Viety %s\n"
+    unexported: "Ei-viety %s\n"
+    exportedApps: "Viety %d sovellusta"
+    unexportedApps: "Ei-viety %d sovellusta"
+    shellInit: "Vaikuttaa siltä, että komentotulkkiasi ei ole vielä alustettu. Haluatko
+      alustaa sen nyt? (Erittäin suositeltava) [k/E]"
+    fallbackShell: "Palaako isäntäkomentotulkkiin? Tämä voi johtaa odottamattomaan
+      käyttäytymiseen. [k/E]"
   export:
-    description: "Export an application or binary from the subsystem"
+    description: "Vie sovellus tai binaari alijärjestelmästä"
     options:
       app:
-        description: "the name of the application to export"
+        description: "vietävän sovelluksen nimi"
       bin:
-        description: "the name of the binary to export"
+        description: "vietävän binaarin nimi"
       binOutput:
-        description: "path of the binary output (default: ~/.local/bin/)"
+        description: "binäärilähdön polku (oletus: ~/.local/bin/)"
   unexport:
-    description: "Unexport an application or binary from the subsystem"
+    description: "Peruuta sovelluksen tai binaarin vienti alijärjestelmästä"
     options:
       app:
-        description: "the name of the application to unexport"
+        description: "viennin peruutettavan sovelluksen nimi"
       bin:
-        description: "the name of the binary to unexport"
+        description: "viennin peruutettavan binaarin nimi"
       binOutput:
-        description: "path of the binary output (default: ~/.local/bin/)"
+        description: "binäärilähdön polku (oletus: ~/.local/bin/)"
   init:
-    description: "Initialize the VSO subsystem, used for package management"
+    description: "Alusta pakettien hallintaan käytettävä VSO-alijärjestelmä"
     options:
       force:
-        description: "force the initialization if the subsystem is already initialized"
+        description: "pakota alustus, jos alijärjestelmä on jo alustettu"
   install:
-    description: "Install an application inside the subsystem"
+    description: "Asenna sovellus alajärjestelmän sisään"
   remove:
-    description: "Remove an application from the subsystem"
+    description: "Poista sovellus alajärjestelmästä"
   run:
-    description: "Run an application from the subsystem"
+    description: "Suorita sovellus alajärjestelmästä"
     options:
       noReset:
-        description: "do not propose to reset the subsystem if something goes wrong"
+        description: "älä ehdota alijärjestelmän nollausta, jos jokin menee pieleen"
   search:
-    description: "Search for an application to install inside the subsystem"
+    description: "Etsi alijärjestelmään asennettava sovellus"
   shell:
-    description: "Enter the subsystem environment"
+    description: "Siirry alijärjestelmäympäristöön"
   sideload:
-    description: "Sideload DEB/APK packages inside the subsystem"
+    description: "Sivulataa DEB/APK-paketit alijärjestelmän sisällä"
   update:
-    description: "Update the subsystem's package repository"
+    description: "Päivitä alijärjestelmän pakettitietovarasto"
   upgrade:
-    description: "Upgrade the packages inside the subsystem"
+    description: "Päivitä alijärjestelmän sisällä olevat paketit"
 
 sysUpgrade:
-  description: "Execute system commands, such as upgrading the system"
+  description: "Suorita järjestelmäkomentoja, kuten järjestelmän päivitys"
   check:
-    asExitCode: "checks for upgrade but doesn't print anything. Return exit code 0
-      if no upgrade is available and 1 otherwise."
-    description: "Check for system updates"
+    asExitCode: "tarkistaa päivityksen, mutta ei tulosta mitään. Palauta poistumiskoodi
+      0, jos päivitystä ei ole saatavilla, ja 1 muussa tapauksessa."
+    description: "Tarkista järjestelmäpäivitysten varalta"
     error:
-      asExitCodeAndJson: "An error occured when checking for updates. See the JSON
-        output for more details."
+      asExitCodeAndJson: "Tapahtui virhe tarkistettaessa päivitysten varalta. Katso
+        lisätietoja JSON-lähdöstä."
     info:
-      checking: "Checking for updates..."
+      checking: "Tarkistetaan päivitysten varalta..."
     json:
-      description: "output the result in JSON format"
+      description: "tulosta tulosteen tulos JSON-muodossa"
   sysUpgrade:
-    description: "Execute system commands, such as upgrading the system"
+    description: "Suorita järjestelmäkomentoja, kuten järjestelmän päivitys"
     error:
-      updating: "An error occured when updating the system."
-      onHasUpdate: "Error while searching for updates: %s."
+      updating: "Järjestelmää päivitettäessä tapahtui virhe."
+      onHasUpdate: "Päivityksiä haettaessa tapahtui virhe: %s."
     schedule:
-      daily: "daily"
-      weekly: "weekly"
-      monthly: "monthly"
+      daily: "päivittäin"
+      weekly: "viikoittain"
+      monthly: "kuukausittain"
     info:
-      updating: "Updating the system..."
-      willUpdateLater: "An update is available and will be automatically installed
-        based on your %s schedule. You can force the update using 'vso sys upgrade
-        --now'."
-      willNeverUpdate: "An update is available, but will not be automatically installed
-        because you disabled automatic updates. You can force the update using 'vso
-        sys upgrade --now'."
-      noUpdates: "Your system is already up-to-date."
-    now: "Trigger a system upgrade now"
+      updating: "Päivitetään järjestelmää..."
+      willUpdateLater: "Päivitys on saatavilla ja se asennetaan automaattisesti %s
+        aikataulusi mukaan. Voit pakottaa päivityksen komennolla `vso sys upgrade
+        --now`."
+      willNeverUpdate: "Päivitys on saatavilla, mutta sitä ei asenneta automaattisesti,
+        koska olet poistanut automaattiset päivitykset käytöstä. Voit pakottaa päivityksen
+        komennolla `vso sys upgrade --now`."
+      noUpdates: "Järjestelmäsi on jo ajan tasalla."
+    now: "Käynnistytä järjestelmäpäivitys nyt"
 
 tasks:
-  description: "Create and manage tasks"
+  description: "Luo ja hallitse tehtäviä"
   stacks:
     new:
       error:
-        emptyCommand: "The command cannot be empty."
-        emptyDescription: "The description cannot be empty."
-        emptyName: "The name cannot be empty."
-        noCommand: "No command specified."
-        noDescription: "No description specified."
-        noName: "No name specified."
+        emptyCommand: "Komento ei voi olla tyhjä."
+        emptyDescription: "Kuvaus ei voi olla tyhjä."
+        emptyName: "Nimi ei voi olla tyhjä."
+        noCommand: "Komentoa ei ole määritetty."
+        noDescription: "Kuvausta ei ole määritetty."
+        noName: "Nimeä ei ole määritetty."
       info:
-        askCommand: "Command: "
-        askDescription: "Description: "
-        askName: "Name: "
-        taskCreated: "Task has been created successfully."
+        askCommand: "Komento: "
+        askDescription: "Kuvaus: "
+        askName: "Nimi: "
+        taskCreated: "Tehtävän luominen onnistui."
   list:
-    description: "List all tasks"
-    noTasks: "No tasks found."
+    description: "Luetteloi kaikki tehtävät"
+    noTasks: "Tehtäviä ei löytynyt."
     info:
-      foundTasks: "Found %d tasks."
+      foundTasks: "Löytyi %d tehtävää."
     options:
       json:
-        description: "output the tasks in JSON format"
+        description: "tulosta tehtävät JSON-muodossa"
   new:
-    description: "Create a new task"
+    description: "Luo uusi tehtävä"
     options:
       assumeYes:
-        description: "assume yes for all prompts"
+        description: "oletetaan \"kyllä\" kaikille kehotteille"
       at:
-        description: "schedule the task to execute at a specific time (hh:mm)"
+        description: "ajoita tehtävä suoritettavaksi tiettyyn aikaan (tt:mm)"
       command:
-        description: "specify the command to execute"
+        description: "määritä suoritettava komento"
       description:
-        description: "specify the task's description"
+        description: "määritä tehtävän kuvaus"
       every:
-        description: "schedule the task to execute every X time (minutes, hours, days)"
+        description: "ajoita tehtävä suoritettavaksi joka X kerta (minuutit, tunnit,
+          päivät)"
       name:
-        description: "specify the task's name"
+        description: "määritä tehtävän nimi"
       needConfirm:
-        description: "ask for confirmation before executing the task"
+        description: "pyytää vahvistusta ennen tehtävän suorittamista"
       onBattery:
-        description: "execute the task only when the system is on battery"
+        description: "suorittaa tehtävän vain, kun järjestelmä on akulla"
       onCharge:
-        description: "execute the task only when the system is charging"
+        description: "suorittaa tehtävän vain järjestelmän latautuessa"
       onConditionCommand:
-        description: "execute the task on condition command"
+        description: "suorita tehtävä ehtokomennolla"
       onCpuTemp:
-        description: "execute the task when CPU temperature is higher than 60°C"
+        description: "suorittaa tehtävän, kun suorittimen lämpötila on yli 60 °C"
       onCpuUsage:
-        description: "execute the task when CPU usage is higher than X%"
+        description: "suorittaa tehtävän, kun suorittimen käyttö on yli X %"
       onDeviceConnect:
-        description: "execute the task when a device is connected"
+        description: "suorittaa tehtävän, kun laite on kytketty"
       onDeviceDisconnect:
-        description: "execute the task when a device is disconnected"
+        description: "suorittaa tehtävän, kun laite on irrotettu"
       onDisconnect:
-        description: "execute the task when the system is disconnected from the network"
+        description: "suorittaa tehtävän, kun järjestelmä on irrotettu verkosta"
       onFullBattery:
-        description: "execute the task when the system is fully charged"
+        description: "suorittaa tehtävän, kun järjestelmä on ladattu täyteen"
       onHighCpuUsage:
-        description: "execute the task when CPU usage is higher than 50%"
+        description: "suorittaa tehtävän, kun suorittimen käyttö on yli 50 %"
       onHighInternetUsage:
-        description: "execute the task when internet usage is higher than 500Kb/s"
+        description: "suorittaa tehtävän, kun Internetin käyttö on yli 500 kb/s"
       onHighMemoryUsage:
-        description: "execute the task when memory usage is higher than 50%"
+        description: "suorittaa tehtävän, kun muistin käyttö on yli 50 %"
       onInternetUsage:
-        description: "execute the task when internet usage is higher than XKb/s"
+        description: "suorittaa tehtävän, kun Internetin käyttö on suurempi kuin X
+          kb/s"
       onLowBattery:
-        description: "execute the task when the system is low on battery (20%)"
+        description: "suorittaa tehtävän, kun järjestelmän akku on vähissä (20 %)"
       onMemoryUsage:
-        description: "execute the task when memory usage is higher than X%"
+        description: "Suorita tehtävä, kun muistin käyttö on yli X %"
       onNetwork:
-        description: "execute the task when the system is connected to the network"
+        description: "suorittaa tehtävän, kun järjestelmä on kytketty verkkoon"
       onProcess:
-        description: "execute the task when a process starts"
+        description: "suorittaa tehtävän prosessin käynnistyessä"
   rm:
-    description: "Remove a task"
+    description: "Poista tehtävä"
     error:
-      cannotDelete: "Cannot delete task: %s"
-      noName: "No task name specified."
-      notFound: "Task not found."
+      cannotDelete: "Tehtävää ei voi poistaa: %s"
+      noName: "Ei tehtävän nimeä määritetty."
+      notFound: "Tehtävää ei löytynyt."
     info:
-      askConfirmation: "Are you sure you want to delete the task %s? [y/N]"
-      taskDeleted: "Task has been deleted successfully."
+      askConfirmation: "Oletko varma, että haluat poistaa tehtävän %s? [k/E]"
+      taskDeleted: "Tehtävän poistaminen onnistui."
     options:
       force:
-        description: "force the deletion of the task"
+        description: "pakottaa tehtävän poistaminen"
       name:
-        description: "specify the task's name"
+        description: "määritä tehtävän nimi"
   rotate:
-    description: "Rotate tasks"
+    description: "Kierrä tehtävät"
     options:
       privateEvent:
-        description: "specify the private event to rotate tasks for boot, shutdown,
-          login, and logout"
+        description: "määritä yksityinen tapahtuma käynnistyksen, sammutuksen, kirjautumisen
+          ja uloskirjautumisen tehtävien kiertämiseksi"
       silent:
-        description: "don't output the status on each cycle"
+        description: "älä tulosta tilaa jokaisella jaksolla"
 
 waydroid:
-  description: "Manage the vso waydroid subsystem"
-  downloadIndex: "Downloading index for repository %s"
+  description: "Hallitse vso waydroid -alijärjestelmää"
+  downloadIndex: "Ladataan hakemistoa tietovarastolle %s"
   clean:
-    description: "Cleans the waydroid vso cache"
+    description: "Puhdistaa waydroid vso -välimuistin"
     info:
-      index: "Deleting index cache"
-      apk: "Deleting apk cache"
-      success: "Successfully deleted waydroid vso cache"
+      index: "Poistetaan indeksivälimuistia"
+      apk: "Poistetaan apk-välimuistia"
+      success: "Waydroid vso -välimuistin poistaminen onnistui"
     error:
-      index: "Failed to delete index cache"
-      apk: "Failed to delete apk cache"
+      index: "Indeksivälimuistin poistaminen epäonnistui"
+      apk: "apk-välimuistin poistaminen epäonnistui"
   delete:
-    description: "Delete the waydroid subsystem"
-    confirmation: "Deleting the waydroid subsystem will delete any data stored in
-      it. Continue?"
-    cancelled: "Cancelled removal of subsystem."
+    description: "Poista waydroid-alijärjestelmä"
+    confirmation: "Waydroid-alijärjestelmän poistaminen poistaa kaikki siihen tallennetut
+      tiedot. Jatketaanko?"
+    cancelled: "Alijärjestelmän poisto peruutettu."
   error:
-    noArguments: "No arguments provided."
-    noRepos: "Could not find any repositories."
-    notWayland: "This feature is only available on Wayland."
-    secureBoot: "This feature requires secure boot to be disabled in the BIOS."
+    noArguments: "Argumentteja ei ole esitetty."
+    noRepos: "Tietovarastoja ei löytynyt."
+    notWayland: "Tämä ominaisuus on käytettävissä vain Waylandissa."
+    secureBoot: "Tämä ominaisuus edellyttää, että Turvallinen käynnistys on poistettu
+      käytöstä BIOSissa."
   install:
-    description: "Install an application"
+    description: "Asenna sovellus"
     options:
       local:
-        description: "Install a local apk"
+        description: "Asenna paikallinen apk"
       noconfirm:
-        description: "Do not ask for confirmation during installation"
+        description: "Älä kysy vahvistusta asennuksen aikana"
     info:
-      PackageInCache: "Application found in cache, not downloading again."
-      ConfirmInstall: "Install application %s?"
-      DownloadingPackage: "Downloading apk from %s"
-      PackageSelection: "Pick an application to install"
-      InstallSuccess: "Installation successful"
+      PackageInCache: "Sovellus löytyi välimuistista, ei lataudu uudelleen."
+      ConfirmInstall: "Asennetaanko sovellus %s?"
+      DownloadingPackage: "Ladataan apk:ta %s:sta"
+      PackageSelection: "Poimi asennettava sovellus"
+      InstallSuccess: "Asennus onnistui"
     error:
-      NotFound: "Application %s was not found."
-      InstallCancelled: "Installation Cancelled"
+      NotFound: "Sovellusta %s ei löytynyt."
+      InstallCancelled: "Asennus peruutettu"
   init:
-    description: "Initialize the waydroid subsystem"
-    warnUnstable: "Waydroid functionality is currently unstable. Expect bugs and missing
-      features. Continue anyway?"
-    warnUnstableForce: "Waydroid functionality is currently unstable. Expect bugs
-      and missing features."
+    description: "Alusta waydroid-alijärjestelmä"
+    warnUnstable: "Waydroid-toiminnallisuus on tällä hetkellä epävakaa. Odota vikoja
+      ja puuttuvia ominaisuuksia. Jatketaanko silti?"
+    warnUnstableForce: "Waydroid-toiminnallisuus on tällä hetkellä epävakaa. Odota
+      vikoja ja puuttuvia ominaisuuksia."
     options:
       force:
-        description: "Force the initialization"
+        description: "Pakota alustus"
     info:
-      initialized: "The waydroid subsystem has been initialized."
+      initialized: "Waydroid-alijärjestelmä on alustettu."
     error:
-      alreadyInitialized: "The waydroid subsystem is already initialized. Use the
-        --force flag to force the initialization."
+      alreadyInitialized: "Waydroid-alijärjestelmä on jo alustettu. Käytä lippua `--force`
+        pakottaaksesi alustuksen."
   launch:
-    description: "Launch an installed application"
+    description: "Käynnistä asennettu sovellus"
   launcher:
-    description: "Show the waydroid launcher"
+    description: "Näytä waydroid-käynnistin"
   remove:
-    description: "Uninstall an application"
+    description: "Poista sovelluksen asennus"
     info:
-      RemovePackage: "Removing package %s"
-      PackageSelection: "Pick an application to remove"
-      ConfirmRemove: "Remove application %s?"
+      RemovePackage: "Poistetaan pakettia %s"
+      PackageSelection: "Poimi poistettava sovellus"
+      ConfirmRemove: "Poistetaanko sovellus %s?"
     error:
-      NoMatches: "Application %s not found"
-      RemoveCancelled: "Removal Cancelled"
+      NoMatches: "Sovellusta %s ei löytynyt"
+      RemoveCancelled: "Poisto peruutettu"
   search:
-    description: "Search for an application"
+    description: "Etsi sovellus"
   sync:
-    description: "Sync the repositories"
+    description: "Synkronoi tietovarastot"
   update:
-    description: "Update installed applications"
-    finished: "Finished updating applications"
+    description: "Päivitä asennetut sovellukset"
+    finished: "Sovellusten päivitys on valmis"
     error:
-      FailGetVersion: "Failed to get version code for %s"
-      FailUpdatePackageDownload: "Failed to download APK for %s"
-      FailUpdatePackageDatabase: "Failed to update database entry for %s"
-      FailUpdatePackageInstall: "Failed to install the update for %s"
+      FailGetVersion: "Versiokoodin hankkiminen %s:lle epäonnistui"
+      FailUpdatePackageDownload: "APK:n lataaminen %s:lle epäonnistui"
+      FailUpdatePackageDatabase: "Tietokantamerkinnän päivittäminen %s:lle epäonnistui"
+      FailUpdatePackageInstall: "Päivityksen asentaminen %s:lle epäonnistui"
     info:
-      NoUpdates: "Nothing to update"
+      NoUpdates: "Ei mitään päivitettävää"
   info:
-    description: "Display information about an application"
+    description: "Näytä tiedot sovelluksesta"
     info:
-      PackageSelection: "Select an application to display information from"
-    PackageName: "Name: %s"
-    InternalName: "Internal name: %s"
-    Summary: "Summary: %s"
-    Author: "Author: %s"
-    License: "License: %s"
-    Repository: "Repository: %s"
+      PackageSelection: "Valitse sovellus, josta tietoja näytetään"
+    PackageName: "Nimi: %s"
+    InternalName: "Sisäinen nimi: %s"
+    Summary: "Yhteenveto: %s"
+    Author: "Tekijä: %s"
+    License: "Lisenssi: %s"
+    Repository: "Tietovarasto: %s"
   status:
-    description: "Return the internal status code of the Android subsystem. For development
-      purposes."
+    description: "Palauta Android-alijärjestelmän sisäinen tilakoodi. Kehitystarkoituksiin."
