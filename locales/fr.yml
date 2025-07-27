@@ -271,7 +271,7 @@ tasks:
         description: spécifier l'événement privé pour alterner les tâches de démarrage,
           d'arrêt, de connexion et de déconnexion
       silent:
-        description: don't output the status on each cycle
+        description: ne pas afficher le statut de chaque cycle
 waydroid:
   error:
     noArguments: Aucun arguments fourni.
