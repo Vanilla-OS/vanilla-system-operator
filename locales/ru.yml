@@ -223,7 +223,7 @@ tasks:
       onCharge:
         description: выполнять задачу только тогда, когда устройство заряжается
       onConditionCommand:
-        description: выполнить задачу при условии команды
+        description: выполнить задачу по команде условия
       onCpuTemp:
         description: выполнить задачу, когда температура ЦП превышает 60°C
       onCpuUsage:
