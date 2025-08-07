@@ -19,37 +19,28 @@ jobs:
       - name: Set up Go
         uses: actions/setup-go@v5
         with:
-          go-version: 1.22
-
-      - name: Install build dependencies
-        run: |
-            apt-get update
-            apt-get install -y pkg-config build-essential
+          go-version-file: go.mod
 
       - name: Build
-        run: go build -o vso -ldflags="-X 'main.Version=${{ github.ref_name }}'"
+        run: |
+          go build -o vso -ldflags="-X 'main.Version=${{ github.ref_name }}'"
+          tar -czvf vso-amd64.tar.gz vso
+          GOARCH=arm64 go build -o vso -ldflags="-X 'main.Version=${{ github.ref_name }}'"
+          tar -czvf vso-arm64.tar.gz vso
+          tar -czvf vso-man.tar.gz man/vso.1
 
       - name: Check for missing strings
         uses: vanilla-os/missing-strings-golang-action@v0.1.0
 
-      - name: Compress
-        run: tar -czvf vso.tar.gz vso
-
-      - name: Compress-manpage
-        run: tar -czvf vso-man.tar.gz man/vso.1
-
       - name: Calculate and Save Checksums
-        run: |
-          sha256sum vso.tar.gz >> checksums.txt
-          sha256sum vso-man.tar.gz >> checksums.txt
+        run: sha256sum vso*.tar.gz >> checksums.txt
 
       - uses: actions/upload-artifact@v4
         with:
           name: vso
           path: |
             checksums.txt
-            vso.tar.gz
-            vso-man.tar.gz
+            vso*.tar.gz
 
   release:
     runs-on: ubuntu-latest
