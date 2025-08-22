@@ -245,6 +245,8 @@ tasks:
       privateEvent:
         description: "specificera den privata händelse för att rotera uppgifter för
           start, avstängning, inloggning, och utloggning"
+      silent:
+        description: skriv inte ut status för varje cykel
 waydroid:
   error:
     noArguments: Inga argument har angetts.

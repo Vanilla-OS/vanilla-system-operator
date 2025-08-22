@@ -252,6 +252,8 @@ tasks:
         description: "especifique el evento privado para rotar las tareas de arranque,
           apagado, inicio de sesión y cierre de sesión"
 
+      silent:
+        description: don't output the status on each cycle
 waydroid:
   description: "Gestionar el subsistema vso waydroid"
   downloadIndex: "Descargando el índice para el repositorio %s"

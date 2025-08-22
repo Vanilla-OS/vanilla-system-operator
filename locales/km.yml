@@ -10,18 +10,18 @@ vso:
   msg:
     help: "Show help for vso."
     version: "Show version for vso."
-    usage: "Asemres"
+    usage: "Usage"
     aliases: "Aliases"
-    examples: "Imedyaten"
+    examples: "Examples"
     availableCommands: "Available Commands"
     additionalCommands: "Additional Commands"
-    flags: "Anayen"
+    flags: "Flags"
     globalFlags: "Global Flags"
     additionalHelpTopics: "Additional help topics"
     moreInfo: "Use %s for more information about a command"
   terminal:
-    yes: "ih"
-    no: "uhu"
+    yes: "yes"
+    no: "no"
 
 config:
   description: "Manage the system configuration."
@@ -136,9 +136,9 @@ sysUpgrade:
       updating: "An error occured when updating the system."
       onHasUpdate: "Error while searching for updates: %s."
     schedule:
-      daily: "yal ass"
-      weekly: "yal imalass"
-      monthly: "yal aggur"
+      daily: "daily"
+      weekly: "weekly"
+      monthly: "monthly"
     info:
       updating: "Updating the system..."
       willUpdateLater: "An update is available and will be automatically installed
@@ -164,7 +164,7 @@ tasks:
       info:
         askCommand: "Command: "
         askDescription: "Description: "
-        askName: "Isem: "
+        askName: "Name: "
         taskCreated: "Task has been created successfully."
   list:
     description: "List all tasks"
@@ -245,9 +245,9 @@ tasks:
       privateEvent:
         description: "specify the private event to rotate tasks for boot, shutdown,
           login, and logout"
-
       silent:
-        description: don't output the status on each cycle
+        description: "don't output the status on each cycle"
+
 waydroid:
   description: "Manage the vso waydroid subsystem"
   downloadIndex: "Downloading index for repository %s"
@@ -331,12 +331,12 @@ waydroid:
     description: "Display information about an application"
     info:
       PackageSelection: "Select an application to display information from"
-    PackageName: "Isem: %s"
+    PackageName: "Name: %s"
     InternalName: "Internal name: %s"
     Summary: "Summary: %s"
-    Author: "Ameskar : %s"
-    License: "Turagt: %s"
-    Repository: "Akufi: %s"
+    Author: "Author: %s"
+    License: "License: %s"
+    Repository: "Repository: %s"
   status:
     description: "Return the internal status code of the Android subsystem. For development
       purposes."
