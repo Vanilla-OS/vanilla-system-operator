@@ -252,7 +252,7 @@ tasks:
           haghaidh tosaithe, múchadh, logáil isteach, agus logáil amach"
 
       silent:
-        description: don't output the status on each cycle
+        description: ná aschuir an stádas ar gach timthriall
 waydroid:
   description: "Bainistigh an fochóras vso waydroid"
   downloadIndex: "Innéacs á íosluchtú don stór %s"
