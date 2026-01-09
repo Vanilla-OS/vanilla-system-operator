@@ -248,6 +248,8 @@ tasks:
       privateEvent:
         description: "вказати приватну подію для чередування задач для завантаження,
           завершення роботи, входу та виходу з системи"
+      silent:
+        description: don't output the status on each cycle
 waydroid:
   error:
     noArguments: Аргументів не надано.

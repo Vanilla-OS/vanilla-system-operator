@@ -245,6 +245,8 @@ tasks:
       privateEvent:
         description: "specify private event to rotate tasks for boot, shutdown, login,
           logout"
+      silent:
+        description: don't output the status on each cycle
 waydroid:
   error:
     noArguments: No arguments provided.

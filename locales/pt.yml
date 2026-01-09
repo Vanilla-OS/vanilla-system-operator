@@ -248,6 +248,8 @@ tasks:
         description: "especifique o evento privado para alternar tarefas de inicialização,
           desligar, login e logout"
 
+      silent:
+        description: don't output the status on each cycle
 waydroid:
   description: "Gerir o subsistema vso do waydroid"
   downloadIndex: "A descarregar o índice do repositório %s"

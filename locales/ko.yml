@@ -236,6 +236,8 @@ tasks:
       privateEvent:
         description: "부팅, 종료, 로그인 및 로그아웃에 대한 작업을 순환하도록 비공개 이벤트를 지정"
 
+      silent:
+        description: don't output the status on each cycle
 waydroid:
   description: "vso 웨이드로이드 하위 시스템 관리"
   downloadIndex: "저장소 %s에 대한 인덱스를 다운로드하는 중"

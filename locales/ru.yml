@@ -260,6 +260,8 @@ tasks:
       privateEvent:
         description: укажите частное событие для чередования задач загрузки, выключения,
           входа в систему и выхода из неё
+      silent:
+        description: don't output the status on each cycle
 waydroid:
   error:
     noArguments: Нет аргументов.

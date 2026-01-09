@@ -260,6 +260,8 @@ tasks:
         description: "specifica l'evento privato per ruotare le attività di boot,
           shutdown, login, e logout"
 
+      silent:
+        description: don't output the status on each cycle
 waydroid:
   description: "Gestisci il sottosistema di waydroid vso"
   downloadIndex: "Scarica l'indice del repository %s"
