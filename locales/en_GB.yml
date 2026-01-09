@@ -212,11 +212,11 @@ tasks:
       onHighCpuUsage:
         description: "execute the task when CPU usage is higher than 50%"
       onHighInternetUsage:
-        description: "execute the task when internet usage is higher than 500Kb/s"
+        description: "execute the task when Internet usage is higher than 500Kb/s"
       onHighMemoryUsage:
         description: "execute the task when memory usage is higher than 50%"
       onInternetUsage:
-        description: "execute the task when internet usage is higher than XKb/s"
+        description: "execute the task when Internet usage is higher than XKb/s"
       onLowBattery:
         description: "execute the task when the system is low on battery (20%)"
       onMemoryUsage:
