@@ -233,6 +233,8 @@ tasks:
     options:
       privateEvent:
         description: "指定私有事件以轮换开机、关机、登录、注销的任务"
+      silent:
+        description: don't output the status on each cycle
 waydroid:
   error:
     noArguments: 没有提供参数。

@@ -247,6 +247,8 @@ tasks:
         description: "specify private event to rotate tasks for boot, shutdown, login,
           logout"
 
+      silent:
+        description: don't output the status on each cycle
 waydroid:
   description: "Administri la VSO-Waydroid-subsistemon"
   downloadIndex: "Elŝutante la indekson de la deponejo «%s»"

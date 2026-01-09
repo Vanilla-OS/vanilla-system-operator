@@ -245,6 +245,8 @@ tasks:
         description: "görevleri önyükleme, kapatma, oturum açma ve oturum kapatma
           için döndürecek özel eylemi belirt"
 
+      silent:
+        description: don't output the status on each cycle
 waydroid:
   description: "VSO waydroid alt sistemini yönet"
   downloadIndex: "%s deposu için dizin indiriliyor"

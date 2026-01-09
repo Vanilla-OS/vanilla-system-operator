@@ -249,6 +249,8 @@ tasks:
         description: "specify private event to rotate tasks for boot, shutdown, login,
           logout"
 
+      silent:
+        description: don't output the status on each cycle
 waydroid:
   description: "Manage the vso waydroid subsystem"
   downloadIndex: "Downloading index for repository %s"

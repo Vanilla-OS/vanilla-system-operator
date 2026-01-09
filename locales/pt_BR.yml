@@ -248,6 +248,8 @@ tasks:
       privateEvent:
         description: "especifique o evento privado para alternar tarefas de inicialização,
           desligamento, login, e logout"
+      silent:
+        description: don't output the status on each cycle
 waydroid:
   error:
     noArguments: Nenhum argumento fornecido.
