@@ -234,7 +234,7 @@ tasks:
       privateEvent:
         description: "指定私有事件以輪值開機、關機、登入、登出的工作"
       silent:
-        description: don't output the status on each cycle
+        description: 每個週期時不輸出狀態
 waydroid:
   error:
     noArguments: 沒有提供引數。
