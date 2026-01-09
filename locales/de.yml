@@ -267,7 +267,7 @@ tasks:
         description: "gib das private Ereignis an, um die Aufgaben für Hochfahren,
           Herunterfahren, Einloggen und Ausloggen zu rotieren"
       silent:
-        description: 'don''t output the status on each cycle'
+        description: 'nicht bei jedem Durchgang den Status ausgeben'
 waydroid:
   error:
     noArguments: Keine Argumente angegeben.
