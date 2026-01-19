@@ -1,0 +1,436 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Vanilla System Operator\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-05-18 12:00+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: uk\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+msgid "vso.description"
+msgstr "Vanilla System Operator - це менеджер пакунків, оновлення системи та автоматизатор завдань."
+
+msgid "vso.errors.unknownCommand"
+msgstr "Невідома команда: %s"
+
+msgid "vso.errors.invalidInput"
+msgstr "Неправильне введення."
+
+msgid "vso.errors.invalidChoice"
+msgstr "Неправильний вибір."
+
+msgid "vso.info.aborting"
+msgstr "Скасування за запитом."
+
+msgid "vso.msg.help"
+msgstr "Показати довідку для vso."
+
+msgid "vso.msg.version"
+msgstr "Показати версію vso."
+
+msgid "vso.msg.usage"
+msgstr "Використання"
+
+msgid "vso.msg.aliases"
+msgstr "Псевдоніми"
+
+msgid "vso.msg.examples"
+msgstr "Приклади"
+
+msgid "vso.msg.availableCommands"
+msgstr "Доступні команди"
+
+msgid "vso.msg.additionalCommands"
+msgstr "Додаткові команди"
+
+msgid "vso.msg.flags"
+msgstr "Прапорці"
+
+msgid "vso.msg.globalFlags"
+msgstr "Глобальні прапорці"
+
+msgid "vso.msg.additionalHelpTopics"
+msgstr "Додаткові довідкові теми"
+
+msgid "vso.msg.moreInfo"
+msgstr "Використовуйте %s для отримання додаткової інформації про команду"
+
+msgid "vso.terminal.yes"
+msgstr "так"
+
+msgid "vso.terminal.no"
+msgstr "ні"
+
+msgid "vso.cmd.config"
+msgstr "Керування конфігурацією системи."
+
+msgid "vso.cmd.config.get"
+msgstr "Отримати конфігурацію системи"
+
+msgid "vso.cmd.config.get.error.noKey"
+msgstr "Ключ не вказано."
+
+msgid "vso.cmd.config.get.error.noValue"
+msgstr "Не знайдено значення для ключа: %s"
+
+msgid "vso.cmd.config.get.options.key"
+msgstr "отримати значення конфігурації за його ключем"
+
+msgid "vso.cmd.config.set"
+msgstr "Встановити конфігурацію системи"
+
+msgid "vso.cmd.config.set.error.noKey"
+msgstr "Ключ не вказано."
+
+msgid "vso.cmd.config.set.error.noValue"
+msgstr "Значення не вказано."
+
+msgid "vso.cmd.config.set.error.failed"
+msgstr "Не вдалося встановити конфігурацію: %s"
+
+msgid "vso.cmd.config.set.options.key"
+msgstr "ключ конфігурації для встановлення"
+
+msgid "vso.cmd.config.set.options.value"
+msgstr "значення конфігурації для встановлення"
+
+msgid "vso.cmd.config.set.success"
+msgstr "Конфігурацію успішно оновлено."
+
+msgid "vso.cmd.config.show"
+msgstr "Показати конфігурацію системи"
+
+msgid "vso.cmd.pico"
+msgstr "Керування підсистемою VSO"
+
+msgid "vso.cmd.pico.error.notInitialized"
+msgstr "Підсистему VSO не ініціалізовано. Будь ласка, виконайте `vso pico-init` для її ініціалізації."
+
+msgid "vso.cmd.pico.error.alreadyInitialized"
+msgstr "Підсистему VSO вже ініціалізовано. Використовуйте прапорець --force для примусової ініціалізації."
+
+msgid "vso.cmd.pico.error.noAppNameOrBin"
+msgstr "--app або --bin необхідно вказати."
+
+msgid "vso.cmd.pico.error.sameAppOrBin"
+msgstr "--app та --bin не можуть бути вказані одночасно."
+
+msgid "vso.cmd.pico.error.exportingApp"
+msgstr "Виникла помилка під час експорту застосунку: %s"
+
+msgid "vso.cmd.pico.error.exportingBin"
+msgstr "Виникла помилка під час бінарного файлу : %s"
+
+msgid "vso.cmd.pico.error.unexportingApp"
+msgstr "Виникла помилка під час скасування експорту програми: %s"
+
+msgid "vso.cmd.pico.error.unexportingBin"
+msgstr "Виникла помилка під час скасування експорту бінарного файлу: %s"
+
+msgid "vso.cmd.pico.error.unknownCommand"
+msgstr "Невідома команда: %s"
+
+msgid "vso.cmd.pico.error.shellReset"
+msgstr "Неможливо дістатися до оболонки VSO. Бажаєте скинути її? (Це призведе до видалення всього вашого програмного забезпечення, встановленого у підсистемі) [y/N]"
+
+msgid "vso.cmd.pico.info.deleting"
+msgstr "Видалення підсистеми VSO..."
+
+msgid "vso.cmd.pico.info.initializing"
+msgstr "Ініціалізація підсистеми VSO..."
+
+msgid "vso.cmd.pico.info.initialized"
+msgstr "Підсистему VSO ініціалізовано."
+
+msgid "vso.cmd.pico.info.exported"
+msgstr "Експортовано %s\n"
+
+msgid "vso.cmd.pico.info.unexported"
+msgstr "Не експортовано %s\n"
+
+msgid "vso.cmd.pico.info.exportedApps"
+msgstr "Експортовано %d застосунків"
+
+msgid "vso.cmd.pico.info.unexportedApps"
+msgstr "Не експортовано %d застосунків"
+
+msgid "vso.cmd.pico.info.shellInit"
+msgstr "Схоже, вашу оболонку ще не ініціалізовано. Бажаєте ініціалізувати її зараз? (Настійно рекомендується) [y/N]"
+
+msgid "vso.cmd.pico.info.fallbackShell"
+msgstr "Повернутися до основної оболонки? Це може призвести до неочікуваної поведінки. [y/N]"
+
+msgid "vso.cmd.pico.export"
+msgstr "Експортувати застосунок або бінарний файл з підсистеми"
+
+msgid "vso.cmd.pico.export.options.app"
+msgstr "назва застосунку для експорту"
+
+msgid "vso.cmd.pico.export.options.bin"
+msgstr "назва бінарного файлу для експорту"
+
+msgid "vso.cmd.pico.export.options.binOutput"
+msgstr "шлях бінарного виводу (типово: ~/.local/bin/)"
+
+msgid "vso.cmd.pico.unexport"
+msgstr "Скасувати експорт застосунку або бінарного файлу з підсистеми"
+
+msgid "vso.cmd.pico.unexport.options.app"
+msgstr "назву застосунку для скасування експорту"
+
+msgid "vso.cmd.pico.unexport.options.bin"
+msgstr "назва бінарного файлу для скасування експорту"
+
+msgid "vso.cmd.pico.unexport.options.binOutput"
+msgstr "шлях до бінарного виводу (типово: ~/.local/bin/)"
+
+msgid "vso.cmd.pico.init"
+msgstr "Ініціалізація підсистеми VSO, що використовується для управління пакетами"
+
+msgid "vso.cmd.pico.init.options.force"
+msgstr "примусово ініціалізувати, якщо підсистема вже ініціалізована"
+
+msgid "vso.cmd.pico.install"
+msgstr "Встановити застосунок всередині підсистеми"
+
+msgid "vso.cmd.pico.remove"
+msgstr "Видалити застосунок з підсистеми"
+
+msgid "vso.cmd.pico.run"
+msgstr "Запустити застосунок з підсистеми"
+
+msgid "vso.cmd.pico.run.options.noReset"
+msgstr "не пропонувати скинути підсистему, якщо щось піде не так"
+
+msgid "vso.cmd.pico.search"
+msgstr "Пошук застосунку для встановлення всередині підсистеми"
+
+msgid "vso.cmd.pico.shell"
+msgstr "Увійти в середовище підсистеми"
+
+msgid "vso.cmd.pico.sideload"
+msgstr "Бокове завантаження пакетів DEB/APK всередині підсистеми"
+
+msgid "vso.cmd.pico.update"
+msgstr "Оновлення сховища пакетів підсистеми"
+
+msgid "vso.cmd.pico.upgrade"
+msgstr "Оновлення пакетів всередині підсистеми"
+
+msgid "vso.cmd.sysUpgrade"
+msgstr "Виконання системних команд, таких як оновлення системи"
+
+msgid "vso.cmd.sysUpgrade.check"
+msgstr "Перевірка наявності оновлень системи"
+
+msgid "vso.cmd.sysUpgrade.check.asExitCode"
+msgstr "перевіряє наявність оновлення, але нічого не друкує. Повертає код виходу 0, якщо оновлення недоступне, і 1 в іншому випадку."
+
+msgid "vso.cmd.sysUpgrade.check.error.asExitCodeAndJson"
+msgstr "Під час перевірки оновлень сталася помилка. Перегляньте вивід JSON для отримання додаткової інформації."
+
+msgid "vso.cmd.sysUpgrade.check.info.checking"
+msgstr "Перевірка оновлень..."
+
+msgid "vso.cmd.sysUpgrade.check.json"
+msgstr "вивести результат у форматі JSON"
+
+msgid "vso.cmd.sysUpgrade.upgrade"
+msgstr ""
+
+msgid "vso.cmd.sysUpgrade.error.updating"
+msgstr ""
+
+msgid "vso.cmd.sysUpgrade.error.onHasUpdate"
+msgstr ""
+
+msgid "vso.cmd.sysUpgrade.schedule.daily"
+msgstr ""
+
+msgid "vso.cmd.sysUpgrade.schedule.weekly"
+msgstr ""
+
+msgid "vso.cmd.sysUpgrade.schedule.monthly"
+msgstr ""
+
+msgid "vso.cmd.sysUpgrade.info.updating"
+msgstr ""
+
+msgid "vso.cmd.sysUpgrade.info.willUpdateLater"
+msgstr ""
+
+msgid "vso.cmd.sysUpgrade.info.willNeverUpdate"
+msgstr ""
+
+msgid "vso.cmd.sysUpgrade.info.noUpdates"
+msgstr ""
+
+msgid "vso.cmd.sysUpgrade.now"
+msgstr ""
+
+msgid "vso.cmd.tasks"
+msgstr "Створюйте завдання та керуйте ними"
+
+msgid "vso.cmd.tasks.stacks.new.error.emptyCommand"
+msgstr "Команда не може бути пустою."
+
+msgid "vso.cmd.tasks.stacks.new.error.emptyDescription"
+msgstr "Опис не може бути пустим."
+
+msgid "vso.cmd.tasks.stacks.new.error.emptyName"
+msgstr "Назва не може бути пустою."
+
+msgid "vso.cmd.tasks.stacks.new.error.noCommand"
+msgstr "Не вказано жодної команди."
+
+msgid "vso.cmd.tasks.stacks.new.error.noDescription"
+msgstr "Не вказано жодного опису."
+
+msgid "vso.cmd.tasks.stacks.new.error.noName"
+msgstr "Не вказано жодної назви."
+
+msgid "vso.cmd.tasks.stacks.new.info.askCommand"
+msgstr "Команда: "
+
+msgid "vso.cmd.tasks.stacks.new.info.askDescription"
+msgstr "Опис: "
+
+msgid "vso.cmd.tasks.stacks.new.info.askName"
+msgstr "Назва: "
+
+msgid "vso.cmd.tasks.stacks.new.info.taskCreated"
+msgstr "Завдання успішно створено."
+
+msgid "vso.cmd.tasks.list"
+msgstr "Список всіх завдань"
+
+msgid "vso.cmd.tasks.list.noTasks"
+msgstr "Завдань не знайдено."
+
+msgid "vso.cmd.tasks.list.info.foundTasks"
+msgstr "Знайдено %d завдань."
+
+msgid "vso.cmd.tasks.list.options.json"
+msgstr "вивести завдання у форматі JSON"
+
+msgid "vso.cmd.tasks.new"
+msgstr "Створити нове завдання"
+
+msgid "vso.cmd.tasks.new.options.assumeYes"
+msgstr "припустимо «так» для всіх підказок"
+
+msgid "vso.cmd.tasks.new.options.at"
+msgstr "запланувати виконання завдання на певний час (hh:mm)"
+
+msgid "vso.cmd.tasks.new.options.command"
+msgstr "вказати команду для виконання"
+
+msgid "vso.cmd.tasks.new.options.description"
+msgstr "вкажіть опис завдання"
+
+msgid "vso.cmd.tasks.new.options.every"
+msgstr "запланувати виконання завдання кожні X (хвилини, години, дні)"
+
+msgid "vso.cmd.tasks.new.options.name"
+msgstr "вкажіть назву завдання"
+
+msgid "vso.cmd.tasks.new.options.needConfirm"
+msgstr "запитувати підтвердження перед виконанням завдання"
+
+msgid "vso.cmd.tasks.new.options.onBattery"
+msgstr "виконувати завдання лише тоді, коли система працює від батареї"
+
+msgid "vso.cmd.tasks.new.options.onCharge"
+msgstr "виконувати завдання лише тоді, коли система заряджається"
+
+msgid "vso.cmd.tasks.new.options.onConditionCommand"
+msgstr "виконувати завдання за умови команди"
+
+msgid "vso.cmd.tasks.new.options.onCpuTemp"
+msgstr "виконувати завдання, коли температура процесора перевищує 60°C"
+
+msgid "vso.cmd.tasks.new.options.onCpuUsage"
+msgstr "виконувати задачу, коли використання процесора перевищує X%"
+
+msgid "vso.cmd.tasks.new.options.onDeviceConnect"
+msgstr "виконувати задачу, коли пристрій під'єднано"
+
+msgid "vso.cmd.tasks.new.options.onDeviceDisconnect"
+msgstr "виконувати задачу, коли пристрій від'єднано"
+
+msgid "vso.cmd.tasks.new.options.onDisconnect"
+msgstr "виконувати задачу, коли система від'єднана від мережі"
+
+msgid "vso.cmd.tasks.new.options.onFullBattery"
+msgstr "виконувати задачу, коли система повністю заряджена"
+
+msgid "vso.cmd.tasks.new.options.onHighCpuUsage"
+msgstr "виконувати задачу, коли завантаження процесора перевищує 50%"
+
+msgid "vso.cmd.tasks.new.options.onHighInternetUsage"
+msgstr "виконувати задачу, коли швидкість інтернету перевищує 500 кб/с"
+
+msgid "vso.cmd.tasks.new.options.onHighMemoryUsage"
+msgstr "виконувати задачу, коли використання пам'яті перевищує 50%"
+
+msgid "vso.cmd.tasks.new.options.onInternetUsage"
+msgstr "виконувати задаяу, коли швидкість інтернету перевищує X кб/с"
+
+msgid "vso.cmd.tasks.new.options.onLowBattery"
+msgstr "виконувати задачу, коли низький заряд батареї (20%)"
+
+msgid "vso.cmd.tasks.new.options.onMemoryUsage"
+msgstr "виконувати задачу, коли використання пам'яті перевищує X%"
+
+msgid "vso.cmd.tasks.new.options.onNetwork"
+msgstr "виконувати задачу, коли система під'єднана до мережі"
+
+msgid "vso.cmd.tasks.new.options.onProcess"
+msgstr "виконувати задачу під час запуску процесу"
+
+msgid "vso.cmd.tasks.rm"
+msgstr "Видалити задачу"
+
+msgid "vso.cmd.tasks.rm.error.cannotDelete"
+msgstr "Неможливо видалити задачу: %s"
+
+msgid "vso.cmd.tasks.rm.error.noName"
+msgstr "Не вказано назву задачі."
+
+msgid "vso.cmd.tasks.rm.error.notFound"
+msgstr "Задачу не знайдено."
+
+msgid "vso.cmd.tasks.rm.info.askConfirmation"
+msgstr "Ви впевнені, що хочете видалити задачу %s? [y/N]"
+
+msgid "vso.cmd.tasks.rm.info.taskDeleted"
+msgstr "Задачу успішно видалено."
+
+msgid "vso.cmd.tasks.rm.options.force"
+msgstr "примусово видалити задачу"
+
+msgid "vso.cmd.tasks.rm.options.name"
+msgstr "вкажіть назву задачі"
+
+msgid "vso.cmd.tasks.rotate"
+msgstr "Чергувати задачі"
+
+msgid "vso.cmd.tasks.rotate.options.privateEvent"
+msgstr "вказати приватну подію для чередування задач для завантаження, завершення роботи, входу та виходу з системи"
+
+msgid "vso.cmd.tasks.rotate.options.silent"
+msgstr "не виводити стан після кожного циклу"
+
+msgid "vso.cmd.waydroid"
+msgstr "Керування підсистемою vso waydroid"
+
+msgid "vso.arg.package"
+msgstr ""
+
+msgid "vso.arg.command"
+msgstr ""
+

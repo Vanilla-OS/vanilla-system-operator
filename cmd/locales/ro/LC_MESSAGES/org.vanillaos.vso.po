@@ -1,0 +1,436 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Vanilla System Operator\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-05-18 12:00+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: ro\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+msgid "vso.description"
+msgstr "Operatorul de sistem Vanilla este un manager de pachete, un actualizator de sistem și un automat de sarcini."
+
+msgid "vso.errors.unknownCommand"
+msgstr "Comanda necunoscută: %s"
+
+msgid "vso.errors.invalidInput"
+msgstr "Intrare nevalidă."
+
+msgid "vso.errors.invalidChoice"
+msgstr "Alegere nevalidă."
+
+msgid "vso.info.aborting"
+msgstr "Se anulează conform solicitării."
+
+msgid "vso.msg.help"
+msgstr "Afișați ajutor pentru vso."
+
+msgid "vso.msg.version"
+msgstr "Afișați versiunea pentru vso."
+
+msgid "vso.msg.usage"
+msgstr "Utilizare"
+
+msgid "vso.msg.aliases"
+msgstr "Aliasuri"
+
+msgid "vso.msg.examples"
+msgstr "Exemple"
+
+msgid "vso.msg.availableCommands"
+msgstr "Comenzi Disponibile"
+
+msgid "vso.msg.additionalCommands"
+msgstr "Comenzi Suplimentare"
+
+msgid "vso.msg.flags"
+msgstr "Parametri"
+
+msgid "vso.msg.globalFlags"
+msgstr "Parametri globali"
+
+msgid "vso.msg.additionalHelpTopics"
+msgstr "Alte subiecte de ajutor"
+
+msgid "vso.msg.moreInfo"
+msgstr "Utilizați %s pentru mai multe informații despre o comandă"
+
+msgid "vso.terminal.yes"
+msgstr "da"
+
+msgid "vso.terminal.no"
+msgstr "nu"
+
+msgid "vso.cmd.config"
+msgstr "Gestionați configurația sistemului."
+
+msgid "vso.cmd.config.get"
+msgstr "Obțineți configurația sistemului"
+
+msgid "vso.cmd.config.get.error.noKey"
+msgstr "Nicio cheie specificată."
+
+msgid "vso.cmd.config.get.error.noValue"
+msgstr "Nu a fost găsită nicio valoare pentru cheia: %s"
+
+msgid "vso.cmd.config.get.options.key"
+msgstr "preluați valoarea configurației folosind cheia acestuia"
+
+msgid "vso.cmd.config.set"
+msgstr "Setați configurația sistemului"
+
+msgid "vso.cmd.config.set.error.noKey"
+msgstr "Nicio cheie specificată."
+
+msgid "vso.cmd.config.set.error.noValue"
+msgstr "Nu este specificată nicio valoare."
+
+msgid "vso.cmd.config.set.error.failed"
+msgstr "Setarea configurației eșuată: %s"
+
+msgid "vso.cmd.config.set.options.key"
+msgstr "tasta configurației de setat"
+
+msgid "vso.cmd.config.set.options.value"
+msgstr "valoarea configurației de setat"
+
+msgid "vso.cmd.config.set.success"
+msgstr "Configurația a fost actualizată cu succes."
+
+msgid "vso.cmd.config.show"
+msgstr "Afișați configurația sistemului"
+
+msgid "vso.cmd.pico"
+msgstr "Gestionează subsistemul VSO"
+
+msgid "vso.cmd.pico.error.notInitialized"
+msgstr "Subsistemul VSO nu este inițializat. Rulează `vso pico-init` pentru a-l inițializa."
+
+msgid "vso.cmd.pico.error.alreadyInitialized"
+msgstr "Subsistemul VSO este deja inițializat. Utilizați indicatorul --force pentru a forța inițializarea."
+
+msgid "vso.cmd.pico.error.noAppNameOrBin"
+msgstr "Trebuie specificat --app sau --bin."
+
+msgid "vso.cmd.pico.error.sameAppOrBin"
+msgstr "--app și --bin nu pot fi ambele specificate."
+
+msgid "vso.cmd.pico.error.exportingApp"
+msgstr "A apărut o eroare la exportul aplicației: %s"
+
+msgid "vso.cmd.pico.error.exportingBin"
+msgstr "A apărut o eroare la exportul binarului: %s"
+
+msgid "vso.cmd.pico.error.unexportingApp"
+msgstr "A apărut o eroare la dezexportarea aplicației: %s"
+
+msgid "vso.cmd.pico.error.unexportingBin"
+msgstr "A apărut o eroare la dezexportarea binarului: %s"
+
+msgid "vso.cmd.pico.error.unknownCommand"
+msgstr "Comandă necunoscută: %s"
+
+msgid "vso.cmd.pico.error.shellReset"
+msgstr "Este imposibil să se ajungă la VSO shell. Dorești să îl resetezi? (Acest lucru va elimina toate programele instalate în subsistem) [y/N]"
+
+msgid "vso.cmd.pico.info.deleting"
+msgstr "Stergerea subsistemului VSO..."
+
+msgid "vso.cmd.pico.info.initializing"
+msgstr "Inițializarea subsistemului VSO..."
+
+msgid "vso.cmd.pico.info.initialized"
+msgstr "Subsistemul VSO a fost inițializat."
+
+msgid "vso.cmd.pico.info.exported"
+msgstr "Exportat %s\n"
+
+msgid "vso.cmd.pico.info.unexported"
+msgstr "Exportat %s\n"
+
+msgid "vso.cmd.pico.info.exportedApps"
+msgstr "Au exportat %d aplicații"
+
+msgid "vso.cmd.pico.info.unexportedApps"
+msgstr "%d aplicații neexportate"
+
+msgid "vso.cmd.pico.info.shellInit"
+msgstr "Se pare că shell-ul tău nu a fost inițializat încă. Dorești să îl inițializezi acum? (Foarte recomandat) [y/N]"
+
+msgid "vso.cmd.pico.info.fallbackShell"
+msgstr "Revenire la shell gazdă? Acest lucru ar putea duce la comportamente neașteptate. [y/N]"
+
+msgid "vso.cmd.pico.export"
+msgstr "Exportați o aplicație sau un fișier binar din subsistem"
+
+msgid "vso.cmd.pico.export.options.app"
+msgstr "numele aplicației de exportat"
+
+msgid "vso.cmd.pico.export.options.bin"
+msgstr "numele binarului de exportat"
+
+msgid "vso.cmd.pico.export.options.binOutput"
+msgstr "calea ieșirii binare (implicit: ~/.local/bin/)"
+
+msgid "vso.cmd.pico.unexport"
+msgstr "Dezexportarea unei aplicații sau a unui fișier binar din subsistem"
+
+msgid "vso.cmd.pico.unexport.options.app"
+msgstr "numele aplicației de dezexportat"
+
+msgid "vso.cmd.pico.unexport.options.bin"
+msgstr "numele binarului de dezexportat"
+
+msgid "vso.cmd.pico.unexport.options.binOutput"
+msgstr "calea ieșirii binare (implicit: ~/.local/bin/)"
+
+msgid "vso.cmd.pico.init"
+msgstr "Inițializarea subsistemului VSO, utilizat pentru gestionarea pachetelor"
+
+msgid "vso.cmd.pico.init.options.force"
+msgstr "forțează inițializarea în cazul în care subsistemul este deja inițializat"
+
+msgid "vso.cmd.pico.install"
+msgstr "Instalează o aplicație în cadrul subsistemului"
+
+msgid "vso.cmd.pico.remove"
+msgstr "Eliminează o aplicație din subsistem"
+
+msgid "vso.cmd.pico.run"
+msgstr "Executați o aplicație din subsistem"
+
+msgid "vso.cmd.pico.run.options.noReset"
+msgstr "nu propune resetarea subsitemului dacă se întâmplă ceva greșit"
+
+msgid "vso.cmd.pico.search"
+msgstr "Căutați o aplicație care să fie instalată în cadrul subsistemului"
+
+msgid "vso.cmd.pico.shell"
+msgstr "Intrați în mediul subsistemului"
+
+msgid "vso.cmd.pico.sideload"
+msgstr "Încărcarea Sideload a pachetelor DEB/APK în interiorul subsistemului"
+
+msgid "vso.cmd.pico.update"
+msgstr "Actualizați depozitul de pachete al subsistemului"
+
+msgid "vso.cmd.pico.upgrade"
+msgstr "Actualizați pachetele din cadrul subsistemului"
+
+msgid "vso.cmd.sysUpgrade"
+msgstr "Executați comenzi de sistem, cum ar fi actualizarea sistemului"
+
+msgid "vso.cmd.sysUpgrade.check"
+msgstr "Verifică după actualizări de sistem"
+
+msgid "vso.cmd.sysUpgrade.check.asExitCode"
+msgstr "verifică dacă există o actualizare, dar nu imprimă nimic. Returnează codul de ieșire 0 dacă nu este disponibilă nicio actualizare și 1 în caz contrar."
+
+msgid "vso.cmd.sysUpgrade.check.error.asExitCodeAndJson"
+msgstr "S-a întâmplat o eroare în timpul verificării după actualizări. Pentru mai multe detalii vezi rezultatul JSON."
+
+msgid "vso.cmd.sysUpgrade.check.info.checking"
+msgstr "Verificare după actualizări..."
+
+msgid "vso.cmd.sysUpgrade.check.json"
+msgstr "exportă rezultatul în format JSON"
+
+msgid "vso.cmd.sysUpgrade.upgrade"
+msgstr ""
+
+msgid "vso.cmd.sysUpgrade.error.updating"
+msgstr ""
+
+msgid "vso.cmd.sysUpgrade.error.onHasUpdate"
+msgstr ""
+
+msgid "vso.cmd.sysUpgrade.schedule.daily"
+msgstr ""
+
+msgid "vso.cmd.sysUpgrade.schedule.weekly"
+msgstr ""
+
+msgid "vso.cmd.sysUpgrade.schedule.monthly"
+msgstr ""
+
+msgid "vso.cmd.sysUpgrade.info.updating"
+msgstr ""
+
+msgid "vso.cmd.sysUpgrade.info.willUpdateLater"
+msgstr ""
+
+msgid "vso.cmd.sysUpgrade.info.willNeverUpdate"
+msgstr ""
+
+msgid "vso.cmd.sysUpgrade.info.noUpdates"
+msgstr ""
+
+msgid "vso.cmd.sysUpgrade.now"
+msgstr ""
+
+msgid "vso.cmd.tasks"
+msgstr "Crează și gestionează sarcini"
+
+msgid "vso.cmd.tasks.stacks.new.error.emptyCommand"
+msgstr "Comanda nu poate fi goală."
+
+msgid "vso.cmd.tasks.stacks.new.error.emptyDescription"
+msgstr "Descrierea nu poate fi goală."
+
+msgid "vso.cmd.tasks.stacks.new.error.emptyName"
+msgstr "Numele nu poate fi gol."
+
+msgid "vso.cmd.tasks.stacks.new.error.noCommand"
+msgstr "Nicio comandă specificată."
+
+msgid "vso.cmd.tasks.stacks.new.error.noDescription"
+msgstr "Nicio descriere specificată."
+
+msgid "vso.cmd.tasks.stacks.new.error.noName"
+msgstr "Niciun nume specificat."
+
+msgid "vso.cmd.tasks.stacks.new.info.askCommand"
+msgstr "Comandă: "
+
+msgid "vso.cmd.tasks.stacks.new.info.askDescription"
+msgstr "Descriere: "
+
+msgid "vso.cmd.tasks.stacks.new.info.askName"
+msgstr "Nume: "
+
+msgid "vso.cmd.tasks.stacks.new.info.taskCreated"
+msgstr "Sarcină creată cu succes."
+
+msgid "vso.cmd.tasks.list"
+msgstr "Listează toate sarcinile"
+
+msgid "vso.cmd.tasks.list.noTasks"
+msgstr "Nu a fost găsită nicio sarcină."
+
+msgid "vso.cmd.tasks.list.info.foundTasks"
+msgstr "%d sarcini găsite."
+
+msgid "vso.cmd.tasks.list.options.json"
+msgstr "exportă sarcinile în format JSON"
+
+msgid "vso.cmd.tasks.new"
+msgstr "Crează o nouă sarcină"
+
+msgid "vso.cmd.tasks.new.options.assumeYes"
+msgstr "aplică da tuturor dialogurilor"
+
+msgid "vso.cmd.tasks.new.options.at"
+msgstr "programează execuția unei sarcini la o oră anume (hh:mm)"
+
+msgid "vso.cmd.tasks.new.options.command"
+msgstr "specifică comanda care să se execute"
+
+msgid "vso.cmd.tasks.new.options.description"
+msgstr "specifică descrierea sarcinii"
+
+msgid "vso.cmd.tasks.new.options.every"
+msgstr "programează executarea sarcinii la fiecare X (minute, ore, zile)"
+
+msgid "vso.cmd.tasks.new.options.name"
+msgstr "specifică numele sarcinii"
+
+msgid "vso.cmd.tasks.new.options.needConfirm"
+msgstr "cere confirmare înainte de execuția sarcinii"
+
+msgid "vso.cmd.tasks.new.options.onBattery"
+msgstr "execută sarcina doar când sistemul este pe baterie"
+
+msgid "vso.cmd.tasks.new.options.onCharge"
+msgstr "execută sarcina doar când sistemul se încarcă de la priză"
+
+msgid "vso.cmd.tasks.new.options.onConditionCommand"
+msgstr "execută sarcina când comanda este condițională"
+
+msgid "vso.cmd.tasks.new.options.onCpuTemp"
+msgstr "execută sarcina când temperatura procesorului este mai mare de 60°C"
+
+msgid "vso.cmd.tasks.new.options.onCpuUsage"
+msgstr "execută sarcina când utilizarea procesorului este mai mare de X%"
+
+msgid "vso.cmd.tasks.new.options.onDeviceConnect"
+msgstr "execută sarcina când se conectează un dispozitiv"
+
+msgid "vso.cmd.tasks.new.options.onDeviceDisconnect"
+msgstr "execută sarcina când se deconectează un dispozitiv"
+
+msgid "vso.cmd.tasks.new.options.onDisconnect"
+msgstr "execută o sarcină când sistemul e deconectat de la rețea"
+
+msgid "vso.cmd.tasks.new.options.onFullBattery"
+msgstr "execută o sarcină când sistemul e complet încărcat cu curent"
+
+msgid "vso.cmd.tasks.new.options.onHighCpuUsage"
+msgstr "execută o sarcină când utilizarea procesorului e mai mare de 50%"
+
+msgid "vso.cmd.tasks.new.options.onHighInternetUsage"
+msgstr "execută o sarcină când utilizarea internetului e mai mare de 500Kb/s"
+
+msgid "vso.cmd.tasks.new.options.onHighMemoryUsage"
+msgstr "execută o sarcină când utilizarea memoriei e mai mare de 50%"
+
+msgid "vso.cmd.tasks.new.options.onInternetUsage"
+msgstr "execută o sarcină când utilizarea internetului e mai mare de XKb/s"
+
+msgid "vso.cmd.tasks.new.options.onLowBattery"
+msgstr "execută o sarcină când sistemul are baterie puțină (20%)"
+
+msgid "vso.cmd.tasks.new.options.onMemoryUsage"
+msgstr "execută o sarcină când utilizarea memoriei e mai mare de X%"
+
+msgid "vso.cmd.tasks.new.options.onNetwork"
+msgstr "execută o sarcină când sistemul e conectat la rețea"
+
+msgid "vso.cmd.tasks.new.options.onProcess"
+msgstr "execută o sarcină când se pornește un proces"
+
+msgid "vso.cmd.tasks.rm"
+msgstr "Elimină o sarcină"
+
+msgid "vso.cmd.tasks.rm.error.cannotDelete"
+msgstr "Nu se poate șterge sarcina: %s"
+
+msgid "vso.cmd.tasks.rm.error.noName"
+msgstr "Numele sarcinii nu e specificat."
+
+msgid "vso.cmd.tasks.rm.error.notFound"
+msgstr "Sarcina nu a fost găsită."
+
+msgid "vso.cmd.tasks.rm.info.askConfirmation"
+msgstr "Ești sigur că vrei să ștergi sarcina %s? [y/N]"
+
+msgid "vso.cmd.tasks.rm.info.taskDeleted"
+msgstr "Sarcina a fost ștearsă cu succes."
+
+msgid "vso.cmd.tasks.rm.options.force"
+msgstr "forțează ștergerea sarcinii"
+
+msgid "vso.cmd.tasks.rm.options.name"
+msgstr "specifică numele sarcinii"
+
+msgid "vso.cmd.tasks.rotate"
+msgstr "Rotește sarcinile"
+
+msgid "vso.cmd.tasks.rotate.options.privateEvent"
+msgstr "specifică evenimentul privat pentru a rotii sarcinile pentru resetare, închidere, login, și logout"
+
+msgid "vso.cmd.tasks.rotate.options.silent"
+msgstr "don't output the status on each cycle"
+
+msgid "vso.cmd.waydroid"
+msgstr "Gestionează subsistemul vso waydroid"
+
+msgid "vso.arg.package"
+msgstr ""
+
+msgid "vso.arg.command"
+msgstr ""
+

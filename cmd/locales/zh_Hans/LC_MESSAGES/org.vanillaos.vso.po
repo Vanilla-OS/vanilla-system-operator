@@ -1,0 +1,436 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Vanilla System Operator\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-05-18 12:00+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: zh_Hans\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+msgid "vso.description"
+msgstr "Vanilla 系统操作程序是软件包管理器、系统更新程序、任务自动化程序的三合一。"
+
+msgid "vso.errors.unknownCommand"
+msgstr "未知的命令：%s"
+
+msgid "vso.errors.invalidInput"
+msgstr "输入无效。"
+
+msgid "vso.errors.invalidChoice"
+msgstr "选择无效。"
+
+msgid "vso.info.aborting"
+msgstr "应用户要求取消操作。"
+
+msgid "vso.msg.help"
+msgstr "显示 vso 的帮助。"
+
+msgid "vso.msg.version"
+msgstr "显示 vso 的版本。"
+
+msgid "vso.msg.usage"
+msgstr "用法"
+
+msgid "vso.msg.aliases"
+msgstr "别名"
+
+msgid "vso.msg.examples"
+msgstr "示例"
+
+msgid "vso.msg.availableCommands"
+msgstr "可用命令"
+
+msgid "vso.msg.additionalCommands"
+msgstr "附加命令"
+
+msgid "vso.msg.flags"
+msgstr "参数"
+
+msgid "vso.msg.globalFlags"
+msgstr "全局参数"
+
+msgid "vso.msg.additionalHelpTopics"
+msgstr "附加帮助主题"
+
+msgid "vso.msg.moreInfo"
+msgstr "使用 %s 获取有关命令的更多信息"
+
+msgid "vso.terminal.yes"
+msgstr "是"
+
+msgid "vso.terminal.no"
+msgstr "否"
+
+msgid "vso.cmd.config"
+msgstr "管理系统配置。"
+
+msgid "vso.cmd.config.get"
+msgstr "获取系统配置"
+
+msgid "vso.cmd.config.get.error.noKey"
+msgstr "没有指定键。"
+
+msgid "vso.cmd.config.get.error.noValue"
+msgstr "无法为键找到对应值：%s"
+
+msgid "vso.cmd.config.get.options.key"
+msgstr "按键名获取配置值"
+
+msgid "vso.cmd.config.set"
+msgstr "设置系统配置"
+
+msgid "vso.cmd.config.set.error.noKey"
+msgstr "没有指定键。"
+
+msgid "vso.cmd.config.set.error.noValue"
+msgstr "没有指定值。"
+
+msgid "vso.cmd.config.set.error.failed"
+msgstr "无法设置配置：%s"
+
+msgid "vso.cmd.config.set.options.key"
+msgstr "要设置的配置的键"
+
+msgid "vso.cmd.config.set.options.value"
+msgstr "要设置的配置的值"
+
+msgid "vso.cmd.config.set.success"
+msgstr "已成功更新配置。"
+
+msgid "vso.cmd.config.show"
+msgstr "显示系统配置"
+
+msgid "vso.cmd.pico"
+msgstr "管理 VSO 子系统"
+
+msgid "vso.cmd.pico.error.notInitialized"
+msgstr "VSO 子系统尚未初始化。请运行 `vso pico-init` 以初始化子系统。"
+
+msgid "vso.cmd.pico.error.alreadyInitialized"
+msgstr "VSO 子系统已经初始化。请使用 --force 标记以强制初始化。"
+
+msgid "vso.cmd.pico.error.noAppNameOrBin"
+msgstr "必须指定 --app 或 --bin。"
+
+msgid "vso.cmd.pico.error.sameAppOrBin"
+msgstr "不能同时指定 --app 和 --bin。"
+
+msgid "vso.cmd.pico.error.exportingApp"
+msgstr "导出应用程序时发生错误：%s"
+
+msgid "vso.cmd.pico.error.exportingBin"
+msgstr "导出二进制文件时发生错误：%s"
+
+msgid "vso.cmd.pico.error.unexportingApp"
+msgstr "移除导出的应用程序时发生错误：%s"
+
+msgid "vso.cmd.pico.error.unexportingBin"
+msgstr "移除导出的二进制文件时发生错误：%s"
+
+msgid "vso.cmd.pico.error.unknownCommand"
+msgstr "未知的命令：%s"
+
+msgid "vso.cmd.pico.error.shellReset"
+msgstr "无法访问 VSO shell。要重置吗？（这将移除子系统中安装的所有软件）[y/N]"
+
+msgid "vso.cmd.pico.info.deleting"
+msgstr "正在删除 VSO 子系统…"
+
+msgid "vso.cmd.pico.info.initializing"
+msgstr "正在初始化 VSO 子系统…"
+
+msgid "vso.cmd.pico.info.initialized"
+msgstr "VSO 子系统已经初始化。"
+
+msgid "vso.cmd.pico.info.exported"
+msgstr "已导出 %s\n"
+
+msgid "vso.cmd.pico.info.unexported"
+msgstr "已移除导出 %s\n"
+
+msgid "vso.cmd.pico.info.exportedApps"
+msgstr "已导出 %d 个应用程序"
+
+msgid "vso.cmd.pico.info.unexportedApps"
+msgstr "已移除导出的 %d 个应用程序"
+
+msgid "vso.cmd.pico.info.shellInit"
+msgstr "shell 似乎尚未初始化。要现在初始化吗？（非常推荐）[y/N]"
+
+msgid "vso.cmd.pico.info.fallbackShell"
+msgstr "回退到主机 shell 吗？这可能会导致意外的行为。[y/N]"
+
+msgid "vso.cmd.pico.export"
+msgstr "从子系统导出应用程序或二进制文件"
+
+msgid "vso.cmd.pico.export.options.app"
+msgstr "要导出的应用程序的名称"
+
+msgid "vso.cmd.pico.export.options.bin"
+msgstr "要导出的二进制文件的名称"
+
+msgid "vso.cmd.pico.export.options.binOutput"
+msgstr "二进制输出的路径（默认：~/.local/bin/）"
+
+msgid "vso.cmd.pico.unexport"
+msgstr "从子系统移除导出的应用程序或二进制文件"
+
+msgid "vso.cmd.pico.unexport.options.app"
+msgstr "要移除导出的应用程序的名称"
+
+msgid "vso.cmd.pico.unexport.options.bin"
+msgstr "要移除导出的二进制文件的名称"
+
+msgid "vso.cmd.pico.unexport.options.binOutput"
+msgstr "二进制输出的路径（默认：~/.local/bin/）"
+
+msgid "vso.cmd.pico.init"
+msgstr "初始化 VSO 子系统，用于包管理"
+
+msgid "vso.cmd.pico.init.options.force"
+msgstr "子系统已经初始化时强制初始化"
+
+msgid "vso.cmd.pico.install"
+msgstr "在子系统内安装应用程序"
+
+msgid "vso.cmd.pico.remove"
+msgstr "从子系统中移除应用程序"
+
+msgid "vso.cmd.pico.run"
+msgstr "运行来自子系统的应用程序"
+
+msgid "vso.cmd.pico.run.options.noReset"
+msgstr "如果出现问题，不要建议重置子系统"
+
+msgid "vso.cmd.pico.search"
+msgstr "搜索要在子系统内安装的应用程序"
+
+msgid "vso.cmd.pico.shell"
+msgstr "进入子系统环境"
+
+msgid "vso.cmd.pico.sideload"
+msgstr "在子系统内侧载 DEB/APK 软件包"
+
+msgid "vso.cmd.pico.update"
+msgstr "更新子系统的软件仓库"
+
+msgid "vso.cmd.pico.upgrade"
+msgstr "更新子系统内的软件包"
+
+msgid "vso.cmd.sysUpgrade"
+msgstr "执行系统命令，例如更新系统"
+
+msgid "vso.cmd.sysUpgrade.check"
+msgstr "检查系统更新"
+
+msgid "vso.cmd.sysUpgrade.check.asExitCode"
+msgstr "检查更新但关闭输出。没有更新可用时返回码为 0，否则为 1。"
+
+msgid "vso.cmd.sysUpgrade.check.error.asExitCodeAndJson"
+msgstr "检查更新时出现错误。查看 JSON 输出获取详细信息。"
+
+msgid "vso.cmd.sysUpgrade.check.info.checking"
+msgstr "正在检查更新…"
+
+msgid "vso.cmd.sysUpgrade.check.json"
+msgstr "输出结果为 JSON 格式"
+
+msgid "vso.cmd.sysUpgrade.upgrade"
+msgstr ""
+
+msgid "vso.cmd.sysUpgrade.error.updating"
+msgstr ""
+
+msgid "vso.cmd.sysUpgrade.error.onHasUpdate"
+msgstr ""
+
+msgid "vso.cmd.sysUpgrade.schedule.daily"
+msgstr ""
+
+msgid "vso.cmd.sysUpgrade.schedule.weekly"
+msgstr ""
+
+msgid "vso.cmd.sysUpgrade.schedule.monthly"
+msgstr ""
+
+msgid "vso.cmd.sysUpgrade.info.updating"
+msgstr ""
+
+msgid "vso.cmd.sysUpgrade.info.willUpdateLater"
+msgstr ""
+
+msgid "vso.cmd.sysUpgrade.info.willNeverUpdate"
+msgstr ""
+
+msgid "vso.cmd.sysUpgrade.info.noUpdates"
+msgstr ""
+
+msgid "vso.cmd.sysUpgrade.now"
+msgstr ""
+
+msgid "vso.cmd.tasks"
+msgstr "创建和管理任务"
+
+msgid "vso.cmd.tasks.stacks.new.error.emptyCommand"
+msgstr "命令不能为空。"
+
+msgid "vso.cmd.tasks.stacks.new.error.emptyDescription"
+msgstr "描述不能为空。"
+
+msgid "vso.cmd.tasks.stacks.new.error.emptyName"
+msgstr "名称不能为空。"
+
+msgid "vso.cmd.tasks.stacks.new.error.noCommand"
+msgstr "没有指定命令。"
+
+msgid "vso.cmd.tasks.stacks.new.error.noDescription"
+msgstr "没有指定描述。"
+
+msgid "vso.cmd.tasks.stacks.new.error.noName"
+msgstr "没有指定名称。"
+
+msgid "vso.cmd.tasks.stacks.new.info.askCommand"
+msgstr "命令： "
+
+msgid "vso.cmd.tasks.stacks.new.info.askDescription"
+msgstr "描述： "
+
+msgid "vso.cmd.tasks.stacks.new.info.askName"
+msgstr "名称： "
+
+msgid "vso.cmd.tasks.stacks.new.info.taskCreated"
+msgstr "已成功创建任务。"
+
+msgid "vso.cmd.tasks.list"
+msgstr "列出所有任务"
+
+msgid "vso.cmd.tasks.list.noTasks"
+msgstr "没有找到任务。"
+
+msgid "vso.cmd.tasks.list.info.foundTasks"
+msgstr "找到 %d 个任务。"
+
+msgid "vso.cmd.tasks.list.options.json"
+msgstr "以 JSON 格式输出任务"
+
+msgid "vso.cmd.tasks.new"
+msgstr "创建新任务"
+
+msgid "vso.cmd.tasks.new.options.assumeYes"
+msgstr "为所有操作指定“是”"
+
+msgid "vso.cmd.tasks.new.options.at"
+msgstr "设置任务在特定时间执行（hh:mm）"
+
+msgid "vso.cmd.tasks.new.options.command"
+msgstr "指定要执行的命令"
+
+msgid "vso.cmd.tasks.new.options.description"
+msgstr "指定任务描述"
+
+msgid "vso.cmd.tasks.new.options.every"
+msgstr "设置任务在每……时执行（分、小时、天）"
+
+msgid "vso.cmd.tasks.new.options.name"
+msgstr "指定任务名称"
+
+msgid "vso.cmd.tasks.new.options.needConfirm"
+msgstr "执行任务时要求确认"
+
+msgid "vso.cmd.tasks.new.options.onBattery"
+msgstr "仅当系统使用电池时执行任务"
+
+msgid "vso.cmd.tasks.new.options.onCharge"
+msgstr "仅当系统正在充电时执行任务"
+
+msgid "vso.cmd.tasks.new.options.onConditionCommand"
+msgstr "按条件命令执行任务"
+
+msgid "vso.cmd.tasks.new.options.onCpuTemp"
+msgstr "在 CPU 温度高于 60°C 时执行任务"
+
+msgid "vso.cmd.tasks.new.options.onCpuUsage"
+msgstr "在 CPU 使用率高于 …% 时执行任务"
+
+msgid "vso.cmd.tasks.new.options.onDeviceConnect"
+msgstr "在某设备连接时执行任务"
+
+msgid "vso.cmd.tasks.new.options.onDeviceDisconnect"
+msgstr "在某设备断开连接时执行任务"
+
+msgid "vso.cmd.tasks.new.options.onDisconnect"
+msgstr "在系统与网络断开连接时执行任务"
+
+msgid "vso.cmd.tasks.new.options.onFullBattery"
+msgstr "在系统充满电时执行任务"
+
+msgid "vso.cmd.tasks.new.options.onHighCpuUsage"
+msgstr "在 CPU 使用率高于 50% 时执行任务"
+
+msgid "vso.cmd.tasks.new.options.onHighInternetUsage"
+msgstr "在网络吞吐量高于 500Kb/s 时执行任务"
+
+msgid "vso.cmd.tasks.new.options.onHighMemoryUsage"
+msgstr "在内存使用率高于 50% 时执行任务"
+
+msgid "vso.cmd.tasks.new.options.onInternetUsage"
+msgstr "在网络吞吐量高于 …Kb/s 时执行任务"
+
+msgid "vso.cmd.tasks.new.options.onLowBattery"
+msgstr "在系统电量低（20%）时执行任务"
+
+msgid "vso.cmd.tasks.new.options.onMemoryUsage"
+msgstr "在内存使用率高于 …% 时执行任务"
+
+msgid "vso.cmd.tasks.new.options.onNetwork"
+msgstr "在系统连接到网络时执行任务"
+
+msgid "vso.cmd.tasks.new.options.onProcess"
+msgstr "在某进程启动时执行任务"
+
+msgid "vso.cmd.tasks.rm"
+msgstr "移除任务"
+
+msgid "vso.cmd.tasks.rm.error.cannotDelete"
+msgstr "无法删除任务：%s"
+
+msgid "vso.cmd.tasks.rm.error.noName"
+msgstr "没有指定任务名称。"
+
+msgid "vso.cmd.tasks.rm.error.notFound"
+msgstr "未找到任务。"
+
+msgid "vso.cmd.tasks.rm.info.askConfirmation"
+msgstr "确定要删除任务 %s 吗？[y/N]"
+
+msgid "vso.cmd.tasks.rm.info.taskDeleted"
+msgstr "已成功删除任务。"
+
+msgid "vso.cmd.tasks.rm.options.force"
+msgstr "强制删除任务"
+
+msgid "vso.cmd.tasks.rm.options.name"
+msgstr "指定任务名称"
+
+msgid "vso.cmd.tasks.rotate"
+msgstr "轮换任务"
+
+msgid "vso.cmd.tasks.rotate.options.privateEvent"
+msgstr "指定私有事件以轮换开机、关机、登录、注销的任务"
+
+msgid "vso.cmd.tasks.rotate.options.silent"
+msgstr "每个周期时不输出状态"
+
+msgid "vso.cmd.waydroid"
+msgstr "管理 VSO 的 Waydroid 子系统"
+
+msgid "vso.arg.package"
+msgstr ""
+
+msgid "vso.arg.command"
+msgstr ""
+

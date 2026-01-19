@@ -1,0 +1,436 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Vanilla System Operator\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-05-18 12:00+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: vi\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+msgid "vso.description"
+msgstr "Công cụ điều hành hệ thống Vanilla là một trình quản lí gói, một trình cập nhật hệ thống và một trình tự động hoá công việc."
+
+msgid "vso.errors.unknownCommand"
+msgstr "Lệnh không xác định: %s"
+
+msgid "vso.errors.invalidInput"
+msgstr "Đầu vào không hợp lệ."
+
+msgid "vso.errors.invalidChoice"
+msgstr "Lựa chọn không hợp lệ."
+
+msgid "vso.info.aborting"
+msgstr "Đang huỷ bỏ như đã được yêu cầu."
+
+msgid "vso.msg.help"
+msgstr "Hiển thị trợ giúp cho vso."
+
+msgid "vso.msg.version"
+msgstr "Hiển thị phiên bản cho vso."
+
+msgid "vso.msg.usage"
+msgstr "Cách sử dụng"
+
+msgid "vso.msg.aliases"
+msgstr "Bí danh"
+
+msgid "vso.msg.examples"
+msgstr "Ví dụ"
+
+msgid "vso.msg.availableCommands"
+msgstr "Các lệnh có sẵn"
+
+msgid "vso.msg.additionalCommands"
+msgstr "Các lệnh bổ sung"
+
+msgid "vso.msg.flags"
+msgstr "Cờ"
+
+msgid "vso.msg.globalFlags"
+msgstr "Cờ chung"
+
+msgid "vso.msg.additionalHelpTopics"
+msgstr "Các chủ đề trợ giúp bổ sung"
+
+msgid "vso.msg.moreInfo"
+msgstr "Sử dụng %s để biết thêm thông tin về lệnh"
+
+msgid "vso.terminal.yes"
+msgstr "có"
+
+msgid "vso.terminal.no"
+msgstr "không"
+
+msgid "vso.cmd.config"
+msgstr "Quản lí cấu hình hệ thống."
+
+msgid "vso.cmd.config.get"
+msgstr "Lấy cấu hình hệ thống"
+
+msgid "vso.cmd.config.get.error.noKey"
+msgstr "Không có khoá nào được xác định."
+
+msgid "vso.cmd.config.get.error.noValue"
+msgstr "Không tìm thấy giá trị cho khoá: %s"
+
+msgid "vso.cmd.config.get.options.key"
+msgstr "lấy giá trị của cài đặt bởi khoá của nó"
+
+msgid "vso.cmd.config.set"
+msgstr "Đặt cấu hình hệ thống"
+
+msgid "vso.cmd.config.set.error.noKey"
+msgstr "Không có khoá nào được xác định."
+
+msgid "vso.cmd.config.set.error.noValue"
+msgstr "Không có giá trị nào được xác định."
+
+msgid "vso.cmd.config.set.error.failed"
+msgstr "Không thể cài đặt cấu hình: %s"
+
+msgid "vso.cmd.config.set.options.key"
+msgstr "khoá của cấu hình cần đặt"
+
+msgid "vso.cmd.config.set.options.value"
+msgstr "giá trị của cấu hình cần đặt"
+
+msgid "vso.cmd.config.set.success"
+msgstr "Cấu hình được cập nhật thành công."
+
+msgid "vso.cmd.config.show"
+msgstr "Hiển thị cấu hình hệ thống"
+
+msgid "vso.cmd.pico"
+msgstr "Quản lí hệ thống con VSO"
+
+msgid "vso.cmd.pico.error.notInitialized"
+msgstr "Hệ thống con VSO chưa được khởi tạo. Vui lòng khởi tạo bằng lệnh `vso pico-init`."
+
+msgid "vso.cmd.pico.error.alreadyInitialized"
+msgstr "Hệ thống con VSO đã được khởi tạo sẵn. Dùng flag --forces để thực hiện khởi tạo bắt buộc."
+
+msgid "vso.cmd.pico.error.noAppNameOrBin"
+msgstr "--app hoặc --bin phải được xác định."
+
+msgid "vso.cmd.pico.error.sameAppOrBin"
+msgstr "không được xác định --app và --bin cùng lúc."
+
+msgid "vso.cmd.pico.error.exportingApp"
+msgstr "Có một lỗi đã xảy ra khi xuất ứng dụng: %s"
+
+msgid "vso.cmd.pico.error.exportingBin"
+msgstr "Có một lỗi đã xảy ra khi xuất mã nhị phân: %s"
+
+msgid "vso.cmd.pico.error.unexportingApp"
+msgstr "Có một lỗi đã xảy ra khi ngừng xuất ứng dụng: %s"
+
+msgid "vso.cmd.pico.error.unexportingBin"
+msgstr "Có một lỗi đã xảy ra khi ngừng xuất mã nhị phân: %s"
+
+msgid "vso.cmd.pico.error.unknownCommand"
+msgstr "Lệnh không xác định: %s"
+
+msgid "vso.cmd.pico.error.shellReset"
+msgstr "Không thể tiếp cận cửa sổ lệnh VSO. Bạn có muốn cài đặt lại không? (Nếu có, tất cả phần mềm được cài đặt trong hệ thống con sẽ bị gỡ bỏ) [y/N]"
+
+msgid "vso.cmd.pico.info.deleting"
+msgstr "Đang xoá hệ thống con VSO..."
+
+msgid "vso.cmd.pico.info.initializing"
+msgstr "Đang khởi tạo hệ thống con VSO..."
+
+msgid "vso.cmd.pico.info.initialized"
+msgstr "Hệ thống con VSO đã được khởi tạo."
+
+msgid "vso.cmd.pico.info.exported"
+msgstr "Đã xuất %s\n"
+
+msgid "vso.cmd.pico.info.unexported"
+msgstr "Đã ngừng xuất %s\n"
+
+msgid "vso.cmd.pico.info.exportedApps"
+msgstr "Đã xuất %d ứng dụng"
+
+msgid "vso.cmd.pico.info.unexportedApps"
+msgstr "Đã ngừng xuất %d ứng dụng"
+
+msgid "vso.cmd.pico.info.shellInit"
+msgstr "Có vẻ như bạn chưa khởi tạo cửa sổ lệnh. Bạn có muốn khởi tạo ngay không? (Nên làm) [y/N]"
+
+msgid "vso.cmd.pico.info.fallbackShell"
+msgstr "Trở lại host shell? Điều này có thể dẫn đến hành vi không mong muốn. [y/N]"
+
+msgid "vso.cmd.pico.export"
+msgstr "Xuất một ứng dụng hoặc mã nhị phân từ hệ thống con"
+
+msgid "vso.cmd.pico.export.options.app"
+msgstr "tên của ứng dụng cần xuất"
+
+msgid "vso.cmd.pico.export.options.bin"
+msgstr "tên của mã nhị phân cần xuất"
+
+msgid "vso.cmd.pico.export.options.binOutput"
+msgstr "vị trí xuất mã nhị phân (mặc định: ~/.local/bin/)"
+
+msgid "vso.cmd.pico.unexport"
+msgstr "Ngừng xuất một ứng dụng hoặc mã nhị phân từ hệ thống con"
+
+msgid "vso.cmd.pico.unexport.options.app"
+msgstr "tên của ứng dụng cần ngừng xuất"
+
+msgid "vso.cmd.pico.unexport.options.bin"
+msgstr "tên của mã nhị phân cần ngừng xuất"
+
+msgid "vso.cmd.pico.unexport.options.binOutput"
+msgstr "vị trí xuất mã nhị phân (mặc định: ~/.local/bin/)"
+
+msgid "vso.cmd.pico.init"
+msgstr "Khởi tạo hệ thống con VSO để quản lí gói"
+
+msgid "vso.cmd.pico.init.options.force"
+msgstr "bắt buộc khởi tạo nếu hệ thống con đã được khởi tạo sẵn"
+
+msgid "vso.cmd.pico.install"
+msgstr "Cài đặt một ứng dụng trong hệ thống con"
+
+msgid "vso.cmd.pico.remove"
+msgstr "Xoá bỏ một ứng dụng trong hệ thống con"
+
+msgid "vso.cmd.pico.run"
+msgstr "Chạy một ứng dụng trong hệ thống con"
+
+msgid "vso.cmd.pico.run.options.noReset"
+msgstr "đề nghị không cài lại hệ thống con nếu có gì đó không ổn"
+
+msgid "vso.cmd.pico.search"
+msgstr "Tìm kiếm một ứng dụng để cài đặt trong hệ thống con"
+
+msgid "vso.cmd.pico.shell"
+msgstr "Sử dụng môi trường trong hệ thống con"
+
+msgid "vso.cmd.pico.sideload"
+msgstr "Cài đặt gói DEB/APK trong hệ thống con"
+
+msgid "vso.cmd.pico.update"
+msgstr "Cập nhật kho lưu trữ gói của hệ thống con"
+
+msgid "vso.cmd.pico.upgrade"
+msgstr "Nâng cấp các gói trong hệ thống con"
+
+msgid "vso.cmd.sysUpgrade"
+msgstr "Thực hiện các lệnh hệ thống, chẳng hạn như nâng cấp hệ thống"
+
+msgid "vso.cmd.sysUpgrade.check"
+msgstr "Kiểm tra cập nhật hệ thống"
+
+msgid "vso.cmd.sysUpgrade.check.asExitCode"
+msgstr "kiểm tra cập nhật và không xuất kết quả. Trả về mã 0 nếu không có và 1 nếu có bản nâng cấp."
+
+msgid "vso.cmd.sysUpgrade.check.error.asExitCodeAndJson"
+msgstr "Có một lỗi đã xảy ra khi kiểm tra cập nhật. Vui lòng xem tệp JSON để biết thêm chi tiết."
+
+msgid "vso.cmd.sysUpgrade.check.info.checking"
+msgstr "Đang kiểm tra cập nhật..."
+
+msgid "vso.cmd.sysUpgrade.check.json"
+msgstr "xuất kết quả dưới dạng JSON"
+
+msgid "vso.cmd.sysUpgrade.upgrade"
+msgstr ""
+
+msgid "vso.cmd.sysUpgrade.error.updating"
+msgstr ""
+
+msgid "vso.cmd.sysUpgrade.error.onHasUpdate"
+msgstr ""
+
+msgid "vso.cmd.sysUpgrade.schedule.daily"
+msgstr ""
+
+msgid "vso.cmd.sysUpgrade.schedule.weekly"
+msgstr ""
+
+msgid "vso.cmd.sysUpgrade.schedule.monthly"
+msgstr ""
+
+msgid "vso.cmd.sysUpgrade.info.updating"
+msgstr ""
+
+msgid "vso.cmd.sysUpgrade.info.willUpdateLater"
+msgstr ""
+
+msgid "vso.cmd.sysUpgrade.info.willNeverUpdate"
+msgstr ""
+
+msgid "vso.cmd.sysUpgrade.info.noUpdates"
+msgstr ""
+
+msgid "vso.cmd.sysUpgrade.now"
+msgstr ""
+
+msgid "vso.cmd.tasks"
+msgstr "Tạo và quản lí công việc"
+
+msgid "vso.cmd.tasks.stacks.new.error.emptyCommand"
+msgstr "Không được để trống câu lệnh."
+
+msgid "vso.cmd.tasks.stacks.new.error.emptyDescription"
+msgstr "Không được để trống mô tả."
+
+msgid "vso.cmd.tasks.stacks.new.error.emptyName"
+msgstr "Không được để trống tên."
+
+msgid "vso.cmd.tasks.stacks.new.error.noCommand"
+msgstr "Không có câu lệnh nào được xác định."
+
+msgid "vso.cmd.tasks.stacks.new.error.noDescription"
+msgstr "Không có mô tả nào được xác định."
+
+msgid "vso.cmd.tasks.stacks.new.error.noName"
+msgstr "Không có tên nào được xác định."
+
+msgid "vso.cmd.tasks.stacks.new.info.askCommand"
+msgstr "Câu lệnh: "
+
+msgid "vso.cmd.tasks.stacks.new.info.askDescription"
+msgstr "Mô tả: "
+
+msgid "vso.cmd.tasks.stacks.new.info.askName"
+msgstr "Tên: "
+
+msgid "vso.cmd.tasks.stacks.new.info.taskCreated"
+msgstr "Công việc đã được tạo thành công."
+
+msgid "vso.cmd.tasks.list"
+msgstr "Liệt kê tất cả công việc"
+
+msgid "vso.cmd.tasks.list.noTasks"
+msgstr "Không tìm thấy công việc nào."
+
+msgid "vso.cmd.tasks.list.info.foundTasks"
+msgstr "Đã tìm thấy %d công việc."
+
+msgid "vso.cmd.tasks.list.options.json"
+msgstr "xuất công việc dưới dạng JSON"
+
+msgid "vso.cmd.tasks.new"
+msgstr "Tạo công việc mới"
+
+msgid "vso.cmd.tasks.new.options.assumeYes"
+msgstr "giả sử có cho tất cả các lời nhắc"
+
+msgid "vso.cmd.tasks.new.options.at"
+msgstr "lên kế hoạch thực hiện công việc tại một thời điểm cụ thể (giờ:phút)"
+
+msgid "vso.cmd.tasks.new.options.command"
+msgstr "xác định câu lệnh để thực thi"
+
+msgid "vso.cmd.tasks.new.options.description"
+msgstr "xác định mô tả công việc"
+
+msgid "vso.cmd.tasks.new.options.every"
+msgstr "lên kế hoạch thực hiện công việc sau mỗi khoảng thời gian cố định (phút, giờ, ngày)"
+
+msgid "vso.cmd.tasks.new.options.name"
+msgstr "xác định tên công việc"
+
+msgid "vso.cmd.tasks.new.options.needConfirm"
+msgstr "yêu cầu xác nhận trước khi thực hiện công việc"
+
+msgid "vso.cmd.tasks.new.options.onBattery"
+msgstr "chỉ thực hiện công việc khi hệ thống đang sử dụng pin"
+
+msgid "vso.cmd.tasks.new.options.onCharge"
+msgstr "chỉ thực hiện công việc khi hệ thống đang được sạc"
+
+msgid "vso.cmd.tasks.new.options.onConditionCommand"
+msgstr "thực hiện công việc với câu lệnh điều kiện"
+
+msgid "vso.cmd.tasks.new.options.onCpuTemp"
+msgstr "thực hiện công việc khi nhiệt độ vi xử lý vượt quá 60°C"
+
+msgid "vso.cmd.tasks.new.options.onCpuUsage"
+msgstr "thực hiện công việc khi vi xử lí đang chạy trên X% công suất"
+
+msgid "vso.cmd.tasks.new.options.onDeviceConnect"
+msgstr "thực hiện công việc khi có một thiết bị được kết nối"
+
+msgid "vso.cmd.tasks.new.options.onDeviceDisconnect"
+msgstr "thực hiện công việc khi có một thiết bị được ngắt kết nối"
+
+msgid "vso.cmd.tasks.new.options.onDisconnect"
+msgstr "thực hiện công việc khi hệ thống đã ngắt kết nối mạng"
+
+msgid "vso.cmd.tasks.new.options.onFullBattery"
+msgstr "thực hiện công việc khi hệ thống được sạc đầy"
+
+msgid "vso.cmd.tasks.new.options.onHighCpuUsage"
+msgstr "thực hiện công việc khi vi xử lý chạy trên 50% công suất"
+
+msgid "vso.cmd.tasks.new.options.onHighInternetUsage"
+msgstr "thực hiện công việc khi thông lượng mạng vượt quá 500Kb/s"
+
+msgid "vso.cmd.tasks.new.options.onHighMemoryUsage"
+msgstr "thực hiện công việc khi RAM được sử dụng trên 50%"
+
+msgid "vso.cmd.tasks.new.options.onInternetUsage"
+msgstr "thực hiện công việc khi thông lượng mạng vượt quá XKb/s"
+
+msgid "vso.cmd.tasks.new.options.onLowBattery"
+msgstr "thực hiện công việc khi hệ thống sắp hết pin (20%)"
+
+msgid "vso.cmd.tasks.new.options.onMemoryUsage"
+msgstr "thực hiện công việc khi RAM được sử dụng trên X%"
+
+msgid "vso.cmd.tasks.new.options.onNetwork"
+msgstr "thực hiện công việc khi hệ thống đã kết nối mạng"
+
+msgid "vso.cmd.tasks.new.options.onProcess"
+msgstr "thực hiện công việc khi có một tiến trình được bắt đầu"
+
+msgid "vso.cmd.tasks.rm"
+msgstr "Xoá một công việc"
+
+msgid "vso.cmd.tasks.rm.error.cannotDelete"
+msgstr "Không thể xoá công việc: %s"
+
+msgid "vso.cmd.tasks.rm.error.noName"
+msgstr "Không có tên công việc nào được xác định."
+
+msgid "vso.cmd.tasks.rm.error.notFound"
+msgstr "Không tìm thấy công việc."
+
+msgid "vso.cmd.tasks.rm.info.askConfirmation"
+msgstr "Bạn có chắc chắn muốn xoá công việc %s? [y/N]"
+
+msgid "vso.cmd.tasks.rm.info.taskDeleted"
+msgstr "Công việc đã được xoá thành công."
+
+msgid "vso.cmd.tasks.rm.options.force"
+msgstr "bắt buộc xoá công việc"
+
+msgid "vso.cmd.tasks.rm.options.name"
+msgstr "xác định tên công việc"
+
+msgid "vso.cmd.tasks.rotate"
+msgstr "Xoay vòng nhiệm vụ"
+
+msgid "vso.cmd.tasks.rotate.options.privateEvent"
+msgstr "chỉ định sự kiện riêng tư để luân phiên các tác vụ khởi động, tắt máy, đăng nhập và đăng xuất"
+
+msgid "vso.cmd.tasks.rotate.options.silent"
+msgstr "không đưa ra trạng thái trên mỗi chu kỳ"
+
+msgid "vso.cmd.waydroid"
+msgstr "Quản lí hệ thống con vso waydroid"
+
+msgid "vso.arg.package"
+msgstr ""
+
+msgid "vso.arg.command"
+msgstr ""
+

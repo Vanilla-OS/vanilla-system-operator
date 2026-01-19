@@ -2,22 +2,25 @@ package core
 
 /*	License: GPLv3
 	Authors:
-		Mirko Brombin <send@mirko.pm>
+		Mirko Brombin <brombin94@gmail.com>
 		Pietro di Caprio <pietro@fabricators.ltd>
+		Vanilla OS Contributors <https://github.com/vanilla-os/>
 	Copyright: 2024
-	Description: The Vanilla System Operator is a package manager,
-	a system updater and a task automator.
+	Description: VSO is a utility which allows you to perform maintenance
+	tasks on your Vanilla OS installation.
 */
 
 import (
 	"fmt"
 	"os"
 	"os/exec"
-	"path"
 	"regexp"
 	"strconv"
 	"strings"
 	"time"
+
+	"github.com/vanilla-os/sdk/pkg/v1/hardware"
+	"github.com/vanilla-os/sdk/pkg/v1/net"
 )
 
 type CommonChecks struct {
@@ -85,41 +88,19 @@ func GetCommonChecks() *CommonChecks {
 
 // IsNetworkUp checks if the network is up
 func IsNetworkUp() bool {
-	cmd := exec.Command("sh", "-c", "ping -q -w 1 -c 1 `ip r | grep default | cut -d ' ' -f 3` > /dev/null && exit 0 || exit 1")
-	err := cmd.Run()
-	return err == nil
+	return net.CheckInternetConnectivity()
 }
 
 // GetBatteryStats gets the battery stats
 func GetBatteryStats() (bool, bool, bool) {
-	battery, lowBattery, fullBattery := false, false, false
-
-	files, err := os.ReadDir("/sys/class/power_supply/")
-	if err == nil {
-		for _, file := range files {
-			if strings.Contains(file.Name(), "BAT") {
-				status, err := os.ReadFile(path.Join("/sys/class/power_supply/", file.Name(), "status"))
-				if err == nil {
-					if strings.Contains(string(status), "Discharging") {
-						battery = true
-					}
-				}
-
-				capacity, err := os.ReadFile(path.Join("/sys/class/power_supply/", file.Name(), "capacity"))
-				if err == nil {
-					percent, err := strconv.Atoi(strings.TrimSpace(string(capacity)))
-					if err == nil {
-						if percent <= 30 {
-							lowBattery = true
-						}
-						if percent == 100 {
-							fullBattery = true
-						}
-					}
-				}
-			}
-		}
+	stats, err := hardware.GetBatteryStats()
+	if err != nil || stats == nil {
+		return false, false, false
 	}
+
+	battery := stats.Status == "Discharging"
+	lowBattery := stats.Percentage <= 30
+	fullBattery := stats.Percentage == 100
 
 	return battery, lowBattery, fullBattery
 }

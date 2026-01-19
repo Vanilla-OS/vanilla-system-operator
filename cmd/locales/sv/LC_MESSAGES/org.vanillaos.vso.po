@@ -1,0 +1,436 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Vanilla System Operator\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-05-18 12:00+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: sv\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+msgid "vso.description"
+msgstr "Vanilla-systemoperatören är en pakethanterare, en systemuppdaterare och en uppgiftsautomatiserare."
+
+msgid "vso.errors.unknownCommand"
+msgstr "Okänt kommando: %s"
+
+msgid "vso.errors.invalidInput"
+msgstr "Ogiltig inmatning."
+
+msgid "vso.errors.invalidChoice"
+msgstr "Ogiltigt val."
+
+msgid "vso.info.aborting"
+msgstr "Avbryter som begärt."
+
+msgid "vso.msg.help"
+msgstr "Visa hjälp för vso."
+
+msgid "vso.msg.version"
+msgstr "Visa version av vso."
+
+msgid "vso.msg.usage"
+msgstr "Användning"
+
+msgid "vso.msg.aliases"
+msgstr "Aliaser"
+
+msgid "vso.msg.examples"
+msgstr "Exempel"
+
+msgid "vso.msg.availableCommands"
+msgstr "Tillgängliga kommandon"
+
+msgid "vso.msg.additionalCommands"
+msgstr "Ytterligare kommandon"
+
+msgid "vso.msg.flags"
+msgstr "Flaggor"
+
+msgid "vso.msg.globalFlags"
+msgstr "Globala flaggor"
+
+msgid "vso.msg.additionalHelpTopics"
+msgstr "Ytterligare hjälpämnen"
+
+msgid "vso.msg.moreInfo"
+msgstr "Använd %s för mer information om ett kommando"
+
+msgid "vso.terminal.yes"
+msgstr "ja"
+
+msgid "vso.terminal.no"
+msgstr "nej"
+
+msgid "vso.cmd.config"
+msgstr "Hantera systemkonfigurationen."
+
+msgid "vso.cmd.config.get"
+msgstr "Hämta systemkonfigurationen"
+
+msgid "vso.cmd.config.get.error.noKey"
+msgstr "Ingen nyckel specificerad."
+
+msgid "vso.cmd.config.get.error.noValue"
+msgstr "Inget värde hittades för nyckel: %s"
+
+msgid "vso.cmd.config.get.options.key"
+msgstr "hämta konfigurationsvärde genom att använda dess nyckel"
+
+msgid "vso.cmd.config.set"
+msgstr "Ställ in systemkonfiguration"
+
+msgid "vso.cmd.config.set.error.noKey"
+msgstr "Ingen nyckel specifiecerad."
+
+msgid "vso.cmd.config.set.error.noValue"
+msgstr "Inget värde specificerat."
+
+msgid "vso.cmd.config.set.error.failed"
+msgstr "Misslyckades med att ställa in konfiguration: %s"
+
+msgid "vso.cmd.config.set.options.key"
+msgstr "nyckeln för den konfiguration som ska ställas in"
+
+msgid "vso.cmd.config.set.options.value"
+msgstr "värdet för den konfiguration som ska ställas in"
+
+msgid "vso.cmd.config.set.success"
+msgstr "Konfigurationen uppdaterades framgångsrikt."
+
+msgid "vso.cmd.config.show"
+msgstr "Visa systemkonfiguration"
+
+msgid "vso.cmd.pico"
+msgstr "Hantera VSO undersystem"
+
+msgid "vso.cmd.pico.error.notInitialized"
+msgstr "VSO-undersystemet är inte initierat. Kör `vso pico-init` för att initiera det."
+
+msgid "vso.cmd.pico.error.alreadyInitialized"
+msgstr "VSO-undersystemet är redan initierat. Använd flaggan --force för att tvinga fram initieringen."
+
+msgid "vso.cmd.pico.error.noAppNameOrBin"
+msgstr "--app eller --bin måste anges."
+
+msgid "vso.cmd.pico.error.sameAppOrBin"
+msgstr "--app och --bin kan inte båda specificeras."
+
+msgid "vso.cmd.pico.error.exportingApp"
+msgstr "Ett fel uppstod vid export av program: %s"
+
+msgid "vso.cmd.pico.error.exportingBin"
+msgstr "Ett fel inträffade vid export av binär: %s"
+
+msgid "vso.cmd.pico.error.unexportingApp"
+msgstr "Ett fel uppstod när programmet skulle avexporteras: %s"
+
+msgid "vso.cmd.pico.error.unexportingBin"
+msgstr "Ett fel uppstod när binären: %s skulle avexporteras"
+
+msgid "vso.cmd.pico.error.unknownCommand"
+msgstr "Okänt kommando: %s"
+
+msgid "vso.cmd.pico.error.shellReset"
+msgstr "Det är omöjligt att nå VSO-skalet. Vill du återställa det? (Detta tar bort all programvara som är installerad i undersystemet) [j/N]"
+
+msgid "vso.cmd.pico.info.deleting"
+msgstr "Tar bort VSO-undersystemet..."
+
+msgid "vso.cmd.pico.info.initializing"
+msgstr "Initierar VSO-undersystemet..."
+
+msgid "vso.cmd.pico.info.initialized"
+msgstr "VSO-undersystemet har initierats."
+
+msgid "vso.cmd.pico.info.exported"
+msgstr "Exporterad %s\n"
+
+msgid "vso.cmd.pico.info.unexported"
+msgstr "Oexporterad %s\n"
+
+msgid "vso.cmd.pico.info.exportedApps"
+msgstr "Exporterade %d program"
+
+msgid "vso.cmd.pico.info.unexportedApps"
+msgstr "Oexporterade %d program"
+
+msgid "vso.cmd.pico.info.shellInit"
+msgstr "Det verkar som om ditt skal inte är initierat ännu. Vill du initiera det nu? (rekommenderas starkt) [j/N]"
+
+msgid "vso.cmd.pico.info.fallbackShell"
+msgstr "Återgå till värdskalet? Detta kan leda till oväntat beteende. [j/N]"
+
+msgid "vso.cmd.pico.export"
+msgstr "Exporterade ett program eller binär från undersystemet"
+
+msgid "vso.cmd.pico.export.options.app"
+msgstr "Namnet på programmet du vill exportera"
+
+msgid "vso.cmd.pico.export.options.bin"
+msgstr "Namnet på binären du vill exportera"
+
+msgid "vso.cmd.pico.export.options.binOutput"
+msgstr "sökväg för den binära utdatan (standard: ~/.local/bin/)"
+
+msgid "vso.cmd.pico.unexport"
+msgstr "Avexportera ett program eller binär från undersystemet"
+
+msgid "vso.cmd.pico.unexport.options.app"
+msgstr "namnet på programmet som ska avexporteras"
+
+msgid "vso.cmd.pico.unexport.options.bin"
+msgstr "namnet på den binär som ska avexporteras"
+
+msgid "vso.cmd.pico.unexport.options.binOutput"
+msgstr "sökväg för den binära utdatan (standard: ~/.local/bin/)"
+
+msgid "vso.cmd.pico.init"
+msgstr "Initiera VSO-undersystemet, som används för pakethantering"
+
+msgid "vso.cmd.pico.init.options.force"
+msgstr "tvinga fram initieringen om undersystemet redan är initierat"
+
+msgid "vso.cmd.pico.install"
+msgstr "Installera ett program inuti undersystemet"
+
+msgid "vso.cmd.pico.remove"
+msgstr "Ta bort ett program från undersystemet"
+
+msgid "vso.cmd.pico.run"
+msgstr "Kör ett program från delsystem"
+
+msgid "vso.cmd.pico.run.options.noReset"
+msgstr "Föreslå inte att återställa undersystemet om något går fel"
+
+msgid "vso.cmd.pico.search"
+msgstr "Sök efter ett program att installera inuti delsystemet"
+
+msgid "vso.cmd.pico.shell"
+msgstr "Gå in i undersystemetsmiljö"
+
+msgid "vso.cmd.pico.sideload"
+msgstr "Sidladda DEB/APK-paket inuti undersystemet"
+
+msgid "vso.cmd.pico.update"
+msgstr "Uppdatera undersystemets paketarkiv"
+
+msgid "vso.cmd.pico.upgrade"
+msgstr "Uppdatera paketen inuti undersystemet"
+
+msgid "vso.cmd.sysUpgrade"
+msgstr "Utför systemkommandon, som att uppgradera systemet"
+
+msgid "vso.cmd.sysUpgrade.check"
+msgstr "Sök efter systemuppdateringar"
+
+msgid "vso.cmd.sysUpgrade.check.asExitCode"
+msgstr "söker efter uppgraderingar men skriver inte ut något. Returnerar utgångskod 0 om ingen uppgradering är tillgänglig och 1 annars."
+
+msgid "vso.cmd.sysUpgrade.check.error.asExitCodeAndJson"
+msgstr "Ett fel uppstod vid sökning efter uppdateringar. Se JSON-utdata för mer information."
+
+msgid "vso.cmd.sysUpgrade.check.info.checking"
+msgstr "Kollar efter uppdateringar..."
+
+msgid "vso.cmd.sysUpgrade.check.json"
+msgstr "Utdata av resultatet i JSON-format"
+
+msgid "vso.cmd.sysUpgrade.upgrade"
+msgstr ""
+
+msgid "vso.cmd.sysUpgrade.error.updating"
+msgstr ""
+
+msgid "vso.cmd.sysUpgrade.error.onHasUpdate"
+msgstr ""
+
+msgid "vso.cmd.sysUpgrade.schedule.daily"
+msgstr ""
+
+msgid "vso.cmd.sysUpgrade.schedule.weekly"
+msgstr ""
+
+msgid "vso.cmd.sysUpgrade.schedule.monthly"
+msgstr ""
+
+msgid "vso.cmd.sysUpgrade.info.updating"
+msgstr ""
+
+msgid "vso.cmd.sysUpgrade.info.willUpdateLater"
+msgstr ""
+
+msgid "vso.cmd.sysUpgrade.info.willNeverUpdate"
+msgstr ""
+
+msgid "vso.cmd.sysUpgrade.info.noUpdates"
+msgstr ""
+
+msgid "vso.cmd.sysUpgrade.now"
+msgstr ""
+
+msgid "vso.cmd.tasks"
+msgstr "Skapa och hantera uppgifter"
+
+msgid "vso.cmd.tasks.stacks.new.error.emptyCommand"
+msgstr "Kommandot kan inte vara tomt."
+
+msgid "vso.cmd.tasks.stacks.new.error.emptyDescription"
+msgstr "Beskrivningen kan inte vara tom."
+
+msgid "vso.cmd.tasks.stacks.new.error.emptyName"
+msgstr "Namnet kan inte vara tomt."
+
+msgid "vso.cmd.tasks.stacks.new.error.noCommand"
+msgstr "Inget kommando specificerat."
+
+msgid "vso.cmd.tasks.stacks.new.error.noDescription"
+msgstr "Ingen beskrivning specificerad."
+
+msgid "vso.cmd.tasks.stacks.new.error.noName"
+msgstr "Inget namn specificerat."
+
+msgid "vso.cmd.tasks.stacks.new.info.askCommand"
+msgstr "Kommando: "
+
+msgid "vso.cmd.tasks.stacks.new.info.askDescription"
+msgstr "Beskrivning: "
+
+msgid "vso.cmd.tasks.stacks.new.info.askName"
+msgstr "Namn: "
+
+msgid "vso.cmd.tasks.stacks.new.info.taskCreated"
+msgstr "Uppgift har skapats framgångsrikt."
+
+msgid "vso.cmd.tasks.list"
+msgstr "Lista alla uppgifter"
+
+msgid "vso.cmd.tasks.list.noTasks"
+msgstr "Inga uppgifter hittades."
+
+msgid "vso.cmd.tasks.list.info.foundTasks"
+msgstr "Hittade %d uppgifter."
+
+msgid "vso.cmd.tasks.list.options.json"
+msgstr "utdata uppgifterna i JSON-format"
+
+msgid "vso.cmd.tasks.new"
+msgstr "Skapa en ny uppgift"
+
+msgid "vso.cmd.tasks.new.options.assumeYes"
+msgstr "anta ja för alla inmatningar"
+
+msgid "vso.cmd.tasks.new.options.at"
+msgstr "schemalägg uppgift att utföras vid en specifik tidpunkt (tt:mm)"
+
+msgid "vso.cmd.tasks.new.options.command"
+msgstr "specificera kommando som ska exekveras"
+
+msgid "vso.cmd.tasks.new.options.description"
+msgstr "specificera uppgiftens beskrivning"
+
+msgid "vso.cmd.tasks.new.options.every"
+msgstr "schemalägg uppgiften att utföras varje X gång (minuter, timmar, dagar)"
+
+msgid "vso.cmd.tasks.new.options.name"
+msgstr "specificera uppgiftens namn"
+
+msgid "vso.cmd.tasks.new.options.needConfirm"
+msgstr "be om bekräftelse innan uppgiften exekveras"
+
+msgid "vso.cmd.tasks.new.options.onBattery"
+msgstr "Installera ett program inuti undersystemet"
+
+msgid "vso.cmd.tasks.new.options.onCharge"
+msgstr "utför den här uppgiften endast när systemet är på batteri"
+
+msgid "vso.cmd.tasks.new.options.onConditionCommand"
+msgstr "exekvera uppgiften på villkorskommando"
+
+msgid "vso.cmd.tasks.new.options.onCpuTemp"
+msgstr "utför uppgiften när CPU-temperaturen är högre än 60°C"
+
+msgid "vso.cmd.tasks.new.options.onCpuUsage"
+msgstr "utför uppgiften när CPU-användningen är högre än X%"
+
+msgid "vso.cmd.tasks.new.options.onDeviceConnect"
+msgstr "utför uppgiften när en enhet är ansluten"
+
+msgid "vso.cmd.tasks.new.options.onDeviceDisconnect"
+msgstr "utför uppgiften när en enhet kopplas från"
+
+msgid "vso.cmd.tasks.new.options.onDisconnect"
+msgstr "utför uppgiften när systemet är frånkopplat från nätverket"
+
+msgid "vso.cmd.tasks.new.options.onFullBattery"
+msgstr "utför uppgiften när systemet är fulladdat"
+
+msgid "vso.cmd.tasks.new.options.onHighCpuUsage"
+msgstr "utför uppgiften när CPU-användningen är högre än 50 %"
+
+msgid "vso.cmd.tasks.new.options.onHighInternetUsage"
+msgstr "utför uppgiften när internetanvändningen är högre än 500Kb/s"
+
+msgid "vso.cmd.tasks.new.options.onHighMemoryUsage"
+msgstr "utför uppgiften när minnesanvändningen är högre än 50 %"
+
+msgid "vso.cmd.tasks.new.options.onInternetUsage"
+msgstr "utför uppgiften när internetanvändningen är högre än XKb/s"
+
+msgid "vso.cmd.tasks.new.options.onLowBattery"
+msgstr "utför uppgiften när systemet har låg batterinivå (20%)"
+
+msgid "vso.cmd.tasks.new.options.onMemoryUsage"
+msgstr "utför uppgiften när minnesanvändningen är högre än X%"
+
+msgid "vso.cmd.tasks.new.options.onNetwork"
+msgstr "utför uppgiften när systemet är anslutet till nätverket"
+
+msgid "vso.cmd.tasks.new.options.onProcess"
+msgstr "utför uppgiften när en process startar"
+
+msgid "vso.cmd.tasks.rm"
+msgstr "Ta bort en uppgift"
+
+msgid "vso.cmd.tasks.rm.error.cannotDelete"
+msgstr "Kan inte ta bort uppgift: %s"
+
+msgid "vso.cmd.tasks.rm.error.noName"
+msgstr "Inget uppgiftsnamn specificerat."
+
+msgid "vso.cmd.tasks.rm.error.notFound"
+msgstr "Uppgift hittades inte."
+
+msgid "vso.cmd.tasks.rm.info.askConfirmation"
+msgstr "Är du säker på att du vill ta bort uppgift %s? [j/N]"
+
+msgid "vso.cmd.tasks.rm.info.taskDeleted"
+msgstr "Uppgiften har raderats framgångsrikt."
+
+msgid "vso.cmd.tasks.rm.options.force"
+msgstr "tvinga fram borttagningen av uppgift"
+
+msgid "vso.cmd.tasks.rm.options.name"
+msgstr "specificera uppgiftens namn"
+
+msgid "vso.cmd.tasks.rotate"
+msgstr "Rotera uppgifter"
+
+msgid "vso.cmd.tasks.rotate.options.privateEvent"
+msgstr "specificera den privata händelse för att rotera uppgifter för start, avstängning, inloggning, och utloggning"
+
+msgid "vso.cmd.tasks.rotate.options.silent"
+msgstr "skriv inte ut status för varje cykel"
+
+msgid "vso.cmd.waydroid"
+msgstr "Hantera vso waydroid undersystem"
+
+msgid "vso.arg.package"
+msgstr ""
+
+msgid "vso.arg.command"
+msgstr ""
+

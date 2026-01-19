@@ -1,440 +1,181 @@
-.TH VSO 1 "2024-01-29" "vso" "User Manual"
-.SH NAME
+.TH ROOT 1 "2026-01-19" "root" ""
+.SH SUBCOMMAND ROOT
 .RS 4
-vso - The Vanilla System Operator is a package manager, a system updater and a task automator\&.
 .RE
-.SH SYNOPSIS
-.RS 4
-vso [command] [flags] [arguments]
-.RE
-.SH DESCRIPTION
-.RS 4
-The Vanilla System Operator is a package manager, a system updater and a task automator\&.
-.RE
-.SH OPTIONS
-.SH VSO COMMANDS
-.RS 4
-\fBtasks\fP
-.RS 4
-Create and manage tasks
-.PP
-.RE
-\fBsys\fP
-.RS 4
-Execute system commands, such as upgrading the system
-.PP
-.RE
-\fBconfig\fP
-.RS 4
-Manage the system configuration\&.
-.PP
-.RE
-\fBinstall\fP
-.RS 4
-Install an application inside the subsystem
-.PP
-.RE
-\fBremove\fP
-.RS 4
-Remove an application from the subsystem
-.PP
-.RE
-\fBsideload\fP
-.RS 4
-pico\&.sideload\&.description
-.PP
-.RE
-\fBupdate\fP
-.RS 4
-Update the subsystem's package repository
-.PP
-.RE
-\fBupgrade\fP
-.RS 4
-Upgrade the packages inside the subsystem
-.PP
-.RE
-\fBsearch\fP
-.RS 4
-Search for an application to install inside the subsystem
-.PP
-.RE
-\fBshell\fP
-.RS 4
-Enter the subsystem environment
-.PP
-.RE
-\fBrun\fP
-.RS 4
-Run an application from the subsystem
-.PP
-.RE
-\fBexport\fP
-.RS 4
-Export an application or binary from the subsystem
-.PP
-.RE
-\fBunexport\fP
-.RS 4
-Unexport an application or binary from the subsystem
-.PP
-.RE
-\fBpico-init\fP
-.RS 4
-Initialize the VSO subsystem, used for package management
-.PP
-.RE
-\fBandroid\fP
-.RS 4
-Manage the vso waydroid subsystem
-.PP
-.RE
-.RE
-.SH AUTHORS
-.PP
-Written by Vanilla OS contributors\&.
-.SH REPORT BUGS TO
-.PP
-https://github\&.com/vanilla-os/vso/issues
-.SH LICENSE
-.PP
-GPLv3+: GNU GPL version 3 or later <http://gnu\&.org/licenses/gpl\&.html>\&.
-.SH VSO SUBCOMMANDS
-.SH SUBCOMMAND TASKS
-.RS 4
-Create and manage tasks
-.RE
-.SS SYNOPSIS
-.RS 4
-\fBtasks\fP [command] [flags] [arguments]
-.RE
-.SS DESCRIPTION
-.RS 4
-.TP 4
-Create and manage tasks
-.RE
-.SS OPTIONS
-.SS GLOBAL OPTIONS
-.SH LIST
-.RS 4
-List all tasks
-.PP
-.RE
-.SH NEW
-.RS 4
-Create a new task
-.PP
-.RE
-.SH RM
-.RS 4
-Remove a task
-.PP
-.RE
-.SH ROTATE
-.RS 4
-Rotate tasks
-.PP
-.RE
-.SH SUBCOMMAND SYS
-.RS 4
-Execute system commands, such as upgrading the system
-.RE
-.SS SYNOPSIS
-.RS 4
-\fBsys\fP [command] [flags] [arguments]
-.RE
-.SS DESCRIPTION
-.RS 4
-.TP 4
-Execute system commands, such as upgrading the system
-.RE
-.SS OPTIONS
-.SS GLOBAL OPTIONS
-.SH CHECK
-.RS 4
-Check for system updates
-.PP
-.RE
-.SH UPGRADE
-.RS 4
-Upgrade the system
-.PP
-.RE
-.SH SUBCOMMAND CONFIG
-.RS 4
-Manage the system configuration\&.
-.RE
-.SS SYNOPSIS
-.RS 4
-\fBconfig\fP [command] [flags] [arguments]
-.RE
-.SS DESCRIPTION
-.RS 4
-.TP 4
-Manage the system configuration\&.
-.RE
-.SS OPTIONS
-.SS GLOBAL OPTIONS
-.SH SHOW
-.RS 4
-Show the system configuration
-.PP
-.RE
-.SH GET
-.RS 4
-Get the system configuration
-.PP
-.RE
-.SH SET
-.RS 4
-Set the system configuration
-.PP
-.RE
-.SH SUBCOMMAND INSTALL
-.RS 4
-Install an application inside the subsystem
-.RE
-.SS SYNOPSIS
-.RS 4
-\fBinstall\fP [command] [flags] [arguments]
-.RE
-.SS DESCRIPTION
-.RS 4
-.TP 4
-Install an application inside the subsystem
-.RE
-.SS OPTIONS
-.SS GLOBAL OPTIONS
-.SH SUBCOMMAND REMOVE
-.RS 4
-Remove an application from the subsystem
-.RE
-.SS SYNOPSIS
-.RS 4
-\fBremove\fP [command] [flags] [arguments]
-.RE
-.SS DESCRIPTION
-.RS 4
-.TP 4
-Remove an application from the subsystem
-.RE
-.SS OPTIONS
-.SS GLOBAL OPTIONS
-.SH SUBCOMMAND SIDELOAD
-.RS 4
-pico\&.sideload\&.description
-.RE
-.SS SYNOPSIS
-.RS 4
-\fBsideload\fP [command] [flags] [arguments]
-.RE
-.SS DESCRIPTION
-.RS 4
-.TP 4
-pico\&.sideload\&.description
-.RE
-.SS OPTIONS
-.SS GLOBAL OPTIONS
-.SH SUBCOMMAND UPDATE
-.RS 4
-Update the subsystem's package repository
-.RE
-.SS SYNOPSIS
-.RS 4
-\fBupdate\fP [command] [flags] [arguments]
-.RE
-.SS DESCRIPTION
-.RS 4
-.TP 4
-Update the subsystem's package repository
-.RE
-.SS OPTIONS
-.SS GLOBAL OPTIONS
 .SH SUBCOMMAND UPGRADE
 .RS 4
-Upgrade the packages inside the subsystem
-.RE
-.SS SYNOPSIS
-.RS 4
-\fBupgrade\fP [command] [flags] [arguments]
-.RE
-.SS DESCRIPTION
-.RS 4
-.TP 4
-Upgrade the packages inside the subsystem
+vso\&.cmd\&.sysUpgrade
 .RE
 .SS OPTIONS
-.SS GLOBAL OPTIONS
-.SH SUBCOMMAND SEARCH
-.RS 4
-Search for an application to install inside the subsystem
-.RE
-.SS SYNOPSIS
-.RS 4
-\fBsearch\fP [command] [flags] [arguments]
-.RE
-.SS DESCRIPTION
-.RS 4
-.TP 4
-Search for an application to install inside the subsystem
-.RE
-.SS OPTIONS
-.SS GLOBAL OPTIONS
-.SH SUBCOMMAND SHELL
-.RS 4
-Enter the subsystem environment
-.RE
-.SS SYNOPSIS
-.RS 4
-\fBshell\fP [command] [flags] [arguments]
-.RE
-.SS DESCRIPTION
-.RS 4
-.TP 4
-Enter the subsystem environment
-.RE
-.SS OPTIONS
-.SS GLOBAL OPTIONS
-.SH SUBCOMMAND RUN
-.RS 4
-Run an application from the subsystem
-.RE
-.SS SYNOPSIS
-.RS 4
-\fBrun\fP [command] [flags] [arguments]
-.RE
-.SS DESCRIPTION
-.RS 4
-.TP 4
-Run an application from the subsystem
-.RE
-.SS OPTIONS
-  -n, --no-reset   do not propose to reset the subsystem if something goes wrong
+  --now  vso\&.cmd\&.sysUpgrade\&.now
 .PP
-.SS GLOBAL OPTIONS
+.SH SUBCOMMAND CHECK
+.RS 4
+vso\&.cmd\&.sysUpgrade\&.check
+.RE
+.SS OPTIONS
+  --json  vso\&.cmd\&.sysUpgrade\&.check\&.json
+.PP
+.SH SUBCOMMAND CONFIG
+.RS 4
+vso\&.cmd\&.config
+.RE
+.SH SUBCOMMAND SHOW
+.RS 4
+vso\&.cmd\&.config\&.show
+.RE
+.SH SUBCOMMAND GET
+.RS 4
+vso\&.cmd\&.config\&.get
+.RE
+.SH SUBCOMMAND SET
+.RS 4
+vso\&.cmd\&.config\&.set
+.RE
+.SH SUBCOMMAND PICO
+.RS 4
+vso\&.cmd\&.pico
+.RE
+.SH SUBCOMMAND INIT
+.RS 4
+vso\&.cmd\&.pico\&.init
+.RE
+.SS OPTIONS
+  -f, --force  vso\&.cmd\&.pico\&.init\&.options\&.force
+.PP
+.SH SUBCOMMAND INSTALL
+.RS 4
+vso\&.cmd\&.pico\&.install
+.RE
 .SH SUBCOMMAND EXPORT
 .RS 4
-Export an application or binary from the subsystem
-.RE
-.SS SYNOPSIS
-.RS 4
-\fBexport\fP [command] [flags] [arguments]
-.RE
-.SS DESCRIPTION
-.RS 4
-.TP 4
-Export an application or binary from the subsystem
+vso\&.cmd\&.pico\&.export
 .RE
 .SS OPTIONS
-  -a, --app string   the name of the application to export
+  --app  vso\&.cmd\&.pico\&.export\&.options\&.app
 .PP
-  -b, --bin string   the name of the binary to export
+  --bin  vso\&.cmd\&.pico\&.export\&.options\&.bin
 .PP
-.SS GLOBAL OPTIONS
+  --bin-output  vso\&.cmd\&.pico\&.export\&.options\&.binOutput
+.PP
+.SH SUBCOMMAND SHELL
+.RS 4
+vso\&.cmd\&.pico\&.shell
+.RE
+.SH SUBCOMMAND UPGRADE
+.RS 4
+vso\&.cmd\&.pico\&.upgrade
+.RE
+.SH SUBCOMMAND REMOVE
+.RS 4
+vso\&.cmd\&.pico\&.remove
+.RE
+.SH SUBCOMMAND RUN
+.RS 4
+vso\&.cmd\&.pico\&.run
+.RE
+.SS OPTIONS
+  --no-reset  vso\&.cmd\&.pico\&.run\&.options\&.noReset
+.PP
 .SH SUBCOMMAND UNEXPORT
 .RS 4
-Unexport an application or binary from the subsystem
-.RE
-.SS SYNOPSIS
-.RS 4
-\fBunexport\fP [command] [flags] [arguments]
-.RE
-.SS DESCRIPTION
-.RS 4
-.TP 4
-Unexport an application or binary from the subsystem
+vso\&.cmd\&.pico\&.unexport
 .RE
 .SS OPTIONS
-  -a, --app string   the name of the application to unexport
+  --app  vso\&.cmd\&.pico\&.unexport\&.options\&.app
 .PP
-  -b, --bin string   the name of the binary to unexport
+  --bin  vso\&.cmd\&.pico\&.unexport\&.options\&.bin
 .PP
-.SS GLOBAL OPTIONS
-.SH SUBCOMMAND PICO-INIT
+  --bin-output  vso\&.cmd\&.pico\&.unexport\&.options\&.binOutput
+.PP
+.SH SUBCOMMAND SIDELOAD
 .RS 4
-Initialize the VSO subsystem, used for package management
+vso\&.cmd\&.pico\&.sideload
 .RE
-.SS SYNOPSIS
+.SH SUBCOMMAND UPDATE
 .RS 4
-\fBpico-init\fP [command] [flags] [arguments]
+vso\&.cmd\&.pico\&.update
 .RE
-.SS DESCRIPTION
+.SH SUBCOMMAND TASKS
 .RS 4
-.TP 4
-Initialize the VSO subsystem, used for package management
+vso\&.cmd\&.tasks
+.RE
+.SH SUBCOMMAND ROTATE
+.RS 4
+vso\&.cmd\&.tasks\&.rotate
 .RE
 .SS OPTIONS
-  -f, --force   force the initialization if the subsystem is already initialized
+  -e, --private-event  vso\&.cmd\&.tasks\&.rotate\&.options\&.privateEvent
 .PP
-.SS GLOBAL OPTIONS
-.SH SUBCOMMAND ANDROID
+  -s, --silent  vso\&.cmd\&.tasks\&.rotate\&.options\&.silent
+.PP
+.SH SUBCOMMAND LIST
 .RS 4
-Manage the vso waydroid subsystem
-.RE
-.SS SYNOPSIS
-.RS 4
-\fBandroid\fP [command] [flags] [arguments]
-.RE
-.SS DESCRIPTION
-.RS 4
-.TP 4
-Manage the vso waydroid subsystem
+vso\&.cmd\&.tasks\&.list
 .RE
 .SS OPTIONS
-.SS GLOBAL OPTIONS
-.SH CLEAN
-.RS 4
-Cleans the waydroid vso cache
+  -j, --json  vso\&.cmd\&.tasks\&.list\&.options\&.json
 .PP
-.RE
-.SH DELETE
+.SH SUBCOMMAND NEW
 .RS 4
-Delete the waydroid subsystem
-.PP
+vso\&.cmd\&.tasks\&.new
 .RE
-.SH INFO
+.SS OPTIONS
+  --every  vso\&.cmd\&.tasks\&.new\&.options\&.every
+.PP
+  --on-low-battery  vso\&.cmd\&.tasks\&.new\&.options\&.onLowBattery
+.PP
+  --on-device-connect  vso\&.cmd\&.tasks\&.new\&.options\&.onDeviceConnect
+.PP
+  --need-confirm  vso\&.cmd\&.tasks\&.new\&.options\&.needConfirm
+.PP
+  --at  vso\&.cmd\&.tasks\&.new\&.options\&.at
+.PP
+  --on-network  vso\&.cmd\&.tasks\&.new\&.options\&.onNetwork
+.PP
+  --on-battery  vso\&.cmd\&.tasks\&.new\&.options\&.onBattery
+.PP
+  --on-charge  vso\&.cmd\&.tasks\&.new\&.options\&.onCharge
+.PP
+  --on-condition-command  vso\&.cmd\&.tasks\&.new\&.options\&.onConditionCommand
+.PP
+  --on-memory-usage  vso\&.cmd\&.tasks\&.new\&.options\&.onMemoryUsage
+.PP
+  --on-cpu-usage  vso\&.cmd\&.tasks\&.new\&.options\&.onCpuUsage
+.PP
+  -y, --assume-yes  vso\&.cmd\&.tasks\&.new\&.options\&.assumeYes
+.PP
+  --name  vso\&.cmd\&.tasks\&.new\&.options\&.name
+.PP
+  --on-full-battery  vso\&.cmd\&.tasks\&.new\&.options\&.onFullBattery
+.PP
+  --on-process  vso\&.cmd\&.tasks\&.new\&.options\&.onProcess
+.PP
+  --on-internet-usage  vso\&.cmd\&.tasks\&.new\&.options\&.onInternetUsage
+.PP
+  --on-high-internet-usage  vso\&.cmd\&.tasks\&.new\&.options\&.onHighInternetUsage
+.PP
+  --on-high-cpu-usage  vso\&.cmd\&.tasks\&.new\&.options\&.onHighCpuUsage
+.PP
+  --on-cpu-temp  vso\&.cmd\&.tasks\&.new\&.options\&.onCpuTemp
+.PP
+  --command  vso\&.cmd\&.tasks\&.new\&.options\&.command
+.PP
+  --on-disconnect  vso\&.cmd\&.tasks\&.new\&.options\&.onDisconnect
+.PP
+  --on-high-memory-usage  vso\&.cmd\&.tasks\&.new\&.options\&.onHighMemoryUsage
+.PP
+  --on-device-disconnect  vso\&.cmd\&.tasks\&.new\&.options\&.onDeviceDisconnect
+.PP
+  --description  vso\&.cmd\&.tasks\&.new\&.options\&.description
+.PP
+.SH SUBCOMMAND RM
 .RS 4
-Display information about an application
-.PP
+vso\&.cmd\&.tasks\&.rm
 .RE
-.SH INSTALL
-.RS 4
-Install an application
+.SS OPTIONS
+  -n, --name  vso\&.cmd\&.tasks\&.rm\&.options\&.name
 .PP
-.RE
-.SH INIT
-.RS 4
-Initialize the waydroid subsystem
+  -f, --force  vso\&.cmd\&.tasks\&.rm\&.options\&.force
 .PP
-.RE
-.SH LAUNCH
-.RS 4
-Launch an installed application
-.PP
-.RE
-.SH LAUNCHER
-.RS 4
-Show the waydroid launcher
-.PP
-.RE
-.SH REMOVE
-.RS 4
-Uninstall an application
-.PP
-.RE
-.SH SEARCH
-.RS 4
-Search for an application
-.PP
-.RE
-.SH SYNC
-.RS 4
-Sync the repositories
-.PP
-.RE
-.SH UPDATE
-.RS 4
-Update installed applications
-.PP
-.RE
 
