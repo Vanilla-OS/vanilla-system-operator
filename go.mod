@@ -6,7 +6,7 @@ require (
 	github.com/BurntSushi/toml v1.5.0
 	github.com/buger/jsonparser v1.1.1
 	github.com/olekukonko/tablewriter v0.0.5
-	github.com/spf13/cobra v1.10.1
+	github.com/spf13/cobra v1.10.2
 	github.com/vanilla-os/apx/v2 v2.4.5
 	github.com/vanilla-os/orchid v0.6.1
 	go.etcd.io/bbolt v1.4.3
