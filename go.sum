@@ -114,8 +114,8 @@ github.com/stretchr/testify v1.11.1 h1:7s2iGBzp5EwR7/aIZr8ao5+dra3wiQyKjjFuvgVKu
 github.com/stretchr/testify v1.11.1/go.mod h1:wZwfW3scLgRK+23gO65QZefKpKQRnfz6sD981Nm4B6U=
 github.com/subosito/gotenv v1.6.0 h1:9NlTDc1FTs4qu0DDq7AEtTPNw6SVm7uBMsUCUjABIf8=
 github.com/subosito/gotenv v1.6.0/go.mod h1:Dk4QP5c2W3ibzajGcXpNraDfq2IrhjMIvMSWPKKo0FU=
-github.com/vanilla-os/apx/v2 v2.4.5 h1:oA3kl/OzHxbJOpLn7QuqnGSxqyuYbT+4m6TFOZ0vg20=
-github.com/vanilla-os/apx/v2 v2.4.5/go.mod h1:Dzch0vNAF1QEtfocnwfBr8rELsd8ZZ1LDy5oxmUGLzI=
+github.com/vanilla-os/apx/v2 v2.5.0 h1:M/QXIEizwaq/lGQ3sA2qEGDoWxwcXfbvRpkX6F4i9+4=
+github.com/vanilla-os/apx/v2 v2.5.0/go.mod h1:7dZ5636J4OQALmBM6qZLJTRjdsRbIFbAwo4068taisk=
 github.com/vanilla-os/orchid v0.6.1 h1:lY1QIhpyzB83N/KdrYuw3fgT+BygyhsO7RKnInpY6gU=
 github.com/vanilla-os/orchid v0.6.1/go.mod h1:dNPvHxofO4hEXodEKXp0nLQDZhoHh8evCUXc6X1xLao=
 github.com/xo/terminfo v0.0.0-20210125001918-ca9a967f8778/go.mod h1:2MuV+tbUrU1zIOPMxZ5EncGwgmMJsa+9ucAQZXxsObs=

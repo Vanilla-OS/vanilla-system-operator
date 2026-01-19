@@ -7,7 +7,7 @@ require (
 	github.com/buger/jsonparser v1.1.1
 	github.com/olekukonko/tablewriter v0.0.5
 	github.com/spf13/cobra v1.10.1
-	github.com/vanilla-os/apx/v2 v2.4.5
+	github.com/vanilla-os/apx/v2 v2.5.0
 	github.com/vanilla-os/orchid v0.6.1
 	go.etcd.io/bbolt v1.4.3
 )
@@ -36,7 +36,6 @@ require (
 	github.com/subosito/gotenv v1.6.0 // indirect
 	github.com/xo/terminfo v0.0.0-20220910002029-abceb7e1c41e // indirect
 	go.yaml.in/yaml/v3 v3.0.4 // indirect
-	golang.org/x/exp v0.0.0-20250911091902-df9299821621 // indirect
 	golang.org/x/sys v0.36.0 // indirect
 	golang.org/x/term v0.35.0 // indirect
 	golang.org/x/text v0.29.0 // indirect
