@@ -2,7 +2,6 @@ name: Go
 
 on:
   push:
-    branches: [ "main" ]
   pull_request:
     branches: [ "main" ]
 
@@ -12,47 +11,39 @@ jobs:
     runs-on: ubuntu-latest
     container:
       image: ghcr.io/vanilla-os/pico:main
-    permissions:
-      contents: write # to upload assets to releases
-      attestations: write # to upload assets attestation for build provenance
-      id-token: write # grant additional permission to attestation action to mint the OIDC token permission
 
     steps:
-    - uses: actions/checkout@v4
+    - uses: actions/checkout@v6
 
     - name: Set up Go
-      uses: actions/setup-go@v5
+      uses: actions/setup-go@v6
       with:
         go-version-file: go.mod
 
     - name: Build
       run: |
-        go build -o vso -ldflags="-X 'main.Version=${{ github.sha }}'"
+        go build -o vso -ldflags="-X 'main.Version=${{ github.sha }}'" ./cmd
         tar -czvf vso-amd64.tar.gz vso
-        GOARCH=arm64 go build -o vso -ldflags="-X 'main.Version=${{ github.sha }}'"
+        GOARCH=arm64 go build -o vso -ldflags="-X 'main.Version=${{ github.sha }}'" ./cmd
         tar -czvf vso-arm64.tar.gz vso
-        tar -czvf vso-man.tar.gz man/vso.1
+        tar -czvf vso-man.tar.gz man/man1/vso.1
 
     - name: Check for missing strings
-      uses: vanilla-os/missing-strings-golang-action@v0.1.0
-
-    - name: Calculate and Save Checksums
-      run: sha256sum vso*.tar.gz >> checksums.txt
+      run: |
+        go build -tags check_missing_strings -o vso-check ./cmd
+        ./vso-check
 
     - uses: actions/upload-artifact@v4
+      if: failure()
       with:
-        name: vso
-        path: |
-          checksums.txt
-          vso*.tar.gz
+        name: missing-strings-report
+        path: missing_strings.json
 
     - uses: softprops/action-gh-release@v2
-      if: github.ref == 'refs/heads/main'
+      if: github.repository == 'vanilla-os/vanilla-system-operator' && github.ref == 'refs/heads/main'
       with:
-          token: "${{ secrets.GITHUB_TOKEN }}"
-          tag_name: "continuous"
-          prerelease: true
-          name: "Continuous Build"
-          files: |
-            checksums.txt
-            vso*.tar.gz
+        token: "${{ secrets.GITHUB_TOKEN }}"
+        tag_name: "continuous"
+        prerelease: true
+        name: "Continuous Build"
+        files: vso*.tar.gz

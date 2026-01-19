@@ -14,33 +14,30 @@ jobs:
         contents: read
 
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v6
 
       - name: Set up Go
-        uses: actions/setup-go@v5
+        uses: actions/setup-go@v6
         with:
           go-version-file: go.mod
 
       - name: Build
         run: |
-          go build -o vso -ldflags="-X 'main.Version=${{ github.ref_name }}'"
+          go build -o vso -ldflags="-X 'main.Version=${{ github.ref_name }}'" ./cmd
           tar -czvf vso-amd64.tar.gz vso
-          GOARCH=arm64 go build -o vso -ldflags="-X 'main.Version=${{ github.ref_name }}'"
+          GOARCH=arm64 go build -o vso -ldflags="-X 'main.Version=${{ github.sha }}'" ./cmd
           tar -czvf vso-arm64.tar.gz vso
-          tar -czvf vso-man.tar.gz man/vso.1
-
-      - name: Check for missing strings
-        uses: vanilla-os/missing-strings-golang-action@v0.1.0
+          tar -czvf vso-man.tar.gz man/man1/vso.1
 
       - name: Calculate and Save Checksums
         run: sha256sum vso*.tar.gz >> checksums.txt
 
-      - uses: actions/upload-artifact@v4
+      - uses: actions/upload-artifact@v6
         with:
           name: vso
           path: |
-            checksums.txt
             vso*.tar.gz
+            checksums.txt
 
   release:
     runs-on: ubuntu-latest
@@ -52,22 +49,22 @@ jobs:
 
     steps:
       - name: Checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@v6
         with:
           fetch-depth: 0
 
       - name: Download Artifact
-        uses: actions/download-artifact@v4
+        uses: actions/download-artifact@v7
         with:
           name: vso
 
       - name: Create Release
         env:
             GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: gh release create "${{ github.ref_name }}" --generate-notes *.tar.gz checksums.txt
+        run: gh release create "${{ github.ref_name }}" --generate-notes vso*.tar.gz checksums.txt
 
       - name: Attest Release Files
         id: attest
-        uses: actions/attest-build-provenance@v3
+        uses: actions/attest-build-provenance@v2
         with:
-          subject-path: '*.tar.gz, checksums.txt'
+          subject-path: 'vso*.tar.gz, checksums.txt'
