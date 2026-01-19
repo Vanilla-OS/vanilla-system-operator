@@ -1,0 +1,436 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Vanilla System Operator\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-05-18 12:00+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: ga\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+msgid "vso.description"
+msgstr "Is bainisteoir pacáiste, nuashonróir córais agus uathoibreoir tasc é Oibreoir an Chórais Vanilla."
+
+msgid "vso.errors.unknownCommand"
+msgstr "Ordú anaithnid: %s"
+
+msgid "vso.errors.invalidInput"
+msgstr "Ionchur neamhbhailí."
+
+msgid "vso.errors.invalidChoice"
+msgstr "Rogha neamhbhailí."
+
+msgid "vso.info.aborting"
+msgstr "Tobscor de réir mar a iarrtar."
+
+msgid "vso.msg.help"
+msgstr "Taispeáin cabhair le haghaidh vso."
+
+msgid "vso.msg.version"
+msgstr "Taispeáin leagan le haghaidh vso."
+
+msgid "vso.msg.usage"
+msgstr "Úsáid"
+
+msgid "vso.msg.aliases"
+msgstr "Ailiasanna"
+
+msgid "vso.msg.examples"
+msgstr "Samplaí"
+
+msgid "vso.msg.availableCommands"
+msgstr "Orduithe atá ar Fáil"
+
+msgid "vso.msg.additionalCommands"
+msgstr "Orduithe Breise"
+
+msgid "vso.msg.flags"
+msgstr "Bratacha"
+
+msgid "vso.msg.globalFlags"
+msgstr "Bratacha Domhanda"
+
+msgid "vso.msg.additionalHelpTopics"
+msgstr "Topaicí cabhrach breise"
+
+msgid "vso.msg.moreInfo"
+msgstr "Úsáid %s le haghaidh tuilleadh eolais faoi ordú"
+
+msgid "vso.terminal.yes"
+msgstr "tá"
+
+msgid "vso.terminal.no"
+msgstr "Ní hea"
+
+msgid "vso.cmd.config"
+msgstr "Bainistigh cumraíocht an chórais."
+
+msgid "vso.cmd.config.get"
+msgstr "Faigh cumraíocht an chórais"
+
+msgid "vso.cmd.config.get.error.noKey"
+msgstr "Níor sonraíodh eochair."
+
+msgid "vso.cmd.config.get.error.noValue"
+msgstr "Níor aimsíodh luach ar eochair: %s"
+
+msgid "vso.cmd.config.get.options.key"
+msgstr "Aisghabh luach cumraíochta trína eochair a úsáid"
+
+msgid "vso.cmd.config.set"
+msgstr "Socraigh cumraíocht an chórais"
+
+msgid "vso.cmd.config.set.error.noKey"
+msgstr "Níor sonraíodh eochair."
+
+msgid "vso.cmd.config.set.error.noValue"
+msgstr "Níor sonraíodh luach ar bith."
+
+msgid "vso.cmd.config.set.error.failed"
+msgstr "Theip ar chumraíocht a shocrú: %s"
+
+msgid "vso.cmd.config.set.options.key"
+msgstr "eochair na cumraíochta le socrú"
+
+msgid "vso.cmd.config.set.options.value"
+msgstr "luach na cumraíochta le socrú"
+
+msgid "vso.cmd.config.set.success"
+msgstr "D' éirigh leis an gcumraíocht."
+
+msgid "vso.cmd.config.show"
+msgstr "Taispeáin cumraíocht an chórais"
+
+msgid "vso.cmd.pico"
+msgstr "Bainistigh an fochóras VSO"
+
+msgid "vso.cmd.pico.error.notInitialized"
+msgstr "Níl an fochóras VSO túsaithe. Rith 'vso pico-init' chun é a thúsú."
+
+msgid "vso.cmd.pico.error.alreadyInitialized"
+msgstr "Tá an fochóras VSO túsaithe cheana féin. Bain úsáid as an bhratach --bhfeidhm chun an túsú a chur i bhfeidhm."
+
+msgid "vso.cmd.pico.error.noAppNameOrBin"
+msgstr "--app nó --bin a shonrú."
+
+msgid "vso.cmd.pico.error.sameAppOrBin"
+msgstr "--app agus --bin ní féidir an dá rud a shonrú."
+
+msgid "vso.cmd.pico.error.exportingApp"
+msgstr "Tharla earráid agus an feidhmchlár á easpórtáil: %s"
+
+msgid "vso.cmd.pico.error.exportingBin"
+msgstr "Tharla earráid agus an dénártha á easpórtáil: %s"
+
+msgid "vso.cmd.pico.error.unexportingApp"
+msgstr "Tharla earráid agus an feidhmchlár á dhíchriptiú: %s"
+
+msgid "vso.cmd.pico.error.unexportingBin"
+msgstr "Tharla earráid agus an dénártha á dhíchriptiú: %s"
+
+msgid "vso.cmd.pico.error.unknownCommand"
+msgstr "Ordú anaithnid: %s"
+
+msgid "vso.cmd.pico.error.shellReset"
+msgstr "Ní féidir an bhlaosc VSO a bhaint amach. An bhfuil fonn ort é a athshocrú? (Bainfidh sé seo do bhogearraí go léir atá suiteáilte san fhochóras) [y/N]"
+
+msgid "vso.cmd.pico.info.deleting"
+msgstr "An fochóras VSO á scriosadh..."
+
+msgid "vso.cmd.pico.info.initializing"
+msgstr "An fochóras VSO á thúsú..."
+
+msgid "vso.cmd.pico.info.initialized"
+msgstr "Tá an fochóras VSO túsaithe."
+
+msgid "vso.cmd.pico.info.exported"
+msgstr "Easpórtáil %s\n"
+
+msgid "vso.cmd.pico.info.unexported"
+msgstr "%s gan easpórtáil\n"
+
+msgid "vso.cmd.pico.info.exportedApps"
+msgstr "Easpórtáil %d feidhmchlár"
+
+msgid "vso.cmd.pico.info.unexportedApps"
+msgstr "Feidhmchláir %d gan easpórtáil"
+
+msgid "vso.cmd.pico.info.shellInit"
+msgstr "Breathnaíonn sé nach bhfuil do bhlaosc túsaithe go fóill. An bhfuil fonn ort é a thúsú anois? (Moltar go hard) [y/N]"
+
+msgid "vso.cmd.pico.info.fallbackShell"
+msgstr "Fallback leis an bhlaosc óstach? D'fhéadfadh iompar gan choinne a bheith mar thoradh air seo. [y/N]"
+
+msgid "vso.cmd.pico.export"
+msgstr "Easpórtáil feidhmchlár nó dénártha ón bhfochóras"
+
+msgid "vso.cmd.pico.export.options.app"
+msgstr "ainm an iarratais ar onnmhairiú"
+
+msgid "vso.cmd.pico.export.options.bin"
+msgstr "ainm an dénártha a onnmhairiú"
+
+msgid "vso.cmd.pico.export.options.binOutput"
+msgstr "conair an aschuir dhénártha (réamhshocrú: ~ / .local / bin / )"
+
+msgid "vso.cmd.pico.unexport"
+msgstr "Unexport iarratas nó dénártha ón bhfochóras"
+
+msgid "vso.cmd.pico.unexport.options.app"
+msgstr "ainm an iarratais ar"
+
+msgid "vso.cmd.pico.unexport.options.bin"
+msgstr "ainm an dénártha a unexport"
+
+msgid "vso.cmd.pico.unexport.options.binOutput"
+msgstr "conair an aschuir dhénártha (réamhshocrú: ~ / .local / bin / )"
+
+msgid "vso.cmd.pico.init"
+msgstr "Túsaigh an fochóras VSO, a úsáidtear le haghaidh bainistíochta pacáiste"
+
+msgid "vso.cmd.pico.init.options.force"
+msgstr "Cuir tús leis an túsú má tá an fochóras túsaithe cheana féin"
+
+msgid "vso.cmd.pico.install"
+msgstr "Suiteáil feidhmchlár taobh istigh den fhochóras"
+
+msgid "vso.cmd.pico.remove"
+msgstr "Bain feidhmchlár ón bhfochóras"
+
+msgid "vso.cmd.pico.run"
+msgstr "Rith feidhmchlár ón bhfochóras"
+
+msgid "vso.cmd.pico.run.options.noReset"
+msgstr "ná mol an fochóras a athshocrú má théann rud éigin mícheart"
+
+msgid "vso.cmd.pico.search"
+msgstr "Cuardaigh feidhmchlár le suiteáil taobh istigh den fhochóras"
+
+msgid "vso.cmd.pico.shell"
+msgstr "Iontráil timpeallacht an fhochórais"
+
+msgid "vso.cmd.pico.sideload"
+msgstr "Pacáistí DEB / APK Sideload taobh istigh den fhochóras"
+
+msgid "vso.cmd.pico.update"
+msgstr "Nuashonraigh stór pacáiste an fhochórais"
+
+msgid "vso.cmd.pico.upgrade"
+msgstr "Uasghrádú na pacáistí taobh istigh den fhochóras"
+
+msgid "vso.cmd.sysUpgrade"
+msgstr "Rith orduithe córais, mar shampla uasghrádú an chórais"
+
+msgid "vso.cmd.sysUpgrade.check"
+msgstr "Seiceáil le haghaidh nuashonruithe córais"
+
+msgid "vso.cmd.sysUpgrade.check.asExitCode"
+msgstr "seiceálacha le haghaidh uasghrádú ach ní phriontáil rud ar bith. Fill cód scoir 0 mura bhfuil aon uasghrádú ar fáil agus 1 ar shlí eile."
+
+msgid "vso.cmd.sysUpgrade.check.error.asExitCodeAndJson"
+msgstr "Tharla earráid agus nuashonruithe á seiceáil. Féach an t-aschur JSON le haghaidh tuilleadh sonraí."
+
+msgid "vso.cmd.sysUpgrade.check.info.checking"
+msgstr "Ag seiceáil le haghaidh nuashonruithe..."
+
+msgid "vso.cmd.sysUpgrade.check.json"
+msgstr "aschur an toradh i bhformáid JSON"
+
+msgid "vso.cmd.sysUpgrade.upgrade"
+msgstr ""
+
+msgid "vso.cmd.sysUpgrade.error.updating"
+msgstr ""
+
+msgid "vso.cmd.sysUpgrade.error.onHasUpdate"
+msgstr ""
+
+msgid "vso.cmd.sysUpgrade.schedule.daily"
+msgstr ""
+
+msgid "vso.cmd.sysUpgrade.schedule.weekly"
+msgstr ""
+
+msgid "vso.cmd.sysUpgrade.schedule.monthly"
+msgstr ""
+
+msgid "vso.cmd.sysUpgrade.info.updating"
+msgstr ""
+
+msgid "vso.cmd.sysUpgrade.info.willUpdateLater"
+msgstr ""
+
+msgid "vso.cmd.sysUpgrade.info.willNeverUpdate"
+msgstr ""
+
+msgid "vso.cmd.sysUpgrade.info.noUpdates"
+msgstr ""
+
+msgid "vso.cmd.sysUpgrade.now"
+msgstr ""
+
+msgid "vso.cmd.tasks"
+msgstr "Tascanna a chruthú agus a bhainistiú"
+
+msgid "vso.cmd.tasks.stacks.new.error.emptyCommand"
+msgstr "Ní féidir leis an ordú a bheith folamh."
+
+msgid "vso.cmd.tasks.stacks.new.error.emptyDescription"
+msgstr "Ní féidir leis an tuairisc a bheith folamh."
+
+msgid "vso.cmd.tasks.stacks.new.error.emptyName"
+msgstr "Ní féidir leis an ainm a bheith folamh."
+
+msgid "vso.cmd.tasks.stacks.new.error.noCommand"
+msgstr "Níor sonraíodh ordú."
+
+msgid "vso.cmd.tasks.stacks.new.error.noDescription"
+msgstr "Níor sonraíodh tuairisc ar bith."
+
+msgid "vso.cmd.tasks.stacks.new.error.noName"
+msgstr "Níor sonraíodh aon ainm."
+
+msgid "vso.cmd.tasks.stacks.new.info.askCommand"
+msgstr "Ordú: "
+
+msgid "vso.cmd.tasks.stacks.new.info.askDescription"
+msgstr "Cur síos: "
+
+msgid "vso.cmd.tasks.stacks.new.info.askName"
+msgstr "Ainm: "
+
+msgid "vso.cmd.tasks.stacks.new.info.taskCreated"
+msgstr "Cruthaíodh tasc go rathúil."
+
+msgid "vso.cmd.tasks.list"
+msgstr "Liostaigh gach tasc"
+
+msgid "vso.cmd.tasks.list.noTasks"
+msgstr "Níor aimsíodh aon tascanna."
+
+msgid "vso.cmd.tasks.list.info.foundTasks"
+msgstr "Aimsíodh %d tascanna."
+
+msgid "vso.cmd.tasks.list.options.json"
+msgstr "aschur na tascanna i bhformáid JSON"
+
+msgid "vso.cmd.tasks.new"
+msgstr "Cruthaigh tasc nua"
+
+msgid "vso.cmd.tasks.new.options.assumeYes"
+msgstr "Glac leis go bhfuil do gach leid"
+
+msgid "vso.cmd.tasks.new.options.at"
+msgstr "Sceideal an tasc a fhorghníomhú ag am ar leith (HH: MM)"
+
+msgid "vso.cmd.tasks.new.options.command"
+msgstr "Sonraigh an t- ordú le rith"
+
+msgid "vso.cmd.tasks.new.options.description"
+msgstr "sonraigh cur síos an taisc"
+
+msgid "vso.cmd.tasks.new.options.every"
+msgstr "sceideal an tasc a fhorghníomhú gach X am (nóiméad, uair an chloig, laethanta)"
+
+msgid "vso.cmd.tasks.new.options.name"
+msgstr "Sonraigh ainm an taisc"
+
+msgid "vso.cmd.tasks.new.options.needConfirm"
+msgstr "deimhniú a iarraidh sula bhforghníomhóidh tú an tasc"
+
+msgid "vso.cmd.tasks.new.options.onBattery"
+msgstr "rith an tasc ach amháin nuair a bhíonn an córas ar chadhnra"
+
+msgid "vso.cmd.tasks.new.options.onCharge"
+msgstr "an tasc a fhorghníomhú ach amháin nuair atá an córas ag gearradh"
+
+msgid "vso.cmd.tasks.new.options.onConditionCommand"
+msgstr "rith an tasc ar ordú coinníoll"
+
+msgid "vso.cmd.tasks.new.options.onCpuTemp"
+msgstr "rith an tasc nuair a bhíonn teocht LAP níos airde ná 60 ° C"
+
+msgid "vso.cmd.tasks.new.options.onCpuUsage"
+msgstr "rith an tasc nuair a bhíonn úsáid LAP níos airde ná X%"
+
+msgid "vso.cmd.tasks.new.options.onDeviceConnect"
+msgstr "Rith an tasc nuair atá gléas ceangailte"
+
+msgid "vso.cmd.tasks.new.options.onDeviceDisconnect"
+msgstr "Rith an tasc nuair atá gléas dícheangailte"
+
+msgid "vso.cmd.tasks.new.options.onDisconnect"
+msgstr "an tasc a fhorghníomhú nuair atá an córas dícheangailte ón líonra"
+
+msgid "vso.cmd.tasks.new.options.onFullBattery"
+msgstr "an tasc a chur i gcrích nuair a ghearrtar an córas go hiomlán"
+
+msgid "vso.cmd.tasks.new.options.onHighCpuUsage"
+msgstr "rith an tasc nuair a bhíonn úsáid LAP níos airde ná 50%"
+
+msgid "vso.cmd.tasks.new.options.onHighInternetUsage"
+msgstr "an tasc a fhorghníomhú nuair atá úsáid an idirlín níos airde ná 500Kb/s"
+
+msgid "vso.cmd.tasks.new.options.onHighMemoryUsage"
+msgstr "rith an tasc nuair a bhíonn úsáid chuimhne níos airde ná 50%"
+
+msgid "vso.cmd.tasks.new.options.onInternetUsage"
+msgstr "an tasc a fhorghníomhú nuair atá úsáid an idirlín níos airde ná XKb/s"
+
+msgid "vso.cmd.tasks.new.options.onLowBattery"
+msgstr "rith an tasc nuair a bhíonn an córas íseal ar chadhnra (20%)"
+
+msgid "vso.cmd.tasks.new.options.onMemoryUsage"
+msgstr "rith an tasc nuair atá úsáid chuimhne níos airde ná X%"
+
+msgid "vso.cmd.tasks.new.options.onNetwork"
+msgstr "an tasc a rith nuair atá an córas ceangailte leis an líonra"
+
+msgid "vso.cmd.tasks.new.options.onProcess"
+msgstr "an tasc a chur i gcrích nuair a thosaíonn próiseas"
+
+msgid "vso.cmd.tasks.rm"
+msgstr "Bain tasc"
+
+msgid "vso.cmd.tasks.rm.error.cannotDelete"
+msgstr "Ní féidir tasc a scriosadh: %s"
+
+msgid "vso.cmd.tasks.rm.error.noName"
+msgstr "Níor sonraíodh ainm an taisc."
+
+msgid "vso.cmd.tasks.rm.error.notFound"
+msgstr "Níor aimsíodh an tasc."
+
+msgid "vso.cmd.tasks.rm.info.askConfirmation"
+msgstr "An bhfuil tú cinnte go bhfuil fonn ort an tasc %s a scriosadh? [y/N]"
+
+msgid "vso.cmd.tasks.rm.info.taskDeleted"
+msgstr "Scriosadh an tasc go rathúil."
+
+msgid "vso.cmd.tasks.rm.options.force"
+msgstr "cuir i bhfeidhm scriosadh an taisc"
+
+msgid "vso.cmd.tasks.rm.options.name"
+msgstr "Sonraigh ainm an taisc"
+
+msgid "vso.cmd.tasks.rotate"
+msgstr "Rothlaigh tascanna"
+
+msgid "vso.cmd.tasks.rotate.options.privateEvent"
+msgstr "Sonraigh an teagmhas príobháideach chun tascanna a rothlú le haghaidh tosaithe, múchadh, logáil isteach, agus logáil amach"
+
+msgid "vso.cmd.tasks.rotate.options.silent"
+msgstr "ná aschuir an stádas ar gach timthriall"
+
+msgid "vso.cmd.waydroid"
+msgstr "Bainistigh an fochóras vso waydroid"
+
+msgid "vso.arg.package"
+msgstr ""
+
+msgid "vso.arg.command"
+msgstr ""
+

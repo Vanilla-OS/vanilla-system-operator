@@ -1,0 +1,436 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Vanilla System Operator\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-05-18 12:00+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: nl\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+msgid "vso.description"
+msgstr "De Vanilla System Operator is een pakketbeheerder, een systeemupdater en een taakautomatiseerder."
+
+msgid "vso.errors.unknownCommand"
+msgstr "Onbekende opdracht: %s"
+
+msgid "vso.errors.invalidInput"
+msgstr "Ongeldige invoer"
+
+msgid "vso.errors.invalidChoice"
+msgstr "Ongeldige keuze"
+
+msgid "vso.info.aborting"
+msgstr "Afbreken zoals verzocht"
+
+msgid "vso.msg.help"
+msgstr "Toon hulp voor vso."
+
+msgid "vso.msg.version"
+msgstr "Toon versie van vso."
+
+msgid "vso.msg.usage"
+msgstr "Gebruik"
+
+msgid "vso.msg.aliases"
+msgstr "Aliassen"
+
+msgid "vso.msg.examples"
+msgstr "Voorbeelden"
+
+msgid "vso.msg.availableCommands"
+msgstr "Beschikbare opdrachten"
+
+msgid "vso.msg.additionalCommands"
+msgstr "Aanvullende opdrachten"
+
+msgid "vso.msg.flags"
+msgstr "Vlaggen"
+
+msgid "vso.msg.globalFlags"
+msgstr "Globale vlaggen"
+
+msgid "vso.msg.additionalHelpTopics"
+msgstr "Aanvullende hulp­onderwerpen"
+
+msgid "vso.msg.moreInfo"
+msgstr "Gebruik %s voor meer informatie over een opdracht"
+
+msgid "vso.terminal.yes"
+msgstr "ja"
+
+msgid "vso.terminal.no"
+msgstr "nee"
+
+msgid "vso.cmd.config"
+msgstr "Beheer de systeem­configuratie"
+
+msgid "vso.cmd.config.get"
+msgstr "Verkrĳg de systeem­configuratie"
+
+msgid "vso.cmd.config.get.error.noKey"
+msgstr "Geen sleutel opgegeven"
+
+msgid "vso.cmd.config.get.error.noValue"
+msgstr "Geen waarde gevonden voor sleutel %s"
+
+msgid "vso.cmd.config.get.options.key"
+msgstr "verkrĳg configuratie­waarde d.m.v. sleutel"
+
+msgid "vso.cmd.config.set"
+msgstr "Stelt de systeem­configuratie in"
+
+msgid "vso.cmd.config.set.error.noKey"
+msgstr "Geen sleutel opgegeven"
+
+msgid "vso.cmd.config.set.error.noValue"
+msgstr "Geen waarde opgegeven"
+
+msgid "vso.cmd.config.set.error.failed"
+msgstr "Configuratie instellen mislukt: %s"
+
+msgid "vso.cmd.config.set.options.key"
+msgstr "sleutel van de configuratie om in te stellen"
+
+msgid "vso.cmd.config.set.options.value"
+msgstr "waarde van de configuratie om in te stellen"
+
+msgid "vso.cmd.config.set.success"
+msgstr "Configuratie succesvol bĳgewerkt"
+
+msgid "vso.cmd.config.show"
+msgstr "Toont de systeemconfiguratie"
+
+msgid "vso.cmd.pico"
+msgstr "Beheer het VSO-subsysteem"
+
+msgid "vso.cmd.pico.error.notInitialized"
+msgstr "Het VSO-subsysteem is niet geïnitialiseerd. Voer `vso pico-init` uit om deze te initialiseren."
+
+msgid "vso.cmd.pico.error.alreadyInitialized"
+msgstr "Het VSO-subsysteem is al geïnitialiseerd. Gebruik de vlag --force om de initialisatie te forceren."
+
+msgid "vso.cmd.pico.error.noAppNameOrBin"
+msgstr "‘--app’ of ‘--bin’ moet worden opgegeven."
+
+msgid "vso.cmd.pico.error.sameAppOrBin"
+msgstr "‘--app’ en ‘--bin’ kunnen niet beide worden opgegeven."
+
+msgid "vso.cmd.pico.error.exportingApp"
+msgstr "Er is een fout opgetreden tĳdens het exporteren van de app: %s"
+
+msgid "vso.cmd.pico.error.exportingBin"
+msgstr "Er is een fout opgetreden tĳdens het exporteren van het programma­bestand: %s"
+
+msgid "vso.cmd.pico.error.unexportingApp"
+msgstr "Er is een fout opgetreden tĳdens het ontexporteren van de app: %s"
+
+msgid "vso.cmd.pico.error.unexportingBin"
+msgstr "Er is een fout opgetreden tĳdens het ontexporteren van het programma­bestand: %s"
+
+msgid "vso.cmd.pico.error.unknownCommand"
+msgstr "Onbekende opdracht: %s"
+
+msgid "vso.cmd.pico.error.shellReset"
+msgstr "Het is onmogelĳk om de VSO-shell te bereiken. Wilt u deze resetten? (Hiermee wordt al uw software verwĳderd die in het subsysteem is geïnstalleerd) [y/N]"
+
+msgid "vso.cmd.pico.info.deleting"
+msgstr "VSO-subsysteem verwĳderen…"
+
+msgid "vso.cmd.pico.info.initializing"
+msgstr "VSO-subsysteem initialiseren…"
+
+msgid "vso.cmd.pico.info.initialized"
+msgstr "Het VSO-subsysteem is geïnitialiseerd."
+
+msgid "vso.cmd.pico.info.exported"
+msgstr "%s geëxporteerd\n"
+
+msgid "vso.cmd.pico.info.unexported"
+msgstr "%s geontexporteerd\n"
+
+msgid "vso.cmd.pico.info.exportedApps"
+msgstr "%d apps geëxporteerd"
+
+msgid "vso.cmd.pico.info.unexportedApps"
+msgstr "%d apps geontexporteerd"
+
+msgid "vso.cmd.pico.info.shellInit"
+msgstr "Het lĳkt erop dat uw shell nog niet is geïnitialiseerd. Wilt u deze nu initialiseren? (sterk aanbevolen) [y/N]"
+
+msgid "vso.cmd.pico.info.fallbackShell"
+msgstr "Terugvallen op de host-shell? Dit kan tot onverwacht gedrag leiden. [y/N]"
+
+msgid "vso.cmd.pico.export"
+msgstr "Een app of programmabestand van het subsysteem exporteren"
+
+msgid "vso.cmd.pico.export.options.app"
+msgstr "de naam van de te exporteren app"
+
+msgid "vso.cmd.pico.export.options.bin"
+msgstr "de naam van het te exporteren programmabestand"
+
+msgid "vso.cmd.pico.export.options.binOutput"
+msgstr "uitvoerpad van het programmabestand (standaard: ~/.local/bin/)"
+
+msgid "vso.cmd.pico.unexport"
+msgstr "Ontexporteert een app of programmabestand van het subsysteem"
+
+msgid "vso.cmd.pico.unexport.options.app"
+msgstr "de naam van de app om te ontexporteren"
+
+msgid "vso.cmd.pico.unexport.options.bin"
+msgstr "de naam van het programmabestand om te ontexporteren"
+
+msgid "vso.cmd.pico.unexport.options.binOutput"
+msgstr "uitvoerpad van het programmabestand (standaard: ~/.local/bin/)"
+
+msgid "vso.cmd.pico.init"
+msgstr "Initialiseert het VSO-subsysteem, gebruikt voor pakketbeheer"
+
+msgid "vso.cmd.pico.init.options.force"
+msgstr "forceert de initialisatie als het subsysteem al is geïnitialiseerd"
+
+msgid "vso.cmd.pico.install"
+msgstr "Installeert een app in het subsysteem"
+
+msgid "vso.cmd.pico.remove"
+msgstr "Verwĳdert een app van het subsysteem"
+
+msgid "vso.cmd.pico.run"
+msgstr "Start een app van het subsysteem"
+
+msgid "vso.cmd.pico.run.options.noReset"
+msgstr "niet voorstellen om het subsysteem te resetten als er iets fout gaat"
+
+msgid "vso.cmd.pico.search"
+msgstr "Zoek naar een app om in het subsysteem te installeren"
+
+msgid "vso.cmd.pico.shell"
+msgstr "Betreed de subsysteem­omgeving"
+
+msgid "vso.cmd.pico.sideload"
+msgstr "DEB-/APK-pakketten binnen het subsysteem sideloaden"
+
+msgid "vso.cmd.pico.update"
+msgstr "Werkt de pakket-repository van het subsysteem bĳ"
+
+msgid "vso.cmd.pico.upgrade"
+msgstr "Werkt de pakketten in het subsysteem bĳ"
+
+msgid "vso.cmd.sysUpgrade"
+msgstr "Voer systeem­opdrachten uit, zoals het upgraden van het systeem"
+
+msgid "vso.cmd.sysUpgrade.check"
+msgstr "Controleert op systeemupdates"
+
+msgid "vso.cmd.sysUpgrade.check.asExitCode"
+msgstr "controleert op upgrades, maar print niets. Geeft afsluitcode 0 terug als er geen upgrade beschikbaar is en anders 1."
+
+msgid "vso.cmd.sysUpgrade.check.error.asExitCodeAndJson"
+msgstr "Er is een fout opgetreden bĳ het controleren op updates. Zie de JSON-uitvoer voor meer details."
+
+msgid "vso.cmd.sysUpgrade.check.info.checking"
+msgstr "Controleren op updates…"
+
+msgid "vso.cmd.sysUpgrade.check.json"
+msgstr "voer het resultaat uit in JSON-formaat"
+
+msgid "vso.cmd.sysUpgrade.upgrade"
+msgstr ""
+
+msgid "vso.cmd.sysUpgrade.error.updating"
+msgstr ""
+
+msgid "vso.cmd.sysUpgrade.error.onHasUpdate"
+msgstr ""
+
+msgid "vso.cmd.sysUpgrade.schedule.daily"
+msgstr ""
+
+msgid "vso.cmd.sysUpgrade.schedule.weekly"
+msgstr ""
+
+msgid "vso.cmd.sysUpgrade.schedule.monthly"
+msgstr ""
+
+msgid "vso.cmd.sysUpgrade.info.updating"
+msgstr ""
+
+msgid "vso.cmd.sysUpgrade.info.willUpdateLater"
+msgstr ""
+
+msgid "vso.cmd.sysUpgrade.info.willNeverUpdate"
+msgstr ""
+
+msgid "vso.cmd.sysUpgrade.info.noUpdates"
+msgstr ""
+
+msgid "vso.cmd.sysUpgrade.now"
+msgstr ""
+
+msgid "vso.cmd.tasks"
+msgstr "Maak taken aan en beheer ze"
+
+msgid "vso.cmd.tasks.stacks.new.error.emptyCommand"
+msgstr "De opdracht mag niet leeg zĳn."
+
+msgid "vso.cmd.tasks.stacks.new.error.emptyDescription"
+msgstr "De omschrĳving mag niet leeg zĳn."
+
+msgid "vso.cmd.tasks.stacks.new.error.emptyName"
+msgstr "De naam mag niet leeg zĳn."
+
+msgid "vso.cmd.tasks.stacks.new.error.noCommand"
+msgstr "Geen opdracht opgegeven."
+
+msgid "vso.cmd.tasks.stacks.new.error.noDescription"
+msgstr "Geen opdracht opgegeven."
+
+msgid "vso.cmd.tasks.stacks.new.error.noName"
+msgstr "Geen naam opgegeven."
+
+msgid "vso.cmd.tasks.stacks.new.info.askCommand"
+msgstr "Opdracht: "
+
+msgid "vso.cmd.tasks.stacks.new.info.askDescription"
+msgstr "Omschrĳving: "
+
+msgid "vso.cmd.tasks.stacks.new.info.askName"
+msgstr "Naam: "
+
+msgid "vso.cmd.tasks.stacks.new.info.taskCreated"
+msgstr "Taak succesvol aangemaakt."
+
+msgid "vso.cmd.tasks.list"
+msgstr "Somt alle taken op"
+
+msgid "vso.cmd.tasks.list.noTasks"
+msgstr "Geen taken gevonden."
+
+msgid "vso.cmd.tasks.list.info.foundTasks"
+msgstr "%d taken gevonden."
+
+msgid "vso.cmd.tasks.list.options.json"
+msgstr "voer de taken uit in JSON-formaat"
+
+msgid "vso.cmd.tasks.new"
+msgstr "Maakt een nieuwe taak aan"
+
+msgid "vso.cmd.tasks.new.options.assumeYes"
+msgstr "antwoord ja op alle prompts"
+
+msgid "vso.cmd.tasks.new.options.at"
+msgstr "plan de taak om op een specifiek tĳdstip uit te voeren (uu:mm)"
+
+msgid "vso.cmd.tasks.new.options.command"
+msgstr "geef de opdracht om uit te voeren op"
+
+msgid "vso.cmd.tasks.new.options.description"
+msgstr "geef de taakbeschrĳving op"
+
+msgid "vso.cmd.tasks.new.options.every"
+msgstr "Plan de taak om met een interval te worden uitgevoerd (minuten, uren, dagen)"
+
+msgid "vso.cmd.tasks.new.options.name"
+msgstr "Geef de taaknaam op"
+
+msgid "vso.cmd.tasks.new.options.needConfirm"
+msgstr "vraag om bevestiging voor het uitvoeren van de taak"
+
+msgid "vso.cmd.tasks.new.options.onBattery"
+msgstr "voer de taak alleen uit als het systeem niet wordt opgeladen"
+
+msgid "vso.cmd.tasks.new.options.onCharge"
+msgstr "voer de taak alleen uit als het systeem wordt opgeladen"
+
+msgid "vso.cmd.tasks.new.options.onConditionCommand"
+msgstr "voert de taak uit na statusopdracht"
+
+msgid "vso.cmd.tasks.new.options.onCpuTemp"
+msgstr "voert de taak uit als CPU-temperatuur hoger is dan 60 °C"
+
+msgid "vso.cmd.tasks.new.options.onCpuUsage"
+msgstr "voert de taak uit als CPU-gebruik hoger is dan het opgegeven percentage"
+
+msgid "vso.cmd.tasks.new.options.onDeviceConnect"
+msgstr "voert de taak uit als een apparaat wordt verbonden"
+
+msgid "vso.cmd.tasks.new.options.onDeviceDisconnect"
+msgstr "voert de taak uit als een apparaat wordt losgekoppeld"
+
+msgid "vso.cmd.tasks.new.options.onDisconnect"
+msgstr "voert de taak uit als het systeem verbinding met het netwerk verliest"
+
+msgid "vso.cmd.tasks.new.options.onFullBattery"
+msgstr "voert de taak uit als het systeem volledig is opgeladen"
+
+msgid "vso.cmd.tasks.new.options.onHighCpuUsage"
+msgstr "voert de taak uit als CPU-gebruik hoger is dan 50%"
+
+msgid "vso.cmd.tasks.new.options.onHighInternetUsage"
+msgstr "voert de taak uit als internetgebruik hoger is dan 500 Kb/s"
+
+msgid "vso.cmd.tasks.new.options.onHighMemoryUsage"
+msgstr "voert de taak uit als geheugengebruik hoger is dan 50%"
+
+msgid "vso.cmd.tasks.new.options.onInternetUsage"
+msgstr "voert de taak uit als internetgebruik hoger is dan de opgegeven snelheid (Kb/s)"
+
+msgid "vso.cmd.tasks.new.options.onLowBattery"
+msgstr "voert de taak uit als de accu minder dan 20% energie resterend heeft"
+
+msgid "vso.cmd.tasks.new.options.onMemoryUsage"
+msgstr "voert de taak uit als geheugengebruik hoger is dan het opgegeven percentage"
+
+msgid "vso.cmd.tasks.new.options.onNetwork"
+msgstr "voert de taak uit als het systeem met een netwerk verbindt"
+
+msgid "vso.cmd.tasks.new.options.onProcess"
+msgstr "voert de taak uit als er een proces start"
+
+msgid "vso.cmd.tasks.rm"
+msgstr "Verwĳdert een taak"
+
+msgid "vso.cmd.tasks.rm.error.cannotDelete"
+msgstr "Kan taak niet verwĳderen: %s"
+
+msgid "vso.cmd.tasks.rm.error.noName"
+msgstr "Geen taaknaam opgegeven"
+
+msgid "vso.cmd.tasks.rm.error.notFound"
+msgstr "Taak niet gevonden."
+
+msgid "vso.cmd.tasks.rm.info.askConfirmation"
+msgstr "Weet u zeker dat u de taak ‘%s’ wilt verwĳderen? [y/N]"
+
+msgid "vso.cmd.tasks.rm.info.taskDeleted"
+msgstr "De taak is succesvol verwĳderd."
+
+msgid "vso.cmd.tasks.rm.options.force"
+msgstr "forceert verwĳdering van de taak"
+
+msgid "vso.cmd.tasks.rm.options.name"
+msgstr "Geef de taaknaam op"
+
+msgid "vso.cmd.tasks.rotate"
+msgstr "Taken roteren"
+
+msgid "vso.cmd.tasks.rotate.options.privateEvent"
+msgstr "specificeer de privégebeurtenis om taken voor opstarten, afsluiten, inloggen en uitloggen te roteren"
+
+msgid "vso.cmd.tasks.rotate.options.silent"
+msgstr "geef niet bĳ elke cyclus de status weer"
+
+msgid "vso.cmd.waydroid"
+msgstr "Beheer het VSO-Waydroid-subsysteem"
+
+msgid "vso.arg.package"
+msgstr ""
+
+msgid "vso.arg.command"
+msgstr ""
+

@@ -1,0 +1,436 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Vanilla System Operator\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-05-18 12:00+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: ar\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+msgid "vso.description"
+msgstr "مشغل النظام Vanilla هو مدير حز م، محدث نظام ومنفذ مهام."
+
+msgid "vso.errors.unknownCommand"
+msgstr "الأمر غير معروف: %s"
+
+msgid "vso.errors.invalidInput"
+msgstr "إدخال غير صالح."
+
+msgid "vso.errors.invalidChoice"
+msgstr "اختيار غير صالح."
+
+msgid "vso.info.aborting"
+msgstr "إلغاء كما هو مطلوب."
+
+msgid "vso.msg.help"
+msgstr "عرض المساعدة لـ vso."
+
+msgid "vso.msg.version"
+msgstr "عرض إصدار vso."
+
+msgid "vso.msg.usage"
+msgstr "الاستخدام"
+
+msgid "vso.msg.aliases"
+msgstr "الأسماء المستعارة"
+
+msgid "vso.msg.examples"
+msgstr "أمثلة"
+
+msgid "vso.msg.availableCommands"
+msgstr "الأوامر المتاحة"
+
+msgid "vso.msg.additionalCommands"
+msgstr "الأوامر الإضافية"
+
+msgid "vso.msg.flags"
+msgstr "أعلام"
+
+msgid "vso.msg.globalFlags"
+msgstr "الأعلام العالمية"
+
+msgid "vso.msg.additionalHelpTopics"
+msgstr "مواضيع مساعدة إضافية"
+
+msgid "vso.msg.moreInfo"
+msgstr "استخدم %s لمزيد من المعلومات حول الأمر"
+
+msgid "vso.terminal.yes"
+msgstr "نعم"
+
+msgid "vso.terminal.no"
+msgstr "لا"
+
+msgid "vso.cmd.config"
+msgstr "إدارة تكوين النظام."
+
+msgid "vso.cmd.config.get"
+msgstr "الحصول على تكوين النظام"
+
+msgid "vso.cmd.config.get.error.noKey"
+msgstr "لم يتم تحديد مفتاح."
+
+msgid "vso.cmd.config.get.error.noValue"
+msgstr "لم يتم العثور على قيمة للمفتاح: %s"
+
+msgid "vso.cmd.config.get.options.key"
+msgstr "استرجاع قيمة التكوين باستخدام مفتاحه"
+
+msgid "vso.cmd.config.set"
+msgstr "تعيين تكوين النظام"
+
+msgid "vso.cmd.config.set.error.noKey"
+msgstr "لم يتم تحديد مفتاح."
+
+msgid "vso.cmd.config.set.error.noValue"
+msgstr "لم يتم تحديد قيمة."
+
+msgid "vso.cmd.config.set.error.failed"
+msgstr "فشل في تعيين التكوين: %s"
+
+msgid "vso.cmd.config.set.options.key"
+msgstr "مفتاح التكوين المراد تعيينه"
+
+msgid "vso.cmd.config.set.options.value"
+msgstr "قيمة التكوين المراد تعيينها"
+
+msgid "vso.cmd.config.set.success"
+msgstr "تم تحديث التكوين بنجاح."
+
+msgid "vso.cmd.config.show"
+msgstr "عرض تكوين النظام"
+
+msgid "vso.cmd.pico"
+msgstr "إدارة نظام VSO الفرعي"
+
+msgid "vso.cmd.pico.error.notInitialized"
+msgstr "نظام VSO الفرعي غير مهيأ. يرجى تشغيل `vso pico-init` لتهيئته."
+
+msgid "vso.cmd.pico.error.alreadyInitialized"
+msgstr "نظام VSO الفرعي مهيأ ب الفعل. استخدم العلامة --force لإجبار التهيئة."
+
+msgid "vso.cmd.pico.error.noAppNameOrBin"
+msgstr "--app أو --bin يجب تحديد واحد منهما."
+
+msgid "vso.cmd.pico.error.sameAppOrBin"
+msgstr "--app و --bin لا يمكن تحديدهما معاً."
+
+msgid "vso.cmd.pico.error.exportingApp"
+msgstr "حدث خطأ أثناء تصدير التطبيق: %s"
+
+msgid "vso.cmd.pico.error.exportingBin"
+msgstr "حدث خطأ أثناء تصدير الملف التنفيذي: %s"
+
+msgid "vso.cmd.pico.error.unexportingApp"
+msgstr "حدث خطأ أثناء إلغاء تصدير التطبيق: %s"
+
+msgid "vso.cmd.pico.error.unexportingBin"
+msgstr "حدث خطأ أثناء إلغاء تصدير الملف التنفيذي: %s"
+
+msgid "vso.cmd.pico.error.unknownCommand"
+msgstr "الأمر غير معروف: %s"
+
+msgid "vso.cmd.pico.error.shellReset"
+msgstr "من المستحيل الوصول إلى قشرة VSO. هل تريد إعادة ضبطها؟ (سيؤدي هذا إلى إزالة جميع البرامج المثبتة في النظام الفرعي) [y/N]"
+
+msgid "vso.cmd.pico.info.deleting"
+msgstr "حذف نظام VSO الفرعي..."
+
+msgid "vso.cmd.pico.info.initializing"
+msgstr "تهيئة نظام VSO الفرعي..."
+
+msgid "vso.cmd.pico.info.initialized"
+msgstr "تم تهيئة نظام VSO الفرعي."
+
+msgid "vso.cmd.pico.info.exported"
+msgstr "تم تصدير %s\n"
+
+msgid "vso.cmd.pico.info.unexported"
+msgstr "تم إلغاء تصدير %s\n"
+
+msgid "vso.cmd.pico.info.exportedApps"
+msgstr "تم تصدير %d تطبيقات"
+
+msgid "vso.cmd.pico.info.unexportedApps"
+msgstr "تم إلغاء تصدير %d تطبيقات"
+
+msgid "vso.cmd.pico.info.shellInit"
+msgstr "يبدو أن قشرتك لم يتم تهيئتها بعد. ه ل تريد تهيئتها الآن؟ (موصى به بشدة) [y/N]"
+
+msgid "vso.cmd.pico.info.fallbackShell"
+msgstr "العودة إلى قشرة المضيف؟ قد يؤدي ذلك إلى سلوك غير متوقع. [y/N]"
+
+msgid "vso.cmd.pico.export"
+msgstr "تصدير تطبيق أو ملف تنفيذي من النظام الفرعي"
+
+msgid "vso.cmd.pico.export.options.app"
+msgstr "اسم التطبيق المراد تصديره"
+
+msgid "vso.cmd.pico.export.options.bin"
+msgstr "اسم الملف التنفيذي المراد تصديره"
+
+msgid "vso.cmd.pico.export.options.binOutput"
+msgstr "مسار إخراج الملف التنفيذي (افتراضي: ~/.local/bin/)"
+
+msgid "vso.cmd.pico.unexport"
+msgstr "إلغاء تصدير تطبيق أو ملف تنفيذي من النظام الفرعي"
+
+msgid "vso.cmd.pico.unexport.options.app"
+msgstr "اسم التطبيق المراد إلغاء تصديره"
+
+msgid "vso.cmd.pico.unexport.options.bin"
+msgstr "اسم الملف التنفيذي المراد إلغاء تصديره"
+
+msgid "vso.cmd.pico.unexport.options.binOutput"
+msgstr "مسار إخراج الملف التنفيذي (افتراضي: ~/.local/bin/)"
+
+msgid "vso.cmd.pico.init"
+msgstr "تهيئة نظام VSO الفرعي، المستخدم لإدارة الحزم"
+
+msgid "vso.cmd.pico.init.options.force"
+msgstr "إجبار التهيئة إذا كان النظام الفرعي مهيأ بالفعل"
+
+msgid "vso.cmd.pico.install"
+msgstr "تثبيت تطبيق داخل النظام الفرعي"
+
+msgid "vso.cmd.pico.remove"
+msgstr "إزالة تطبيق من النظام الفرعي"
+
+msgid "vso.cmd.pico.run"
+msgstr "تشغيل تطبيق من النظام الفرعي"
+
+msgid "vso.cmd.pico.run.options.noReset"
+msgstr "عدم اقتراح إعادة ضبط النظام الفرعي إذا حدث خطأ ما"
+
+msgid "vso.cmd.pico.search"
+msgstr "البحث عن تطبيق لتثبيته داخل النظام الفرعي"
+
+msgid "vso.cmd.pico.shell"
+msgstr "الدخول إلى بيئة النظام الفرعي"
+
+msgid "vso.cmd.pico.sideload"
+msgstr "تثبيت حزم DEB/APK داخل النظام الفرعي"
+
+msgid "vso.cmd.pico.update"
+msgstr "تحديث مستودع حزم النظام الفرعي"
+
+msgid "vso.cmd.pico.upgrade"
+msgstr "ترقية الحزم داخل النظام الفرعي"
+
+msgid "vso.cmd.sysUpgrade"
+msgstr "ترقية النظام"
+
+msgid "vso.cmd.sysUpgrade.check"
+msgstr "التحقق من تحديثات النظام"
+
+msgid "vso.cmd.sysUpgrade.check.asExitCode"
+msgstr "التحقق من الترقية ولكن دون طباعة أي شي ء. العودة برمز خروج 0 إذا لم تكن هناك ترقية متاحة و1 خلاف ذلك."
+
+msgid "vso.cmd.sysUpgrade.check.error.asExitCodeAndJson"
+msgstr "An error occured when checking for updates. See the JSON output for more details."
+
+msgid "vso.cmd.sysUpgrade.check.info.checking"
+msgstr "التحقق من التحديثات..."
+
+msgid "vso.cmd.sysUpgrade.check.json"
+msgstr "عرض النتيجة بتنسيق JSON"
+
+msgid "vso.cmd.sysUpgrade.upgrade"
+msgstr ""
+
+msgid "vso.cmd.sysUpgrade.error.updating"
+msgstr ""
+
+msgid "vso.cmd.sysUpgrade.error.onHasUpdate"
+msgstr ""
+
+msgid "vso.cmd.sysUpgrade.schedule.daily"
+msgstr ""
+
+msgid "vso.cmd.sysUpgrade.schedule.weekly"
+msgstr ""
+
+msgid "vso.cmd.sysUpgrade.schedule.monthly"
+msgstr ""
+
+msgid "vso.cmd.sysUpgrade.info.updating"
+msgstr ""
+
+msgid "vso.cmd.sysUpgrade.info.willUpdateLater"
+msgstr ""
+
+msgid "vso.cmd.sysUpgrade.info.willNeverUpdate"
+msgstr ""
+
+msgid "vso.cmd.sysUpgrade.info.noUpdates"
+msgstr ""
+
+msgid "vso.cmd.sysUpgrade.now"
+msgstr ""
+
+msgid "vso.cmd.tasks"
+msgstr "إنشاء وإدارة المهام"
+
+msgid "vso.cmd.tasks.stacks.new.error.emptyCommand"
+msgstr "الأمر لا يمكن أن يكون فارغًا."
+
+msgid "vso.cmd.tasks.stacks.new.error.emptyDescription"
+msgstr "الوصف لا يمكن أن يكون فارغًا."
+
+msgid "vso.cmd.tasks.stacks.new.error.emptyName"
+msgstr "الاسم لا يمكن أن يكون فارغًا."
+
+msgid "vso.cmd.tasks.stacks.new.error.noCommand"
+msgstr "لم يتم تحديد أمر."
+
+msgid "vso.cmd.tasks.stacks.new.error.noDescription"
+msgstr "لم يتم تحديد وصف."
+
+msgid "vso.cmd.tasks.stacks.new.error.noName"
+msgstr "لم يتم تحديد اسم."
+
+msgid "vso.cmd.tasks.stacks.new.info.askCommand"
+msgstr "الأمر: "
+
+msgid "vso.cmd.tasks.stacks.new.info.askDescription"
+msgstr "الوصف: "
+
+msgid "vso.cmd.tasks.stacks.new.info.askName"
+msgstr "الاسم: "
+
+msgid "vso.cmd.tasks.stacks.new.info.taskCreated"
+msgstr "تم إنشاء المهمة بنجاح."
+
+msgid "vso.cmd.tasks.list"
+msgstr "عرض جميع المهام"
+
+msgid "vso.cmd.tasks.list.noTasks"
+msgstr "لم يتم العثور على مهام."
+
+msgid "vso.cmd.tasks.list.info.foundTasks"
+msgstr "تم العثور على %d مهام."
+
+msgid "vso.cmd.tasks.list.options.json"
+msgstr "عرض المهام بتنسيق JSON"
+
+msgid "vso.cmd.tasks.new"
+msgstr "إنشاء مهمة جديدة"
+
+msgid "vso.cmd.tasks.new.options.assumeYes"
+msgstr "افترض الإجابة بنعم لجميع المطالبات"
+
+msgid "vso.cmd.tasks.new.options.at"
+msgstr "جدولة المهمة للتنفيذ في وقت محدد (hh:mm)"
+
+msgid "vso.cmd.tasks.new.options.command"
+msgstr "تحديد الأمر للتنفيذ"
+
+msgid "vso.cmd.tasks.new.options.description"
+msgstr "تحديد وصف المهمة"
+
+msgid "vso.cmd.tasks.new.options.every"
+msgstr "جدولة المهمة للتنفيذ كل X وقت (دقائق، ساعات، أيام)"
+
+msgid "vso.cmd.tasks.new.options.name"
+msgstr "تحديد اسم المهمة"
+
+msgid "vso.cmd.tasks.new.options.needConfirm"
+msgstr "طلب التأكيد قبل تنفيذ المهمة"
+
+msgid "vso.cmd.tasks.new.options.onBattery"
+msgstr "تنفيذ المهمة فقط عندما يكون النظام على البطارية"
+
+msgid "vso.cmd.tasks.new.options.onCharge"
+msgstr "تنفيذ المهمة فقط عندما يكون النظام في حالة الشحن"
+
+msgid "vso.cmd.tasks.new.options.onConditionCommand"
+msgstr "تنفيذ المهمة بأمر مشروط"
+
+msgid "vso.cmd.tasks.new.options.onCpuTemp"
+msgstr "تنفيذ المهمة عندما تكون درجة حرارة وحدة المعالجة المركزية أعلى من 60 درجة مئوية"
+
+msgid "vso.cmd.tasks.new.options.onCpuUsage"
+msgstr "تنفيذ المهمة عندما يكون استخدام وحدة المعالجة المركزية أعلى من X%"
+
+msgid "vso.cmd.tasks.new.options.onDeviceConnect"
+msgstr "تنفيذ المهمة عند توصيل جهاز"
+
+msgid "vso.cmd.tasks.new.options.onDeviceDisconnect"
+msgstr "تنفيذ المهمة عندما يكون الجهاز مفصولاً"
+
+msgid "vso.cmd.tasks.new.options.onDisconnect"
+msgstr "تنفيذ المهمة عندما يكون النظام مفصولاً عن الشبكة"
+
+msgid "vso.cmd.tasks.new.options.onFullBattery"
+msgstr "تنفيذ المهمة عندما يكون النظام مشحونًا بالكامل"
+
+msgid "vso.cmd.tasks.new.options.onHighCpuUsage"
+msgstr "تنفيذ المهمة عندما يكون استخدام وحدة المعالجة المركزية أعلى من 50%"
+
+msgid "vso.cmd.tasks.new.options.onHighInternetUsage"
+msgstr "تنفيذ المهمة عندما يكون استخدام الإنترنت أعلى من 500 كيلو بايت/ثانية"
+
+msgid "vso.cmd.tasks.new.options.onHighMemoryUsage"
+msgstr "تنفيذ المهمة عندما يكون استخدام الذاكرة أعلى من 50%"
+
+msgid "vso.cmd.tasks.new.options.onInternetUsage"
+msgstr "تنفيذ المهمة عندما يكون استخدام الإنترنت أعلى من X كيلو بايت/ثانية"
+
+msgid "vso.cmd.tasks.new.options.onLowBattery"
+msgstr "تنفيذ المهمة عندما يكون مستوى البطارية في النظام منخفضًا (20%)"
+
+msgid "vso.cmd.tasks.new.options.onMemoryUsage"
+msgstr "تنفيذ المهمة عندما يكون استخدام الذاكرة أعلى من X%"
+
+msgid "vso.cmd.tasks.new.options.onNetwork"
+msgstr "تنفيذ المهمة عندما يكون النظام متصلاً بالشبكة"
+
+msgid "vso.cmd.tasks.new.options.onProcess"
+msgstr "تنفيذ المهمة عند بدء عملية"
+
+msgid "vso.cmd.tasks.rm"
+msgstr "إزالة مهمة"
+
+msgid "vso.cmd.tasks.rm.error.cannotDelete"
+msgstr "لا يمكن حذف المهمة: %s"
+
+msgid "vso.cmd.tasks.rm.error.noName"
+msgstr "لم يتم تحديد اسم المهمة."
+
+msgid "vso.cmd.tasks.rm.error.notFound"
+msgstr "لم يتم العثور على المهمة."
+
+msgid "vso.cmd.tasks.rm.info.askConfirmation"
+msgstr "هل أنت متأكد أنك تريد حذف المهمة %s؟ [y/N]"
+
+msgid "vso.cmd.tasks.rm.info.taskDeleted"
+msgstr "تم حذف المهمة بنجاح."
+
+msgid "vso.cmd.tasks.rm.options.force"
+msgstr "فرض حذف المهمة"
+
+msgid "vso.cmd.tasks.rm.options.name"
+msgstr "حدد اسم المهمة"
+
+msgid "vso.cmd.tasks.rotate"
+msgstr "تدوير المهام"
+
+msgid "vso.cmd.tasks.rotate.options.privateEvent"
+msgstr "تحديد الحدث الخاص لتدوير المهام الخاصة بالتمهيد، والإيقاف، وتسجيل الدخول، وتسجيل الخروج"
+
+msgid "vso.cmd.tasks.rotate.options.silent"
+msgstr "don't output the status on each cycle"
+
+msgid "vso.cmd.waydroid"
+msgstr "إدارة النظام الفرعي vso waydroid"
+
+msgid "vso.arg.package"
+msgstr ""
+
+msgid "vso.arg.command"
+msgstr ""
+

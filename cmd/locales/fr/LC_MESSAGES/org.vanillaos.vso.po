@@ -1,0 +1,436 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Vanilla System Operator\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-05-18 12:00+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: fr\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+msgid "vso.description"
+msgstr "Le centre de contrôle de Vanilla OS est un gestionnaire de paquets et de tâches ainsi qu'un outil de mise à jour du système."
+
+msgid "vso.errors.unknownCommand"
+msgstr "Commande inconnue : %s"
+
+msgid "vso.errors.invalidInput"
+msgstr "Entrée invalide."
+
+msgid "vso.errors.invalidChoice"
+msgstr "Choix invalide."
+
+msgid "vso.info.aborting"
+msgstr "Annulation."
+
+msgid "vso.msg.help"
+msgstr "Affiche l'aide de vso."
+
+msgid "vso.msg.version"
+msgstr "Affiche la version de vso."
+
+msgid "vso.msg.usage"
+msgstr "Utilisation"
+
+msgid "vso.msg.aliases"
+msgstr "Alias"
+
+msgid "vso.msg.examples"
+msgstr "Exemples"
+
+msgid "vso.msg.availableCommands"
+msgstr "Commandes Disponibles"
+
+msgid "vso.msg.additionalCommands"
+msgstr "Commandes Additionnelles"
+
+msgid "vso.msg.flags"
+msgstr "Drapeaux"
+
+msgid "vso.msg.globalFlags"
+msgstr "Drapeaux Globaux"
+
+msgid "vso.msg.additionalHelpTopics"
+msgstr "Autres sujets d'aide"
+
+msgid "vso.msg.moreInfo"
+msgstr "Utilisez %s pour plus d'informations à propos d'une commande"
+
+msgid "vso.terminal.yes"
+msgstr "oui"
+
+msgid "vso.terminal.no"
+msgstr "non"
+
+msgid "vso.cmd.config"
+msgstr "Gestion de la configuration du système."
+
+msgid "vso.cmd.config.get"
+msgstr "Obtenir la configuration du système"
+
+msgid "vso.cmd.config.get.error.noKey"
+msgstr "Aucune clé n'est spécifiée."
+
+msgid "vso.cmd.config.get.error.noValue"
+msgstr "Aucune valeur trouvée pour la clé : %s"
+
+msgid "vso.cmd.config.get.options.key"
+msgstr "récupérer la valeur de la configuration en utilisant sa clé"
+
+msgid "vso.cmd.config.set"
+msgstr "Définir la configuration du système"
+
+msgid "vso.cmd.config.set.error.noKey"
+msgstr "Aucune clé n'est spécifiée."
+
+msgid "vso.cmd.config.set.error.noValue"
+msgstr "Aucune valeur n'est spécifiée."
+
+msgid "vso.cmd.config.set.error.failed"
+msgstr "Échec à définir la configuration : %s"
+
+msgid "vso.cmd.config.set.options.key"
+msgstr "clé de la configuration à définir"
+
+msgid "vso.cmd.config.set.options.value"
+msgstr "valeur de la configuration à définir"
+
+msgid "vso.cmd.config.set.success"
+msgstr "Configuration mise à jour avec succès."
+
+msgid "vso.cmd.config.show"
+msgstr "Afficher la configuration du système"
+
+msgid "vso.cmd.pico"
+msgstr "Gestion du sous-système VSO"
+
+msgid "vso.cmd.pico.error.notInitialized"
+msgstr "Le sous-système VSO n'est pas initialisé. Veuillez lancer `vso pico-init` pour l'initialiser."
+
+msgid "vso.cmd.pico.error.alreadyInitialized"
+msgstr "Le sous-système VSO est déjà initialisé. Utilisez l'option --force pour forcer l'initialisation."
+
+msgid "vso.cmd.pico.error.noAppNameOrBin"
+msgstr "Les options --app ou --bin doivent être spécifiées."
+
+msgid "vso.cmd.pico.error.sameAppOrBin"
+msgstr "--app et --bin ne peuvent pas être spécifiés tous les deux."
+
+msgid "vso.cmd.pico.error.exportingApp"
+msgstr "Une erreur s'est produite lors de l'exportation de l'application : %s"
+
+msgid "vso.cmd.pico.error.exportingBin"
+msgstr "Une erreur s'est produite lors de l'exportation du binaire : %s"
+
+msgid "vso.cmd.pico.error.unexportingApp"
+msgstr "Une erreur s'est produite lors de la suppression de l'exportation de l'application : %s"
+
+msgid "vso.cmd.pico.error.unexportingBin"
+msgstr "Une erreur s'est produite lors de la suppression de l'exportation du binaire : %s"
+
+msgid "vso.cmd.pico.error.unknownCommand"
+msgstr "Commande inconnu  : %s"
+
+msgid "vso.cmd.pico.error.shellReset"
+msgstr "Il est impossible d'atteindre le shell VSO. Voulez-vous le réinitialiser ? (Cela supprimera tous vos logiciels installés dans le sous-système) [y/N]"
+
+msgid "vso.cmd.pico.info.deleting"
+msgstr "Suppression du sous-système VSO..."
+
+msgid "vso.cmd.pico.info.initializing"
+msgstr "Initialisation du sous-système VSO..."
+
+msgid "vso.cmd.pico.info.initialized"
+msgstr "Le sous-système VSO a été initialisé."
+
+msgid "vso.cmd.pico.info.exported"
+msgstr "Exportation de %s\n"
+
+msgid "vso.cmd.pico.info.unexported"
+msgstr "Suppression de l'exportation de %s\n"
+
+msgid "vso.cmd.pico.info.exportedApps"
+msgstr "Exportation de l'application %d"
+
+msgid "vso.cmd.pico.info.unexportedApps"
+msgstr "Suppression de l'exportation de l'application %d"
+
+msgid "vso.cmd.pico.info.shellInit"
+msgstr "On dirait que votre shell n'est pas encore initialisé. Voulez-vous l'initialiser maintenant ? (Fortement recommandé) [y/N]"
+
+msgid "vso.cmd.pico.info.fallbackShell"
+msgstr "Revenir au shell hôte ? Cela pourrait conduire à un comportement inattendu. [y/N]"
+
+msgid "vso.cmd.pico.export"
+msgstr "Exporter une application ou un binaire du sous-système"
+
+msgid "vso.cmd.pico.export.options.app"
+msgstr "le nom de l'application à exporter"
+
+msgid "vso.cmd.pico.export.options.bin"
+msgstr "le nom du binaire à exporter"
+
+msgid "vso.cmd.pico.export.options.binOutput"
+msgstr "chemin de la sortie du binaire (par défaut : ~/.local/bin/)"
+
+msgid "vso.cmd.pico.unexport"
+msgstr "Supprimer l'exportation d'une application ou d'un binaire du sous-système"
+
+msgid "vso.cmd.pico.unexport.options.app"
+msgstr "le nom de l'application à supprimer l'exportation"
+
+msgid "vso.cmd.pico.unexport.options.bin"
+msgstr "le nom du binaire à supprimer l'exportation"
+
+msgid "vso.cmd.pico.unexport.options.binOutput"
+msgstr "chemin de la sortie du binaire (par défaut : ~/.local/bin/)"
+
+msgid "vso.cmd.pico.init"
+msgstr "Initialiser le sous-système VSO, utilisé pour la gestion des paquets"
+
+msgid "vso.cmd.pico.init.options.force"
+msgstr "forcer l'initialisation si le sous-système est déjà initialisé"
+
+msgid "vso.cmd.pico.install"
+msgstr "Installer une application dans le sous-système"
+
+msgid "vso.cmd.pico.remove"
+msgstr "Supprimer une application du sous-système"
+
+msgid "vso.cmd.pico.run"
+msgstr "Exécuter une application à partir du sous-système"
+
+msgid "vso.cmd.pico.run.options.noReset"
+msgstr "ne proposez pas de réinitialiser le sous-système en cas de problème"
+
+msgid "vso.cmd.pico.search"
+msgstr "Recherche d'une application à installer dans le sous-système"
+
+msgid "vso.cmd.pico.shell"
+msgstr "Entrer dans l'environnement du sous-système"
+
+msgid "vso.cmd.pico.sideload"
+msgstr "Chargement des paquets DEB/APK dans le sous-système"
+
+msgid "vso.cmd.pico.update"
+msgstr "Mise à jour du référentiel de paquets du sous-système"
+
+msgid "vso.cmd.pico.upgrade"
+msgstr "Mise à jour des paquets à l'intérieur du sous-système"
+
+msgid "vso.cmd.sysUpgrade"
+msgstr "Exécuter des commandes système, comme celle pour mettre à jour le système"
+
+msgid "vso.cmd.sysUpgrade.check"
+msgstr "Vérifier les mises à jour du système"
+
+msgid "vso.cmd.sysUpgrade.check.asExitCode"
+msgstr "vérifie l'existence d'une mise à jour, mais n'affiche rien. Retourne le code de sortie 0 si aucune mise à jour n'est disponible et 1 sinon."
+
+msgid "vso.cmd.sysUpgrade.check.error.asExitCodeAndJson"
+msgstr "Une erreur s'est produite lors de la vérification des mises à jour. Voir la sortie JSON pour plus de détails."
+
+msgid "vso.cmd.sysUpgrade.check.info.checking"
+msgstr "Vérifier les mises à jour ..."
+
+msgid "vso.cmd.sysUpgrade.check.json"
+msgstr "exporter le résultat au format JSON"
+
+msgid "vso.cmd.sysUpgrade.upgrade"
+msgstr ""
+
+msgid "vso.cmd.sysUpgrade.error.updating"
+msgstr ""
+
+msgid "vso.cmd.sysUpgrade.error.onHasUpdate"
+msgstr ""
+
+msgid "vso.cmd.sysUpgrade.schedule.daily"
+msgstr ""
+
+msgid "vso.cmd.sysUpgrade.schedule.weekly"
+msgstr ""
+
+msgid "vso.cmd.sysUpgrade.schedule.monthly"
+msgstr ""
+
+msgid "vso.cmd.sysUpgrade.info.updating"
+msgstr ""
+
+msgid "vso.cmd.sysUpgrade.info.willUpdateLater"
+msgstr ""
+
+msgid "vso.cmd.sysUpgrade.info.willNeverUpdate"
+msgstr ""
+
+msgid "vso.cmd.sysUpgrade.info.noUpdates"
+msgstr ""
+
+msgid "vso.cmd.sysUpgrade.now"
+msgstr ""
+
+msgid "vso.cmd.tasks"
+msgstr "Créer et gérer des tâches"
+
+msgid "vso.cmd.tasks.stacks.new.error.emptyCommand"
+msgstr "La commande ne peut pas être vide."
+
+msgid "vso.cmd.tasks.stacks.new.error.emptyDescription"
+msgstr "La description ne peut pas être vide."
+
+msgid "vso.cmd.tasks.stacks.new.error.emptyName"
+msgstr "Le nom ne peut pas être vide."
+
+msgid "vso.cmd.tasks.stacks.new.error.noCommand"
+msgstr "Aucune commande n'a été spécifiée."
+
+msgid "vso.cmd.tasks.stacks.new.error.noDescription"
+msgstr "Aucune description n'a été spécifiée."
+
+msgid "vso.cmd.tasks.stacks.new.error.noName"
+msgstr "Aucun nom n'a été spécifié."
+
+msgid "vso.cmd.tasks.stacks.new.info.askCommand"
+msgstr "Commande : "
+
+msgid "vso.cmd.tasks.stacks.new.info.askDescription"
+msgstr "Description : "
+
+msgid "vso.cmd.tasks.stacks.new.info.askName"
+msgstr "Nom : "
+
+msgid "vso.cmd.tasks.stacks.new.info.taskCreated"
+msgstr "La tâche a été créée avec succès."
+
+msgid "vso.cmd.tasks.list"
+msgstr "Liste des tâches"
+
+msgid "vso.cmd.tasks.list.noTasks"
+msgstr "Aucune tâche n'a été trouvée."
+
+msgid "vso.cmd.tasks.list.info.foundTasks"
+msgstr "A trouvé %d tâches."
+
+msgid "vso.cmd.tasks.list.options.json"
+msgstr "sortir des tâches au format JSON"
+
+msgid "vso.cmd.tasks.new"
+msgstr "Créer une nouvelle tâche"
+
+msgid "vso.cmd.tasks.new.options.assumeYes"
+msgstr "Supposez que vous répondez par oui à toutes les questions"
+
+msgid "vso.cmd.tasks.new.options.at"
+msgstr "programmer l'exécution de la tâche à une heure précise (hh:mm)"
+
+msgid "vso.cmd.tasks.new.options.command"
+msgstr "spécifier la commande à exécuter"
+
+msgid "vso.cmd.tasks.new.options.description"
+msgstr "spécifier la description de la tâche"
+
+msgid "vso.cmd.tasks.new.options.every"
+msgstr "programmer l'exécution de la tâche tous les X temps (minutes, heures, jours)"
+
+msgid "vso.cmd.tasks.new.options.name"
+msgstr "spécifier le nom de la tâche"
+
+msgid "vso.cmd.tasks.new.options.needConfirm"
+msgstr "demander une confirmation avant d'exécuter la tâche"
+
+msgid "vso.cmd.tasks.new.options.onBattery"
+msgstr "exécuter la tâche uniquement lorsque le système est sur batterie"
+
+msgid "vso.cmd.tasks.new.options.onCharge"
+msgstr "exécuter la tâche uniquement lorsque le système est en charge"
+
+msgid "vso.cmd.tasks.new.options.onConditionCommand"
+msgstr "exécuter la commande de la tâche avec condition"
+
+msgid "vso.cmd.tasks.new.options.onCpuTemp"
+msgstr "exécuter la tâche lorsque la température de l'unité centrale est supérieure à 60°C"
+
+msgid "vso.cmd.tasks.new.options.onCpuUsage"
+msgstr "exécuter la tâche lorsque l'utilisation de l'unité centrale est supérieure à X%"
+
+msgid "vso.cmd.tasks.new.options.onDeviceConnect"
+msgstr "exécuter la tâche lorsqu'un appareil est connecté"
+
+msgid "vso.cmd.tasks.new.options.onDeviceDisconnect"
+msgstr "exécuter la tâche lorsqu'un appareil est déconnecté"
+
+msgid "vso.cmd.tasks.new.options.onDisconnect"
+msgstr "exécuter la tâche lorsque le système est déconnecté du réseau"
+
+msgid "vso.cmd.tasks.new.options.onFullBattery"
+msgstr "exécuter la tâche lorsque le système est complètement chargé"
+
+msgid "vso.cmd.tasks.new.options.onHighCpuUsage"
+msgstr "exécuter la tâche lorsque l'utilisation du CPU est supérieure à 50 %"
+
+msgid "vso.cmd.tasks.new.options.onHighInternetUsage"
+msgstr "exécuter la tâche lorsque l'utilisation de l'internet est supérieure à 500 Kb/s"
+
+msgid "vso.cmd.tasks.new.options.onHighMemoryUsage"
+msgstr "exécuter la tâche lorsque l'utilisation de la mémoire est supérieure à 50 %"
+
+msgid "vso.cmd.tasks.new.options.onInternetUsage"
+msgstr "exécuter la tâche lorsque l'utilisation de l'internet est supérieure à X Kb/s"
+
+msgid "vso.cmd.tasks.new.options.onLowBattery"
+msgstr "exécuter la tâche lorsque la batterie du système est faible (20 %)"
+
+msgid "vso.cmd.tasks.new.options.onMemoryUsage"
+msgstr "exécuter la tâche lorsque l'utilisation de la mémoire est supérieure à X%"
+
+msgid "vso.cmd.tasks.new.options.onNetwork"
+msgstr "exécuter la tâche lorsque le système est connecté au réseau"
+
+msgid "vso.cmd.tasks.new.options.onProcess"
+msgstr "exécuter la tâche au démarrage d'un processus"
+
+msgid "vso.cmd.tasks.rm"
+msgstr "Supprimer une tâche"
+
+msgid "vso.cmd.tasks.rm.error.cannotDelete"
+msgstr "Impossible de supprimer la tâche : %s"
+
+msgid "vso.cmd.tasks.rm.error.noName"
+msgstr "Aucun nom de tâche n'est spécifié."
+
+msgid "vso.cmd.tasks.rm.error.notFound"
+msgstr "Tâche non trouvée."
+
+msgid "vso.cmd.tasks.rm.info.askConfirmation"
+msgstr "Êtes-vous sûr de vouloir supprimer la tâche %s ? [y/N]"
+
+msgid "vso.cmd.tasks.rm.info.taskDeleted"
+msgstr "La tâche a été supprimée avec succès."
+
+msgid "vso.cmd.tasks.rm.options.force"
+msgstr "forcer la suppression de la tâche"
+
+msgid "vso.cmd.tasks.rm.options.name"
+msgstr "spécifier le nom de la tâche"
+
+msgid "vso.cmd.tasks.rotate"
+msgstr "Rotation des tâches"
+
+msgid "vso.cmd.tasks.rotate.options.privateEvent"
+msgstr "spécifier l'événement privé pour alterner les tâches de démarrage, d'arrêt, de connexion et de déconnexion"
+
+msgid "vso.cmd.tasks.rotate.options.silent"
+msgstr "ne pas afficher le statut de chaque cycle"
+
+msgid "vso.cmd.waydroid"
+msgstr "Gérer le sous-système waydroid"
+
+msgid "vso.arg.package"
+msgstr ""
+
+msgid "vso.arg.command"
+msgstr ""
+

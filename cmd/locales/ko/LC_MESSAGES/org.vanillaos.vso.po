@@ -1,0 +1,436 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Vanilla System Operator\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-05-18 12:00+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: ko\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+msgid "vso.description"
+msgstr "바닐라 시스템 운영자는 패키지 관리자, 시스템 업데이트 도구 및 작업 자동화 도구입니다."
+
+msgid "vso.errors.unknownCommand"
+msgstr "알 수 없는 명령어: %s"
+
+msgid "vso.errors.invalidInput"
+msgstr "잘못된 입력입니다."
+
+msgid "vso.errors.invalidChoice"
+msgstr "유효하지 않은 선택입니다."
+
+msgid "vso.info.aborting"
+msgstr "요청에 의해 중단되었습니다."
+
+msgid "vso.msg.help"
+msgstr "vso에 대한 도움말을 표시합니다."
+
+msgid "vso.msg.version"
+msgstr "vso 버전 표시."
+
+msgid "vso.msg.usage"
+msgstr "사용법"
+
+msgid "vso.msg.aliases"
+msgstr "별칭"
+
+msgid "vso.msg.examples"
+msgstr "예제"
+
+msgid "vso.msg.availableCommands"
+msgstr "사용 가능한 명령어"
+
+msgid "vso.msg.additionalCommands"
+msgstr "추가 명령어"
+
+msgid "vso.msg.flags"
+msgstr "플래그"
+
+msgid "vso.msg.globalFlags"
+msgstr "전역 플래그"
+
+msgid "vso.msg.additionalHelpTopics"
+msgstr "추가 도움말 항목"
+
+msgid "vso.msg.moreInfo"
+msgstr "명령어에 대한 자세한 정보를 보려면 %s를 사용하세요"
+
+msgid "vso.terminal.yes"
+msgstr "예"
+
+msgid "vso.terminal.no"
+msgstr "아니오"
+
+msgid "vso.cmd.config"
+msgstr "시스템 구성을 관리하세요."
+
+msgid "vso.cmd.config.get"
+msgstr "시스템 구성을 가져옵니다"
+
+msgid "vso.cmd.config.get.error.noKey"
+msgstr "키가 지정되지 않았습니다."
+
+msgid "vso.cmd.config.get.error.noValue"
+msgstr "키에 대한 값이 없습니다 : %s"
+
+msgid "vso.cmd.config.get.options.key"
+msgstr "키를 사용하여 구성 값을 검색하세요"
+
+msgid "vso.cmd.config.set"
+msgstr "시스템 구성을 설정하세요"
+
+msgid "vso.cmd.config.set.error.noKey"
+msgstr "키가 지정되지 않았습니다."
+
+msgid "vso.cmd.config.set.error.noValue"
+msgstr "값이 지정되지 않았습니다."
+
+msgid "vso.cmd.config.set.error.failed"
+msgstr "구성 설정 실패: %s"
+
+msgid "vso.cmd.config.set.options.key"
+msgstr "설정할 구성의 키"
+
+msgid "vso.cmd.config.set.options.value"
+msgstr "설정할 구성의 값"
+
+msgid "vso.cmd.config.set.success"
+msgstr "구성이 성공적으로 업데이트되었습니다."
+
+msgid "vso.cmd.config.show"
+msgstr "시스템 구성을 표시합니다"
+
+msgid "vso.cmd.pico"
+msgstr "VSO 하위 시스템을 관리합니다"
+
+msgid "vso.cmd.pico.error.notInitialized"
+msgstr "VSO 하위 시스템이 초기화되지 않았습니다. `vso pico-init`을 실행하여 초기화해 주세요."
+
+msgid "vso.cmd.pico.error.alreadyInitialized"
+msgstr "VSO 하위 시스템은 이미 초기화되었습니다. 초기화를 강제로 실행하려면 --force 플래그를 사용하세요."
+
+msgid "vso.cmd.pico.error.noAppNameOrBin"
+msgstr "--app 또는 --bin을 지정해야 합니다."
+
+msgid "vso.cmd.pico.error.sameAppOrBin"
+msgstr "--app과 --bin을 동시에 지정할 수 없습니다."
+
+msgid "vso.cmd.pico.error.exportingApp"
+msgstr "응용 프로그램 내보내기 중 오류가 발생했습니다: %s"
+
+msgid "vso.cmd.pico.error.exportingBin"
+msgstr "바이너리 내보내기 중 오류가 발생했습니다: %s"
+
+msgid "vso.cmd.pico.error.unexportingApp"
+msgstr "응용 프로그램을 되돌리는 중 오류가 발생했습니다: %s"
+
+msgid "vso.cmd.pico.error.unexportingBin"
+msgstr "바이너리를 되돌리는 중 오류가 발생했습니다: %s"
+
+msgid "vso.cmd.pico.error.unknownCommand"
+msgstr "알 수 없는 명령어: %s"
+
+msgid "vso.cmd.pico.error.shellReset"
+msgstr "VSO 쉘에 접근할 수 없습니다. 초기화하시겠습니까? (하위 시스템에 설치된 모든 소프트웨어가 제거됩니다) [y/N]"
+
+msgid "vso.cmd.pico.info.deleting"
+msgstr "VSO 하위 시스템을 삭제하는 중입니다..."
+
+msgid "vso.cmd.pico.info.initializing"
+msgstr "VSO 하위 시스템을 초기화하는 중입니다..."
+
+msgid "vso.cmd.pico.info.initialized"
+msgstr "VSO 하위 시스템이 초기화되었습니다."
+
+msgid "vso.cmd.pico.info.exported"
+msgstr "%s 내보냄\n"
+
+msgid "vso.cmd.pico.info.unexported"
+msgstr "%s 되돌림\n"
+
+msgid "vso.cmd.pico.info.exportedApps"
+msgstr "%d개의 응용 프로그램(들)을 내보냈습니다"
+
+msgid "vso.cmd.pico.info.unexportedApps"
+msgstr "내보내지 않은 %d개의 응용 프로그램(들)"
+
+msgid "vso.cmd.pico.info.shellInit"
+msgstr "쉘이 아직 초기화되지 않은 것 같습니다. 지금 초기화하시겠습니까? (강력히 추천됨) [y/N]"
+
+msgid "vso.cmd.pico.info.fallbackShell"
+msgstr "호스트 쉘로 대체하시겠습니까? 예기치 않은 동작을 초래할 수 있습니다. [y/N]"
+
+msgid "vso.cmd.pico.export"
+msgstr "하위 시스템에서 응용 프로그램 또는 바이너리를 내보내세요"
+
+msgid "vso.cmd.pico.export.options.app"
+msgstr "내보낼 응용 프로그램의 이름"
+
+msgid "vso.cmd.pico.export.options.bin"
+msgstr "내보낼 바이너리의 이름"
+
+msgid "vso.cmd.pico.export.options.binOutput"
+msgstr "바이너리 출력 경로 (기본값: ~/.local/bin/)"
+
+msgid "vso.cmd.pico.unexport"
+msgstr "하위 시스템에서 응용 프로그램 또는 바이너리 내보내기 취소"
+
+msgid "vso.cmd.pico.unexport.options.app"
+msgstr "되돌릴 응용 프로그램의 이름"
+
+msgid "vso.cmd.pico.unexport.options.bin"
+msgstr "되돌릴 바이너리의 이름"
+
+msgid "vso.cmd.pico.unexport.options.binOutput"
+msgstr "바이너리 출력 경로 (기본값: ~/.local/bin/)"
+
+msgid "vso.cmd.pico.init"
+msgstr "패키지 관리를 위해 사용되는 VSO 하위 시스템을 초기화합니다"
+
+msgid "vso.cmd.pico.init.options.force"
+msgstr "하위 시스템이 이미 초기화되어 있는 경우 강제로 초기화합니다"
+
+msgid "vso.cmd.pico.install"
+msgstr "하위 시스템 내에 응용 프로그램을 설치합니다"
+
+msgid "vso.cmd.pico.remove"
+msgstr "하위 시스템에서 응용 프로그램을 제거합니다"
+
+msgid "vso.cmd.pico.run"
+msgstr "하위 시스템에서 응용 프로그램을 실행합니다"
+
+msgid "vso.cmd.pico.run.options.noReset"
+msgstr "문제가 발생하면 하위 시스템을 재설정하도록 제안하지 마십시오"
+
+msgid "vso.cmd.pico.search"
+msgstr "하위 시스템 내부에 설치할 응용 프로그램 검색"
+
+msgid "vso.cmd.pico.shell"
+msgstr "하위 시스템 환경 진입"
+
+msgid "vso.cmd.pico.sideload"
+msgstr "하위 시스템 내에서 DEB/APK 패키지를 사이드로드합니다"
+
+msgid "vso.cmd.pico.update"
+msgstr "하위 시스템의 패키지 저장소를 업데이트합니다"
+
+msgid "vso.cmd.pico.upgrade"
+msgstr "하위 시스템 내부의 패키지 업그레이드"
+
+msgid "vso.cmd.sysUpgrade"
+msgstr "시스템 업그레이드 등의 시스템 명령 실행"
+
+msgid "vso.cmd.sysUpgrade.check"
+msgstr "시스템 업데이트 확인"
+
+msgid "vso.cmd.sysUpgrade.check.asExitCode"
+msgstr "업그레이드 가능 여부를 확인하지만 아무것도 출력하지 않습니다. 업그레이드가 없는 경우 종료 코드 0을 반환하고, 그렇지 않은 경우 1을 반환합니다."
+
+msgid "vso.cmd.sysUpgrade.check.error.asExitCodeAndJson"
+msgstr "업데이트 확인 중 오류가 발생하였습니다. 자세한 내용은 JSON 출력을 참조하십시오."
+
+msgid "vso.cmd.sysUpgrade.check.info.checking"
+msgstr "업데이트 확인 중..."
+
+msgid "vso.cmd.sysUpgrade.check.json"
+msgstr "결과를 JSON 형식으로 출력합니다"
+
+msgid "vso.cmd.sysUpgrade.upgrade"
+msgstr ""
+
+msgid "vso.cmd.sysUpgrade.error.updating"
+msgstr ""
+
+msgid "vso.cmd.sysUpgrade.error.onHasUpdate"
+msgstr ""
+
+msgid "vso.cmd.sysUpgrade.schedule.daily"
+msgstr ""
+
+msgid "vso.cmd.sysUpgrade.schedule.weekly"
+msgstr ""
+
+msgid "vso.cmd.sysUpgrade.schedule.monthly"
+msgstr ""
+
+msgid "vso.cmd.sysUpgrade.info.updating"
+msgstr ""
+
+msgid "vso.cmd.sysUpgrade.info.willUpdateLater"
+msgstr ""
+
+msgid "vso.cmd.sysUpgrade.info.willNeverUpdate"
+msgstr ""
+
+msgid "vso.cmd.sysUpgrade.info.noUpdates"
+msgstr ""
+
+msgid "vso.cmd.sysUpgrade.now"
+msgstr ""
+
+msgid "vso.cmd.tasks"
+msgstr "작업 생성 및 관리"
+
+msgid "vso.cmd.tasks.stacks.new.error.emptyCommand"
+msgstr "명령어는 비워 둘 수 없습니다."
+
+msgid "vso.cmd.tasks.stacks.new.error.emptyDescription"
+msgstr "설명은 비워 둘 수 없습니다."
+
+msgid "vso.cmd.tasks.stacks.new.error.emptyName"
+msgstr "이름은 비워 둘 수 없습니다."
+
+msgid "vso.cmd.tasks.stacks.new.error.noCommand"
+msgstr "명령어가 지정되지 않았습니다."
+
+msgid "vso.cmd.tasks.stacks.new.error.noDescription"
+msgstr "설명이 지정되지 않았습니다."
+
+msgid "vso.cmd.tasks.stacks.new.error.noName"
+msgstr "이름을 지정하지 않았습니다."
+
+msgid "vso.cmd.tasks.stacks.new.info.askCommand"
+msgstr "명령어: "
+
+msgid "vso.cmd.tasks.stacks.new.info.askDescription"
+msgstr "설명: "
+
+msgid "vso.cmd.tasks.stacks.new.info.askName"
+msgstr "이름: "
+
+msgid "vso.cmd.tasks.stacks.new.info.taskCreated"
+msgstr "작업이 성공적으로 생성되었습니다."
+
+msgid "vso.cmd.tasks.list"
+msgstr "모든 작업 목록"
+
+msgid "vso.cmd.tasks.list.noTasks"
+msgstr "작업을 찾을 수 없습니다."
+
+msgid "vso.cmd.tasks.list.info.foundTasks"
+msgstr "%d개의 작업을 찾았습니다."
+
+msgid "vso.cmd.tasks.list.options.json"
+msgstr "작업을 JSON 형식으로 출력"
+
+msgid "vso.cmd.tasks.new"
+msgstr "새 작업 만들기"
+
+msgid "vso.cmd.tasks.new.options.assumeYes"
+msgstr "모든 프롬프트에 대해 yes라고 가정"
+
+msgid "vso.cmd.tasks.new.options.at"
+msgstr "특정 시간(hh:mm)에 실행되도록 작업을 예약"
+
+msgid "vso.cmd.tasks.new.options.command"
+msgstr "실행할 명령을 지정"
+
+msgid "vso.cmd.tasks.new.options.description"
+msgstr "작업의 설명을 지정"
+
+msgid "vso.cmd.tasks.new.options.every"
+msgstr "X 시간(분, 시간, 일)마다 작업을 실행하도록 예약"
+
+msgid "vso.cmd.tasks.new.options.name"
+msgstr "작업의 이름을 지정"
+
+msgid "vso.cmd.tasks.new.options.needConfirm"
+msgstr "작업을 실행하기 전에 확인을 요청"
+
+msgid "vso.cmd.tasks.new.options.onBattery"
+msgstr "시스템이 배터리를 사용할 때만 작업을 실행합니다"
+
+msgid "vso.cmd.tasks.new.options.onCharge"
+msgstr "시스템이 충전 중일 때만 작업을 실행"
+
+msgid "vso.cmd.tasks.new.options.onConditionCommand"
+msgstr "조건에 따라 작업 실행 명령"
+
+msgid "vso.cmd.tasks.new.options.onCpuTemp"
+msgstr "CPU 온도가 60°C보다 높을 때 작업을 실행"
+
+msgid "vso.cmd.tasks.new.options.onCpuUsage"
+msgstr "CPU 사용량이 X%보다 높을 때 작업을 실행"
+
+msgid "vso.cmd.tasks.new.options.onDeviceConnect"
+msgstr "장치가 연결되면 작업 실행"
+
+msgid "vso.cmd.tasks.new.options.onDeviceDisconnect"
+msgstr "장치 연결이 끊어졌을 때 작업을 실행"
+
+msgid "vso.cmd.tasks.new.options.onDisconnect"
+msgstr "시스템이 네트워크에서 연결이 끊어졌을 때 작업을 실행"
+
+msgid "vso.cmd.tasks.new.options.onFullBattery"
+msgstr "시스템이 완전히 충전되면 작업을 실행"
+
+msgid "vso.cmd.tasks.new.options.onHighCpuUsage"
+msgstr "CPU 사용량이 50%보다 높을 때 작업을 실행"
+
+msgid "vso.cmd.tasks.new.options.onHighInternetUsage"
+msgstr "인터넷 사용량이 500Kb/s보다 높을 때 작업을 실행"
+
+msgid "vso.cmd.tasks.new.options.onHighMemoryUsage"
+msgstr "메모리 사용량이 50%보다 높을 때 작업을 실행"
+
+msgid "vso.cmd.tasks.new.options.onInternetUsage"
+msgstr "인터넷 사용량이 XKb/s보다 높을 때 작업을 실행"
+
+msgid "vso.cmd.tasks.new.options.onLowBattery"
+msgstr "시스템의 배터리가 부족할 때 작업 실행(20%)"
+
+msgid "vso.cmd.tasks.new.options.onMemoryUsage"
+msgstr "메모리 사용량이 X%보다 높을 때 작업을 실행"
+
+msgid "vso.cmd.tasks.new.options.onNetwork"
+msgstr "시스템이 네트워크에 연결되어 있을 때 작업을 실행"
+
+msgid "vso.cmd.tasks.new.options.onProcess"
+msgstr "프로세스가 시작될 때 작업 실행"
+
+msgid "vso.cmd.tasks.rm"
+msgstr "작업 제거"
+
+msgid "vso.cmd.tasks.rm.error.cannotDelete"
+msgstr "작업을 삭제할 수 없습니다: %s"
+
+msgid "vso.cmd.tasks.rm.error.noName"
+msgstr "작업 이름이 지정되지 않았습니다."
+
+msgid "vso.cmd.tasks.rm.error.notFound"
+msgstr "작업을 찾을 수 없습니다."
+
+msgid "vso.cmd.tasks.rm.info.askConfirmation"
+msgstr "작업 %s를 삭제하시겠습니까? [y/N]"
+
+msgid "vso.cmd.tasks.rm.info.taskDeleted"
+msgstr "작업이 성공적으로 삭제되었습니다."
+
+msgid "vso.cmd.tasks.rm.options.force"
+msgstr "작업 강제 삭제"
+
+msgid "vso.cmd.tasks.rm.options.name"
+msgstr "작업 이름 지정"
+
+msgid "vso.cmd.tasks.rotate"
+msgstr "작업 순환"
+
+msgid "vso.cmd.tasks.rotate.options.privateEvent"
+msgstr "부팅, 종료, 로그인 및 로그아웃에 대한 작업을 순환하도록 비공개 이벤트를 지정"
+
+msgid "vso.cmd.tasks.rotate.options.silent"
+msgstr "don't output the status on each cycle"
+
+msgid "vso.cmd.waydroid"
+msgstr "vso 웨이드로이드 하위 시스템 관리"
+
+msgid "vso.arg.package"
+msgstr ""
+
+msgid "vso.arg.command"
+msgstr ""
+

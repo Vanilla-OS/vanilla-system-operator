@@ -1,0 +1,436 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Vanilla System Operator\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-05-18 12:00+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: fi\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+msgid "vso.description"
+msgstr "Vanilla System Operator on paketinhallinta, järjestelmän päivittäjä ja tehtäväautomaatio."
+
+msgid "vso.errors.unknownCommand"
+msgstr "Tuntematon komento: %s"
+
+msgid "vso.errors.invalidInput"
+msgstr "Epäkelvollinen syöte."
+
+msgid "vso.errors.invalidChoice"
+msgstr "Epäkelvollinen valinta."
+
+msgid "vso.info.aborting"
+msgstr "Keskeytetään kuten pyydettiin."
+
+msgid "vso.msg.help"
+msgstr "Näytä apu vso:lle."
+
+msgid "vso.msg.version"
+msgstr "Näytä versio vso:lle."
+
+msgid "vso.msg.usage"
+msgstr "Käyttö"
+
+msgid "vso.msg.aliases"
+msgstr "Aliakset"
+
+msgid "vso.msg.examples"
+msgstr "Esimerkit"
+
+msgid "vso.msg.availableCommands"
+msgstr "Saatavilla olevat komennot"
+
+msgid "vso.msg.additionalCommands"
+msgstr "Lisäkomennot"
+
+msgid "vso.msg.flags"
+msgstr "Liput"
+
+msgid "vso.msg.globalFlags"
+msgstr "Yleispätevät liput"
+
+msgid "vso.msg.additionalHelpTopics"
+msgstr "Lisäapuaiheet"
+
+msgid "vso.msg.moreInfo"
+msgstr "Käytä %s saadaksesi lisätietoja komennosta"
+
+msgid "vso.terminal.yes"
+msgstr "kyllä"
+
+msgid "vso.terminal.no"
+msgstr "ei"
+
+msgid "vso.cmd.config"
+msgstr "Hallitse järjestelmän kokoonpanoa."
+
+msgid "vso.cmd.config.get"
+msgstr "Hanki järjestelmän kokoonpano"
+
+msgid "vso.cmd.config.get.error.noKey"
+msgstr "Ei avainta määritetty."
+
+msgid "vso.cmd.config.get.error.noValue"
+msgstr "Arvoa ei löytynyt avaimelle: %s"
+
+msgid "vso.cmd.config.get.options.key"
+msgstr "noutaa kokoonpanoarvon käyttämällä sen avainta"
+
+msgid "vso.cmd.config.set"
+msgstr "Aseta järjestelmän kokoonpano"
+
+msgid "vso.cmd.config.set.error.noKey"
+msgstr "Avainta ei ole määritetty."
+
+msgid "vso.cmd.config.set.error.noValue"
+msgstr "Arvoa ei ole määritetty."
+
+msgid "vso.cmd.config.set.error.failed"
+msgstr "Kokoonpanon määrittäminen epäonnistui: %s"
+
+msgid "vso.cmd.config.set.options.key"
+msgstr "määritettävän kokoonpanon avain"
+
+msgid "vso.cmd.config.set.options.value"
+msgstr "määritettävän kokoonpanon arvo"
+
+msgid "vso.cmd.config.set.success"
+msgstr "Kokoonpanon päivitys onnistui."
+
+msgid "vso.cmd.config.show"
+msgstr "Näytä järjestelmän kokoonpano"
+
+msgid "vso.cmd.pico"
+msgstr "Hallinnoi VSO-alijärjestelmää"
+
+msgid "vso.cmd.pico.error.notInitialized"
+msgstr "VSO-alijärjestelmää ei ole alustettu. Suorita `vso pico-init` alustaaksesi sen."
+
+msgid "vso.cmd.pico.error.alreadyInitialized"
+msgstr "VSO-alijärjestelmä on jo alustettu. Käytä lippua `--force` pakottaaksesi alustuksen."
+
+msgid "vso.cmd.pico.error.noAppNameOrBin"
+msgstr "`--app` tai `--bin` on määritettävä."
+
+msgid "vso.cmd.pico.error.sameAppOrBin"
+msgstr "`--app` ja `--bin` eivät voi olla molemmat määritettyjä."
+
+msgid "vso.cmd.pico.error.exportingApp"
+msgstr "Sovellusta vietäessä tapahtui virhe: %s"
+
+msgid "vso.cmd.pico.error.exportingBin"
+msgstr "Binaaritiedostoa vietäessä tapahtui virhe: %s"
+
+msgid "vso.cmd.pico.error.unexportingApp"
+msgstr "Sovelluksen vientiä peruttaessa tapahtui virhe: %s"
+
+msgid "vso.cmd.pico.error.unexportingBin"
+msgstr "Binaarin vientiä peruttaessa tapahtui virhe: %s"
+
+msgid "vso.cmd.pico.error.unknownCommand"
+msgstr "Tuntematon komento: %s"
+
+msgid "vso.cmd.pico.error.shellReset"
+msgstr "VSO-komentotulkkiin on mahdotonta päästä. Haluatko nollata sen? (Tämä poistaa kaikki alijärjestelmään asennetut ohjelmistot) [k/E]"
+
+msgid "vso.cmd.pico.info.deleting"
+msgstr "Poistetaan VSO-alijärjestelmää..."
+
+msgid "vso.cmd.pico.info.initializing"
+msgstr "Alustetaan VSO-alijärjestelmää..."
+
+msgid "vso.cmd.pico.info.initialized"
+msgstr "VSO-alijärjestelmä on alustettu."
+
+msgid "vso.cmd.pico.info.exported"
+msgstr "Viety %s\n"
+
+msgid "vso.cmd.pico.info.unexported"
+msgstr "Ei-viety %s\n"
+
+msgid "vso.cmd.pico.info.exportedApps"
+msgstr "Viety %d sovellusta"
+
+msgid "vso.cmd.pico.info.unexportedApps"
+msgstr "Ei-viety %d sovellusta"
+
+msgid "vso.cmd.pico.info.shellInit"
+msgstr "Vaikuttaa siltä, että komentotulkkiasi ei ole vielä alustettu. Haluatko alustaa sen nyt? (Erittäin suositeltava) [k/E]"
+
+msgid "vso.cmd.pico.info.fallbackShell"
+msgstr "Palaako isäntäkomentotulkkiin? Tämä voi johtaa odottamattomaan käyttäytymiseen. [k/E]"
+
+msgid "vso.cmd.pico.export"
+msgstr "Vie sovellus tai binaari alijärjestelmästä"
+
+msgid "vso.cmd.pico.export.options.app"
+msgstr "vietävän sovelluksen nimi"
+
+msgid "vso.cmd.pico.export.options.bin"
+msgstr "vietävän binaarin nimi"
+
+msgid "vso.cmd.pico.export.options.binOutput"
+msgstr "binäärilähdön polku (oletus: ~/.local/bin/)"
+
+msgid "vso.cmd.pico.unexport"
+msgstr "Peruuta sovelluksen tai binaarin vienti alijärjestelmästä"
+
+msgid "vso.cmd.pico.unexport.options.app"
+msgstr "viennin peruutettavan sovelluksen nimi"
+
+msgid "vso.cmd.pico.unexport.options.bin"
+msgstr "viennin peruutettavan binaarin nimi"
+
+msgid "vso.cmd.pico.unexport.options.binOutput"
+msgstr "binäärilähdön polku (oletus: ~/.local/bin/)"
+
+msgid "vso.cmd.pico.init"
+msgstr "Alusta pakettien hallintaan käytettävä VSO-alijärjestelmä"
+
+msgid "vso.cmd.pico.init.options.force"
+msgstr "pakota alustus, jos alijärjestelmä on jo alustettu"
+
+msgid "vso.cmd.pico.install"
+msgstr "Asenna sovellus alajärjestelmän sisään"
+
+msgid "vso.cmd.pico.remove"
+msgstr "Poista sovellus alajärjestelmästä"
+
+msgid "vso.cmd.pico.run"
+msgstr "Suorita sovellus alajärjestelmästä"
+
+msgid "vso.cmd.pico.run.options.noReset"
+msgstr "älä ehdota alijärjestelmän nollausta, jos jokin menee pieleen"
+
+msgid "vso.cmd.pico.search"
+msgstr "Etsi alijärjestelmään asennettava sovellus"
+
+msgid "vso.cmd.pico.shell"
+msgstr "Siirry alijärjestelmäympäristöön"
+
+msgid "vso.cmd.pico.sideload"
+msgstr "Sivulataa DEB/APK-paketit alijärjestelmän sisällä"
+
+msgid "vso.cmd.pico.update"
+msgstr "Päivitä alijärjestelmän pakettitietovarasto"
+
+msgid "vso.cmd.pico.upgrade"
+msgstr "Päivitä alijärjestelmän sisällä olevat paketit"
+
+msgid "vso.cmd.sysUpgrade"
+msgstr "Suorita järjestelmäkomentoja, kuten järjestelmän päivitys"
+
+msgid "vso.cmd.sysUpgrade.check"
+msgstr "Tarkista järjestelmäpäivitysten varalta"
+
+msgid "vso.cmd.sysUpgrade.check.asExitCode"
+msgstr "tarkistaa päivityksen, mutta ei tulosta mitään. Palauta poistumiskoodi 0, jos päivitystä ei ole saatavilla, ja 1 muussa tapauksessa."
+
+msgid "vso.cmd.sysUpgrade.check.error.asExitCodeAndJson"
+msgstr "Tapahtui virhe tarkistettaessa päivitysten varalta. Katso lisätietoja JSON-lähdöstä."
+
+msgid "vso.cmd.sysUpgrade.check.info.checking"
+msgstr "Tarkistetaan päivitysten varalta..."
+
+msgid "vso.cmd.sysUpgrade.check.json"
+msgstr "tulosta tulosteen tulos JSON-muodossa"
+
+msgid "vso.cmd.sysUpgrade.upgrade"
+msgstr ""
+
+msgid "vso.cmd.sysUpgrade.error.updating"
+msgstr ""
+
+msgid "vso.cmd.sysUpgrade.error.onHasUpdate"
+msgstr ""
+
+msgid "vso.cmd.sysUpgrade.schedule.daily"
+msgstr ""
+
+msgid "vso.cmd.sysUpgrade.schedule.weekly"
+msgstr ""
+
+msgid "vso.cmd.sysUpgrade.schedule.monthly"
+msgstr ""
+
+msgid "vso.cmd.sysUpgrade.info.updating"
+msgstr ""
+
+msgid "vso.cmd.sysUpgrade.info.willUpdateLater"
+msgstr ""
+
+msgid "vso.cmd.sysUpgrade.info.willNeverUpdate"
+msgstr ""
+
+msgid "vso.cmd.sysUpgrade.info.noUpdates"
+msgstr ""
+
+msgid "vso.cmd.sysUpgrade.now"
+msgstr ""
+
+msgid "vso.cmd.tasks"
+msgstr "Luo ja hallitse tehtäviä"
+
+msgid "vso.cmd.tasks.stacks.new.error.emptyCommand"
+msgstr "Komento ei voi olla tyhjä."
+
+msgid "vso.cmd.tasks.stacks.new.error.emptyDescription"
+msgstr "Kuvaus ei voi olla tyhjä."
+
+msgid "vso.cmd.tasks.stacks.new.error.emptyName"
+msgstr "Nimi ei voi olla tyhjä."
+
+msgid "vso.cmd.tasks.stacks.new.error.noCommand"
+msgstr "Komentoa ei ole määritetty."
+
+msgid "vso.cmd.tasks.stacks.new.error.noDescription"
+msgstr "Kuvausta ei ole määritetty."
+
+msgid "vso.cmd.tasks.stacks.new.error.noName"
+msgstr "Nimeä ei ole määritetty."
+
+msgid "vso.cmd.tasks.stacks.new.info.askCommand"
+msgstr "Komento: "
+
+msgid "vso.cmd.tasks.stacks.new.info.askDescription"
+msgstr "Kuvaus: "
+
+msgid "vso.cmd.tasks.stacks.new.info.askName"
+msgstr "Nimi: "
+
+msgid "vso.cmd.tasks.stacks.new.info.taskCreated"
+msgstr "Tehtävän luominen onnistui."
+
+msgid "vso.cmd.tasks.list"
+msgstr "Luetteloi kaikki tehtävät"
+
+msgid "vso.cmd.tasks.list.noTasks"
+msgstr "Tehtäviä ei löytynyt."
+
+msgid "vso.cmd.tasks.list.info.foundTasks"
+msgstr "Löytyi %d tehtävää."
+
+msgid "vso.cmd.tasks.list.options.json"
+msgstr "tulosta tehtävät JSON-muodossa"
+
+msgid "vso.cmd.tasks.new"
+msgstr "Luo uusi tehtävä"
+
+msgid "vso.cmd.tasks.new.options.assumeYes"
+msgstr "oletetaan \"kyllä\" kaikille kehotteille"
+
+msgid "vso.cmd.tasks.new.options.at"
+msgstr "ajoita tehtävä suoritettavaksi tiettyyn aikaan (tt:mm)"
+
+msgid "vso.cmd.tasks.new.options.command"
+msgstr "määritä suoritettava komento"
+
+msgid "vso.cmd.tasks.new.options.description"
+msgstr "määritä tehtävän kuvaus"
+
+msgid "vso.cmd.tasks.new.options.every"
+msgstr "ajoita tehtävä suoritettavaksi joka X kerta (minuutit, tunnit, päivät)"
+
+msgid "vso.cmd.tasks.new.options.name"
+msgstr "määritä tehtävän nimi"
+
+msgid "vso.cmd.tasks.new.options.needConfirm"
+msgstr "pyytää vahvistusta ennen tehtävän suorittamista"
+
+msgid "vso.cmd.tasks.new.options.onBattery"
+msgstr "suorittaa tehtävän vain, kun järjestelmä on akulla"
+
+msgid "vso.cmd.tasks.new.options.onCharge"
+msgstr "suorittaa tehtävän vain järjestelmän latautuessa"
+
+msgid "vso.cmd.tasks.new.options.onConditionCommand"
+msgstr "suorita tehtävä ehtokomennolla"
+
+msgid "vso.cmd.tasks.new.options.onCpuTemp"
+msgstr "suorittaa tehtävän, kun suorittimen lämpötila on yli 60 °C"
+
+msgid "vso.cmd.tasks.new.options.onCpuUsage"
+msgstr "suorittaa tehtävän, kun suorittimen käyttö on yli X %"
+
+msgid "vso.cmd.tasks.new.options.onDeviceConnect"
+msgstr "suorittaa tehtävän, kun laite on kytketty"
+
+msgid "vso.cmd.tasks.new.options.onDeviceDisconnect"
+msgstr "suorittaa tehtävän, kun laite on irrotettu"
+
+msgid "vso.cmd.tasks.new.options.onDisconnect"
+msgstr "suorittaa tehtävän, kun järjestelmä on irrotettu verkosta"
+
+msgid "vso.cmd.tasks.new.options.onFullBattery"
+msgstr "suorittaa tehtävän, kun järjestelmä on ladattu täyteen"
+
+msgid "vso.cmd.tasks.new.options.onHighCpuUsage"
+msgstr "suorittaa tehtävän, kun suorittimen käyttö on yli 50 %"
+
+msgid "vso.cmd.tasks.new.options.onHighInternetUsage"
+msgstr "suorittaa tehtävän, kun Internetin käyttö on yli 500 kb/s"
+
+msgid "vso.cmd.tasks.new.options.onHighMemoryUsage"
+msgstr "suorittaa tehtävän, kun muistin käyttö on yli 50 %"
+
+msgid "vso.cmd.tasks.new.options.onInternetUsage"
+msgstr "suorittaa tehtävän, kun Internetin käyttö on suurempi kuin X kb/s"
+
+msgid "vso.cmd.tasks.new.options.onLowBattery"
+msgstr "suorittaa tehtävän, kun järjestelmän akku on vähissä (20 %)"
+
+msgid "vso.cmd.tasks.new.options.onMemoryUsage"
+msgstr "Suorita tehtävä, kun muistin käyttö on yli X %"
+
+msgid "vso.cmd.tasks.new.options.onNetwork"
+msgstr "suorittaa tehtävän, kun järjestelmä on kytketty verkkoon"
+
+msgid "vso.cmd.tasks.new.options.onProcess"
+msgstr "suorittaa tehtävän prosessin käynnistyessä"
+
+msgid "vso.cmd.tasks.rm"
+msgstr "Poista tehtävä"
+
+msgid "vso.cmd.tasks.rm.error.cannotDelete"
+msgstr "Tehtävää ei voi poistaa: %s"
+
+msgid "vso.cmd.tasks.rm.error.noName"
+msgstr "Ei tehtävän nimeä määritetty."
+
+msgid "vso.cmd.tasks.rm.error.notFound"
+msgstr "Tehtävää ei löytynyt."
+
+msgid "vso.cmd.tasks.rm.info.askConfirmation"
+msgstr "Oletko varma, että haluat poistaa tehtävän %s? [k/E]"
+
+msgid "vso.cmd.tasks.rm.info.taskDeleted"
+msgstr "Tehtävän poistaminen onnistui."
+
+msgid "vso.cmd.tasks.rm.options.force"
+msgstr "pakottaa tehtävän poistaminen"
+
+msgid "vso.cmd.tasks.rm.options.name"
+msgstr "määritä tehtävän nimi"
+
+msgid "vso.cmd.tasks.rotate"
+msgstr "Kierrä tehtävät"
+
+msgid "vso.cmd.tasks.rotate.options.privateEvent"
+msgstr "määritä yksityinen tapahtuma käynnistyksen, sammutuksen, kirjautumisen ja uloskirjautumisen tehtävien kiertämiseksi"
+
+msgid "vso.cmd.tasks.rotate.options.silent"
+msgstr "älä tulosta tilaa jokaisella jaksolla"
+
+msgid "vso.cmd.waydroid"
+msgstr "Hallitse vso waydroid -alijärjestelmää"
+
+msgid "vso.arg.package"
+msgstr ""
+
+msgid "vso.arg.command"
+msgstr ""
+

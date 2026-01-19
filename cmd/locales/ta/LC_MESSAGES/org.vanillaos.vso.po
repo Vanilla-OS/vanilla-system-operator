@@ -1,0 +1,436 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Vanilla System Operator\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-05-18 12:00+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: ta\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+msgid "vso.description"
+msgstr "வெண்ணிலா சிச்டம் ஆபரேட்டர் ஒரு தொகுப்பு மேலாளர், கணினி புதுப்பிப்பாளர் மற்றும் பணி ஆட்டோமேட்டர்."
+
+msgid "vso.errors.unknownCommand"
+msgstr "தெரியாத கட்டளை: %s"
+
+msgid "vso.errors.invalidInput"
+msgstr "தவறான உள்ளீடு."
+
+msgid "vso.errors.invalidChoice"
+msgstr "தவறான தேர்வு."
+
+msgid "vso.info.aborting"
+msgstr "கோரப்பட்டபடி கருக்கலைப்பு."
+
+msgid "vso.msg.help"
+msgstr "VSO க்கான உதவியைக் காட்டு."
+
+msgid "vso.msg.version"
+msgstr "VSO க்கான பதிப்பைக் காட்டு."
+
+msgid "vso.msg.usage"
+msgstr "பயன்பாடு"
+
+msgid "vso.msg.aliases"
+msgstr "மாற்றுப்பெயர்கள்"
+
+msgid "vso.msg.examples"
+msgstr "எடுத்துக்காட்டுகள்"
+
+msgid "vso.msg.availableCommands"
+msgstr "கிடைக்கும் கட்டளைகள்"
+
+msgid "vso.msg.additionalCommands"
+msgstr "கூடுதல் கட்டளைகள்"
+
+msgid "vso.msg.flags"
+msgstr "கொடிகள்"
+
+msgid "vso.msg.globalFlags"
+msgstr "உலகளாவிய கொடிகள்"
+
+msgid "vso.msg.additionalHelpTopics"
+msgstr "கூடுதல் உதவி தலைப்புகள்"
+
+msgid "vso.msg.moreInfo"
+msgstr "ஒரு கட்டளை பற்றிய கூடுதல் தகவலுக்கு %s ஐப் பயன்படுத்தவும்"
+
+msgid "vso.terminal.yes"
+msgstr "ஆம்"
+
+msgid "vso.terminal.no"
+msgstr "இல்லை"
+
+msgid "vso.cmd.config"
+msgstr "கணினி உள்ளமைவை நிர்வகிக்கவும்."
+
+msgid "vso.cmd.config.get"
+msgstr "கணினி உள்ளமைவைப் பெறுங்கள்"
+
+msgid "vso.cmd.config.get.error.noKey"
+msgstr "எந்த விசையும் குறிப்பிடப்படவில்லை."
+
+msgid "vso.cmd.config.get.error.noValue"
+msgstr "விசைக்கு எந்த மதிப்பும் கிடைக்கவில்லை: %s"
+
+msgid "vso.cmd.config.get.options.key"
+msgstr "அதன் விசையைப் பயன்படுத்தி உள்ளமைவு மதிப்பை மீட்டெடுக்கவும்"
+
+msgid "vso.cmd.config.set"
+msgstr "கணினி உள்ளமைவை அமைக்கவும்"
+
+msgid "vso.cmd.config.set.error.noKey"
+msgstr "எந்த விசையும் குறிப்பிடப்படவில்லை."
+
+msgid "vso.cmd.config.set.error.noValue"
+msgstr "மதிப்பு குறிப்பிடப்படவில்லை."
+
+msgid "vso.cmd.config.set.error.failed"
+msgstr "உள்ளமைவை அமைப்பதில் தோல்வி: %s"
+
+msgid "vso.cmd.config.set.options.key"
+msgstr "அமைக்க உள்ளமைவின் விசை"
+
+msgid "vso.cmd.config.set.options.value"
+msgstr "அமைக்க உள்ளமைவின் மதிப்பு"
+
+msgid "vso.cmd.config.set.success"
+msgstr "உள்ளமைவு வெற்றிகரமாக புதுப்பிக்கப்பட்டது."
+
+msgid "vso.cmd.config.show"
+msgstr "கணினி உள்ளமைவைக் காட்டு"
+
+msgid "vso.cmd.pico"
+msgstr "VSO துணை அமைப்பை நிர்வகிக்கவும்"
+
+msgid "vso.cmd.pico.error.notInitialized"
+msgstr "VSO துணை அமைப்பு துவக்கப்படவில்லை. அதைத் தொடங்க `VSO Pico-init` ஐ இயக்கவும்."
+
+msgid "vso.cmd.pico.error.alreadyInitialized"
+msgstr "VSO துணை அமைப்பு ஏற்கனவே துவக்கப்பட்டுள்ளது. துவக்கத்தை கட்டாயப்படுத்த -ஃபோர்ச் கொடியைப் பயன்படுத்தவும்."
+
+msgid "vso.cmd.pico.error.noAppNameOrBin"
+msgstr "--app அல்லது--பின் குறிப்பிடப்பட வேண்டும்."
+
+msgid "vso.cmd.pico.error.sameAppOrBin"
+msgstr "--app மற்றும்--பின் இரண்டையும் குறிப்பிட முடியாது."
+
+msgid "vso.cmd.pico.error.exportingApp"
+msgstr "விண்ணப்பத்தை ஏற்றுமதி செய்யும் போது பிழை ஏற்பட்டது: %s"
+
+msgid "vso.cmd.pico.error.exportingBin"
+msgstr "பைனரியை ஏற்றுமதி செய்யும் போது பிழை ஏற்பட்டது: %s"
+
+msgid "vso.cmd.pico.error.unexportingApp"
+msgstr "பயன்பாடுகளை ஏற்றுமதி செய்யும் போது பிழை ஏற்பட்டது"
+
+msgid "vso.cmd.pico.error.unexportingBin"
+msgstr "பைனரியை ஆய்வு செய்யும் போது பிழை ஏற்பட்டது: %s"
+
+msgid "vso.cmd.pico.error.unknownCommand"
+msgstr "தெரியாத கட்டளை: %s"
+
+msgid "vso.cmd.pico.error.shellReset"
+msgstr "VSO செல்லை அடைய முடியாது. அதை மீட்டமைக்க விரும்புகிறீர்களா? (இது துணை அமைப்பில் நிறுவப்பட்ட உங்கள் எல்லா மென்பொருளையும் அகற்றும்) [y/n]"
+
+msgid "vso.cmd.pico.info.deleting"
+msgstr "VSO துணை அமைப்பை நீக்குகிறது ..."
+
+msgid "vso.cmd.pico.info.initializing"
+msgstr "VSO துணை அமைப்பைத் தொடங்குதல் ..."
+
+msgid "vso.cmd.pico.info.initialized"
+msgstr "VSO துணை அமைப்பு துவக்கப்பட்டுள்ளது."
+
+msgid "vso.cmd.pico.info.exported"
+msgstr "ஏற்றுமதி %s\n"
+
+msgid "vso.cmd.pico.info.unexported"
+msgstr "ஏற்றுக்கொள்ளப்பட்ட %s\n"
+
+msgid "vso.cmd.pico.info.exportedApps"
+msgstr "ஏற்றுமதி செய்யப்பட்ட %d பயன்பாடுகள்"
+
+msgid "vso.cmd.pico.info.unexportedApps"
+msgstr "ஏற்றுக்கொள்ளப்பட்ட %d பயன்பாடுகள்"
+
+msgid "vso.cmd.pico.info.shellInit"
+msgstr "உங்கள் செல் இன்னும் துவக்கப்படவில்லை என்று தெரிகிறது. இப்போது அதைத் தொடங்க விரும்புகிறீர்களா? (மிகவும் பரிந்துரைக்கப்படுகிறது) [y/n]"
+
+msgid "vso.cmd.pico.info.fallbackShell"
+msgstr "புரவலன் செல்லுக்கு குறைவு? இது எதிர்பாராத நடத்தைக்கு வழிவகுக்கும். [y/n]"
+
+msgid "vso.cmd.pico.export"
+msgstr "துணை அமைப்பிலிருந்து ஒரு விண்ணப்பம் அல்லது பைனரியை ஏற்றுமதி செய்யுங்கள்"
+
+msgid "vso.cmd.pico.export.options.app"
+msgstr "ஏற்றுமதி செய்வதற்கான விண்ணப்பத்தின் பெயர்"
+
+msgid "vso.cmd.pico.export.options.bin"
+msgstr "ஏற்றுமதி செய்ய பைனரியின் பெயர்"
+
+msgid "vso.cmd.pico.export.options.binOutput"
+msgstr "பைனரி வெளியீட்டின் பாதை (இயல்புநிலை: ~/.லோகல்/பின்/)"
+
+msgid "vso.cmd.pico.unexport"
+msgstr "துணை அமைப்பிலிருந்து ஒரு விண்ணப்பம் அல்லது பைனரி விளக்கப்படம்"
+
+msgid "vso.cmd.pico.unexport.options.app"
+msgstr "பயன்பாட்டின் பெயர்"
+
+msgid "vso.cmd.pico.unexport.options.bin"
+msgstr "பைனரியின் பெயர் முதல் விளக்கப்படம்"
+
+msgid "vso.cmd.pico.unexport.options.binOutput"
+msgstr "பைனரி வெளியீட்டின் பாதை (இயல்புநிலை: ~/.லோகல்/பின்/)"
+
+msgid "vso.cmd.pico.init"
+msgstr "தொகுப்பு நிர்வாகத்திற்குப் பயன்படுத்தப்படும் VSO துணை அமைப்பைத் தொடங்கவும்"
+
+msgid "vso.cmd.pico.init.options.force"
+msgstr "துணை அமைப்பு ஏற்கனவே துவக்கப்பட்டால் துவக்கத்தை கட்டாயப்படுத்துங்கள்"
+
+msgid "vso.cmd.pico.install"
+msgstr "துணை அமைப்பினுள் ஒரு பயன்பாட்டை நிறுவவும்"
+
+msgid "vso.cmd.pico.remove"
+msgstr "துணை அமைப்பிலிருந்து ஒரு பயன்பாட்டை அகற்று"
+
+msgid "vso.cmd.pico.run"
+msgstr "துணை அமைப்பிலிருந்து ஒரு பயன்பாட்டை இயக்கவும்"
+
+msgid "vso.cmd.pico.run.options.noReset"
+msgstr "ஏதேனும் தவறு நடந்தால் துணை அமைப்பை மீட்டமைக்க முன்மொழிய வேண்டாம்"
+
+msgid "vso.cmd.pico.search"
+msgstr "துணை அமைப்பினுள் நிறுவ ஒரு பயன்பாட்டைத் தேடுங்கள்"
+
+msgid "vso.cmd.pico.shell"
+msgstr "துணை அமைப்பு சூழலை உள்ளிடவும்"
+
+msgid "vso.cmd.pico.sideload"
+msgstr "துணை அமைப்பினுள் பக்கவாட்டு/APK தொகுப்புகள்"
+
+msgid "vso.cmd.pico.update"
+msgstr "துணை அமைப்பின் தொகுப்பு களஞ்சியத்தைப் புதுப்பிக்கவும்"
+
+msgid "vso.cmd.pico.upgrade"
+msgstr "துணை அமைப்பினுள் தொகுப்புகளை மேம்படுத்தவும்"
+
+msgid "vso.cmd.sysUpgrade"
+msgstr "கணினியை மேம்படுத்துவது போன்ற கணினி கட்டளைகளை இயக்கவும்"
+
+msgid "vso.cmd.sysUpgrade.check"
+msgstr "கணினி புதுப்பிப்புகளைச் சரிபார்க்கவும்"
+
+msgid "vso.cmd.sysUpgrade.check.asExitCode"
+msgstr "மேம்படுத்தலுக்கான காசோலைகள் ஆனால் எதையும் அச்சிடாது. மேம்படுத்தல் எதுவும் கிடைக்கவில்லை என்றால் வெளியேறும் குறியீடு 0 ஐ திரும்பவும், இல்லையெனில் 1."
+
+msgid "vso.cmd.sysUpgrade.check.error.asExitCodeAndJson"
+msgstr "புதுப்பிப்புகளைச் சரிபார்க்கும்போது பிழை ஏற்பட்டது. மேலும் விவரங்களுக்கு சாதொபொகு வெளியீட்டைப் பார்க்கவும்."
+
+msgid "vso.cmd.sysUpgrade.check.info.checking"
+msgstr "புதுப்பிப்புகளைச் சரிபார்க்கிறது ..."
+
+msgid "vso.cmd.sysUpgrade.check.json"
+msgstr "சாதொபொகு வடிவத்தில் முடிவை வெளியிடுங்கள்"
+
+msgid "vso.cmd.sysUpgrade.upgrade"
+msgstr ""
+
+msgid "vso.cmd.sysUpgrade.error.updating"
+msgstr ""
+
+msgid "vso.cmd.sysUpgrade.error.onHasUpdate"
+msgstr ""
+
+msgid "vso.cmd.sysUpgrade.schedule.daily"
+msgstr ""
+
+msgid "vso.cmd.sysUpgrade.schedule.weekly"
+msgstr ""
+
+msgid "vso.cmd.sysUpgrade.schedule.monthly"
+msgstr ""
+
+msgid "vso.cmd.sysUpgrade.info.updating"
+msgstr ""
+
+msgid "vso.cmd.sysUpgrade.info.willUpdateLater"
+msgstr ""
+
+msgid "vso.cmd.sysUpgrade.info.willNeverUpdate"
+msgstr ""
+
+msgid "vso.cmd.sysUpgrade.info.noUpdates"
+msgstr ""
+
+msgid "vso.cmd.sysUpgrade.now"
+msgstr ""
+
+msgid "vso.cmd.tasks"
+msgstr "பணிகளை உருவாக்கி நிர்வகிக்கவும்"
+
+msgid "vso.cmd.tasks.stacks.new.error.emptyCommand"
+msgstr "கட்டளை காலியாக இருக்க முடியாது."
+
+msgid "vso.cmd.tasks.stacks.new.error.emptyDescription"
+msgstr "விளக்கம் காலியாக இருக்க முடியாது."
+
+msgid "vso.cmd.tasks.stacks.new.error.emptyName"
+msgstr "பெயர் காலியாக இருக்க முடியாது."
+
+msgid "vso.cmd.tasks.stacks.new.error.noCommand"
+msgstr "கட்டளை குறிப்பிடப்படவில்லை."
+
+msgid "vso.cmd.tasks.stacks.new.error.noDescription"
+msgstr "எந்த விளக்கமும் குறிப்பிடப்படவில்லை."
+
+msgid "vso.cmd.tasks.stacks.new.error.noName"
+msgstr "பெயர் குறிப்பிடப்படவில்லை."
+
+msgid "vso.cmd.tasks.stacks.new.info.askCommand"
+msgstr "கட்டளை: "
+
+msgid "vso.cmd.tasks.stacks.new.info.askDescription"
+msgstr "விளக்கம்: "
+
+msgid "vso.cmd.tasks.stacks.new.info.askName"
+msgstr "பெயர்: "
+
+msgid "vso.cmd.tasks.stacks.new.info.taskCreated"
+msgstr "பணி வெற்றிகரமாக உருவாக்கப்பட்டுள்ளது."
+
+msgid "vso.cmd.tasks.list"
+msgstr "எல்லா பணிகளையும் பட்டியலிடுங்கள்"
+
+msgid "vso.cmd.tasks.list.noTasks"
+msgstr "பணிகள் எதுவும் கிடைக்கவில்லை."
+
+msgid "vso.cmd.tasks.list.info.foundTasks"
+msgstr "%d பணிகள் காணப்பட்டன."
+
+msgid "vso.cmd.tasks.list.options.json"
+msgstr "சாதொபொகு வடிவத்தில் பணிகளை வெளியிடுங்கள்"
+
+msgid "vso.cmd.tasks.new"
+msgstr "புதிய பணியை உருவாக்கவும்"
+
+msgid "vso.cmd.tasks.new.options.assumeYes"
+msgstr "எல்லா தூண்டுதல்களுக்கும் ஆம் என்று வைத்துக் கொள்ளுங்கள்"
+
+msgid "vso.cmd.tasks.new.options.at"
+msgstr "ஒரு குறிப்பிட்ட நேரத்தில் (HH: MM) செயல்படுத்த பணியை திட்டமிடுங்கள்"
+
+msgid "vso.cmd.tasks.new.options.command"
+msgstr "செயல்படுத்த கட்டளையைக் குறிப்பிடவும்"
+
+msgid "vso.cmd.tasks.new.options.description"
+msgstr "பணியின் விளக்கத்தைக் குறிப்பிடவும்"
+
+msgid "vso.cmd.tasks.new.options.every"
+msgstr "ஒவ்வொரு ஃச் நேரத்தையும் (நிமிடங்கள், மணிநேரம், நாட்கள்) செயல்படுத்த பணியைத் திட்டமிடுங்கள்"
+
+msgid "vso.cmd.tasks.new.options.name"
+msgstr "பணியின் பெயரைக் குறிப்பிடவும்"
+
+msgid "vso.cmd.tasks.new.options.needConfirm"
+msgstr "பணியைச் செயல்படுத்துவதற்கு முன் உறுதிப்படுத்தல் கேளுங்கள்"
+
+msgid "vso.cmd.tasks.new.options.onBattery"
+msgstr "கணினி பேட்டரியில் இருக்கும்போது மட்டுமே பணியை இயக்கவும்"
+
+msgid "vso.cmd.tasks.new.options.onCharge"
+msgstr "கணினி கட்டணம் வசூலிக்கும்போது மட்டுமே பணியை இயக்கவும்"
+
+msgid "vso.cmd.tasks.new.options.onConditionCommand"
+msgstr "நிபந்தனை கட்டளையில் பணியை இயக்கவும்"
+
+msgid "vso.cmd.tasks.new.options.onCpuTemp"
+msgstr "சிபியு வெப்பநிலை 60 ° C ஐ விட அதிகமாக இருக்கும்போது பணியை இயக்கவும்"
+
+msgid "vso.cmd.tasks.new.options.onCpuUsage"
+msgstr "சிபியு பயன்பாடு x% ஐ விட அதிகமாக இருக்கும்போது பணியை இயக்கவும்"
+
+msgid "vso.cmd.tasks.new.options.onDeviceConnect"
+msgstr "சாதனம் இணைக்கப்படும்போது பணியை இயக்கவும்"
+
+msgid "vso.cmd.tasks.new.options.onDeviceDisconnect"
+msgstr "சாதனம் துண்டிக்கப்படும்போது பணியை இயக்கவும்"
+
+msgid "vso.cmd.tasks.new.options.onDisconnect"
+msgstr "நெட்வொர்க்கிலிருந்து கணினி துண்டிக்கப்படும்போது பணியை இயக்கவும்"
+
+msgid "vso.cmd.tasks.new.options.onFullBattery"
+msgstr "கணினி முழுமையாக சார்ச் செய்யப்படும்போது பணியை இயக்கவும்"
+
+msgid "vso.cmd.tasks.new.options.onHighCpuUsage"
+msgstr "சிபியு பயன்பாடு 50% ஐ விட அதிகமாக இருக்கும்போது பணியை இயக்கவும்"
+
+msgid "vso.cmd.tasks.new.options.onHighInternetUsage"
+msgstr "இணைய பயன்பாடு 500kb/s ஐ விட அதிகமாக இருக்கும்போது பணியை இயக்கவும்"
+
+msgid "vso.cmd.tasks.new.options.onHighMemoryUsage"
+msgstr "நினைவக பயன்பாடு 50% ஐ விட அதிகமாக இருக்கும்போது பணியை இயக்கவும்"
+
+msgid "vso.cmd.tasks.new.options.onInternetUsage"
+msgstr "இணைய பயன்பாடு xkb/s ஐ விட அதிகமாக இருக்கும்போது பணியை இயக்கவும்"
+
+msgid "vso.cmd.tasks.new.options.onLowBattery"
+msgstr "கணினி பேட்டரியில் குறைவாக இருக்கும்போது பணியை இயக்கவும் (20%)"
+
+msgid "vso.cmd.tasks.new.options.onMemoryUsage"
+msgstr "நினைவக பயன்பாடு x% ஐ விட அதிகமாக இருக்கும்போது பணியை இயக்கவும்"
+
+msgid "vso.cmd.tasks.new.options.onNetwork"
+msgstr "கணினி பிணையத்துடன் இணைக்கப்படும்போது பணியை இயக்கவும்"
+
+msgid "vso.cmd.tasks.new.options.onProcess"
+msgstr "ஒரு செயல்முறை தொடங்கும் போது பணியை இயக்கவும்"
+
+msgid "vso.cmd.tasks.rm"
+msgstr "ஒரு பணியை அகற்று"
+
+msgid "vso.cmd.tasks.rm.error.cannotDelete"
+msgstr "பணியை நீக்க முடியாது: %s"
+
+msgid "vso.cmd.tasks.rm.error.noName"
+msgstr "பணி பெயர் குறிப்பிடப்படவில்லை."
+
+msgid "vso.cmd.tasks.rm.error.notFound"
+msgstr "பணி கிடைக்கவில்லை."
+
+msgid "vso.cmd.tasks.rm.info.askConfirmation"
+msgstr "பணி %s ஐ நீக்க விரும்புகிறீர்களா? [y/n]"
+
+msgid "vso.cmd.tasks.rm.info.taskDeleted"
+msgstr "பணி வெற்றிகரமாக நீக்கப்பட்டுள்ளது."
+
+msgid "vso.cmd.tasks.rm.options.force"
+msgstr "பணியை நீக்க கட்டாயப்படுத்துங்கள்"
+
+msgid "vso.cmd.tasks.rm.options.name"
+msgstr "பணியின் பெயரைக் குறிப்பிடவும்"
+
+msgid "vso.cmd.tasks.rotate"
+msgstr "பணிகளை சுழற்றுங்கள்"
+
+msgid "vso.cmd.tasks.rotate.options.privateEvent"
+msgstr "துவக்க, பணிநிறுத்தம், உள்நுழைவு மற்றும் வெளியேறுவதற்கான பணிகளைச் சுழற்ற தனிப்பட்ட நிகழ்வைக் குறிப்பிடவும்"
+
+msgid "vso.cmd.tasks.rotate.options.silent"
+msgstr "ஒவ்வொரு சுழற்சியிலும் நிலையை வெளியிட வேண்டாம்"
+
+msgid "vso.cmd.waydroid"
+msgstr "VSO வேட்ராய்டு துணை அமைப்பை நிர்வகிக்கவும்"
+
+msgid "vso.arg.package"
+msgstr ""
+
+msgid "vso.arg.command"
+msgstr ""
+

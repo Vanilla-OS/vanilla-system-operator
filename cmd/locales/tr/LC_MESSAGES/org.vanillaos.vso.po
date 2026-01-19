@@ -1,0 +1,436 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Vanilla System Operator\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-05-18 12:00+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: tr\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+msgid "vso.description"
+msgstr "Vanilla Sistem Operatörü bir paket yöneticisi, sistem güncelleyici ve görev kendiliğindenleştiricidir."
+
+msgid "vso.errors.unknownCommand"
+msgstr "Bilinmeyen komut: %s"
+
+msgid "vso.errors.invalidInput"
+msgstr "Geçersiz girdi."
+
+msgid "vso.errors.invalidChoice"
+msgstr "Geçersiz seçim."
+
+msgid "vso.info.aborting"
+msgstr "İstendiği için vazgeçiliyor."
+
+msgid "vso.msg.help"
+msgstr "Vso için yardımı göster."
+
+msgid "vso.msg.version"
+msgstr "Vso için sürümü göster."
+
+msgid "vso.msg.usage"
+msgstr "Kullanım"
+
+msgid "vso.msg.aliases"
+msgstr "Diğer Adlar"
+
+msgid "vso.msg.examples"
+msgstr "Örnekler"
+
+msgid "vso.msg.availableCommands"
+msgstr "Uygun Komutlar"
+
+msgid "vso.msg.additionalCommands"
+msgstr "Ek Komutlar"
+
+msgid "vso.msg.flags"
+msgstr "İmler"
+
+msgid "vso.msg.globalFlags"
+msgstr "Küresel İmler"
+
+msgid "vso.msg.additionalHelpTopics"
+msgstr "Ek yardım konuları"
+
+msgid "vso.msg.moreInfo"
+msgstr "Komutla ilgili daha çok bilgi için %s kullanın"
+
+msgid "vso.terminal.yes"
+msgstr "evet"
+
+msgid "vso.terminal.no"
+msgstr "hayır"
+
+msgid "vso.cmd.config"
+msgstr "Sistem yapılandırmasını yönet."
+
+msgid "vso.cmd.config.get"
+msgstr "Sistem yapılandırmasını al"
+
+msgid "vso.cmd.config.get.error.noKey"
+msgstr "Anahtar belirtilmedi."
+
+msgid "vso.cmd.config.get.error.noValue"
+msgstr "Anahtar için değer bulunamadı: %s"
+
+msgid "vso.cmd.config.get.options.key"
+msgstr "anahtarını kullanarak yapılandırma değeri al"
+
+msgid "vso.cmd.config.set"
+msgstr "Sistem yapılandırmasını ayarla"
+
+msgid "vso.cmd.config.set.error.noKey"
+msgstr "Anahtar belirtilmedi."
+
+msgid "vso.cmd.config.set.error.noValue"
+msgstr "Değer belirtilmedi."
+
+msgid "vso.cmd.config.set.error.failed"
+msgstr "Yapılandırma ayarlanamadı: %s"
+
+msgid "vso.cmd.config.set.options.key"
+msgstr "ayarlanacak yapılandırmanın anahtarı"
+
+msgid "vso.cmd.config.set.options.value"
+msgstr "ayarlanacak yapılandırmanın değeri"
+
+msgid "vso.cmd.config.set.success"
+msgstr "Yapılandırma başarıyla güncellendi."
+
+msgid "vso.cmd.config.show"
+msgstr "Sistem yapılandırmasını göster"
+
+msgid "vso.cmd.pico"
+msgstr "VSO alt sistemini yönet"
+
+msgid "vso.cmd.pico.error.notInitialized"
+msgstr "VSO alt sistemi ilklendirilmedi. İlklendirmek için `vso pico-init` çalıştırın."
+
+msgid "vso.cmd.pico.error.alreadyInitialized"
+msgstr "VSO alt sistemi halihazırda ilklendirildi. İlklendirmeye zorlamak için --force bayrağını kullanın."
+
+msgid "vso.cmd.pico.error.noAppNameOrBin"
+msgstr "--app ya da --bin belirtilmeli."
+
+msgid "vso.cmd.pico.error.sameAppOrBin"
+msgstr "--app ve --bin aynı anda belirtilemez."
+
+msgid "vso.cmd.pico.error.exportingApp"
+msgstr "Uygulama dışa aktarılırken hata oluştu: %s"
+
+msgid "vso.cmd.pico.error.exportingBin"
+msgstr "İki dışa aktarılırken hata oluştu: %s"
+
+msgid "vso.cmd.pico.error.unexportingApp"
+msgstr "Uygulama dışa aktarımı geri alınırken hata oluştu: %s"
+
+msgid "vso.cmd.pico.error.unexportingBin"
+msgstr "İkili dışa aktarımı geri alınırken hata oluştu: %s"
+
+msgid "vso.cmd.pico.error.unknownCommand"
+msgstr "Bilinmeyen komut: %s"
+
+msgid "vso.cmd.pico.error.shellReset"
+msgstr "VSO kabuğuna erişmek olanaksız. Sıfırlamak ister misiniz? (Bu, alt sisteminizde kurulu yazılımların tümünü kaldıracaktır. [y/N]"
+
+msgid "vso.cmd.pico.info.deleting"
+msgstr "VSO alt sistemi siliniyor..."
+
+msgid "vso.cmd.pico.info.initializing"
+msgstr "VSO alt sistemi ilklendiriliyor..."
+
+msgid "vso.cmd.pico.info.initialized"
+msgstr "VSO alt sistemi ilklendirildi."
+
+msgid "vso.cmd.pico.info.exported"
+msgstr "Dışa aktarıldı: %s\n"
+
+msgid "vso.cmd.pico.info.unexported"
+msgstr "Dışa aktarımı geri alındı: %s\n"
+
+msgid "vso.cmd.pico.info.exportedApps"
+msgstr "%d uygulama dışa aktarıldı"
+
+msgid "vso.cmd.pico.info.unexportedApps"
+msgstr "%d uygulama dışa aktarımı geri alındı"
+
+msgid "vso.cmd.pico.info.shellInit"
+msgstr "Görünüşe göre kabuğunuz henüz ilklendirilmemiş. Şimdi ilklendirmek ister misiniz? (Şiddetle önerilir) [y/N]"
+
+msgid "vso.cmd.pico.info.fallbackShell"
+msgstr "Ana makine kabuğuna geri dönülsün mü? Bu beklenmedik davranışlara neden olabilir. [y/N]"
+
+msgid "vso.cmd.pico.export"
+msgstr "Alt sistemden uygulama ya da ikili dışa aktar"
+
+msgid "vso.cmd.pico.export.options.app"
+msgstr "dışa aktarılacak uygulamanın adı"
+
+msgid "vso.cmd.pico.export.options.bin"
+msgstr "dışa aktarılacak ikilinin adı"
+
+msgid "vso.cmd.pico.export.options.binOutput"
+msgstr "ikili çıktısının yolu (öntanımlı: ~/.local/bin/)"
+
+msgid "vso.cmd.pico.unexport"
+msgstr "Alt sistemden uygulama ya da ikili dışa aktarımını geri al"
+
+msgid "vso.cmd.pico.unexport.options.app"
+msgstr "dışa aktarımı geri alınacak uygulamanın adı"
+
+msgid "vso.cmd.pico.unexport.options.bin"
+msgstr "dışa aktarımı geri alınacak ikilinin adı"
+
+msgid "vso.cmd.pico.unexport.options.binOutput"
+msgstr "ikili çıktısının yolu (öntanımlı: ~/.local/bin/)"
+
+msgid "vso.cmd.pico.init"
+msgstr "VSO alt sistemini ilklendir, paket yönetimi için kullanıldı"
+
+msgid "vso.cmd.pico.init.options.force"
+msgstr "alt sistem halihazırda ilklendiyse de ilklendirmeye zorla"
+
+msgid "vso.cmd.pico.install"
+msgstr "Alt sistemin içine uygulama kur"
+
+msgid "vso.cmd.pico.remove"
+msgstr "Alt sistemden uygulama kaldır"
+
+msgid "vso.cmd.pico.run"
+msgstr "Alt sistemden uygulama çalıştır"
+
+msgid "vso.cmd.pico.run.options.noReset"
+msgstr "eğer bir şey yanlış giderse alt sistemi sıfırlamayı önerme"
+
+msgid "vso.cmd.pico.search"
+msgstr "Alt sistemin içine kurulacak uygulama ara"
+
+msgid "vso.cmd.pico.shell"
+msgstr "Alt sistem ortamına gir"
+
+msgid "vso.cmd.pico.sideload"
+msgstr "DEB/APK paketleri alt sistemin içine yandan yükle"
+
+msgid "vso.cmd.pico.update"
+msgstr "Alt sistemin paket deposunu güncelle"
+
+msgid "vso.cmd.pico.upgrade"
+msgstr "Alt sistemin içindeki paketleri yükselt"
+
+msgid "vso.cmd.sysUpgrade"
+msgstr "Sistemi yükseltmek gibi sistem komutlarını çalıştır"
+
+msgid "vso.cmd.sysUpgrade.check"
+msgstr "Sistem güncellemelerini denetle"
+
+msgid "vso.cmd.sysUpgrade.check.asExitCode"
+msgstr "yükseltmek için denetle ancak bir şey yazdırma. Yükseltme yoksa çıkış kodu olarak 0, varsa 1 döndür."
+
+msgid "vso.cmd.sysUpgrade.check.error.asExitCodeAndJson"
+msgstr "Güncellemeler denetlenirken hata oluştu. Daha çok ayrıntı için JSON çıktısına bakın."
+
+msgid "vso.cmd.sysUpgrade.check.info.checking"
+msgstr "Güncellemeler denetleniyor..."
+
+msgid "vso.cmd.sysUpgrade.check.json"
+msgstr "sonucu JSON biçiminde çıkar"
+
+msgid "vso.cmd.sysUpgrade.upgrade"
+msgstr ""
+
+msgid "vso.cmd.sysUpgrade.error.updating"
+msgstr ""
+
+msgid "vso.cmd.sysUpgrade.error.onHasUpdate"
+msgstr ""
+
+msgid "vso.cmd.sysUpgrade.schedule.daily"
+msgstr ""
+
+msgid "vso.cmd.sysUpgrade.schedule.weekly"
+msgstr ""
+
+msgid "vso.cmd.sysUpgrade.schedule.monthly"
+msgstr ""
+
+msgid "vso.cmd.sysUpgrade.info.updating"
+msgstr ""
+
+msgid "vso.cmd.sysUpgrade.info.willUpdateLater"
+msgstr ""
+
+msgid "vso.cmd.sysUpgrade.info.willNeverUpdate"
+msgstr ""
+
+msgid "vso.cmd.sysUpgrade.info.noUpdates"
+msgstr ""
+
+msgid "vso.cmd.sysUpgrade.now"
+msgstr ""
+
+msgid "vso.cmd.tasks"
+msgstr "Görev oluştur ve yönet"
+
+msgid "vso.cmd.tasks.stacks.new.error.emptyCommand"
+msgstr "Komut boş olamaz."
+
+msgid "vso.cmd.tasks.stacks.new.error.emptyDescription"
+msgstr "Açıklama boş olamaz."
+
+msgid "vso.cmd.tasks.stacks.new.error.emptyName"
+msgstr "Ad boş olamaz."
+
+msgid "vso.cmd.tasks.stacks.new.error.noCommand"
+msgstr "Komut belirtilmedi."
+
+msgid "vso.cmd.tasks.stacks.new.error.noDescription"
+msgstr "Açıklama belirtilmedi."
+
+msgid "vso.cmd.tasks.stacks.new.error.noName"
+msgstr "Ad belirtilmedi."
+
+msgid "vso.cmd.tasks.stacks.new.info.askCommand"
+msgstr "Komut: "
+
+msgid "vso.cmd.tasks.stacks.new.info.askDescription"
+msgstr "Açıklama: "
+
+msgid "vso.cmd.tasks.stacks.new.info.askName"
+msgstr "Ad: "
+
+msgid "vso.cmd.tasks.stacks.new.info.taskCreated"
+msgstr "Görev başarıyla oluşturuldu."
+
+msgid "vso.cmd.tasks.list"
+msgstr "Tüm görevleri listele"
+
+msgid "vso.cmd.tasks.list.noTasks"
+msgstr "Hiçbir görev bulunamadı."
+
+msgid "vso.cmd.tasks.list.info.foundTasks"
+msgstr "%d görev bulundu."
+
+msgid "vso.cmd.tasks.list.options.json"
+msgstr "görevleri JSON biçiminde çıkar"
+
+msgid "vso.cmd.tasks.new"
+msgstr "Yeni görev oluştur"
+
+msgid "vso.cmd.tasks.new.options.assumeYes"
+msgstr "tüm sorguları evet varsay"
+
+msgid "vso.cmd.tasks.new.options.at"
+msgstr "komutu belirli saatte çalışacak biçimde zamanla (ss:dd)"
+
+msgid "vso.cmd.tasks.new.options.command"
+msgstr "çalıştırılacak komutu belirt"
+
+msgid "vso.cmd.tasks.new.options.description"
+msgstr "görevin açıklamasını belirt"
+
+msgid "vso.cmd.tasks.new.options.every"
+msgstr "görevi her X'te çalışacak biçimde zamanla (dakika, saat, gün)"
+
+msgid "vso.cmd.tasks.new.options.name"
+msgstr "görevin adını belirt"
+
+msgid "vso.cmd.tasks.new.options.needConfirm"
+msgstr "görevi çalıştırmadan önce onay sor"
+
+msgid "vso.cmd.tasks.new.options.onBattery"
+msgstr "görevi yalnızca sistem pildeyken çalıştır"
+
+msgid "vso.cmd.tasks.new.options.onCharge"
+msgstr "görevi yalnızca sistem şarj olurken çalıştır"
+
+msgid "vso.cmd.tasks.new.options.onConditionCommand"
+msgstr "görevi koşul komutunda çalıştır"
+
+msgid "vso.cmd.tasks.new.options.onCpuTemp"
+msgstr "görevi MİB sıcaklığı 60°C'den yüksekse çalıştır"
+
+msgid "vso.cmd.tasks.new.options.onCpuUsage"
+msgstr "görevi MİB kullanımı %X'ten yüksekse çalıştır"
+
+msgid "vso.cmd.tasks.new.options.onDeviceConnect"
+msgstr "görevi bir aygıt bağlandığında çalıştır"
+
+msgid "vso.cmd.tasks.new.options.onDeviceDisconnect"
+msgstr "görevi bir aygıtın bağlantısı kesildiğinde çalıştır"
+
+msgid "vso.cmd.tasks.new.options.onDisconnect"
+msgstr "görevi sistem ağdan bağlantısını kestiğinde çalıştır"
+
+msgid "vso.cmd.tasks.new.options.onFullBattery"
+msgstr "görevi sistem tümüyle şarj olduğunda çalıştır"
+
+msgid "vso.cmd.tasks.new.options.onHighCpuUsage"
+msgstr "görevi MİB kullanımı %50'ten yüksekse çalıştır"
+
+msgid "vso.cmd.tasks.new.options.onHighInternetUsage"
+msgstr "görevi internet kullanımı 500Kb/s'den yüksekse çalıştır"
+
+msgid "vso.cmd.tasks.new.options.onHighMemoryUsage"
+msgstr "görevi bellek kullanımı %50'den yüksekse çalıştır"
+
+msgid "vso.cmd.tasks.new.options.onInternetUsage"
+msgstr "görevi internet kullanımı XKb/s'den yüksekse çalıştır"
+
+msgid "vso.cmd.tasks.new.options.onLowBattery"
+msgstr "görevi sistem pil düzeyi düşükse (%20) çalıştır"
+
+msgid "vso.cmd.tasks.new.options.onMemoryUsage"
+msgstr "görevi bellek kullanımı %X'ten yüksekse çalıştır"
+
+msgid "vso.cmd.tasks.new.options.onNetwork"
+msgstr "görevi sistem ağa bağlandığında çalıştır"
+
+msgid "vso.cmd.tasks.new.options.onProcess"
+msgstr "görevi bir işlem başladığında çalıştır"
+
+msgid "vso.cmd.tasks.rm"
+msgstr "Görev kaldır"
+
+msgid "vso.cmd.tasks.rm.error.cannotDelete"
+msgstr "Görev silinemedi: %s"
+
+msgid "vso.cmd.tasks.rm.error.noName"
+msgstr "Görev adı belirtilmedi."
+
+msgid "vso.cmd.tasks.rm.error.notFound"
+msgstr "Görev bulunamadı."
+
+msgid "vso.cmd.tasks.rm.info.askConfirmation"
+msgstr "%s görevini kaldırmak istediğinize emin misiniz? [y/N]"
+
+msgid "vso.cmd.tasks.rm.info.taskDeleted"
+msgstr "Görev başarıyla silindi."
+
+msgid "vso.cmd.tasks.rm.options.force"
+msgstr "görevin silinmeye zorla"
+
+msgid "vso.cmd.tasks.rm.options.name"
+msgstr "görevin adını belirt"
+
+msgid "vso.cmd.tasks.rotate"
+msgstr "Görevleri döndür"
+
+msgid "vso.cmd.tasks.rotate.options.privateEvent"
+msgstr "görevleri önyükleme, kapatma, oturum açma ve oturum kapatma için döndürecek özel eylemi belirt"
+
+msgid "vso.cmd.tasks.rotate.options.silent"
+msgstr "her döngüde durumu çıktı olarak verme"
+
+msgid "vso.cmd.waydroid"
+msgstr "VSO waydroid alt sistemini yönet"
+
+msgid "vso.arg.package"
+msgstr ""
+
+msgid "vso.arg.command"
+msgstr ""
+

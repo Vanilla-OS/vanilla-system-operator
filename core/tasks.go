@@ -2,11 +2,12 @@ package core
 
 /*	License: GPLv3
 	Authors:
-		Mirko Brombin <send@mirko.pm>
+		Mirko Brombin <brombin94@gmail.com>
 		Pietro di Caprio <pietro@fabricators.ltd>
+		Vanilla OS Contributors <https://github.com/vanilla-os/>
 	Copyright: 2024
-	Description: The Vanilla System Operator is a package manager,
-	a system updater and a task automator.
+	Description: VSO is a utility which allows you to perform maintenance
+	tasks on your Vanilla OS installation.
 */
 
 import (

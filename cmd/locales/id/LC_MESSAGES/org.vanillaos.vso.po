@@ -1,0 +1,436 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Vanilla System Operator\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-05-18 12:00+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: id\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+msgid "vso.description"
+msgstr "Vanilla System Operator adalah pengelola paket, pembaruan sistem, dan otomatisasi tugas."
+
+msgid "vso.errors.unknownCommand"
+msgstr "Perintah tidak dikenal: %s"
+
+msgid "vso.errors.invalidInput"
+msgstr "Masukan tidak valid."
+
+msgid "vso.errors.invalidChoice"
+msgstr "Pilihan tidak valid."
+
+msgid "vso.info.aborting"
+msgstr "Menghentikan sesuai permintaan."
+
+msgid "vso.msg.help"
+msgstr "Tampilkan bantuan untuk vso."
+
+msgid "vso.msg.version"
+msgstr "Tampilkan versi untuk vso."
+
+msgid "vso.msg.usage"
+msgstr "Penggunaan"
+
+msgid "vso.msg.aliases"
+msgstr "Alias"
+
+msgid "vso.msg.examples"
+msgstr "Contoh"
+
+msgid "vso.msg.availableCommands"
+msgstr "Perintah yang Tersedia"
+
+msgid "vso.msg.additionalCommands"
+msgstr "Perintah Tambahan"
+
+msgid "vso.msg.flags"
+msgstr "Bendera"
+
+msgid "vso.msg.globalFlags"
+msgstr "Bendera Global"
+
+msgid "vso.msg.additionalHelpTopics"
+msgstr "Topik bantuan tambahan"
+
+msgid "vso.msg.moreInfo"
+msgstr "Gunakan %s untuk informasi lebih lanjut tentang perintah."
+
+msgid "vso.terminal.yes"
+msgstr "yes"
+
+msgid "vso.terminal.no"
+msgstr "no"
+
+msgid "vso.cmd.config"
+msgstr "Kelola konfigurasi sistem."
+
+msgid "vso.cmd.config.get"
+msgstr "Dapatkan konfigurasi sistem"
+
+msgid "vso.cmd.config.get.error.noKey"
+msgstr "Tidak ada kunci yang ditentukan."
+
+msgid "vso.cmd.config.get.error.noValue"
+msgstr "Tidak ditemukan nilai untuk kunci: %s"
+
+msgid "vso.cmd.config.get.options.key"
+msgstr "mendapatkan nilai konfigurasi dengan menggunakan kuncinya"
+
+msgid "vso.cmd.config.set"
+msgstr "Atur konfigurasi sistem"
+
+msgid "vso.cmd.config.set.error.noKey"
+msgstr "Tidak ada kunci yang ditentukan."
+
+msgid "vso.cmd.config.set.error.noValue"
+msgstr "Tidak ada nilai yang ditentukan."
+
+msgid "vso.cmd.config.set.error.failed"
+msgstr "Gagal mengatur konfigurasi: %s"
+
+msgid "vso.cmd.config.set.options.key"
+msgstr "kunci konfigurasi untuk disetel"
+
+msgid "vso.cmd.config.set.options.value"
+msgstr "nilai konfigurasi yang akan diatur"
+
+msgid "vso.cmd.config.set.success"
+msgstr "Konfigurasi telah diperbarui dengan sukses."
+
+msgid "vso.cmd.config.show"
+msgstr "Tampilkan konfigurasi sistem"
+
+msgid "vso.cmd.pico"
+msgstr "Kelola subsistem VSO"
+
+msgid "vso.cmd.pico.error.notInitialized"
+msgstr "Subsistem VSO belum diinisialisasi. Silakan jalankan perintah `vso pico-init` untuk menginisialisasinya."
+
+msgid "vso.cmd.pico.error.alreadyInitialized"
+msgstr "Subsistem VSO sudah diinisialisasi. Gunakan bendera --force untuk memaksa inisialisasi."
+
+msgid "vso.cmd.pico.error.noAppNameOrBin"
+msgstr "--app atau --bin harus ditentukan."
+
+msgid "vso.cmd.pico.error.sameAppOrBin"
+msgstr "--app dan --bin tidak dapat keduanya ditentukan."
+
+msgid "vso.cmd.pico.error.exportingApp"
+msgstr "Terjadi kesalahan saat mengekspor aplikasi: %s"
+
+msgid "vso.cmd.pico.error.exportingBin"
+msgstr "Terjadi kesalahan saat mengekspor berkas biner: %s"
+
+msgid "vso.cmd.pico.error.unexportingApp"
+msgstr "Terjadi kesalahan saat membatalkan ekspor aplikasi: %s"
+
+msgid "vso.cmd.pico.error.unexportingBin"
+msgstr "Terjadi kesalahan saat membatalkan ekspor berkas biner: %s"
+
+msgid "vso.cmd.pico.error.unknownCommand"
+msgstr "Perintah tidak dikenal: %s"
+
+msgid "vso.cmd.pico.error.shellReset"
+msgstr "Tidak mungkin untuk mengakses shell VSO. Apakah Anda ingin meresetnya? (Ini akan menghapus semua perangkat lunak yang terinstal di subsistem) [y/N]"
+
+msgid "vso.cmd.pico.info.deleting"
+msgstr "Menghapus subsistem VSO..."
+
+msgid "vso.cmd.pico.info.initializing"
+msgstr "Menginisialisasi subsistem VSO..."
+
+msgid "vso.cmd.pico.info.initialized"
+msgstr "Subsistem VSO telah diinisialisasi."
+
+msgid "vso.cmd.pico.info.exported"
+msgstr "Diekspor %s\n"
+
+msgid "vso.cmd.pico.info.unexported"
+msgstr "%s yang belum diekspor\n"
+
+msgid "vso.cmd.pico.info.exportedApps"
+msgstr "Aplikasi yang diekspor: %d"
+
+msgid "vso.cmd.pico.info.unexportedApps"
+msgstr "Aplikasi yang tidak diekspor: %d"
+
+msgid "vso.cmd.pico.info.shellInit"
+msgstr "Sepertinya shell Anda belum diinisialisasi. Apakah Anda ingin menginisialisasinya sekarang? (Sangat disarankan) [y/N]"
+
+msgid "vso.cmd.pico.info.fallbackShell"
+msgstr "Kembali ke shell host? Hal ini dapat menyebabkan perilaku yang tidak terduga. [y/N]"
+
+msgid "vso.cmd.pico.export"
+msgstr "Ekspor aplikasi atau berkas biner dari subsistem"
+
+msgid "vso.cmd.pico.export.options.app"
+msgstr "nama aplikasi yang akan diekspor"
+
+msgid "vso.cmd.pico.export.options.bin"
+msgstr "nama berkas biner yang akan diekspor"
+
+msgid "vso.cmd.pico.export.options.binOutput"
+msgstr "jalur output biner (default: ~/.local/bin/)"
+
+msgid "vso.cmd.pico.unexport"
+msgstr "Jangan ekspor aplikasi atau berkas biner dari subsistem"
+
+msgid "vso.cmd.pico.unexport.options.app"
+msgstr "nama aplikasi yang batal diekspor"
+
+msgid "vso.cmd.pico.unexport.options.bin"
+msgstr "Nama berkas biner yang batal diekspor"
+
+msgid "vso.cmd.pico.unexport.options.binOutput"
+msgstr "jalur output biner (default: ~/.local/bin/)"
+
+msgid "vso.cmd.pico.init"
+msgstr "Inisialisasi subsistem VSO, yang digunakan untuk manajemen paket"
+
+msgid "vso.cmd.pico.init.options.force"
+msgstr "paksa inisialisasi jika subsistem sudah diinisialisasi"
+
+msgid "vso.cmd.pico.install"
+msgstr "Instal aplikasi di dalam subsistem"
+
+msgid "vso.cmd.pico.remove"
+msgstr "Hapus aplikasi dari subsistem"
+
+msgid "vso.cmd.pico.run"
+msgstr "Jalankan aplikasi dari subsistem"
+
+msgid "vso.cmd.pico.run.options.noReset"
+msgstr "jangan mengusulkan untuk mereset subsistem jika terjadi kesalahan"
+
+msgid "vso.cmd.pico.search"
+msgstr "Cari aplikasi yang akan diinstal di dalam subsistem"
+
+msgid "vso.cmd.pico.shell"
+msgstr "Masuk ke lingkungan subsistem"
+
+msgid "vso.cmd.pico.sideload"
+msgstr "Menginstal paket DEB/APK secara sideload di dalam subsistem"
+
+msgid "vso.cmd.pico.update"
+msgstr "Perbarui repositori paket subsistem"
+
+msgid "vso.cmd.pico.upgrade"
+msgstr "Perbarui paket-paket di dalam subsistem"
+
+msgid "vso.cmd.sysUpgrade"
+msgstr "Jalankan perintah sistem, seperti melakukan pembaruan sistem"
+
+msgid "vso.cmd.sysUpgrade.check"
+msgstr "Periksa pembaruan sistem"
+
+msgid "vso.cmd.sysUpgrade.check.asExitCode"
+msgstr "memeriksa pembaruan tetapi tidak mencetak apa pun. Kembalikan kode keluar 0 jika tidak ada pembaruan yang tersedia dan 1 jika ada."
+
+msgid "vso.cmd.sysUpgrade.check.error.asExitCodeAndJson"
+msgstr "Terjadi kesalahan saat memeriksa pembaruan. Lihat output JSON untuk detail lebih lanjut."
+
+msgid "vso.cmd.sysUpgrade.check.info.checking"
+msgstr "Memeriksa pembaruan..."
+
+msgid "vso.cmd.sysUpgrade.check.json"
+msgstr "menampilkan hasil dalam format JSON"
+
+msgid "vso.cmd.sysUpgrade.upgrade"
+msgstr ""
+
+msgid "vso.cmd.sysUpgrade.error.updating"
+msgstr ""
+
+msgid "vso.cmd.sysUpgrade.error.onHasUpdate"
+msgstr ""
+
+msgid "vso.cmd.sysUpgrade.schedule.daily"
+msgstr ""
+
+msgid "vso.cmd.sysUpgrade.schedule.weekly"
+msgstr ""
+
+msgid "vso.cmd.sysUpgrade.schedule.monthly"
+msgstr ""
+
+msgid "vso.cmd.sysUpgrade.info.updating"
+msgstr ""
+
+msgid "vso.cmd.sysUpgrade.info.willUpdateLater"
+msgstr ""
+
+msgid "vso.cmd.sysUpgrade.info.willNeverUpdate"
+msgstr ""
+
+msgid "vso.cmd.sysUpgrade.info.noUpdates"
+msgstr ""
+
+msgid "vso.cmd.sysUpgrade.now"
+msgstr ""
+
+msgid "vso.cmd.tasks"
+msgstr "Buat dan kelola tugas"
+
+msgid "vso.cmd.tasks.stacks.new.error.emptyCommand"
+msgstr "Perintah tidak boleh kosong."
+
+msgid "vso.cmd.tasks.stacks.new.error.emptyDescription"
+msgstr "Deskripsi tidak boleh kosong."
+
+msgid "vso.cmd.tasks.stacks.new.error.emptyName"
+msgstr "Nama tidak boleh kosong."
+
+msgid "vso.cmd.tasks.stacks.new.error.noCommand"
+msgstr "Tidak ada perintah yang ditentukan."
+
+msgid "vso.cmd.tasks.stacks.new.error.noDescription"
+msgstr "Tidak ada deskripsi yang ditentukan."
+
+msgid "vso.cmd.tasks.stacks.new.error.noName"
+msgstr "Tidak ada nama yang ditentukan."
+
+msgid "vso.cmd.tasks.stacks.new.info.askCommand"
+msgstr "Perintah: "
+
+msgid "vso.cmd.tasks.stacks.new.info.askDescription"
+msgstr "Deskripsi: "
+
+msgid "vso.cmd.tasks.stacks.new.info.askName"
+msgstr "Nama: "
+
+msgid "vso.cmd.tasks.stacks.new.info.taskCreated"
+msgstr "Tugas telah dibuat dengan sukses."
+
+msgid "vso.cmd.tasks.list"
+msgstr "Daftar semua tugas"
+
+msgid "vso.cmd.tasks.list.noTasks"
+msgstr "Tidak ada tugas yang ditemukan."
+
+msgid "vso.cmd.tasks.list.info.foundTasks"
+msgstr "Ditemukan %d tugas."
+
+msgid "vso.cmd.tasks.list.options.json"
+msgstr "menampilkan tugas dalam format JSON"
+
+msgid "vso.cmd.tasks.new"
+msgstr "Buat tugas baru"
+
+msgid "vso.cmd.tasks.new.options.assumeYes"
+msgstr "anggap ya untuk semua prompt"
+
+msgid "vso.cmd.tasks.new.options.at"
+msgstr "jadwalkan tugas untuk dijalankan pada waktu tertentu (hh:mm)"
+
+msgid "vso.cmd.tasks.new.options.command"
+msgstr "tentukan perintah yang akan dieksekusi"
+
+msgid "vso.cmd.tasks.new.options.description"
+msgstr "tentukan deskripsi tugas tersebut"
+
+msgid "vso.cmd.tasks.new.options.every"
+msgstr "jadwalkan tugas untuk dijalankan setiap X waktu (menit, jam, hari)"
+
+msgid "vso.cmd.tasks.new.options.name"
+msgstr "tentukan nama tugas"
+
+msgid "vso.cmd.tasks.new.options.needConfirm"
+msgstr "minta konfirmasi sebelum melaksanakan tugas"
+
+msgid "vso.cmd.tasks.new.options.onBattery"
+msgstr "jalankan tugas hanya saat sistem menggunakan baterai"
+
+msgid "vso.cmd.tasks.new.options.onCharge"
+msgstr "lakukan tugas ini hanya saat sistem sedang diisi daya"
+
+msgid "vso.cmd.tasks.new.options.onConditionCommand"
+msgstr "jalankan tugas pada perintah kondisi"
+
+msgid "vso.cmd.tasks.new.options.onCpuTemp"
+msgstr "jalankan tugas saat suhu CPU melebihi 60°C"
+
+msgid "vso.cmd.tasks.new.options.onCpuUsage"
+msgstr "jalankan tugas saat penggunaan CPU melebihi X%"
+
+msgid "vso.cmd.tasks.new.options.onDeviceConnect"
+msgstr "jalankan tugas saat perangkat terhubung"
+
+msgid "vso.cmd.tasks.new.options.onDeviceDisconnect"
+msgstr "jalankan tugas saat perangkat terputus"
+
+msgid "vso.cmd.tasks.new.options.onDisconnect"
+msgstr "jalankan tugas saat sistem terputus dari jaringan"
+
+msgid "vso.cmd.tasks.new.options.onFullBattery"
+msgstr "jalankan tugas saat sistem telah terisi penuh"
+
+msgid "vso.cmd.tasks.new.options.onHighCpuUsage"
+msgstr "jalankan tugas saat penggunaan CPU melebihi 50%"
+
+msgid "vso.cmd.tasks.new.options.onHighInternetUsage"
+msgstr "jalankan tugas saat penggunaan internet melebihi 500 Kb/s"
+
+msgid "vso.cmd.tasks.new.options.onHighMemoryUsage"
+msgstr "jalankan tugas saat penggunaan memori melebihi 50%"
+
+msgid "vso.cmd.tasks.new.options.onInternetUsage"
+msgstr "jalankan tugas saat penggunaan internet melebihi XKb/s"
+
+msgid "vso.cmd.tasks.new.options.onLowBattery"
+msgstr "jalankan tugas saat baterai sistem rendah (20%)"
+
+msgid "vso.cmd.tasks.new.options.onMemoryUsage"
+msgstr "jalankan tugas saat penggunaan memori melebihi X%"
+
+msgid "vso.cmd.tasks.new.options.onNetwork"
+msgstr "jalankan tugas saat sistem terhubung ke jaringan"
+
+msgid "vso.cmd.tasks.new.options.onProcess"
+msgstr "jalankan tugas saat proses dimulai"
+
+msgid "vso.cmd.tasks.rm"
+msgstr "Hapus tugas"
+
+msgid "vso.cmd.tasks.rm.error.cannotDelete"
+msgstr "Tidak dapat menghapus tugas: %s"
+
+msgid "vso.cmd.tasks.rm.error.noName"
+msgstr "Tidak ada nama tugas yang ditentukan."
+
+msgid "vso.cmd.tasks.rm.error.notFound"
+msgstr "Tugas tidak ditemukan."
+
+msgid "vso.cmd.tasks.rm.info.askConfirmation"
+msgstr "Apakah Anda yakin ingin menghapus tugas %s? [y/N]"
+
+msgid "vso.cmd.tasks.rm.info.taskDeleted"
+msgstr "Tugas telah dihapus dengan sukses."
+
+msgid "vso.cmd.tasks.rm.options.force"
+msgstr "memaksa penghapusan tugas"
+
+msgid "vso.cmd.tasks.rm.options.name"
+msgstr "tentukan nama tugas"
+
+msgid "vso.cmd.tasks.rotate"
+msgstr "Rotasi tugas"
+
+msgid "vso.cmd.tasks.rotate.options.privateEvent"
+msgstr "tentukan acara pribadi untuk memutar tugas saat booting, shutdown, login, dan logout"
+
+msgid "vso.cmd.tasks.rotate.options.silent"
+msgstr "jangan menampilkan status pada setiap siklus"
+
+msgid "vso.cmd.waydroid"
+msgstr "Kelola subsistem Waydroid VSO"
+
+msgid "vso.arg.package"
+msgstr ""
+
+msgid "vso.arg.command"
+msgstr ""
+

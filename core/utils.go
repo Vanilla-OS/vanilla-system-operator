@@ -2,23 +2,26 @@ package core
 
 /*	License: GPLv3
 	Authors:
-		Mirko Brombin <send@mirko.pm>
+		Mirko Brombin <brombin94@gmail.com>
 		Pietro di Caprio <pietro@fabricators.ltd>
+		Vanilla OS Contributors <https://github.com/vanilla-os/>
 	Copyright: 2024
-	Description: The Vanilla System Operator is a package manager,
-	a system updater and a task automator.
+	Description: VSO is a utility which allows you to perform maintenance
+	tasks on your Vanilla OS installation.
 */
 
 import (
 	"fmt"
 	"io"
-	"net/http"
 	"os"
 	"os/exec"
-	"strconv"
 	"strings"
 
 	"github.com/olekukonko/tablewriter"
+	"github.com/vanilla-os/sdk/pkg/v1/net"
+	"github.com/vanilla-os/sdk/pkg/v1/notification"
+	notificationTypes "github.com/vanilla-os/sdk/pkg/v1/notification/types"
+	"github.com/vanilla-os/sdk/pkg/v1/system"
 )
 
 var ProcessPath string
@@ -33,60 +36,20 @@ func RootCheck(display bool) bool {
 	return true
 }
 
-func AskConfirmation(s string, norm bool) bool {
-	var response string
-	var defResponse string
-	if norm {
-		fmt.Print(s + " [Y/n]: ")
-		defResponse = "y"
-	} else {
-		fmt.Print(s + " [y/N]: ")
-		defResponse = "n"
-	}
-	fmt.Scanln(&response)
-	if !strings.EqualFold(response, defResponse) && len(strings.TrimSpace(response)) != 0 {
-		return !norm
-	}
-	return norm
-}
-
-func PickOption(s string, a []string, def int) int {
-	var response int
-	selected := -1
-	for i, opt := range a {
-		fmt.Printf("%d) %s\n", i+1, opt)
-	}
-	fmt.Println()
-	for selected > len(a) || selected < 0 {
-		selected = def
-		fmt.Printf("%s", s)
-		if def > -1 {
-			fmt.Printf(" (%d): ", def)
-		}
-		fmt.Scanln(&response)
-		if response != 0 {
-			selected = response
-		}
-	}
-	return selected - 1
-}
-
 func CheckConnection() bool {
-	_, err := http.Get("https://google.com") // TODO: use a better way to check connection
-	return err == nil
+	return net.CheckInternetConnectivity()
 }
 
 func SendNotification(title, body string) error {
-	cmd := exec.Command(
-		"notify-send",
-		title, body,
-		"-i", "distributor-logo-vanilla",
+	notif := notificationTypes.NewNotification(
+		"vso",
+		title,
+		body,
+		"distributor-logo-vanilla",
+		5000,
+		notificationTypes.NotificationAction{},
 	)
-	err := cmd.Run()
-	if err != nil {
-		return err
-	}
-	return nil
+	return notification.SendNotification(notif)
 }
 
 func ConfirmWindow(title string, body string) bool {
@@ -120,27 +83,22 @@ func getRealUser() (string, error) {
 
 // processIsRunning checks if a process is running based on its name
 func processIsRunning(name string, excludeVsoPid bool) bool {
-	cmd := exec.Command("ps", "-A", "-o", "pid,ppid,cmd")
-	out, err := cmd.Output()
+	processes, err := system.GetProcessList()
 	if err != nil {
 		return false
 	}
 
-	lines := strings.Split(string(out), "\n")
-	for _, line := range lines {
-		if strings.Contains(line, name) {
+	for _, p := range processes {
+		if strings.Contains(p.Name, name) {
 			if excludeVsoPid {
-				vsoPid := strconv.Itoa(os.Getppid())
-				if strings.Contains(line, vsoPid) {
+				if p.PID == os.Getppid() {
 					continue
 				}
 			}
 			return true
 		}
 	}
-
 	return false
-
 }
 
 // slugify returns a slugified string
@@ -192,13 +150,4 @@ func CreateVsoTable(writer io.Writer) *tablewriter.Table {
 	table.SetRowLine(true)
 
 	return table
-}
-
-func sliceContains(slice []string, item string) bool {
-	for _, s := range slice {
-		if s == item {
-			return true
-		}
-	}
-	return false
 }

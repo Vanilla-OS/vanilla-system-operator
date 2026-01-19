@@ -1,0 +1,436 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Vanilla System Operator\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-05-18 12:00+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: eo\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+msgid "vso.description"
+msgstr "La Vanilla-Sistemoperatoro estas pakadministrilo, sistemĝisdatigilo, kaj taskaŭtomatigilo."
+
+msgid "vso.errors.unknownCommand"
+msgstr "Nekonata komando: %s"
+
+msgid "vso.errors.invalidInput"
+msgstr "Nevalida enigaĵo."
+
+msgid "vso.errors.invalidChoice"
+msgstr "Nevalida elekto."
+
+msgid "vso.info.aborting"
+msgstr "Forlasante laŭ peto."
+
+msgid "vso.msg.help"
+msgstr "Montri helpon pri vso."
+
+msgid "vso.msg.version"
+msgstr "Montri la version de vso."
+
+msgid "vso.msg.usage"
+msgstr "Uzado"
+
+msgid "vso.msg.aliases"
+msgstr "Sinonimoj"
+
+msgid "vso.msg.examples"
+msgstr "Ekzemploj"
+
+msgid "vso.msg.availableCommands"
+msgstr "Haveblaj komandoj"
+
+msgid "vso.msg.additionalCommands"
+msgstr "Pliaj komandoj"
+
+msgid "vso.msg.flags"
+msgstr "Flagoj"
+
+msgid "vso.msg.globalFlags"
+msgstr "Mallokaj flagoj"
+
+msgid "vso.msg.additionalHelpTopics"
+msgstr "Pliaj helpaj temoj"
+
+msgid "vso.msg.moreInfo"
+msgstr "Uzu %s por pliaj informoj pri komando"
+
+msgid "vso.terminal.yes"
+msgstr "jes"
+
+msgid "vso.terminal.no"
+msgstr "ne"
+
+msgid "vso.cmd.config"
+msgstr "Administri la sistemajn agordojn."
+
+msgid "vso.cmd.config.get"
+msgstr "Akiri la sistemajn agordojn"
+
+msgid "vso.cmd.config.get.error.noKey"
+msgstr "Neniu ŝlosilo specifiĝis."
+
+msgid "vso.cmd.config.get.error.noValue"
+msgstr "Neniu valoro por la ŝlosilo «%s»"
+
+msgid "vso.cmd.config.get.options.key"
+msgstr "akiri la valoron de agordaĵo per ŝlosilo"
+
+msgid "vso.cmd.config.set"
+msgstr "Modifi la sistemajn agordojn"
+
+msgid "vso.cmd.config.set.error.noKey"
+msgstr "Neniu ŝlosilo specifiĝis."
+
+msgid "vso.cmd.config.set.error.noValue"
+msgstr "Neniu valoro specifiĝis."
+
+msgid "vso.cmd.config.set.error.failed"
+msgstr "Malsukcesis modifi agordon: %s"
+
+msgid "vso.cmd.config.set.options.key"
+msgstr "ŝlosilo de la modifota agordo"
+
+msgid "vso.cmd.config.set.options.value"
+msgstr "valoro de la modifota agordo"
+
+msgid "vso.cmd.config.set.success"
+msgstr "Agordoj modifiĝis sukcese."
+
+msgid "vso.cmd.config.show"
+msgstr "Montri la sistemajn agordojn"
+
+msgid "vso.cmd.pico"
+msgstr "Administri la VSO-subsistemon"
+
+msgid "vso.cmd.pico.error.notInitialized"
+msgstr "La VSO-subsistemo ne estas lanĉita. Bonvolu ruli `vso pico-init` por lanĉi ĝin."
+
+msgid "vso.cmd.pico.error.alreadyInitialized"
+msgstr "La VSO-subsistemo estas jam lanĉita. Uzu la flagon «--force» por relanĉi."
+
+msgid "vso.cmd.pico.error.noAppNameOrBin"
+msgstr "Oni devas specifi aŭ «--app» aŭ «--bin»."
+
+msgid "vso.cmd.pico.error.sameAppOrBin"
+msgstr "Oni devas ne specifi kaj «--app» kaj «--bin»."
+
+msgid "vso.cmd.pico.error.exportingApp"
+msgstr "Okazis eraro eksportante la programon: %s"
+
+msgid "vso.cmd.pico.error.exportingBin"
+msgstr "Okazis eraro eksportante la binaraĵon: %s"
+
+msgid "vso.cmd.pico.error.unexportingApp"
+msgstr "Okazis eraro maleksportante la programon: %s"
+
+msgid "vso.cmd.pico.error.unexportingBin"
+msgstr "Okazis eraro maleksportante la binaraĵon: %s"
+
+msgid "vso.cmd.pico.error.unknownCommand"
+msgstr "Nekonata komando: %s"
+
+msgid "vso.cmd.pico.error.shellReset"
+msgstr "Ne eblas atingi la VSO-ŝelon. Ĉu restaŭri ĝin? (Tio malinstalos ĉiujn programojn instalitajn en la subsistemo) [y/N]"
+
+msgid "vso.cmd.pico.info.deleting"
+msgstr "Forviŝante la VSO-subsistemon…"
+
+msgid "vso.cmd.pico.info.initializing"
+msgstr "Lanĉante la VSO-subsistemon…"
+
+msgid "vso.cmd.pico.info.initialized"
+msgstr "La VSO-subsistemo lanĉiĝis."
+
+msgid "vso.cmd.pico.info.exported"
+msgstr "Eksportis %s\n"
+
+msgid "vso.cmd.pico.info.unexported"
+msgstr "Maleksportis %s\n"
+
+msgid "vso.cmd.pico.info.exportedApps"
+msgstr "Eksportis %d programojn"
+
+msgid "vso.cmd.pico.info.unexportedApps"
+msgstr "Maleksportis %d programojn"
+
+msgid "vso.cmd.pico.info.shellInit"
+msgstr "Ŝajnas, ke via ŝelo ankoraŭ ne estas lanĉita. Ĉu lanĉi ĝin nun? (Rekomendegata) [y/N]"
+
+msgid "vso.cmd.pico.info.fallbackShell"
+msgstr "Ĉu uzi la gastigan ŝelon? Tio povas kaŭzi neatenditajn fenomenojn. [y/N]"
+
+msgid "vso.cmd.pico.export"
+msgstr "Eksporti programon aŭ binaraĵon de la subsistemo"
+
+msgid "vso.cmd.pico.export.options.app"
+msgstr "la nomo de la eksportota programo"
+
+msgid "vso.cmd.pico.export.options.bin"
+msgstr "la nomo de la eksportota binaraĵo"
+
+msgid "vso.cmd.pico.export.options.binOutput"
+msgstr "loko de la eligota binaraĵo (implicite: ~/.local/bin/)"
+
+msgid "vso.cmd.pico.unexport"
+msgstr "Maleksporti programon aŭ binaraĵon de la subsistemo"
+
+msgid "vso.cmd.pico.unexport.options.app"
+msgstr "la nomo de la maleksportota programo"
+
+msgid "vso.cmd.pico.unexport.options.bin"
+msgstr "la nomo de la maleksportota binaraĵo"
+
+msgid "vso.cmd.pico.unexport.options.binOutput"
+msgstr "loko de la eligota binaraĵo (implicite: ~/.local/bin/)"
+
+msgid "vso.cmd.pico.init"
+msgstr "Lanĉi la VSO-subsistemon por administri pakojn"
+
+msgid "vso.cmd.pico.init.options.force"
+msgstr "devige relanĉi, eĉ se la subsistemo estas jam lanĉita"
+
+msgid "vso.cmd.pico.install"
+msgstr "Instali programon en la subsistemo"
+
+msgid "vso.cmd.pico.remove"
+msgstr "Malinstali programon el la subsistemo"
+
+msgid "vso.cmd.pico.run"
+msgstr "Ruli programon de la subsistemo"
+
+msgid "vso.cmd.pico.run.options.noReset"
+msgstr "ne proponi restaŭri la subsistemo, se io fiaskos"
+
+msgid "vso.cmd.pico.search"
+msgstr "Serĉi programon instalotan en la subsistemon"
+
+msgid "vso.cmd.pico.shell"
+msgstr "Eniri la subsisteman medion"
+
+msgid "vso.cmd.pico.sideload"
+msgstr "Flankinstali DEB/APK-pakojn en la subsistemon"
+
+msgid "vso.cmd.pico.update"
+msgstr "Ĝisdatigi la pakdeponejon de la subsistemo"
+
+msgid "vso.cmd.pico.upgrade"
+msgstr "Ĝisdatigi la pakojn en la subsistemo"
+
+msgid "vso.cmd.sysUpgrade"
+msgstr "Ruli sistemajn komandojn, ekz. ĝisdatigi la sistemon"
+
+msgid "vso.cmd.sysUpgrade.check"
+msgstr "Kontroli sistemajn ĝisdatigojn"
+
+msgid "vso.cmd.sysUpgrade.check.asExitCode"
+msgstr "kontroli pri ĝisdatigoj, sed presi nenion, liverante la elirkodon 0 se neniu ĝisdatigo estas havebla kaj la elirkodon 1 alikaze."
+
+msgid "vso.cmd.sysUpgrade.check.error.asExitCodeAndJson"
+msgstr "Okazis eraro dum kontrolado pri ĝisdatigoj. Vidu la JSON-eligaĵon por pliaj detaloj."
+
+msgid "vso.cmd.sysUpgrade.check.info.checking"
+msgstr "Kontrolante ĝisdatigojn…"
+
+msgid "vso.cmd.sysUpgrade.check.json"
+msgstr "eligi la rezulton kiel JSON"
+
+msgid "vso.cmd.sysUpgrade.upgrade"
+msgstr ""
+
+msgid "vso.cmd.sysUpgrade.error.updating"
+msgstr ""
+
+msgid "vso.cmd.sysUpgrade.error.onHasUpdate"
+msgstr ""
+
+msgid "vso.cmd.sysUpgrade.schedule.daily"
+msgstr ""
+
+msgid "vso.cmd.sysUpgrade.schedule.weekly"
+msgstr ""
+
+msgid "vso.cmd.sysUpgrade.schedule.monthly"
+msgstr ""
+
+msgid "vso.cmd.sysUpgrade.info.updating"
+msgstr ""
+
+msgid "vso.cmd.sysUpgrade.info.willUpdateLater"
+msgstr ""
+
+msgid "vso.cmd.sysUpgrade.info.willNeverUpdate"
+msgstr ""
+
+msgid "vso.cmd.sysUpgrade.info.noUpdates"
+msgstr ""
+
+msgid "vso.cmd.sysUpgrade.now"
+msgstr ""
+
+msgid "vso.cmd.tasks"
+msgstr "Krei kaj administri taskojn"
+
+msgid "vso.cmd.tasks.stacks.new.error.emptyCommand"
+msgstr "La komando devas esti nemalplena."
+
+msgid "vso.cmd.tasks.stacks.new.error.emptyDescription"
+msgstr "La priskribo devas esti nemalplena."
+
+msgid "vso.cmd.tasks.stacks.new.error.emptyName"
+msgstr "La nomo devas esti nemalplena."
+
+msgid "vso.cmd.tasks.stacks.new.error.noCommand"
+msgstr "Neniu komando specifiĝis."
+
+msgid "vso.cmd.tasks.stacks.new.error.noDescription"
+msgstr "Neniu priskribo specifiĝis."
+
+msgid "vso.cmd.tasks.stacks.new.error.noName"
+msgstr "Neniu nomo specifiĝis."
+
+msgid "vso.cmd.tasks.stacks.new.info.askCommand"
+msgstr "Komando: "
+
+msgid "vso.cmd.tasks.stacks.new.info.askDescription"
+msgstr "Priskribo: "
+
+msgid "vso.cmd.tasks.stacks.new.info.askName"
+msgstr "Nomo: "
+
+msgid "vso.cmd.tasks.stacks.new.info.taskCreated"
+msgstr "Tasko sukcese kreiĝis."
+
+msgid "vso.cmd.tasks.list"
+msgstr "Listigi ĉiujn taskojn"
+
+msgid "vso.cmd.tasks.list.noTasks"
+msgstr "Neniu tasko troviĝis."
+
+msgid "vso.cmd.tasks.list.info.foundTasks"
+msgstr "Troviĝis %d taskoj."
+
+msgid "vso.cmd.tasks.list.options.json"
+msgstr "eligi la taskojn kiel JSON"
+
+msgid "vso.cmd.tasks.new"
+msgstr "Krei novan taskon"
+
+msgid "vso.cmd.tasks.new.options.assumeYes"
+msgstr "jesi al ĉiuj demandoj"
+
+msgid "vso.cmd.tasks.new.options.at"
+msgstr "plani taskon rulotan je specifa tempo (hh:mm)"
+
+msgid "vso.cmd.tasks.new.options.command"
+msgstr "specifi la rulotan komandon"
+
+msgid "vso.cmd.tasks.new.options.description"
+msgstr "specifi la priskribon de la tasko"
+
+msgid "vso.cmd.tasks.new.options.every"
+msgstr "plani taskon ripetotan ĉiujn X temunuojn (minutojn, horojn, tagojn)"
+
+msgid "vso.cmd.tasks.new.options.name"
+msgstr "specifi la nomon de la tasko"
+
+msgid "vso.cmd.tasks.new.options.needConfirm"
+msgstr "peti konfirmon antaŭ rulado de la tasko"
+
+msgid "vso.cmd.tasks.new.options.onBattery"
+msgstr "ruli taskon, kiam la baterio estas uzata"
+
+msgid "vso.cmd.tasks.new.options.onCharge"
+msgstr "ruli taskon, kiam la baterio estas ŝargata"
+
+msgid "vso.cmd.tasks.new.options.onConditionCommand"
+msgstr "ruli taskon laŭ kondiĉo-komando"
+
+msgid "vso.cmd.tasks.new.options.onCpuTemp"
+msgstr "ruli taskon, kiam la ĉefprocesoro estas pli varma ol 60 °C"
+
+msgid "vso.cmd.tasks.new.options.onCpuUsage"
+msgstr "ruli taskon, kiam pli ol X% de la ĉefprocesoro estas uzata"
+
+msgid "vso.cmd.tasks.new.options.onDeviceConnect"
+msgstr "ruli taskon, kiam aparato konektiĝas"
+
+msgid "vso.cmd.tasks.new.options.onDeviceDisconnect"
+msgstr "ruli taskon, kiam aparato malkonektiĝas"
+
+msgid "vso.cmd.tasks.new.options.onDisconnect"
+msgstr "ruli taskon, kiam la sistemo estas malkonektita el la reto"
+
+msgid "vso.cmd.tasks.new.options.onFullBattery"
+msgstr "ruli taskon, kiam la baterio estas plene ŝargita"
+
+msgid "vso.cmd.tasks.new.options.onHighCpuUsage"
+msgstr "ruli taskon, kiam pli ol 50% de la ĉefprocesoro estas uzata"
+
+msgid "vso.cmd.tasks.new.options.onHighInternetUsage"
+msgstr "ruli taskon, kiam la Interreto estas uzata pli ol 500 kb/s"
+
+msgid "vso.cmd.tasks.new.options.onHighMemoryUsage"
+msgstr "ruli taskon, kiam pli ol 50% de la memoro estas uzata"
+
+msgid "vso.cmd.tasks.new.options.onInternetUsage"
+msgstr "ruli taskon, kiam la Interreto estas uzata pli ol X kb/s"
+
+msgid "vso.cmd.tasks.new.options.onLowBattery"
+msgstr "ruli taskon, kiam la baterio estas malpli ŝargita ol 20%"
+
+msgid "vso.cmd.tasks.new.options.onMemoryUsage"
+msgstr "ruli taskon, kiam pli ol X% de la memoro estas uzata"
+
+msgid "vso.cmd.tasks.new.options.onNetwork"
+msgstr "ruli taskon, kiam la sistemo konektiĝas al la reto"
+
+msgid "vso.cmd.tasks.new.options.onProcess"
+msgstr "ruli taskon, kiam procezo lanĉiĝas"
+
+msgid "vso.cmd.tasks.rm"
+msgstr "Forigi taskon"
+
+msgid "vso.cmd.tasks.rm.error.cannotDelete"
+msgstr "Ne povas forigi taskon: %s"
+
+msgid "vso.cmd.tasks.rm.error.noName"
+msgstr "Neniu nomo de tasko specifiĝis."
+
+msgid "vso.cmd.tasks.rm.error.notFound"
+msgstr "Tasko ne troviĝis."
+
+msgid "vso.cmd.tasks.rm.info.askConfirmation"
+msgstr "Ĉu vi certe volas forigi la taskon %s? [y/N]"
+
+msgid "vso.cmd.tasks.rm.info.taskDeleted"
+msgstr "Tasko estis sukcese forigita."
+
+msgid "vso.cmd.tasks.rm.options.force"
+msgstr "devigi la forigon de la tasko"
+
+msgid "vso.cmd.tasks.rm.options.name"
+msgstr "specifi la nomon de la tasko"
+
+msgid "vso.cmd.tasks.rotate"
+msgstr "Rotaciigi taskojn"
+
+msgid "vso.cmd.tasks.rotate.options.privateEvent"
+msgstr "specify private event to rotate tasks for boot, shutdown, login, logout"
+
+msgid "vso.cmd.tasks.rotate.options.silent"
+msgstr "don't output the status on each cycle"
+
+msgid "vso.cmd.waydroid"
+msgstr "Administri la VSO-Waydroid-subsistemon"
+
+msgid "vso.arg.package"
+msgstr ""
+
+msgid "vso.arg.command"
+msgstr ""
+

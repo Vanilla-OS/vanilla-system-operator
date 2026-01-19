@@ -2,7 +2,8 @@ package settings
 
 /*	License: GPLv3
 	Authors:
-		Mirko Brombin <send@mirko.pm>
+		Mirko Brombin <brombin94@gmail.com>
+		Pietro di Caprio <pietro@fabricators.ltd>
 		Vanilla OS Contributors <https://github.com/vanilla-os/>
 	Copyright: 2024
 	Description: VSO is a utility which allows you to perform maintenance
@@ -10,11 +11,12 @@ package settings
 */
 
 import (
+	"encoding/json"
 	"fmt"
 	"os"
 	"slices"
 
-	"github.com/spf13/viper"
+	"github.com/vanilla-os/sdk/pkg/v1/conf"
 )
 
 type Config struct {
@@ -40,25 +42,25 @@ var (
 	validUpdatesSmartKeys    = []string{"true", "false"}
 )
 
-func init() {
-	viper.AddConfigPath("/usr/share/vso/")
-	viper.AddConfigPath("/etc/vso/")
-	viper.AddConfigPath("config/")
-	viper.SetConfigName("config")
-	viper.SetConfigType("json")
-	err := viper.ReadInConfig()
-	if err != nil {
-		panic("Config error!")
+func LoadConfig() error {
+	var err error
+	Cnf = Config{
+		Updates: UpdatesConfig{
+			Schedule: ScheduleWeekly,
+			Smart:    true,
+		},
 	}
 
-	if os.Getenv("VSO_DEBUG") != "" {
-		fmt.Println("Config loaded from " + viper.ConfigFileUsed())
+	loadedCnf, err := conf.NewBuilder[Config]("vso").
+		WithType("json").
+		Build()
+
+	if err != nil {
+		return nil
 	}
 
-	err = viper.Unmarshal(&Cnf)
-	if err != nil {
-		panic("Config error!\n" + err.Error())
-	}
+	Cnf = *loadedCnf
+	return nil
 }
 
 func GetConfig() Config {
@@ -73,7 +75,13 @@ func GetConfigAsKV() map[string]string {
 }
 
 func GetConfigValue(key string) interface{} {
-	return viper.Get(key)
+	switch key {
+	case "updates.schedule":
+		return Cnf.Updates.Schedule
+	case "updates.smart":
+		return Cnf.Updates.Smart
+	}
+	return nil
 }
 
 func SetConfigValue(key string, value string) error {
@@ -82,32 +90,29 @@ func SetConfigValue(key string, value string) error {
 		if !slices.Contains(validUpdatesScheduleKeys, value) {
 			return fmt.Errorf("invalid value for updates.schedule")
 		}
+		Cnf.Updates.Schedule = value
 	case "updates.smart":
 		if !slices.Contains(validUpdatesSmartKeys, value) {
 			return fmt.Errorf("invalid value for updates.smart")
 		}
-	}
-
-	var anyValue any
-	switch value {
-	case "true":
-		anyValue = true
-	case "false":
-		anyValue = false
+		Cnf.Updates.Smart = (value == "true")
 	default:
-		anyValue = value
+		return fmt.Errorf("unknown key: %s", key)
 	}
 
-	viper.Set(key, anyValue)
-
-	err := SaveConfig()
-	if err != nil {
-		return err
-	}
-
-	return nil
+	return SaveConfig()
 }
 
 func SaveConfig() error {
-	return viper.WriteConfig()
+	path := "/etc/vso/config.json"
+
+	f, err := os.Create(path)
+	if err != nil {
+		return err
+	}
+	defer f.Close()
+
+	encoder := json.NewEncoder(f)
+	encoder.SetIndent("", "  ")
+	return encoder.Encode(Cnf)
 }
