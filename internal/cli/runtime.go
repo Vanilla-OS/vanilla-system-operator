@@ -281,11 +281,11 @@ func (c *UpgradeCmd) Run() error {
 // Config
 
 func (c *ConfigGetCmd) Run() error {
-	if len(c.Args) == 0 {
+	if c.Key == "" {
 		VSO.Log.Error(VSO.LC.Get("vso.cmd.config.get.error.noKey"))
 		return nil
 	}
-	key := c.Args[0]
+	key := c.Key
 	val := settings.GetConfigValue(key)
 	if val == nil {
 		VSO.Log.Error(fmt.Sprintf(VSO.LC.Get("vso.cmd.config.get.error.noValue"), key))
@@ -296,12 +296,16 @@ func (c *ConfigGetCmd) Run() error {
 }
 
 func (c *ConfigSetCmd) Run() error {
-	if len(c.Args) < 2 {
+	if c.Key == "" {
+		VSO.Log.Error(VSO.LC.Get("vso.cmd.config.set.error.noKey"))
+		return nil
+	}
+	if c.Value == "" {
 		VSO.Log.Error(VSO.LC.Get("vso.cmd.config.set.error.noValue"))
 		return nil
 	}
-	key := c.Args[0]
-	value := c.Args[1]
+	key := c.Key
+	value := c.Value
 
 	err := settings.SetConfigValue(key, value)
 	if err != nil {
