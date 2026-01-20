@@ -106,12 +106,13 @@ type ConfigCmd struct {
 
 type ConfigGetCmd struct {
 	cli.Base
-	Args []string `arg:"" optional:"" name:"key" help:"pr:vso.cmd.config.get.options.key"`
+	Key string `arg:"" name:"key" help:"pr:vso.arg.key"`
 }
 
 type ConfigSetCmd struct {
 	cli.Base
-	Args []string `arg:"" optional:"" name:"key value" help:"pr:vso.cmd.config.set.options.key"`
+	Key   string `arg:"" name:"key" help:"pr:vso.arg.key"`
+	Value string `arg:"" name:"value" help:"pr:vso.arg.value"`
 }
 
 type ConfigShowCmd struct {

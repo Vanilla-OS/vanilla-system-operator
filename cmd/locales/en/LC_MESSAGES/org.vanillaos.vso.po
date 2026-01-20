@@ -429,8 +429,14 @@ msgid "vso.cmd.waydroid"
 msgstr "Manage the vso waydroid subsystem"
 
 msgid "vso.arg.package"
-msgstr ""
+msgstr "package"
 
 msgid "vso.arg.command"
-msgstr ""
+msgstr "command"
+
+msgid "vso.arg.key"
+msgstr "key"
+
+msgid "vso.arg.value"
+msgstr "value"
 
