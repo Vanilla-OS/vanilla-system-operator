@@ -317,6 +317,12 @@ msgstr "Found %d tasks."
 msgid "vso.cmd.tasks.labels.name"
 msgstr "Name"
 
+msgid "vso.cmd.tasks.labels.relations"
+msgstr "Relations"
+
+msgid "vso.cmd.tasks.labels.dependencies"
+msgstr "Dependencies"
+
 msgid "vso.cmd.tasks.labels.description"
 msgstr "Description"
 
