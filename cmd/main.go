@@ -36,7 +36,7 @@ func main() {
 
 	cnf := settings.NewApxConfig(
 		"/usr/share/vso/apx",
-		"/usr/share/apx/distrobox/distrobox",
+		"/usr/bin/distrobox",
 		"btrfs",
 	)
 	core.NewApx(cnf)
