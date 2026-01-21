@@ -104,10 +104,12 @@ github.com/tklauser/go-sysconf v0.3.13 h1:GBUpcahXSpR2xN01jhkNAbTLRk2Yzgggk8IM08
 github.com/tklauser/go-sysconf v0.3.13/go.mod h1:zwleP4Q4OehZHGn4CYZDipCgg9usW5IJePewFCGVEa0=
 github.com/tklauser/numcpus v0.7.0 h1:yjuerZP127QG9m5Zh/mSO4wqurYil27tHrqwRoRjpr4=
 github.com/tklauser/numcpus v0.7.0/go.mod h1:bb6dMVcj8A42tSE7i32fsIUCbQNllK5iDguyOZRUzAY=
-github.com/vanilla-os/apx/v2 v2.4.5 h1:oA3kl/OzHxbJOpLn7QuqnGSxqyuYbT+4m6TFOZ0vg20=
-github.com/vanilla-os/apx/v2 v2.4.5/go.mod h1:Dzch0vNAF1QEtfocnwfBr8rELsd8ZZ1LDy5oxmUGLzI=
-github.com/vanilla-os/sdk v0.0.0-20260119195140-88fa4a06134f h1:62oWJCMCg4SOxXod4AmzwtXuhugWR5jILhAFeN7z7m4=
-github.com/vanilla-os/sdk v0.0.0-20260119195140-88fa4a06134f/go.mod h1:7OrRPJwcgw5aGZHLPbh8yfP9Os+T8gv14Z+vqGF506A=
+github.com/vanilla-os/apx/v2 v2.5.0 h1:M/QXIEizwaq/lGQ3sA2qEGDoWxwcXfbvRpkX6F4i9+4=
+github.com/vanilla-os/apx/v2 v2.5.0/go.mod h1:7dZ5636J4OQALmBM6qZLJTRjdsRbIFbAwo4068taisk=
+github.com/vanilla-os/apx/v3 v3.0.0 h1:AUk8xxKIUwgbw+QinYTBPVO/IQZ7EodMgEG1Vr4z65w=
+github.com/vanilla-os/apx/v3 v3.0.0/go.mod h1:dffbaUDexxjV8p8M/WeHo8lr1d98aaXoF2jN2v1AEEg=
+github.com/vanilla-os/sdk v0.0.0-20260121134003-7795e641c7d6 h1:tuyT3hvAvLomz3u3DK6AENRS7JOnteJM9jo0zB17/xo=
+github.com/vanilla-os/sdk v0.0.0-20260121134003-7795e641c7d6/go.mod h1:7OrRPJwcgw5aGZHLPbh8yfP9Os+T8gv14Z+vqGF506A=
 github.com/vorlif/spreak v0.6.0 h1:+WrtSGKx9zcZy8d/Tp6t+OA3x9RgmA8TQYPzQ+U7Ddc=
 github.com/vorlif/spreak v0.6.0/go.mod h1:vcqv4dB1XgHpxIXhV5C+8EgqlzKfL37Atj2O/bOB1Bw=
 github.com/xo/terminfo v0.0.0-20220910002029-abceb7e1c41e h1:JVG44RsyaB9T2KIHavMF/ppJZNG9ZpyihvCd0w101no=

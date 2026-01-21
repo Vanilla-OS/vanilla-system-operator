@@ -14,7 +14,7 @@ import (
 	"fmt"
 	"strings"
 
-	apxCore "github.com/vanilla-os/apx/v2/core"
+	apxCore "github.com/vanilla-os/apx/v3/core"
 	"github.com/vanilla-os/vanilla-system-operator/core"
 	"github.com/vanilla-os/vanilla-system-operator/settings"
 )
