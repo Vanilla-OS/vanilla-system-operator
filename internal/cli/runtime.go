@@ -66,6 +66,8 @@ func (c *TasksListCmd) Run() error {
 		headers := []string{
 			VSO.LC.Get("vso.cmd.tasks.labels.name"),
 			VSO.LC.Get("vso.cmd.tasks.labels.description"),
+			VSO.LC.Get("vso.cmd.tasks.labels.relations"),
+			VSO.LC.Get("vso.cmd.tasks.labels.dependencies"),
 			VSO.LC.Get("vso.cmd.tasks.labels.lastExecution"),
 		}
 		var data [][]string
@@ -74,6 +76,8 @@ func (c *TasksListCmd) Run() error {
 			data = append(data, []string{
 				task.Name,
 				task.Description,
+				fmt.Sprintf("%d", len(task.Relations())),
+				fmt.Sprintf("%d", len(task.Dependencies())),
 				task.LastExecution.Format("2006-01-02 15:04:05"),
 			})
 		}
