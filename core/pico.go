@@ -11,7 +11,7 @@ package core
 */
 
 import (
-	"github.com/vanilla-os/apx/v2/core"
+	"github.com/vanilla-os/apx/v3/core"
 )
 
 func GetPico() (*core.SubSystem, error) {
