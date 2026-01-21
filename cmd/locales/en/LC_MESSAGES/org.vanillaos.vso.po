@@ -314,6 +314,15 @@ msgstr "No tasks found."
 msgid "vso.cmd.tasks.list.info.foundTasks"
 msgstr "Found %d tasks."
 
+msgid "vso.cmd.tasks.labels.name"
+msgstr "Name"
+
+msgid "vso.cmd.tasks.labels.description"
+msgstr "Description"
+
+msgid "vso.cmd.tasks.labels.lastExecution"
+msgstr "Last Execution"
+
 msgid "vso.cmd.tasks.list.options.json"
 msgstr "output the tasks in JSON format"
 
@@ -405,7 +414,7 @@ msgid "vso.cmd.tasks.rm.error.notFound"
 msgstr "Task not found."
 
 msgid "vso.cmd.tasks.rm.info.askConfirmation"
-msgstr "Are you sure you want to delete the task %s? [y/N]"
+msgstr "Are you sure you want to delete the task %s?"
 
 msgid "vso.cmd.tasks.rm.info.taskDeleted"
 msgstr "Task has been deleted successfully."

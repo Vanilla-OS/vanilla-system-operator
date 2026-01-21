@@ -63,27 +63,21 @@ func (c *TasksListCmd) Run() error {
 
 		VSO.Log.Info(fmt.Sprintf(VSO.LC.Get("vso.cmd.tasks.list.info.foundTasks"), tasksCount))
 
-		for _, task := range tasks {
-			relations := task.Relations()
-			dependencies := task.Dependencies()
-
-			fmt.Println("- " + task.Name)
-			fmt.Println("  Description: " + task.Description)
-			fmt.Println("  LastExecution: " + task.LastExecution.String())
-			if len(relations) > 0 {
-				fmt.Println("  Relations:")
-				for _, relation := range relations {
-					fmt.Println("    - " + relation.Name)
-				}
-			}
-			if len(dependencies) > 0 {
-				fmt.Println("  Dependencies:")
-				for _, dependency := range dependencies {
-					fmt.Println("    - " + dependency.Name)
-				}
-			}
-			fmt.Println("--------------------")
+		headers := []string{
+			VSO.LC.Get("vso.cmd.tasks.labels.name"),
+			VSO.LC.Get("vso.cmd.tasks.labels.description"),
+			VSO.LC.Get("vso.cmd.tasks.labels.lastExecution"),
 		}
+		var data [][]string
+
+		for _, task := range tasks {
+			data = append(data, []string{
+				task.Name,
+				task.Description,
+				task.LastExecution.Format("2006-01-02 15:04:05"),
+			})
+		}
+		VSO.CLI.Table(headers, data)
 	} else {
 		json, err := core.ListTasksJson()
 		if err != nil {
@@ -190,7 +184,11 @@ func (c *TasksRmCmd) Run() error {
 	}
 
 	if !c.Force {
-		res, err := VSO.CLI.ConfirmAction(VSO.LC.Get("vso.cmd.tasks.rm.info.askConfirmation")+" "+taskName, VSO.LC.Get("vso.terminal.yes"), VSO.LC.Get("vso.terminal.no"), false)
+		res, err := VSO.CLI.ConfirmAction(
+			fmt.Sprintf(VSO.LC.Get("vso.cmd.tasks.rm.info.askConfirmation"), taskName),
+			"y", "N",
+			false,
+		)
 		if err != nil || !res {
 			VSO.Log.Info(VSO.LC.Get("vso.info.aborting"))
 			return nil
