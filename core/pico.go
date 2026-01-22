@@ -11,6 +11,8 @@ package core
 */
 
 import (
+    "os/exec"
+
 	"github.com/vanilla-os/apx/v3/core"
 )
 
@@ -47,6 +49,12 @@ func PicoInit() error {
 	}
 
 	err = subsystem.Create()
+	if err != nil {
+		return err
+	}
+
+	terminal_setup_cmd := exec.Command("setup-vso-terminal", "--non-interactive")
+	err = terminal_setup_cmd.Run()
 	return err
 }
 
