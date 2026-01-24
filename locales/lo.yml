@@ -1,342 +1,340 @@
 vso:
-  description: "The Vanilla System Operator is a package manager, a system updater
-    and a task automator."
+  description: "Vanilla System Operator ແມ່ນຕົວຈັດການແພັກເກັດ, ຕົວອັບເດດລະບົບ ແລະ
+    ຕົວເຮັດວຽກອັດຕະໂນມັດ."
   errors:
-    unknownCommand: "Unknown command: %s"
-    invalidInput: "Invalid input."
-    invalidChoice: "Invalid choice."
+    unknownCommand: "ບໍ່ຮູ້ຈັກຄຳສັ່ງ: %s"
+    invalidInput: "ຂໍ້ມູນທີ່ປ້ອນເຂົ້າບໍ່ຖືກຕ້ອງ."
+    invalidChoice: "ຕົວເລືອກບໍ່ຖືກຕ້ອງ."
   info:
-    aborting: "Aborting as requested."
+    aborting: "ກຳລັງຍົກເລີກຕາມທີ່ຮ້ອງຂໍ."
   msg:
-    help: "Show help for vso."
-    version: "Show version for vso."
-    usage: "Usage"
-    aliases: "Aliases"
-    examples: "Examples"
-    availableCommands: "Available Commands"
-    additionalCommands: "Additional Commands"
-    flags: "Flags"
-    globalFlags: "Global Flags"
-    additionalHelpTopics: "Additional help topics"
-    moreInfo: "Use %s for more information about a command"
+    help: "ສະແດງວິທີຊ່ວຍເຫຼືອສຳລັບ vso."
+    version: "ສະແດງເວີຊັນຂອງ vso."
+    usage: "ວິທີໃຊ້"
+    aliases: "ນາມແຝງ"
+    examples: "ຕົວຢ່າງ"
+    availableCommands: "ຄຳສັ່ງທີ່ມີໃຫ້ໃຊ້"
+    additionalCommands: "ຄຳສັ່ງເພີ່ມເຕີມ"
+    flags: "ແຟລັກ (Flags)"
+    globalFlags: "ແຟລັກທົ່ວໄປ (Global Flags)"
+    additionalHelpTopics: "ຫົວຂໍ້ການຊ່ວຍເຫຼືອເພີ່ມເຕີມ"
+    moreInfo: "ໃຊ້ %s ສຳລັບຂໍ້ມູນເພີ່ມເຕີມກ່ຽວກັບຄຳສັ່ງ"
   terminal:
-    yes: "yes"
-    no: "no"
+    yes: "ແມ່ນ"
+    no: "ບໍ່"
 
 config:
-  description: "Manage the system configuration."
+  description: "ຈັດການການຕັ້ງຄ່າລະບົບ."
   get:
-    description: "Get the system configuration"
+    description: "ດຶງເອົາການຕັ້ງຄ່າລະບົບ"
     error:
-      noKey: "No key specified."
-      noValue: "No value found for key: %s"
+      noKey: "ບໍ່ໄດ້ລະບຸຄີ (Key)."
+      noValue: "ບໍ່ພົບຄ່າສຳລັບຄີ: %s"
     options:
       key:
-        description: "retrieve configuration value by using its key"
+        description: "ຮີບໂຮມຄ່າການຕັ້ງຄ່າໂດຍການໃຊ້ຄີຂອງມັນ"
   set:
-    description: "Set the system configuration"
+    description: "ຕັ້ງຄ່າລະບົບ"
     error:
-      noKey: "No key specified."
-      noValue: "No value specified."
-      failed: "Failed to set configuration: %s"
+      noKey: "ບໍ່ໄດ້ລະບຸຄີ (Key)."
+      noValue: "ບໍ່ໄດ້ລະບຸຄ່າ."
+      failed: "ການຕັ້ງຄ່າລົ້ມເຫຼວ: %s"
     options:
-      key: "key of the configuration to set"
-      value: "value of the configuration to set"
-    success: "Configuration updated successfully."
+      key: "ຄີຂອງການຕັ້ງຄ່າທີ່ຈະກຳນົດ"
+      value: "ຄ່າຂອງການຕັ້ງຄ່າທີ່ຈະກຳນົດ"
+    success: "ອັບເດດການຕັ້ງຄ່າສຳເລັດແລ້ວ."
   show:
-    description: "Show the system configuration"
+    description: "ສະແດງການຕັ້ງຄ່າລະບົບ"
 
 pico:
-  description: "Manage the VSO subsystem"
+  description: "ຈັດການລະບົບຍ່ອຍ VSO"
   error:
-    notInitialized: "The VSO subsystem is not initialized. Please run `vso pico-init`
-      to initialize it."
-    alreadyInitialized: "The VSO subsystem is already initialized. Use the --force
-      flag to force the initialization."
-    noAppNameOrBin: "--app or --bin must be specified."
-    sameAppOrBin: "--app and --bin cannot be both specified."
-    exportingApp: "An error occurred while exporting the application: %s"
-    exportingBin: "An error occurred while exporting the binary: %s"
-    unexportingApp: "An error occurred while unexporting the application: %s"
-    unexportingBin: "An error occurred while unexporting the binary: %s"
-    unknownCommand: "Unknown command: %s"
-    shellReset: "It is impossible to reach the VSO shell. Do you want to reset it?
-      (This will remove all your software installed in the subsystem) [y/N]"
+    notInitialized: "ລະບົບຍ່ອຍ VSO ຍັງບໍ່ທັນໄດ້ຖືກເລີ່ມຕົ້ນ. ກະລຸນາເປີດໃຊ້ `vso pico-init`
+      ເພື່ອເລີ່ມຕົ້ນລະບົບ."
+    alreadyInitialized: "ລະບົບຍ່ອຍ VSO ຖືກເລີ່ມຕົ້ນແລ້ວ. ໃຊ້ແຟລັກ --force ເພື່ອບັງຄັບໃຫ້ເລີ່ມຕົ້ນໃໝ່."
+    noAppNameOrBin: "ຕ້ອງລະບຸ --app ຫຼື --bin."
+    sameAppOrBin: "ບໍ່ສາມາດລະບຸທັງ --app ແລະ --bin ພ້ອມກັນໄດ້."
+    exportingApp: "ເກີດຂໍ້ຜິດພາດຂຶ້ນໃນຂະນະທີ່ກຳລັງສົ່ງອອກແອັບພລິເຄຊັນ: %s"
+    exportingBin: "ເກີດຂໍ້ຜິດພາດຂຶ້ນໃນຂະນະທີ່ກຳລັງສົ່ງອອກໄຟລ໌ບາຍນາຣີ: %s"
+    unexportingApp: "ເກີດຂໍ້ຜິດພາດຂຶ້ນໃນຂະນະທີ່ກຳລັງຍົກເລີກການສົ່ງອອກແອັບພລິເຄຊັນ:
+      %s"
+    unexportingBin: "ເກີດຂໍ້ຜິດພາດຂຶ້ນໃນຂະນະທີ່ກຳລັງຍົກເລີກການສົ່ງອອກໄຟລ໌ບາຍນາຣີ:
+      %s"
+    unknownCommand: "ບໍ່ຮູ້ຈັກຄຳສັ່ງ: %s"
+    shellReset: "ບໍ່ສາມາດເຂົ້າເຖິງ VSO shell ໄດ້. ເຈົ້າຕ້ອງການລີເຊັດມັນບໍ່? (ການເຮັດແບບນີ້ຈະລຶບຊອບແວທັງໝົດທີ່ຕິດຕັ້ງໄວ້ໃນລະບົບຍ່ອຍນີ້)
+      [y/N]"
   info:
-    deleting: "Deleting the VSO subsystem..."
-    initializing: "Initializing the VSO subsystem..."
-    initialized: "The VSO subsystem has been initialized."
-    exported: "Exported %s\n"
-    unexported: "Unexported %s\n"
-    exportedApps: "Exported %d applications"
-    unexportedApps: "Unexported %d applications"
-    shellInit: "Looks like your shell is not initialized yet. Do you want to initialize
-      it now? (Highly recommended) [y/N]"
-    fallbackShell: "Fallback to the host shell? This could lead to unexpected behavior.
+    deleting: "ກຳລັງລຶບລະບົບຍ່ອຍ VSO..."
+    initializing: "ກຳລັງເລີ່ມຕົ້ນລະບົບຍ່ອຍ VSO..."
+    initialized: "ລະບົບຍ່ອຍ VSO ໄດ້ຖືກເລີ່ມຕົ້ນສຳເລັດແລ້ວ."
+    exported: "ສົ່ງອອກ %s ແລ້ວ\n"
+    unexported: "ຍົກເລີກການສົ່ງອອກ %s ແລ້ວ\n"
+    exportedApps: "ສົ່ງອອກແອັບພລິເຄຊັນ %d ລາຍການແລ້ວ"
+    unexportedApps: "ຍົກເລີກການສົ່ງອອກແອັບພລິເຄຊັນ %d ລາຍການແລ້ວ"
+    shellInit: "ເບິ່ງຄືວ່າ shell ຂອງທ່ານຍັງບໍ່ໄດ້ຖືກເລີ່ມຕົ້ນເທື່ອ. ເຈົ້າຕ້ອງການເລີ່ມຕົ້ນມັນຕອນນີ້ເລີຍບໍ່?
+      (ແນະນຳຢ່າງຍິ່ງ) [y/N]"
+    fallbackShell: "ກັບໄປໃຊ້ shell ຂອງເຄື່ອງຫຼັກ (host shell) ບໍ່? ນີ້ອາດເຮັດໃຫ້ເກີດພຶດຕິກຳທີ່ບໍ່ຄາດຄິດໄດ້.
       [y/N]"
   export:
-    description: "Export an application or binary from the subsystem"
+    description: "ສົ່ງອອກແອັບພລິເຄຊັນ ຫຼື ໄຟລ໌ບາຍນາຣີ ຈາກລະບົບຍ່ອຍ"
     options:
       app:
-        description: "the name of the application to export"
+        description: "ຊື່ຂອງແອັບພລິເຄຊັນທີ່ຈະສົ່ງອອກ"
       bin:
-        description: "the name of the binary to export"
+        description: "ຊື່ຂອງໄຟລ໌ບາຍນາຣີທີ່ຈະສົ່ງອອກ"
       binOutput:
-        description: "path of the binary output (default: ~/.local/bin/)"
+        description: "ເສັ້ນທາງຜົນອອກຂອງໄຟລ໌ບາຍນາຣີ (ຄ່າມາດຕະຖານ: ~/.local/bin/)"
   unexport:
-    description: "Unexport an application or binary from the subsystem"
+    description: "ຍົກເລີກການສົ່ງອອກແອັບພລິເຄຊັນ ຫຼື ໄຟລ໌ບາຍນາຣີ ຈາກລະບົບຍ່ອຍ"
     options:
       app:
-        description: "the name of the application to unexport"
+        description: "ຊື່ຂອງແອັບພລິເຄຊັນທີ່ຈະຍົກເລີກການສົ່ງອອກ"
       bin:
-        description: "the name of the binary to unexport"
+        description: "ຊື່ຂອງໄຟລ໌ບາຍນາຣີທີ່ຈະຍົກເລີກການສົ່ງອອກ"
       binOutput:
-        description: "path of the binary output (default: ~/.local/bin/)"
+        description: "ເສັ້ນທາງຜົນອອກຂອງໄຟລ໌ບາຍນາຣີ (ຄ່າມາດຕະຖານ: ~/.local/bin/)"
   init:
-    description: "Initialize the VSO subsystem, used for package management"
+    description: "ເລີ່ມຕົ້ນລະບົບຍ່ອຍ VSO, ໃຊ້ສຳລັບການຈັດການແພັກເກັດ"
     options:
       force:
-        description: "force the initialization if the subsystem is already initialized"
+        description: "ບັງຄັບໃຫ້ເລີ່ມຕົ້ນລະບົບໃໝ່ ຖ້າລະບົບຍ່ອຍໄດ້ຖືກເລີ່ມຕົ້ນແລ້ວ"
   install:
-    description: "Install an application inside the subsystem"
+    description: "ຕິດຕັ້ງແອັບພລິເຄຊັນພາຍໃນລະບົບຍ່ອຍ"
   remove:
-    description: "Remove an application from the subsystem"
+    description: "ລຶບແອັບພລິເຄຊັນອອກຈາກລະບົບຍ່ອຍ"
   run:
-    description: "Run an application from the subsystem"
+    description: "ເປີດໃຊ້ແອັບພລິເຄຊັນຈາກລະບົບຍ່ອຍ"
     options:
       noReset:
-        description: "do not propose to reset the subsystem if something goes wrong"
+        description: "ບໍ່ຕ້ອງສະເໜີໃຫ້ລີເຊັດລະບົບຍ່ອຍ ຫາກມີບາງຢ່າງຜິດພາດ"
   search:
-    description: "Search for an application to install inside the subsystem"
+    description: "ຄົ້ນຫາແອັບພລິເຄຊັນເພື່ອຕິດຕັ້ງພາຍໃນລະບົບຍ່ອຍ"
   shell:
-    description: "Enter the subsystem environment"
+    description: "ເຂົ້າສູ່ສະພາບແວດລ້ອມຂອງລະບົບຍ່ອຍ"
   sideload:
-    description: "Sideload DEB/APK packages inside the subsystem"
+    description: "ຕິດຕັ້ງແພັກເກັດ DEB/APK ຈາກພາຍນອກ (Sideload) ເຂົ້າໃນລະບົບຍ່ອຍ"
   update:
-    description: "Update the subsystem's package repository"
+    description: "ອັບເດດຄັງເກັບແພັກເກັດ (repository) ຂອງລະບົບຍ່ອຍ"
   upgrade:
-    description: "Upgrade the packages inside the subsystem"
+    description: "ອັບເກຣດແພັກເກັດພາຍໃນລະບົບຍ່ອຍ"
 
 sysUpgrade:
-  description: "Execute system commands, such as upgrading the system"
+  description: "ປະຕິບັດຄຳສັ່ງລະບົບ ເຊັ່ນ: ການອັບເກຣດລະບົບ"
   check:
-    asExitCode: "checks for upgrade but doesn't print anything. Return exit code 0
-      if no upgrade is available and 1 otherwise."
-    description: "Check for system updates"
+    asExitCode: "ກວດສອບການອັບເກຣດແຕ່ບໍ່ສະແດງຜົນໃດໆ. ສົ່ງຄືນ exit code 0 ຖ້າບໍ່ມີການອັບເກຣດ
+      ແລະ 1 ໃນກໍລະນີອື່ນໆ."
+    description: "ກວດສອບການອັບເດດລະບົບ"
     error:
-      asExitCodeAndJson: "An error occured when checking for updates. See the JSON
-        output for more details."
+      asExitCodeAndJson: "ເກີດຂໍ້ຜິດພາດຂຶ້ນໃນຂະນະທີ່ກວດສອບການອັບເດດ. ເບິ່ງຜົນອອກແບບ
+        JSON ສຳລັບລາຍລະອຽດເພີ່ມເຕີມ."
     info:
-      checking: "Checking for updates..."
+      checking: "ກຳລັງກວດສອບການອັບເດດ..."
     json:
-      description: "output the result in JSON format"
+      description: "ສະແດງຜົນໃນຮູບແບບ JSON"
   sysUpgrade:
-    description: "Execute system commands, such as upgrading the system"
+    description: "ປະຕິບັດຄຳສັ່ງລະບົບ ເຊັ່ນ: ການອັບເກຣດລະບົບ"
     error:
-      updating: "An error occured when updating the system."
-      onHasUpdate: "Error while searching for updates: %s."
+      updating: "ເກີດຂໍ້ຜິດພາດຂຶ້ນໃນຂະນະທີ່ກຳລັງອັບເດດລະບົບ."
+      onHasUpdate: "ເກີດຂໍ້ຜິດພາດໃນຂະນະທີ່ຄົ້ນຫາການອັບເດດ: %s."
     schedule:
-      daily: "daily"
-      weekly: "weekly"
-      monthly: "monthly"
+      daily: "ລາຍວັນ"
+      weekly: "ລາຍອາທິດ"
+      monthly: "ລາຍເດືອນ"
     info:
-      updating: "Updating the system..."
-      willUpdateLater: "An update is available and will be automatically installed
-        based on your %s schedule. You can force the update using 'vso sys upgrade
-        --now'."
-      willNeverUpdate: "An update is available, but will not be automatically installed
-        because you disabled automatic updates. You can force the update using 'vso
-        sys upgrade --now'."
-      noUpdates: "Your system is already up-to-date."
-    now: "Trigger a system upgrade now"
+      updating: "ກຳລັງອັບເດດລະບົບ..."
+      willUpdateLater: "ມີການອັບເດດພ້ອມໃຊ້ງານ ແລະ ຈະຖືກຕິດຕັ້ງອັດຕະໂນມັດຕາມກຳນົດເວລາ
+        %s ຂອງທ່ານ. ທ່ານສາມາດບັງຄັບການອັບເດດໄດ້ໂດຍໃຊ້ 'vso sys upgrade --now'."
+      willNeverUpdate: "ມີການອັບເດດພ້ອມໃຊ້ງານ, ແຕ່ຈະບໍ່ຖືກຕິດຕັ້ງອັດຕະໂນມັດ ເພາະທ່ານໄດ້ປິດການອັບເດດອັດຕະໂນມັດໄວ້.
+        ທ່ານສາມາດບັງຄັບການອັບເດດໄດ້ໂດຍໃຊ້ 'vso sys upgrade --now'."
+      noUpdates: "ລະບົບຂອງທ່ານເປັນເວີຊັນຫຼ້າສຸດແລ້ວ."
+    now: "ເລີ່ມການອັບເກຣດລະບົບຕອນນີ້ເລີຍ"
 
 tasks:
-  description: "Create and manage tasks"
+  description: "ສ້າງ ແລະ ຈັດການໜ້າທີ່ວຽກງານ"
   stacks:
     new:
       error:
-        emptyCommand: "The command cannot be empty."
-        emptyDescription: "The description cannot be empty."
-        emptyName: "The name cannot be empty."
-        noCommand: "No command specified."
-        noDescription: "No description specified."
-        noName: "No name specified."
+        emptyCommand: "ຄຳສັ່ງບໍ່ສາມາດຫວ່າງເປົ່າໄດ້."
+        emptyDescription: "ຄຳອະທິບາຍບໍ່ສາມາດຫວ່າງເປົ່າໄດ້."
+        emptyName: "ຊື່ບໍ່ສາມາດຫວ່າງເປົ່າໄດ້."
+        noCommand: "ບໍ່ໄດ້ລະບຸຄຳສັ່ງ."
+        noDescription: "ບໍ່ໄດ້ລະບຸຄຳອະທິບາຍ."
+        noName: "ບໍ່ໄດ້ລະບຸຊື່."
       info:
-        askCommand: "Command: "
-        askDescription: "Description: "
-        askName: "Name: "
-        taskCreated: "Task has been created successfully."
+        askCommand: "ຄຳສັ່ງ: "
+        askDescription: "ຄຳອະທິບາຍ: "
+        askName: "ຊື່: "
+        taskCreated: "ສ້າງໜ້າທີ່ວຽກງານສຳເລັດແລ້ວ."
   list:
-    description: "List all tasks"
-    noTasks: "No tasks found."
+    description: "ລາຍຊື່ໜ້າທີ່ວຽກງານທັງໝົດ"
+    noTasks: "ບໍ່ພົບໜ້າທີ່ວຽກງານໃດໆ."
     info:
-      foundTasks: "Found %d tasks."
+      foundTasks: "ພົບ %d ໜ້າທີ່ວຽກງານ."
     options:
       json:
-        description: "output the tasks in JSON format"
+        description: "ສະແດງລາຍຊື່ວຽກໃນຮູບແບບ JSON"
   new:
-    description: "Create a new task"
+    description: "ສ້າງໜ້າທີ່ວຽກງານໃໝ່"
     options:
       assumeYes:
-        description: "assume yes for all prompts"
+        description: "ຕອບ \"ຕົກລົງ\" ສຳລັບທຸກຄຳຖາມໂດຍອັດຕະໂນມັດ"
       at:
-        description: "schedule the task to execute at a specific time (hh:mm)"
+        description: "ຕັ້ງເວລາດຳເນີນການໃນເວລາທີ່ລະບຸ (ຊມ:ນທ)"
       command:
-        description: "specify the command to execute"
+        description: "ລະບຸຄຳສັ່ງທີ່ຈະໃຫ້ດຳເນີນການ"
       description:
-        description: "specify the task's description"
+        description: "ລະບຸຄຳອະທິບາຍຂອງວຽກ"
       every:
-        description: "schedule the task to execute every X time (minutes, hours, days)"
+        description: "ຕັ້ງເວລາດຳເນີນການໃນທຸກໆ X ເວລາ (ນາທີ, ຊົ່ວໂມງ, ມື້)"
       name:
-        description: "specify the task's name"
+        description: "ລະບຸຊື່ຂອງວຽກ"
       needConfirm:
-        description: "ask for confirmation before executing the task"
+        description: "ຖາມເພື່ອຢືນຢັນກ່ອນດຳເນີນການວຽກ"
       onBattery:
-        description: "execute the task only when the system is on battery"
+        description: "ດຳເນີນການວຽກເມື່ອລະບົບໃຊ້ໄຟຟ້າຈາກແບັດເຕີຣີເທົ່ານັ້ນ"
       onCharge:
-        description: "execute the task only when the system is charging"
+        description: "ດຳເນີນການວຽກເມື່ອລະບົບກຳລັງສາກໄຟເທົ່ານັ້ນ"
       onConditionCommand:
-        description: "execute the task on condition command"
+        description: "ດຳເນີນການວຽກຕາມເງື່ອນໄຂຂອງຄຳສັ່ງ"
       onCpuTemp:
-        description: "execute the task when CPU temperature is higher than 60°C"
+        description: "ດຳເນີນການວຽກເມື່ອອຸນຫະພູມ CPU ສູງກວ່າ 60°C"
       onCpuUsage:
-        description: "execute the task when CPU usage is higher than X%"
+        description: "ດຳເນີນການວຽກເມື່ອການໃຊ້ງານ CPU ສູງກວ່າ X%"
       onDeviceConnect:
-        description: "execute the task when a device is connected"
+        description: "ດຳເນີນການວຽກເມື່ອມີການເຊື່ອມຕໍ່ອຸປະກອນ"
       onDeviceDisconnect:
-        description: "execute the task when a device is disconnected"
+        description: "ດຳເນີນການວຽກເມື່ອມີການຕັດການເຊື່ອມຕໍ່ອຸປະກອນ"
       onDisconnect:
-        description: "execute the task when the system is disconnected from the network"
+        description: "ດຳເນີນການວຽກເມື່ອລະບົບຕັດການເຊື່ອມຕໍ່ຈາກເຄືອຂ່າຍ"
       onFullBattery:
-        description: "execute the task when the system is fully charged"
+        description: "ດຳເນີນການວຽກເມື່ອແບັດເຕີຣີເຕັມແລ້ວ"
       onHighCpuUsage:
-        description: "execute the task when CPU usage is higher than 50%"
+        description: "ດຳເນີນການວຽກເມື່ອການໃຊ້ງານ CPU ສູງກວ່າ 50%"
       onHighInternetUsage:
-        description: "execute the task when internet usage is higher than 500Kb/s"
+        description: "ດຳເນີນການວຽກເມື່ອການໃຊ້ງານອິນເຕີເນັດສູງກວ່າ 500Kb/s"
       onHighMemoryUsage:
-        description: "execute the task when memory usage is higher than 50%"
+        description: "ດຳເນີນການວຽກເມື່ອການໃຊ້ງານໜ່ວຍຄວາມຈຳ (RAM) ສູງກວ່າ 50%"
       onInternetUsage:
-        description: "execute the task when internet usage is higher than XKb/s"
+        description: "ດຳເນີນການວຽກເມື່ອການໃຊ້ງານອິນເຕີເນັດສູງກວ່າ XKb/s"
       onLowBattery:
-        description: "execute the task when the system is low on battery (20%)"
+        description: "ດຳເນີນການວຽກເມື່ອແບັດເຕີຣີຕ່ຳ (20%)"
       onMemoryUsage:
-        description: "execute the task when memory usage is higher than X%"
+        description: "ດຳເນີນການວຽກເມື່ອການໃຊ້ງານໜ່ວຍຄວາມຈຳ (RAM) ສູງກວ່າ X%"
       onNetwork:
-        description: "execute the task when the system is connected to the network"
+        description: "ດຳເນີນການວຽກເມື່ອລະບົບເຊື່ອມຕໍ່ກັບເຄືອຂ່າຍ"
       onProcess:
-        description: "execute the task when a process starts"
+        description: "ດຳເນີນການວຽກເມື່ອມີໂປຣເຊສ (process) ເລີ່ມຕົ້ນຂຶ້ນ"
   rm:
-    description: "Remove a task"
+    description: "ລຶບໜ້າທີ່ວຽກງານ"
     error:
-      cannotDelete: "Cannot delete task: %s"
-      noName: "No task name specified."
-      notFound: "Task not found."
+      cannotDelete: "ບໍ່ສາມາດລຶບວຽກໄດ້: %s"
+      noName: "ບໍ່ໄດ້ລະບຸຊື່ຂອງວຽກ."
+      notFound: "ບໍ່ພົບວຽກທີ່ລະບຸ."
     info:
-      askConfirmation: "Are you sure you want to delete the task %s? [y/N]"
-      taskDeleted: "Task has been deleted successfully."
+      askConfirmation: "ເຈົ້າແນ່ໃຈບໍ່ວ່າຕ້ອງການລຶບວຽກ %s? [y/N]"
+      taskDeleted: "ລຶບວຽກສຳເລັດແລ້ວ."
     options:
       force:
-        description: "force the deletion of the task"
+        description: "ບັງຄັບໃຫ້ລຶບວຽກ"
       name:
-        description: "specify the task's name"
+        description: "ລະບຸຊື່ຂອງວຽກ"
   rotate:
-    description: "Rotate tasks"
+    description: "ໝູນວຽນໜ້າທີ່ວຽກງານ"
     options:
       privateEvent:
-        description: "specify the private event to rotate tasks for boot, shutdown,
-          login, and logout"
+        description: "ລະບຸເຫດການສ່ວນຕົວເພື່ອໝູນວຽນວຽກສຳລັບການ boot, shutdown, login,
+          ແລະ logout"
       silent:
-        description: "don't output the status on each cycle"
+        description: "ບໍ່ຕ້ອງສະແດງສະຖານະໃນແຕ່ລະຮອບການເຮັດວຽກ"
 
 waydroid:
-  description: "Manage the vso waydroid subsystem"
-  downloadIndex: "Downloading index for repository %s"
+  description: "ຈັດການລະບົບຍ່ອຍ vso waydroid"
+  downloadIndex: "ກຳລັງດາວໂຫຼດດັດຊະນີສຳລັບຄັງເກັບ %s"
   clean:
-    description: "Cleans the waydroid vso cache"
+    description: "ລ້າງແຄຊ (cache) ຂອງ waydroid vso"
     info:
-      index: "Deleting index cache"
-      apk: "Deleting apk cache"
-      success: "Successfully deleted waydroid vso cache"
+      index: "ກຳລັງລຶບແຄຊດັດຊະນີ"
+      apk: "ກຳລັງລຶບແຄຊໄຟລ໌ apk"
+      success: "ລຶບແຄຊຂອງ waydroid vso ສຳເລັດແລ້ວ"
     error:
-      index: "Failed to delete index cache"
-      apk: "Failed to delete apk cache"
+      index: "ລຶບແຄຊດັດຊະນີບໍ່ສຳເລັດ"
+      apk: "ລຶບແຄຊໄຟລ໌ apk ບໍ່ສຳເລັດ"
   delete:
-    description: "Delete the waydroid subsystem"
-    confirmation: "Deleting the waydroid subsystem will delete any data stored in
-      it. Continue?"
-    cancelled: "Cancelled removal of subsystem."
+    description: "ລຶບລະບົບຍ່ອຍ waydroid"
+    confirmation: "ການລຶບລະບົບຍ່ອຍ waydroid ຈະເຮັດໃຫ້ຂໍ້ມູນທັງໝົດທີ່ເກັບໄວ້ໃນນັ້ນຖືກລຶບໄປນຳ.
+      ຕ້ອງການດຳເນີນການຕໍ່ບໍ່?"
+    cancelled: "ຍົກເລີກການລຶບລະບົບຍ່ອຍແລ້ວ."
   error:
-    noArguments: "No arguments provided."
-    noRepos: "Could not find any repositories."
-    notWayland: "This feature is only available on Wayland."
-    secureBoot: "This feature requires secure boot to be disabled in the BIOS."
+    noArguments: "ບໍ່ໄດ້ລະບຸອາກິວເມນ (arguments)."
+    noRepos: "ບໍ່ພົບຄັງເກັບ (repositories) ໃດໆ."
+    notWayland: "ຟີເຈີນີ້ສາມາດໃຊ້ໄດ້ສະເພາະໃນ Wayland ເທົ່ານັ້ນ."
+    secureBoot: "ຟີເຈີນີ້ຕ້ອງການໃຫ້ປິດການໃຊ້ງານ secure boot ໃນ BIOS."
   install:
-    description: "Install an application"
+    description: "ຕິດຕັ້ງແອັບພລິເຄຊັນ"
     options:
       local:
-        description: "Install a local apk"
+        description: "ຕິດຕັ້ງໄຟລ໌ apk ຈາກເຄື່ອງ"
       noconfirm:
-        description: "Do not ask for confirmation during installation"
+        description: "ບໍ່ຕ້ອງຖາມເພື່ອຢືນຢັນໃນລະຫວ່າງການຕິດຕັ້ງ"
     info:
-      PackageInCache: "Application found in cache, not downloading again."
-      ConfirmInstall: "Install application %s?"
-      DownloadingPackage: "Downloading apk from %s"
-      PackageSelection: "Pick an application to install"
-      InstallSuccess: "Installation successful"
+      PackageInCache: "ພົບແອັບພລິເຄຊັນໃນແຄຊແລ້ວ, ຈະບໍ່ດາວໂຫຼດໃໝ່ອີກ."
+      ConfirmInstall: "ຕິດຕັ້ງແອັບພລິເຄຊັນ %s ບໍ່?"
+      DownloadingPackage: "ກຳລັງດາວໂຫຼດ apk ຈາກ %s"
+      PackageSelection: "ເລືອກແອັບພລິເຄຊັນທີ່ຈະຕິດຕັ້ງ"
+      InstallSuccess: "ຕິດຕັ້ງສຳເລັດແລ້ວ"
     error:
-      NotFound: "Application %s was not found."
-      InstallCancelled: "Installation Cancelled"
+      NotFound: "ບໍ່ພົບແອັບພລິເຄຊັນ %s."
+      InstallCancelled: "ຍົກເລີກການຕິດຕັ້ງແລ້ວ"
   init:
-    description: "Initialize the waydroid subsystem"
-    warnUnstable: "Waydroid functionality is currently unstable. Expect bugs and missing
-      features. Continue anyway?"
-    warnUnstableForce: "Waydroid functionality is currently unstable. Expect bugs
-      and missing features."
+    description: "ເລີ່ມຕົ້ນລະບົບຍ່ອຍ waydroid"
+    warnUnstable: "ການເຮັດວຽກຂອງ Waydroid ໃນຕອນນີ້ຍັງບໍ່ຄົງທີ່. ອາດຈະມີຂໍ້ຜິດພາດ (bugs)
+      ຫຼື ຟີເຈີທີ່ຍັງບໍ່ຄົບຖ້ວນ. ຕ້ອງການດຳເນີນການຕໍ່ບໍ່?"
+    warnUnstableForce: "ການເຮັດວຽກຂອງ Waydroid ໃນຕອນນີ້ຍັງບໍ່ຄົງທີ່. ອາດຈະມີຂໍ້ຜິດພາດ
+      (bugs) ຫຼື ຟີເຈີທີ່ຍັງບໍ່ຄົບຖ້ວນ."
     options:
       force:
-        description: "Force the initialization"
+        description: "ບັງຄັບໃຫ້ເລີ່ມຕົ້ນລະບົບ"
     info:
-      initialized: "The waydroid subsystem has been initialized."
+      initialized: "ລະບົບຍ່ອຍ waydroid ໄດ້ຖືກເລີ່ມຕົ້ນແລ້ວ."
     error:
-      alreadyInitialized: "The waydroid subsystem is already initialized. Use the
-        --force flag to force the initialization."
+      alreadyInitialized: "ລະບົບຍ່ອຍ waydroid ໄດ້ຖືກເລີ່ມຕົ້ນແລ້ວ. ໃຊ້ແຟລັກ --force
+        ເພື່ອບັງຄັບໃຫ້ເລີ່ມຕົ້ນໃໝ່."
   launch:
-    description: "Launch an installed application"
+    description: "ເປີດໃຊ້ແອັບພລິເຄຊັນທີ່ຕິດຕັ້ງແລ້ວ"
   launcher:
-    description: "Show the waydroid launcher"
+    description: "ສະແດງຕົວເປີດແອັບ (launcher) ຂອງ waydroid"
   remove:
-    description: "Uninstall an application"
+    description: "ຖອນການຕິດຕັ້ງແອັບພລິເຄຊັນ"
     info:
-      RemovePackage: "Removing package %s"
-      PackageSelection: "Pick an application to remove"
-      ConfirmRemove: "Remove application %s?"
+      RemovePackage: "ກຳລັງລຶບແພັກເກັດ %s"
+      PackageSelection: "ເລືອກແອັບພລິເຄຊັນທີ່ຈະລຶບອອກ"
+      ConfirmRemove: "ລຶບແອັບພລິເຄຊັນ %s ບໍ່?"
     error:
-      NoMatches: "Application %s not found"
-      RemoveCancelled: "Removal Cancelled"
+      NoMatches: "ບໍ່ພົບແອັບພລິເຄຊັນ %s"
+      RemoveCancelled: "ຍົກເລີກການລຶບແລ້ວ"
   search:
-    description: "Search for an application"
+    description: "ຄົ້ນຫາແອັບພລິເຄຊັນ"
   sync:
-    description: "Sync the repositories"
+    description: "ຊິງຄ໌ (Sync) ຂໍ້ມູນຄັງເກັບ"
   update:
-    description: "Update installed applications"
-    finished: "Finished updating applications"
+    description: "ອັບເດດແອັບພລິເຄຊັນທີ່ຕິດຕັ້ງແລ້ວ"
+    finished: "ອັບເດດແອັບພລິເຄຊັນສຳເລັດແລ້ວ"
     error:
-      FailGetVersion: "Failed to get version code for %s"
-      FailUpdatePackageDownload: "Failed to download APK for %s"
-      FailUpdatePackageDatabase: "Failed to update database entry for %s"
-      FailUpdatePackageInstall: "Failed to install the update for %s"
+      FailGetVersion: "ບໍ່ສາມາດດຶງຂໍ້ມູນລະຫັດເວີຊັນສຳລັບ %s ໄດ້"
+      FailUpdatePackageDownload: "ດາວໂຫຼດ APK ສຳລັບ %s ບໍ່ສຳເລັດ"
+      FailUpdatePackageDatabase: "ອັບເດດຂໍ້ມູນໃນຖານຂໍ້ມູນສຳລັບ %s ບໍ່ສຳເລັດ"
+      FailUpdatePackageInstall: "ຕິດຕັ້ງການອັບເດດສຳລັບ %s ບໍ່ສຳເລັດ"
     info:
-      NoUpdates: "Nothing to update"
+      NoUpdates: "ບໍ່ມີຫຍັງຕ້ອງອັບເດດ"
   info:
-    description: "Display information about an application"
+    description: "ສະແດງຂໍ້ມູນກ່ຽວກັບແອັບພລິເຄຊັນ"
     info:
-      PackageSelection: "Select an application to display information from"
-    PackageName: "Name: %s"
-    InternalName: "Internal name: %s"
-    Summary: "Summary: %s"
-    Author: "Author: %s"
-    License: "License: %s"
-    Repository: "Repository: %s"
+      PackageSelection: "ເລືອກແອັບພລິເຄຊັນເພື່ອສະແດງຂໍ້ມູນ"
+    PackageName: "ຊື່: %s"
+    InternalName: "ຊື່ພາຍໃນ: %s"
+    Summary: "ສະຫຼຸບຫຍໍ້: %s"
+    Author: "ຜູ້ຂຽນ: %s"
+    License: "ໃບອະນຸຍາດ (License): %s"
+    Repository: "ຄັງເກັບ (Repository): %s"
   status:
-    description: "Return the internal status code of the Android subsystem. For development
-      purposes."
+    description: "ສົ່ງຄືນລະຫັດສະຖານະພາຍໃນຂອງລະບົບຍ່ອຍ Android. ສຳລັບຈຸດປະສົງໃນການພັດທະນາ."
