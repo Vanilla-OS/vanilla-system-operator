@@ -25,6 +25,7 @@ type RootCmd struct {
 	Upgrade UpgradeCmd `cmd:"upgrade" help:"pr:vso.cmd.sysUpgrade"`
 	Config  ConfigCmd  `cmd:"config" help:"pr:vso.cmd.config"`
 	Pico    PicoCmd    `cmd:"pico" help:"pr:vso.cmd.pico"`
+	Migrate MigrateCmd `cmd:"migrate" help:"pr:vso.cmd.migrate"`
 }
 
 // Tasks
@@ -185,4 +186,12 @@ type PicoUpdateCmd struct {
 
 type PicoUpgradeCmd struct {
 	cli.Base
+}
+
+// Migrate
+
+type MigrateCmd struct {
+	cli.Base
+	Check bool `flag:"check" help:"pr:vso.cmd.migrate.check"`
+
 }

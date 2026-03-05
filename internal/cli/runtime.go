@@ -556,3 +556,19 @@ func (c *PicoUpgradeCmd) Run() error {
 	_, err = pico.Exec(false, false, finalArgs...)
 	return err
 }
+
+// Migrate
+
+func (c *MigrateCmd) Run() error {
+	err := settings.LoadPatches()
+	if err != nil {
+		return err
+	}
+
+	fmt.Println(settings.GetPatches())
+	if !c.Check {
+		fmt.Println(settings.RunPatches())
+	}
+
+	return nil
+}
