@@ -23,7 +23,6 @@ import (
 
 var (
 	checkLogPath       = "/var/log/vso-check.log"
-	firstSetupDonePath = "/etc/vanilla-first-setup-done"
 	abrootLockPaths    = []string{
 		"/tmp/ABSystem.Upgrade.lock",
 		"/tmp/ABSystem.Upgrade.user.lock",
@@ -47,11 +46,6 @@ func AreABRootTransactionsLocked() bool {
 func NeedUpdate() bool {
 	if AreABRootTransactionsLocked() {
 		fmt.Println("ABRoot transactions are currently locked. Skipping update check.")
-		return false
-	}
-
-	if !okToUpdate() {
-		fmt.Println("Deferring update until first-setup is complete.")
 		return false
 	}
 
@@ -150,18 +144,6 @@ func RunUpgradeCheckJSON() (bool, error) {
 	return hasUpdate, err
 }
 
-func okToUpdate() bool {
-	// check vso logs for previous run
-	if _, err := os.Stat(checkLogPath); os.IsNotExist(err) {
-		// vso has never run, check if first-setup has been done
-		if _, err := os.Stat(firstSetupDonePath); os.IsNotExist(err) {
-			// first setup has not completed. don't try to update
-			return false
-		}
-	}
-	return true
-}
-
 // getLatestCheck returns the latest check time from the log file, it also
 // write the current time to the log file if it doesn't exist
 func getLatestCheck() *time.Time {
@@ -215,11 +197,6 @@ func writeLatestCheck(t time.Time) error {
 
 // TryUpdate tries to update the system via ABRoot
 func TryUpdate(force bool) error {
-	if !okToUpdate() {
-		fmt.Println("Deferring update until first-setup is done.")
-		return nil
-
-	}
 	if !force && !SmartUpdate() {
 		fmt.Println("Smart update detected device is being used, skipping update.")
 		return nil
