@@ -90,7 +90,7 @@ func NeedUpdate() bool {
 }
 
 func runABRootCheck(asJson, showStdout bool) (bool, map[string]any, error) {
-	update_cmd := exec.Command("abroot", "upgrade", "--check-only")
+	update_cmd := exec.Command("pkexec", "abroot", "upgrade", "--check-only")
 
 	var out []byte
 	var err error
@@ -232,7 +232,7 @@ func TryUpdate(force bool) error {
 
 	writeLatestCheck(time.Now())
 
-	cmd := exec.Command("abroot", "upgrade")
+	cmd := exec.Command("pkexec", "abroot", "upgrade")
 	cmd.Stdout = os.Stdout
 	cmd.Stderr = os.Stderr
 
