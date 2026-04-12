@@ -11,7 +11,7 @@ package core
 */
 
 import (
-    "os/exec"
+	"os/exec"
 
 	"github.com/vanilla-os/apx/v3/core"
 )
@@ -42,6 +42,10 @@ func PicoInit() error {
 		false,
 		true,
 		"",
+		"--pre-init-hooks",
+		"/run/host/usr/share/vso/scripts/pre-init-hook",
+		"--init-hooks",
+		"/run/host/usr/share/vso/scripts/init-hook",
 	)
 
 	if err != nil {
