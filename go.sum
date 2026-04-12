@@ -83,8 +83,12 @@ github.com/tklauser/numcpus v0.7.0 h1:yjuerZP127QG9m5Zh/mSO4wqurYil27tHrqwRoRjpr
 github.com/tklauser/numcpus v0.7.0/go.mod h1:bb6dMVcj8A42tSE7i32fsIUCbQNllK5iDguyOZRUzAY=
 github.com/vanilla-os/apx/v3 v3.0.1 h1:vbYwfM/dYLFL3JSPZJxNU0jMphgvuicd6/6kCBfDwsQ=
 github.com/vanilla-os/apx/v3 v3.0.1/go.mod h1:dffbaUDexxjV8p8M/WeHo8lr1d98aaXoF2jN2v1AEEg=
+github.com/vanilla-os/apx/v3 v3.1.0 h1:cZRYSm3wphMikvY6U7qz2SWfYvA//cSjILeVjKTvMLw=
+github.com/vanilla-os/apx/v3 v3.1.0/go.mod h1:RYrGk3d3hZcrQPBLnDh56lOKCRvW7tbFUmgL0/njg4o=
 github.com/vanilla-os/sdk v0.0.0-20260121134003-7795e641c7d6 h1:tuyT3hvAvLomz3u3DK6AENRS7JOnteJM9jo0zB17/xo=
 github.com/vanilla-os/sdk v0.0.0-20260121134003-7795e641c7d6/go.mod h1:7OrRPJwcgw5aGZHLPbh8yfP9Os+T8gv14Z+vqGF506A=
+github.com/vanilla-os/sdk v0.0.0-20260125180913-308d9916c100 h1:UZ2wjTXekcYkXgUF0gMaQkZw6BYiEXTdSLN9y+RAtNw=
+github.com/vanilla-os/sdk v0.0.0-20260125180913-308d9916c100/go.mod h1:7OrRPJwcgw5aGZHLPbh8yfP9Os+T8gv14Z+vqGF506A=
 github.com/vorlif/spreak v0.6.0 h1:+WrtSGKx9zcZy8d/Tp6t+OA3x9RgmA8TQYPzQ+U7Ddc=
 github.com/vorlif/spreak v0.6.0/go.mod h1:vcqv4dB1XgHpxIXhV5C+8EgqlzKfL37Atj2O/bOB1Bw=
 github.com/xo/terminfo v0.0.0-20220910002029-abceb7e1c41e h1:JVG44RsyaB9T2KIHavMF/ppJZNG9ZpyihvCd0w101no=
