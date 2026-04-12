@@ -4,8 +4,8 @@ go 1.24.4
 
 require (
 	github.com/olekukonko/tablewriter v0.0.5
-	github.com/vanilla-os/apx/v3 v3.0.1
-	github.com/vanilla-os/sdk v0.0.0-20260121134003-7795e641c7d6
+	github.com/vanilla-os/apx/v3 v3.1.0
+	github.com/vanilla-os/sdk v0.0.0-20260125180913-308d9916c100
 )
 
 require (
