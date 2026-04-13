@@ -104,121 +104,121 @@ msgstr "Configurația a fost actualizată cu succes."
 msgid "vso.cmd.config.show"
 msgstr "Afișați configurația sistemului"
 
-msgid "vso.cmd.pico"
+msgid "vso.cmd.native"
 msgstr "Gestionează subsistemul VSO"
 
-msgid "vso.cmd.pico.error.notInitialized"
-msgstr "Subsistemul VSO nu este inițializat. Rulează `vso pico-init` pentru a-l inițializa."
+msgid "vso.cmd.native.error.notInitialized"
+msgstr "Subsistemul VSO nu este inițializat. Rulează `vso native init` pentru a-l inițializa."
 
-msgid "vso.cmd.pico.error.alreadyInitialized"
+msgid "vso.cmd.native.error.alreadyInitialized"
 msgstr "Subsistemul VSO este deja inițializat. Utilizați indicatorul --force pentru a forța inițializarea."
 
-msgid "vso.cmd.pico.error.noAppNameOrBin"
+msgid "vso.cmd.native.error.noAppNameOrBin"
 msgstr "Trebuie specificat --app sau --bin."
 
-msgid "vso.cmd.pico.error.sameAppOrBin"
+msgid "vso.cmd.native.error.sameAppOrBin"
 msgstr "--app și --bin nu pot fi ambele specificate."
 
-msgid "vso.cmd.pico.error.exportingApp"
+msgid "vso.cmd.native.error.exportingApp"
 msgstr "A apărut o eroare la exportul aplicației: %s"
 
-msgid "vso.cmd.pico.error.exportingBin"
+msgid "vso.cmd.native.error.exportingBin"
 msgstr "A apărut o eroare la exportul binarului: %s"
 
-msgid "vso.cmd.pico.error.unexportingApp"
+msgid "vso.cmd.native.error.unexportingApp"
 msgstr "A apărut o eroare la dezexportarea aplicației: %s"
 
-msgid "vso.cmd.pico.error.unexportingBin"
+msgid "vso.cmd.native.error.unexportingBin"
 msgstr "A apărut o eroare la dezexportarea binarului: %s"
 
-msgid "vso.cmd.pico.error.unknownCommand"
+msgid "vso.cmd.native.error.unknownCommand"
 msgstr "Comandă necunoscută: %s"
 
-msgid "vso.cmd.pico.error.shellReset"
+msgid "vso.cmd.native.error.shellReset"
 msgstr "Este imposibil să se ajungă la VSO shell. Dorești să îl resetezi? (Acest lucru va elimina toate programele instalate în subsistem) [y/N]"
 
-msgid "vso.cmd.pico.info.deleting"
+msgid "vso.cmd.native.info.deleting"
 msgstr "Stergerea subsistemului VSO..."
 
-msgid "vso.cmd.pico.info.initializing"
+msgid "vso.cmd.native.info.initializing"
 msgstr "Inițializarea subsistemului VSO..."
 
-msgid "vso.cmd.pico.info.initialized"
+msgid "vso.cmd.native.info.initialized"
 msgstr "Subsistemul VSO a fost inițializat."
 
-msgid "vso.cmd.pico.info.exported"
+msgid "vso.cmd.native.info.exported"
 msgstr "Exportat %s\n"
 
-msgid "vso.cmd.pico.info.unexported"
+msgid "vso.cmd.native.info.unexported"
 msgstr "Exportat %s\n"
 
-msgid "vso.cmd.pico.info.exportedApps"
+msgid "vso.cmd.native.info.exportedApps"
 msgstr "Au exportat %d aplicații"
 
-msgid "vso.cmd.pico.info.unexportedApps"
+msgid "vso.cmd.native.info.unexportedApps"
 msgstr "%d aplicații neexportate"
 
-msgid "vso.cmd.pico.info.shellInit"
+msgid "vso.cmd.native.info.shellInit"
 msgstr "Se pare că shell-ul tău nu a fost inițializat încă. Dorești să îl inițializezi acum? (Foarte recomandat) [y/N]"
 
-msgid "vso.cmd.pico.info.fallbackShell"
+msgid "vso.cmd.native.info.fallbackShell"
 msgstr "Revenire la shell gazdă? Acest lucru ar putea duce la comportamente neașteptate. [y/N]"
 
-msgid "vso.cmd.pico.export"
+msgid "vso.cmd.native.export"
 msgstr "Exportați o aplicație sau un fișier binar din subsistem"
 
-msgid "vso.cmd.pico.export.options.app"
+msgid "vso.cmd.native.export.options.app"
 msgstr "numele aplicației de exportat"
 
-msgid "vso.cmd.pico.export.options.bin"
+msgid "vso.cmd.native.export.options.bin"
 msgstr "numele binarului de exportat"
 
-msgid "vso.cmd.pico.export.options.binOutput"
+msgid "vso.cmd.native.export.options.binOutput"
 msgstr "calea ieșirii binare (implicit: ~/.local/bin/)"
 
-msgid "vso.cmd.pico.unexport"
+msgid "vso.cmd.native.unexport"
 msgstr "Dezexportarea unei aplicații sau a unui fișier binar din subsistem"
 
-msgid "vso.cmd.pico.unexport.options.app"
+msgid "vso.cmd.native.unexport.options.app"
 msgstr "numele aplicației de dezexportat"
 
-msgid "vso.cmd.pico.unexport.options.bin"
+msgid "vso.cmd.native.unexport.options.bin"
 msgstr "numele binarului de dezexportat"
 
-msgid "vso.cmd.pico.unexport.options.binOutput"
+msgid "vso.cmd.native.unexport.options.binOutput"
 msgstr "calea ieșirii binare (implicit: ~/.local/bin/)"
 
-msgid "vso.cmd.pico.init"
+msgid "vso.cmd.native.init"
 msgstr "Inițializarea subsistemului VSO, utilizat pentru gestionarea pachetelor"
 
-msgid "vso.cmd.pico.init.options.force"
+msgid "vso.cmd.native.init.options.force"
 msgstr "forțează inițializarea în cazul în care subsistemul este deja inițializat"
 
-msgid "vso.cmd.pico.install"
+msgid "vso.cmd.native.install"
 msgstr "Instalează o aplicație în cadrul subsistemului"
 
-msgid "vso.cmd.pico.remove"
+msgid "vso.cmd.native.remove"
 msgstr "Eliminează o aplicație din subsistem"
 
-msgid "vso.cmd.pico.run"
+msgid "vso.cmd.native.run"
 msgstr "Executați o aplicație din subsistem"
 
-msgid "vso.cmd.pico.run.options.noReset"
+msgid "vso.cmd.native.run.options.noReset"
 msgstr "nu propune resetarea subsitemului dacă se întâmplă ceva greșit"
 
-msgid "vso.cmd.pico.search"
+msgid "vso.cmd.native.search"
 msgstr "Căutați o aplicație care să fie instalată în cadrul subsistemului"
 
-msgid "vso.cmd.pico.shell"
+msgid "vso.cmd.native.shell"
 msgstr "Intrați în mediul subsistemului"
 
-msgid "vso.cmd.pico.sideload"
+msgid "vso.cmd.native.sideload"
 msgstr "Încărcarea Sideload a pachetelor DEB/APK în interiorul subsistemului"
 
-msgid "vso.cmd.pico.update"
+msgid "vso.cmd.native.update"
 msgstr "Actualizați depozitul de pachete al subsistemului"
 
-msgid "vso.cmd.pico.upgrade"
+msgid "vso.cmd.native.upgrade"
 msgstr "Actualizați pachetele din cadrul subsistemului"
 
 msgid "vso.cmd.sysUpgrade"

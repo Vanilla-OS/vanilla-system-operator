@@ -104,121 +104,121 @@ msgstr "Конфигурация успешно обновлена."
 msgid "vso.cmd.config.show"
 msgstr "Показать конфигурацию системы"
 
-msgid "vso.cmd.pico"
+msgid "vso.cmd.native"
 msgstr "Управление подсистемой VSO"
 
-msgid "vso.cmd.pico.error.notInitialized"
-msgstr "Подсистема VSO не инициализирована. Пожалуйста, выполните `vso pico-init`, чтобы инициализировать её."
+msgid "vso.cmd.native.error.notInitialized"
+msgstr "Подсистема VSO не инициализирована. Пожалуйста, выполните `vso native init`, чтобы инициализировать её."
 
-msgid "vso.cmd.pico.error.alreadyInitialized"
+msgid "vso.cmd.native.error.alreadyInitialized"
 msgstr "Подсистема VSO уже инициализирована. Используйте флаг --force для принудительной инициализации."
 
-msgid "vso.cmd.pico.error.noAppNameOrBin"
+msgid "vso.cmd.native.error.noAppNameOrBin"
 msgstr "--app или --bin должно быть указано."
 
-msgid "vso.cmd.pico.error.sameAppOrBin"
+msgid "vso.cmd.native.error.sameAppOrBin"
 msgstr "--app или --bin не могут быть указаны одновременно."
 
-msgid "vso.cmd.pico.error.exportingApp"
+msgid "vso.cmd.native.error.exportingApp"
 msgstr "При экспорте приложения произошла ошибка: %s"
 
-msgid "vso.cmd.pico.error.exportingBin"
+msgid "vso.cmd.native.error.exportingBin"
 msgstr "Произошла ошибка при экспорте двоичного файла: %s"
 
-msgid "vso.cmd.pico.error.unexportingApp"
+msgid "vso.cmd.native.error.unexportingApp"
 msgstr "Произошла ошибка при отмене экспорта приложения: %s"
 
-msgid "vso.cmd.pico.error.unexportingBin"
+msgid "vso.cmd.native.error.unexportingBin"
 msgstr "Произошла ошибка при отмене экспорта двоичного файла: %s"
 
-msgid "vso.cmd.pico.error.unknownCommand"
+msgid "vso.cmd.native.error.unknownCommand"
 msgstr "Неизвестная команда: %s"
 
-msgid "vso.cmd.pico.error.shellReset"
+msgid "vso.cmd.native.error.shellReset"
 msgstr "Невозможно получить доступ к оболочке VSO. Вы хотите её сбросить? (Это удалит всё ПО, установленное в подсистеме) [д/Н]"
 
-msgid "vso.cmd.pico.info.deleting"
+msgid "vso.cmd.native.info.deleting"
 msgstr "Удаление подсистемы VSO..."
 
-msgid "vso.cmd.pico.info.initializing"
+msgid "vso.cmd.native.info.initializing"
 msgstr "Инициализация подсистемы VSO..."
 
-msgid "vso.cmd.pico.info.initialized"
+msgid "vso.cmd.native.info.initialized"
 msgstr "Подсистема VSO инициализирована."
 
-msgid "vso.cmd.pico.info.exported"
+msgid "vso.cmd.native.info.exported"
 msgstr "Экспортировано %s\n"
 
-msgid "vso.cmd.pico.info.unexported"
+msgid "vso.cmd.native.info.unexported"
 msgstr "Неэкспортировано %s\n"
 
-msgid "vso.cmd.pico.info.exportedApps"
+msgid "vso.cmd.native.info.exportedApps"
 msgstr "Экспортировано приложений %d"
 
-msgid "vso.cmd.pico.info.unexportedApps"
+msgid "vso.cmd.native.info.unexportedApps"
 msgstr "Неэкспортированные приложения: %d"
 
-msgid "vso.cmd.pico.info.shellInit"
+msgid "vso.cmd.native.info.shellInit"
 msgstr "Похоже, ваша оболочка ещё не инициализирована. Вы хотите инициализировать её сейчас? (Настоятельно рекомендуется) [д/Н]"
 
-msgid "vso.cmd.pico.info.fallbackShell"
+msgid "vso.cmd.native.info.fallbackShell"
 msgstr "Произвести откат к оболочке хоста? Это может привести к неожиданному поведению. [д/Н]"
 
-msgid "vso.cmd.pico.export"
+msgid "vso.cmd.native.export"
 msgstr "Экспорт приложения или двоичного файла из подсистемы"
 
-msgid "vso.cmd.pico.export.options.app"
+msgid "vso.cmd.native.export.options.app"
 msgstr "имя приложения для экспорта"
 
-msgid "vso.cmd.pico.export.options.bin"
+msgid "vso.cmd.native.export.options.bin"
 msgstr "имя двоичного файла для экспорта"
 
-msgid "vso.cmd.pico.export.options.binOutput"
+msgid "vso.cmd.native.export.options.binOutput"
 msgstr "путь двоичного выхода (по умолчанию: ~/.local/bin/)"
 
-msgid "vso.cmd.pico.unexport"
+msgid "vso.cmd.native.unexport"
 msgstr "Отменить экспорт приложения или двоичного файла из подсистемы"
 
-msgid "vso.cmd.pico.unexport.options.app"
+msgid "vso.cmd.native.unexport.options.app"
 msgstr "имя приложения для отмены экспорта"
 
-msgid "vso.cmd.pico.unexport.options.bin"
+msgid "vso.cmd.native.unexport.options.bin"
 msgstr "имя двоичного файла, которому нужно отменить экспорт"
 
-msgid "vso.cmd.pico.unexport.options.binOutput"
+msgid "vso.cmd.native.unexport.options.binOutput"
 msgstr "путь сохранения бинарных файлов (по умолчанию: ~/.local/bin/)"
 
-msgid "vso.cmd.pico.init"
+msgid "vso.cmd.native.init"
 msgstr "Инициализируйте подсистему VSO, используемую для управления пакетами"
 
-msgid "vso.cmd.pico.init.options.force"
+msgid "vso.cmd.native.init.options.force"
 msgstr "принудительно выполнить инициализацию, если подсистема уже инициализирована"
 
-msgid "vso.cmd.pico.install"
+msgid "vso.cmd.native.install"
 msgstr "Установить приложение внутри подсистемы"
 
-msgid "vso.cmd.pico.remove"
+msgid "vso.cmd.native.remove"
 msgstr "Удаление приложения из подсистемы"
 
-msgid "vso.cmd.pico.run"
+msgid "vso.cmd.native.run"
 msgstr "Запуск приложения из подсистемы"
 
-msgid "vso.cmd.pico.run.options.noReset"
+msgid "vso.cmd.native.run.options.noReset"
 msgstr "не предлагать перезагрузить подсистему, если что-то пойдёт не так"
 
-msgid "vso.cmd.pico.search"
+msgid "vso.cmd.native.search"
 msgstr "Поиск приложения для установки внутри подсистемы"
 
-msgid "vso.cmd.pico.shell"
+msgid "vso.cmd.native.shell"
 msgstr "Перейти в среду подсистемы"
 
-msgid "vso.cmd.pico.sideload"
+msgid "vso.cmd.native.sideload"
 msgstr "Загрузка пакетов DEB/APK через Sideload внутри подсистемы"
 
-msgid "vso.cmd.pico.update"
+msgid "vso.cmd.native.update"
 msgstr "Обновите репозиторий пакетов подсистемы"
 
-msgid "vso.cmd.pico.upgrade"
+msgid "vso.cmd.native.upgrade"
 msgstr "Обновите пакеты внутри подсистемы"
 
 msgid "vso.cmd.sysUpgrade"

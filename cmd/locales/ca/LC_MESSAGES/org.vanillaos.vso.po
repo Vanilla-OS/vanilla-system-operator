@@ -104,121 +104,121 @@ msgstr "La configuració s'ha actualitzat correctament."
 msgid "vso.cmd.config.show"
 msgstr "Mostrar la configuració del sistema"
 
-msgid "vso.cmd.pico"
+msgid "vso.cmd.native"
 msgstr "Gestionar el subsistema Pico"
 
-msgid "vso.cmd.pico.error.notInitialized"
-msgstr "El subsistema Pico no és inicialitzat. Si us plau, fes servir la comanda `vso pico-init` per inicialitzar-lo."
+msgid "vso.cmd.native.error.notInitialized"
+msgstr "El subsistema Pico no és inicialitzat. Si us plau, fes servir la comanda `vso native init` per inicialitzar-lo."
 
-msgid "vso.cmd.pico.error.alreadyInitialized"
+msgid "vso.cmd.native.error.alreadyInitialized"
 msgstr "El subsistema Pico ja es troba inicialitzat. Si us plau fes servir l'opció --force per forçar la inicialització."
 
-msgid "vso.cmd.pico.error.noAppNameOrBin"
+msgid "vso.cmd.native.error.noAppNameOrBin"
 msgstr "S'ha d'especificar el nom de la --aplicació o del --binari."
 
-msgid "vso.cmd.pico.error.sameAppOrBin"
+msgid "vso.cmd.native.error.sameAppOrBin"
 msgstr "No es poden declarar a la vegada --nom-aplicació i --binari."
 
-msgid "vso.cmd.pico.error.exportingApp"
+msgid "vso.cmd.native.error.exportingApp"
 msgstr "S'ha trobat un error exportant la aplicació: %s"
 
-msgid "vso.cmd.pico.error.exportingBin"
+msgid "vso.cmd.native.error.exportingBin"
 msgstr "S'ha trobat un error exportant el binari: %s"
 
-msgid "vso.cmd.pico.error.unexportingApp"
+msgid "vso.cmd.native.error.unexportingApp"
 msgstr "S'ha trobat un error mentre es desfeia l'exportació de l'aplicació: %s"
 
-msgid "vso.cmd.pico.error.unexportingBin"
+msgid "vso.cmd.native.error.unexportingBin"
 msgstr "S'ha trobat un error mentre es desfeia l'exportació del binari: %s"
 
-msgid "vso.cmd.pico.error.unknownCommand"
+msgid "vso.cmd.native.error.unknownCommand"
 msgstr "Unknown command: %s"
 
-msgid "vso.cmd.pico.error.shellReset"
+msgid "vso.cmd.native.error.shellReset"
 msgstr "It is impossible to reach the VSO shell. Do you want to reset it? (This will remove all your software installed in the subsystem) [y/N]"
 
-msgid "vso.cmd.pico.info.deleting"
+msgid "vso.cmd.native.info.deleting"
 msgstr "Deleting the VSO subsystem..."
 
-msgid "vso.cmd.pico.info.initializing"
+msgid "vso.cmd.native.info.initializing"
 msgstr "Initializing the VSO subsystem..."
 
-msgid "vso.cmd.pico.info.initialized"
+msgid "vso.cmd.native.info.initialized"
 msgstr "El subsistema Pico s'ha inicialitzat."
 
-msgid "vso.cmd.pico.info.exported"
+msgid "vso.cmd.native.info.exported"
 msgstr "%s Exportat\n"
 
-msgid "vso.cmd.pico.info.unexported"
+msgid "vso.cmd.native.info.unexported"
 msgstr "%s Exportació desfeta\n"
 
-msgid "vso.cmd.pico.info.exportedApps"
+msgid "vso.cmd.native.info.exportedApps"
 msgstr "Aplicacions exportades %d"
 
-msgid "vso.cmd.pico.info.unexportedApps"
+msgid "vso.cmd.native.info.unexportedApps"
 msgstr "Aplicacions amb exportacions desfetes %d"
 
-msgid "vso.cmd.pico.info.shellInit"
+msgid "vso.cmd.native.info.shellInit"
 msgstr "Looks like your shell is not initialized yet. Do you want to initialize it now? (Highly recommended) [y/N]"
 
-msgid "vso.cmd.pico.info.fallbackShell"
+msgid "vso.cmd.native.info.fallbackShell"
 msgstr "Fallback to the host shell? This could lead to unexpected behavior. [y/N]"
 
-msgid "vso.cmd.pico.export"
+msgid "vso.cmd.native.export"
 msgstr "Exportar una aplicació o binari del subsistema"
 
-msgid "vso.cmd.pico.export.options.app"
+msgid "vso.cmd.native.export.options.app"
 msgstr "el no de la aplicació a exportar"
 
-msgid "vso.cmd.pico.export.options.bin"
+msgid "vso.cmd.native.export.options.bin"
 msgstr "el nom del binari a exportar"
 
-msgid "vso.cmd.pico.export.options.binOutput"
+msgid "vso.cmd.native.export.options.binOutput"
 msgstr "camí de sortida del binari (per defecte: ~/.local/bin)"
 
-msgid "vso.cmd.pico.unexport"
+msgid "vso.cmd.native.unexport"
 msgstr "Desfés la exportació d'una aplicació o binari del subsistema"
 
-msgid "vso.cmd.pico.unexport.options.app"
+msgid "vso.cmd.native.unexport.options.app"
 msgstr "el nom de la aplicació per desfer l'exportació"
 
-msgid "vso.cmd.pico.unexport.options.bin"
+msgid "vso.cmd.native.unexport.options.bin"
 msgstr "el nom del binari per desfer l'exportació"
 
-msgid "vso.cmd.pico.unexport.options.binOutput"
+msgid "vso.cmd.native.unexport.options.binOutput"
 msgstr "camí de la sortida del binari (per defecte: ~/.local/bin/)"
 
-msgid "vso.cmd.pico.init"
+msgid "vso.cmd.native.init"
 msgstr "Inicialitzar el subsistema Pic, es fa servir per a la gestió de paquets"
 
-msgid "vso.cmd.pico.init.options.force"
+msgid "vso.cmd.native.init.options.force"
 msgstr "força la inicialització del subsistema si ja es troba inicialitzat"
 
-msgid "vso.cmd.pico.install"
+msgid "vso.cmd.native.install"
 msgstr "Instal·lar una aplicació dintre del subsistema"
 
-msgid "vso.cmd.pico.remove"
+msgid "vso.cmd.native.remove"
 msgstr "Suprimir una aplicació del subsistema"
 
-msgid "vso.cmd.pico.run"
+msgid "vso.cmd.native.run"
 msgstr "Executar una aplicació del subsistema"
 
-msgid "vso.cmd.pico.run.options.noReset"
+msgid "vso.cmd.native.run.options.noReset"
 msgstr "do not propose to reset the subsystem if something goes wrong"
 
-msgid "vso.cmd.pico.search"
+msgid "vso.cmd.native.search"
 msgstr "Cercar una aplicació per instal·lar dintre del subsistema"
 
-msgid "vso.cmd.pico.shell"
+msgid "vso.cmd.native.shell"
 msgstr "Entrar a l'entorn del subsistema"
 
-msgid "vso.cmd.pico.sideload"
+msgid "vso.cmd.native.sideload"
 msgstr "Sideload DEB/APK packages inside the subsystem"
 
-msgid "vso.cmd.pico.update"
+msgid "vso.cmd.native.update"
 msgstr "Actualitzar el repositori de paquets del subsistema"
 
-msgid "vso.cmd.pico.upgrade"
+msgid "vso.cmd.native.upgrade"
 msgstr "Actualitzar els paquets dintre del subsistema"
 
 msgid "vso.cmd.sysUpgrade"

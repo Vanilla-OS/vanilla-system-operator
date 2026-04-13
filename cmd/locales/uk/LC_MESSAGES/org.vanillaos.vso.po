@@ -104,121 +104,121 @@ msgstr "Конфігурацію успішно оновлено."
 msgid "vso.cmd.config.show"
 msgstr "Показати конфігурацію системи"
 
-msgid "vso.cmd.pico"
+msgid "vso.cmd.native"
 msgstr "Керування підсистемою VSO"
 
-msgid "vso.cmd.pico.error.notInitialized"
-msgstr "Підсистему VSO не ініціалізовано. Будь ласка, виконайте `vso pico-init` для її ініціалізації."
+msgid "vso.cmd.native.error.notInitialized"
+msgstr "Підсистему VSO не ініціалізовано. Будь ласка, виконайте `vso native init` для її ініціалізації."
 
-msgid "vso.cmd.pico.error.alreadyInitialized"
+msgid "vso.cmd.native.error.alreadyInitialized"
 msgstr "Підсистему VSO вже ініціалізовано. Використовуйте прапорець --force для примусової ініціалізації."
 
-msgid "vso.cmd.pico.error.noAppNameOrBin"
+msgid "vso.cmd.native.error.noAppNameOrBin"
 msgstr "--app або --bin необхідно вказати."
 
-msgid "vso.cmd.pico.error.sameAppOrBin"
+msgid "vso.cmd.native.error.sameAppOrBin"
 msgstr "--app та --bin не можуть бути вказані одночасно."
 
-msgid "vso.cmd.pico.error.exportingApp"
+msgid "vso.cmd.native.error.exportingApp"
 msgstr "Виникла помилка під час експорту застосунку: %s"
 
-msgid "vso.cmd.pico.error.exportingBin"
+msgid "vso.cmd.native.error.exportingBin"
 msgstr "Виникла помилка під час бінарного файлу : %s"
 
-msgid "vso.cmd.pico.error.unexportingApp"
+msgid "vso.cmd.native.error.unexportingApp"
 msgstr "Виникла помилка під час скасування експорту програми: %s"
 
-msgid "vso.cmd.pico.error.unexportingBin"
+msgid "vso.cmd.native.error.unexportingBin"
 msgstr "Виникла помилка під час скасування експорту бінарного файлу: %s"
 
-msgid "vso.cmd.pico.error.unknownCommand"
+msgid "vso.cmd.native.error.unknownCommand"
 msgstr "Невідома команда: %s"
 
-msgid "vso.cmd.pico.error.shellReset"
+msgid "vso.cmd.native.error.shellReset"
 msgstr "Неможливо дістатися до оболонки VSO. Бажаєте скинути її? (Це призведе до видалення всього вашого програмного забезпечення, встановленого у підсистемі) [y/N]"
 
-msgid "vso.cmd.pico.info.deleting"
+msgid "vso.cmd.native.info.deleting"
 msgstr "Видалення підсистеми VSO..."
 
-msgid "vso.cmd.pico.info.initializing"
+msgid "vso.cmd.native.info.initializing"
 msgstr "Ініціалізація підсистеми VSO..."
 
-msgid "vso.cmd.pico.info.initialized"
+msgid "vso.cmd.native.info.initialized"
 msgstr "Підсистему VSO ініціалізовано."
 
-msgid "vso.cmd.pico.info.exported"
+msgid "vso.cmd.native.info.exported"
 msgstr "Експортовано %s\n"
 
-msgid "vso.cmd.pico.info.unexported"
+msgid "vso.cmd.native.info.unexported"
 msgstr "Не експортовано %s\n"
 
-msgid "vso.cmd.pico.info.exportedApps"
+msgid "vso.cmd.native.info.exportedApps"
 msgstr "Експортовано %d застосунків"
 
-msgid "vso.cmd.pico.info.unexportedApps"
+msgid "vso.cmd.native.info.unexportedApps"
 msgstr "Не експортовано %d застосунків"
 
-msgid "vso.cmd.pico.info.shellInit"
+msgid "vso.cmd.native.info.shellInit"
 msgstr "Схоже, вашу оболонку ще не ініціалізовано. Бажаєте ініціалізувати її зараз? (Настійно рекомендується) [y/N]"
 
-msgid "vso.cmd.pico.info.fallbackShell"
+msgid "vso.cmd.native.info.fallbackShell"
 msgstr "Повернутися до основної оболонки? Це може призвести до неочікуваної поведінки. [y/N]"
 
-msgid "vso.cmd.pico.export"
+msgid "vso.cmd.native.export"
 msgstr "Експортувати застосунок або бінарний файл з підсистеми"
 
-msgid "vso.cmd.pico.export.options.app"
+msgid "vso.cmd.native.export.options.app"
 msgstr "назва застосунку для експорту"
 
-msgid "vso.cmd.pico.export.options.bin"
+msgid "vso.cmd.native.export.options.bin"
 msgstr "назва бінарного файлу для експорту"
 
-msgid "vso.cmd.pico.export.options.binOutput"
+msgid "vso.cmd.native.export.options.binOutput"
 msgstr "шлях бінарного виводу (типово: ~/.local/bin/)"
 
-msgid "vso.cmd.pico.unexport"
+msgid "vso.cmd.native.unexport"
 msgstr "Скасувати експорт застосунку або бінарного файлу з підсистеми"
 
-msgid "vso.cmd.pico.unexport.options.app"
+msgid "vso.cmd.native.unexport.options.app"
 msgstr "назву застосунку для скасування експорту"
 
-msgid "vso.cmd.pico.unexport.options.bin"
+msgid "vso.cmd.native.unexport.options.bin"
 msgstr "назва бінарного файлу для скасування експорту"
 
-msgid "vso.cmd.pico.unexport.options.binOutput"
+msgid "vso.cmd.native.unexport.options.binOutput"
 msgstr "шлях до бінарного виводу (типово: ~/.local/bin/)"
 
-msgid "vso.cmd.pico.init"
+msgid "vso.cmd.native.init"
 msgstr "Ініціалізація підсистеми VSO, що використовується для управління пакетами"
 
-msgid "vso.cmd.pico.init.options.force"
+msgid "vso.cmd.native.init.options.force"
 msgstr "примусово ініціалізувати, якщо підсистема вже ініціалізована"
 
-msgid "vso.cmd.pico.install"
+msgid "vso.cmd.native.install"
 msgstr "Встановити застосунок всередині підсистеми"
 
-msgid "vso.cmd.pico.remove"
+msgid "vso.cmd.native.remove"
 msgstr "Видалити застосунок з підсистеми"
 
-msgid "vso.cmd.pico.run"
+msgid "vso.cmd.native.run"
 msgstr "Запустити застосунок з підсистеми"
 
-msgid "vso.cmd.pico.run.options.noReset"
+msgid "vso.cmd.native.run.options.noReset"
 msgstr "не пропонувати скинути підсистему, якщо щось піде не так"
 
-msgid "vso.cmd.pico.search"
+msgid "vso.cmd.native.search"
 msgstr "Пошук застосунку для встановлення всередині підсистеми"
 
-msgid "vso.cmd.pico.shell"
+msgid "vso.cmd.native.shell"
 msgstr "Увійти в середовище підсистеми"
 
-msgid "vso.cmd.pico.sideload"
+msgid "vso.cmd.native.sideload"
 msgstr "Бокове завантаження пакетів DEB/APK всередині підсистеми"
 
-msgid "vso.cmd.pico.update"
+msgid "vso.cmd.native.update"
 msgstr "Оновлення сховища пакетів підсистеми"
 
-msgid "vso.cmd.pico.upgrade"
+msgid "vso.cmd.native.upgrade"
 msgstr "Оновлення пакетів всередині підсистеми"
 
 msgid "vso.cmd.sysUpgrade"

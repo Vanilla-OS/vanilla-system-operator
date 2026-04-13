@@ -104,121 +104,121 @@ msgstr "구성이 성공적으로 업데이트되었습니다."
 msgid "vso.cmd.config.show"
 msgstr "시스템 구성을 표시합니다"
 
-msgid "vso.cmd.pico"
+msgid "vso.cmd.native"
 msgstr "VSO 하위 시스템을 관리합니다"
 
-msgid "vso.cmd.pico.error.notInitialized"
-msgstr "VSO 하위 시스템이 초기화되지 않았습니다. `vso pico-init`을 실행하여 초기화해 주세요."
+msgid "vso.cmd.native.error.notInitialized"
+msgstr "VSO 하위 시스템이 초기화되지 않았습니다. `vso native init`을 실행하여 초기화해 주세요."
 
-msgid "vso.cmd.pico.error.alreadyInitialized"
+msgid "vso.cmd.native.error.alreadyInitialized"
 msgstr "VSO 하위 시스템은 이미 초기화되었습니다. 초기화를 강제로 실행하려면 --force 플래그를 사용하세요."
 
-msgid "vso.cmd.pico.error.noAppNameOrBin"
+msgid "vso.cmd.native.error.noAppNameOrBin"
 msgstr "--app 또는 --bin을 지정해야 합니다."
 
-msgid "vso.cmd.pico.error.sameAppOrBin"
+msgid "vso.cmd.native.error.sameAppOrBin"
 msgstr "--app과 --bin을 동시에 지정할 수 없습니다."
 
-msgid "vso.cmd.pico.error.exportingApp"
+msgid "vso.cmd.native.error.exportingApp"
 msgstr "응용 프로그램 내보내기 중 오류가 발생했습니다: %s"
 
-msgid "vso.cmd.pico.error.exportingBin"
+msgid "vso.cmd.native.error.exportingBin"
 msgstr "바이너리 내보내기 중 오류가 발생했습니다: %s"
 
-msgid "vso.cmd.pico.error.unexportingApp"
+msgid "vso.cmd.native.error.unexportingApp"
 msgstr "응용 프로그램을 되돌리는 중 오류가 발생했습니다: %s"
 
-msgid "vso.cmd.pico.error.unexportingBin"
+msgid "vso.cmd.native.error.unexportingBin"
 msgstr "바이너리를 되돌리는 중 오류가 발생했습니다: %s"
 
-msgid "vso.cmd.pico.error.unknownCommand"
+msgid "vso.cmd.native.error.unknownCommand"
 msgstr "알 수 없는 명령어: %s"
 
-msgid "vso.cmd.pico.error.shellReset"
+msgid "vso.cmd.native.error.shellReset"
 msgstr "VSO 쉘에 접근할 수 없습니다. 초기화하시겠습니까? (하위 시스템에 설치된 모든 소프트웨어가 제거됩니다) [y/N]"
 
-msgid "vso.cmd.pico.info.deleting"
+msgid "vso.cmd.native.info.deleting"
 msgstr "VSO 하위 시스템을 삭제하는 중입니다..."
 
-msgid "vso.cmd.pico.info.initializing"
+msgid "vso.cmd.native.info.initializing"
 msgstr "VSO 하위 시스템을 초기화하는 중입니다..."
 
-msgid "vso.cmd.pico.info.initialized"
+msgid "vso.cmd.native.info.initialized"
 msgstr "VSO 하위 시스템이 초기화되었습니다."
 
-msgid "vso.cmd.pico.info.exported"
+msgid "vso.cmd.native.info.exported"
 msgstr "%s 내보냄\n"
 
-msgid "vso.cmd.pico.info.unexported"
+msgid "vso.cmd.native.info.unexported"
 msgstr "%s 되돌림\n"
 
-msgid "vso.cmd.pico.info.exportedApps"
+msgid "vso.cmd.native.info.exportedApps"
 msgstr "%d개의 응용 프로그램(들)을 내보냈습니다"
 
-msgid "vso.cmd.pico.info.unexportedApps"
+msgid "vso.cmd.native.info.unexportedApps"
 msgstr "내보내지 않은 %d개의 응용 프로그램(들)"
 
-msgid "vso.cmd.pico.info.shellInit"
+msgid "vso.cmd.native.info.shellInit"
 msgstr "쉘이 아직 초기화되지 않은 것 같습니다. 지금 초기화하시겠습니까? (강력히 추천됨) [y/N]"
 
-msgid "vso.cmd.pico.info.fallbackShell"
+msgid "vso.cmd.native.info.fallbackShell"
 msgstr "호스트 쉘로 대체하시겠습니까? 예기치 않은 동작을 초래할 수 있습니다. [y/N]"
 
-msgid "vso.cmd.pico.export"
+msgid "vso.cmd.native.export"
 msgstr "하위 시스템에서 응용 프로그램 또는 바이너리를 내보내세요"
 
-msgid "vso.cmd.pico.export.options.app"
+msgid "vso.cmd.native.export.options.app"
 msgstr "내보낼 응용 프로그램의 이름"
 
-msgid "vso.cmd.pico.export.options.bin"
+msgid "vso.cmd.native.export.options.bin"
 msgstr "내보낼 바이너리의 이름"
 
-msgid "vso.cmd.pico.export.options.binOutput"
+msgid "vso.cmd.native.export.options.binOutput"
 msgstr "바이너리 출력 경로 (기본값: ~/.local/bin/)"
 
-msgid "vso.cmd.pico.unexport"
+msgid "vso.cmd.native.unexport"
 msgstr "하위 시스템에서 응용 프로그램 또는 바이너리 내보내기 취소"
 
-msgid "vso.cmd.pico.unexport.options.app"
+msgid "vso.cmd.native.unexport.options.app"
 msgstr "되돌릴 응용 프로그램의 이름"
 
-msgid "vso.cmd.pico.unexport.options.bin"
+msgid "vso.cmd.native.unexport.options.bin"
 msgstr "되돌릴 바이너리의 이름"
 
-msgid "vso.cmd.pico.unexport.options.binOutput"
+msgid "vso.cmd.native.unexport.options.binOutput"
 msgstr "바이너리 출력 경로 (기본값: ~/.local/bin/)"
 
-msgid "vso.cmd.pico.init"
+msgid "vso.cmd.native.init"
 msgstr "패키지 관리를 위해 사용되는 VSO 하위 시스템을 초기화합니다"
 
-msgid "vso.cmd.pico.init.options.force"
+msgid "vso.cmd.native.init.options.force"
 msgstr "하위 시스템이 이미 초기화되어 있는 경우 강제로 초기화합니다"
 
-msgid "vso.cmd.pico.install"
+msgid "vso.cmd.native.install"
 msgstr "하위 시스템 내에 응용 프로그램을 설치합니다"
 
-msgid "vso.cmd.pico.remove"
+msgid "vso.cmd.native.remove"
 msgstr "하위 시스템에서 응용 프로그램을 제거합니다"
 
-msgid "vso.cmd.pico.run"
+msgid "vso.cmd.native.run"
 msgstr "하위 시스템에서 응용 프로그램을 실행합니다"
 
-msgid "vso.cmd.pico.run.options.noReset"
+msgid "vso.cmd.native.run.options.noReset"
 msgstr "문제가 발생하면 하위 시스템을 재설정하도록 제안하지 마십시오"
 
-msgid "vso.cmd.pico.search"
+msgid "vso.cmd.native.search"
 msgstr "하위 시스템 내부에 설치할 응용 프로그램 검색"
 
-msgid "vso.cmd.pico.shell"
+msgid "vso.cmd.native.shell"
 msgstr "하위 시스템 환경 진입"
 
-msgid "vso.cmd.pico.sideload"
+msgid "vso.cmd.native.sideload"
 msgstr "하위 시스템 내에서 DEB/APK 패키지를 사이드로드합니다"
 
-msgid "vso.cmd.pico.update"
+msgid "vso.cmd.native.update"
 msgstr "하위 시스템의 패키지 저장소를 업데이트합니다"
 
-msgid "vso.cmd.pico.upgrade"
+msgid "vso.cmd.native.upgrade"
 msgstr "하위 시스템 내부의 패키지 업그레이드"
 
 msgid "vso.cmd.sysUpgrade"

@@ -104,121 +104,121 @@ msgstr "Configuratie succesvol bĳgewerkt"
 msgid "vso.cmd.config.show"
 msgstr "Toont de systeemconfiguratie"
 
-msgid "vso.cmd.pico"
+msgid "vso.cmd.native"
 msgstr "Beheer het VSO-subsysteem"
 
-msgid "vso.cmd.pico.error.notInitialized"
-msgstr "Het VSO-subsysteem is niet geïnitialiseerd. Voer `vso pico-init` uit om deze te initialiseren."
+msgid "vso.cmd.native.error.notInitialized"
+msgstr "Het VSO-subsysteem is niet geïnitialiseerd. Voer `vso native init` uit om deze te initialiseren."
 
-msgid "vso.cmd.pico.error.alreadyInitialized"
+msgid "vso.cmd.native.error.alreadyInitialized"
 msgstr "Het VSO-subsysteem is al geïnitialiseerd. Gebruik de vlag --force om de initialisatie te forceren."
 
-msgid "vso.cmd.pico.error.noAppNameOrBin"
+msgid "vso.cmd.native.error.noAppNameOrBin"
 msgstr "‘--app’ of ‘--bin’ moet worden opgegeven."
 
-msgid "vso.cmd.pico.error.sameAppOrBin"
+msgid "vso.cmd.native.error.sameAppOrBin"
 msgstr "‘--app’ en ‘--bin’ kunnen niet beide worden opgegeven."
 
-msgid "vso.cmd.pico.error.exportingApp"
+msgid "vso.cmd.native.error.exportingApp"
 msgstr "Er is een fout opgetreden tĳdens het exporteren van de app: %s"
 
-msgid "vso.cmd.pico.error.exportingBin"
+msgid "vso.cmd.native.error.exportingBin"
 msgstr "Er is een fout opgetreden tĳdens het exporteren van het programma­bestand: %s"
 
-msgid "vso.cmd.pico.error.unexportingApp"
+msgid "vso.cmd.native.error.unexportingApp"
 msgstr "Er is een fout opgetreden tĳdens het ontexporteren van de app: %s"
 
-msgid "vso.cmd.pico.error.unexportingBin"
+msgid "vso.cmd.native.error.unexportingBin"
 msgstr "Er is een fout opgetreden tĳdens het ontexporteren van het programma­bestand: %s"
 
-msgid "vso.cmd.pico.error.unknownCommand"
+msgid "vso.cmd.native.error.unknownCommand"
 msgstr "Onbekende opdracht: %s"
 
-msgid "vso.cmd.pico.error.shellReset"
+msgid "vso.cmd.native.error.shellReset"
 msgstr "Het is onmogelĳk om de VSO-shell te bereiken. Wilt u deze resetten? (Hiermee wordt al uw software verwĳderd die in het subsysteem is geïnstalleerd) [y/N]"
 
-msgid "vso.cmd.pico.info.deleting"
+msgid "vso.cmd.native.info.deleting"
 msgstr "VSO-subsysteem verwĳderen…"
 
-msgid "vso.cmd.pico.info.initializing"
+msgid "vso.cmd.native.info.initializing"
 msgstr "VSO-subsysteem initialiseren…"
 
-msgid "vso.cmd.pico.info.initialized"
+msgid "vso.cmd.native.info.initialized"
 msgstr "Het VSO-subsysteem is geïnitialiseerd."
 
-msgid "vso.cmd.pico.info.exported"
+msgid "vso.cmd.native.info.exported"
 msgstr "%s geëxporteerd\n"
 
-msgid "vso.cmd.pico.info.unexported"
+msgid "vso.cmd.native.info.unexported"
 msgstr "%s geontexporteerd\n"
 
-msgid "vso.cmd.pico.info.exportedApps"
+msgid "vso.cmd.native.info.exportedApps"
 msgstr "%d apps geëxporteerd"
 
-msgid "vso.cmd.pico.info.unexportedApps"
+msgid "vso.cmd.native.info.unexportedApps"
 msgstr "%d apps geontexporteerd"
 
-msgid "vso.cmd.pico.info.shellInit"
+msgid "vso.cmd.native.info.shellInit"
 msgstr "Het lĳkt erop dat uw shell nog niet is geïnitialiseerd. Wilt u deze nu initialiseren? (sterk aanbevolen) [y/N]"
 
-msgid "vso.cmd.pico.info.fallbackShell"
+msgid "vso.cmd.native.info.fallbackShell"
 msgstr "Terugvallen op de host-shell? Dit kan tot onverwacht gedrag leiden. [y/N]"
 
-msgid "vso.cmd.pico.export"
+msgid "vso.cmd.native.export"
 msgstr "Een app of programmabestand van het subsysteem exporteren"
 
-msgid "vso.cmd.pico.export.options.app"
+msgid "vso.cmd.native.export.options.app"
 msgstr "de naam van de te exporteren app"
 
-msgid "vso.cmd.pico.export.options.bin"
+msgid "vso.cmd.native.export.options.bin"
 msgstr "de naam van het te exporteren programmabestand"
 
-msgid "vso.cmd.pico.export.options.binOutput"
+msgid "vso.cmd.native.export.options.binOutput"
 msgstr "uitvoerpad van het programmabestand (standaard: ~/.local/bin/)"
 
-msgid "vso.cmd.pico.unexport"
+msgid "vso.cmd.native.unexport"
 msgstr "Ontexporteert een app of programmabestand van het subsysteem"
 
-msgid "vso.cmd.pico.unexport.options.app"
+msgid "vso.cmd.native.unexport.options.app"
 msgstr "de naam van de app om te ontexporteren"
 
-msgid "vso.cmd.pico.unexport.options.bin"
+msgid "vso.cmd.native.unexport.options.bin"
 msgstr "de naam van het programmabestand om te ontexporteren"
 
-msgid "vso.cmd.pico.unexport.options.binOutput"
+msgid "vso.cmd.native.unexport.options.binOutput"
 msgstr "uitvoerpad van het programmabestand (standaard: ~/.local/bin/)"
 
-msgid "vso.cmd.pico.init"
+msgid "vso.cmd.native.init"
 msgstr "Initialiseert het VSO-subsysteem, gebruikt voor pakketbeheer"
 
-msgid "vso.cmd.pico.init.options.force"
+msgid "vso.cmd.native.init.options.force"
 msgstr "forceert de initialisatie als het subsysteem al is geïnitialiseerd"
 
-msgid "vso.cmd.pico.install"
+msgid "vso.cmd.native.install"
 msgstr "Installeert een app in het subsysteem"
 
-msgid "vso.cmd.pico.remove"
+msgid "vso.cmd.native.remove"
 msgstr "Verwĳdert een app van het subsysteem"
 
-msgid "vso.cmd.pico.run"
+msgid "vso.cmd.native.run"
 msgstr "Start een app van het subsysteem"
 
-msgid "vso.cmd.pico.run.options.noReset"
+msgid "vso.cmd.native.run.options.noReset"
 msgstr "niet voorstellen om het subsysteem te resetten als er iets fout gaat"
 
-msgid "vso.cmd.pico.search"
+msgid "vso.cmd.native.search"
 msgstr "Zoek naar een app om in het subsysteem te installeren"
 
-msgid "vso.cmd.pico.shell"
+msgid "vso.cmd.native.shell"
 msgstr "Betreed de subsysteem­omgeving"
 
-msgid "vso.cmd.pico.sideload"
+msgid "vso.cmd.native.sideload"
 msgstr "DEB-/APK-pakketten binnen het subsysteem sideloaden"
 
-msgid "vso.cmd.pico.update"
+msgid "vso.cmd.native.update"
 msgstr "Werkt de pakket-repository van het subsysteem bĳ"
 
-msgid "vso.cmd.pico.upgrade"
+msgid "vso.cmd.native.upgrade"
 msgstr "Werkt de pakketten in het subsysteem bĳ"
 
 msgid "vso.cmd.sysUpgrade"
