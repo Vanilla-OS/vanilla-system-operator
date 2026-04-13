@@ -16,8 +16,8 @@ import (
 	"github.com/vanilla-os/apx/v3/core"
 )
 
-func GetPico() (*core.SubSystem, error) {
-	subsystem, err := core.LoadSubSystem("vso-pico", false)
+func GetNative() (*core.SubSystem, error) {
+	subsystem, err := core.LoadSubSystem("vso-native", false)
 	if err != nil {
 		return nil, err
 	}
@@ -25,15 +25,15 @@ func GetPico() (*core.SubSystem, error) {
 	return subsystem, nil
 }
 
-func PicoExists() bool {
-	_, err := GetPico()
+func NativeExists() bool {
+	_, err := GetNative()
 	return err == nil
 }
 
-func PicoInit() error {
-	stack, _ := core.LoadStack("vso-pico")
+func NativeInit() error {
+	stack, _ := core.LoadStack("vso-native")
 	subsystem, err := core.NewSubSystem(
-		"vso-pico",
+		"vso-native",
 		stack,
 		"",
 		true,
@@ -62,8 +62,8 @@ func PicoInit() error {
 	return err
 }
 
-func PicoDelete() error {
-	subsystem, err := GetPico()
+func NativeDelete() error {
+	subsystem, err := GetNative()
 	if err != nil {
 		return err
 	}
@@ -76,8 +76,8 @@ func PicoDelete() error {
 	return nil
 }
 
-func PicoExport(app string, binary string) error {
-	subsystem, err := GetPico()
+func NativeExport(app string, binary string) error {
+	subsystem, err := GetNative()
 	if err != nil {
 		return err
 	}
@@ -91,8 +91,8 @@ func PicoExport(app string, binary string) error {
 	return err
 }
 
-func PicoUnexport(app string, binary string) error {
-	subsystem, err := GetPico()
+func NativeUnexport(app string, binary string) error {
+	subsystem, err := GetNative()
 	if err != nil {
 		return err
 	}
@@ -106,25 +106,25 @@ func PicoUnexport(app string, binary string) error {
 	return err
 }
 
-func PicoUpgrade() error {
-	pico, err := GetPico()
+func NativeUpgrade() error {
+	subsystem, err := GetNative()
 	if err != nil {
 		return err
 	}
 
-	pkgManager, err := pico.Stack.GetPkgManager()
+	pkgManager, err := subsystem.Stack.GetPkgManager()
 	if err != nil {
 		return err
 	}
 
 	finalArgs := pkgManager.GenCmd(pkgManager.CmdUpdate, []string{}...)
-	_, err = pico.Exec(false, false, finalArgs...)
+	_, err = subsystem.Exec(false, false, finalArgs...)
 	if err != nil {
 		return err
 	}
 
 	finalArgs = pkgManager.GenCmd(pkgManager.CmdUpgrade, []string{}...)
-	_, err = pico.Exec(false, false, finalArgs...)
+	_, err = subsystem.Exec(false, false, finalArgs...)
 	if err != nil {
 		return err
 	}

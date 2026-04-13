@@ -104,121 +104,121 @@ msgstr "Yapılandırma başarıyla güncellendi."
 msgid "vso.cmd.config.show"
 msgstr "Sistem yapılandırmasını göster"
 
-msgid "vso.cmd.pico"
+msgid "vso.cmd.native"
 msgstr "VSO alt sistemini yönet"
 
-msgid "vso.cmd.pico.error.notInitialized"
-msgstr "VSO alt sistemi ilklendirilmedi. İlklendirmek için `vso pico-init` çalıştırın."
+msgid "vso.cmd.native.error.notInitialized"
+msgstr "VSO alt sistemi ilklendirilmedi. İlklendirmek için `vso native init` çalıştırın."
 
-msgid "vso.cmd.pico.error.alreadyInitialized"
+msgid "vso.cmd.native.error.alreadyInitialized"
 msgstr "VSO alt sistemi halihazırda ilklendirildi. İlklendirmeye zorlamak için --force bayrağını kullanın."
 
-msgid "vso.cmd.pico.error.noAppNameOrBin"
+msgid "vso.cmd.native.error.noAppNameOrBin"
 msgstr "--app ya da --bin belirtilmeli."
 
-msgid "vso.cmd.pico.error.sameAppOrBin"
+msgid "vso.cmd.native.error.sameAppOrBin"
 msgstr "--app ve --bin aynı anda belirtilemez."
 
-msgid "vso.cmd.pico.error.exportingApp"
+msgid "vso.cmd.native.error.exportingApp"
 msgstr "Uygulama dışa aktarılırken hata oluştu: %s"
 
-msgid "vso.cmd.pico.error.exportingBin"
+msgid "vso.cmd.native.error.exportingBin"
 msgstr "İki dışa aktarılırken hata oluştu: %s"
 
-msgid "vso.cmd.pico.error.unexportingApp"
+msgid "vso.cmd.native.error.unexportingApp"
 msgstr "Uygulama dışa aktarımı geri alınırken hata oluştu: %s"
 
-msgid "vso.cmd.pico.error.unexportingBin"
+msgid "vso.cmd.native.error.unexportingBin"
 msgstr "İkili dışa aktarımı geri alınırken hata oluştu: %s"
 
-msgid "vso.cmd.pico.error.unknownCommand"
+msgid "vso.cmd.native.error.unknownCommand"
 msgstr "Bilinmeyen komut: %s"
 
-msgid "vso.cmd.pico.error.shellReset"
+msgid "vso.cmd.native.error.shellReset"
 msgstr "VSO kabuğuna erişmek olanaksız. Sıfırlamak ister misiniz? (Bu, alt sisteminizde kurulu yazılımların tümünü kaldıracaktır. [y/N]"
 
-msgid "vso.cmd.pico.info.deleting"
+msgid "vso.cmd.native.info.deleting"
 msgstr "VSO alt sistemi siliniyor..."
 
-msgid "vso.cmd.pico.info.initializing"
+msgid "vso.cmd.native.info.initializing"
 msgstr "VSO alt sistemi ilklendiriliyor..."
 
-msgid "vso.cmd.pico.info.initialized"
+msgid "vso.cmd.native.info.initialized"
 msgstr "VSO alt sistemi ilklendirildi."
 
-msgid "vso.cmd.pico.info.exported"
+msgid "vso.cmd.native.info.exported"
 msgstr "Dışa aktarıldı: %s\n"
 
-msgid "vso.cmd.pico.info.unexported"
+msgid "vso.cmd.native.info.unexported"
 msgstr "Dışa aktarımı geri alındı: %s\n"
 
-msgid "vso.cmd.pico.info.exportedApps"
+msgid "vso.cmd.native.info.exportedApps"
 msgstr "%d uygulama dışa aktarıldı"
 
-msgid "vso.cmd.pico.info.unexportedApps"
+msgid "vso.cmd.native.info.unexportedApps"
 msgstr "%d uygulama dışa aktarımı geri alındı"
 
-msgid "vso.cmd.pico.info.shellInit"
+msgid "vso.cmd.native.info.shellInit"
 msgstr "Görünüşe göre kabuğunuz henüz ilklendirilmemiş. Şimdi ilklendirmek ister misiniz? (Şiddetle önerilir) [y/N]"
 
-msgid "vso.cmd.pico.info.fallbackShell"
+msgid "vso.cmd.native.info.fallbackShell"
 msgstr "Ana makine kabuğuna geri dönülsün mü? Bu beklenmedik davranışlara neden olabilir. [y/N]"
 
-msgid "vso.cmd.pico.export"
+msgid "vso.cmd.native.export"
 msgstr "Alt sistemden uygulama ya da ikili dışa aktar"
 
-msgid "vso.cmd.pico.export.options.app"
+msgid "vso.cmd.native.export.options.app"
 msgstr "dışa aktarılacak uygulamanın adı"
 
-msgid "vso.cmd.pico.export.options.bin"
+msgid "vso.cmd.native.export.options.bin"
 msgstr "dışa aktarılacak ikilinin adı"
 
-msgid "vso.cmd.pico.export.options.binOutput"
+msgid "vso.cmd.native.export.options.binOutput"
 msgstr "ikili çıktısının yolu (öntanımlı: ~/.local/bin/)"
 
-msgid "vso.cmd.pico.unexport"
+msgid "vso.cmd.native.unexport"
 msgstr "Alt sistemden uygulama ya da ikili dışa aktarımını geri al"
 
-msgid "vso.cmd.pico.unexport.options.app"
+msgid "vso.cmd.native.unexport.options.app"
 msgstr "dışa aktarımı geri alınacak uygulamanın adı"
 
-msgid "vso.cmd.pico.unexport.options.bin"
+msgid "vso.cmd.native.unexport.options.bin"
 msgstr "dışa aktarımı geri alınacak ikilinin adı"
 
-msgid "vso.cmd.pico.unexport.options.binOutput"
+msgid "vso.cmd.native.unexport.options.binOutput"
 msgstr "ikili çıktısının yolu (öntanımlı: ~/.local/bin/)"
 
-msgid "vso.cmd.pico.init"
+msgid "vso.cmd.native.init"
 msgstr "VSO alt sistemini ilklendir, paket yönetimi için kullanıldı"
 
-msgid "vso.cmd.pico.init.options.force"
+msgid "vso.cmd.native.init.options.force"
 msgstr "alt sistem halihazırda ilklendiyse de ilklendirmeye zorla"
 
-msgid "vso.cmd.pico.install"
+msgid "vso.cmd.native.install"
 msgstr "Alt sistemin içine uygulama kur"
 
-msgid "vso.cmd.pico.remove"
+msgid "vso.cmd.native.remove"
 msgstr "Alt sistemden uygulama kaldır"
 
-msgid "vso.cmd.pico.run"
+msgid "vso.cmd.native.run"
 msgstr "Alt sistemden uygulama çalıştır"
 
-msgid "vso.cmd.pico.run.options.noReset"
+msgid "vso.cmd.native.run.options.noReset"
 msgstr "eğer bir şey yanlış giderse alt sistemi sıfırlamayı önerme"
 
-msgid "vso.cmd.pico.search"
+msgid "vso.cmd.native.search"
 msgstr "Alt sistemin içine kurulacak uygulama ara"
 
-msgid "vso.cmd.pico.shell"
+msgid "vso.cmd.native.shell"
 msgstr "Alt sistem ortamına gir"
 
-msgid "vso.cmd.pico.sideload"
+msgid "vso.cmd.native.sideload"
 msgstr "DEB/APK paketleri alt sistemin içine yandan yükle"
 
-msgid "vso.cmd.pico.update"
+msgid "vso.cmd.native.update"
 msgstr "Alt sistemin paket deposunu güncelle"
 
-msgid "vso.cmd.pico.upgrade"
+msgid "vso.cmd.native.upgrade"
 msgstr "Alt sistemin içindeki paketleri yükselt"
 
 msgid "vso.cmd.sysUpgrade"

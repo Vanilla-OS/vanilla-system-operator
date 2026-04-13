@@ -104,121 +104,121 @@ msgstr "Configuração atualizada com sucesso."
 msgid "vso.cmd.config.show"
 msgstr "Mostrar a configuração do sistema"
 
-msgid "vso.cmd.pico"
+msgid "vso.cmd.native"
 msgstr "Gerenciar o subsistema VSO"
 
-msgid "vso.cmd.pico.error.notInitialized"
-msgstr "O subsistema VSO não foi inicializado. Por favor, execute 'vso pico-init' para inicializá-lo."
+msgid "vso.cmd.native.error.notInitialized"
+msgstr "O subsistema VSO não foi inicializado. Por favor, execute 'vso native init' para inicializá-lo."
 
-msgid "vso.cmd.pico.error.alreadyInitialized"
+msgid "vso.cmd.native.error.alreadyInitialized"
 msgstr "O subsistema VSO já foi inicializado. Use o sinalizador --force para forçar a inicialização."
 
-msgid "vso.cmd.pico.error.noAppNameOrBin"
+msgid "vso.cmd.native.error.noAppNameOrBin"
 msgstr "--app ou --bin devem ser especificados."
 
-msgid "vso.cmd.pico.error.sameAppOrBin"
+msgid "vso.cmd.native.error.sameAppOrBin"
 msgstr "--app e --bin não podem ser especificados ao mesmo tempo."
 
-msgid "vso.cmd.pico.error.exportingApp"
+msgid "vso.cmd.native.error.exportingApp"
 msgstr "Ocorreu um erro ao exportar o aplicativo: %s"
 
-msgid "vso.cmd.pico.error.exportingBin"
+msgid "vso.cmd.native.error.exportingBin"
 msgstr "Ocorreu um erro ao exportar o binário: %s"
 
-msgid "vso.cmd.pico.error.unexportingApp"
+msgid "vso.cmd.native.error.unexportingApp"
 msgstr "Ocorreu um erro ao cancelar a exportação do aplicativo: %s"
 
-msgid "vso.cmd.pico.error.unexportingBin"
+msgid "vso.cmd.native.error.unexportingBin"
 msgstr "Ocorreu um erro ao cancelar a exportação do binário: %s"
 
-msgid "vso.cmd.pico.error.unknownCommand"
+msgid "vso.cmd.native.error.unknownCommand"
 msgstr "Comando desconhecido: %s"
 
-msgid "vso.cmd.pico.error.shellReset"
+msgid "vso.cmd.native.error.shellReset"
 msgstr "É impossível alcançar o shell VSO. Deseja redefini-lo? (Isso removerá todos os softwares instalados no subsistema) [s/n]"
 
-msgid "vso.cmd.pico.info.deleting"
+msgid "vso.cmd.native.info.deleting"
 msgstr "Excluindo o subsistema VSO..."
 
-msgid "vso.cmd.pico.info.initializing"
+msgid "vso.cmd.native.info.initializing"
 msgstr "Inicializando o subsistema VSO..."
 
-msgid "vso.cmd.pico.info.initialized"
+msgid "vso.cmd.native.info.initialized"
 msgstr "O subsistema VSO foi inicializado."
 
-msgid "vso.cmd.pico.info.exported"
+msgid "vso.cmd.native.info.exported"
 msgstr "Exportado %s\n"
 
-msgid "vso.cmd.pico.info.unexported"
+msgid "vso.cmd.native.info.unexported"
 msgstr "Desfeita a exportação de %s\n"
 
-msgid "vso.cmd.pico.info.exportedApps"
+msgid "vso.cmd.native.info.exportedApps"
 msgstr "Exportados %d aplicativos"
 
-msgid "vso.cmd.pico.info.unexportedApps"
+msgid "vso.cmd.native.info.unexportedApps"
 msgstr "Desfeita a exportação de %d aplicativos"
 
-msgid "vso.cmd.pico.info.shellInit"
+msgid "vso.cmd.native.info.shellInit"
 msgstr "Parece que seu shell ainda não foi inicializado. Deseja inicializá-lo agora? (Altamente recomendado) [s/n]"
 
-msgid "vso.cmd.pico.info.fallbackShell"
+msgid "vso.cmd.native.info.fallbackShell"
 msgstr "Fallback para o shell do host? Isso pode levar a comportamentos inesperados. [s/n]"
 
-msgid "vso.cmd.pico.export"
+msgid "vso.cmd.native.export"
 msgstr "Exportar um aplicativo ou binário do subsistema"
 
-msgid "vso.cmd.pico.export.options.app"
+msgid "vso.cmd.native.export.options.app"
 msgstr "o nome do aplicativo a ser exportado"
 
-msgid "vso.cmd.pico.export.options.bin"
+msgid "vso.cmd.native.export.options.bin"
 msgstr "o nome do binário a ser exportado"
 
-msgid "vso.cmd.pico.export.options.binOutput"
+msgid "vso.cmd.native.export.options.binOutput"
 msgstr "caminho de saída do binário (padrão: ~/.local/bin/)"
 
-msgid "vso.cmd.pico.unexport"
+msgid "vso.cmd.native.unexport"
 msgstr "Desfazer a exportação de um aplicativo ou binário do subsistema"
 
-msgid "vso.cmd.pico.unexport.options.app"
+msgid "vso.cmd.native.unexport.options.app"
 msgstr "o nome do aplicativo para desfazer a exportação"
 
-msgid "vso.cmd.pico.unexport.options.bin"
+msgid "vso.cmd.native.unexport.options.bin"
 msgstr "o nome do binário para desfazer a exportação"
 
-msgid "vso.cmd.pico.unexport.options.binOutput"
+msgid "vso.cmd.native.unexport.options.binOutput"
 msgstr "caminho de saída do binário (padrão: ~/.local/bin/)"
 
-msgid "vso.cmd.pico.init"
+msgid "vso.cmd.native.init"
 msgstr "Inicializar o subsistema VSO, usado para gerenciamento de pacotes"
 
-msgid "vso.cmd.pico.init.options.force"
+msgid "vso.cmd.native.init.options.force"
 msgstr "força a inicialização se o subsistema já estiver inicializado"
 
-msgid "vso.cmd.pico.install"
+msgid "vso.cmd.native.install"
 msgstr "Instalar um aplicativo dentro do subsistema"
 
-msgid "vso.cmd.pico.remove"
+msgid "vso.cmd.native.remove"
 msgstr "Remover um aplicativo do subsistema"
 
-msgid "vso.cmd.pico.run"
+msgid "vso.cmd.native.run"
 msgstr "Executar um aplicativo a partir do subsistema"
 
-msgid "vso.cmd.pico.run.options.noReset"
+msgid "vso.cmd.native.run.options.noReset"
 msgstr "não propor redefinir o subsistema se algo der errado"
 
-msgid "vso.cmd.pico.search"
+msgid "vso.cmd.native.search"
 msgstr "Procurar um aplicativo para instalar dentro do subsistema"
 
-msgid "vso.cmd.pico.shell"
+msgid "vso.cmd.native.shell"
 msgstr "Entrar no ambiente do subsistema"
 
-msgid "vso.cmd.pico.sideload"
+msgid "vso.cmd.native.sideload"
 msgstr "Realize sideload de pacotes DEB/APK dentro do subsistema"
 
-msgid "vso.cmd.pico.update"
+msgid "vso.cmd.native.update"
 msgstr "Atualizar o repositório de pacotes do subsistema"
 
-msgid "vso.cmd.pico.upgrade"
+msgid "vso.cmd.native.upgrade"
 msgstr "Atualizar os pacotes dentro do subsistema"
 
 msgid "vso.cmd.sysUpgrade"

@@ -21,29 +21,29 @@ import (
 
 // Helpers
 
-func ensurePicoInitialized() (*apxCore.SubSystem, error) {
-	pico, err := core.GetPico()
+func ensureNativeInitialized() (*apxCore.SubSystem, error) {
+	subsystem, err := core.GetNative()
 	if err != nil {
 		return nil, err
 	}
-	if !core.PicoExists() {
-		VSO.Log.Error(VSO.LC.Get("vso.cmd.pico.error.notInitialized"))
+	if !core.NativeExists() {
+		VSO.Log.Error(VSO.LC.Get("vso.cmd.native.error.notInitialized"))
 		return nil, nil
 	}
-	return pico, nil
+	return subsystem, nil
 }
 
-func getPicoAndPkgManager() (*apxCore.SubSystem, *apxCore.PkgManager, error) {
-	pico, err := ensurePicoInitialized()
-	if err != nil || pico == nil {
+func getNativeAndPkgManager() (*apxCore.SubSystem, *apxCore.PkgManager, error) {
+	subsystem, err := ensureNativeInitialized()
+	if err != nil || subsystem == nil {
 		return nil, nil, err
 	}
 
-	pkgManager, err := pico.Stack.GetPkgManager()
+	pkgManager, err := subsystem.Stack.GetPkgManager()
 	if err != nil {
 		return nil, nil, err
 	}
-	return pico, pkgManager, nil
+	return subsystem, pkgManager, nil
 }
 
 // Tasks
@@ -326,193 +326,193 @@ func (c *ConfigShowCmd) Run() error {
 	return nil
 }
 
-// Pico
+// Native
 
-func (c *PicoInitCmd) Run() error {
-	if !core.PicoExists() {
-		VSO.Log.Info(VSO.LC.Get("vso.cmd.pico.info.initializing"))
-		err := core.PicoInit()
+func (c *NativeInitCmd) Run() error {
+	if !core.NativeExists() {
+		VSO.Log.Info(VSO.LC.Get("vso.cmd.native.info.initializing"))
+		err := core.NativeInit()
 		if err != nil {
 			return err
 		}
 	} else if c.Force {
-		VSO.Log.Info(VSO.LC.Get("vso.cmd.pico.info.deleting"))
-		err := core.PicoDelete()
+		VSO.Log.Info(VSO.LC.Get("vso.cmd.native.info.deleting"))
+		err := core.NativeDelete()
 		if err != nil {
 			return err
 		}
-		VSO.Log.Info(VSO.LC.Get("vso.cmd.pico.info.initializing"))
-		err = core.PicoInit()
+		VSO.Log.Info(VSO.LC.Get("vso.cmd.native.info.initializing"))
+		err = core.NativeInit()
 		if err != nil {
 			return err
 		}
 	} else {
-		VSO.Log.Error(VSO.LC.Get("vso.cmd.pico.error.alreadyInitialized"))
+		VSO.Log.Error(VSO.LC.Get("vso.cmd.native.error.alreadyInitialized"))
 		return nil
 	}
 
-	VSO.Log.Info(VSO.LC.Get("vso.cmd.pico.info.initialized"))
+	VSO.Log.Info(VSO.LC.Get("vso.cmd.native.info.initialized"))
 	return nil
 }
 
-func (c *PicoInstallCmd) Run() error {
+func (c *NativeInstallCmd) Run() error {
 	if len(c.Args) == 0 {
 		return fmt.Errorf("package argument required")
 	}
 
-	pico, pkgManager, err := getPicoAndPkgManager()
+	subsystem, pkgManager, err := getNativeAndPkgManager()
 	if err != nil {
 		return err
 	}
-	if pico == nil {
+	if subsystem == nil {
 		return nil
 	}
 
-	exportedN, err := pico.ExportDesktopEntries(c.Args...)
+	exportedN, err := subsystem.ExportDesktopEntries(c.Args...)
 	if err == nil && exportedN > 0 {
-		VSO.Log.Info(fmt.Sprintf(VSO.LC.Get("vso.cmd.pico.info.exportedApps"), exportedN))
+		VSO.Log.Info(fmt.Sprintf(VSO.LC.Get("vso.cmd.native.info.exportedApps"), exportedN))
 	}
 
 	finalArgs := pkgManager.GenCmd(pkgManager.CmdInstall, c.Args...)
-	_, err = pico.Exec(false, false, finalArgs...)
+	_, err = subsystem.Exec(false, false, finalArgs...)
 	return err
 }
 
-func (c *PicoRemoveCmd) Run() error {
-	pico, pkgManager, err := getPicoAndPkgManager()
+func (c *NativeRemoveCmd) Run() error {
+	subsystem, pkgManager, err := getNativeAndPkgManager()
 	if err != nil {
 		return err
 	}
-	if pico == nil {
+	if subsystem == nil {
 		return nil
 	}
 
-	exportedN, err := pico.UnexportDesktopEntries(c.Args...)
+	exportedN, err := subsystem.UnexportDesktopEntries(c.Args...)
 	if err == nil && exportedN > 0 {
-		VSO.Log.Info(fmt.Sprintf(VSO.LC.Get("vso.cmd.pico.info.unexportedApps"), exportedN))
+		VSO.Log.Info(fmt.Sprintf(VSO.LC.Get("vso.cmd.native.info.unexportedApps"), exportedN))
 	}
 
 	finalArgs := pkgManager.GenCmd(pkgManager.CmdRemove, c.Args...)
-	_, err = pico.Exec(false, false, finalArgs...)
+	_, err = subsystem.Exec(false, false, finalArgs...)
 	return err
 }
 
-func (c *PicoRunCmd) Run() error {
-	pico, err := ensurePicoInitialized()
+func (c *NativeRunCmd) Run() error {
+	subsystem, err := ensureNativeInitialized()
 	if err != nil {
 		return err
 	}
-	if pico == nil {
+	if subsystem == nil {
 		return nil
 	}
 
-	_, err = pico.Exec(false, false, c.Args...)
+	_, err = subsystem.Exec(false, false, c.Args...)
 	return err
 }
 
-func (c *PicoExportCmd) Run() error {
+func (c *NativeExportCmd) Run() error {
 	if c.App == "" && c.Bin == "" {
-		VSO.Log.Error(VSO.LC.Get("vso.cmd.pico.error.noAppNameOrBin"))
+		VSO.Log.Error(VSO.LC.Get("vso.cmd.native.error.noAppNameOrBin"))
 		return nil
 	}
 
-	pico, err := ensurePicoInitialized()
+	subsystem, err := ensureNativeInitialized()
 	if err != nil {
 		return err
 	}
-	if pico == nil {
+	if subsystem == nil {
 		return nil
 	}
 
-	err = core.PicoExport(c.App, c.Bin)
+	err = core.NativeExport(c.App, c.Bin)
 	if err != nil {
 		var errMsg string
 		if c.App != "" {
-			errMsg = fmt.Sprintf(VSO.LC.Get("vso.cmd.pico.error.exportingApp"), err.Error())
+			errMsg = fmt.Sprintf(VSO.LC.Get("vso.cmd.native.error.exportingApp"), err.Error())
 		} else {
-			errMsg = fmt.Sprintf(VSO.LC.Get("vso.cmd.pico.error.exportingBin"), err.Error())
+			errMsg = fmt.Sprintf(VSO.LC.Get("vso.cmd.native.error.exportingBin"), err.Error())
 		}
 		return fmt.Errorf(errMsg)
 	}
 
 	if c.App != "" {
-		VSO.Log.Info(fmt.Sprintf(VSO.LC.Get("vso.cmd.pico.info.exported"), c.App))
+		VSO.Log.Info(fmt.Sprintf(VSO.LC.Get("vso.cmd.native.info.exported"), c.App))
 	} else {
-		VSO.Log.Info(fmt.Sprintf(VSO.LC.Get("vso.cmd.pico.info.exported"), c.Bin))
+		VSO.Log.Info(fmt.Sprintf(VSO.LC.Get("vso.cmd.native.info.exported"), c.Bin))
 	}
 	return nil
 }
 
-func (c *PicoUnexportCmd) Run() error {
+func (c *NativeUnexportCmd) Run() error {
 	if c.App == "" && c.Bin == "" {
-		VSO.Log.Error(VSO.LC.Get("vso.cmd.pico.error.noAppNameOrBin"))
+		VSO.Log.Error(VSO.LC.Get("vso.cmd.native.error.noAppNameOrBin"))
 		return nil
 	}
 
-	pico, err := ensurePicoInitialized()
+	subsystem, err := ensureNativeInitialized()
 	if err != nil {
 		return err
 	}
-	if pico == nil {
+	if subsystem == nil {
 		return nil
 	}
 
-	err = core.PicoUnexport(c.App, c.Bin)
+	err = core.NativeUnexport(c.App, c.Bin)
 	if err != nil {
 		var errMsg string
 		if c.App != "" {
-			errMsg = fmt.Sprintf(VSO.LC.Get("vso.cmd.pico.error.unexportingApp"), err.Error())
+			errMsg = fmt.Sprintf(VSO.LC.Get("vso.cmd.native.error.unexportingApp"), err.Error())
 		} else {
-			errMsg = fmt.Sprintf(VSO.LC.Get("vso.cmd.pico.error.unexportingBin"), err.Error())
+			errMsg = fmt.Sprintf(VSO.LC.Get("vso.cmd.native.error.unexportingBin"), err.Error())
 		}
 		return fmt.Errorf(errMsg)
 	}
 
 	if c.App != "" {
-		VSO.Log.Info(fmt.Sprintf(VSO.LC.Get("vso.cmd.pico.info.unexported"), c.App))
+		VSO.Log.Info(fmt.Sprintf(VSO.LC.Get("vso.cmd.native.info.unexported"), c.App))
 	} else {
-		VSO.Log.Info(fmt.Sprintf(VSO.LC.Get("vso.cmd.pico.info.unexported"), c.Bin))
+		VSO.Log.Info(fmt.Sprintf(VSO.LC.Get("vso.cmd.native.info.unexported"), c.Bin))
 	}
 	return nil
 }
 
-func (c *PicoShellCmd) Run() error {
-	pico, err := ensurePicoInitialized()
+func (c *NativeShellCmd) Run() error {
+	subsystem, err := ensureNativeInitialized()
 	if err != nil {
 		return err
 	}
-	if pico == nil {
+	if subsystem == nil {
 		return nil
 	}
 
-	return pico.Enter()
+	return subsystem.Enter()
 }
 
-func (c *PicoSideloadCmd) Run() error {
-	pico, pkgManager, err := getPicoAndPkgManager()
+func (c *NativeSideloadCmd) Run() error {
+	subsystem, pkgManager, err := getNativeAndPkgManager()
 	if err != nil {
 		return err
 	}
-	if pico == nil {
+	if subsystem == nil {
 		return nil
 	}
 
 	updateArgs := pkgManager.GenCmd(pkgManager.CmdUpdate)
-	_, err = pico.Exec(false, false, updateArgs...)
+	_, err = subsystem.Exec(false, false, updateArgs...)
 	if err != nil {
 		return err
 	}
 
 	args := append([]string{"--fix-broken"}, c.Args...)
 	finalArgs := pkgManager.GenCmd(pkgManager.CmdInstall, args...)
-	_, err = pico.Exec(false, false, finalArgs...)
+	_, err = subsystem.Exec(false, false, finalArgs...)
 	if err != nil {
 		return err
 	}
 
 	packageNames := []string{}
 	for _, v := range c.Args { // Iterate original args (files)
-		out, _ := pico.Exec(true, false, "dpkg-deb", "--info", v)
+		out, _ := subsystem.Exec(true, false, "dpkg-deb", "--info", v)
 		for _, w := range strings.Split(out, "\n") {
 			wordsInLine := strings.Split(w, " ")
 			if len(wordsInLine) > 1 && wordsInLine[1] == "Package:" {
@@ -522,37 +522,37 @@ func (c *PicoSideloadCmd) Run() error {
 		}
 	}
 
-	exportedN, err := pico.ExportDesktopEntries(packageNames...)
+	exportedN, err := subsystem.ExportDesktopEntries(packageNames...)
 	if err == nil && exportedN > 0 {
-		VSO.Log.Info(fmt.Sprintf(VSO.LC.Get("vso.cmd.pico.info.exportedApps"), exportedN))
+		VSO.Log.Info(fmt.Sprintf(VSO.LC.Get("vso.cmd.native.info.exportedApps"), exportedN))
 	}
 	return nil
 }
 
-func (c *PicoUpdateCmd) Run() error {
-	pico, pkgManager, err := getPicoAndPkgManager()
+func (c *NativeUpdateCmd) Run() error {
+	subsystem, pkgManager, err := getNativeAndPkgManager()
 	if err != nil {
 		return err
 	}
-	if pico == nil {
+	if subsystem == nil {
 		return nil
 	}
 
 	finalArgs := pkgManager.GenCmd(pkgManager.CmdUpdate)
-	_, err = pico.Exec(false, false, finalArgs...)
+	_, err = subsystem.Exec(false, false, finalArgs...)
 	return err
 }
 
-func (c *PicoUpgradeCmd) Run() error {
-	pico, pkgManager, err := getPicoAndPkgManager()
+func (c *NativeUpgradeCmd) Run() error {
+	subsystem, pkgManager, err := getNativeAndPkgManager()
 	if err != nil {
 		return err
 	}
-	if pico == nil {
+	if subsystem == nil {
 		return nil
 	}
 
 	finalArgs := pkgManager.GenCmd(pkgManager.CmdUpgrade)
-	_, err = pico.Exec(false, false, finalArgs...)
+	_, err = subsystem.Exec(false, false, finalArgs...)
 	return err
 }

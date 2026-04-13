@@ -104,121 +104,121 @@ msgstr "Agordoj modifiĝis sukcese."
 msgid "vso.cmd.config.show"
 msgstr "Montri la sistemajn agordojn"
 
-msgid "vso.cmd.pico"
+msgid "vso.cmd.native"
 msgstr "Administri la VSO-subsistemon"
 
-msgid "vso.cmd.pico.error.notInitialized"
-msgstr "La VSO-subsistemo ne estas lanĉita. Bonvolu ruli `vso pico-init` por lanĉi ĝin."
+msgid "vso.cmd.native.error.notInitialized"
+msgstr "La VSO-subsistemo ne estas lanĉita. Bonvolu ruli `vso native init` por lanĉi ĝin."
 
-msgid "vso.cmd.pico.error.alreadyInitialized"
+msgid "vso.cmd.native.error.alreadyInitialized"
 msgstr "La VSO-subsistemo estas jam lanĉita. Uzu la flagon «--force» por relanĉi."
 
-msgid "vso.cmd.pico.error.noAppNameOrBin"
+msgid "vso.cmd.native.error.noAppNameOrBin"
 msgstr "Oni devas specifi aŭ «--app» aŭ «--bin»."
 
-msgid "vso.cmd.pico.error.sameAppOrBin"
+msgid "vso.cmd.native.error.sameAppOrBin"
 msgstr "Oni devas ne specifi kaj «--app» kaj «--bin»."
 
-msgid "vso.cmd.pico.error.exportingApp"
+msgid "vso.cmd.native.error.exportingApp"
 msgstr "Okazis eraro eksportante la programon: %s"
 
-msgid "vso.cmd.pico.error.exportingBin"
+msgid "vso.cmd.native.error.exportingBin"
 msgstr "Okazis eraro eksportante la binaraĵon: %s"
 
-msgid "vso.cmd.pico.error.unexportingApp"
+msgid "vso.cmd.native.error.unexportingApp"
 msgstr "Okazis eraro maleksportante la programon: %s"
 
-msgid "vso.cmd.pico.error.unexportingBin"
+msgid "vso.cmd.native.error.unexportingBin"
 msgstr "Okazis eraro maleksportante la binaraĵon: %s"
 
-msgid "vso.cmd.pico.error.unknownCommand"
+msgid "vso.cmd.native.error.unknownCommand"
 msgstr "Nekonata komando: %s"
 
-msgid "vso.cmd.pico.error.shellReset"
+msgid "vso.cmd.native.error.shellReset"
 msgstr "Ne eblas atingi la VSO-ŝelon. Ĉu restaŭri ĝin? (Tio malinstalos ĉiujn programojn instalitajn en la subsistemo) [y/N]"
 
-msgid "vso.cmd.pico.info.deleting"
+msgid "vso.cmd.native.info.deleting"
 msgstr "Forviŝante la VSO-subsistemon…"
 
-msgid "vso.cmd.pico.info.initializing"
+msgid "vso.cmd.native.info.initializing"
 msgstr "Lanĉante la VSO-subsistemon…"
 
-msgid "vso.cmd.pico.info.initialized"
+msgid "vso.cmd.native.info.initialized"
 msgstr "La VSO-subsistemo lanĉiĝis."
 
-msgid "vso.cmd.pico.info.exported"
+msgid "vso.cmd.native.info.exported"
 msgstr "Eksportis %s\n"
 
-msgid "vso.cmd.pico.info.unexported"
+msgid "vso.cmd.native.info.unexported"
 msgstr "Maleksportis %s\n"
 
-msgid "vso.cmd.pico.info.exportedApps"
+msgid "vso.cmd.native.info.exportedApps"
 msgstr "Eksportis %d programojn"
 
-msgid "vso.cmd.pico.info.unexportedApps"
+msgid "vso.cmd.native.info.unexportedApps"
 msgstr "Maleksportis %d programojn"
 
-msgid "vso.cmd.pico.info.shellInit"
+msgid "vso.cmd.native.info.shellInit"
 msgstr "Ŝajnas, ke via ŝelo ankoraŭ ne estas lanĉita. Ĉu lanĉi ĝin nun? (Rekomendegata) [y/N]"
 
-msgid "vso.cmd.pico.info.fallbackShell"
+msgid "vso.cmd.native.info.fallbackShell"
 msgstr "Ĉu uzi la gastigan ŝelon? Tio povas kaŭzi neatenditajn fenomenojn. [y/N]"
 
-msgid "vso.cmd.pico.export"
+msgid "vso.cmd.native.export"
 msgstr "Eksporti programon aŭ binaraĵon de la subsistemo"
 
-msgid "vso.cmd.pico.export.options.app"
+msgid "vso.cmd.native.export.options.app"
 msgstr "la nomo de la eksportota programo"
 
-msgid "vso.cmd.pico.export.options.bin"
+msgid "vso.cmd.native.export.options.bin"
 msgstr "la nomo de la eksportota binaraĵo"
 
-msgid "vso.cmd.pico.export.options.binOutput"
+msgid "vso.cmd.native.export.options.binOutput"
 msgstr "loko de la eligota binaraĵo (implicite: ~/.local/bin/)"
 
-msgid "vso.cmd.pico.unexport"
+msgid "vso.cmd.native.unexport"
 msgstr "Maleksporti programon aŭ binaraĵon de la subsistemo"
 
-msgid "vso.cmd.pico.unexport.options.app"
+msgid "vso.cmd.native.unexport.options.app"
 msgstr "la nomo de la maleksportota programo"
 
-msgid "vso.cmd.pico.unexport.options.bin"
+msgid "vso.cmd.native.unexport.options.bin"
 msgstr "la nomo de la maleksportota binaraĵo"
 
-msgid "vso.cmd.pico.unexport.options.binOutput"
+msgid "vso.cmd.native.unexport.options.binOutput"
 msgstr "loko de la eligota binaraĵo (implicite: ~/.local/bin/)"
 
-msgid "vso.cmd.pico.init"
+msgid "vso.cmd.native.init"
 msgstr "Lanĉi la VSO-subsistemon por administri pakojn"
 
-msgid "vso.cmd.pico.init.options.force"
+msgid "vso.cmd.native.init.options.force"
 msgstr "devige relanĉi, eĉ se la subsistemo estas jam lanĉita"
 
-msgid "vso.cmd.pico.install"
+msgid "vso.cmd.native.install"
 msgstr "Instali programon en la subsistemo"
 
-msgid "vso.cmd.pico.remove"
+msgid "vso.cmd.native.remove"
 msgstr "Malinstali programon el la subsistemo"
 
-msgid "vso.cmd.pico.run"
+msgid "vso.cmd.native.run"
 msgstr "Ruli programon de la subsistemo"
 
-msgid "vso.cmd.pico.run.options.noReset"
+msgid "vso.cmd.native.run.options.noReset"
 msgstr "ne proponi restaŭri la subsistemo, se io fiaskos"
 
-msgid "vso.cmd.pico.search"
+msgid "vso.cmd.native.search"
 msgstr "Serĉi programon instalotan en la subsistemon"
 
-msgid "vso.cmd.pico.shell"
+msgid "vso.cmd.native.shell"
 msgstr "Eniri la subsisteman medion"
 
-msgid "vso.cmd.pico.sideload"
+msgid "vso.cmd.native.sideload"
 msgstr "Flankinstali DEB/APK-pakojn en la subsistemon"
 
-msgid "vso.cmd.pico.update"
+msgid "vso.cmd.native.update"
 msgstr "Ĝisdatigi la pakdeponejon de la subsistemo"
 
-msgid "vso.cmd.pico.upgrade"
+msgid "vso.cmd.native.upgrade"
 msgstr "Ĝisdatigi la pakojn en la subsistemo"
 
 msgid "vso.cmd.sysUpgrade"
