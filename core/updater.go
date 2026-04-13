@@ -218,10 +218,10 @@ func TryUpdate(force bool) error {
 		return fmt.Errorf("failed to update system: %s", err)
 	}
 
-	// FIXME: the pico upgrade could fail if APT is locked by another process
+	// FIXME: the native subsystem upgrade could fail if APT is locked by another process
 	// or it simply fails, but since we are also upgrading the system, we
 	// cannot fail the whole operation, so just ignore the error for now
-	PicoUpgrade()
+	NativeUpgrade()
 
 	SendNotification("Update", "System updated successfully, restart to apply changes.")
 	return nil

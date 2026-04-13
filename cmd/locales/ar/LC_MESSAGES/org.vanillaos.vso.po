@@ -104,121 +104,121 @@ msgstr "تم تحديث التكوين بنجاح."
 msgid "vso.cmd.config.show"
 msgstr "عرض تكوين النظام"
 
-msgid "vso.cmd.pico"
+msgid "vso.cmd.native"
 msgstr "إدارة نظام VSO الفرعي"
 
-msgid "vso.cmd.pico.error.notInitialized"
-msgstr "نظام VSO الفرعي غير مهيأ. يرجى تشغيل `vso pico-init` لتهيئته."
+msgid "vso.cmd.native.error.notInitialized"
+msgstr "نظام VSO الفرعي غير مهيأ. يرجى تشغيل `vso native init` لتهيئته."
 
-msgid "vso.cmd.pico.error.alreadyInitialized"
+msgid "vso.cmd.native.error.alreadyInitialized"
 msgstr "نظام VSO الفرعي مهيأ ب الفعل. استخدم العلامة --force لإجبار التهيئة."
 
-msgid "vso.cmd.pico.error.noAppNameOrBin"
+msgid "vso.cmd.native.error.noAppNameOrBin"
 msgstr "--app أو --bin يجب تحديد واحد منهما."
 
-msgid "vso.cmd.pico.error.sameAppOrBin"
+msgid "vso.cmd.native.error.sameAppOrBin"
 msgstr "--app و --bin لا يمكن تحديدهما معاً."
 
-msgid "vso.cmd.pico.error.exportingApp"
+msgid "vso.cmd.native.error.exportingApp"
 msgstr "حدث خطأ أثناء تصدير التطبيق: %s"
 
-msgid "vso.cmd.pico.error.exportingBin"
+msgid "vso.cmd.native.error.exportingBin"
 msgstr "حدث خطأ أثناء تصدير الملف التنفيذي: %s"
 
-msgid "vso.cmd.pico.error.unexportingApp"
+msgid "vso.cmd.native.error.unexportingApp"
 msgstr "حدث خطأ أثناء إلغاء تصدير التطبيق: %s"
 
-msgid "vso.cmd.pico.error.unexportingBin"
+msgid "vso.cmd.native.error.unexportingBin"
 msgstr "حدث خطأ أثناء إلغاء تصدير الملف التنفيذي: %s"
 
-msgid "vso.cmd.pico.error.unknownCommand"
+msgid "vso.cmd.native.error.unknownCommand"
 msgstr "الأمر غير معروف: %s"
 
-msgid "vso.cmd.pico.error.shellReset"
+msgid "vso.cmd.native.error.shellReset"
 msgstr "من المستحيل الوصول إلى قشرة VSO. هل تريد إعادة ضبطها؟ (سيؤدي هذا إلى إزالة جميع البرامج المثبتة في النظام الفرعي) [y/N]"
 
-msgid "vso.cmd.pico.info.deleting"
+msgid "vso.cmd.native.info.deleting"
 msgstr "حذف نظام VSO الفرعي..."
 
-msgid "vso.cmd.pico.info.initializing"
+msgid "vso.cmd.native.info.initializing"
 msgstr "تهيئة نظام VSO الفرعي..."
 
-msgid "vso.cmd.pico.info.initialized"
+msgid "vso.cmd.native.info.initialized"
 msgstr "تم تهيئة نظام VSO الفرعي."
 
-msgid "vso.cmd.pico.info.exported"
+msgid "vso.cmd.native.info.exported"
 msgstr "تم تصدير %s\n"
 
-msgid "vso.cmd.pico.info.unexported"
+msgid "vso.cmd.native.info.unexported"
 msgstr "تم إلغاء تصدير %s\n"
 
-msgid "vso.cmd.pico.info.exportedApps"
+msgid "vso.cmd.native.info.exportedApps"
 msgstr "تم تصدير %d تطبيقات"
 
-msgid "vso.cmd.pico.info.unexportedApps"
+msgid "vso.cmd.native.info.unexportedApps"
 msgstr "تم إلغاء تصدير %d تطبيقات"
 
-msgid "vso.cmd.pico.info.shellInit"
+msgid "vso.cmd.native.info.shellInit"
 msgstr "يبدو أن قشرتك لم يتم تهيئتها بعد. ه ل تريد تهيئتها الآن؟ (موصى به بشدة) [y/N]"
 
-msgid "vso.cmd.pico.info.fallbackShell"
+msgid "vso.cmd.native.info.fallbackShell"
 msgstr "العودة إلى قشرة المضيف؟ قد يؤدي ذلك إلى سلوك غير متوقع. [y/N]"
 
-msgid "vso.cmd.pico.export"
+msgid "vso.cmd.native.export"
 msgstr "تصدير تطبيق أو ملف تنفيذي من النظام الفرعي"
 
-msgid "vso.cmd.pico.export.options.app"
+msgid "vso.cmd.native.export.options.app"
 msgstr "اسم التطبيق المراد تصديره"
 
-msgid "vso.cmd.pico.export.options.bin"
+msgid "vso.cmd.native.export.options.bin"
 msgstr "اسم الملف التنفيذي المراد تصديره"
 
-msgid "vso.cmd.pico.export.options.binOutput"
+msgid "vso.cmd.native.export.options.binOutput"
 msgstr "مسار إخراج الملف التنفيذي (افتراضي: ~/.local/bin/)"
 
-msgid "vso.cmd.pico.unexport"
+msgid "vso.cmd.native.unexport"
 msgstr "إلغاء تصدير تطبيق أو ملف تنفيذي من النظام الفرعي"
 
-msgid "vso.cmd.pico.unexport.options.app"
+msgid "vso.cmd.native.unexport.options.app"
 msgstr "اسم التطبيق المراد إلغاء تصديره"
 
-msgid "vso.cmd.pico.unexport.options.bin"
+msgid "vso.cmd.native.unexport.options.bin"
 msgstr "اسم الملف التنفيذي المراد إلغاء تصديره"
 
-msgid "vso.cmd.pico.unexport.options.binOutput"
+msgid "vso.cmd.native.unexport.options.binOutput"
 msgstr "مسار إخراج الملف التنفيذي (افتراضي: ~/.local/bin/)"
 
-msgid "vso.cmd.pico.init"
+msgid "vso.cmd.native.init"
 msgstr "تهيئة نظام VSO الفرعي، المستخدم لإدارة الحزم"
 
-msgid "vso.cmd.pico.init.options.force"
+msgid "vso.cmd.native.init.options.force"
 msgstr "إجبار التهيئة إذا كان النظام الفرعي مهيأ بالفعل"
 
-msgid "vso.cmd.pico.install"
+msgid "vso.cmd.native.install"
 msgstr "تثبيت تطبيق داخل النظام الفرعي"
 
-msgid "vso.cmd.pico.remove"
+msgid "vso.cmd.native.remove"
 msgstr "إزالة تطبيق من النظام الفرعي"
 
-msgid "vso.cmd.pico.run"
+msgid "vso.cmd.native.run"
 msgstr "تشغيل تطبيق من النظام الفرعي"
 
-msgid "vso.cmd.pico.run.options.noReset"
+msgid "vso.cmd.native.run.options.noReset"
 msgstr "عدم اقتراح إعادة ضبط النظام الفرعي إذا حدث خطأ ما"
 
-msgid "vso.cmd.pico.search"
+msgid "vso.cmd.native.search"
 msgstr "البحث عن تطبيق لتثبيته داخل النظام الفرعي"
 
-msgid "vso.cmd.pico.shell"
+msgid "vso.cmd.native.shell"
 msgstr "الدخول إلى بيئة النظام الفرعي"
 
-msgid "vso.cmd.pico.sideload"
+msgid "vso.cmd.native.sideload"
 msgstr "تثبيت حزم DEB/APK داخل النظام الفرعي"
 
-msgid "vso.cmd.pico.update"
+msgid "vso.cmd.native.update"
 msgstr "تحديث مستودع حزم النظام الفرعي"
 
-msgid "vso.cmd.pico.upgrade"
+msgid "vso.cmd.native.upgrade"
 msgstr "ترقية الحزم داخل النظام الفرعي"
 
 msgid "vso.cmd.sysUpgrade"

@@ -24,7 +24,7 @@ type RootCmd struct {
 	Tasks   TasksCmd   `cmd:"tasks" help:"pr:vso.cmd.tasks"`
 	Upgrade UpgradeCmd `cmd:"upgrade" help:"pr:vso.cmd.sysUpgrade"`
 	Config  ConfigCmd  `cmd:"config" help:"pr:vso.cmd.config"`
-	Pico    PicoCmd    `cmd:"pico" help:"pr:vso.cmd.pico"`
+	Native  NativeCmd  `cmd:"native" help:"pr:vso.cmd.native"`
 }
 
 // Tasks
@@ -119,70 +119,70 @@ type ConfigShowCmd struct {
 	cli.Base
 }
 
-// Pico
+// Native
 
-type PicoCmd struct {
+type NativeCmd struct {
 	cli.Base
-	Init     PicoInitCmd     `cmd:"init" help:"pr:vso.cmd.pico.init"`
-	Install  PicoInstallCmd  `cmd:"install" help:"pr:vso.cmd.pico.install"`
-	Remove   PicoRemoveCmd   `cmd:"remove" help:"pr:vso.cmd.pico.remove"`
-	Run      PicoRunCmd      `cmd:"run" help:"pr:vso.cmd.pico.run"`
-	Export   PicoExportCmd   `cmd:"export" help:"pr:vso.cmd.pico.export"`
-	Unexport PicoUnexportCmd `cmd:"unexport" help:"pr:vso.cmd.pico.unexport"`
-	Shell    PicoShellCmd    `cmd:"shell" help:"pr:vso.cmd.pico.shell"`
-	Sideload PicoSideloadCmd `cmd:"sideload" help:"pr:vso.cmd.pico.sideload"`
-	Update   PicoUpdateCmd   `cmd:"update" help:"pr:vso.cmd.pico.update"`
-	Upgrade  PicoUpgradeCmd  `cmd:"upgrade" help:"pr:vso.cmd.pico.upgrade"`
+	Init     NativeInitCmd     `cmd:"init" help:"pr:vso.cmd.native.init"`
+	Install  NativeInstallCmd  `cmd:"install" help:"pr:vso.cmd.native.install"`
+	Remove   NativeRemoveCmd   `cmd:"remove" help:"pr:vso.cmd.native.remove"`
+	Run      NativeRunCmd      `cmd:"run" help:"pr:vso.cmd.native.run"`
+	Export   NativeExportCmd   `cmd:"export" help:"pr:vso.cmd.native.export"`
+	Unexport NativeUnexportCmd `cmd:"unexport" help:"pr:vso.cmd.native.unexport"`
+	Shell    NativeShellCmd    `cmd:"shell" help:"pr:vso.cmd.native.shell"`
+	Sideload NativeSideloadCmd `cmd:"sideload" help:"pr:vso.cmd.native.sideload"`
+	Update   NativeUpdateCmd   `cmd:"update" help:"pr:vso.cmd.native.update"`
+	Upgrade  NativeUpgradeCmd  `cmd:"upgrade" help:"pr:vso.cmd.native.upgrade"`
 }
 
-type PicoInitCmd struct {
+type NativeInitCmd struct {
 	cli.Base
-	Force bool `flag:"short:f, long:force, name:pr:vso.cmd.pico.init.options.force"`
+	Force bool `flag:"short:f, long:force, name:pr:vso.cmd.native.init.options.force"`
 }
 
-type PicoInstallCmd struct {
+type NativeInstallCmd struct {
 	cli.Base
 	Args []string `arg:"" optional:"" name:"package" help:"pr:vso.arg.package"`
 }
 
-type PicoRemoveCmd struct {
+type NativeRemoveCmd struct {
 	cli.Base
 	Args []string `arg:"" optional:"" name:"package" help:"pr:vso.arg.package"`
 }
 
-type PicoRunCmd struct {
+type NativeRunCmd struct {
 	cli.Base
-	NoReset bool     `flag:"long:no-reset, name:pr:vso.cmd.pico.run.options.noReset"`
+	NoReset bool     `flag:"long:no-reset, name:pr:vso.cmd.native.run.options.noReset"`
 	Args    []string `arg:"" optional:"" name:"command" help:"pr:vso.arg.command"`
 }
 
-type PicoExportCmd struct {
+type NativeExportCmd struct {
 	cli.Base
-	App       string `flag:"long:app, name:pr:vso.cmd.pico.export.options.app"`
-	Bin       string `flag:"long:bin, name:pr:vso.cmd.pico.export.options.bin"`
-	BinOutput string `flag:"long:bin-output, name:pr:vso.cmd.pico.export.options.binOutput"`
+	App       string `flag:"long:app, name:pr:vso.cmd.native.export.options.app"`
+	Bin       string `flag:"long:bin, name:pr:vso.cmd.native.export.options.bin"`
+	BinOutput string `flag:"long:bin-output, name:pr:vso.cmd.native.export.options.binOutput"`
 }
 
-type PicoUnexportCmd struct {
+type NativeUnexportCmd struct {
 	cli.Base
-	App       string `flag:"long:app, name:pr:vso.cmd.pico.unexport.options.app"`
-	Bin       string `flag:"long:bin, name:pr:vso.cmd.pico.unexport.options.bin"`
-	BinOutput string `flag:"long:bin-output, name:pr:vso.cmd.pico.unexport.options.binOutput"`
+	App       string `flag:"long:app, name:pr:vso.cmd.native.unexport.options.app"`
+	Bin       string `flag:"long:bin, name:pr:vso.cmd.native.unexport.options.bin"`
+	BinOutput string `flag:"long:bin-output, name:pr:vso.cmd.native.unexport.options.binOutput"`
 }
 
-type PicoShellCmd struct {
+type NativeShellCmd struct {
 	cli.Base
 }
 
-type PicoSideloadCmd struct {
+type NativeSideloadCmd struct {
 	cli.Base
 	Args []string `arg:"" optional:"" name:"package" help:"pr:vso.arg.package"`
 }
 
-type PicoUpdateCmd struct {
+type NativeUpdateCmd struct {
 	cli.Base
 }
 
-type PicoUpgradeCmd struct {
+type NativeUpgradeCmd struct {
 	cli.Base
 }

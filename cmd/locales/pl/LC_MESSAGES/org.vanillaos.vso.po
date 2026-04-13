@@ -104,121 +104,121 @@ msgstr "Zaktualizowano konfiguracje pomyślnie."
 msgid "vso.cmd.config.show"
 msgstr "Pokaż konfiguracje systemu"
 
-msgid "vso.cmd.pico"
+msgid "vso.cmd.native"
 msgstr "Zarządzaj podsystemem VSO"
 
-msgid "vso.cmd.pico.error.notInitialized"
-msgstr "Podsystem VSO nie jest zainicjowany. Proszę uruchom`vso pico-init`, aby zainicjować go."
+msgid "vso.cmd.native.error.notInitialized"
+msgstr "Podsystem VSO nie jest zainicjowany. Proszę uruchom`vso native init`, aby zainicjować go."
 
-msgid "vso.cmd.pico.error.alreadyInitialized"
+msgid "vso.cmd.native.error.alreadyInitialized"
 msgstr "Podsystem VSO jest aktualnie zainicjowany. Użyj flagi --force aby wymusić inicjowanie."
 
-msgid "vso.cmd.pico.error.noAppNameOrBin"
+msgid "vso.cmd.native.error.noAppNameOrBin"
 msgstr "--app lub --bin muszą być określone."
 
-msgid "vso.cmd.pico.error.sameAppOrBin"
+msgid "vso.cmd.native.error.sameAppOrBin"
 msgstr "--app i --bin nie mogą być jednocześnie określone."
 
-msgid "vso.cmd.pico.error.exportingApp"
+msgid "vso.cmd.native.error.exportingApp"
 msgstr "Wystąpił błąd podczas eksportowania aplikacji: %s"
 
-msgid "vso.cmd.pico.error.exportingBin"
+msgid "vso.cmd.native.error.exportingBin"
 msgstr "Wystąpił błąd podczas eksportowania pliku binarnego: %s"
 
-msgid "vso.cmd.pico.error.unexportingApp"
+msgid "vso.cmd.native.error.unexportingApp"
 msgstr "Wystąpił błąd podczas usuwania eksportu aplikacji: %s"
 
-msgid "vso.cmd.pico.error.unexportingBin"
+msgid "vso.cmd.native.error.unexportingBin"
 msgstr "Wystąpił błąd podczas usuwania eksportu pliku binarnego: %s"
 
-msgid "vso.cmd.pico.error.unknownCommand"
+msgid "vso.cmd.native.error.unknownCommand"
 msgstr "Nieznane polecenie: %s"
 
-msgid "vso.cmd.pico.error.shellReset"
+msgid "vso.cmd.native.error.shellReset"
 msgstr "Uzyskanie dostępu do powłoki VSO jest nie możliwe. Czy chcesz ją zresetować? (Spowoduje to usunięcie całego oprogramowania zainstalowanego w podsystemie) [y/N]"
 
-msgid "vso.cmd.pico.info.deleting"
+msgid "vso.cmd.native.info.deleting"
 msgstr "Usuwanie podsystemu VSO..."
 
-msgid "vso.cmd.pico.info.initializing"
+msgid "vso.cmd.native.info.initializing"
 msgstr "inicjalizacja podsystemu VSO..."
 
-msgid "vso.cmd.pico.info.initialized"
+msgid "vso.cmd.native.info.initialized"
 msgstr "Podsystem VSO został zainicjowany."
 
-msgid "vso.cmd.pico.info.exported"
+msgid "vso.cmd.native.info.exported"
 msgstr "Wyeksportowano %s\n"
 
-msgid "vso.cmd.pico.info.unexported"
+msgid "vso.cmd.native.info.unexported"
 msgstr "Usunięto eksport %s\n"
 
-msgid "vso.cmd.pico.info.exportedApps"
+msgid "vso.cmd.native.info.exportedApps"
 msgstr "Wyeksportowano %d aplikacji"
 
-msgid "vso.cmd.pico.info.unexportedApps"
+msgid "vso.cmd.native.info.unexportedApps"
 msgstr "Usunięto eksporty %d aplikacji"
 
-msgid "vso.cmd.pico.info.shellInit"
+msgid "vso.cmd.native.info.shellInit"
 msgstr "Wygląda na to że nie zainicjowałeś Swojej powłoki . Czy chcesz zainicjować ją teraz? (Wysoce rekomendowane) [y/N]"
 
-msgid "vso.cmd.pico.info.fallbackShell"
+msgid "vso.cmd.native.info.fallbackShell"
 msgstr "Powrócić do powłoki hosta? Może to prowadzić do niespodziewanych zachowań. [y/N]"
 
-msgid "vso.cmd.pico.export"
+msgid "vso.cmd.native.export"
 msgstr "Export an application or binary from the subsystem"
 
-msgid "vso.cmd.pico.export.options.app"
+msgid "vso.cmd.native.export.options.app"
 msgstr "the name of the application to export"
 
-msgid "vso.cmd.pico.export.options.bin"
+msgid "vso.cmd.native.export.options.bin"
 msgstr "the name of the binary to export"
 
-msgid "vso.cmd.pico.export.options.binOutput"
+msgid "vso.cmd.native.export.options.binOutput"
 msgstr "path of the binary output (default: ~/.local/bin/)"
 
-msgid "vso.cmd.pico.unexport"
+msgid "vso.cmd.native.unexport"
 msgstr "Unexport an application or binary from the subsystem"
 
-msgid "vso.cmd.pico.unexport.options.app"
+msgid "vso.cmd.native.unexport.options.app"
 msgstr "the name of the application to unexport"
 
-msgid "vso.cmd.pico.unexport.options.bin"
+msgid "vso.cmd.native.unexport.options.bin"
 msgstr "the name of the binary to unexport"
 
-msgid "vso.cmd.pico.unexport.options.binOutput"
+msgid "vso.cmd.native.unexport.options.binOutput"
 msgstr "path of the binary output (default: ~/.local/bin/)"
 
-msgid "vso.cmd.pico.init"
+msgid "vso.cmd.native.init"
 msgstr "Initialize the VSO subsystem, used for package management"
 
-msgid "vso.cmd.pico.init.options.force"
+msgid "vso.cmd.native.init.options.force"
 msgstr "force the initialization if the subsystem is already initialized"
 
-msgid "vso.cmd.pico.install"
+msgid "vso.cmd.native.install"
 msgstr "Install an application inside the subsystem"
 
-msgid "vso.cmd.pico.remove"
+msgid "vso.cmd.native.remove"
 msgstr "Remove an application from the subsystem"
 
-msgid "vso.cmd.pico.run"
+msgid "vso.cmd.native.run"
 msgstr "Run an application from the subsystem"
 
-msgid "vso.cmd.pico.run.options.noReset"
+msgid "vso.cmd.native.run.options.noReset"
 msgstr "do not propose to reset the subsystem if something goes wrong"
 
-msgid "vso.cmd.pico.search"
+msgid "vso.cmd.native.search"
 msgstr "Search for an application to install inside the subsystem"
 
-msgid "vso.cmd.pico.shell"
+msgid "vso.cmd.native.shell"
 msgstr "Enter the subsystem environment"
 
-msgid "vso.cmd.pico.sideload"
+msgid "vso.cmd.native.sideload"
 msgstr "Sideload DEB/APK packages inside the subsystem"
 
-msgid "vso.cmd.pico.update"
+msgid "vso.cmd.native.update"
 msgstr "Update the subsystem's package repository"
 
-msgid "vso.cmd.pico.upgrade"
+msgid "vso.cmd.native.upgrade"
 msgstr "Upgrade the packages inside the subsystem"
 
 msgid "vso.cmd.sysUpgrade"

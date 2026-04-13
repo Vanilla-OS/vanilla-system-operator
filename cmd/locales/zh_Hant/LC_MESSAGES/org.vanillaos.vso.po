@@ -104,121 +104,121 @@ msgstr "已成功更新組態。"
 msgid "vso.cmd.config.show"
 msgstr "顯示系統組態"
 
-msgid "vso.cmd.pico"
+msgid "vso.cmd.native"
 msgstr "管理 VSO 子系統"
 
-msgid "vso.cmd.pico.error.notInitialized"
-msgstr "VSO 子系統尚未初始化。請執行 `vso pico-init` 以初始化子系統。"
+msgid "vso.cmd.native.error.notInitialized"
+msgstr "VSO 子系統尚未初始化。請執行 `vso native init` 以初始化子系統。"
 
-msgid "vso.cmd.pico.error.alreadyInitialized"
+msgid "vso.cmd.native.error.alreadyInitialized"
 msgstr "VSO 子系統已經初始化。請使用 --force 以強制初始化。"
 
-msgid "vso.cmd.pico.error.noAppNameOrBin"
+msgid "vso.cmd.native.error.noAppNameOrBin"
 msgstr "必須指定 --app 或是 --bin。"
 
-msgid "vso.cmd.pico.error.sameAppOrBin"
+msgid "vso.cmd.native.error.sameAppOrBin"
 msgstr "不能同時指定 --app 及 --bin。"
 
-msgid "vso.cmd.pico.error.exportingApp"
+msgid "vso.cmd.native.error.exportingApp"
 msgstr "匯出應用程式時發生錯誤：%s"
 
-msgid "vso.cmd.pico.error.exportingBin"
+msgid "vso.cmd.native.error.exportingBin"
 msgstr "匯出二進位檔案時發生錯誤：%s"
 
-msgid "vso.cmd.pico.error.unexportingApp"
+msgid "vso.cmd.native.error.unexportingApp"
 msgstr "移除匯出的應用程式時發生錯誤：%s"
 
-msgid "vso.cmd.pico.error.unexportingBin"
+msgid "vso.cmd.native.error.unexportingBin"
 msgstr "移除匯出的二進位檔案時發生錯誤：%s"
 
-msgid "vso.cmd.pico.error.unknownCommand"
+msgid "vso.cmd.native.error.unknownCommand"
 msgstr "未知的命令：%s"
 
-msgid "vso.cmd.pico.error.shellReset"
+msgid "vso.cmd.native.error.shellReset"
 msgstr "無法存取 VSO shell。要重設嗎？（這將移除子系統中安裝的所有軟體）[y/N]"
 
-msgid "vso.cmd.pico.info.deleting"
+msgid "vso.cmd.native.info.deleting"
 msgstr "正在刪除 VSO 子系統…"
 
-msgid "vso.cmd.pico.info.initializing"
+msgid "vso.cmd.native.info.initializing"
 msgstr "正在初始化 VSO 子系統…"
 
-msgid "vso.cmd.pico.info.initialized"
+msgid "vso.cmd.native.info.initialized"
 msgstr "VSO 子系統已經初始化。"
 
-msgid "vso.cmd.pico.info.exported"
+msgid "vso.cmd.native.info.exported"
 msgstr "已匯出 %s\n"
 
-msgid "vso.cmd.pico.info.unexported"
+msgid "vso.cmd.native.info.unexported"
 msgstr "已移除匯出 %s\n"
 
-msgid "vso.cmd.pico.info.exportedApps"
+msgid "vso.cmd.native.info.exportedApps"
 msgstr "已匯出 %d 個應用程式"
 
-msgid "vso.cmd.pico.info.unexportedApps"
+msgid "vso.cmd.native.info.unexportedApps"
 msgstr "已移除匯出的 %d 個應用程式"
 
-msgid "vso.cmd.pico.info.shellInit"
+msgid "vso.cmd.native.info.shellInit"
 msgstr "shell 似乎尚未初始化。要現在初始化嗎？（十分推薦）[y/N]"
 
-msgid "vso.cmd.pico.info.fallbackShell"
+msgid "vso.cmd.native.info.fallbackShell"
 msgstr "備選使用主機 shell 嗎？這可能會導致意外的行為。[y/N]"
 
-msgid "vso.cmd.pico.export"
+msgid "vso.cmd.native.export"
 msgstr "從子系統匯出應用程式或是二進位檔案"
 
-msgid "vso.cmd.pico.export.options.app"
+msgid "vso.cmd.native.export.options.app"
 msgstr "要匯出的應用程式的名稱"
 
-msgid "vso.cmd.pico.export.options.bin"
+msgid "vso.cmd.native.export.options.bin"
 msgstr "要匯出的二進位檔案的名稱"
 
-msgid "vso.cmd.pico.export.options.binOutput"
+msgid "vso.cmd.native.export.options.binOutput"
 msgstr "二進位輸出的路徑（預設：~/.local/bin/）"
 
-msgid "vso.cmd.pico.unexport"
+msgid "vso.cmd.native.unexport"
 msgstr "從子系統移除匯出的應用程式或是二進位檔案"
 
-msgid "vso.cmd.pico.unexport.options.app"
+msgid "vso.cmd.native.unexport.options.app"
 msgstr "要移除匯出的應用程式的名稱"
 
-msgid "vso.cmd.pico.unexport.options.bin"
+msgid "vso.cmd.native.unexport.options.bin"
 msgstr "要移除匯出的二進位檔案的名稱"
 
-msgid "vso.cmd.pico.unexport.options.binOutput"
+msgid "vso.cmd.native.unexport.options.binOutput"
 msgstr "二進位輸出的路徑（預設：~/.local/bin/）"
 
-msgid "vso.cmd.pico.init"
+msgid "vso.cmd.native.init"
 msgstr "初始化 VSO 子系統，用於軟體包的管理"
 
-msgid "vso.cmd.pico.init.options.force"
+msgid "vso.cmd.native.init.options.force"
 msgstr "強制初始化，即便子系統已經初始化"
 
-msgid "vso.cmd.pico.install"
+msgid "vso.cmd.native.install"
 msgstr "在子系統內安裝應用程式"
 
-msgid "vso.cmd.pico.remove"
+msgid "vso.cmd.native.remove"
 msgstr "從子系統中移除應用程式"
 
-msgid "vso.cmd.pico.run"
+msgid "vso.cmd.native.run"
 msgstr "執行來自子系統的應用程式"
 
-msgid "vso.cmd.pico.run.options.noReset"
+msgid "vso.cmd.native.run.options.noReset"
 msgstr "如果出現問題，不要建議重設子系統"
 
-msgid "vso.cmd.pico.search"
+msgid "vso.cmd.native.search"
 msgstr "搜尋要在子系統內安裝的應用程式"
 
-msgid "vso.cmd.pico.shell"
+msgid "vso.cmd.native.shell"
 msgstr "進入子系統環境"
 
-msgid "vso.cmd.pico.sideload"
+msgid "vso.cmd.native.sideload"
 msgstr "在子系統內側載 DEB/APK 軟體包"
 
-msgid "vso.cmd.pico.update"
+msgid "vso.cmd.native.update"
 msgstr "更新子系統的軟體庫"
 
-msgid "vso.cmd.pico.upgrade"
+msgid "vso.cmd.native.upgrade"
 msgstr "更新子系統內的軟體包"
 
 msgid "vso.cmd.sysUpgrade"

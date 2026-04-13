@@ -104,121 +104,121 @@ msgstr "Cấu hình được cập nhật thành công."
 msgid "vso.cmd.config.show"
 msgstr "Hiển thị cấu hình hệ thống"
 
-msgid "vso.cmd.pico"
+msgid "vso.cmd.native"
 msgstr "Quản lí hệ thống con VSO"
 
-msgid "vso.cmd.pico.error.notInitialized"
-msgstr "Hệ thống con VSO chưa được khởi tạo. Vui lòng khởi tạo bằng lệnh `vso pico-init`."
+msgid "vso.cmd.native.error.notInitialized"
+msgstr "Hệ thống con VSO chưa được khởi tạo. Vui lòng khởi tạo bằng lệnh `vso native init`."
 
-msgid "vso.cmd.pico.error.alreadyInitialized"
+msgid "vso.cmd.native.error.alreadyInitialized"
 msgstr "Hệ thống con VSO đã được khởi tạo sẵn. Dùng flag --forces để thực hiện khởi tạo bắt buộc."
 
-msgid "vso.cmd.pico.error.noAppNameOrBin"
+msgid "vso.cmd.native.error.noAppNameOrBin"
 msgstr "--app hoặc --bin phải được xác định."
 
-msgid "vso.cmd.pico.error.sameAppOrBin"
+msgid "vso.cmd.native.error.sameAppOrBin"
 msgstr "không được xác định --app và --bin cùng lúc."
 
-msgid "vso.cmd.pico.error.exportingApp"
+msgid "vso.cmd.native.error.exportingApp"
 msgstr "Có một lỗi đã xảy ra khi xuất ứng dụng: %s"
 
-msgid "vso.cmd.pico.error.exportingBin"
+msgid "vso.cmd.native.error.exportingBin"
 msgstr "Có một lỗi đã xảy ra khi xuất mã nhị phân: %s"
 
-msgid "vso.cmd.pico.error.unexportingApp"
+msgid "vso.cmd.native.error.unexportingApp"
 msgstr "Có một lỗi đã xảy ra khi ngừng xuất ứng dụng: %s"
 
-msgid "vso.cmd.pico.error.unexportingBin"
+msgid "vso.cmd.native.error.unexportingBin"
 msgstr "Có một lỗi đã xảy ra khi ngừng xuất mã nhị phân: %s"
 
-msgid "vso.cmd.pico.error.unknownCommand"
+msgid "vso.cmd.native.error.unknownCommand"
 msgstr "Lệnh không xác định: %s"
 
-msgid "vso.cmd.pico.error.shellReset"
+msgid "vso.cmd.native.error.shellReset"
 msgstr "Không thể tiếp cận cửa sổ lệnh VSO. Bạn có muốn cài đặt lại không? (Nếu có, tất cả phần mềm được cài đặt trong hệ thống con sẽ bị gỡ bỏ) [y/N]"
 
-msgid "vso.cmd.pico.info.deleting"
+msgid "vso.cmd.native.info.deleting"
 msgstr "Đang xoá hệ thống con VSO..."
 
-msgid "vso.cmd.pico.info.initializing"
+msgid "vso.cmd.native.info.initializing"
 msgstr "Đang khởi tạo hệ thống con VSO..."
 
-msgid "vso.cmd.pico.info.initialized"
+msgid "vso.cmd.native.info.initialized"
 msgstr "Hệ thống con VSO đã được khởi tạo."
 
-msgid "vso.cmd.pico.info.exported"
+msgid "vso.cmd.native.info.exported"
 msgstr "Đã xuất %s\n"
 
-msgid "vso.cmd.pico.info.unexported"
+msgid "vso.cmd.native.info.unexported"
 msgstr "Đã ngừng xuất %s\n"
 
-msgid "vso.cmd.pico.info.exportedApps"
+msgid "vso.cmd.native.info.exportedApps"
 msgstr "Đã xuất %d ứng dụng"
 
-msgid "vso.cmd.pico.info.unexportedApps"
+msgid "vso.cmd.native.info.unexportedApps"
 msgstr "Đã ngừng xuất %d ứng dụng"
 
-msgid "vso.cmd.pico.info.shellInit"
+msgid "vso.cmd.native.info.shellInit"
 msgstr "Có vẻ như bạn chưa khởi tạo cửa sổ lệnh. Bạn có muốn khởi tạo ngay không? (Nên làm) [y/N]"
 
-msgid "vso.cmd.pico.info.fallbackShell"
+msgid "vso.cmd.native.info.fallbackShell"
 msgstr "Trở lại host shell? Điều này có thể dẫn đến hành vi không mong muốn. [y/N]"
 
-msgid "vso.cmd.pico.export"
+msgid "vso.cmd.native.export"
 msgstr "Xuất một ứng dụng hoặc mã nhị phân từ hệ thống con"
 
-msgid "vso.cmd.pico.export.options.app"
+msgid "vso.cmd.native.export.options.app"
 msgstr "tên của ứng dụng cần xuất"
 
-msgid "vso.cmd.pico.export.options.bin"
+msgid "vso.cmd.native.export.options.bin"
 msgstr "tên của mã nhị phân cần xuất"
 
-msgid "vso.cmd.pico.export.options.binOutput"
+msgid "vso.cmd.native.export.options.binOutput"
 msgstr "vị trí xuất mã nhị phân (mặc định: ~/.local/bin/)"
 
-msgid "vso.cmd.pico.unexport"
+msgid "vso.cmd.native.unexport"
 msgstr "Ngừng xuất một ứng dụng hoặc mã nhị phân từ hệ thống con"
 
-msgid "vso.cmd.pico.unexport.options.app"
+msgid "vso.cmd.native.unexport.options.app"
 msgstr "tên của ứng dụng cần ngừng xuất"
 
-msgid "vso.cmd.pico.unexport.options.bin"
+msgid "vso.cmd.native.unexport.options.bin"
 msgstr "tên của mã nhị phân cần ngừng xuất"
 
-msgid "vso.cmd.pico.unexport.options.binOutput"
+msgid "vso.cmd.native.unexport.options.binOutput"
 msgstr "vị trí xuất mã nhị phân (mặc định: ~/.local/bin/)"
 
-msgid "vso.cmd.pico.init"
+msgid "vso.cmd.native.init"
 msgstr "Khởi tạo hệ thống con VSO để quản lí gói"
 
-msgid "vso.cmd.pico.init.options.force"
+msgid "vso.cmd.native.init.options.force"
 msgstr "bắt buộc khởi tạo nếu hệ thống con đã được khởi tạo sẵn"
 
-msgid "vso.cmd.pico.install"
+msgid "vso.cmd.native.install"
 msgstr "Cài đặt một ứng dụng trong hệ thống con"
 
-msgid "vso.cmd.pico.remove"
+msgid "vso.cmd.native.remove"
 msgstr "Xoá bỏ một ứng dụng trong hệ thống con"
 
-msgid "vso.cmd.pico.run"
+msgid "vso.cmd.native.run"
 msgstr "Chạy một ứng dụng trong hệ thống con"
 
-msgid "vso.cmd.pico.run.options.noReset"
+msgid "vso.cmd.native.run.options.noReset"
 msgstr "đề nghị không cài lại hệ thống con nếu có gì đó không ổn"
 
-msgid "vso.cmd.pico.search"
+msgid "vso.cmd.native.search"
 msgstr "Tìm kiếm một ứng dụng để cài đặt trong hệ thống con"
 
-msgid "vso.cmd.pico.shell"
+msgid "vso.cmd.native.shell"
 msgstr "Sử dụng môi trường trong hệ thống con"
 
-msgid "vso.cmd.pico.sideload"
+msgid "vso.cmd.native.sideload"
 msgstr "Cài đặt gói DEB/APK trong hệ thống con"
 
-msgid "vso.cmd.pico.update"
+msgid "vso.cmd.native.update"
 msgstr "Cập nhật kho lưu trữ gói của hệ thống con"
 
-msgid "vso.cmd.pico.upgrade"
+msgid "vso.cmd.native.upgrade"
 msgstr "Nâng cấp các gói trong hệ thống con"
 
 msgid "vso.cmd.sysUpgrade"

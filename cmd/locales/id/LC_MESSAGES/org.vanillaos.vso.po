@@ -104,121 +104,121 @@ msgstr "Konfigurasi telah diperbarui dengan sukses."
 msgid "vso.cmd.config.show"
 msgstr "Tampilkan konfigurasi sistem"
 
-msgid "vso.cmd.pico"
+msgid "vso.cmd.native"
 msgstr "Kelola subsistem VSO"
 
-msgid "vso.cmd.pico.error.notInitialized"
-msgstr "Subsistem VSO belum diinisialisasi. Silakan jalankan perintah `vso pico-init` untuk menginisialisasinya."
+msgid "vso.cmd.native.error.notInitialized"
+msgstr "Subsistem VSO belum diinisialisasi. Silakan jalankan perintah `vso native init` untuk menginisialisasinya."
 
-msgid "vso.cmd.pico.error.alreadyInitialized"
+msgid "vso.cmd.native.error.alreadyInitialized"
 msgstr "Subsistem VSO sudah diinisialisasi. Gunakan bendera --force untuk memaksa inisialisasi."
 
-msgid "vso.cmd.pico.error.noAppNameOrBin"
+msgid "vso.cmd.native.error.noAppNameOrBin"
 msgstr "--app atau --bin harus ditentukan."
 
-msgid "vso.cmd.pico.error.sameAppOrBin"
+msgid "vso.cmd.native.error.sameAppOrBin"
 msgstr "--app dan --bin tidak dapat keduanya ditentukan."
 
-msgid "vso.cmd.pico.error.exportingApp"
+msgid "vso.cmd.native.error.exportingApp"
 msgstr "Terjadi kesalahan saat mengekspor aplikasi: %s"
 
-msgid "vso.cmd.pico.error.exportingBin"
+msgid "vso.cmd.native.error.exportingBin"
 msgstr "Terjadi kesalahan saat mengekspor berkas biner: %s"
 
-msgid "vso.cmd.pico.error.unexportingApp"
+msgid "vso.cmd.native.error.unexportingApp"
 msgstr "Terjadi kesalahan saat membatalkan ekspor aplikasi: %s"
 
-msgid "vso.cmd.pico.error.unexportingBin"
+msgid "vso.cmd.native.error.unexportingBin"
 msgstr "Terjadi kesalahan saat membatalkan ekspor berkas biner: %s"
 
-msgid "vso.cmd.pico.error.unknownCommand"
+msgid "vso.cmd.native.error.unknownCommand"
 msgstr "Perintah tidak dikenal: %s"
 
-msgid "vso.cmd.pico.error.shellReset"
+msgid "vso.cmd.native.error.shellReset"
 msgstr "Tidak mungkin untuk mengakses shell VSO. Apakah Anda ingin meresetnya? (Ini akan menghapus semua perangkat lunak yang terinstal di subsistem) [y/N]"
 
-msgid "vso.cmd.pico.info.deleting"
+msgid "vso.cmd.native.info.deleting"
 msgstr "Menghapus subsistem VSO..."
 
-msgid "vso.cmd.pico.info.initializing"
+msgid "vso.cmd.native.info.initializing"
 msgstr "Menginisialisasi subsistem VSO..."
 
-msgid "vso.cmd.pico.info.initialized"
+msgid "vso.cmd.native.info.initialized"
 msgstr "Subsistem VSO telah diinisialisasi."
 
-msgid "vso.cmd.pico.info.exported"
+msgid "vso.cmd.native.info.exported"
 msgstr "Diekspor %s\n"
 
-msgid "vso.cmd.pico.info.unexported"
+msgid "vso.cmd.native.info.unexported"
 msgstr "%s yang belum diekspor\n"
 
-msgid "vso.cmd.pico.info.exportedApps"
+msgid "vso.cmd.native.info.exportedApps"
 msgstr "Aplikasi yang diekspor: %d"
 
-msgid "vso.cmd.pico.info.unexportedApps"
+msgid "vso.cmd.native.info.unexportedApps"
 msgstr "Aplikasi yang tidak diekspor: %d"
 
-msgid "vso.cmd.pico.info.shellInit"
+msgid "vso.cmd.native.info.shellInit"
 msgstr "Sepertinya shell Anda belum diinisialisasi. Apakah Anda ingin menginisialisasinya sekarang? (Sangat disarankan) [y/N]"
 
-msgid "vso.cmd.pico.info.fallbackShell"
+msgid "vso.cmd.native.info.fallbackShell"
 msgstr "Kembali ke shell host? Hal ini dapat menyebabkan perilaku yang tidak terduga. [y/N]"
 
-msgid "vso.cmd.pico.export"
+msgid "vso.cmd.native.export"
 msgstr "Ekspor aplikasi atau berkas biner dari subsistem"
 
-msgid "vso.cmd.pico.export.options.app"
+msgid "vso.cmd.native.export.options.app"
 msgstr "nama aplikasi yang akan diekspor"
 
-msgid "vso.cmd.pico.export.options.bin"
+msgid "vso.cmd.native.export.options.bin"
 msgstr "nama berkas biner yang akan diekspor"
 
-msgid "vso.cmd.pico.export.options.binOutput"
+msgid "vso.cmd.native.export.options.binOutput"
 msgstr "jalur output biner (default: ~/.local/bin/)"
 
-msgid "vso.cmd.pico.unexport"
+msgid "vso.cmd.native.unexport"
 msgstr "Jangan ekspor aplikasi atau berkas biner dari subsistem"
 
-msgid "vso.cmd.pico.unexport.options.app"
+msgid "vso.cmd.native.unexport.options.app"
 msgstr "nama aplikasi yang batal diekspor"
 
-msgid "vso.cmd.pico.unexport.options.bin"
+msgid "vso.cmd.native.unexport.options.bin"
 msgstr "Nama berkas biner yang batal diekspor"
 
-msgid "vso.cmd.pico.unexport.options.binOutput"
+msgid "vso.cmd.native.unexport.options.binOutput"
 msgstr "jalur output biner (default: ~/.local/bin/)"
 
-msgid "vso.cmd.pico.init"
+msgid "vso.cmd.native.init"
 msgstr "Inisialisasi subsistem VSO, yang digunakan untuk manajemen paket"
 
-msgid "vso.cmd.pico.init.options.force"
+msgid "vso.cmd.native.init.options.force"
 msgstr "paksa inisialisasi jika subsistem sudah diinisialisasi"
 
-msgid "vso.cmd.pico.install"
+msgid "vso.cmd.native.install"
 msgstr "Instal aplikasi di dalam subsistem"
 
-msgid "vso.cmd.pico.remove"
+msgid "vso.cmd.native.remove"
 msgstr "Hapus aplikasi dari subsistem"
 
-msgid "vso.cmd.pico.run"
+msgid "vso.cmd.native.run"
 msgstr "Jalankan aplikasi dari subsistem"
 
-msgid "vso.cmd.pico.run.options.noReset"
+msgid "vso.cmd.native.run.options.noReset"
 msgstr "jangan mengusulkan untuk mereset subsistem jika terjadi kesalahan"
 
-msgid "vso.cmd.pico.search"
+msgid "vso.cmd.native.search"
 msgstr "Cari aplikasi yang akan diinstal di dalam subsistem"
 
-msgid "vso.cmd.pico.shell"
+msgid "vso.cmd.native.shell"
 msgstr "Masuk ke lingkungan subsistem"
 
-msgid "vso.cmd.pico.sideload"
+msgid "vso.cmd.native.sideload"
 msgstr "Menginstal paket DEB/APK secara sideload di dalam subsistem"
 
-msgid "vso.cmd.pico.update"
+msgid "vso.cmd.native.update"
 msgstr "Perbarui repositori paket subsistem"
 
-msgid "vso.cmd.pico.upgrade"
+msgid "vso.cmd.native.upgrade"
 msgstr "Perbarui paket-paket di dalam subsistem"
 
 msgid "vso.cmd.sysUpgrade"
