@@ -67,8 +67,7 @@ func getPatchVersionFilePath() (string, error) {
 }
 
 func loadPatches() ([]PatchVersion, error) {
-	// patchFilePath := "/usr/share/vso/patch.json"
-	patchFilePath := "/etc/vso/patch.json"
+	patchFilePath := "/usr/share/vso/patch.json"
 
 	f, err := os.Open(patchFilePath)
 	if err != nil {
