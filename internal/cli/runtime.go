@@ -238,6 +238,10 @@ func (c *UpgradeCheckCmd) Run() error {
 }
 
 func (c *UpgradeCmd) Run() error {
+
+	var migrate MigrateCmd
+	defer migrate.Run()
+
 	if c.Now {
 		err := core.TryUpdate(true)
 		if err != nil {
@@ -543,6 +547,8 @@ func (c *PicoUpdateCmd) Run() error {
 	return err
 }
 
+//TODO: Run patch as post-install after upgrade
+
 func (c *PicoUpgradeCmd) Run() error {
 	pico, pkgManager, err := getPicoAndPkgManager()
 	if err != nil {
@@ -555,4 +561,96 @@ func (c *PicoUpgradeCmd) Run() error {
 	finalArgs := pkgManager.GenCmd(pkgManager.CmdUpgrade)
 	_, err = pico.Exec(false, false, finalArgs...)
 	return err
+}
+
+// Migrate
+
+func (c *MigrateCmd) Run() error {
+	patch1, patch2, err := core.GetPatches()
+	if err != nil {
+		return err
+	}
+
+	requiredPatches, err := core.GetRequiredPatches()
+	if err != nil {
+		return err
+	}
+	optionalPatches, err := core.GetOptionalPatches()
+	if err != nil {
+		return err
+	}
+
+	if len(requiredPatches)+len(optionalPatches) == 0 {
+		VSO.Log.Info("No patches need to be applied.")
+		return nil
+	}
+
+	fmt.Printf("Need to apply patches from version, %.2f (%s) to version %.2f (%s)", patch1.Version, patch1.Name, patch2.Version, patch2.Name)
+
+	fmt.Println()
+	fmt.Println("The following patches are mandatory and will be applied:")
+
+	for _, v := range requiredPatches {
+		fmt.Println("- " + v.Name)
+		fmt.Println("  Description: " + v.Description)
+	}
+
+	fmt.Println()
+	fmt.Println("The following patches are optional:")
+	var consentList []bool
+	var totaloptional int
+	for _, v := range optionalPatches {
+		fmt.Println("- " + v.Name)
+		fmt.Println("  Description: " + v.Description)
+		properAnswer := false
+		for !properAnswer {
+			var answer string
+			fmt.Print("Do you want to apply this patch? [Y/n]")
+			fmt.Scanln(&answer)
+			switch answer {
+			case "yes", "y", "":
+				consentList = append(consentList, true)
+				properAnswer = true
+				totaloptional += 1
+			case "no", "n":
+				consentList = append(consentList, false)
+				properAnswer = true
+			}
+		}
+	}
+
+	statusChan := make(chan int)
+	errorChan := make(chan error)
+	completeChan := make(chan bool)
+	go core.AsyncApplyPatches(statusChan, completeChan, errorChan, consentList...)
+
+	fmt.Println()
+	fmt.Println("Please wait while the patches are applied.")
+	patchLength := len(requiredPatches) + totaloptional
+	completed := false
+	errSwitch := false
+	for !completed {
+		select {
+		case err := <-errorChan:
+			fmt.Println(err)
+			errSwitch = true
+		case status := <-statusChan:
+			if status == -1 {
+				if !errSwitch {
+					fmt.Println("SUCCESS")
+				} else {
+					fmt.Println("FAIL")
+					errSwitch = false
+				}
+			} else {
+				fmt.Print("Applying patch ", status, " of ", patchLength, "...")
+			}
+		case complete := <-completeChan:
+			completed = complete
+		}
+	}
+	fmt.Println()
+	VSO.Log.Info("All patches have been applied successfully")
+
+	return nil
 }
