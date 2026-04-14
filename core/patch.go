@@ -6,7 +6,6 @@ import (
 	"os"
 	"os/exec"
 	"strconv"
-	"strings"
 )
 
 // The root JSON object that holds all the patches
@@ -15,66 +14,51 @@ type RootPatch struct {
 }
 
 type PatchVersion struct {
-	Version  int    `json:"version"`
-	Name     string `json:"name"`
-	Patches  []any  `json:"patches"`
-	Optional bool   `json:"optional"`
+	Version  float32 `json:"version"`
+	Name     string  `json:"name"`
+	Patches  []Patch `json:"patches"`
+	Optional bool    `json:"optional"`
 }
 
-// The format that every patch must follow, regardless of type
 type Patch struct {
+	// The format that every patch must follow, regardless of type
 	Name        string `json:"name"`
 	Description string `json:"description"`
 	Type        string `json:"type"`
 	Optional    bool   `json:"optional"`
-}
 
-type ShellPatch struct {
-	Name        string   `json:"name"`
-	Description string   `json:"description"`
-	Type        string   `json:"type"`
-	Optional    bool     `json:"optional"`
-	Command     string   `json:"commands"`
-	Arguments   []string `json:"arguments"`
-}
+	// Shell Patches
+	Command   string   `json:"command"`
+	Arguments []string `json:"arguments"`
 
-type FlatpakInstallPatch struct {
-	Name        string `json:"name"`
-	Description string `json:"description"`
-	Type        string `json:"type"`
-	Optional    bool   `json:"optional"`
-	Flatpak     string `json:"flatpak"`
-}
+	// Flatpak Install Patch & Flatpak Remove Patch
+	Flatpak string `json:"flatpak"`
 
-type FlatpakRemovePatch struct {
-	Name        string `json:"name"`
-	Description string `json:"description"`
-	Type        string `json:"type"`
-	Optional    bool   `json:"optional"`
-	Flatpak     string `json:"flatpak"`
-}
-
-type FlatpakReplacePatch struct {
-	Name        string `json:"name"`
-	Description string `json:"description"`
-	Type        string `json:"type"`
-	Optional    bool   `json:"optional"`
-	OldFlatpak  string `json:"old-flatpak"`
-	NewFlatpak  string `json:"new-flatpak"`
+	// Flatpak Replace Patch
+	OldFlatpak string `json:"old-flatpak"`
+	NewFlatpak string `json:"new-flatpak"`
 }
 
 var versionedPatches []PatchVersion
-var requiredPatchList []any
-var optionalPatchList []any
+var requiredPatchList []Patch
+var optionalPatchList []Patch
 var patchListInitialised bool
+var newestVersion float32
 
-func GetPatchVersionFilePath() (string, error) {
+func rawPatchVersionFilePath() (string, error) {
 	currentUser, err := getRealUser()
 	if err != nil {
 		return "", err
 	}
+	return fmt.Sprintf("/home/%s/.config/vso/patchVersion", currentUser), nil
+}
 
-	patchVersionFilePath := fmt.Sprintf("/home/%s/.config/vso/patchVersion", currentUser)
+func getPatchVersionFilePath() (string, error) {
+
+	patchVersionFilePath, err := rawPatchVersionFilePath()
+	if err != nil {
+		return "", err
+	}
 	if _, err := os.Stat(patchVersionFilePath); err != nil {
 		return "", nil
 	}
@@ -82,7 +66,7 @@ func GetPatchVersionFilePath() (string, error) {
 	return patchVersionFilePath, nil
 }
 
-func LoadPatches() ([]PatchVersion, error) {
+func loadPatches() ([]PatchVersion, error) {
 	// patchFilePath := "/usr/share/vso/patch.json"
 	patchFilePath := "/etc/vso/patch.json"
 
@@ -101,10 +85,10 @@ func LoadPatches() ([]PatchVersion, error) {
 	return loadedFile.PatchVersions, nil
 }
 
-func LoadPatchVersion() (int, error) {
-	var version int
+func loadPatchVersion() (float32, error) {
+	var version float32
 
-	patchVersionFilePath, err := GetPatchVersionFilePath()
+	patchVersionFilePath, err := getPatchVersionFilePath()
 	if err != nil {
 		return 0, err
 	}
@@ -113,40 +97,46 @@ func LoadPatchVersion() (int, error) {
 	if patchVersionFilePath == "" { // The file does not exist
 		version = 0
 	} else {
-		f, err := os.Open(patchVersionFilePath)
+		content, err := os.ReadFile(patchVersionFilePath)
 		if err != nil {
 			return 0, err
 		}
 
-		var content []byte
-		defer f.Close()
-
-		_, err = f.Read(content)
+		version64, err := strconv.ParseFloat(string(content), 32)
 		if err != nil {
 			return 0, err
 		}
-
-		version, err = strconv.Atoi(strings.Split(string(content), "\n")[0])
-		if err != nil {
-			return 0, err
-		}
+		version = float32(version64)
 	}
 
 	return version, nil
 }
 
+func setPatchVersion() error {
+	patchVersionFilePath, err := rawPatchVersionFilePath()
+	if err != nil {
+		return err
+	}
+
+	newestVersionString := strconv.FormatFloat(float64(newestVersion), 'f', -1, 32)
+	return os.WriteFile(patchVersionFilePath, []byte(newestVersionString), 0644)
+}
+
 // GetPatches aggregates all the patches that have to be applied into the final patch lists, and returns the first and last patches to be applied
 func GetPatches() (PatchVersion, PatchVersion, error) {
-	fullPatchList, err := LoadPatches()
+	fullPatchList, err := loadPatches()
 	if err != nil {
 		return PatchVersion{}, PatchVersion{}, err
 	}
 
-	currentPatchVersion, err := LoadPatchVersion()
+	currentPatchVersion, err := loadPatchVersion()
 	if err != nil {
 		return PatchVersion{}, PatchVersion{}, err
 	}
 
+	newestVersion = fullPatchList[0].Version
+
+	versionedPatches = fullPatchList
 	for i, v := range fullPatchList {
 		if v.Version <= currentPatchVersion {
 			versionedPatches = fullPatchList[0:i]
@@ -154,12 +144,12 @@ func GetPatches() (PatchVersion, PatchVersion, error) {
 		}
 	}
 
-	for _, v := range fullPatchList {
+	for _, v := range versionedPatches {
 		for _, w := range v.Patches {
 			if !validatePatch(w) {
 				continue
 			}
-			if w.(Patch).Optional {
+			if w.Optional {
 				optionalPatchList = append(optionalPatchList, w)
 			} else {
 				requiredPatchList = append(requiredPatchList, w)
@@ -171,49 +161,49 @@ func GetPatches() (PatchVersion, PatchVersion, error) {
 	return fullPatchList[0], fullPatchList[len(fullPatchList)-1], nil
 }
 
-func validatePatch(patch any) bool {
-	switch patch.(Patch).Type {
+func validatePatch(patch Patch) bool {
+	switch patch.Type {
 	case "shell":
 		return true
 	case "flatpak-install":
 		return true
 	case "flatpak-remove":
-		return validateFlatpakRemove(patch.(FlatpakRemovePatch))
+		return validateFlatpakRemove(patch)
 	case "flatpak-replace":
-		return validateFlatpakReplace(patch.(FlatpakReplacePatch))
+		return validateFlatpakReplace(patch)
 	default:
 		return false
 	}
 }
 
-func validateFlatpakRemove(patch FlatpakRemovePatch) bool {
+func validateFlatpakRemove(patch Patch) bool {
 	err := exec.Command("flatpak", "info", patch.Flatpak).Run()
 	return err == nil
 }
 
-func validateFlatpakReplace(patch FlatpakReplacePatch) bool {
+func validateFlatpakReplace(patch Patch) bool {
 	err := exec.Command("flatpak", "info", patch.OldFlatpak).Run()
 	if err != nil {
 		return false
 	}
-	err = exec.Command("flatpak", "info", "patch.NewFlatpak").Run()
+	err = exec.Command("flatpak", "info", patch.NewFlatpak).Run()
 	if err == nil {
 		return false
 	}
 	return true
 }
 
-func GetOptionalPatches() ([]any, error) {
+func GetOptionalPatches() ([]Patch, error) {
 	if !patchListInitialised {
-		return []any{}, fmt.Errorf("Patch list is requested before it is initialised")
+		return []Patch{}, fmt.Errorf("Patch list is requested before it is initialised")
 	}
 
 	return optionalPatchList, nil
 }
 
-func GetRequiredPatches() ([]any, error) {
+func GetRequiredPatches() ([]Patch, error) {
 	if !patchListInitialised {
-		return []any{}, fmt.Errorf("Patch list is requested before it is initialised")
+		return []Patch{}, fmt.Errorf("Patch list is requested before it is initialised")
 	}
 
 	return requiredPatchList, nil
@@ -221,95 +211,103 @@ func GetRequiredPatches() ([]any, error) {
 
 //TODO: Restore previous application state in case of failed patch application
 
-func AsyncApplyPatches(infoChannel chan int, errorChannel chan error, optionalPatchConsent ...bool) {
+func AsyncApplyPatches(statusChannel chan int, completeChannel chan bool, errorChannel chan error, optionalPatchConsent ...bool) {
 	if len(optionalPatchConsent) != len(optionalPatchList) {
 		errorChannel <- fmt.Errorf("Optional Patch Consent list is malformed")
 		return
 	}
 
-	for _, v := range requiredPatchList {
-		infoChannel <- 0
+	totalTransactions := 0
 
-		switch v.(Patch).Type {
+	for _, v := range requiredPatchList {
+		totalTransactions += 1
+		statusChannel <- totalTransactions
+
+		switch v.Type {
 		case "shell":
-			err := applyShellPatch(v.(ShellPatch))
+			err := applyShellPatch(v)
 			if err != nil {
 				errorChannel <- err
 			}
 		case "flatpak-install":
-			err := applyFlatpakInstallPatch(v.(FlatpakInstallPatch))
+			err := applyFlatpakInstallPatch(v)
 			if err != nil {
 				errorChannel <- err
 			}
 		case "flatpak-remove":
-			err := applyFlatpakRemovePatch(v.(FlatpakRemovePatch))
+			err := applyFlatpakRemovePatch(v)
 			if err != nil {
 				errorChannel <- err
 			}
 		case "flatpak-replace":
-			err := applyFlatpakReplacePatch(v.(FlatpakReplacePatch))
+			err := applyFlatpakReplacePatch(v)
 			if err != nil {
 				errorChannel <- err
 			}
 		default:
-			errorChannel <- fmt.Errorf("Invalid Patch Type: %s", v.(Patch).Type)
+			errorChannel <- fmt.Errorf("Invalid Patch Type: %s", v.Type)
 		}
 
-		infoChannel <- 1
+		statusChannel <- -1
 	}
 
 	for i, v := range optionalPatchList {
 		if !optionalPatchConsent[i] {
 			continue
 		}
+		totalTransactions += 1
 
-		infoChannel <- 1
+		statusChannel <- totalTransactions
 
-		switch v.(Patch).Type {
+		switch v.Type {
 		case "shell":
-			err := applyShellPatch(v.(ShellPatch))
+			err := applyShellPatch(v)
 			if err != nil {
 				errorChannel <- err
 			}
 		case "flatpak-install":
-			err := applyFlatpakInstallPatch(v.(FlatpakInstallPatch))
+			err := applyFlatpakInstallPatch(v)
 			if err != nil {
 				errorChannel <- err
 			}
 		case "flatpak-remove":
-			err := applyFlatpakRemovePatch(v.(FlatpakRemovePatch))
+			err := applyFlatpakRemovePatch(v)
 			if err != nil {
 				errorChannel <- err
 			}
 		case "flatpak-replace":
-			err := applyFlatpakReplacePatch(v.(FlatpakReplacePatch))
+			err := applyFlatpakReplacePatch(v)
 			if err != nil {
 				errorChannel <- err
 			}
 		default:
-			errorChannel <- fmt.Errorf("Invalid Patch Type: %s", v.(Patch).Type)
+			errorChannel <- fmt.Errorf("Invalid Patch Type: %s", v.Type)
 		}
-		infoChannel <- 1
+		statusChannel <- -1
 	}
-	errorChannel <- nil
+	err := setPatchVersion()
+	if err != nil {
+		errorChannel <- err
+	}
+	completeChannel <- true
 }
 
-func applyShellPatch(patch ShellPatch) error {
+func applyShellPatch(patch Patch) error {
 	err := exec.Command(patch.Command, patch.Arguments...).Run()
 	return err
 }
 
-func applyFlatpakInstallPatch(patch FlatpakInstallPatch) error {
+func applyFlatpakInstallPatch(patch Patch) error {
 	err := exec.Command("flatpak", "install", "-y", patch.Flatpak).Run()
 	return err
 }
 
-func applyFlatpakRemovePatch(patch FlatpakRemovePatch) error {
+func applyFlatpakRemovePatch(patch Patch) error {
 	err := exec.Command("flatpak", "remove", "-y", patch.Flatpak).Run()
 	return err
 }
 
-func applyFlatpakReplacePatch(patch FlatpakReplacePatch) error {
+func applyFlatpakReplacePatch(patch Patch) error {
 	err := exec.Command("flatpak", "remove", "-y", patch.OldFlatpak).Run()
 	if err != nil {
 		return err
