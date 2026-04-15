@@ -104,121 +104,121 @@ msgstr "D' éirigh leis an gcumraíocht."
 msgid "vso.cmd.config.show"
 msgstr "Taispeáin cumraíocht an chórais"
 
-msgid "vso.cmd.pico"
+msgid "vso.cmd.native"
 msgstr "Bainistigh an fochóras VSO"
 
-msgid "vso.cmd.pico.error.notInitialized"
-msgstr "Níl an fochóras VSO túsaithe. Rith 'vso pico-init' chun é a thúsú."
+msgid "vso.cmd.native.error.notInitialized"
+msgstr "Níl an fochóras VSO túsaithe. Rith 'vso native init' chun é a thúsú."
 
-msgid "vso.cmd.pico.error.alreadyInitialized"
+msgid "vso.cmd.native.error.alreadyInitialized"
 msgstr "Tá an fochóras VSO túsaithe cheana féin. Bain úsáid as an bhratach --bhfeidhm chun an túsú a chur i bhfeidhm."
 
-msgid "vso.cmd.pico.error.noAppNameOrBin"
+msgid "vso.cmd.native.error.noAppNameOrBin"
 msgstr "--app nó --bin a shonrú."
 
-msgid "vso.cmd.pico.error.sameAppOrBin"
+msgid "vso.cmd.native.error.sameAppOrBin"
 msgstr "--app agus --bin ní féidir an dá rud a shonrú."
 
-msgid "vso.cmd.pico.error.exportingApp"
+msgid "vso.cmd.native.error.exportingApp"
 msgstr "Tharla earráid agus an feidhmchlár á easpórtáil: %s"
 
-msgid "vso.cmd.pico.error.exportingBin"
+msgid "vso.cmd.native.error.exportingBin"
 msgstr "Tharla earráid agus an dénártha á easpórtáil: %s"
 
-msgid "vso.cmd.pico.error.unexportingApp"
+msgid "vso.cmd.native.error.unexportingApp"
 msgstr "Tharla earráid agus an feidhmchlár á dhíchriptiú: %s"
 
-msgid "vso.cmd.pico.error.unexportingBin"
+msgid "vso.cmd.native.error.unexportingBin"
 msgstr "Tharla earráid agus an dénártha á dhíchriptiú: %s"
 
-msgid "vso.cmd.pico.error.unknownCommand"
+msgid "vso.cmd.native.error.unknownCommand"
 msgstr "Ordú anaithnid: %s"
 
-msgid "vso.cmd.pico.error.shellReset"
+msgid "vso.cmd.native.error.shellReset"
 msgstr "Ní féidir an bhlaosc VSO a bhaint amach. An bhfuil fonn ort é a athshocrú? (Bainfidh sé seo do bhogearraí go léir atá suiteáilte san fhochóras) [y/N]"
 
-msgid "vso.cmd.pico.info.deleting"
+msgid "vso.cmd.native.info.deleting"
 msgstr "An fochóras VSO á scriosadh..."
 
-msgid "vso.cmd.pico.info.initializing"
+msgid "vso.cmd.native.info.initializing"
 msgstr "An fochóras VSO á thúsú..."
 
-msgid "vso.cmd.pico.info.initialized"
+msgid "vso.cmd.native.info.initialized"
 msgstr "Tá an fochóras VSO túsaithe."
 
-msgid "vso.cmd.pico.info.exported"
+msgid "vso.cmd.native.info.exported"
 msgstr "Easpórtáil %s\n"
 
-msgid "vso.cmd.pico.info.unexported"
+msgid "vso.cmd.native.info.unexported"
 msgstr "%s gan easpórtáil\n"
 
-msgid "vso.cmd.pico.info.exportedApps"
+msgid "vso.cmd.native.info.exportedApps"
 msgstr "Easpórtáil %d feidhmchlár"
 
-msgid "vso.cmd.pico.info.unexportedApps"
+msgid "vso.cmd.native.info.unexportedApps"
 msgstr "Feidhmchláir %d gan easpórtáil"
 
-msgid "vso.cmd.pico.info.shellInit"
+msgid "vso.cmd.native.info.shellInit"
 msgstr "Breathnaíonn sé nach bhfuil do bhlaosc túsaithe go fóill. An bhfuil fonn ort é a thúsú anois? (Moltar go hard) [y/N]"
 
-msgid "vso.cmd.pico.info.fallbackShell"
+msgid "vso.cmd.native.info.fallbackShell"
 msgstr "Fallback leis an bhlaosc óstach? D'fhéadfadh iompar gan choinne a bheith mar thoradh air seo. [y/N]"
 
-msgid "vso.cmd.pico.export"
+msgid "vso.cmd.native.export"
 msgstr "Easpórtáil feidhmchlár nó dénártha ón bhfochóras"
 
-msgid "vso.cmd.pico.export.options.app"
+msgid "vso.cmd.native.export.options.app"
 msgstr "ainm an iarratais ar onnmhairiú"
 
-msgid "vso.cmd.pico.export.options.bin"
+msgid "vso.cmd.native.export.options.bin"
 msgstr "ainm an dénártha a onnmhairiú"
 
-msgid "vso.cmd.pico.export.options.binOutput"
+msgid "vso.cmd.native.export.options.binOutput"
 msgstr "conair an aschuir dhénártha (réamhshocrú: ~ / .local / bin / )"
 
-msgid "vso.cmd.pico.unexport"
+msgid "vso.cmd.native.unexport"
 msgstr "Unexport iarratas nó dénártha ón bhfochóras"
 
-msgid "vso.cmd.pico.unexport.options.app"
+msgid "vso.cmd.native.unexport.options.app"
 msgstr "ainm an iarratais ar"
 
-msgid "vso.cmd.pico.unexport.options.bin"
+msgid "vso.cmd.native.unexport.options.bin"
 msgstr "ainm an dénártha a unexport"
 
-msgid "vso.cmd.pico.unexport.options.binOutput"
+msgid "vso.cmd.native.unexport.options.binOutput"
 msgstr "conair an aschuir dhénártha (réamhshocrú: ~ / .local / bin / )"
 
-msgid "vso.cmd.pico.init"
+msgid "vso.cmd.native.init"
 msgstr "Túsaigh an fochóras VSO, a úsáidtear le haghaidh bainistíochta pacáiste"
 
-msgid "vso.cmd.pico.init.options.force"
+msgid "vso.cmd.native.init.options.force"
 msgstr "Cuir tús leis an túsú má tá an fochóras túsaithe cheana féin"
 
-msgid "vso.cmd.pico.install"
+msgid "vso.cmd.native.install"
 msgstr "Suiteáil feidhmchlár taobh istigh den fhochóras"
 
-msgid "vso.cmd.pico.remove"
+msgid "vso.cmd.native.remove"
 msgstr "Bain feidhmchlár ón bhfochóras"
 
-msgid "vso.cmd.pico.run"
+msgid "vso.cmd.native.run"
 msgstr "Rith feidhmchlár ón bhfochóras"
 
-msgid "vso.cmd.pico.run.options.noReset"
+msgid "vso.cmd.native.run.options.noReset"
 msgstr "ná mol an fochóras a athshocrú má théann rud éigin mícheart"
 
-msgid "vso.cmd.pico.search"
+msgid "vso.cmd.native.search"
 msgstr "Cuardaigh feidhmchlár le suiteáil taobh istigh den fhochóras"
 
-msgid "vso.cmd.pico.shell"
+msgid "vso.cmd.native.shell"
 msgstr "Iontráil timpeallacht an fhochórais"
 
-msgid "vso.cmd.pico.sideload"
+msgid "vso.cmd.native.sideload"
 msgstr "Pacáistí DEB / APK Sideload taobh istigh den fhochóras"
 
-msgid "vso.cmd.pico.update"
+msgid "vso.cmd.native.update"
 msgstr "Nuashonraigh stór pacáiste an fhochórais"
 
-msgid "vso.cmd.pico.upgrade"
+msgid "vso.cmd.native.upgrade"
 msgstr "Uasghrádú na pacáistí taobh istigh den fhochóras"
 
 msgid "vso.cmd.sysUpgrade"

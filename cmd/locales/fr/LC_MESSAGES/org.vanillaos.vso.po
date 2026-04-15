@@ -104,121 +104,121 @@ msgstr "Configuration mise à jour avec succès."
 msgid "vso.cmd.config.show"
 msgstr "Afficher la configuration du système"
 
-msgid "vso.cmd.pico"
+msgid "vso.cmd.native"
 msgstr "Gestion du sous-système VSO"
 
-msgid "vso.cmd.pico.error.notInitialized"
-msgstr "Le sous-système VSO n'est pas initialisé. Veuillez lancer `vso pico-init` pour l'initialiser."
+msgid "vso.cmd.native.error.notInitialized"
+msgstr "Le sous-système VSO n'est pas initialisé. Veuillez lancer `vso native init` pour l'initialiser."
 
-msgid "vso.cmd.pico.error.alreadyInitialized"
+msgid "vso.cmd.native.error.alreadyInitialized"
 msgstr "Le sous-système VSO est déjà initialisé. Utilisez l'option --force pour forcer l'initialisation."
 
-msgid "vso.cmd.pico.error.noAppNameOrBin"
+msgid "vso.cmd.native.error.noAppNameOrBin"
 msgstr "Les options --app ou --bin doivent être spécifiées."
 
-msgid "vso.cmd.pico.error.sameAppOrBin"
+msgid "vso.cmd.native.error.sameAppOrBin"
 msgstr "--app et --bin ne peuvent pas être spécifiés tous les deux."
 
-msgid "vso.cmd.pico.error.exportingApp"
+msgid "vso.cmd.native.error.exportingApp"
 msgstr "Une erreur s'est produite lors de l'exportation de l'application : %s"
 
-msgid "vso.cmd.pico.error.exportingBin"
+msgid "vso.cmd.native.error.exportingBin"
 msgstr "Une erreur s'est produite lors de l'exportation du binaire : %s"
 
-msgid "vso.cmd.pico.error.unexportingApp"
+msgid "vso.cmd.native.error.unexportingApp"
 msgstr "Une erreur s'est produite lors de la suppression de l'exportation de l'application : %s"
 
-msgid "vso.cmd.pico.error.unexportingBin"
+msgid "vso.cmd.native.error.unexportingBin"
 msgstr "Une erreur s'est produite lors de la suppression de l'exportation du binaire : %s"
 
-msgid "vso.cmd.pico.error.unknownCommand"
+msgid "vso.cmd.native.error.unknownCommand"
 msgstr "Commande inconnu  : %s"
 
-msgid "vso.cmd.pico.error.shellReset"
+msgid "vso.cmd.native.error.shellReset"
 msgstr "Il est impossible d'atteindre le shell VSO. Voulez-vous le réinitialiser ? (Cela supprimera tous vos logiciels installés dans le sous-système) [y/N]"
 
-msgid "vso.cmd.pico.info.deleting"
+msgid "vso.cmd.native.info.deleting"
 msgstr "Suppression du sous-système VSO..."
 
-msgid "vso.cmd.pico.info.initializing"
+msgid "vso.cmd.native.info.initializing"
 msgstr "Initialisation du sous-système VSO..."
 
-msgid "vso.cmd.pico.info.initialized"
+msgid "vso.cmd.native.info.initialized"
 msgstr "Le sous-système VSO a été initialisé."
 
-msgid "vso.cmd.pico.info.exported"
+msgid "vso.cmd.native.info.exported"
 msgstr "Exportation de %s\n"
 
-msgid "vso.cmd.pico.info.unexported"
+msgid "vso.cmd.native.info.unexported"
 msgstr "Suppression de l'exportation de %s\n"
 
-msgid "vso.cmd.pico.info.exportedApps"
+msgid "vso.cmd.native.info.exportedApps"
 msgstr "Exportation de l'application %d"
 
-msgid "vso.cmd.pico.info.unexportedApps"
+msgid "vso.cmd.native.info.unexportedApps"
 msgstr "Suppression de l'exportation de l'application %d"
 
-msgid "vso.cmd.pico.info.shellInit"
+msgid "vso.cmd.native.info.shellInit"
 msgstr "On dirait que votre shell n'est pas encore initialisé. Voulez-vous l'initialiser maintenant ? (Fortement recommandé) [y/N]"
 
-msgid "vso.cmd.pico.info.fallbackShell"
+msgid "vso.cmd.native.info.fallbackShell"
 msgstr "Revenir au shell hôte ? Cela pourrait conduire à un comportement inattendu. [y/N]"
 
-msgid "vso.cmd.pico.export"
+msgid "vso.cmd.native.export"
 msgstr "Exporter une application ou un binaire du sous-système"
 
-msgid "vso.cmd.pico.export.options.app"
+msgid "vso.cmd.native.export.options.app"
 msgstr "le nom de l'application à exporter"
 
-msgid "vso.cmd.pico.export.options.bin"
+msgid "vso.cmd.native.export.options.bin"
 msgstr "le nom du binaire à exporter"
 
-msgid "vso.cmd.pico.export.options.binOutput"
+msgid "vso.cmd.native.export.options.binOutput"
 msgstr "chemin de la sortie du binaire (par défaut : ~/.local/bin/)"
 
-msgid "vso.cmd.pico.unexport"
+msgid "vso.cmd.native.unexport"
 msgstr "Supprimer l'exportation d'une application ou d'un binaire du sous-système"
 
-msgid "vso.cmd.pico.unexport.options.app"
+msgid "vso.cmd.native.unexport.options.app"
 msgstr "le nom de l'application à supprimer l'exportation"
 
-msgid "vso.cmd.pico.unexport.options.bin"
+msgid "vso.cmd.native.unexport.options.bin"
 msgstr "le nom du binaire à supprimer l'exportation"
 
-msgid "vso.cmd.pico.unexport.options.binOutput"
+msgid "vso.cmd.native.unexport.options.binOutput"
 msgstr "chemin de la sortie du binaire (par défaut : ~/.local/bin/)"
 
-msgid "vso.cmd.pico.init"
+msgid "vso.cmd.native.init"
 msgstr "Initialiser le sous-système VSO, utilisé pour la gestion des paquets"
 
-msgid "vso.cmd.pico.init.options.force"
+msgid "vso.cmd.native.init.options.force"
 msgstr "forcer l'initialisation si le sous-système est déjà initialisé"
 
-msgid "vso.cmd.pico.install"
+msgid "vso.cmd.native.install"
 msgstr "Installer une application dans le sous-système"
 
-msgid "vso.cmd.pico.remove"
+msgid "vso.cmd.native.remove"
 msgstr "Supprimer une application du sous-système"
 
-msgid "vso.cmd.pico.run"
+msgid "vso.cmd.native.run"
 msgstr "Exécuter une application à partir du sous-système"
 
-msgid "vso.cmd.pico.run.options.noReset"
+msgid "vso.cmd.native.run.options.noReset"
 msgstr "ne proposez pas de réinitialiser le sous-système en cas de problème"
 
-msgid "vso.cmd.pico.search"
+msgid "vso.cmd.native.search"
 msgstr "Recherche d'une application à installer dans le sous-système"
 
-msgid "vso.cmd.pico.shell"
+msgid "vso.cmd.native.shell"
 msgstr "Entrer dans l'environnement du sous-système"
 
-msgid "vso.cmd.pico.sideload"
+msgid "vso.cmd.native.sideload"
 msgstr "Chargement des paquets DEB/APK dans le sous-système"
 
-msgid "vso.cmd.pico.update"
+msgid "vso.cmd.native.update"
 msgstr "Mise à jour du référentiel de paquets du sous-système"
 
-msgid "vso.cmd.pico.upgrade"
+msgid "vso.cmd.native.upgrade"
 msgstr "Mise à jour des paquets à l'intérieur du sous-système"
 
 msgid "vso.cmd.sysUpgrade"

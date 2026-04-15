@@ -104,121 +104,121 @@ msgstr "Kokoonpanon päivitys onnistui."
 msgid "vso.cmd.config.show"
 msgstr "Näytä järjestelmän kokoonpano"
 
-msgid "vso.cmd.pico"
+msgid "vso.cmd.native"
 msgstr "Hallinnoi VSO-alijärjestelmää"
 
-msgid "vso.cmd.pico.error.notInitialized"
-msgstr "VSO-alijärjestelmää ei ole alustettu. Suorita `vso pico-init` alustaaksesi sen."
+msgid "vso.cmd.native.error.notInitialized"
+msgstr "VSO-alijärjestelmää ei ole alustettu. Suorita `vso native init` alustaaksesi sen."
 
-msgid "vso.cmd.pico.error.alreadyInitialized"
+msgid "vso.cmd.native.error.alreadyInitialized"
 msgstr "VSO-alijärjestelmä on jo alustettu. Käytä lippua `--force` pakottaaksesi alustuksen."
 
-msgid "vso.cmd.pico.error.noAppNameOrBin"
+msgid "vso.cmd.native.error.noAppNameOrBin"
 msgstr "`--app` tai `--bin` on määritettävä."
 
-msgid "vso.cmd.pico.error.sameAppOrBin"
+msgid "vso.cmd.native.error.sameAppOrBin"
 msgstr "`--app` ja `--bin` eivät voi olla molemmat määritettyjä."
 
-msgid "vso.cmd.pico.error.exportingApp"
+msgid "vso.cmd.native.error.exportingApp"
 msgstr "Sovellusta vietäessä tapahtui virhe: %s"
 
-msgid "vso.cmd.pico.error.exportingBin"
+msgid "vso.cmd.native.error.exportingBin"
 msgstr "Binaaritiedostoa vietäessä tapahtui virhe: %s"
 
-msgid "vso.cmd.pico.error.unexportingApp"
+msgid "vso.cmd.native.error.unexportingApp"
 msgstr "Sovelluksen vientiä peruttaessa tapahtui virhe: %s"
 
-msgid "vso.cmd.pico.error.unexportingBin"
+msgid "vso.cmd.native.error.unexportingBin"
 msgstr "Binaarin vientiä peruttaessa tapahtui virhe: %s"
 
-msgid "vso.cmd.pico.error.unknownCommand"
+msgid "vso.cmd.native.error.unknownCommand"
 msgstr "Tuntematon komento: %s"
 
-msgid "vso.cmd.pico.error.shellReset"
+msgid "vso.cmd.native.error.shellReset"
 msgstr "VSO-komentotulkkiin on mahdotonta päästä. Haluatko nollata sen? (Tämä poistaa kaikki alijärjestelmään asennetut ohjelmistot) [k/E]"
 
-msgid "vso.cmd.pico.info.deleting"
+msgid "vso.cmd.native.info.deleting"
 msgstr "Poistetaan VSO-alijärjestelmää..."
 
-msgid "vso.cmd.pico.info.initializing"
+msgid "vso.cmd.native.info.initializing"
 msgstr "Alustetaan VSO-alijärjestelmää..."
 
-msgid "vso.cmd.pico.info.initialized"
+msgid "vso.cmd.native.info.initialized"
 msgstr "VSO-alijärjestelmä on alustettu."
 
-msgid "vso.cmd.pico.info.exported"
+msgid "vso.cmd.native.info.exported"
 msgstr "Viety %s\n"
 
-msgid "vso.cmd.pico.info.unexported"
+msgid "vso.cmd.native.info.unexported"
 msgstr "Ei-viety %s\n"
 
-msgid "vso.cmd.pico.info.exportedApps"
+msgid "vso.cmd.native.info.exportedApps"
 msgstr "Viety %d sovellusta"
 
-msgid "vso.cmd.pico.info.unexportedApps"
+msgid "vso.cmd.native.info.unexportedApps"
 msgstr "Ei-viety %d sovellusta"
 
-msgid "vso.cmd.pico.info.shellInit"
+msgid "vso.cmd.native.info.shellInit"
 msgstr "Vaikuttaa siltä, että komentotulkkiasi ei ole vielä alustettu. Haluatko alustaa sen nyt? (Erittäin suositeltava) [k/E]"
 
-msgid "vso.cmd.pico.info.fallbackShell"
+msgid "vso.cmd.native.info.fallbackShell"
 msgstr "Palaako isäntäkomentotulkkiin? Tämä voi johtaa odottamattomaan käyttäytymiseen. [k/E]"
 
-msgid "vso.cmd.pico.export"
+msgid "vso.cmd.native.export"
 msgstr "Vie sovellus tai binaari alijärjestelmästä"
 
-msgid "vso.cmd.pico.export.options.app"
+msgid "vso.cmd.native.export.options.app"
 msgstr "vietävän sovelluksen nimi"
 
-msgid "vso.cmd.pico.export.options.bin"
+msgid "vso.cmd.native.export.options.bin"
 msgstr "vietävän binaarin nimi"
 
-msgid "vso.cmd.pico.export.options.binOutput"
+msgid "vso.cmd.native.export.options.binOutput"
 msgstr "binäärilähdön polku (oletus: ~/.local/bin/)"
 
-msgid "vso.cmd.pico.unexport"
+msgid "vso.cmd.native.unexport"
 msgstr "Peruuta sovelluksen tai binaarin vienti alijärjestelmästä"
 
-msgid "vso.cmd.pico.unexport.options.app"
+msgid "vso.cmd.native.unexport.options.app"
 msgstr "viennin peruutettavan sovelluksen nimi"
 
-msgid "vso.cmd.pico.unexport.options.bin"
+msgid "vso.cmd.native.unexport.options.bin"
 msgstr "viennin peruutettavan binaarin nimi"
 
-msgid "vso.cmd.pico.unexport.options.binOutput"
+msgid "vso.cmd.native.unexport.options.binOutput"
 msgstr "binäärilähdön polku (oletus: ~/.local/bin/)"
 
-msgid "vso.cmd.pico.init"
+msgid "vso.cmd.native.init"
 msgstr "Alusta pakettien hallintaan käytettävä VSO-alijärjestelmä"
 
-msgid "vso.cmd.pico.init.options.force"
+msgid "vso.cmd.native.init.options.force"
 msgstr "pakota alustus, jos alijärjestelmä on jo alustettu"
 
-msgid "vso.cmd.pico.install"
+msgid "vso.cmd.native.install"
 msgstr "Asenna sovellus alajärjestelmän sisään"
 
-msgid "vso.cmd.pico.remove"
+msgid "vso.cmd.native.remove"
 msgstr "Poista sovellus alajärjestelmästä"
 
-msgid "vso.cmd.pico.run"
+msgid "vso.cmd.native.run"
 msgstr "Suorita sovellus alajärjestelmästä"
 
-msgid "vso.cmd.pico.run.options.noReset"
+msgid "vso.cmd.native.run.options.noReset"
 msgstr "älä ehdota alijärjestelmän nollausta, jos jokin menee pieleen"
 
-msgid "vso.cmd.pico.search"
+msgid "vso.cmd.native.search"
 msgstr "Etsi alijärjestelmään asennettava sovellus"
 
-msgid "vso.cmd.pico.shell"
+msgid "vso.cmd.native.shell"
 msgstr "Siirry alijärjestelmäympäristöön"
 
-msgid "vso.cmd.pico.sideload"
+msgid "vso.cmd.native.sideload"
 msgstr "Sivulataa DEB/APK-paketit alijärjestelmän sisällä"
 
-msgid "vso.cmd.pico.update"
+msgid "vso.cmd.native.update"
 msgstr "Päivitä alijärjestelmän pakettitietovarasto"
 
-msgid "vso.cmd.pico.upgrade"
+msgid "vso.cmd.native.upgrade"
 msgstr "Päivitä alijärjestelmän sisällä olevat paketit"
 
 msgid "vso.cmd.sysUpgrade"
