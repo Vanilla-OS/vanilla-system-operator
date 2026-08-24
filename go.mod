@@ -4,7 +4,7 @@ go 1.25.0
 
 require (
 	github.com/olekukonko/tablewriter v0.0.5
-	github.com/vanilla-os/apx/v3 v3.1.1
+	github.com/vanilla-os/apx/v3 v3.1.2
 	github.com/vanilla-os/sdk v0.0.0-20260302123445-43c07dcc578b
 )
 

@@ -85,8 +85,8 @@ github.com/tklauser/go-sysconf v0.4.0 h1:7H0uAN+7RkwWRaxhYXDLqa5V3LPrJeV8wmD9dRU
 github.com/tklauser/go-sysconf v0.4.0/go.mod h1:8mTNWyog7H+MpKijp4VmKJAd2bbYQ2zuUwkYRbUArPI=
 github.com/tklauser/numcpus v0.12.0 h1:NR85qdvHA9pFse3x3weVZ0r0ST8R6l5RHbZrlRaqob4=
 github.com/tklauser/numcpus v0.12.0/go.mod h1:ABHeXzJnr/qqwguhClkZKT1/8VABcYrsyUiUGobwWJg=
-github.com/vanilla-os/apx/v3 v3.1.1 h1:W31rb6JRPU3SpIhRxWaF6gWeOuxF+3yvabm/BMLflKA=
-github.com/vanilla-os/apx/v3 v3.1.1/go.mod h1:+996D75zMjrfKIM2MhtcxWTrYFOrmCFdL5FtuY828IA=
+github.com/vanilla-os/apx/v3 v3.1.2 h1:YcfoVj1MzU9GdH4DunfiOwYndQUo+Djy+9Jd6M9hMVM=
+github.com/vanilla-os/apx/v3 v3.1.2/go.mod h1:+996D75zMjrfKIM2MhtcxWTrYFOrmCFdL5FtuY828IA=
 github.com/vanilla-os/sdk v0.0.0-20260302123445-43c07dcc578b h1:5jJ7hoYtML/vdx9D+39O+UOhH1naypTtrzzlBhG5S6g=
 github.com/vanilla-os/sdk v0.0.0-20260302123445-43c07dcc578b/go.mod h1:zLVU8inGsIa+f9zUqBjSsnQMuhM9u0pE5oetH6B/GBw=
 github.com/vorlif/spreak v1.0.0 h1:SUaD/p+cWcGgLAdHi73cTmBBejpPpztlgM5I4kPSewY=
