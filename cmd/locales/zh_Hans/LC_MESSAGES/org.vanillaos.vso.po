@@ -15,7 +15,8 @@ msgstr ""
 "X-Generator: Weblate 2026.9.dev0\n"
 
 msgid "vso.description"
-msgstr "Vanilla 系统操作程序是软件包管理器、系统更新程序、任务自动化程序的三合一。"
+msgstr ""
+"Vanilla 系统操作程序是软件包管理器、系统更新程序、任务自动化程序的三合一。"
 
 msgid "vso.errors.unknownCommand"
 msgstr "未知的命令：%s"
@@ -328,6 +329,31 @@ msgstr "没有找到任务。"
 msgid "vso.cmd.tasks.list.info.foundTasks"
 msgstr "找到 %d 个任务。"
 
+#, fuzzy
+#| msgid "vso.cmd.tasks.new.options.name"
+msgid "vso.cmd.tasks.labels.name"
+msgstr "指定任务名称"
+
+#, fuzzy
+#| msgid "vso.cmd.tasks.new.options.at"
+msgid "vso.cmd.tasks.labels.relations"
+msgstr "设置任务在特定时间执行（hh:mm）"
+
+#, fuzzy
+#| msgid "vso.cmd.tasks.list"
+msgid "vso.cmd.tasks.labels.dependencies"
+msgstr "列出所有任务"
+
+#, fuzzy
+#| msgid "vso.cmd.tasks.new.options.description"
+msgid "vso.cmd.tasks.labels.description"
+msgstr "指定任务描述"
+
+#, fuzzy
+#| msgid "vso.cmd.tasks.list"
+msgid "vso.cmd.tasks.labels.lastExecution"
+msgstr "列出所有任务"
+
 msgid "vso.cmd.tasks.list.options.json"
 msgstr "以 JSON 格式输出任务"
 
@@ -449,3 +475,11 @@ msgstr "vso.arg.package"
 #, fuzzy
 msgid "vso.arg.command"
 msgstr "vso.arg.command"
+
+#, fuzzy
+msgid "vso.arg.key"
+msgstr "vso.arg.package"
+
+#, fuzzy
+msgid "vso.arg.value"
+msgstr "vso.arg.package"

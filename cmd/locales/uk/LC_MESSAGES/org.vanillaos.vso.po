@@ -16,7 +16,9 @@ msgstr ""
 "X-Generator: Weblate 2026.9.dev0\n"
 
 msgid "vso.description"
-msgstr "Vanilla System Operator - це менеджер пакунків, оновлення системи та автоматизатор завдань."
+msgstr ""
+"Vanilla System Operator - це менеджер пакунків, оновлення системи та "
+"автоматизатор завдань."
 
 msgid "vso.errors.unknownCommand"
 msgstr "Невідома команда: %s"
@@ -112,10 +114,14 @@ msgid "vso.cmd.native"
 msgstr "Керування підсистемою VSO"
 
 msgid "vso.cmd.native.error.notInitialized"
-msgstr "Підсистему VSO не ініціалізовано. Будь ласка, виконайте `vso native init` для її ініціалізації."
+msgstr ""
+"Підсистему VSO не ініціалізовано. Будь ласка, виконайте `vso native init` "
+"для її ініціалізації."
 
 msgid "vso.cmd.native.error.alreadyInitialized"
-msgstr "Підсистему VSO вже ініціалізовано. Використовуйте прапорець --force для примусової ініціалізації."
+msgstr ""
+"Підсистему VSO вже ініціалізовано. Використовуйте прапорець --force для "
+"примусової ініціалізації."
 
 msgid "vso.cmd.native.error.noAppNameOrBin"
 msgstr "--app або --bin необхідно вказати."
@@ -139,7 +145,10 @@ msgid "vso.cmd.native.error.unknownCommand"
 msgstr "Невідома команда: %s"
 
 msgid "vso.cmd.native.error.shellReset"
-msgstr "Неможливо дістатися до оболонки VSO. Бажаєте скинути її? (Це призведе до видалення всього вашого програмного забезпечення, встановленого у підсистемі) [y/N]"
+msgstr ""
+"Неможливо дістатися до оболонки VSO. Бажаєте скинути її? (Це призведе до "
+"видалення всього вашого програмного забезпечення, встановленого у "
+"підсистемі) [y/N]"
 
 msgid "vso.cmd.native.info.deleting"
 msgstr "Видалення підсистеми VSO..."
@@ -163,10 +172,14 @@ msgid "vso.cmd.native.info.unexportedApps"
 msgstr "Не експортовано %d застосунків"
 
 msgid "vso.cmd.native.info.shellInit"
-msgstr "Схоже, вашу оболонку ще не ініціалізовано. Бажаєте ініціалізувати її зараз? (Настійно рекомендується) [y/N]"
+msgstr ""
+"Схоже, вашу оболонку ще не ініціалізовано. Бажаєте ініціалізувати її зараз? "
+"(Настійно рекомендується) [y/N]"
 
 msgid "vso.cmd.native.info.fallbackShell"
-msgstr "Повернутися до основної оболонки? Це може призвести до неочікуваної поведінки. [y/N]"
+msgstr ""
+"Повернутися до основної оболонки? Це може призвести до неочікуваної "
+"поведінки. [y/N]"
 
 msgid "vso.cmd.native.export"
 msgstr "Експортувати застосунок або бінарний файл з підсистеми"
@@ -193,7 +206,8 @@ msgid "vso.cmd.native.unexport.options.binOutput"
 msgstr "шлях до бінарного виводу (типово: ~/.local/bin/)"
 
 msgid "vso.cmd.native.init"
-msgstr "Ініціалізація підсистеми VSO, що використовується для управління пакетами"
+msgstr ""
+"Ініціалізація підсистеми VSO, що використовується для управління пакетами"
 
 msgid "vso.cmd.native.init.options.force"
 msgstr "примусово ініціалізувати, якщо підсистема вже ініціалізована"
@@ -232,10 +246,14 @@ msgid "vso.cmd.sysUpgrade.check"
 msgstr "Перевірка наявності оновлень системи"
 
 msgid "vso.cmd.sysUpgrade.check.asExitCode"
-msgstr "перевіряє наявність оновлення, але нічого не друкує. Повертає код виходу 0, якщо оновлення недоступне, і 1 в іншому випадку."
+msgstr ""
+"перевіряє наявність оновлення, але нічого не друкує. Повертає код виходу 0, "
+"якщо оновлення недоступне, і 1 в іншому випадку."
 
 msgid "vso.cmd.sysUpgrade.check.error.asExitCodeAndJson"
-msgstr "Під час перевірки оновлень сталася помилка. Перегляньте вивід JSON для отримання додаткової інформації."
+msgstr ""
+"Під час перевірки оновлень сталася помилка. Перегляньте вивід JSON для "
+"отримання додаткової інформації."
 
 msgid "vso.cmd.sysUpgrade.check.info.checking"
 msgstr "Перевірка оновлень..."
@@ -328,6 +346,31 @@ msgstr "Завдань не знайдено."
 
 msgid "vso.cmd.tasks.list.info.foundTasks"
 msgstr "Знайдено %d завдань."
+
+#, fuzzy
+#| msgid "vso.cmd.tasks.new.options.name"
+msgid "vso.cmd.tasks.labels.name"
+msgstr "вкажіть назву завдання"
+
+#, fuzzy
+#| msgid "vso.cmd.tasks.new.options.at"
+msgid "vso.cmd.tasks.labels.relations"
+msgstr "запланувати виконання завдання на певний час (hh:mm)"
+
+#, fuzzy
+#| msgid "vso.cmd.tasks.list"
+msgid "vso.cmd.tasks.labels.dependencies"
+msgstr "Список всіх завдань"
+
+#, fuzzy
+#| msgid "vso.cmd.tasks.new.options.description"
+msgid "vso.cmd.tasks.labels.description"
+msgstr "вкажіть опис завдання"
+
+#, fuzzy
+#| msgid "vso.cmd.tasks.list"
+msgid "vso.cmd.tasks.labels.lastExecution"
+msgstr "Список всіх завдань"
 
 msgid "vso.cmd.tasks.list.options.json"
 msgstr "вивести завдання у форматі JSON"
@@ -435,7 +478,9 @@ msgid "vso.cmd.tasks.rotate"
 msgstr "Чергувати задачі"
 
 msgid "vso.cmd.tasks.rotate.options.privateEvent"
-msgstr "вказати приватну подію для чередування задач для завантаження, завершення роботи, входу та виходу з системи"
+msgstr ""
+"вказати приватну подію для чередування задач для завантаження, завершення "
+"роботи, входу та виходу з системи"
 
 msgid "vso.cmd.tasks.rotate.options.silent"
 msgstr "не виводити стан після кожного циклу"
@@ -450,3 +495,11 @@ msgstr "vso.arg.package"
 #, fuzzy
 msgid "vso.arg.command"
 msgstr "vso.arg.command"
+
+#, fuzzy
+msgid "vso.arg.key"
+msgstr "vso.arg.package"
+
+#, fuzzy
+msgid "vso.arg.value"
+msgstr "vso.arg.package"

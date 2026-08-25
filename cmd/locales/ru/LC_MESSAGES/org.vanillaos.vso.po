@@ -16,7 +16,9 @@ msgstr ""
 "X-Generator: Weblate 2026.9.dev0\n"
 
 msgid "vso.description"
-msgstr "Vanilla System Operator (VSO) — это менеджер пакетов, программа для обновления системы и автоматизации задач."
+msgstr ""
+"Vanilla System Operator (VSO) — это менеджер пакетов, программа для "
+"обновления системы и автоматизации задач."
 
 msgid "vso.errors.unknownCommand"
 msgstr "Неизвестная команда: %s"
@@ -112,10 +114,14 @@ msgid "vso.cmd.native"
 msgstr "Управление подсистемой VSO"
 
 msgid "vso.cmd.native.error.notInitialized"
-msgstr "Подсистема VSO не инициализирована. Пожалуйста, выполните `vso native init`, чтобы инициализировать её."
+msgstr ""
+"Подсистема VSO не инициализирована. Пожалуйста, выполните `vso native init`, "
+"чтобы инициализировать её."
 
 msgid "vso.cmd.native.error.alreadyInitialized"
-msgstr "Подсистема VSO уже инициализирована. Используйте флаг --force для принудительной инициализации."
+msgstr ""
+"Подсистема VSO уже инициализирована. Используйте флаг --force для "
+"принудительной инициализации."
 
 msgid "vso.cmd.native.error.noAppNameOrBin"
 msgstr "--app или --bin должно быть указано."
@@ -139,7 +145,9 @@ msgid "vso.cmd.native.error.unknownCommand"
 msgstr "Неизвестная команда: %s"
 
 msgid "vso.cmd.native.error.shellReset"
-msgstr "Невозможно получить доступ к оболочке VSO. Вы хотите её сбросить? (Это удалит всё ПО, установленное в подсистеме) [д/Н]"
+msgstr ""
+"Невозможно получить доступ к оболочке VSO. Вы хотите её сбросить? (Это "
+"удалит всё ПО, установленное в подсистеме) [д/Н]"
 
 msgid "vso.cmd.native.info.deleting"
 msgstr "Удаление подсистемы VSO..."
@@ -163,10 +171,14 @@ msgid "vso.cmd.native.info.unexportedApps"
 msgstr "Неэкспортированные приложения: %d"
 
 msgid "vso.cmd.native.info.shellInit"
-msgstr "Похоже, ваша оболочка ещё не инициализирована. Вы хотите инициализировать её сейчас? (Настоятельно рекомендуется) [д/Н]"
+msgstr ""
+"Похоже, ваша оболочка ещё не инициализирована. Вы хотите инициализировать её "
+"сейчас? (Настоятельно рекомендуется) [д/Н]"
 
 msgid "vso.cmd.native.info.fallbackShell"
-msgstr "Произвести откат к оболочке хоста? Это может привести к неожиданному поведению. [д/Н]"
+msgstr ""
+"Произвести откат к оболочке хоста? Это может привести к неожиданному "
+"поведению. [д/Н]"
 
 msgid "vso.cmd.native.export"
 msgstr "Экспорт приложения или двоичного файла из подсистемы"
@@ -196,7 +208,8 @@ msgid "vso.cmd.native.init"
 msgstr "Инициализируйте подсистему VSO, используемую для управления пакетами"
 
 msgid "vso.cmd.native.init.options.force"
-msgstr "принудительно выполнить инициализацию, если подсистема уже инициализирована"
+msgstr ""
+"принудительно выполнить инициализацию, если подсистема уже инициализирована"
 
 msgid "vso.cmd.native.install"
 msgstr "Установить приложение внутри подсистемы"
@@ -232,10 +245,14 @@ msgid "vso.cmd.sysUpgrade.check"
 msgstr "Проверьте наличие обновлений системы"
 
 msgid "vso.cmd.sysUpgrade.check.asExitCode"
-msgstr "Проверяет наличие обновления, но ничего не печатает. Возвращает код завершения 0, если обновление недоступно, и 1 в противном случае."
+msgstr ""
+"Проверяет наличие обновления, но ничего не печатает. Возвращает код "
+"завершения 0, если обновление недоступно, и 1 в противном случае."
 
 msgid "vso.cmd.sysUpgrade.check.error.asExitCodeAndJson"
-msgstr "Произошла ошибка при проверке обновлений. Дополнительные сведения см. в выводе JSON."
+msgstr ""
+"Произошла ошибка при проверке обновлений. Дополнительные сведения см. в "
+"выводе JSON."
 
 msgid "vso.cmd.sysUpgrade.check.info.checking"
 msgstr "Проверка обновлений..."
@@ -329,6 +346,31 @@ msgstr "Задачи не найдены."
 msgid "vso.cmd.tasks.list.info.foundTasks"
 msgstr "Найдено %d задач."
 
+#, fuzzy
+#| msgid "vso.cmd.tasks.new.options.name"
+msgid "vso.cmd.tasks.labels.name"
+msgstr "укажите название задачи"
+
+#, fuzzy
+#| msgid "vso.cmd.tasks.new.options.at"
+msgid "vso.cmd.tasks.labels.relations"
+msgstr "запланировать выполнение задачи в определенное время (hh:mm)"
+
+#, fuzzy
+#| msgid "vso.cmd.tasks.list"
+msgid "vso.cmd.tasks.labels.dependencies"
+msgstr "Список всех задач"
+
+#, fuzzy
+#| msgid "vso.cmd.tasks.new.options.description"
+msgid "vso.cmd.tasks.labels.description"
+msgstr "укажите описание задачи"
+
+#, fuzzy
+#| msgid "vso.cmd.tasks.list"
+msgid "vso.cmd.tasks.labels.lastExecution"
+msgstr "Список всех задач"
+
 msgid "vso.cmd.tasks.list.options.json"
 msgstr "выводить задачи в формате JSON"
 
@@ -387,7 +429,8 @@ msgid "vso.cmd.tasks.new.options.onHighCpuUsage"
 msgstr "выполнить задачу, когда использование ЦП превышает 50%"
 
 msgid "vso.cmd.tasks.new.options.onHighInternetUsage"
-msgstr "выполняйте задачу, когда скорость доступа в Интернет превышает 500 Кбит/с"
+msgstr ""
+"выполняйте задачу, когда скорость доступа в Интернет превышает 500 Кбит/с"
 
 msgid "vso.cmd.tasks.new.options.onHighMemoryUsage"
 msgstr "выполнить задачу, когда использование памяти превышает 50%"
@@ -435,7 +478,9 @@ msgid "vso.cmd.tasks.rotate"
 msgstr "Чередовать задачи"
 
 msgid "vso.cmd.tasks.rotate.options.privateEvent"
-msgstr "укажите частное событие для чередования задач загрузки, выключения, входа в систему и выхода из неё"
+msgstr ""
+"укажите частное событие для чередования задач загрузки, выключения, входа в "
+"систему и выхода из неё"
 
 msgid "vso.cmd.tasks.rotate.options.silent"
 msgstr "Не отображать состояние при каждом цикле"
@@ -450,3 +495,11 @@ msgstr "vso.arg.package"
 #, fuzzy
 msgid "vso.arg.command"
 msgstr "vso.arg.command"
+
+#, fuzzy
+msgid "vso.arg.key"
+msgstr "vso.arg.package"
+
+#, fuzzy
+msgid "vso.arg.value"
+msgstr "vso.arg.package"

@@ -15,7 +15,9 @@ msgstr ""
 "X-Generator: Weblate 2026.9.dev0\n"
 
 msgid "vso.description"
-msgstr "Vanilla Sistem Operatörü bir paket yöneticisi, sistem güncelleyici ve görev kendiliğindenleştiricidir."
+msgstr ""
+"Vanilla Sistem Operatörü bir paket yöneticisi, sistem güncelleyici ve görev "
+"kendiliğindenleştiricidir."
 
 msgid "vso.errors.unknownCommand"
 msgstr "Bilinmeyen komut: %s"
@@ -111,10 +113,14 @@ msgid "vso.cmd.native"
 msgstr "VSO alt sistemini yönet"
 
 msgid "vso.cmd.native.error.notInitialized"
-msgstr "VSO alt sistemi ilklendirilmedi. İlklendirmek için `vso native init` çalıştırın."
+msgstr ""
+"VSO alt sistemi ilklendirilmedi. İlklendirmek için `vso native init` "
+"çalıştırın."
 
 msgid "vso.cmd.native.error.alreadyInitialized"
-msgstr "VSO alt sistemi halihazırda ilklendirildi. İlklendirmeye zorlamak için --force bayrağını kullanın."
+msgstr ""
+"VSO alt sistemi halihazırda ilklendirildi. İlklendirmeye zorlamak için --"
+"force bayrağını kullanın."
 
 msgid "vso.cmd.native.error.noAppNameOrBin"
 msgstr "--app ya da --bin belirtilmeli."
@@ -138,7 +144,9 @@ msgid "vso.cmd.native.error.unknownCommand"
 msgstr "Bilinmeyen komut: %s"
 
 msgid "vso.cmd.native.error.shellReset"
-msgstr "VSO kabuğuna erişmek olanaksız. Sıfırlamak ister misiniz? (Bu, alt sisteminizde kurulu yazılımların tümünü kaldıracaktır. [y/N]"
+msgstr ""
+"VSO kabuğuna erişmek olanaksız. Sıfırlamak ister misiniz? (Bu, alt "
+"sisteminizde kurulu yazılımların tümünü kaldıracaktır. [y/N]"
 
 msgid "vso.cmd.native.info.deleting"
 msgstr "VSO alt sistemi siliniyor..."
@@ -162,10 +170,14 @@ msgid "vso.cmd.native.info.unexportedApps"
 msgstr "%d uygulama dışa aktarımı geri alındı"
 
 msgid "vso.cmd.native.info.shellInit"
-msgstr "Görünüşe göre kabuğunuz henüz ilklendirilmemiş. Şimdi ilklendirmek ister misiniz? (Şiddetle önerilir) [y/N]"
+msgstr ""
+"Görünüşe göre kabuğunuz henüz ilklendirilmemiş. Şimdi ilklendirmek ister "
+"misiniz? (Şiddetle önerilir) [y/N]"
 
 msgid "vso.cmd.native.info.fallbackShell"
-msgstr "Ana makine kabuğuna geri dönülsün mü? Bu beklenmedik davranışlara neden olabilir. [y/N]"
+msgstr ""
+"Ana makine kabuğuna geri dönülsün mü? Bu beklenmedik davranışlara neden "
+"olabilir. [y/N]"
 
 msgid "vso.cmd.native.export"
 msgstr "Alt sistemden uygulama ya da ikili dışa aktar"
@@ -231,10 +243,14 @@ msgid "vso.cmd.sysUpgrade.check"
 msgstr "Sistem güncellemelerini denetle"
 
 msgid "vso.cmd.sysUpgrade.check.asExitCode"
-msgstr "yükseltmek için denetle ancak bir şey yazdırma. Yükseltme yoksa çıkış kodu olarak 0, varsa 1 döndür."
+msgstr ""
+"yükseltmek için denetle ancak bir şey yazdırma. Yükseltme yoksa çıkış kodu "
+"olarak 0, varsa 1 döndür."
 
 msgid "vso.cmd.sysUpgrade.check.error.asExitCodeAndJson"
-msgstr "Güncellemeler denetlenirken hata oluştu. Daha çok ayrıntı için JSON çıktısına bakın."
+msgstr ""
+"Güncellemeler denetlenirken hata oluştu. Daha çok ayrıntı için JSON "
+"çıktısına bakın."
 
 msgid "vso.cmd.sysUpgrade.check.info.checking"
 msgstr "Güncellemeler denetleniyor..."
@@ -327,6 +343,31 @@ msgstr "Hiçbir görev bulunamadı."
 
 msgid "vso.cmd.tasks.list.info.foundTasks"
 msgstr "%d görev bulundu."
+
+#, fuzzy
+#| msgid "vso.cmd.tasks.new.options.name"
+msgid "vso.cmd.tasks.labels.name"
+msgstr "görevin adını belirt"
+
+#, fuzzy
+#| msgid "vso.cmd.tasks.new.options.at"
+msgid "vso.cmd.tasks.labels.relations"
+msgstr "komutu belirli saatte çalışacak biçimde zamanla (ss:dd)"
+
+#, fuzzy
+#| msgid "vso.cmd.tasks.list"
+msgid "vso.cmd.tasks.labels.dependencies"
+msgstr "Tüm görevleri listele"
+
+#, fuzzy
+#| msgid "vso.cmd.tasks.new.options.description"
+msgid "vso.cmd.tasks.labels.description"
+msgstr "görevin açıklamasını belirt"
+
+#, fuzzy
+#| msgid "vso.cmd.tasks.list"
+msgid "vso.cmd.tasks.labels.lastExecution"
+msgstr "Tüm görevleri listele"
 
 msgid "vso.cmd.tasks.list.options.json"
 msgstr "görevleri JSON biçiminde çıkar"
@@ -434,7 +475,9 @@ msgid "vso.cmd.tasks.rotate"
 msgstr "Görevleri döndür"
 
 msgid "vso.cmd.tasks.rotate.options.privateEvent"
-msgstr "görevleri önyükleme, kapatma, oturum açma ve oturum kapatma için döndürecek özel eylemi belirt"
+msgstr ""
+"görevleri önyükleme, kapatma, oturum açma ve oturum kapatma için döndürecek "
+"özel eylemi belirt"
 
 msgid "vso.cmd.tasks.rotate.options.silent"
 msgstr "her döngüde durumu çıktı olarak verme"
@@ -449,3 +492,11 @@ msgstr "vso.arg.package"
 #, fuzzy
 msgid "vso.arg.command"
 msgstr "vso.arg.command"
+
+#, fuzzy
+msgid "vso.arg.key"
+msgstr "vso.arg.package"
+
+#, fuzzy
+msgid "vso.arg.value"
+msgstr "vso.arg.package"

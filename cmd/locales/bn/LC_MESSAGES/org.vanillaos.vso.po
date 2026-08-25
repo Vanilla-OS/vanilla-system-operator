@@ -15,7 +15,9 @@ msgstr ""
 "X-Generator: Weblate 2026.9.dev0\n"
 
 msgid "vso.description"
-msgstr "The Vanilla System Operator is a package manager, a system updater and a task automator।"
+msgstr ""
+"The Vanilla System Operator is a package manager, a system updater and a "
+"task automator।"
 
 msgid "vso.errors.unknownCommand"
 msgstr "Unknown command: %s"
@@ -111,10 +113,14 @@ msgid "vso.cmd.native"
 msgstr "Manage the native subsystem"
 
 msgid "vso.cmd.native.error.notInitialized"
-msgstr "The native subsystem is not initialized. Please run `vso native init` to initialize it।"
+msgstr ""
+"The native subsystem is not initialized. Please run `vso native init` to "
+"initialize it।"
 
 msgid "vso.cmd.native.error.alreadyInitialized"
-msgstr "The native subsystem is already initialized. Use the --force flag to force the initialization।"
+msgstr ""
+"The native subsystem is already initialized. Use the --force flag to force "
+"the initialization।"
 
 msgid "vso.cmd.native.error.noAppNameOrBin"
 msgstr "--app or --bin must be specified।"
@@ -138,7 +144,9 @@ msgid "vso.cmd.native.error.unknownCommand"
 msgstr "Unknown command: %s"
 
 msgid "vso.cmd.native.error.shellReset"
-msgstr "It is impossible to reach the VSO shell. Do you want to reset it? (This will remove all your software installed in the subsystem) [y/N]"
+msgstr ""
+"It is impossible to reach the VSO shell. Do you want to reset it? (This will "
+"remove all your software installed in the subsystem) [y/N]"
 
 msgid "vso.cmd.native.info.deleting"
 msgstr "Deleting the VSO subsystem..।"
@@ -162,10 +170,13 @@ msgid "vso.cmd.native.info.unexportedApps"
 msgstr "Unexported %d applications"
 
 msgid "vso.cmd.native.info.shellInit"
-msgstr "Looks like your shell is not initialized yet. Do you want to initialize it now? (Highly recommended) [y/N]"
+msgstr ""
+"Looks like your shell is not initialized yet. Do you want to initialize it "
+"now? (Highly recommended) [y/N]"
 
 msgid "vso.cmd.native.info.fallbackShell"
-msgstr "Fallback to the host shell? This could lead to unexpected behavior. [y/N]"
+msgstr ""
+"Fallback to the host shell? This could lead to unexpected behavior. [y/N]"
 
 msgid "vso.cmd.native.export"
 msgstr "Export an application or binary from the subsystem"
@@ -231,10 +242,14 @@ msgid "vso.cmd.sysUpgrade.check"
 msgstr "Check for system updates"
 
 msgid "vso.cmd.sysUpgrade.check.asExitCode"
-msgstr "checks for upgrade but doesn't print anything. Return exit code 0 if no upgrade is available and 1 otherwise।"
+msgstr ""
+"checks for upgrade but doesn't print anything. Return exit code 0 if no "
+"upgrade is available and 1 otherwise।"
 
 msgid "vso.cmd.sysUpgrade.check.error.asExitCodeAndJson"
-msgstr "An error occured when checking for updates. See the JSON output for more details।"
+msgstr ""
+"An error occured when checking for updates. See the JSON output for more "
+"details।"
 
 msgid "vso.cmd.sysUpgrade.check.info.checking"
 msgstr "Checking for updates..।"
@@ -327,6 +342,31 @@ msgstr "No tasks found।"
 
 msgid "vso.cmd.tasks.list.info.foundTasks"
 msgstr "Found %d tasks।"
+
+#, fuzzy
+#| msgid "vso.cmd.tasks.new.options.name"
+msgid "vso.cmd.tasks.labels.name"
+msgstr "specify the task's name"
+
+#, fuzzy
+#| msgid "vso.cmd.tasks.new.options.at"
+msgid "vso.cmd.tasks.labels.relations"
+msgstr "schedule the task to execute at a specific time (hh:mm)"
+
+#, fuzzy
+#| msgid "vso.cmd.tasks.list"
+msgid "vso.cmd.tasks.labels.dependencies"
+msgstr "List all tasks"
+
+#, fuzzy
+#| msgid "vso.cmd.tasks.new.options.description"
+msgid "vso.cmd.tasks.labels.description"
+msgstr "specify the task's description"
+
+#, fuzzy
+#| msgid "vso.cmd.tasks.list"
+msgid "vso.cmd.tasks.labels.lastExecution"
+msgstr "List all tasks"
 
 msgid "vso.cmd.tasks.list.options.json"
 msgstr "output the tasks in JSON format"
@@ -434,7 +474,8 @@ msgid "vso.cmd.tasks.rotate"
 msgstr "Rotate tasks"
 
 msgid "vso.cmd.tasks.rotate.options.privateEvent"
-msgstr "specify private event to rotate tasks for boot, shutdown, login, logout"
+msgstr ""
+"specify private event to rotate tasks for boot, shutdown, login, logout"
 
 msgid "vso.cmd.tasks.rotate.options.silent"
 msgstr "don't output the status on each cycle"
@@ -449,3 +490,11 @@ msgstr "vso.arg.package"
 #, fuzzy
 msgid "vso.arg.command"
 msgstr "vso.arg.command"
+
+#, fuzzy
+msgid "vso.arg.key"
+msgstr "vso.arg.package"
+
+#, fuzzy
+msgid "vso.arg.value"
+msgstr "vso.arg.package"

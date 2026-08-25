@@ -15,7 +15,9 @@ msgstr ""
 "X-Generator: Weblate 2026.9.dev0\n"
 
 msgid "vso.description"
-msgstr "O Vanilla System Operator é um gerenciador de pacotes, um atualizador do sistema e um automatizador de tarefas."
+msgstr ""
+"O Vanilla System Operator é um gerenciador de pacotes, um atualizador do "
+"sistema e um automatizador de tarefas."
 
 msgid "vso.errors.unknownCommand"
 msgstr "Comando desconhecido: %s"
@@ -111,10 +113,14 @@ msgid "vso.cmd.native"
 msgstr "Gerenciar o subsistema VSO"
 
 msgid "vso.cmd.native.error.notInitialized"
-msgstr "O subsistema VSO não foi inicializado. Por favor, execute 'vso native init' para inicializá-lo."
+msgstr ""
+"O subsistema VSO não foi inicializado. Por favor, execute 'vso native init' "
+"para inicializá-lo."
 
 msgid "vso.cmd.native.error.alreadyInitialized"
-msgstr "O subsistema VSO já foi inicializado. Use o sinalizador --force para forçar a inicialização."
+msgstr ""
+"O subsistema VSO já foi inicializado. Use o sinalizador --force para forçar "
+"a inicialização."
 
 msgid "vso.cmd.native.error.noAppNameOrBin"
 msgstr "--app ou --bin devem ser especificados."
@@ -138,7 +144,9 @@ msgid "vso.cmd.native.error.unknownCommand"
 msgstr "Comando desconhecido: %s"
 
 msgid "vso.cmd.native.error.shellReset"
-msgstr "É impossível alcançar o shell VSO. Deseja redefini-lo? (Isso removerá todos os softwares instalados no subsistema) [s/n]"
+msgstr ""
+"É impossível alcançar o shell VSO. Deseja redefini-lo? (Isso removerá todos "
+"os softwares instalados no subsistema) [s/n]"
 
 msgid "vso.cmd.native.info.deleting"
 msgstr "Excluindo o subsistema VSO..."
@@ -162,10 +170,14 @@ msgid "vso.cmd.native.info.unexportedApps"
 msgstr "Desfeita a exportação de %d aplicativos"
 
 msgid "vso.cmd.native.info.shellInit"
-msgstr "Parece que seu shell ainda não foi inicializado. Deseja inicializá-lo agora? (Altamente recomendado) [s/n]"
+msgstr ""
+"Parece que seu shell ainda não foi inicializado. Deseja inicializá-lo agora? "
+"(Altamente recomendado) [s/n]"
 
 msgid "vso.cmd.native.info.fallbackShell"
-msgstr "Fallback para o shell do host? Isso pode levar a comportamentos inesperados. [s/n]"
+msgstr ""
+"Fallback para o shell do host? Isso pode levar a comportamentos inesperados. "
+"[s/n]"
 
 msgid "vso.cmd.native.export"
 msgstr "Exportar um aplicativo ou binário do subsistema"
@@ -231,10 +243,14 @@ msgid "vso.cmd.sysUpgrade.check"
 msgstr "Verificar se há atualizações do sistema"
 
 msgid "vso.cmd.sysUpgrade.check.asExitCode"
-msgstr "verifica se há atualização, mas não imprime nada. Retorna o código de saída 0 se nenhuma atualização estiver disponível e 1 caso contrário."
+msgstr ""
+"verifica se há atualização, mas não imprime nada. Retorna o código de saída "
+"0 se nenhuma atualização estiver disponível e 1 caso contrário."
 
 msgid "vso.cmd.sysUpgrade.check.error.asExitCodeAndJson"
-msgstr "Ocorreu um erro ao verificar se há atualizações. Consulte a saída JSON para obter mais detalhes."
+msgstr ""
+"Ocorreu um erro ao verificar se há atualizações. Consulte a saída JSON para "
+"obter mais detalhes."
 
 msgid "vso.cmd.sysUpgrade.check.info.checking"
 msgstr "Verificando se há atualizações..."
@@ -328,6 +344,31 @@ msgstr "Nenhuma tarefa encontrada."
 msgid "vso.cmd.tasks.list.info.foundTasks"
 msgstr "Encontradas %d tarefas."
 
+#, fuzzy
+#| msgid "vso.cmd.tasks.new.options.name"
+msgid "vso.cmd.tasks.labels.name"
+msgstr "especifique o nome da tarefa"
+
+#, fuzzy
+#| msgid "vso.cmd.tasks.new.options.at"
+msgid "vso.cmd.tasks.labels.relations"
+msgstr "agende a execução da tarefa em um horário específico (hh:mm)"
+
+#, fuzzy
+#| msgid "vso.cmd.tasks.list"
+msgid "vso.cmd.tasks.labels.dependencies"
+msgstr "Listar todas as tarefas"
+
+#, fuzzy
+#| msgid "vso.cmd.tasks.new.options.description"
+msgid "vso.cmd.tasks.labels.description"
+msgstr "especifique a descrição da tarefa"
+
+#, fuzzy
+#| msgid "vso.cmd.tasks.list"
+msgid "vso.cmd.tasks.labels.lastExecution"
+msgstr "Listar todas as tarefas"
+
 msgid "vso.cmd.tasks.list.options.json"
 msgstr "saída das tarefas no formato JSON"
 
@@ -347,7 +388,8 @@ msgid "vso.cmd.tasks.new.options.description"
 msgstr "especifique a descrição da tarefa"
 
 msgid "vso.cmd.tasks.new.options.every"
-msgstr "agende a tarefa para ser executada a cada X tempo (minutos, horas, dias)"
+msgstr ""
+"agende a tarefa para ser executada a cada X tempo (minutos, horas, dias)"
 
 msgid "vso.cmd.tasks.new.options.name"
 msgstr "especifique o nome da tarefa"
@@ -434,7 +476,9 @@ msgid "vso.cmd.tasks.rotate"
 msgstr "Rotacionar tarefas"
 
 msgid "vso.cmd.tasks.rotate.options.privateEvent"
-msgstr "especifique o evento privado para alternar tarefas de inicialização, desligamento, login, e logout"
+msgstr ""
+"especifique o evento privado para alternar tarefas de inicialização, "
+"desligamento, login, e logout"
 
 msgid "vso.cmd.tasks.rotate.options.silent"
 msgstr "don't output the status on each cycle"
@@ -449,3 +493,11 @@ msgstr "vso.arg.package"
 #, fuzzy
 msgid "vso.arg.command"
 msgstr "vso.arg.command"
+
+#, fuzzy
+msgid "vso.arg.key"
+msgstr "vso.arg.package"
+
+#, fuzzy
+msgid "vso.arg.value"
+msgstr "vso.arg.package"
