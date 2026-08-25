@@ -3,16 +3,22 @@ msgstr ""
 "Project-Id-Version: Vanilla System Operator\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2024-05-18 12:00+0000\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
+"PO-Revision-Date: 2026-08-24 05:44+0000\n"
+"Last-Translator: Prefill add-on <noreply-addon-prefill@weblate.org>\n"
+"Language-Team: Polish <https://hosted.weblate.org/projects/vanilla-os/"
+"vanilla-system-operator/pl/>\n"
 "Language: pl\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=n==1 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 "
+"|| n%100>=20) ? 1 : 2;\n"
+"X-Generator: Weblate 2026.9.dev0\n"
 
 msgid "vso.description"
-msgstr "Vanilla System Operator to menedżer pakietów, aktualizator systemu i automatyzator zadań."
+msgstr ""
+"Vanilla System Operator to menedżer pakietów, aktualizator systemu i "
+"automatyzator zadań."
 
 msgid "vso.errors.unknownCommand"
 msgstr "Nieznane polecenie: %s"
@@ -108,10 +114,14 @@ msgid "vso.cmd.native"
 msgstr "Zarządzaj podsystemem VSO"
 
 msgid "vso.cmd.native.error.notInitialized"
-msgstr "Podsystem VSO nie jest zainicjowany. Proszę uruchom`vso native init`, aby zainicjować go."
+msgstr ""
+"Podsystem VSO nie jest zainicjowany. Proszę uruchom`vso native init`, aby "
+"zainicjować go."
 
 msgid "vso.cmd.native.error.alreadyInitialized"
-msgstr "Podsystem VSO jest aktualnie zainicjowany. Użyj flagi --force aby wymusić inicjowanie."
+msgstr ""
+"Podsystem VSO jest aktualnie zainicjowany. Użyj flagi --force aby wymusić "
+"inicjowanie."
 
 msgid "vso.cmd.native.error.noAppNameOrBin"
 msgstr "--app lub --bin muszą być określone."
@@ -135,7 +145,10 @@ msgid "vso.cmd.native.error.unknownCommand"
 msgstr "Nieznane polecenie: %s"
 
 msgid "vso.cmd.native.error.shellReset"
-msgstr "Uzyskanie dostępu do powłoki VSO jest nie możliwe. Czy chcesz ją zresetować? (Spowoduje to usunięcie całego oprogramowania zainstalowanego w podsystemie) [y/N]"
+msgstr ""
+"Uzyskanie dostępu do powłoki VSO jest nie możliwe. Czy chcesz ją zresetować? "
+"(Spowoduje to usunięcie całego oprogramowania zainstalowanego w podsystemie) "
+"[y/N]"
 
 msgid "vso.cmd.native.info.deleting"
 msgstr "Usuwanie podsystemu VSO..."
@@ -159,10 +172,14 @@ msgid "vso.cmd.native.info.unexportedApps"
 msgstr "Usunięto eksporty %d aplikacji"
 
 msgid "vso.cmd.native.info.shellInit"
-msgstr "Wygląda na to że nie zainicjowałeś Swojej powłoki . Czy chcesz zainicjować ją teraz? (Wysoce rekomendowane) [y/N]"
+msgstr ""
+"Wygląda na to że nie zainicjowałeś Swojej powłoki . Czy chcesz zainicjować "
+"ją teraz? (Wysoce rekomendowane) [y/N]"
 
 msgid "vso.cmd.native.info.fallbackShell"
-msgstr "Powrócić do powłoki hosta? Może to prowadzić do niespodziewanych zachowań. [y/N]"
+msgstr ""
+"Powrócić do powłoki hosta? Może to prowadzić do niespodziewanych zachowań. "
+"[y/N]"
 
 msgid "vso.cmd.native.export"
 msgstr "Export an application or binary from the subsystem"
@@ -228,10 +245,14 @@ msgid "vso.cmd.sysUpgrade.check"
 msgstr "Check for system updates"
 
 msgid "vso.cmd.sysUpgrade.check.asExitCode"
-msgstr "checks for upgrade but doesn't print anything. Return exit code 0 if no upgrade is available and 1 otherwise."
+msgstr ""
+"checks for upgrade but doesn't print anything. Return exit code 0 if no "
+"upgrade is available and 1 otherwise."
 
 msgid "vso.cmd.sysUpgrade.check.error.asExitCodeAndJson"
-msgstr "An error occured when checking for updates. See the JSON output for more details."
+msgstr ""
+"An error occured when checking for updates. See the JSON output for more "
+"details."
 
 msgid "vso.cmd.sysUpgrade.check.info.checking"
 msgstr "Checking for updates..."
@@ -239,38 +260,49 @@ msgstr "Checking for updates..."
 msgid "vso.cmd.sysUpgrade.check.json"
 msgstr "output the result in JSON format"
 
+#, fuzzy
 msgid "vso.cmd.sysUpgrade.upgrade"
-msgstr ""
+msgstr "vso.cmd.sysUpgrade.upgrade"
 
+#, fuzzy
 msgid "vso.cmd.sysUpgrade.error.updating"
-msgstr ""
+msgstr "vso.cmd.sysUpgrade.error.updating"
 
+#, fuzzy
 msgid "vso.cmd.sysUpgrade.error.onHasUpdate"
-msgstr ""
+msgstr "vso.cmd.sysUpgrade.error.onHasUpdate"
 
+#, fuzzy
 msgid "vso.cmd.sysUpgrade.schedule.daily"
-msgstr ""
+msgstr "vso.cmd.sysUpgrade.schedule.daily"
 
+#, fuzzy
 msgid "vso.cmd.sysUpgrade.schedule.weekly"
-msgstr ""
+msgstr "vso.cmd.sysUpgrade.schedule.weekly"
 
+#, fuzzy
 msgid "vso.cmd.sysUpgrade.schedule.monthly"
-msgstr ""
+msgstr "vso.cmd.sysUpgrade.schedule.monthly"
 
+#, fuzzy
 msgid "vso.cmd.sysUpgrade.info.updating"
-msgstr ""
+msgstr "vso.cmd.sysUpgrade.info.updating"
 
+#, fuzzy
 msgid "vso.cmd.sysUpgrade.info.willUpdateLater"
-msgstr ""
+msgstr "vso.cmd.sysUpgrade.info.willUpdateLater"
 
+#, fuzzy
 msgid "vso.cmd.sysUpgrade.info.willNeverUpdate"
-msgstr ""
+msgstr "vso.cmd.sysUpgrade.info.willNeverUpdate"
 
+#, fuzzy
 msgid "vso.cmd.sysUpgrade.info.noUpdates"
-msgstr ""
+msgstr "vso.cmd.sysUpgrade.info.noUpdates"
 
+#, fuzzy
 msgid "vso.cmd.sysUpgrade.now"
-msgstr ""
+msgstr "vso.cmd.sysUpgrade.now"
 
 msgid "vso.cmd.tasks"
 msgstr "Create and manage tasks"
@@ -313,6 +345,31 @@ msgstr "No tasks found."
 
 msgid "vso.cmd.tasks.list.info.foundTasks"
 msgstr "Found %d tasks."
+
+#, fuzzy
+#| msgid "vso.cmd.tasks.new.options.name"
+msgid "vso.cmd.tasks.labels.name"
+msgstr "specify the task's name"
+
+#, fuzzy
+#| msgid "vso.cmd.tasks.new.options.at"
+msgid "vso.cmd.tasks.labels.relations"
+msgstr "schedule the task to execute at a specific time (hh:mm)"
+
+#, fuzzy
+#| msgid "vso.cmd.tasks.list"
+msgid "vso.cmd.tasks.labels.dependencies"
+msgstr "List all tasks"
+
+#, fuzzy
+#| msgid "vso.cmd.tasks.new.options.description"
+msgid "vso.cmd.tasks.labels.description"
+msgstr "specify the task's description"
+
+#, fuzzy
+#| msgid "vso.cmd.tasks.list"
+msgid "vso.cmd.tasks.labels.lastExecution"
+msgstr "List all tasks"
 
 msgid "vso.cmd.tasks.list.options.json"
 msgstr "output the tasks in JSON format"
@@ -420,7 +477,9 @@ msgid "vso.cmd.tasks.rotate"
 msgstr "Rotate tasks"
 
 msgid "vso.cmd.tasks.rotate.options.privateEvent"
-msgstr "specify the private event to rotate tasks for boot, shutdown, login, and logout"
+msgstr ""
+"specify the private event to rotate tasks for boot, shutdown, login, and "
+"logout"
 
 msgid "vso.cmd.tasks.rotate.options.silent"
 msgstr "don't output the status on each cycle"
@@ -428,9 +487,18 @@ msgstr "don't output the status on each cycle"
 msgid "vso.cmd.waydroid"
 msgstr "Manage the vso waydroid subsystem"
 
+#, fuzzy
 msgid "vso.arg.package"
-msgstr ""
+msgstr "vso.arg.package"
 
+#, fuzzy
 msgid "vso.arg.command"
-msgstr ""
+msgstr "vso.arg.command"
 
+#, fuzzy
+msgid "vso.arg.key"
+msgstr "vso.arg.package"
+
+#, fuzzy
+msgid "vso.arg.value"
+msgstr "vso.arg.package"
