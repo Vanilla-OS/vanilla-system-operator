@@ -25,8 +25,9 @@ Commands:
   upgrade         Check for or apply a system image update
 ```
 
-Use `vso COMMAND --help` for command-specific options. The VSO 3 command groups
-replace the VSO 2 top-level package commands and `sys-upgrade` command.
+> [!NOTE]
+> Use `vso <COMMAND> --help` for command-specific options. The VSO 3 command groups
+> replace the VSO 2 top-level package commands and `sys-upgrade` command.
 
 ## Documentation
 
