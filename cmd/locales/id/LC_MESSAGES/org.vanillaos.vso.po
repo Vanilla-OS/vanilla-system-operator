@@ -1,10 +1,11 @@
+# Zahid Rizky Fakhri <zahidrizkyfakhri@gmail.com>, 2026.
 msgid ""
 msgstr ""
 "Project-Id-Version: Vanilla System Operator\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2024-05-18 12:00+0000\n"
-"PO-Revision-Date: 2026-08-24 05:43+0000\n"
-"Last-Translator: Prefill add-on <noreply-addon-prefill@weblate.org>\n"
+"PO-Revision-Date: 2026-08-25 06:51+0000\n"
+"Last-Translator: Zahid Rizky Fakhri <zahidrizkyfakhri@gmail.com>\n"
 "Language-Team: Indonesian <https://hosted.weblate.org/projects/vanilla-os/"
 "vanilla-system-operator/id/>\n"
 "Language: id\n"
@@ -15,124 +16,118 @@ msgstr ""
 "X-Generator: Weblate 2026.9.dev0\n"
 
 msgid "vso.description"
-msgstr ""
-"Vanilla System Operator adalah pengelola paket, pembaruan sistem, dan "
-"otomatisasi tugas."
+msgstr "vso.description"
 
 msgid "vso.errors.unknownCommand"
-msgstr "Perintah tidak dikenal: %s"
+msgstr "vso.errors.unknownCommand"
 
 msgid "vso.errors.invalidInput"
-msgstr "Masukan tidak valid."
+msgstr "vso.errors.invalidInput"
 
 msgid "vso.errors.invalidChoice"
-msgstr "Pilihan tidak valid."
+msgstr "vso.errors.invalidChoice"
 
 msgid "vso.info.aborting"
-msgstr "Menghentikan sesuai permintaan."
+msgstr "vso.info.aborting"
 
 msgid "vso.msg.help"
-msgstr "Tampilkan bantuan untuk vso."
+msgstr "vso.msg.help"
 
 msgid "vso.msg.version"
-msgstr "Tampilkan versi untuk vso."
+msgstr "vso.msg.version"
 
 msgid "vso.msg.usage"
-msgstr "Penggunaan"
+msgstr "vso.msg.usage"
 
 msgid "vso.msg.aliases"
-msgstr "Alias"
+msgstr "vso.msg.aliases"
 
 msgid "vso.msg.examples"
-msgstr "Contoh"
+msgstr "vso.msg.examples"
 
 msgid "vso.msg.availableCommands"
-msgstr "Perintah yang Tersedia"
+msgstr "vso.msg.availableCommands"
 
 msgid "vso.msg.additionalCommands"
-msgstr "Perintah Tambahan"
+msgstr "vso.msg.additionalCommands"
 
 msgid "vso.msg.flags"
-msgstr "Bendera"
+msgstr "vso.msg.flags"
 
 msgid "vso.msg.globalFlags"
-msgstr "Bendera Global"
+msgstr "vso.msg.globalFlags"
 
 msgid "vso.msg.additionalHelpTopics"
-msgstr "Topik bantuan tambahan"
+msgstr "vso.msg.additionalHelpTopics"
 
 msgid "vso.msg.moreInfo"
-msgstr "Gunakan %s untuk informasi lebih lanjut tentang perintah."
+msgstr "vso.msg.moreInfo"
 
 msgid "vso.terminal.yes"
-msgstr "yes"
+msgstr "vso.terminal.yes"
 
 msgid "vso.terminal.no"
-msgstr "no"
+msgstr "vso.terminal.no"
 
 msgid "vso.cmd.config"
-msgstr "Kelola konfigurasi sistem."
+msgstr "vso.cmd.config"
 
 msgid "vso.cmd.config.get"
-msgstr "Dapatkan konfigurasi sistem"
+msgstr "vso.cmd.config.get"
 
 msgid "vso.cmd.config.get.error.noKey"
-msgstr "Tidak ada kunci yang ditentukan."
+msgstr "vso.cmd.config.get.error.noKey"
 
 msgid "vso.cmd.config.get.error.noValue"
-msgstr "Tidak ditemukan nilai untuk kunci: %s"
+msgstr "vso.cmd.config.get.error.noValue"
 
 msgid "vso.cmd.config.get.options.key"
-msgstr "mendapatkan nilai konfigurasi dengan menggunakan kuncinya"
+msgstr "vso.cmd.config.get.options.key"
 
 msgid "vso.cmd.config.set"
-msgstr "Atur konfigurasi sistem"
+msgstr "vso.cmd.config.set"
 
 msgid "vso.cmd.config.set.error.noKey"
-msgstr "Tidak ada kunci yang ditentukan."
+msgstr "vso.cmd.config.set.error.noKey"
 
 msgid "vso.cmd.config.set.error.noValue"
-msgstr "Tidak ada nilai yang ditentukan."
+msgstr "vso.cmd.config.set.error.noValue"
 
 msgid "vso.cmd.config.set.error.failed"
-msgstr "Gagal mengatur konfigurasi: %s"
+msgstr "vso.cmd.config.set.error.failed"
 
 msgid "vso.cmd.config.set.options.key"
-msgstr "kunci konfigurasi untuk disetel"
+msgstr "vso.cmd.config.set.options.key"
 
 msgid "vso.cmd.config.set.options.value"
-msgstr "nilai konfigurasi yang akan diatur"
+msgstr "vso.cmd.config.set.options.value"
 
 msgid "vso.cmd.config.set.success"
-msgstr "Konfigurasi telah diperbarui dengan sukses."
+msgstr "vso.cmd.config.set.success"
 
 msgid "vso.cmd.config.show"
-msgstr "Tampilkan konfigurasi sistem"
+msgstr "vso.cmd.config.show"
 
 msgid "vso.cmd.native"
-msgstr "Kelola subsistem VSO"
+msgstr "vso.cmd.native"
 
 msgid "vso.cmd.native.error.notInitialized"
-msgstr ""
-"Subsistem VSO belum diinisialisasi. Silakan jalankan perintah `vso native "
-"init` untuk menginisialisasinya."
+msgstr "vso.cmd.native.error.notInitialized"
 
 msgid "vso.cmd.native.error.alreadyInitialized"
-msgstr ""
-"Subsistem VSO sudah diinisialisasi. Gunakan bendera --force untuk memaksa "
-"inisialisasi."
+msgstr "vso.cmd.native.error.alreadyInitialized"
 
 msgid "vso.cmd.native.error.noAppNameOrBin"
-msgstr "--app atau --bin harus ditentukan."
+msgstr "vso.cmd.native.error.noAppNameOrBin"
 
 msgid "vso.cmd.native.error.sameAppOrBin"
-msgstr "--app dan --bin tidak dapat keduanya ditentukan."
+msgstr "vso.cmd.native.error.sameAppOrBin"
 
 msgid "vso.cmd.native.error.exportingApp"
-msgstr "Terjadi kesalahan saat mengekspor aplikasi: %s"
+msgstr "vso.cmd.native.error.exportingApp"
 
 msgid "vso.cmd.native.error.exportingBin"
-msgstr "Terjadi kesalahan saat mengekspor berkas biner: %s"
+msgstr "vso.cmd.native.error.exportingBin"
 
 msgid "vso.cmd.native.error.unexportingApp"
 msgstr "Terjadi kesalahan saat membatalkan ekspor aplikasi: %s"
@@ -144,24 +139,22 @@ msgid "vso.cmd.native.error.unknownCommand"
 msgstr "Perintah tidak dikenal: %s"
 
 msgid "vso.cmd.native.error.shellReset"
-msgstr ""
-"Tidak mungkin untuk mengakses shell VSO. Apakah Anda ingin meresetnya? (Ini "
-"akan menghapus semua perangkat lunak yang terinstal di subsistem) [y/N]"
+msgstr "vso.cmd.native.error.shellReset"
 
 msgid "vso.cmd.native.info.deleting"
-msgstr "Menghapus subsistem VSO..."
+msgstr "vso.cmd.native.info.deleting"
 
 msgid "vso.cmd.native.info.initializing"
-msgstr "Menginisialisasi subsistem VSO..."
+msgstr "vso.cmd.native.info.initializing"
 
 msgid "vso.cmd.native.info.initialized"
-msgstr "Subsistem VSO telah diinisialisasi."
+msgstr "vso.cmd.native.info.initialized"
 
 msgid "vso.cmd.native.info.exported"
-msgstr "Diekspor %s\n"
+msgstr "vso.cmd.native.info.exported"
 
 msgid "vso.cmd.native.info.unexported"
-msgstr "%s yang belum diekspor\n"
+msgstr "vso.cmd.native.info.unexported"
 
 msgid "vso.cmd.native.info.exportedApps"
 msgstr "Aplikasi yang diekspor: %d"
@@ -204,7 +197,7 @@ msgid "vso.cmd.native.unexport.options.binOutput"
 msgstr "jalur output biner (default: ~/.local/bin/)"
 
 msgid "vso.cmd.native.init"
-msgstr "Inisialisasi subsistem VSO, yang digunakan untuk manajemen paket"
+msgstr "vso.cmd.native.init"
 
 msgid "vso.cmd.native.init.options.force"
 msgstr "paksa inisialisasi jika subsistem sudah diinisialisasi"
@@ -228,7 +221,7 @@ msgid "vso.cmd.native.shell"
 msgstr "Masuk ke lingkungan subsistem"
 
 msgid "vso.cmd.native.sideload"
-msgstr "Menginstal paket DEB/APK secara sideload di dalam subsistem"
+msgstr "vso.cmd.native.sideload"
 
 msgid "vso.cmd.native.update"
 msgstr "Perbarui repositori paket subsistem"
@@ -243,62 +236,47 @@ msgid "vso.cmd.sysUpgrade.check"
 msgstr "Periksa pembaruan sistem"
 
 msgid "vso.cmd.sysUpgrade.check.asExitCode"
-msgstr ""
-"memeriksa pembaruan tetapi tidak mencetak apa pun. Kembalikan kode keluar 0 "
-"jika tidak ada pembaruan yang tersedia dan 1 jika ada."
+msgstr "vso.cmd.sysUpgrade.check.asExitCode"
 
 msgid "vso.cmd.sysUpgrade.check.error.asExitCodeAndJson"
-msgstr ""
-"Terjadi kesalahan saat memeriksa pembaruan. Lihat output JSON untuk detail "
-"lebih lanjut."
+msgstr "vso.cmd.sysUpgrade.check.error.asExitCodeAndJson"
 
 msgid "vso.cmd.sysUpgrade.check.info.checking"
-msgstr "Memeriksa pembaruan..."
+msgstr "vso.cmd.sysUpgrade.check.info.checking"
 
 msgid "vso.cmd.sysUpgrade.check.json"
-msgstr "menampilkan hasil dalam format JSON"
+msgstr "vso.cmd.sysUpgrade.check.json"
 
-#, fuzzy
 msgid "vso.cmd.sysUpgrade.upgrade"
 msgstr "vso.cmd.sysUpgrade.upgrade"
 
-#, fuzzy
 msgid "vso.cmd.sysUpgrade.error.updating"
 msgstr "vso.cmd.sysUpgrade.error.updating"
 
-#, fuzzy
 msgid "vso.cmd.sysUpgrade.error.onHasUpdate"
 msgstr "vso.cmd.sysUpgrade.error.onHasUpdate"
 
-#, fuzzy
 msgid "vso.cmd.sysUpgrade.schedule.daily"
 msgstr "vso.cmd.sysUpgrade.schedule.daily"
 
-#, fuzzy
 msgid "vso.cmd.sysUpgrade.schedule.weekly"
 msgstr "vso.cmd.sysUpgrade.schedule.weekly"
 
-#, fuzzy
 msgid "vso.cmd.sysUpgrade.schedule.monthly"
 msgstr "vso.cmd.sysUpgrade.schedule.monthly"
 
-#, fuzzy
 msgid "vso.cmd.sysUpgrade.info.updating"
 msgstr "vso.cmd.sysUpgrade.info.updating"
 
-#, fuzzy
 msgid "vso.cmd.sysUpgrade.info.willUpdateLater"
 msgstr "vso.cmd.sysUpgrade.info.willUpdateLater"
 
-#, fuzzy
 msgid "vso.cmd.sysUpgrade.info.willNeverUpdate"
 msgstr "vso.cmd.sysUpgrade.info.willNeverUpdate"
 
-#, fuzzy
 msgid "vso.cmd.sysUpgrade.info.noUpdates"
 msgstr "vso.cmd.sysUpgrade.info.noUpdates"
 
-#, fuzzy
 msgid "vso.cmd.sysUpgrade.now"
 msgstr "vso.cmd.sysUpgrade.now"
 
@@ -306,71 +284,61 @@ msgid "vso.cmd.tasks"
 msgstr "Buat dan kelola tugas"
 
 msgid "vso.cmd.tasks.stacks.new.error.emptyCommand"
-msgstr "Perintah tidak boleh kosong."
+msgstr "vso.cmd.tasks.stacks.new.error.emptyCommand"
 
 msgid "vso.cmd.tasks.stacks.new.error.emptyDescription"
-msgstr "Deskripsi tidak boleh kosong."
+msgstr "vso.cmd.tasks.stacks.new.error.emptyDescription"
 
 msgid "vso.cmd.tasks.stacks.new.error.emptyName"
-msgstr "Nama tidak boleh kosong."
+msgstr "vso.cmd.tasks.stacks.new.error.emptyName"
 
 msgid "vso.cmd.tasks.stacks.new.error.noCommand"
-msgstr "Tidak ada perintah yang ditentukan."
+msgstr "vso.cmd.tasks.stacks.new.error.noCommand"
 
 msgid "vso.cmd.tasks.stacks.new.error.noDescription"
-msgstr "Tidak ada deskripsi yang ditentukan."
+msgstr "vso.cmd.tasks.stacks.new.error.noDescription"
 
 msgid "vso.cmd.tasks.stacks.new.error.noName"
-msgstr "Tidak ada nama yang ditentukan."
+msgstr "vso.cmd.tasks.stacks.new.error.noName"
 
 msgid "vso.cmd.tasks.stacks.new.info.askCommand"
-msgstr "Perintah: "
+msgstr "vso.cmd.tasks.stacks.new.info.askCommand"
 
 msgid "vso.cmd.tasks.stacks.new.info.askDescription"
-msgstr "Deskripsi: "
+msgstr "vso.cmd.tasks.stacks.new.info.askDescription"
 
 msgid "vso.cmd.tasks.stacks.new.info.askName"
-msgstr "Nama: "
+msgstr "vso.cmd.tasks.stacks.new.info.askName"
 
 msgid "vso.cmd.tasks.stacks.new.info.taskCreated"
-msgstr "Tugas telah dibuat dengan sukses."
+msgstr "vso.cmd.tasks.stacks.new.info.taskCreated"
 
 msgid "vso.cmd.tasks.list"
 msgstr "Daftar semua tugas"
 
 msgid "vso.cmd.tasks.list.noTasks"
-msgstr "Tidak ada tugas yang ditemukan."
+msgstr "vso.cmd.tasks.list.noTasks"
 
 msgid "vso.cmd.tasks.list.info.foundTasks"
-msgstr "Ditemukan %d tugas."
+msgstr "vso.cmd.tasks.list.info.foundTasks"
 
-#, fuzzy
-#| msgid "vso.cmd.tasks.new.options.name"
 msgid "vso.cmd.tasks.labels.name"
-msgstr "tentukan nama tugas"
+msgstr "vso.cmd.tasks.labels.name"
 
-#, fuzzy
-#| msgid "vso.cmd.tasks.new.options.at"
 msgid "vso.cmd.tasks.labels.relations"
-msgstr "jadwalkan tugas untuk dijalankan pada waktu tertentu (hh:mm)"
+msgstr "vso.cmd.tasks.labels.relations"
 
-#, fuzzy
-#| msgid "vso.cmd.tasks.list"
 msgid "vso.cmd.tasks.labels.dependencies"
-msgstr "Daftar semua tugas"
+msgstr "vso.cmd.tasks.labels.dependencies"
 
-#, fuzzy
-#| msgid "vso.cmd.tasks.new.options.description"
 msgid "vso.cmd.tasks.labels.description"
-msgstr "tentukan deskripsi tugas tersebut"
+msgstr "vso.cmd.tasks.labels.description"
 
-#, fuzzy
-#| msgid "vso.cmd.tasks.list"
 msgid "vso.cmd.tasks.labels.lastExecution"
-msgstr "Daftar semua tugas"
+msgstr "vso.cmd.tasks.labels.lastExecution"
 
 msgid "vso.cmd.tasks.list.options.json"
-msgstr "menampilkan tugas dalam format JSON"
+msgstr "vso.cmd.tasks.list.options.json"
 
 msgid "vso.cmd.tasks.new"
 msgstr "Buat tugas baru"
@@ -406,10 +374,10 @@ msgid "vso.cmd.tasks.new.options.onConditionCommand"
 msgstr "jalankan tugas pada perintah kondisi"
 
 msgid "vso.cmd.tasks.new.options.onCpuTemp"
-msgstr "jalankan tugas saat suhu CPU melebihi 60°C"
+msgstr "vso.cmd.tasks.new.options.onCpuTemp"
 
 msgid "vso.cmd.tasks.new.options.onCpuUsage"
-msgstr "jalankan tugas saat penggunaan CPU melebihi X%"
+msgstr "vso.cmd.tasks.new.options.onCpuUsage"
 
 msgid "vso.cmd.tasks.new.options.onDeviceConnect"
 msgstr "jalankan tugas saat perangkat terhubung"
@@ -424,7 +392,7 @@ msgid "vso.cmd.tasks.new.options.onFullBattery"
 msgstr "jalankan tugas saat sistem telah terisi penuh"
 
 msgid "vso.cmd.tasks.new.options.onHighCpuUsage"
-msgstr "jalankan tugas saat penggunaan CPU melebihi 50%"
+msgstr "vso.cmd.tasks.new.options.onHighCpuUsage"
 
 msgid "vso.cmd.tasks.new.options.onHighInternetUsage"
 msgstr "jalankan tugas saat penggunaan internet melebihi 500 Kb/s"
@@ -433,7 +401,7 @@ msgid "vso.cmd.tasks.new.options.onHighMemoryUsage"
 msgstr "jalankan tugas saat penggunaan memori melebihi 50%"
 
 msgid "vso.cmd.tasks.new.options.onInternetUsage"
-msgstr "jalankan tugas saat penggunaan internet melebihi XKb/s"
+msgstr "vso.cmd.tasks.new.options.onInternetUsage"
 
 msgid "vso.cmd.tasks.new.options.onLowBattery"
 msgstr "jalankan tugas saat baterai sistem rendah (20%)"
@@ -454,16 +422,16 @@ msgid "vso.cmd.tasks.rm.error.cannotDelete"
 msgstr "Tidak dapat menghapus tugas: %s"
 
 msgid "vso.cmd.tasks.rm.error.noName"
-msgstr "Tidak ada nama tugas yang ditentukan."
+msgstr "vso.cmd.tasks.rm.error.noName"
 
 msgid "vso.cmd.tasks.rm.error.notFound"
-msgstr "Tugas tidak ditemukan."
+msgstr "vso.cmd.tasks.rm.error.notFound"
 
 msgid "vso.cmd.tasks.rm.info.askConfirmation"
 msgstr "Apakah Anda yakin ingin menghapus tugas %s? [y/N]"
 
 msgid "vso.cmd.tasks.rm.info.taskDeleted"
-msgstr "Tugas telah dihapus dengan sukses."
+msgstr "vso.cmd.tasks.rm.info.taskDeleted"
 
 msgid "vso.cmd.tasks.rm.options.force"
 msgstr "memaksa penghapusan tugas"
@@ -483,20 +451,16 @@ msgid "vso.cmd.tasks.rotate.options.silent"
 msgstr "jangan menampilkan status pada setiap siklus"
 
 msgid "vso.cmd.waydroid"
-msgstr "Kelola subsistem Waydroid VSO"
+msgstr "vso.cmd.waydroid"
 
-#, fuzzy
 msgid "vso.arg.package"
 msgstr "vso.arg.package"
 
-#, fuzzy
 msgid "vso.arg.command"
 msgstr "vso.arg.command"
 
-#, fuzzy
 msgid "vso.arg.key"
-msgstr "vso.arg.package"
+msgstr "vso.arg.key"
 
-#, fuzzy
 msgid "vso.arg.value"
-msgstr "vso.arg.package"
+msgstr "vso.arg.value"
