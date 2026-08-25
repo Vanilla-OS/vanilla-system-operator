@@ -3,13 +3,17 @@ msgstr ""
 "Project-Id-Version: Vanilla System Operator\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2024-05-18 12:00+0000\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
+"PO-Revision-Date: 2026-08-24 05:44+0000\n"
+"Last-Translator: Prefill add-on <noreply-addon-prefill@weblate.org>\n"
+"Language-Team: Slovenian <https://hosted.weblate.org/projects/vanilla-os/"
+"vanilla-system-operator/sl/>\n"
 "Language: sl\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=4; plural=n%100==1 ? 0 : n%100==2 ? 1 : n%100==3 || "
+"n%100==4 ? 2 : 3;\n"
+"X-Generator: Weblate 2026.9.dev0\n"
 
 msgid "vso.description"
 msgstr "Sistemski operater Vanilla je upravitelj paketov, posodabljalec sistema in avtomatizator opravil."
@@ -239,38 +243,49 @@ msgstr "Checking for updates..."
 msgid "vso.cmd.sysUpgrade.check.json"
 msgstr "output the result in JSON format"
 
+#, fuzzy
 msgid "vso.cmd.sysUpgrade.upgrade"
-msgstr ""
+msgstr "vso.cmd.sysUpgrade.upgrade"
 
+#, fuzzy
 msgid "vso.cmd.sysUpgrade.error.updating"
-msgstr ""
+msgstr "vso.cmd.sysUpgrade.error.updating"
 
+#, fuzzy
 msgid "vso.cmd.sysUpgrade.error.onHasUpdate"
-msgstr ""
+msgstr "vso.cmd.sysUpgrade.error.onHasUpdate"
 
+#, fuzzy
 msgid "vso.cmd.sysUpgrade.schedule.daily"
-msgstr ""
+msgstr "vso.cmd.sysUpgrade.schedule.daily"
 
+#, fuzzy
 msgid "vso.cmd.sysUpgrade.schedule.weekly"
-msgstr ""
+msgstr "vso.cmd.sysUpgrade.schedule.weekly"
 
+#, fuzzy
 msgid "vso.cmd.sysUpgrade.schedule.monthly"
-msgstr ""
+msgstr "vso.cmd.sysUpgrade.schedule.monthly"
 
+#, fuzzy
 msgid "vso.cmd.sysUpgrade.info.updating"
-msgstr ""
+msgstr "vso.cmd.sysUpgrade.info.updating"
 
+#, fuzzy
 msgid "vso.cmd.sysUpgrade.info.willUpdateLater"
-msgstr ""
+msgstr "vso.cmd.sysUpgrade.info.willUpdateLater"
 
+#, fuzzy
 msgid "vso.cmd.sysUpgrade.info.willNeverUpdate"
-msgstr ""
+msgstr "vso.cmd.sysUpgrade.info.willNeverUpdate"
 
+#, fuzzy
 msgid "vso.cmd.sysUpgrade.info.noUpdates"
-msgstr ""
+msgstr "vso.cmd.sysUpgrade.info.noUpdates"
 
+#, fuzzy
 msgid "vso.cmd.sysUpgrade.now"
-msgstr ""
+msgstr "vso.cmd.sysUpgrade.now"
 
 msgid "vso.cmd.tasks"
 msgstr "Create and manage tasks"
@@ -428,9 +443,10 @@ msgstr "don't output the status on each cycle"
 msgid "vso.cmd.waydroid"
 msgstr "Manage the vso waydroid subsystem"
 
+#, fuzzy
 msgid "vso.arg.package"
-msgstr ""
+msgstr "vso.arg.package"
 
+#, fuzzy
 msgid "vso.arg.command"
-msgstr ""
-
+msgstr "vso.arg.command"
