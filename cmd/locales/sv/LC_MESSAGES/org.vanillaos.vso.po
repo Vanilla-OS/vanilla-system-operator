@@ -1,10 +1,11 @@
+# bittin1ddc447d824349b2 <bittin@reimu.nl>, 2026.
 msgid ""
 msgstr ""
 "Project-Id-Version: Vanilla System Operator\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2024-05-18 12:00+0000\n"
-"PO-Revision-Date: 2026-08-24 05:44+0000\n"
-"Last-Translator: Prefill add-on <noreply-addon-prefill@weblate.org>\n"
+"PO-Revision-Date: 2026-09-28 20:51+0000\n"
+"Last-Translator: bittin1ddc447d824349b2 <bittin@reimu.nl>\n"
 "Language-Team: Swedish <https://hosted.weblate.org/projects/vanilla-os/"
 "vanilla-system-operator/sv/>\n"
 "Language: sv\n"
@@ -12,7 +13,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 2026.9.dev0\n"
+"X-Generator: Weblate 2026.10.dev0\n"
 
 msgid "vso.description"
 msgstr ""
@@ -256,47 +257,36 @@ msgstr "Kollar efter uppdateringar..."
 msgid "vso.cmd.sysUpgrade.check.json"
 msgstr "Utdata av resultatet i JSON-format"
 
-#, fuzzy
 msgid "vso.cmd.sysUpgrade.upgrade"
 msgstr "vso.cmd.sysUpgrade.upgrade"
 
-#, fuzzy
 msgid "vso.cmd.sysUpgrade.error.updating"
 msgstr "vso.cmd.sysUpgrade.error.updating"
 
-#, fuzzy
 msgid "vso.cmd.sysUpgrade.error.onHasUpdate"
 msgstr "vso.cmd.sysUpgrade.error.onHasUpdate"
 
-#, fuzzy
 msgid "vso.cmd.sysUpgrade.schedule.daily"
 msgstr "vso.cmd.sysUpgrade.schedule.daily"
 
-#, fuzzy
 msgid "vso.cmd.sysUpgrade.schedule.weekly"
 msgstr "vso.cmd.sysUpgrade.schedule.weekly"
 
-#, fuzzy
 msgid "vso.cmd.sysUpgrade.schedule.monthly"
 msgstr "vso.cmd.sysUpgrade.schedule.monthly"
 
-#, fuzzy
 msgid "vso.cmd.sysUpgrade.info.updating"
 msgstr "vso.cmd.sysUpgrade.info.updating"
 
-#, fuzzy
 msgid "vso.cmd.sysUpgrade.info.willUpdateLater"
 msgstr "vso.cmd.sysUpgrade.info.willUpdateLater"
 
-#, fuzzy
 msgid "vso.cmd.sysUpgrade.info.willNeverUpdate"
 msgstr "vso.cmd.sysUpgrade.info.willNeverUpdate"
 
-#, fuzzy
 msgid "vso.cmd.sysUpgrade.info.noUpdates"
 msgstr "vso.cmd.sysUpgrade.info.noUpdates"
 
-#, fuzzy
 msgid "vso.cmd.sysUpgrade.now"
 msgstr "vso.cmd.sysUpgrade.now"
 
@@ -342,30 +332,20 @@ msgstr "Inga uppgifter hittades."
 msgid "vso.cmd.tasks.list.info.foundTasks"
 msgstr "Hittade %d uppgifter."
 
-#, fuzzy
-#| msgid "vso.cmd.tasks.new.options.name"
 msgid "vso.cmd.tasks.labels.name"
-msgstr "specificera uppgiftens namn"
+msgstr "vso.cmd.tasks.labels.name"
 
-#, fuzzy
-#| msgid "vso.cmd.tasks.new.options.at"
 msgid "vso.cmd.tasks.labels.relations"
-msgstr "schemalägg uppgift att utföras vid en specifik tidpunkt (tt:mm)"
+msgstr "vso.cmd.tasks.labels.relations"
 
-#, fuzzy
-#| msgid "vso.cmd.tasks.list"
 msgid "vso.cmd.tasks.labels.dependencies"
-msgstr "Lista alla uppgifter"
+msgstr "vso.cmd.tasks.labels.dependencies"
 
-#, fuzzy
-#| msgid "vso.cmd.tasks.new.options.description"
 msgid "vso.cmd.tasks.labels.description"
-msgstr "specificera uppgiftens beskrivning"
+msgstr "vso.cmd.tasks.labels.description"
 
-#, fuzzy
-#| msgid "vso.cmd.tasks.list"
 msgid "vso.cmd.tasks.labels.lastExecution"
-msgstr "Lista alla uppgifter"
+msgstr "vso.cmd.tasks.labels.lastExecution"
 
 msgid "vso.cmd.tasks.list.options.json"
 msgstr "utdata uppgifterna i JSON-format"
@@ -483,18 +463,14 @@ msgstr "skriv inte ut status för varje cykel"
 msgid "vso.cmd.waydroid"
 msgstr "Hantera vso waydroid undersystem"
 
-#, fuzzy
 msgid "vso.arg.package"
 msgstr "vso.arg.package"
 
-#, fuzzy
 msgid "vso.arg.command"
 msgstr "vso.arg.command"
 
-#, fuzzy
 msgid "vso.arg.key"
-msgstr "vso.arg.package"
+msgstr "vso.arg.key"
 
-#, fuzzy
 msgid "vso.arg.value"
-msgstr "vso.arg.package"
+msgstr "vso.arg.value"
