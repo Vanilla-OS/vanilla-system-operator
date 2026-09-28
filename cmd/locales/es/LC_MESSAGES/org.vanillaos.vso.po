@@ -1,10 +1,11 @@
+# Juan Benites <benitesjn@gmail.com>, 2026.
 msgid ""
 msgstr ""
 "Project-Id-Version: Vanilla System Operator\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2024-05-18 12:00+0000\n"
-"PO-Revision-Date: 2026-08-24 05:43+0000\n"
-"Last-Translator: Prefill add-on <noreply-addon-prefill@weblate.org>\n"
+"PO-Revision-Date: 2026-09-11 21:51+0000\n"
+"Last-Translator: Juan Benites <benitesjn@gmail.com>\n"
 "Language-Team: Spanish <https://hosted.weblate.org/projects/vanilla-os/"
 "vanilla-system-operator/es/>\n"
 "Language: es\n"
@@ -12,7 +13,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 2026.9.dev0\n"
+"X-Generator: Weblate 2026.10.dev0\n"
 
 msgid "vso.description"
 msgstr ""
@@ -261,47 +262,36 @@ msgstr "Buscando actualizaciones..."
 msgid "vso.cmd.sysUpgrade.check.json"
 msgstr "salida del resultado en formato JSON"
 
-#, fuzzy
 msgid "vso.cmd.sysUpgrade.upgrade"
 msgstr "vso.cmd.sysUpgrade.upgrade"
 
-#, fuzzy
 msgid "vso.cmd.sysUpgrade.error.updating"
 msgstr "vso.cmd.sysUpgrade.error.updating"
 
-#, fuzzy
 msgid "vso.cmd.sysUpgrade.error.onHasUpdate"
 msgstr "vso.cmd.sysUpgrade.error.onHasUpdate"
 
-#, fuzzy
 msgid "vso.cmd.sysUpgrade.schedule.daily"
 msgstr "vso.cmd.sysUpgrade.schedule.daily"
 
-#, fuzzy
 msgid "vso.cmd.sysUpgrade.schedule.weekly"
 msgstr "vso.cmd.sysUpgrade.schedule.weekly"
 
-#, fuzzy
 msgid "vso.cmd.sysUpgrade.schedule.monthly"
 msgstr "vso.cmd.sysUpgrade.schedule.monthly"
 
-#, fuzzy
 msgid "vso.cmd.sysUpgrade.info.updating"
 msgstr "vso.cmd.sysUpgrade.info.updating"
 
-#, fuzzy
 msgid "vso.cmd.sysUpgrade.info.willUpdateLater"
 msgstr "vso.cmd.sysUpgrade.info.willUpdateLater"
 
-#, fuzzy
 msgid "vso.cmd.sysUpgrade.info.willNeverUpdate"
 msgstr "vso.cmd.sysUpgrade.info.willNeverUpdate"
 
-#, fuzzy
 msgid "vso.cmd.sysUpgrade.info.noUpdates"
 msgstr "vso.cmd.sysUpgrade.info.noUpdates"
 
-#, fuzzy
 msgid "vso.cmd.sysUpgrade.now"
 msgstr "vso.cmd.sysUpgrade.now"
 
@@ -347,30 +337,20 @@ msgstr "No se encontraron tareas."
 msgid "vso.cmd.tasks.list.info.foundTasks"
 msgstr "Encontradas %d tareas."
 
-#, fuzzy
-#| msgid "vso.cmd.tasks.new.options.name"
 msgid "vso.cmd.tasks.labels.name"
-msgstr "especificar el nombre de la tarea"
+msgstr "vso.cmd.tasks.labels.name"
 
-#, fuzzy
-#| msgid "vso.cmd.tasks.new.options.at"
 msgid "vso.cmd.tasks.labels.relations"
-msgstr "programar la tarea para que se ejecute a una hora determinada (hh:mm)"
+msgstr "vso.cmd.tasks.labels.relations"
 
-#, fuzzy
-#| msgid "vso.cmd.tasks.list"
 msgid "vso.cmd.tasks.labels.dependencies"
-msgstr "Enumerar todas las tareas"
+msgstr "vso.cmd.tasks.labels.dependencies"
 
-#, fuzzy
-#| msgid "vso.cmd.tasks.new.options.description"
 msgid "vso.cmd.tasks.labels.description"
-msgstr "especificar la descripción de la tarea"
+msgstr "vso.cmd.tasks.labels.description"
 
-#, fuzzy
-#| msgid "vso.cmd.tasks.list"
 msgid "vso.cmd.tasks.labels.lastExecution"
-msgstr "Enumerar todas las tareas"
+msgstr "vso.cmd.tasks.labels.lastExecution"
 
 msgid "vso.cmd.tasks.list.options.json"
 msgstr "salida de las tareas en formato JSON"
@@ -489,18 +469,14 @@ msgstr "don't output the status on each cycle"
 msgid "vso.cmd.waydroid"
 msgstr "Gestionar el subsistema vso waydroid"
 
-#, fuzzy
 msgid "vso.arg.package"
 msgstr "vso.arg.package"
 
-#, fuzzy
 msgid "vso.arg.command"
 msgstr "vso.arg.command"
 
-#, fuzzy
 msgid "vso.arg.key"
-msgstr "vso.arg.package"
+msgstr "vso.arg.key"
 
-#, fuzzy
 msgid "vso.arg.value"
-msgstr "vso.arg.package"
+msgstr "vso.arg.value"
