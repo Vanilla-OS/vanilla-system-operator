@@ -3,16 +3,21 @@ msgstr ""
 "Project-Id-Version: Vanilla System Operator\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2024-05-18 12:00+0000\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
+"PO-Revision-Date: 2026-08-24 05:43+0000\n"
+"Last-Translator: Prefill add-on <noreply-addon-prefill@weblate.org>\n"
+"Language-Team: French <https://hosted.weblate.org/projects/vanilla-os/"
+"vanilla-system-operator/fr/>\n"
 "Language: fr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n > 1;\n"
+"X-Generator: Weblate 2026.9.dev0\n"
 
 msgid "vso.description"
-msgstr "Le centre de contrôle de Vanilla OS est un gestionnaire de paquets et de tâches ainsi qu'un outil de mise à jour du système."
+msgstr ""
+"Le centre de contrôle de Vanilla OS est un gestionnaire de paquets et de "
+"tâches ainsi qu'un outil de mise à jour du système."
 
 msgid "vso.errors.unknownCommand"
 msgstr "Commande inconnue : %s"
@@ -108,10 +113,14 @@ msgid "vso.cmd.native"
 msgstr "Gestion du sous-système VSO"
 
 msgid "vso.cmd.native.error.notInitialized"
-msgstr "Le sous-système VSO n'est pas initialisé. Veuillez lancer `vso native init` pour l'initialiser."
+msgstr ""
+"Le sous-système VSO n'est pas initialisé. Veuillez lancer `vso native init` "
+"pour l'initialiser."
 
 msgid "vso.cmd.native.error.alreadyInitialized"
-msgstr "Le sous-système VSO est déjà initialisé. Utilisez l'option --force pour forcer l'initialisation."
+msgstr ""
+"Le sous-système VSO est déjà initialisé. Utilisez l'option --force pour "
+"forcer l'initialisation."
 
 msgid "vso.cmd.native.error.noAppNameOrBin"
 msgstr "Les options --app ou --bin doivent être spécifiées."
@@ -126,16 +135,22 @@ msgid "vso.cmd.native.error.exportingBin"
 msgstr "Une erreur s'est produite lors de l'exportation du binaire : %s"
 
 msgid "vso.cmd.native.error.unexportingApp"
-msgstr "Une erreur s'est produite lors de la suppression de l'exportation de l'application : %s"
+msgstr ""
+"Une erreur s'est produite lors de la suppression de l'exportation de "
+"l'application : %s"
 
 msgid "vso.cmd.native.error.unexportingBin"
-msgstr "Une erreur s'est produite lors de la suppression de l'exportation du binaire : %s"
+msgstr ""
+"Une erreur s'est produite lors de la suppression de l'exportation du "
+"binaire : %s"
 
 msgid "vso.cmd.native.error.unknownCommand"
 msgstr "Commande inconnu  : %s"
 
 msgid "vso.cmd.native.error.shellReset"
-msgstr "Il est impossible d'atteindre le shell VSO. Voulez-vous le réinitialiser ? (Cela supprimera tous vos logiciels installés dans le sous-système) [y/N]"
+msgstr ""
+"Il est impossible d'atteindre le shell VSO. Voulez-vous le réinitialiser ? "
+"(Cela supprimera tous vos logiciels installés dans le sous-système) [y/N]"
 
 msgid "vso.cmd.native.info.deleting"
 msgstr "Suppression du sous-système VSO..."
@@ -159,10 +174,14 @@ msgid "vso.cmd.native.info.unexportedApps"
 msgstr "Suppression de l'exportation de l'application %d"
 
 msgid "vso.cmd.native.info.shellInit"
-msgstr "On dirait que votre shell n'est pas encore initialisé. Voulez-vous l'initialiser maintenant ? (Fortement recommandé) [y/N]"
+msgstr ""
+"On dirait que votre shell n'est pas encore initialisé. Voulez-vous "
+"l'initialiser maintenant ? (Fortement recommandé) [y/N]"
 
 msgid "vso.cmd.native.info.fallbackShell"
-msgstr "Revenir au shell hôte ? Cela pourrait conduire à un comportement inattendu. [y/N]"
+msgstr ""
+"Revenir au shell hôte ? Cela pourrait conduire à un comportement inattendu. "
+"[y/N]"
 
 msgid "vso.cmd.native.export"
 msgstr "Exporter une application ou un binaire du sous-système"
@@ -177,7 +196,8 @@ msgid "vso.cmd.native.export.options.binOutput"
 msgstr "chemin de la sortie du binaire (par défaut : ~/.local/bin/)"
 
 msgid "vso.cmd.native.unexport"
-msgstr "Supprimer l'exportation d'une application ou d'un binaire du sous-système"
+msgstr ""
+"Supprimer l'exportation d'une application ou d'un binaire du sous-système"
 
 msgid "vso.cmd.native.unexport.options.app"
 msgstr "le nom de l'application à supprimer l'exportation"
@@ -222,16 +242,21 @@ msgid "vso.cmd.native.upgrade"
 msgstr "Mise à jour des paquets à l'intérieur du sous-système"
 
 msgid "vso.cmd.sysUpgrade"
-msgstr "Exécuter des commandes système, comme celle pour mettre à jour le système"
+msgstr ""
+"Exécuter des commandes système, comme celle pour mettre à jour le système"
 
 msgid "vso.cmd.sysUpgrade.check"
 msgstr "Vérifier les mises à jour du système"
 
 msgid "vso.cmd.sysUpgrade.check.asExitCode"
-msgstr "vérifie l'existence d'une mise à jour, mais n'affiche rien. Retourne le code de sortie 0 si aucune mise à jour n'est disponible et 1 sinon."
+msgstr ""
+"vérifie l'existence d'une mise à jour, mais n'affiche rien. Retourne le code "
+"de sortie 0 si aucune mise à jour n'est disponible et 1 sinon."
 
 msgid "vso.cmd.sysUpgrade.check.error.asExitCodeAndJson"
-msgstr "Une erreur s'est produite lors de la vérification des mises à jour. Voir la sortie JSON pour plus de détails."
+msgstr ""
+"Une erreur s'est produite lors de la vérification des mises à jour. Voir la "
+"sortie JSON pour plus de détails."
 
 msgid "vso.cmd.sysUpgrade.check.info.checking"
 msgstr "Vérifier les mises à jour ..."
@@ -239,38 +264,49 @@ msgstr "Vérifier les mises à jour ..."
 msgid "vso.cmd.sysUpgrade.check.json"
 msgstr "exporter le résultat au format JSON"
 
+#, fuzzy
 msgid "vso.cmd.sysUpgrade.upgrade"
-msgstr ""
+msgstr "vso.cmd.sysUpgrade.upgrade"
 
+#, fuzzy
 msgid "vso.cmd.sysUpgrade.error.updating"
-msgstr ""
+msgstr "vso.cmd.sysUpgrade.error.updating"
 
+#, fuzzy
 msgid "vso.cmd.sysUpgrade.error.onHasUpdate"
-msgstr ""
+msgstr "vso.cmd.sysUpgrade.error.onHasUpdate"
 
+#, fuzzy
 msgid "vso.cmd.sysUpgrade.schedule.daily"
-msgstr ""
+msgstr "vso.cmd.sysUpgrade.schedule.daily"
 
+#, fuzzy
 msgid "vso.cmd.sysUpgrade.schedule.weekly"
-msgstr ""
+msgstr "vso.cmd.sysUpgrade.schedule.weekly"
 
+#, fuzzy
 msgid "vso.cmd.sysUpgrade.schedule.monthly"
-msgstr ""
+msgstr "vso.cmd.sysUpgrade.schedule.monthly"
 
+#, fuzzy
 msgid "vso.cmd.sysUpgrade.info.updating"
-msgstr ""
+msgstr "vso.cmd.sysUpgrade.info.updating"
 
+#, fuzzy
 msgid "vso.cmd.sysUpgrade.info.willUpdateLater"
-msgstr ""
+msgstr "vso.cmd.sysUpgrade.info.willUpdateLater"
 
+#, fuzzy
 msgid "vso.cmd.sysUpgrade.info.willNeverUpdate"
-msgstr ""
+msgstr "vso.cmd.sysUpgrade.info.willNeverUpdate"
 
+#, fuzzy
 msgid "vso.cmd.sysUpgrade.info.noUpdates"
-msgstr ""
+msgstr "vso.cmd.sysUpgrade.info.noUpdates"
 
+#, fuzzy
 msgid "vso.cmd.sysUpgrade.now"
-msgstr ""
+msgstr "vso.cmd.sysUpgrade.now"
 
 msgid "vso.cmd.tasks"
 msgstr "Créer et gérer des tâches"
@@ -314,6 +350,31 @@ msgstr "Aucune tâche n'a été trouvée."
 msgid "vso.cmd.tasks.list.info.foundTasks"
 msgstr "A trouvé %d tâches."
 
+#, fuzzy
+#| msgid "vso.cmd.tasks.new.options.name"
+msgid "vso.cmd.tasks.labels.name"
+msgstr "spécifier le nom de la tâche"
+
+#, fuzzy
+#| msgid "vso.cmd.tasks.new.options.at"
+msgid "vso.cmd.tasks.labels.relations"
+msgstr "programmer l'exécution de la tâche à une heure précise (hh:mm)"
+
+#, fuzzy
+#| msgid "vso.cmd.tasks.list"
+msgid "vso.cmd.tasks.labels.dependencies"
+msgstr "Liste des tâches"
+
+#, fuzzy
+#| msgid "vso.cmd.tasks.new.options.description"
+msgid "vso.cmd.tasks.labels.description"
+msgstr "spécifier la description de la tâche"
+
+#, fuzzy
+#| msgid "vso.cmd.tasks.list"
+msgid "vso.cmd.tasks.labels.lastExecution"
+msgstr "Liste des tâches"
+
 msgid "vso.cmd.tasks.list.options.json"
 msgstr "sortir des tâches au format JSON"
 
@@ -333,7 +394,8 @@ msgid "vso.cmd.tasks.new.options.description"
 msgstr "spécifier la description de la tâche"
 
 msgid "vso.cmd.tasks.new.options.every"
-msgstr "programmer l'exécution de la tâche tous les X temps (minutes, heures, jours)"
+msgstr ""
+"programmer l'exécution de la tâche tous les X temps (minutes, heures, jours)"
 
 msgid "vso.cmd.tasks.new.options.name"
 msgstr "spécifier le nom de la tâche"
@@ -351,10 +413,14 @@ msgid "vso.cmd.tasks.new.options.onConditionCommand"
 msgstr "exécuter la commande de la tâche avec condition"
 
 msgid "vso.cmd.tasks.new.options.onCpuTemp"
-msgstr "exécuter la tâche lorsque la température de l'unité centrale est supérieure à 60°C"
+msgstr ""
+"exécuter la tâche lorsque la température de l'unité centrale est supérieure "
+"à 60°C"
 
 msgid "vso.cmd.tasks.new.options.onCpuUsage"
-msgstr "exécuter la tâche lorsque l'utilisation de l'unité centrale est supérieure à X%"
+msgstr ""
+"exécuter la tâche lorsque l'utilisation de l'unité centrale est supérieure à "
+"X%"
 
 msgid "vso.cmd.tasks.new.options.onDeviceConnect"
 msgstr "exécuter la tâche lorsqu'un appareil est connecté"
@@ -372,19 +438,24 @@ msgid "vso.cmd.tasks.new.options.onHighCpuUsage"
 msgstr "exécuter la tâche lorsque l'utilisation du CPU est supérieure à 50 %"
 
 msgid "vso.cmd.tasks.new.options.onHighInternetUsage"
-msgstr "exécuter la tâche lorsque l'utilisation de l'internet est supérieure à 500 Kb/s"
+msgstr ""
+"exécuter la tâche lorsque l'utilisation de l'internet est supérieure à 500 "
+"Kb/s"
 
 msgid "vso.cmd.tasks.new.options.onHighMemoryUsage"
-msgstr "exécuter la tâche lorsque l'utilisation de la mémoire est supérieure à 50 %"
+msgstr ""
+"exécuter la tâche lorsque l'utilisation de la mémoire est supérieure à 50 %"
 
 msgid "vso.cmd.tasks.new.options.onInternetUsage"
-msgstr "exécuter la tâche lorsque l'utilisation de l'internet est supérieure à X Kb/s"
+msgstr ""
+"exécuter la tâche lorsque l'utilisation de l'internet est supérieure à X Kb/s"
 
 msgid "vso.cmd.tasks.new.options.onLowBattery"
 msgstr "exécuter la tâche lorsque la batterie du système est faible (20 %)"
 
 msgid "vso.cmd.tasks.new.options.onMemoryUsage"
-msgstr "exécuter la tâche lorsque l'utilisation de la mémoire est supérieure à X%"
+msgstr ""
+"exécuter la tâche lorsque l'utilisation de la mémoire est supérieure à X%"
 
 msgid "vso.cmd.tasks.new.options.onNetwork"
 msgstr "exécuter la tâche lorsque le système est connecté au réseau"
@@ -420,7 +491,9 @@ msgid "vso.cmd.tasks.rotate"
 msgstr "Rotation des tâches"
 
 msgid "vso.cmd.tasks.rotate.options.privateEvent"
-msgstr "spécifier l'événement privé pour alterner les tâches de démarrage, d'arrêt, de connexion et de déconnexion"
+msgstr ""
+"spécifier l'événement privé pour alterner les tâches de démarrage, d'arrêt, "
+"de connexion et de déconnexion"
 
 msgid "vso.cmd.tasks.rotate.options.silent"
 msgstr "ne pas afficher le statut de chaque cycle"
@@ -428,9 +501,18 @@ msgstr "ne pas afficher le statut de chaque cycle"
 msgid "vso.cmd.waydroid"
 msgstr "Gérer le sous-système waydroid"
 
+#, fuzzy
 msgid "vso.arg.package"
-msgstr ""
+msgstr "vso.arg.package"
 
+#, fuzzy
 msgid "vso.arg.command"
-msgstr ""
+msgstr "vso.arg.command"
 
+#, fuzzy
+msgid "vso.arg.key"
+msgstr "vso.arg.package"
+
+#, fuzzy
+msgid "vso.arg.value"
+msgstr "vso.arg.package"

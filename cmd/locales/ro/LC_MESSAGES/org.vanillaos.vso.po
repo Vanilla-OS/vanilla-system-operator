@@ -3,16 +3,22 @@ msgstr ""
 "Project-Id-Version: Vanilla System Operator\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2024-05-18 12:00+0000\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
+"PO-Revision-Date: 2026-08-24 05:44+0000\n"
+"Last-Translator: Prefill add-on <noreply-addon-prefill@weblate.org>\n"
+"Language-Team: Romanian <https://hosted.weblate.org/projects/vanilla-os/"
+"vanilla-system-operator/ro/>\n"
 "Language: ro\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=n==1 ? 0 : (n==0 || (n%100 > 0 && n%100 < "
+"20)) ? 1 : 2;\n"
+"X-Generator: Weblate 2026.9.dev0\n"
 
 msgid "vso.description"
-msgstr "Operatorul de sistem Vanilla este un manager de pachete, un actualizator de sistem și un automat de sarcini."
+msgstr ""
+"Operatorul de sistem Vanilla este un manager de pachete, un actualizator de "
+"sistem și un automat de sarcini."
 
 msgid "vso.errors.unknownCommand"
 msgstr "Comanda necunoscută: %s"
@@ -108,10 +114,14 @@ msgid "vso.cmd.native"
 msgstr "Gestionează subsistemul VSO"
 
 msgid "vso.cmd.native.error.notInitialized"
-msgstr "Subsistemul VSO nu este inițializat. Rulează `vso native init` pentru a-l inițializa."
+msgstr ""
+"Subsistemul VSO nu este inițializat. Rulează `vso native init` pentru a-l "
+"inițializa."
 
 msgid "vso.cmd.native.error.alreadyInitialized"
-msgstr "Subsistemul VSO este deja inițializat. Utilizați indicatorul --force pentru a forța inițializarea."
+msgstr ""
+"Subsistemul VSO este deja inițializat. Utilizați indicatorul --force pentru "
+"a forța inițializarea."
 
 msgid "vso.cmd.native.error.noAppNameOrBin"
 msgstr "Trebuie specificat --app sau --bin."
@@ -135,7 +145,9 @@ msgid "vso.cmd.native.error.unknownCommand"
 msgstr "Comandă necunoscută: %s"
 
 msgid "vso.cmd.native.error.shellReset"
-msgstr "Este imposibil să se ajungă la VSO shell. Dorești să îl resetezi? (Acest lucru va elimina toate programele instalate în subsistem) [y/N]"
+msgstr ""
+"Este imposibil să se ajungă la VSO shell. Dorești să îl resetezi? (Acest "
+"lucru va elimina toate programele instalate în subsistem) [y/N]"
 
 msgid "vso.cmd.native.info.deleting"
 msgstr "Stergerea subsistemului VSO..."
@@ -159,10 +171,14 @@ msgid "vso.cmd.native.info.unexportedApps"
 msgstr "%d aplicații neexportate"
 
 msgid "vso.cmd.native.info.shellInit"
-msgstr "Se pare că shell-ul tău nu a fost inițializat încă. Dorești să îl inițializezi acum? (Foarte recomandat) [y/N]"
+msgstr ""
+"Se pare că shell-ul tău nu a fost inițializat încă. Dorești să îl "
+"inițializezi acum? (Foarte recomandat) [y/N]"
 
 msgid "vso.cmd.native.info.fallbackShell"
-msgstr "Revenire la shell gazdă? Acest lucru ar putea duce la comportamente neașteptate. [y/N]"
+msgstr ""
+"Revenire la shell gazdă? Acest lucru ar putea duce la comportamente "
+"neașteptate. [y/N]"
 
 msgid "vso.cmd.native.export"
 msgstr "Exportați o aplicație sau un fișier binar din subsistem"
@@ -189,10 +205,12 @@ msgid "vso.cmd.native.unexport.options.binOutput"
 msgstr "calea ieșirii binare (implicit: ~/.local/bin/)"
 
 msgid "vso.cmd.native.init"
-msgstr "Inițializarea subsistemului VSO, utilizat pentru gestionarea pachetelor"
+msgstr ""
+"Inițializarea subsistemului VSO, utilizat pentru gestionarea pachetelor"
 
 msgid "vso.cmd.native.init.options.force"
-msgstr "forțează inițializarea în cazul în care subsistemul este deja inițializat"
+msgstr ""
+"forțează inițializarea în cazul în care subsistemul este deja inițializat"
 
 msgid "vso.cmd.native.install"
 msgstr "Instalează o aplicație în cadrul subsistemului"
@@ -228,10 +246,14 @@ msgid "vso.cmd.sysUpgrade.check"
 msgstr "Verifică după actualizări de sistem"
 
 msgid "vso.cmd.sysUpgrade.check.asExitCode"
-msgstr "verifică dacă există o actualizare, dar nu imprimă nimic. Returnează codul de ieșire 0 dacă nu este disponibilă nicio actualizare și 1 în caz contrar."
+msgstr ""
+"verifică dacă există o actualizare, dar nu imprimă nimic. Returnează codul "
+"de ieșire 0 dacă nu este disponibilă nicio actualizare și 1 în caz contrar."
 
 msgid "vso.cmd.sysUpgrade.check.error.asExitCodeAndJson"
-msgstr "S-a întâmplat o eroare în timpul verificării după actualizări. Pentru mai multe detalii vezi rezultatul JSON."
+msgstr ""
+"S-a întâmplat o eroare în timpul verificării după actualizări. Pentru mai "
+"multe detalii vezi rezultatul JSON."
 
 msgid "vso.cmd.sysUpgrade.check.info.checking"
 msgstr "Verificare după actualizări..."
@@ -239,38 +261,49 @@ msgstr "Verificare după actualizări..."
 msgid "vso.cmd.sysUpgrade.check.json"
 msgstr "exportă rezultatul în format JSON"
 
+#, fuzzy
 msgid "vso.cmd.sysUpgrade.upgrade"
-msgstr ""
+msgstr "vso.cmd.sysUpgrade.upgrade"
 
+#, fuzzy
 msgid "vso.cmd.sysUpgrade.error.updating"
-msgstr ""
+msgstr "vso.cmd.sysUpgrade.error.updating"
 
+#, fuzzy
 msgid "vso.cmd.sysUpgrade.error.onHasUpdate"
-msgstr ""
+msgstr "vso.cmd.sysUpgrade.error.onHasUpdate"
 
+#, fuzzy
 msgid "vso.cmd.sysUpgrade.schedule.daily"
-msgstr ""
+msgstr "vso.cmd.sysUpgrade.schedule.daily"
 
+#, fuzzy
 msgid "vso.cmd.sysUpgrade.schedule.weekly"
-msgstr ""
+msgstr "vso.cmd.sysUpgrade.schedule.weekly"
 
+#, fuzzy
 msgid "vso.cmd.sysUpgrade.schedule.monthly"
-msgstr ""
+msgstr "vso.cmd.sysUpgrade.schedule.monthly"
 
+#, fuzzy
 msgid "vso.cmd.sysUpgrade.info.updating"
-msgstr ""
+msgstr "vso.cmd.sysUpgrade.info.updating"
 
+#, fuzzy
 msgid "vso.cmd.sysUpgrade.info.willUpdateLater"
-msgstr ""
+msgstr "vso.cmd.sysUpgrade.info.willUpdateLater"
 
+#, fuzzy
 msgid "vso.cmd.sysUpgrade.info.willNeverUpdate"
-msgstr ""
+msgstr "vso.cmd.sysUpgrade.info.willNeverUpdate"
 
+#, fuzzy
 msgid "vso.cmd.sysUpgrade.info.noUpdates"
-msgstr ""
+msgstr "vso.cmd.sysUpgrade.info.noUpdates"
 
+#, fuzzy
 msgid "vso.cmd.sysUpgrade.now"
-msgstr ""
+msgstr "vso.cmd.sysUpgrade.now"
 
 msgid "vso.cmd.tasks"
 msgstr "Crează și gestionează sarcini"
@@ -313,6 +346,31 @@ msgstr "Nu a fost găsită nicio sarcină."
 
 msgid "vso.cmd.tasks.list.info.foundTasks"
 msgstr "%d sarcini găsite."
+
+#, fuzzy
+#| msgid "vso.cmd.tasks.new.options.name"
+msgid "vso.cmd.tasks.labels.name"
+msgstr "specifică numele sarcinii"
+
+#, fuzzy
+#| msgid "vso.cmd.tasks.new.options.at"
+msgid "vso.cmd.tasks.labels.relations"
+msgstr "programează execuția unei sarcini la o oră anume (hh:mm)"
+
+#, fuzzy
+#| msgid "vso.cmd.tasks.list"
+msgid "vso.cmd.tasks.labels.dependencies"
+msgstr "Listează toate sarcinile"
+
+#, fuzzy
+#| msgid "vso.cmd.tasks.new.options.description"
+msgid "vso.cmd.tasks.labels.description"
+msgstr "specifică descrierea sarcinii"
+
+#, fuzzy
+#| msgid "vso.cmd.tasks.list"
+msgid "vso.cmd.tasks.labels.lastExecution"
+msgstr "Listează toate sarcinile"
 
 msgid "vso.cmd.tasks.list.options.json"
 msgstr "exportă sarcinile în format JSON"
@@ -420,7 +478,9 @@ msgid "vso.cmd.tasks.rotate"
 msgstr "Rotește sarcinile"
 
 msgid "vso.cmd.tasks.rotate.options.privateEvent"
-msgstr "specifică evenimentul privat pentru a rotii sarcinile pentru resetare, închidere, login, și logout"
+msgstr ""
+"specifică evenimentul privat pentru a rotii sarcinile pentru resetare, "
+"închidere, login, și logout"
 
 msgid "vso.cmd.tasks.rotate.options.silent"
 msgstr "don't output the status on each cycle"
@@ -428,9 +488,18 @@ msgstr "don't output the status on each cycle"
 msgid "vso.cmd.waydroid"
 msgstr "Gestionează subsistemul vso waydroid"
 
+#, fuzzy
 msgid "vso.arg.package"
-msgstr ""
+msgstr "vso.arg.package"
 
+#, fuzzy
 msgid "vso.arg.command"
-msgstr ""
+msgstr "vso.arg.command"
 
+#, fuzzy
+msgid "vso.arg.key"
+msgstr "vso.arg.package"
+
+#, fuzzy
+msgid "vso.arg.value"
+msgstr "vso.arg.package"
