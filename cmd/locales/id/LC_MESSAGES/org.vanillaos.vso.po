@@ -15,7 +15,9 @@ msgstr ""
 "X-Generator: Weblate 2026.9.dev0\n"
 
 msgid "vso.description"
-msgstr "Vanilla System Operator adalah pengelola paket, pembaruan sistem, dan otomatisasi tugas."
+msgstr ""
+"Vanilla System Operator adalah pengelola paket, pembaruan sistem, dan "
+"otomatisasi tugas."
 
 msgid "vso.errors.unknownCommand"
 msgstr "Perintah tidak dikenal: %s"
@@ -111,10 +113,14 @@ msgid "vso.cmd.native"
 msgstr "Kelola subsistem VSO"
 
 msgid "vso.cmd.native.error.notInitialized"
-msgstr "Subsistem VSO belum diinisialisasi. Silakan jalankan perintah `vso native init` untuk menginisialisasinya."
+msgstr ""
+"Subsistem VSO belum diinisialisasi. Silakan jalankan perintah `vso native "
+"init` untuk menginisialisasinya."
 
 msgid "vso.cmd.native.error.alreadyInitialized"
-msgstr "Subsistem VSO sudah diinisialisasi. Gunakan bendera --force untuk memaksa inisialisasi."
+msgstr ""
+"Subsistem VSO sudah diinisialisasi. Gunakan bendera --force untuk memaksa "
+"inisialisasi."
 
 msgid "vso.cmd.native.error.noAppNameOrBin"
 msgstr "--app atau --bin harus ditentukan."
@@ -138,7 +144,9 @@ msgid "vso.cmd.native.error.unknownCommand"
 msgstr "Perintah tidak dikenal: %s"
 
 msgid "vso.cmd.native.error.shellReset"
-msgstr "Tidak mungkin untuk mengakses shell VSO. Apakah Anda ingin meresetnya? (Ini akan menghapus semua perangkat lunak yang terinstal di subsistem) [y/N]"
+msgstr ""
+"Tidak mungkin untuk mengakses shell VSO. Apakah Anda ingin meresetnya? (Ini "
+"akan menghapus semua perangkat lunak yang terinstal di subsistem) [y/N]"
 
 msgid "vso.cmd.native.info.deleting"
 msgstr "Menghapus subsistem VSO..."
@@ -162,10 +170,14 @@ msgid "vso.cmd.native.info.unexportedApps"
 msgstr "Aplikasi yang tidak diekspor: %d"
 
 msgid "vso.cmd.native.info.shellInit"
-msgstr "Sepertinya shell Anda belum diinisialisasi. Apakah Anda ingin menginisialisasinya sekarang? (Sangat disarankan) [y/N]"
+msgstr ""
+"Sepertinya shell Anda belum diinisialisasi. Apakah Anda ingin "
+"menginisialisasinya sekarang? (Sangat disarankan) [y/N]"
 
 msgid "vso.cmd.native.info.fallbackShell"
-msgstr "Kembali ke shell host? Hal ini dapat menyebabkan perilaku yang tidak terduga. [y/N]"
+msgstr ""
+"Kembali ke shell host? Hal ini dapat menyebabkan perilaku yang tidak "
+"terduga. [y/N]"
 
 msgid "vso.cmd.native.export"
 msgstr "Ekspor aplikasi atau berkas biner dari subsistem"
@@ -231,10 +243,14 @@ msgid "vso.cmd.sysUpgrade.check"
 msgstr "Periksa pembaruan sistem"
 
 msgid "vso.cmd.sysUpgrade.check.asExitCode"
-msgstr "memeriksa pembaruan tetapi tidak mencetak apa pun. Kembalikan kode keluar 0 jika tidak ada pembaruan yang tersedia dan 1 jika ada."
+msgstr ""
+"memeriksa pembaruan tetapi tidak mencetak apa pun. Kembalikan kode keluar 0 "
+"jika tidak ada pembaruan yang tersedia dan 1 jika ada."
 
 msgid "vso.cmd.sysUpgrade.check.error.asExitCodeAndJson"
-msgstr "Terjadi kesalahan saat memeriksa pembaruan. Lihat output JSON untuk detail lebih lanjut."
+msgstr ""
+"Terjadi kesalahan saat memeriksa pembaruan. Lihat output JSON untuk detail "
+"lebih lanjut."
 
 msgid "vso.cmd.sysUpgrade.check.info.checking"
 msgstr "Memeriksa pembaruan..."
@@ -327,6 +343,31 @@ msgstr "Tidak ada tugas yang ditemukan."
 
 msgid "vso.cmd.tasks.list.info.foundTasks"
 msgstr "Ditemukan %d tugas."
+
+#, fuzzy
+#| msgid "vso.cmd.tasks.new.options.name"
+msgid "vso.cmd.tasks.labels.name"
+msgstr "tentukan nama tugas"
+
+#, fuzzy
+#| msgid "vso.cmd.tasks.new.options.at"
+msgid "vso.cmd.tasks.labels.relations"
+msgstr "jadwalkan tugas untuk dijalankan pada waktu tertentu (hh:mm)"
+
+#, fuzzy
+#| msgid "vso.cmd.tasks.list"
+msgid "vso.cmd.tasks.labels.dependencies"
+msgstr "Daftar semua tugas"
+
+#, fuzzy
+#| msgid "vso.cmd.tasks.new.options.description"
+msgid "vso.cmd.tasks.labels.description"
+msgstr "tentukan deskripsi tugas tersebut"
+
+#, fuzzy
+#| msgid "vso.cmd.tasks.list"
+msgid "vso.cmd.tasks.labels.lastExecution"
+msgstr "Daftar semua tugas"
 
 msgid "vso.cmd.tasks.list.options.json"
 msgstr "menampilkan tugas dalam format JSON"
@@ -434,7 +475,9 @@ msgid "vso.cmd.tasks.rotate"
 msgstr "Rotasi tugas"
 
 msgid "vso.cmd.tasks.rotate.options.privateEvent"
-msgstr "tentukan acara pribadi untuk memutar tugas saat booting, shutdown, login, dan logout"
+msgstr ""
+"tentukan acara pribadi untuk memutar tugas saat booting, shutdown, login, "
+"dan logout"
 
 msgid "vso.cmd.tasks.rotate.options.silent"
 msgstr "jangan menampilkan status pada setiap siklus"
@@ -449,3 +492,11 @@ msgstr "vso.arg.package"
 #, fuzzy
 msgid "vso.arg.command"
 msgstr "vso.arg.command"
+
+#, fuzzy
+msgid "vso.arg.key"
+msgstr "vso.arg.package"
+
+#, fuzzy
+msgid "vso.arg.value"
+msgstr "vso.arg.package"

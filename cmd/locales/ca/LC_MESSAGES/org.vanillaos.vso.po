@@ -15,7 +15,9 @@ msgstr ""
 "X-Generator: Weblate 2026.9.dev0\n"
 
 msgid "vso.description"
-msgstr "L'Operador del Sistema Vanilla és un gestor de paquets, un actualitzador del sistema i un automatitzador de tasques."
+msgstr ""
+"L'Operador del Sistema Vanilla és un gestor de paquets, un actualitzador del "
+"sistema i un automatitzador de tasques."
 
 msgid "vso.errors.unknownCommand"
 msgstr "Comanda desconeguda: %s"
@@ -111,10 +113,14 @@ msgid "vso.cmd.native"
 msgstr "Gestionar el subsistema Pico"
 
 msgid "vso.cmd.native.error.notInitialized"
-msgstr "El subsistema Pico no és inicialitzat. Si us plau, fes servir la comanda `vso native init` per inicialitzar-lo."
+msgstr ""
+"El subsistema Pico no és inicialitzat. Si us plau, fes servir la comanda "
+"`vso native init` per inicialitzar-lo."
 
 msgid "vso.cmd.native.error.alreadyInitialized"
-msgstr "El subsistema Pico ja es troba inicialitzat. Si us plau fes servir l'opció --force per forçar la inicialització."
+msgstr ""
+"El subsistema Pico ja es troba inicialitzat. Si us plau fes servir l'opció --"
+"force per forçar la inicialització."
 
 msgid "vso.cmd.native.error.noAppNameOrBin"
 msgstr "S'ha d'especificar el nom de la --aplicació o del --binari."
@@ -138,7 +144,9 @@ msgid "vso.cmd.native.error.unknownCommand"
 msgstr "Unknown command: %s"
 
 msgid "vso.cmd.native.error.shellReset"
-msgstr "It is impossible to reach the VSO shell. Do you want to reset it? (This will remove all your software installed in the subsystem) [y/N]"
+msgstr ""
+"It is impossible to reach the VSO shell. Do you want to reset it? (This will "
+"remove all your software installed in the subsystem) [y/N]"
 
 msgid "vso.cmd.native.info.deleting"
 msgstr "Deleting the VSO subsystem..."
@@ -162,10 +170,13 @@ msgid "vso.cmd.native.info.unexportedApps"
 msgstr "Aplicacions amb exportacions desfetes %d"
 
 msgid "vso.cmd.native.info.shellInit"
-msgstr "Looks like your shell is not initialized yet. Do you want to initialize it now? (Highly recommended) [y/N]"
+msgstr ""
+"Looks like your shell is not initialized yet. Do you want to initialize it "
+"now? (Highly recommended) [y/N]"
 
 msgid "vso.cmd.native.info.fallbackShell"
-msgstr "Fallback to the host shell? This could lead to unexpected behavior. [y/N]"
+msgstr ""
+"Fallback to the host shell? This could lead to unexpected behavior. [y/N]"
 
 msgid "vso.cmd.native.export"
 msgstr "Exportar una aplicació o binari del subsistema"
@@ -192,7 +203,8 @@ msgid "vso.cmd.native.unexport.options.binOutput"
 msgstr "camí de la sortida del binari (per defecte: ~/.local/bin/)"
 
 msgid "vso.cmd.native.init"
-msgstr "Inicialitzar el subsistema Pic, es fa servir per a la gestió de paquets"
+msgstr ""
+"Inicialitzar el subsistema Pic, es fa servir per a la gestió de paquets"
 
 msgid "vso.cmd.native.init.options.force"
 msgstr "força la inicialització del subsistema si ja es troba inicialitzat"
@@ -231,10 +243,14 @@ msgid "vso.cmd.sysUpgrade.check"
 msgstr "Comprovar actualitzacions del sistema"
 
 msgid "vso.cmd.sysUpgrade.check.asExitCode"
-msgstr "comprova les actualitzacions però no imprimeix res. Retorna 0 si no hi han actualitzacions i 1 per la resta."
+msgstr ""
+"comprova les actualitzacions però no imprimeix res. Retorna 0 si no hi han "
+"actualitzacions i 1 per la resta."
 
 msgid "vso.cmd.sysUpgrade.check.error.asExitCodeAndJson"
-msgstr "S'ha trobat un error al comprovar les actualitzacions. Fes una ullada al JSON per més detalls."
+msgstr ""
+"S'ha trobat un error al comprovar les actualitzacions. Fes una ullada al "
+"JSON per més detalls."
 
 msgid "vso.cmd.sysUpgrade.check.info.checking"
 msgstr "Comprovant les actualitzacions..."
@@ -327,6 +343,31 @@ msgstr "No tasks found."
 
 msgid "vso.cmd.tasks.list.info.foundTasks"
 msgstr "Found %d tasks."
+
+#, fuzzy
+#| msgid "vso.cmd.tasks.new.options.name"
+msgid "vso.cmd.tasks.labels.name"
+msgstr "specify the task's name"
+
+#, fuzzy
+#| msgid "vso.cmd.tasks.new.options.at"
+msgid "vso.cmd.tasks.labels.relations"
+msgstr "schedule the task to execute at a specific time (hh:mm)"
+
+#, fuzzy
+#| msgid "vso.cmd.tasks.list"
+msgid "vso.cmd.tasks.labels.dependencies"
+msgstr "List all tasks"
+
+#, fuzzy
+#| msgid "vso.cmd.tasks.new.options.description"
+msgid "vso.cmd.tasks.labels.description"
+msgstr "specify the task's description"
+
+#, fuzzy
+#| msgid "vso.cmd.tasks.list"
+msgid "vso.cmd.tasks.labels.lastExecution"
+msgstr "List all tasks"
 
 msgid "vso.cmd.tasks.list.options.json"
 msgstr "output the tasks in JSON format"
@@ -434,7 +475,8 @@ msgid "vso.cmd.tasks.rotate"
 msgstr "Rotate tasks"
 
 msgid "vso.cmd.tasks.rotate.options.privateEvent"
-msgstr "specify private event to rotate tasks for boot, shutdown, login, logout"
+msgstr ""
+"specify private event to rotate tasks for boot, shutdown, login, logout"
 
 msgid "vso.cmd.tasks.rotate.options.silent"
 msgstr "don't output the status on each cycle"
@@ -449,3 +491,11 @@ msgstr "vso.arg.package"
 #, fuzzy
 msgid "vso.arg.command"
 msgstr "vso.arg.command"
+
+#, fuzzy
+msgid "vso.arg.key"
+msgstr "vso.arg.package"
+
+#, fuzzy
+msgid "vso.arg.value"
+msgstr "vso.arg.package"

@@ -15,7 +15,9 @@ msgstr ""
 "X-Generator: Weblate 2026.9.dev0\n"
 
 msgid "vso.description"
-msgstr "Der Vanilla System Operator ist ein Paketmanager, kann das System aktualisieren und Aufgaben automatisieren."
+msgstr ""
+"Der Vanilla System Operator ist ein Paketmanager, kann das System "
+"aktualisieren und Aufgaben automatisieren."
 
 msgid "vso.errors.unknownCommand"
 msgstr "Unbekannter Befehl: %s"
@@ -111,10 +113,14 @@ msgid "vso.cmd.native"
 msgstr "VSO-Subsystem verwalten"
 
 msgid "vso.cmd.native.error.notInitialized"
-msgstr "Das VSO-Subsystem ist nicht initialisiert. Bitte führen Sie `vso native init`aus, um es zu initialisieren."
+msgstr ""
+"Das VSO-Subsystem ist nicht initialisiert. Bitte führen Sie `vso native "
+"init`aus, um es zu initialisieren."
 
 msgid "vso.cmd.native.error.alreadyInitialized"
-msgstr "Das VSO-Subsystem ist bereits initialisiert. Verwenden Sie die Option --force, um die Initialisierung zu erzwingen."
+msgstr ""
+"Das VSO-Subsystem ist bereits initialisiert. Verwenden Sie die Option --"
+"force, um die Initialisierung zu erzwingen."
 
 msgid "vso.cmd.native.error.noAppNameOrBin"
 msgstr "--app oder --bin muss spezifiziert sein."
@@ -138,7 +144,9 @@ msgid "vso.cmd.native.error.unknownCommand"
 msgstr "Unbekannter Befehl: %s"
 
 msgid "vso.cmd.native.error.shellReset"
-msgstr "Es ist nicht möglich, die VSO shell aufzurufen. Wollen Sie sie zurücksetzen? (Dies wird ihr gesamte Software im Subsystem entfernen) [y/N]"
+msgstr ""
+"Es ist nicht möglich, die VSO shell aufzurufen. Wollen Sie sie zurücksetzen? "
+"(Dies wird ihr gesamte Software im Subsystem entfernen) [y/N]"
 
 msgid "vso.cmd.native.info.deleting"
 msgstr "VSO Subsystem wird gelöscht..."
@@ -162,10 +170,13 @@ msgid "vso.cmd.native.info.unexportedApps"
 msgstr "Export von %d Anwendungen rückgängig gemacht"
 
 msgid "vso.cmd.native.info.shellInit"
-msgstr "Es sieht so aus, als sei Ihre Shell noch nicht initialisiert. Möchten Sie sie jetzt initialisieren? (Sehr empfohlen) [y/N]"
+msgstr ""
+"Es sieht so aus, als sei Ihre Shell noch nicht initialisiert. Möchten Sie "
+"sie jetzt initialisieren? (Sehr empfohlen) [y/N]"
 
 msgid "vso.cmd.native.info.fallbackShell"
-msgstr "Fallback zur Host-Shell? Dies könnte zu unerwartetem Verhalten führen. [y/N]"
+msgstr ""
+"Fallback zur Host-Shell? Dies könnte zu unerwartetem Verhalten führen. [y/N]"
 
 msgid "vso.cmd.native.export"
 msgstr "Eine Anwendung oder eine Binärdatei aus dem Subsystem exportieren"
@@ -192,10 +203,12 @@ msgid "vso.cmd.native.unexport.options.binOutput"
 msgstr "Pfad der Binärausgabe (Standard: ~/.local/bin/)"
 
 msgid "vso.cmd.native.init"
-msgstr "Initialisiere das VSO-Subsystem, das für die Paketverwaltung verwendet wird"
+msgstr ""
+"Initialisiere das VSO-Subsystem, das für die Paketverwaltung verwendet wird"
 
 msgid "vso.cmd.native.init.options.force"
-msgstr "Initialisierung erzwingen, wenn das Subsystem bereits initialisiert ist"
+msgstr ""
+"Initialisierung erzwingen, wenn das Subsystem bereits initialisiert ist"
 
 msgid "vso.cmd.native.install"
 msgstr "Eine Anwendung innerhalb des Subsystems installieren"
@@ -207,10 +220,13 @@ msgid "vso.cmd.native.run"
 msgstr "Eine Anwendung vom Subsystem aus starten"
 
 msgid "vso.cmd.native.run.options.noReset"
-msgstr "nicht vorschlagen, das Subsystem zurückzusetzen, wenn etwas schief geht"
+msgstr ""
+"nicht vorschlagen, das Subsystem zurückzusetzen, wenn etwas schief geht"
 
 msgid "vso.cmd.native.search"
-msgstr "Nach einer Anwendung suchen, die innerhalb des Subsystems installiert werden soll"
+msgstr ""
+"Nach einer Anwendung suchen, die innerhalb des Subsystems installiert werden "
+"soll"
 
 msgid "vso.cmd.native.shell"
 msgstr "Geben Sie die Subsystemumgebung ein"
@@ -231,10 +247,15 @@ msgid "vso.cmd.sysUpgrade.check"
 msgstr "Auf Systemaktualisierungen prüfen"
 
 msgid "vso.cmd.sysUpgrade.check.asExitCode"
-msgstr "Prüft, ob eine Aktualisierung verfügbar ist, gibt aber nichts aus. Gibt den Beendigungscode 0 zurück, wenn keine Aktualisierung verfügbar ist, ansonsten 1."
+msgstr ""
+"Prüft, ob eine Aktualisierung verfügbar ist, gibt aber nichts aus. Gibt den "
+"Beendigungscode 0 zurück, wenn keine Aktualisierung verfügbar ist, ansonsten "
+"1."
 
 msgid "vso.cmd.sysUpgrade.check.error.asExitCodeAndJson"
-msgstr "Bei der Prüfung auf Aktualisierungen ist ein Fehler aufgetreten. Siehe die JSON-Ausgabe für weitere Details."
+msgstr ""
+"Bei der Prüfung auf Aktualisierungen ist ein Fehler aufgetreten. Siehe die "
+"JSON-Ausgabe für weitere Details."
 
 msgid "vso.cmd.sysUpgrade.check.info.checking"
 msgstr "Auf Aktualisierungen wird geprüft..."
@@ -328,6 +349,32 @@ msgstr "Keine Aufgaben gefunden."
 msgid "vso.cmd.tasks.list.info.foundTasks"
 msgstr "%d Aufgaben gefunden."
 
+#, fuzzy
+#| msgid "vso.cmd.tasks.new.options.name"
+msgid "vso.cmd.tasks.labels.name"
+msgstr "geben Sie den Namen der Aufgabe an"
+
+#, fuzzy
+#| msgid "vso.cmd.tasks.new.options.at"
+msgid "vso.cmd.tasks.labels.relations"
+msgstr ""
+"die Ausführung der Aufgabe zu einem bestimmten Zeitpunkt (hh:mm) planen"
+
+#, fuzzy
+#| msgid "vso.cmd.tasks.list"
+msgid "vso.cmd.tasks.labels.dependencies"
+msgstr "Alle Aufgaben auflisten"
+
+#, fuzzy
+#| msgid "vso.cmd.tasks.new.options.description"
+msgid "vso.cmd.tasks.labels.description"
+msgstr "geben Sie die Beschreibung der Aufgabe an"
+
+#, fuzzy
+#| msgid "vso.cmd.tasks.list"
+msgid "vso.cmd.tasks.labels.lastExecution"
+msgstr "Alle Aufgaben auflisten"
+
 msgid "vso.cmd.tasks.list.options.json"
 msgstr "die Aufgaben im JSON-Format ausgeben"
 
@@ -338,7 +385,8 @@ msgid "vso.cmd.tasks.new.options.assumeYes"
 msgstr "alle Fragen mit Ja beantworten"
 
 msgid "vso.cmd.tasks.new.options.at"
-msgstr "die Ausführung der Aufgabe zu einem bestimmten Zeitpunkt (hh:mm) planen"
+msgstr ""
+"die Ausführung der Aufgabe zu einem bestimmten Zeitpunkt (hh:mm) planen"
 
 msgid "vso.cmd.tasks.new.options.command"
 msgstr "geben Sie den auszuführenden Befehl an"
@@ -347,7 +395,9 @@ msgid "vso.cmd.tasks.new.options.description"
 msgstr "geben Sie die Beschreibung der Aufgabe an"
 
 msgid "vso.cmd.tasks.new.options.every"
-msgstr "die Aufgabe so planen, dass sie alle X Zeiten (Minuten, Stunden, Tage) ausgeführt wird"
+msgstr ""
+"die Aufgabe so planen, dass sie alle X Zeiten (Minuten, Stunden, Tage) "
+"ausgeführt wird"
 
 msgid "vso.cmd.tasks.new.options.name"
 msgstr "geben Sie den Namen der Aufgabe an"
@@ -377,7 +427,8 @@ msgid "vso.cmd.tasks.new.options.onDeviceDisconnect"
 msgstr "die Aufgabe ausführen, wenn ein Gerät nicht angeschlossen ist"
 
 msgid "vso.cmd.tasks.new.options.onDisconnect"
-msgstr "die Aufgabe ausführen, wenn das System nicht mit dem Netzwerk verbunden ist"
+msgstr ""
+"die Aufgabe ausführen, wenn das System nicht mit dem Netzwerk verbunden ist"
 
 msgid "vso.cmd.tasks.new.options.onFullBattery"
 msgstr "die Aufgabe ausführen, wenn das System vollständig aufgeladen ist"
@@ -434,7 +485,9 @@ msgid "vso.cmd.tasks.rotate"
 msgstr "Aufgaben rotieren"
 
 msgid "vso.cmd.tasks.rotate.options.privateEvent"
-msgstr "gib das private Ereignis an, um die Aufgaben für Hochfahren, Herunterfahren, Einloggen und Ausloggen zu rotieren"
+msgstr ""
+"gib das private Ereignis an, um die Aufgaben für Hochfahren, Herunterfahren, "
+"Einloggen und Ausloggen zu rotieren"
 
 msgid "vso.cmd.tasks.rotate.options.silent"
 msgstr "nicht bei jedem Durchgang den Status ausgeben"
@@ -449,3 +502,11 @@ msgstr "vso.arg.package"
 #, fuzzy
 msgid "vso.arg.command"
 msgstr "vso.arg.command"
+
+#, fuzzy
+msgid "vso.arg.key"
+msgstr "vso.arg.package"
+
+#, fuzzy
+msgid "vso.arg.value"
+msgstr "vso.arg.package"

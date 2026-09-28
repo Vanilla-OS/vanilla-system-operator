@@ -15,7 +15,9 @@ msgstr ""
 "X-Generator: Weblate 2026.9.dev0\n"
 
 msgid "vso.description"
-msgstr "The Vanilla System Operator è un programma per gestire pacchetti, aggiornare il sistema e automatizzare attività."
+msgstr ""
+"The Vanilla System Operator è un programma per gestire pacchetti, aggiornare "
+"il sistema e automatizzare attività."
 
 msgid "vso.errors.unknownCommand"
 msgstr "Comando sconosciuto: %s"
@@ -111,10 +113,14 @@ msgid "vso.cmd.native"
 msgstr "Gestisci il sottosistema VSO"
 
 msgid "vso.cmd.native.error.notInitialized"
-msgstr "Il sottosistema VSO non è inizializzato. Per favore lanciare `vso native init` per inizializzarlo."
+msgstr ""
+"Il sottosistema VSO non è inizializzato. Per favore lanciare `vso native "
+"init` per inizializzarlo."
 
 msgid "vso.cmd.native.error.alreadyInitialized"
-msgstr "Il sottosistema VSO è già inizializzato. Usa --force per forzare l'inizializzazione."
+msgstr ""
+"Il sottosistema VSO è già inizializzato. Usa --force per forzare "
+"l'inizializzazione."
 
 msgid "vso.cmd.native.error.noAppNameOrBin"
 msgstr "L'opzione --app o --bin deve essere specificata."
@@ -129,16 +135,22 @@ msgid "vso.cmd.native.error.exportingBin"
 msgstr "Si è verificato un errore durante l'esportazione del binario: %s"
 
 msgid "vso.cmd.native.error.unexportingApp"
-msgstr "Si è verificato un errore durante l'annullamento dell'esportazione dell'applicazione: %s"
+msgstr ""
+"Si è verificato un errore durante l'annullamento dell'esportazione "
+"dell'applicazione: %s"
 
 msgid "vso.cmd.native.error.unexportingBin"
-msgstr "Si è verificato un errore durante l'annullamento dell'esportazione del binario: %s"
+msgstr ""
+"Si è verificato un errore durante l'annullamento dell'esportazione del "
+"binario: %s"
 
 msgid "vso.cmd.native.error.unknownCommand"
 msgstr "Comando sconosciuto: %s"
 
 msgid "vso.cmd.native.error.shellReset"
-msgstr "È impossibile raggiungere la VSO shell. Vuoi ripristinarla? (Questo cancellerà tutti i tuoi programmi installati nel sottosistema) [s/N]"
+msgstr ""
+"È impossibile raggiungere la VSO shell. Vuoi ripristinarla? (Questo "
+"cancellerà tutti i tuoi programmi installati nel sottosistema) [s/N]"
 
 msgid "vso.cmd.native.info.deleting"
 msgstr "Cancellazione del sottosistema VSO..."
@@ -162,10 +174,14 @@ msgid "vso.cmd.native.info.unexportedApps"
 msgstr "Esportazione %d applicazioni annullata"
 
 msgid "vso.cmd.native.info.shellInit"
-msgstr "Sembra che la tua shell non è ancora inizializzata. Vuoi inizializzarla ora? (Altamente raccomandato) [s/N]"
+msgstr ""
+"Sembra che la tua shell non è ancora inizializzata. Vuoi inizializzarla ora? "
+"(Altamente raccomandato) [s/N]"
 
 msgid "vso.cmd.native.info.fallbackShell"
-msgstr "Ripiegare sulla shell host? Questo potrebbe causare comportamenti imprevisti. [s/N]"
+msgstr ""
+"Ripiegare sulla shell host? Questo potrebbe causare comportamenti "
+"imprevisti. [s/N]"
 
 msgid "vso.cmd.native.export"
 msgstr "Esporta un'applicazione o un binario dal sottosistema"
@@ -180,7 +196,8 @@ msgid "vso.cmd.native.export.options.binOutput"
 msgstr "percorso del output del binario (default: ~/.local/bin/)"
 
 msgid "vso.cmd.native.unexport"
-msgstr "Annulla esportazione di un'applicazione o di un binario dal sottosistema"
+msgstr ""
+"Annulla esportazione di un'applicazione o di un binario dal sottosistema"
 
 msgid "vso.cmd.native.unexport.options.app"
 msgstr "il nome dell'applicazione da non esportare"
@@ -207,7 +224,8 @@ msgid "vso.cmd.native.run"
 msgstr "Lancia un'applicazione dal sottosistema"
 
 msgid "vso.cmd.native.run.options.noReset"
-msgstr "non proporre il reset del sottosistema se qualcosa non funziona correttamente"
+msgstr ""
+"non proporre il reset del sottosistema se qualcosa non funziona correttamente"
 
 msgid "vso.cmd.native.search"
 msgstr "Cerca un'applicazione da installare nel sottosistema"
@@ -231,10 +249,14 @@ msgid "vso.cmd.sysUpgrade.check"
 msgstr "Controlla gli aggiornamenti di sistema"
 
 msgid "vso.cmd.sysUpgrade.check.asExitCode"
-msgstr "Controlla se ci sono aggiornamenti, ma non stampare nulla. Restituisci il codice 0 se non ci sono aggiornamenti disponibili e 1 in caso contrario."
+msgstr ""
+"Controlla se ci sono aggiornamenti, ma non stampare nulla. Restituisci il "
+"codice 0 se non ci sono aggiornamenti disponibili e 1 in caso contrario."
 
 msgid "vso.cmd.sysUpgrade.check.error.asExitCodeAndJson"
-msgstr "Si è verificato un errore durante il controllo degli aggiornamenti. Per maggiori dettagli controlla l'output JSON."
+msgstr ""
+"Si è verificato un errore durante il controllo degli aggiornamenti. Per "
+"maggiori dettagli controlla l'output JSON."
 
 msgid "vso.cmd.sysUpgrade.check.info.checking"
 msgstr "Controllo aggiornamenti..."
@@ -328,6 +350,31 @@ msgstr "Nessuna attività trovata."
 msgid "vso.cmd.tasks.list.info.foundTasks"
 msgstr "Trovate %d attività."
 
+#, fuzzy
+#| msgid "vso.cmd.tasks.new.options.name"
+msgid "vso.cmd.tasks.labels.name"
+msgstr "specifica il nome dell'attività"
+
+#, fuzzy
+#| msgid "vso.cmd.tasks.new.options.at"
+msgid "vso.cmd.tasks.labels.relations"
+msgstr "pianifica l'attività da eseguire ad una specifica ora (hh:mm)"
+
+#, fuzzy
+#| msgid "vso.cmd.tasks.list"
+msgid "vso.cmd.tasks.labels.dependencies"
+msgstr "Lista delle attività"
+
+#, fuzzy
+#| msgid "vso.cmd.tasks.new.options.description"
+msgid "vso.cmd.tasks.labels.description"
+msgstr "specifica la descrizione dell'attività"
+
+#, fuzzy
+#| msgid "vso.cmd.tasks.list"
+msgid "vso.cmd.tasks.labels.lastExecution"
+msgstr "Lista delle attività"
+
 msgid "vso.cmd.tasks.list.options.json"
 msgstr "output delle attività in formato JSON"
 
@@ -395,7 +442,8 @@ msgid "vso.cmd.tasks.new.options.onInternetUsage"
 msgstr "esegui l'attività quando l'utilizzo di internet è maggiore di XKb/s"
 
 msgid "vso.cmd.tasks.new.options.onLowBattery"
-msgstr "esegui l'attività quando il sistema ha un basso livello di batteria (20%)"
+msgstr ""
+"esegui l'attività quando il sistema ha un basso livello di batteria (20%)"
 
 msgid "vso.cmd.tasks.new.options.onMemoryUsage"
 msgstr "esegui l'attività quando la memoria utilizzata è maggiore del X%"
@@ -434,7 +482,9 @@ msgid "vso.cmd.tasks.rotate"
 msgstr "Ruota le attività"
 
 msgid "vso.cmd.tasks.rotate.options.privateEvent"
-msgstr "specifica l'evento privato per ruotare le attività di boot, shutdown, login, e logout"
+msgstr ""
+"specifica l'evento privato per ruotare le attività di boot, shutdown, login, "
+"e logout"
 
 msgid "vso.cmd.tasks.rotate.options.silent"
 msgstr "don't output the status on each cycle"
@@ -449,3 +499,11 @@ msgstr "vso.arg.package"
 #, fuzzy
 msgid "vso.arg.command"
 msgstr "vso.arg.command"
+
+#, fuzzy
+msgid "vso.arg.key"
+msgstr "vso.arg.package"
+
+#, fuzzy
+msgid "vso.arg.value"
+msgstr "vso.arg.package"

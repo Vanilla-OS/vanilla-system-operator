@@ -15,7 +15,9 @@ msgstr ""
 "X-Generator: Weblate 2026.9.dev0\n"
 
 msgid "vso.description"
-msgstr "வெண்ணிலா சிச்டம் ஆபரேட்டர் ஒரு தொகுப்பு மேலாளர், கணினி புதுப்பிப்பாளர் மற்றும் பணி ஆட்டோமேட்டர்."
+msgstr ""
+"வெண்ணிலா சிச்டம் ஆபரேட்டர் ஒரு தொகுப்பு மேலாளர், கணினி புதுப்பிப்பாளர் மற்றும் பணி "
+"ஆட்டோமேட்டர்."
 
 msgid "vso.errors.unknownCommand"
 msgstr "தெரியாத கட்டளை: %s"
@@ -114,7 +116,9 @@ msgid "vso.cmd.native.error.notInitialized"
 msgstr "VSO துணை அமைப்பு துவக்கப்படவில்லை. அதைத் தொடங்க `vso native init` ஐ இயக்கவும்."
 
 msgid "vso.cmd.native.error.alreadyInitialized"
-msgstr "VSO துணை அமைப்பு ஏற்கனவே துவக்கப்பட்டுள்ளது. துவக்கத்தை கட்டாயப்படுத்த -ஃபோர்ச் கொடியைப் பயன்படுத்தவும்."
+msgstr ""
+"VSO துணை அமைப்பு ஏற்கனவே துவக்கப்பட்டுள்ளது. துவக்கத்தை கட்டாயப்படுத்த -ஃபோர்ச் கொடியைப் "
+"பயன்படுத்தவும்."
 
 msgid "vso.cmd.native.error.noAppNameOrBin"
 msgstr "--app அல்லது--பின் குறிப்பிடப்பட வேண்டும்."
@@ -138,7 +142,9 @@ msgid "vso.cmd.native.error.unknownCommand"
 msgstr "தெரியாத கட்டளை: %s"
 
 msgid "vso.cmd.native.error.shellReset"
-msgstr "VSO செல்லை அடைய முடியாது. அதை மீட்டமைக்க விரும்புகிறீர்களா? (இது துணை அமைப்பில் நிறுவப்பட்ட உங்கள் எல்லா மென்பொருளையும் அகற்றும்) [y/n]"
+msgstr ""
+"VSO செல்லை அடைய முடியாது. அதை மீட்டமைக்க விரும்புகிறீர்களா? (இது துணை அமைப்பில் "
+"நிறுவப்பட்ட உங்கள் எல்லா மென்பொருளையும் அகற்றும்) [y/n]"
 
 msgid "vso.cmd.native.info.deleting"
 msgstr "VSO துணை அமைப்பை நீக்குகிறது ..."
@@ -162,7 +168,9 @@ msgid "vso.cmd.native.info.unexportedApps"
 msgstr "ஏற்றுக்கொள்ளப்பட்ட %d பயன்பாடுகள்"
 
 msgid "vso.cmd.native.info.shellInit"
-msgstr "உங்கள் செல் இன்னும் துவக்கப்படவில்லை என்று தெரிகிறது. இப்போது அதைத் தொடங்க விரும்புகிறீர்களா? (மிகவும் பரிந்துரைக்கப்படுகிறது) [y/n]"
+msgstr ""
+"உங்கள் செல் இன்னும் துவக்கப்படவில்லை என்று தெரிகிறது. இப்போது அதைத் தொடங்க "
+"விரும்புகிறீர்களா? (மிகவும் பரிந்துரைக்கப்படுகிறது) [y/n]"
 
 msgid "vso.cmd.native.info.fallbackShell"
 msgstr "புரவலன் செல்லுக்கு குறைவு? இது எதிர்பாராத நடத்தைக்கு வழிவகுக்கும். [y/n]"
@@ -231,10 +239,14 @@ msgid "vso.cmd.sysUpgrade.check"
 msgstr "கணினி புதுப்பிப்புகளைச் சரிபார்க்கவும்"
 
 msgid "vso.cmd.sysUpgrade.check.asExitCode"
-msgstr "மேம்படுத்தலுக்கான காசோலைகள் ஆனால் எதையும் அச்சிடாது. மேம்படுத்தல் எதுவும் கிடைக்கவில்லை என்றால் வெளியேறும் குறியீடு 0 ஐ திரும்பவும், இல்லையெனில் 1."
+msgstr ""
+"மேம்படுத்தலுக்கான காசோலைகள் ஆனால் எதையும் அச்சிடாது. மேம்படுத்தல் எதுவும் கிடைக்கவில்லை "
+"என்றால் வெளியேறும் குறியீடு 0 ஐ திரும்பவும், இல்லையெனில் 1."
 
 msgid "vso.cmd.sysUpgrade.check.error.asExitCodeAndJson"
-msgstr "புதுப்பிப்புகளைச் சரிபார்க்கும்போது பிழை ஏற்பட்டது. மேலும் விவரங்களுக்கு சாதொபொகு வெளியீட்டைப் பார்க்கவும்."
+msgstr ""
+"புதுப்பிப்புகளைச் சரிபார்க்கும்போது பிழை ஏற்பட்டது. மேலும் விவரங்களுக்கு சாதொபொகு "
+"வெளியீட்டைப் பார்க்கவும்."
 
 msgid "vso.cmd.sysUpgrade.check.info.checking"
 msgstr "புதுப்பிப்புகளைச் சரிபார்க்கிறது ..."
@@ -328,6 +340,31 @@ msgstr "பணிகள் எதுவும் கிடைக்கவில�
 msgid "vso.cmd.tasks.list.info.foundTasks"
 msgstr "%d பணிகள் காணப்பட்டன."
 
+#, fuzzy
+#| msgid "vso.cmd.tasks.new.options.name"
+msgid "vso.cmd.tasks.labels.name"
+msgstr "பணியின் பெயரைக் குறிப்பிடவும்"
+
+#, fuzzy
+#| msgid "vso.cmd.tasks.new.options.at"
+msgid "vso.cmd.tasks.labels.relations"
+msgstr "ஒரு குறிப்பிட்ட நேரத்தில் (HH: MM) செயல்படுத்த பணியை திட்டமிடுங்கள்"
+
+#, fuzzy
+#| msgid "vso.cmd.tasks.list"
+msgid "vso.cmd.tasks.labels.dependencies"
+msgstr "எல்லா பணிகளையும் பட்டியலிடுங்கள்"
+
+#, fuzzy
+#| msgid "vso.cmd.tasks.new.options.description"
+msgid "vso.cmd.tasks.labels.description"
+msgstr "பணியின் விளக்கத்தைக் குறிப்பிடவும்"
+
+#, fuzzy
+#| msgid "vso.cmd.tasks.list"
+msgid "vso.cmd.tasks.labels.lastExecution"
+msgstr "எல்லா பணிகளையும் பட்டியலிடுங்கள்"
+
 msgid "vso.cmd.tasks.list.options.json"
 msgstr "சாதொபொகு வடிவத்தில் பணிகளை வெளியிடுங்கள்"
 
@@ -347,7 +384,8 @@ msgid "vso.cmd.tasks.new.options.description"
 msgstr "பணியின் விளக்கத்தைக் குறிப்பிடவும்"
 
 msgid "vso.cmd.tasks.new.options.every"
-msgstr "ஒவ்வொரு ஃச் நேரத்தையும் (நிமிடங்கள், மணிநேரம், நாட்கள்) செயல்படுத்த பணியைத் திட்டமிடுங்கள்"
+msgstr ""
+"ஒவ்வொரு ஃச் நேரத்தையும் (நிமிடங்கள், மணிநேரம், நாட்கள்) செயல்படுத்த பணியைத் திட்டமிடுங்கள்"
 
 msgid "vso.cmd.tasks.new.options.name"
 msgstr "பணியின் பெயரைக் குறிப்பிடவும்"
@@ -434,7 +472,9 @@ msgid "vso.cmd.tasks.rotate"
 msgstr "பணிகளை சுழற்றுங்கள்"
 
 msgid "vso.cmd.tasks.rotate.options.privateEvent"
-msgstr "துவக்க, பணிநிறுத்தம், உள்நுழைவு மற்றும் வெளியேறுவதற்கான பணிகளைச் சுழற்ற தனிப்பட்ட நிகழ்வைக் குறிப்பிடவும்"
+msgstr ""
+"துவக்க, பணிநிறுத்தம், உள்நுழைவு மற்றும் வெளியேறுவதற்கான பணிகளைச் சுழற்ற தனிப்பட்ட "
+"நிகழ்வைக் குறிப்பிடவும்"
 
 msgid "vso.cmd.tasks.rotate.options.silent"
 msgstr "ஒவ்வொரு சுழற்சியிலும் நிலையை வெளியிட வேண்டாம்"
@@ -449,3 +489,11 @@ msgstr "vso.arg.package"
 #, fuzzy
 msgid "vso.arg.command"
 msgstr "vso.arg.command"
+
+#, fuzzy
+msgid "vso.arg.key"
+msgstr "vso.arg.package"
+
+#, fuzzy
+msgid "vso.arg.value"
+msgstr "vso.arg.package"

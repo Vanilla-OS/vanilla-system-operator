@@ -139,7 +139,9 @@ msgid "vso.cmd.native.error.unknownCommand"
 msgstr "الأمر غير معروف: %s"
 
 msgid "vso.cmd.native.error.shellReset"
-msgstr "من المستحيل الوصول إلى قشرة VSO. هل تريد إعادة ضبطها؟ (سيؤدي هذا إلى إزالة جميع البرامج المثبتة في النظام الفرعي) [y/N]"
+msgstr ""
+"من المستحيل الوصول إلى قشرة VSO. هل تريد إعادة ضبطها؟ (سيؤدي هذا إلى إزالة "
+"جميع البرامج المثبتة في النظام الفرعي) [y/N]"
 
 msgid "vso.cmd.native.info.deleting"
 msgstr "حذف نظام VSO الفرعي..."
@@ -163,7 +165,8 @@ msgid "vso.cmd.native.info.unexportedApps"
 msgstr "تم إلغاء تصدير %d تطبيقات"
 
 msgid "vso.cmd.native.info.shellInit"
-msgstr "يبدو أن قشرتك لم يتم تهيئتها بعد. ه ل تريد تهيئتها الآن؟ (موصى به بشدة) [y/N]"
+msgstr ""
+"يبدو أن قشرتك لم يتم تهيئتها بعد. ه ل تريد تهيئتها الآن؟ (موصى به بشدة) [y/N]"
 
 msgid "vso.cmd.native.info.fallbackShell"
 msgstr "العودة إلى قشرة المضيف؟ قد يؤدي ذلك إلى سلوك غير متوقع. [y/N]"
@@ -232,10 +235,14 @@ msgid "vso.cmd.sysUpgrade.check"
 msgstr "التحقق من تحديثات النظام"
 
 msgid "vso.cmd.sysUpgrade.check.asExitCode"
-msgstr "التحقق من الترقية ولكن دون طباعة أي شي ء. العودة برمز خروج 0 إذا لم تكن هناك ترقية متاحة و1 خلاف ذلك."
+msgstr ""
+"التحقق من الترقية ولكن دون طباعة أي شي ء. العودة برمز خروج 0 إذا لم تكن هناك "
+"ترقية متاحة و1 خلاف ذلك."
 
 msgid "vso.cmd.sysUpgrade.check.error.asExitCodeAndJson"
-msgstr "An error occured when checking for updates. See the JSON output for more details."
+msgstr ""
+"An error occured when checking for updates. See the JSON output for more "
+"details."
 
 msgid "vso.cmd.sysUpgrade.check.info.checking"
 msgstr "التحقق من التحديثات..."
@@ -329,6 +336,31 @@ msgstr "لم يتم العثور على مهام."
 msgid "vso.cmd.tasks.list.info.foundTasks"
 msgstr "تم العثور على %d مهام."
 
+#, fuzzy
+#| msgid "vso.cmd.tasks.new.options.name"
+msgid "vso.cmd.tasks.labels.name"
+msgstr "تحديد اسم المهمة"
+
+#, fuzzy
+#| msgid "vso.cmd.tasks.new.options.at"
+msgid "vso.cmd.tasks.labels.relations"
+msgstr "جدولة المهمة للتنفيذ في وقت محدد (hh:mm)"
+
+#, fuzzy
+#| msgid "vso.cmd.tasks.list"
+msgid "vso.cmd.tasks.labels.dependencies"
+msgstr "عرض جميع المهام"
+
+#, fuzzy
+#| msgid "vso.cmd.tasks.new.options.description"
+msgid "vso.cmd.tasks.labels.description"
+msgstr "تحديد وصف المهمة"
+
+#, fuzzy
+#| msgid "vso.cmd.tasks.list"
+msgid "vso.cmd.tasks.labels.lastExecution"
+msgstr "عرض جميع المهام"
+
 msgid "vso.cmd.tasks.list.options.json"
 msgstr "عرض المهام بتنسيق JSON"
 
@@ -366,7 +398,9 @@ msgid "vso.cmd.tasks.new.options.onConditionCommand"
 msgstr "تنفيذ المهمة بأمر مشروط"
 
 msgid "vso.cmd.tasks.new.options.onCpuTemp"
-msgstr "تنفيذ المهمة عندما تكون درجة حرارة وحدة المعالجة المركزية أعلى من 60 درجة مئوية"
+msgstr ""
+"تنفيذ المهمة عندما تكون درجة حرارة وحدة المعالجة المركزية أعلى من 60 درجة "
+"مئوية"
 
 msgid "vso.cmd.tasks.new.options.onCpuUsage"
 msgstr "تنفيذ المهمة عندما يكون استخدام وحدة المعالجة المركزية أعلى من X%"
@@ -435,7 +469,9 @@ msgid "vso.cmd.tasks.rotate"
 msgstr "تدوير المهام"
 
 msgid "vso.cmd.tasks.rotate.options.privateEvent"
-msgstr "تحديد الحدث الخاص لتدوير المهام الخاصة بالتمهيد، والإيقاف، وتسجيل الدخول، وتسجيل الخروج"
+msgstr ""
+"تحديد الحدث الخاص لتدوير المهام الخاصة بالتمهيد، والإيقاف، وتسجيل الدخول، "
+"وتسجيل الخروج"
 
 msgid "vso.cmd.tasks.rotate.options.silent"
 msgstr "don't output the status on each cycle"
@@ -450,3 +486,11 @@ msgstr "vso.arg.package"
 #, fuzzy
 msgid "vso.arg.command"
 msgstr "vso.arg.command"
+
+#, fuzzy
+msgid "vso.arg.key"
+msgstr "vso.arg.package"
+
+#, fuzzy
+msgid "vso.arg.value"
+msgstr "vso.arg.package"

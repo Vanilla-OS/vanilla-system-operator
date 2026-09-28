@@ -15,7 +15,9 @@ msgstr ""
 "X-Generator: Weblate 2026.9.dev0\n"
 
 msgid "vso.description"
-msgstr "Vanilla System Operator on paketinhallinta, järjestelmän päivittäjä ja tehtäväautomaatio."
+msgstr ""
+"Vanilla System Operator on paketinhallinta, järjestelmän päivittäjä ja "
+"tehtäväautomaatio."
 
 msgid "vso.errors.unknownCommand"
 msgstr "Tuntematon komento: %s"
@@ -111,10 +113,14 @@ msgid "vso.cmd.native"
 msgstr "Hallinnoi VSO-alijärjestelmää"
 
 msgid "vso.cmd.native.error.notInitialized"
-msgstr "VSO-alijärjestelmää ei ole alustettu. Suorita `vso native init` alustaaksesi sen."
+msgstr ""
+"VSO-alijärjestelmää ei ole alustettu. Suorita `vso native init` alustaaksesi "
+"sen."
 
 msgid "vso.cmd.native.error.alreadyInitialized"
-msgstr "VSO-alijärjestelmä on jo alustettu. Käytä lippua `--force` pakottaaksesi alustuksen."
+msgstr ""
+"VSO-alijärjestelmä on jo alustettu. Käytä lippua `--force` pakottaaksesi "
+"alustuksen."
 
 msgid "vso.cmd.native.error.noAppNameOrBin"
 msgstr "`--app` tai `--bin` on määritettävä."
@@ -138,7 +144,9 @@ msgid "vso.cmd.native.error.unknownCommand"
 msgstr "Tuntematon komento: %s"
 
 msgid "vso.cmd.native.error.shellReset"
-msgstr "VSO-komentotulkkiin on mahdotonta päästä. Haluatko nollata sen? (Tämä poistaa kaikki alijärjestelmään asennetut ohjelmistot) [k/E]"
+msgstr ""
+"VSO-komentotulkkiin on mahdotonta päästä. Haluatko nollata sen? (Tämä "
+"poistaa kaikki alijärjestelmään asennetut ohjelmistot) [k/E]"
 
 msgid "vso.cmd.native.info.deleting"
 msgstr "Poistetaan VSO-alijärjestelmää..."
@@ -162,10 +170,14 @@ msgid "vso.cmd.native.info.unexportedApps"
 msgstr "Ei-viety %d sovellusta"
 
 msgid "vso.cmd.native.info.shellInit"
-msgstr "Vaikuttaa siltä, että komentotulkkiasi ei ole vielä alustettu. Haluatko alustaa sen nyt? (Erittäin suositeltava) [k/E]"
+msgstr ""
+"Vaikuttaa siltä, että komentotulkkiasi ei ole vielä alustettu. Haluatko "
+"alustaa sen nyt? (Erittäin suositeltava) [k/E]"
 
 msgid "vso.cmd.native.info.fallbackShell"
-msgstr "Palaako isäntäkomentotulkkiin? Tämä voi johtaa odottamattomaan käyttäytymiseen. [k/E]"
+msgstr ""
+"Palaako isäntäkomentotulkkiin? Tämä voi johtaa odottamattomaan "
+"käyttäytymiseen. [k/E]"
 
 msgid "vso.cmd.native.export"
 msgstr "Vie sovellus tai binaari alijärjestelmästä"
@@ -231,10 +243,14 @@ msgid "vso.cmd.sysUpgrade.check"
 msgstr "Tarkista järjestelmäpäivitysten varalta"
 
 msgid "vso.cmd.sysUpgrade.check.asExitCode"
-msgstr "tarkistaa päivityksen, mutta ei tulosta mitään. Palauta poistumiskoodi 0, jos päivitystä ei ole saatavilla, ja 1 muussa tapauksessa."
+msgstr ""
+"tarkistaa päivityksen, mutta ei tulosta mitään. Palauta poistumiskoodi 0, "
+"jos päivitystä ei ole saatavilla, ja 1 muussa tapauksessa."
 
 msgid "vso.cmd.sysUpgrade.check.error.asExitCodeAndJson"
-msgstr "Tapahtui virhe tarkistettaessa päivitysten varalta. Katso lisätietoja JSON-lähdöstä."
+msgstr ""
+"Tapahtui virhe tarkistettaessa päivitysten varalta. Katso lisätietoja JSON-"
+"lähdöstä."
 
 msgid "vso.cmd.sysUpgrade.check.info.checking"
 msgstr "Tarkistetaan päivitysten varalta..."
@@ -327,6 +343,31 @@ msgstr "Tehtäviä ei löytynyt."
 
 msgid "vso.cmd.tasks.list.info.foundTasks"
 msgstr "Löytyi %d tehtävää."
+
+#, fuzzy
+#| msgid "vso.cmd.tasks.new.options.name"
+msgid "vso.cmd.tasks.labels.name"
+msgstr "määritä tehtävän nimi"
+
+#, fuzzy
+#| msgid "vso.cmd.tasks.new.options.at"
+msgid "vso.cmd.tasks.labels.relations"
+msgstr "ajoita tehtävä suoritettavaksi tiettyyn aikaan (tt:mm)"
+
+#, fuzzy
+#| msgid "vso.cmd.tasks.list"
+msgid "vso.cmd.tasks.labels.dependencies"
+msgstr "Luetteloi kaikki tehtävät"
+
+#, fuzzy
+#| msgid "vso.cmd.tasks.new.options.description"
+msgid "vso.cmd.tasks.labels.description"
+msgstr "määritä tehtävän kuvaus"
+
+#, fuzzy
+#| msgid "vso.cmd.tasks.list"
+msgid "vso.cmd.tasks.labels.lastExecution"
+msgstr "Luetteloi kaikki tehtävät"
 
 msgid "vso.cmd.tasks.list.options.json"
 msgstr "tulosta tehtävät JSON-muodossa"
@@ -434,7 +475,9 @@ msgid "vso.cmd.tasks.rotate"
 msgstr "Kierrä tehtävät"
 
 msgid "vso.cmd.tasks.rotate.options.privateEvent"
-msgstr "määritä yksityinen tapahtuma käynnistyksen, sammutuksen, kirjautumisen ja uloskirjautumisen tehtävien kiertämiseksi"
+msgstr ""
+"määritä yksityinen tapahtuma käynnistyksen, sammutuksen, kirjautumisen ja "
+"uloskirjautumisen tehtävien kiertämiseksi"
 
 msgid "vso.cmd.tasks.rotate.options.silent"
 msgstr "älä tulosta tilaa jokaisella jaksolla"
@@ -449,3 +492,11 @@ msgstr "vso.arg.package"
 #, fuzzy
 msgid "vso.arg.command"
 msgstr "vso.arg.command"
+
+#, fuzzy
+msgid "vso.arg.key"
+msgstr "vso.arg.package"
+
+#, fuzzy
+msgid "vso.arg.value"
+msgstr "vso.arg.package"
